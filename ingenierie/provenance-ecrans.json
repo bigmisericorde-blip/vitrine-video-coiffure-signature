@@ -4,7 +4,7 @@
   "sha256_source": "a804a3fa8ad4f9bb70ca624417cdc5b547bf8e4cb9e0528b4c05734fa0f89ea9",
   "adapter": "ingenierie/build_ecrans.py",
   "output": "simulation.html",
-  "sha256_output": "cd03d0cf1f5788d4692ef8bd1e23aa1a37496746a252e560b15acf621bd1f29c",
+  "sha256_output": "2af60000d904c18eea10c286faef0d5358a75c37c42569552d69a25c8095cf1c",
   "etats": [
     "A",
     "B",

@@ -1,14 +1,25 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ta fiche coiffure — Vitrine Vidéo</title><link rel="stylesheet" href="assets/web.css"><script src="cas-demo.js" defer></script><script src="assets/test.js" defer></script></head><body>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ta fiche coiffure — Vitrine Vidéo</title><link rel="stylesheet" href="assets/web.css?v=2"><script src="cas-demo.js" defer></script><script src="assets/test.js?v=2" defer></script></head><body>
 <div class="shell"><header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="ecrans.html">Les 12 écrans →</a></header>
-<main><div class="hero"><section><p class="kicker" id="caseLabel">CAS DE TEST</p><h1>Ta fiche<span>coiffure.</span></h1><p class="lead">Coupe, tresses, couleur, barbe… les mêmes questions pour tout le monde. Garde l’exemple ou mets tes infos.</p>
+<main><div class="hero"><section><p class="kicker" id="caseLabel">CAS DE TEST</p><h1>Ta fiche<span>coiffure.</span></h1><p class="lead">Les mêmes questions pour une coupe, des tresses, une couleur ou une barbe. Tu peux garder l’exemple ou mettre tes infos.</p>
 <form class="card leadCard form-flow" id="testForm" autocomplete="off">
- <div><label for="salon">1. Quel nom veux-tu montrer ?</label><small>Ton nom ou celui de ton salon.</small><input id="salon" name="salon" required maxlength="45" placeholder="Ex. Studio Vitrine"></div>
- <div><label for="ville">2. Où travailles-tu ?</label><small>Écris ta ville ou ton quartier.</small><input id="ville" name="ville" required maxlength="45" placeholder="Ex. Cotonou"></div>
- <div><label for="service">3. Quel travail veux-tu montrer ?</label><input id="service" name="service" required maxlength="50" placeholder="Ex. Tresses, coupe, couleur, barbe"></div>
- <div><label for="prix">4. Quel est le prix ?</label><small>Tu peux laisser vide.</small><input id="prix" name="prix" maxlength="32" placeholder="Ex. 7 500 FCFA"></div>
- <div><label for="resultat">5. Que veux-tu montrer à la fin ?</label><input id="resultat" name="resultat" maxlength="80" placeholder="Ex. La coupe finie, de côté"></div>
- <div><label for="action">6. Que doit faire la personne après la vidéo ?</label><select id="action" name="action"><option>Prendre rendez-vous</option><option>T’écrire</option><option>T’appeler</option><option>Rien pour le moment</option></select>
- <label for="contact" class="sub-label">Quel numéro ou quel lien veux-tu montrer ? <small>Tu peux laisser vide.</small></label><input id="contact" name="contact" maxlength="120" placeholder="Ton numéro ou ton lien"></div>
+ <div><label for="salon">1. Quel nom doit-on lire sur la vidéo ?</label><small id="aideNom">Ton nom ou celui de ton salon.</small><input id="salon" name="salon" aria-describedby="aideNom" required maxlength="45" placeholder="Ex. Studio Vitrine"></div>
+ <div><label for="ville">2. Dans quelle ville ou quel quartier travailles-tu ?</label><input id="ville" name="ville" required maxlength="45" placeholder="Ex. Cotonou, Fidjrossè"></div>
+ <div><label for="service">3. Quel travail veux-tu montrer dans la vidéo ?</label><small id="aideTravail">Par exemple : une coupe, des tresses, une couleur, un soin ou une barbe.</small><input id="service" name="service" aria-describedby="aideTravail" required maxlength="50" placeholder="Ex. Tresses"></div>
+ <div><label for="prix">4. Quel prix peut-on écrire sur la vidéo ?</label><small id="aidePrix">Laisse vide si tu ne veux pas montrer le prix.</small><input id="prix" name="prix" aria-describedby="aidePrix" maxlength="32" placeholder="Ex. 7 500 FCFA"></div>
+ <fieldset class="finish-choice" aria-describedby="aideFin">
+  <legend>5. Ton travail est fini. Que faut-il montrer dans la dernière prise ?</legend>
+  <small id="aideFin">Choisis une réponse. Si tu hésites, garde le premier choix.</small>
+  <div class="finish-options">
+   <label><input type="radio" name="resultatChoix" value="profil" checked> <span>Le résultat entier, vu de côté.</span></label>
+   <label><input type="radio" name="resultatChoix" value="contours"> <span>Les contours, filmés de près.</span></label>
+   <label><input type="radio" name="resultatChoix" value="couleur"> <span>La couleur et les reflets, dans la lumière.</span></label>
+   <label><input type="radio" name="resultatChoix" value="detail"> <span>Un détail : une tresse, une boucle ou une mèche.</span></label>
+   <label><input type="radio" name="resultatChoix" value="autre"> <span>Autre chose</span></label>
+  </div>
+  <div id="autreResultat" hidden><label for="resultatAutre">Qu’est-ce qu’on doit voir ?</label><input id="resultatAutre" maxlength="80" placeholder="Ex. Les pointes après le soin"></div>
+ </fieldset>
+ <div><label for="action">6. Que doit faire la personne après avoir vu la vidéo ?</label><select id="action" name="action"><option value="Prendre rendez-vous">Prendre rendez-vous</option><option value="T’écrire">T’envoyer un message</option><option value="T’appeler">T’appeler</option><option value="Rien pour le moment">Rien pour le moment</option></select>
+ <div id="contactBloc"><label for="contact" class="sub-label" id="contactLabel">Quel lien ou numéro permet de prendre rendez-vous ?</label><small id="aideContact">Tu peux laisser vide.</small><input id="contact" name="contact" aria-describedby="aideContact" maxlength="120" placeholder="Ex. Ton lien ou ton numéro"></div></div>
  <p class="note">Tes réponses restent dans cet onglet. Elles aident à lire les consignes. Le film qui se joue à la fin reste l’exemple de Studio Vitrine.</p>
  <label class="check"><input id="checkedCase" type="checkbox" required><span>J’ai relu ma fiche.</span></label><button class="button" type="submit" id="startTest" disabled>Lancer les 4 prises <span aria-hidden="true">→</span></button>
  <p id="ready" class="note" role="status"></p>

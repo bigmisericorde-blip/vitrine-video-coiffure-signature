@@ -2,16 +2,16 @@
 
 Même fiche pour une coupe, des tresses, une couleur ou une barbe. Quatre prises, avec à chaque fois : une consigne, le temps pour filmer et une question après lecture. Les captures viennent de la simulation ; elle ne demande pas la caméra.
 
-Pour essayer le parcours, la page interactive du dépôt est `ecrans.html`.
+Pour essayer le parcours, ouvre [la page publique des 12 écrans](https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/ecrans.html). Elle donne aussi accès à chaque écran à sa taille normale.
 
 ## Les questions de la fiche
 
-1. Quel nom veux-tu montrer ?
-2. Où travailles-tu ?
-3. Quel travail veux-tu montrer ?
-4. Quel est le prix ? (Tu peux laisser vide.)
-5. Que veux-tu montrer à la fin ?
-6. Que doit faire la personne après la vidéo ?
+1. Quel nom doit-on lire sur la vidéo ?
+2. Dans quelle ville ou quel quartier travailles-tu ?
+3. Quel travail veux-tu montrer dans la vidéo ?
+4. Quel prix peut-on écrire sur la vidéo ? (Tu peux laisser vide.)
+5. Ton travail est fini. Que faut-il montrer dans la dernière prise ? **Choisis** le résultat entier vu de côté (déjà coché), les contours de près, la couleur et les reflets, une tresse/boucle/mèche, ou autre chose.
+6. Que doit faire la personne après avoir vu la vidéo ? Elle peut prendre rendez-vous, t’écrire ou t’appeler. Tu peux aussi ne rien demander pour le moment.
 
 ## Prise 1 — Toi au travail
 

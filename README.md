@@ -24,7 +24,7 @@ Les douze plans rendus sont des fenêtres dans les **quatre mêmes** sources, de
 
 ## Voir les 12 écrans directement
 
-`ecrans.html` ouvre, au choix, Consigne / Enregistrement / Après lecture pour chacune des quatre prises. La fiche et les consignes ne séparent pas homme et femme. L’aperçu ne valide pas les prises : pour suivre le parcours, démarrer par `index.html`. On peut aussi [voir les 12 captures sur GitHub](livrables/12-ecrans.md).
+`ecrans.html` ouvre, au choix, Consigne / Enregistrement / Après lecture pour chacune des quatre prises. La fiche et les consignes ne séparent pas homme et femme. Sur petit écran, l’aperçu est présenté avant la liste et offre Précédent, Suivant et un choix direct. La fiche guide le choix du résultat à filmer, sans texte libre obligatoire. Le chrono suit la lecture réelle et s’arrête si le clip attend. L’aperçu ne valide pas les prises : pour suivre le parcours, démarrer par `index.html`. On peut aussi [voir les 12 captures sur GitHub](livrables/12-ecrans.md).
 
 ## Livrables
 

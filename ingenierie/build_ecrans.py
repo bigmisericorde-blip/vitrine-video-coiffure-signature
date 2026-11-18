@@ -15,6 +15,17 @@ s=s.replace('../assets/fonts/','assets/')
 rep('  .sr{','''  .test-id{position:absolute;top:12px;left:58px;color:#f7fffc;background:#0b1d25dd;padding:5px 8px;border-radius:9px;font-size:10px;letter-spacing:.08em;z-index:21;pointer-events:none}
   body.capture .test-id,#app:has(.rec.on,.adwrap.on) .test-id,#app:has(.rec.on,.adwrap.on,.panel.on) .demo-fab{display:none}
   :root{--bg:#04191b;--deep:#062629;--sheet:rgba(6,38,41,.97);--accent:#40d6a1;--cream:#f5faf3;--muted:#b1c9bf}
+  #app{height:100vh;height:100dvh}
+  .sheet.hidden{visibility:hidden}
+  .sheet-body{min-height:0;padding-bottom:16px;scroll-padding-bottom:16px}
+  .sheet-foot::before{display:none}
+  button.scroll-hint{position:static;width:100%;display:block;margin:-3px 0 7px;padding:4px 8px;min-height:27px;opacity:1;transform:none;pointer-events:auto;border:1px solid #438679;background:#0b3937;color:#bdf4d8;border-radius:9px;font:700 12px var(--sans);cursor:pointer}
+  button.scroll-hint[hidden]{display:none}
+  .media-feedback{position:absolute;z-index:25;top:calc(72px + env(safe-area-inset-top));left:14px;right:14px;display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;text-align:center;padding:10px 12px;border:1px solid #487d72;border-radius:13px;background:#062629ee;color:#f5faf3}
+  .media-feedback[hidden],.media-feedback button[hidden]{display:none}
+  .media-feedback p{width:100%;margin:0;font-size:13px;line-height:1.4}
+  .media-feedback button{border:1px solid #65d9b0;color:#bdf4d8;background:#0b3e36;border-radius:8px;padding:8px 9px;font:700 12px var(--sans);cursor:pointer}
+  @media(max-width:340px){.sheet-head{padding-inline:14px}.sheet-body{padding-inline:14px}.sheet-foot{padding-inline:14px}.cta{font-size:14px}.btns{gap:7px}.btn{font-size:12px;letter-spacing:.03em}.review{padding-inline:12px}.review-question{font-size:14px}}
   .case-context{margin:-8px 0 15px;font-size:13px;color:#bdf4d8;overflow-wrap:anywhere}
   .review-question{font-size:15px;font-weight:750;line-height:1.4;margin:0;padding:9px 12px;color:#fff;background:#062629ee;border-radius:11px;border:1px solid #40d6a17a}
   .duration,.voice{background:rgba(64,214,161,.10);border-color:rgba(64,214,161,.34)}
@@ -43,7 +54,10 @@ rep('  .sr{','''  .test-id{position:absolute;top:12px;left:58px;color:#f7fffc;ba
   .sr{''')
 rep('<main id="app">','''<main id="app">
   <div id="testCurtain" hidden><strong>Le cas de test est requis.</strong><a href="index.html">Ouvrir la fiche préremplie</a></div>
-  <span class="test-id" id="testID" aria-hidden="true"></span>''')
+  <span class="test-id" id="testID" aria-hidden="true"></span>
+  <aside id="mediaFeedback" class="media-feedback" hidden><p id="mediaMessage" role="status"></p><button id="mediaRetry" type="button" hidden>Réessayer</button><button id="mediaBack" type="button">Revenir à la consigne</button></aside>''')
+rep('<video id="replay" playsinline preload="auto">','<video id="replay" playsinline muted preload="auto">')
+rep('      <div class="scroll-hint" id="scrollHint" aria-hidden="true"><span title="La fiche continue sous le bouton">↓</span></div>', '      <button type="button" class="scroll-hint" id="scrollHint" aria-controls="sheetBody" hidden>Lire la suite ↓</button>')
 rep('>enregistrement</p>','>enregistrement simulé</p>')
 rep('>LE PLAT</h1>','>TOI AU TRAVAIL</h1>')
 rep('      <p class="consigne" id="consigne"></p>', '      <p class="consigne" id="consigne"></p>\n      <p id="caseContext" class="case-context" hidden></p>')
@@ -70,6 +84,8 @@ rep('const cam = $("cam"), replay = $("replay"), ad = $("ad"), audioVoix = new A
 const film = `media/${DATA.sortie.file}`;
 const params = new URLSearchParams(location.search);
 const linked = params.get("test") === DATA.id;
+const requestedScreen=Number(params.get("ecran"));
+const previewNumber=linked&&Number.isInteger(requestedScreen)&&requestedScreen>=1&&requestedScreen<=12?requestedScreen:0;
 const fiche = (() => {
   if (!linked || params.get("fiche") !== "1") return null;
   try { return JSON.parse(sessionStorage.getItem("vv-fiche-" + DATA.id) || "null"); }
@@ -85,7 +101,7 @@ $("endCta").href = $("caCta").getAttribute("href");
 $("endCta").textContent = DATA.display.cta;
 $("endMeta").textContent = `4 prises · ${DATA.plan.duration} secondes · ${DATA.display.salon}`;''')
 rep('  ad.pause(); replay.pause(); replay.style.display = "none";','''  if (montageTimer !== null) {clearInterval(montageTimer); montageTimer = null;}
-  ad.pause(); replay.pause(); replay.style.display = "none";''')
+  clearPicture(); cam.pause(); ad.pause(); replay.pause(); replay.style.display = "none";''')
 rep('''  $("listFilm").innerHTML = s.a_filmer.map((t) => `<li><span class="mark">✓</span><span>${t}</span></li>`).join("");
   $("listAvoid").innerHTML = s.a_eviter.map((t) => `<li><span class="mark">✕</span><span>${t}</span></li>`).join("");''', '''  const list = (id, items, icon) => $(id).replaceChildren(...items.map(t => {
     const li = document.createElement("li"), mark = document.createElement("span"), txt = document.createElement("span");
@@ -112,7 +128,7 @@ rep('    if (p >= 100) { clearInterval(iv); go.disabled = false; go.textContent 
       ad.addEventListener("error",()=>{go.textContent="RENDU INDISPONIBLE";},{once:true});
     }''')
 rep('$("next").onclick = () => (idx < SCENES.length - 1 ? showCard(idx + 1) : showMontage());','''$("next").onclick = () => {
-  if (state !== "C") return;
+  if (state !== "C" || $("next").disabled || previewNumber) return;
   validated.add(SCENES[idx].id);
   if (idx < SCENES.length - 1) showCard(idx+1);
   else if (validated.size === SCENES.length) showMontage();
@@ -125,21 +141,29 @@ rep('    setTimeout(() => { stopRecording(); $("rec").classList.remove("on"); },
 rep('  if (e === "ad") { hideAll(); state = "ad"; $("adwrap").classList.add("on"); ad.src = "media/publicite_T1_demo.mp4"; }','  if (e === "ad") { hideAll(); state = "ad"; $("adwrap").classList.add("on"); ad.src = film; }')
 rep('  state: () => state','  state: () => state,\n  validations: () => [...validated],\n  test: () => DATA.id')
 rep('showCard(0);\n\n/* Repère','''if (!linked) $("testCurtain").hidden = false;
-else {
-  const num = Number(params.get("ecran"));
-  if (Number.isInteger(num) && num >= 1 && num <= 12) {
-    const i = Math.floor((num-1)/3), mode = (num-1)%3;
-    document.body.classList.add("capture");
-    showCard(i);
-    if (mode === 1) {
-      startRecording(); stopRecording(); window.__demo.setProgress(40);
-      const pausePrise = () => { cam.pause(); cam.currentTime = SCENES[i].secondes*.4; };
-      if (cam.readyState >= 1) pausePrise(); else cam.addEventListener("loadedmetadata",pausePrise,{once:true});
-    } else if (mode === 2) finishRecording();
-    for (const id of ["cta","redo","next","demoFab"]) $(id).disabled = true;
-  } else showCard(0);
-}
+else if (previewNumber) {
+  const i=Math.floor((previewNumber-1)/3), mode=(previewNumber-1)%3;
+  document.body.classList.add("capture");
+  showCard(i);
+  if(mode===1)showFrozenRecording();
+  else if(mode===2)finishRecording();
+  for(const id of ["cta","redo","next","demoFab"])$(id).disabled=true;
+} else showCard(0);
 
 /* Repère''')
+
+# Bloc A/B/C maintenu séparément, tout en gardant le reste du socle repris du T1.
+begin=s.index('/* ---------------- état A ---------------- */')
+end=s.index('/* ---------------- montage / publicité / fin ---------------- */',begin)
+s=s[:begin]+(HERE/'prises-web.js').read_text(encoding='utf-8')+'\n\n'+s[end:]
+rep('let idx = 0, rafId = null, recStart = 0, recording = false, state = "A";', 'let idx = 0, rafId = null, recording = false, state = "A";')
+rep('''  if (e === "B") {
+    startRecording();
+    setTimeout(() => { stopRecording(); window.__demo.setProgress(40); cam.pause(); }, 45);
+  }''', '  if (e === "B") showFrozenRecording();')
+rep('  hint.classList.toggle("show", deborde && !fini);','  hint.hidden = !deborde || fini;')
+rep('document.getElementById("sheetBody").addEventListener("scroll", window.majRepereDefilement, {passive: true});','''$("sheetBody").addEventListener("scroll",window.majRepereDefilement,{passive:true});
+$("scrollHint").onclick=()=>$("sheetBody").scrollBy({top:Math.max(110,$("sheetBody").clientHeight*.75),behavior:"auto"});
+if(document.fonts)document.fonts.ready.then(window.majRepereDefilement);''')
 (ROOT/'simulation.html').write_text(s,encoding='utf-8')
 save(HERE/'provenance-ecrans.json',{'base_commit':'ad4ff15a76dcba7bd08b7e8f56052e842b3e794f','base_path':'simulation/index.html','sha256_source':hashlib.sha256(orig.encode()).hexdigest(),'adapter':'ingenierie/build_ecrans.py','output':'simulation.html','sha256_output':hashlib.sha256(s.encode()).hexdigest(),'etats':['A','B','C','montage','ad','end']})

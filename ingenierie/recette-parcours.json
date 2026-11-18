@@ -3,13 +3,16 @@
   "resultat": "PASS",
   "navigateur": "Chromium headless",
   "vue_px": [
+    320,
     360,
     430
   ],
   "checks": [
     "Accès direct sans identifiant : retour vers la fiche",
-    "Une page donne accès aux 12 écrans A/B/C, en aperçu sans validation",
-    "Coupe + barbe préremplie → même fiche avec Tresses et prix vide → contexte lié sans changer les prises",
+    "Les 12 aperçus lisibles à 320 px : choix direct, précédent/suivant et URL partageable",
+    "Les 12 écrans réels ouverts un par un : prise correcte, image prête et contrôles visibles sur petit écran",
+    "Vidéo bloquée : chrono à zéro, aucune validation ; Réessayer relance la bonne prise",
+    "Question 5 : un choix par défaut et des exemples ; tresses / détail choisissables sans taper ni prix ni résultat",
     "S1 : ordre des textes, source S1.mp4, chrono automatique, révision, validation",
     "S2 : ordre des textes, source S2.mp4, chrono automatique, révision, validation",
     "S3 : ordre des textes, source S3.mp4, chrono automatique, révision, validation",
@@ -37,10 +40,11 @@
     "starts": 1,
     "seek": 0,
     "errs": [],
-    "startedAt": 39407.700000000186,
-    "elapsed": 29.998,
+    "startedAt": 40146.80000000028,
+    "elapsed": 30,
     "frameTiming": {}
   },
   "erreurs": [],
+  "version": "navigation et questions v2",
   "périmètre": "Maquette web ; aucune validation Android ni réservation réelle."
 }
