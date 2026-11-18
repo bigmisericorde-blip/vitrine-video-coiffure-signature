@@ -1,0 +1,14 @@
+{
+  "resultat": "PASS",
+  "cas": "VV-COIF-01",
+  "test": "Variante de plan isolée, quatre mêmes sources. Modification du seul JSON. Images 46/76 : split décalé de 42 à 51 et allongé de 18 à 24 images ; 143 : premier iris de 12 à 16 images ; 636 : push de 12 à 16 images ; 810 : carton identique.",
+  "images_reference_identiques": {
+    "46": false,
+    "76": false,
+    "143": false,
+    "636": false,
+    "810": true
+  },
+  "rebuild_master_identique": true,
+  "initial_sha256": "89122a6bafd7c71fdde9051f585f96ed4cf25e38abe464188fc6f1a582464a73"
+}

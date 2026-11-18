@@ -1,0 +1,31 @@
+﻿Début (s),Fin exclue (s),Prises / plans,Action visuelle,Texte,Rôle,Son projeté seulement — hors master
+0,1,P01/S1,Le professionnel et le profil entrent immédiatement.,"Studio Vitrine, démonstration, Coupe + barbe.",Face et métier avant toute animation longue.,"0.15–1.35 s : « Coupe et barbe. » Départ du lit original, sans accord massif."
+1,2,P01/S1 / P02/S1,"La fenêtre du pro se replie, la carte entre latéralement à 1,40.","Coupe + barbe, 7 500 FCFA à env. 1,85, tarif démo.",Placer le prix avant le premier geste.,0.15–1.35 s : « Coupe et barbe. » 1.70–4.50 s : « À sept mille cinq cents francs CFA. » Lit original en retrait.
+2,3,P02/S1,Fenêtre vidéo et carte maintenant stables.,Un seul rendez-vous.,Tenir la lecture pendant que le pro bouge.,1.70–4.50 s : « À sept mille cinq cents francs CFA. » Lit original en retrait.
+3,4,P02/S1,Continuité du profil et du lieu ; petite poussée.,Même prix et même bénéfice.,Prouver la réalité du geste dans le même cadre.,1.70–4.50 s : « À sept mille cinq cents francs CFA. » Lit original en retrait.
+4,5,P02/S1,"Dernière respiration de la carte, départ de l’iris vers 4,80.",Offre toujours présente jusqu’à l’iris.,Quitter la carte sans perdre sa couleur.,"1.70–4.50 s : « À sept mille cinq cents francs CFA. » Accent court de l’iris (vers 4,80 s)."
+5,6,P03/S2,"Fin iris vers 5,20 ; tempe et tondeuse en grand.",Badge répété haut droit. Dégradé sur les côtés.,La preuve démarre sans carton intercalaire.,"Pas de voix. Fin de l’accent, dégager le geste."
+6,7,P03/S2,La tondeuse traverse la tempe.,Même badge et libellé de geste.,Laisser l’outil finir son passage.,6.10–8.80 s : « Un dégradé net sur les côtés. » Lit original en retrait.
+7,8,P03/S2 / P04/S2,"Cut de changement d’échelle à 7,13.",Même repère d’offre.,"Appuyer le geste, pas montrer un nouveau client.",6.10–8.80 s : « Un dégradé net sur les côtés. » Lit original en retrait.
+8,9,P04/S2,"Macro en cours, légère poussée.",Dégradé sur les côtés.,Voir la texture et l’outil.,6.10–8.80 s : « Un dégradé net sur les côtés. » Lit original en retrait.
+9,10,P04/S2 / P05/S2,"Resserré → retour de cadre à 9,40.",Badge stable.,Créer un temps de respiration.,Pas de voix. Un passage d’outil léger si raccordé à l’image.
+10,11,P05/S2,Dernier mouvement à la tempe ; outil reste au centre utile.,Même offre.,Préparer le raccord motivé.,Pas de voix. Lit original en retrait.
+11,12,P06/S3,"Cut raccord objet à 11,00, même tondeuse vers la barbe.",La barbe ; Des contours précis.,Rendre visible la deuxième partie de la formule.,11.35–14.55 s : « On dessine les contours de la barbe. » Lit original en retrait.
+12,13,P06/S3,Le profil s’incline dans le gros plan.,Badge fixe + intitulé court.,Suivre la trajectoire plutôt que le décor.,11.35–14.55 s : « On dessine les contours de la barbe. » Lit original en retrait.
+13,14,P06/S3 / P07/S3,"Changement d’échelle à 13,33.","Libellé répété, pas de nouveau texte.",L’outil touche la matière ; preuve de précision.,11.35–14.55 s : « On dessine les contours de la barbe. » Lit original en retrait.
+14,15,P07/S3,"Macro ramassée, passage de l’outil.",Même promesse.,"Pas de rotation ajoutée, le geste anime l’image.",11.35–14.55 s : « On dessine les contours de la barbe. » Lit original en retrait.
+15,16,P07/S3 / P08/S4,"Second iris entre 15,60 et 16,00.",Le badge disparaît le temps de la transition.,Marquer la sortie du détail et la révélation.,"Pas de voix. Second iris, accent bref (vers 15,60 s)."
+16,17,P08/S4,Profil et dernière finition réapparaissent.,Le résultat / La finition.,Même client ; pas de fausse photo avant/après.,Pas de voix. Respiration ; pas de réaction fabriquée.
+17,18,P08/S4 / P09/S4,"Profil tenu, fin du geste ; cut à 17,97.",La ligne se voit de près.,Temps de vérification visuelle.,Pas de voix. Lit original en retrait.
+18,19,P09/S4,"Recadrage sur le même profil, taille plus forte.",Badge + résultat.,Conserver la cohérence du sujet.,"18.05–20.25 s : « Une ligne nette, de profil. » (option) Lit original en retrait."
+19,20,P09/S4,Le visage reste dégagé ; micro-poussée.,Pas de message supplémentaire.,Le résultat fait l’argument.,"18.05–20.25 s : « Une ligne nette, de profil. » (option) Lit original en retrait."
+20,21,P09/S4 / P10/S4,"Profil, panneau de réservation entre à 20,83.",Choisis ton créneau.,Amener la solution sans changer d’offre.,"18.05–20.25 s : « Une ligne nette, de profil. » (option) Transition d’interface sans jingle supplémentaire."
+21,22,P10/S4,Déplacement du téléphone et vidéo à gauche.,Prestation et prix reportés dans le téléphone.,Montrer la destination et conserver du mouvement.,21.16–23.55 s : « Choisis ton créneau en ligne. » Lit original en retrait.
+22,23,P10/S4,Trois horaires fictifs visibles.,Horaires fictifs.,Pas d’indication de disponibilités réelles.,21.16–23.55 s : « Choisis ton créneau en ligne. » Lit original en retrait.
+23,24,P10/S4,Un horaire est sélectionné dans la maquette.,11:30 en vert.,Visualiser le choix : ne pas basculer sur un autre objectif.,21.16–23.55 s : « Choisis ton créneau en ligne. » Lit original en retrait.
+24,25,P11/S4,Retour plein cadre sur le client.,À Cotonou / Réserver coupe + barbe.,Nommer l’action et le lieu avant le carton.,"24.02–26.25 s : « Studio Vitrine, à Cotonou. » Lit original en retrait."
+25,26,P11/S4,Même plan de finition et même action.,Bouton sous la vidéo.,Le spectateur sait exactement où cliquer.,"24.02–26.25 s : « Studio Vitrine, à Cotonou. » Lit original en retrait."
+26,27,P11/S4 / P12/S4,"Cut à 26,40 sur le rail vert et plan haut vivant.","Studio Vitrine, Cotonou · Bénin, prix, CTA.","Geler l’information, pas la vidéo.","24.02–26.25 s : « Studio Vitrine, à Cotonou. » 26.55–29.25 s : « Réserve ta coupe et ta barbe. » Lit original en retrait."
+27,28,P12/S4,Carton stable ; mouvement en haut.,Même CTA. Offre fictive.,Laisser lire.,26.55–29.25 s : « Réserve ta coupe et ta barbe. » Lit original en retrait.
+28,29,P12/S4,"Carton inchangé, aucun nouvel élément.",Réservation en ligne.,Maintenir le chemin unique.,26.55–29.25 s : « Réserve ta coupe et ta barbe. » Lit original en retrait.
+29,30,P12/S4,Dernière seconde maintenue jusqu’à l’image 899.,Libellé et destination encore visibles.,Pas de queue noire et pas de fondu qui efface la lecture.,"26.55–29.25 s : « Réserve ta coupe et ta barbe. » Terminer le lit après la voix, garder l’action lisible."

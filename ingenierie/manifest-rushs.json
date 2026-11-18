@@ -1,0 +1,74 @@
+{
+  "fixture": "VV-COIF-01",
+  "licence": "https://www.pexels.com/license/",
+  "prises": [
+    {
+      "id": "S1",
+      "duree": 6,
+      "sha256": "4e3cb23b82836ffc3cda23bf4e0b9c052938157b623078c24fa976d782140ee6",
+      "fichier": "S1.mp4",
+      "source": {
+        "id": 4177803,
+        "slug": "a-man-styling-a-man-s-hair-4177803",
+        "in_s": 0.2,
+        "crop_x": 392,
+        "sha256": "4cbf13f643de2f28fb6f11edf49fdbd28cff4a340cb576dc5ed682ef97701863",
+        "cdn": "https://videos.pexels.com/video-files/4177803/4177803-hd_1920_1080_30fps.mp4",
+        "source": "https://www.pexels.com/video/a-man-styling-a-man-s-hair-4177803/",
+        "licence": "https://www.pexels.com/license/",
+        "credit": "Pavel Danilyuk / Pexels"
+      }
+    },
+    {
+      "id": "S2",
+      "duree": 7,
+      "sha256": "c6c53da93ddfa3940e546e0119a9cb494238702d6d2bbf81d28e28c5aa5556fc",
+      "fichier": "S2.mp4",
+      "source": {
+        "id": 4177957,
+        "slug": "beard-young-man-barber-barbershop-4177957",
+        "in_s": 0.26,
+        "crop_x": 1058,
+        "sha256": "b377603740f76d9fc42a23b003a472689e89974b6a3ced26b04bfbfa102aa1ed",
+        "cdn": "https://videos.pexels.com/video-files/4177957/4177957-hd_1920_1080_30fps.mp4",
+        "source": "https://www.pexels.com/video/beard-young-man-barber-barbershop-4177957/",
+        "licence": "https://www.pexels.com/license/",
+        "credit": "Pavel Danilyuk / Pexels"
+      }
+    },
+    {
+      "id": "S3",
+      "duree": 7,
+      "sha256": "45383ab9f745701b43af3a69d5f2ebb5ce2b533d09d393c193c6e2ca1e9aceeb",
+      "fichier": "S3.mp4",
+      "source": {
+        "id": 4178110,
+        "slug": "a-man-having-a-facial-haircut-4178110",
+        "in_s": 0.43,
+        "crop_x": 405,
+        "sha256": "6d50be7c30614f479f374964b289c2a26bb0b339d6241e4672c8a84a5fb80cf0",
+        "cdn": "https://videos.pexels.com/video-files/4178110/4178110-hd_1920_1080_30fps.mp4",
+        "source": "https://www.pexels.com/video/a-man-having-a-facial-haircut-4178110/",
+        "licence": "https://www.pexels.com/license/",
+        "credit": "Pavel Danilyuk / Pexels"
+      }
+    },
+    {
+      "id": "S4",
+      "duree": 7,
+      "sha256": "9a919a7fe081572e47cedfa6a98a95ff776634808b55debdf4633ca115d6f25e",
+      "fichier": "S4.mp4",
+      "source": {
+        "id": 4177796,
+        "slug": "a-man-fixing-a-man-s-hair-after-haircut-4177796",
+        "in_s": 0.1,
+        "crop_x": 257,
+        "sha256": "c46c38ae03fae419a853740f847690114e188d52242fcf62a540be6678c42f8c",
+        "cdn": "https://videos.pexels.com/video-files/4177796/4177796-hd_1920_1080_30fps.mp4",
+        "source": "https://www.pexels.com/video/a-man-fixing-a-man-s-hair-after-haircut-4177796/",
+        "licence": "https://www.pexels.com/license/",
+        "credit": "Pavel Danilyuk / Pexels"
+      }
+    }
+  ]
+}

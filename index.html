@@ -1,0 +1,19 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ta fiche coiffure — Vitrine Vidéo</title><link rel="stylesheet" href="assets/web.css"><script src="cas-demo.js" defer></script><script src="assets/test.js" defer></script></head><body>
+<div class="shell"><header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="ecrans.html">Les 12 écrans →</a></header>
+<main><div class="hero"><section><p class="kicker" id="caseLabel">CAS DE TEST</p><h1>Ta fiche<span>coiffure.</span></h1><p class="lead">Coupe, tresses, couleur, barbe… les mêmes questions pour tout le monde. Garde l’exemple ou mets tes infos.</p>
+<form class="card leadCard form-flow" id="testForm" autocomplete="off">
+ <div><label for="salon">1. Quel nom veux-tu montrer ?</label><small>Ton nom ou celui de ton salon.</small><input id="salon" name="salon" required maxlength="45" placeholder="Ex. Studio Vitrine"></div>
+ <div><label for="ville">2. Où travailles-tu ?</label><small>Écris ta ville ou ton quartier.</small><input id="ville" name="ville" required maxlength="45" placeholder="Ex. Cotonou"></div>
+ <div><label for="service">3. Quel travail veux-tu montrer ?</label><input id="service" name="service" required maxlength="50" placeholder="Ex. Tresses, coupe, couleur, barbe"></div>
+ <div><label for="prix">4. Quel est le prix ?</label><small>Tu peux laisser vide.</small><input id="prix" name="prix" maxlength="32" placeholder="Ex. 7 500 FCFA"></div>
+ <div><label for="resultat">5. Que veux-tu montrer à la fin ?</label><input id="resultat" name="resultat" maxlength="80" placeholder="Ex. La coupe finie, de côté"></div>
+ <div><label for="action">6. Que doit faire la personne après la vidéo ?</label><select id="action" name="action"><option>Prendre rendez-vous</option><option>T’écrire</option><option>T’appeler</option><option>Rien pour le moment</option></select>
+ <label for="contact" class="sub-label">Quel numéro ou quel lien veux-tu montrer ? <small>Tu peux laisser vide.</small></label><input id="contact" name="contact" maxlength="120" placeholder="Ton numéro ou ton lien"></div>
+ <p class="note">Tes réponses restent dans cet onglet. Elles aident à lire les consignes. Le film qui se joue à la fin reste l’exemple de Studio Vitrine.</p>
+ <label class="check"><input id="checkedCase" type="checkbox" required><span>J’ai relu ma fiche.</span></label><button class="button" type="submit" id="startTest" disabled>Lancer les 4 prises <span aria-hidden="true">→</span></button>
+ <p id="ready" class="note" role="status"></p>
+</form></section>
+<section class="card"><div class="badgeLine"><span class="pill">Exemple de test</span><span class="pill">Sans son</span></div><h2 style="margin-top:15px">Les 4 prises</h2><ol class="list" id="captureList"></ol>
+<p class="note">Une consigne, un chrono et une lecture pour chaque prise. La caméra n’est pas utilisée.</p><div class="links"><a class="button" href="ecrans.html">Voir les 12 écrans</a><a id="filmLink" href="film.html">Voir le film exemple</a></div></section></div>
+<div class="info"><b>Test Vitrine Vidéo.</b> Les clips et le film sont déjà prêts. Aucun message, paiement ou rendez-vous n’est envoyé.</div>
+</main></div></body></html>

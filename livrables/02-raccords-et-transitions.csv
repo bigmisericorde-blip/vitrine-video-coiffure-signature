@@ -1,0 +1,12 @@
+﻿Raccord,Image charnière,Timecode mm:ss:ii,Fenêtre (fin exclue),Images d’effet,Durée (s),Provenance fonctionnelle,Exécution dans le gabarit
+split_slide,42,00:01:12,00:01:12 → 00:02:00,18,0.6,"Plateau → split GC 1,6–2,0 s",La carte prend la place du décor et crée une lecture pro/prix. Le profil demeure visible.
+iris_vert,150,00:05:00,00:04:24 → 00:05:06,12,0.4,"Premier iris GC ~4,94–5,45 s","Pastille d’offre agrandie en masque vert, puis voile qui découvre la coupe."
+cut_geste,214,00:07:04,00:07:04,0,0.0,"Cuts Lab 19,93–22,23 s","Même geste, plus près : tempe et outil restent dans l’axe de lecture."
+cut_geste,282,00:09:12,00:09:12,0,0.0,"Alternance d’échelle Lab 22,23–25,50 s",Respirer et dégager l’outil avant le raccord.
+match_outil,330,00:11:00,00:11:00,0,0.0,"Détail contigu Nafaya ~32,93–37,54 s",Cut sur l’outil ; coupe puis barbe. Ne pas plaquer un volet en plus.
+cut_geste,400,00:13:10,00:13:10,0,0.0,"Alternance large/macro Nafaya ~4,81–10,81 s",Pousser à la limite utile de détail ; aucun nouveau tournage.
+iris_vert,474,00:15:24,00:15:18 → 00:16:00,12,0.4,"Iris GC ~15,24 s + résultat Red ~26,30–28,2 s","Changer de fonction : du geste à la preuve de résultat, pas du vert au rouge."
+match_profil,539,00:17:29,00:17:29,0,0.0,"Profil Red ~34,23–37 s","Même sujet et orientation, changement de taille, pas de métrique inventée."
+ui_push,625,00:20:25,00:20:25 → 00:21:07,12,0.4,"Insert et poussé de téléphone GC ~7,0–8,6 + 10,61–13,05 s",Mouvement d’entrée du chemin de réservation ; le profil reste source commune.
+cut_geste,720,00:24:00,00:24:00,0,0.0,"Retour au CTA face GC 21,55–26,39 s",Cut vers un fond vivant et un seul libellé de CTA. Pas de transition superflue.
+rail_vert,792,00:26:12,00:26:12,0,0.0,"Rail vert GC 26,39–30 s",Cut à f792 sur le carton et l’image vivante. L’action ne bouge plus pendant 108 images.

@@ -1,0 +1,112 @@
+{
+  "cas": "VV-COIF-01",
+  "resultat": "PASS",
+  "plan_sha256": "4cb7bcbb3e0ca4fc39ac5ef766a9b61ed39b8e575a6081d4d655f4cebe29c8b7",
+  "cas_sha256": "dcfe16f25b7e6d1e93d461f0a1e63a32968506c913e45d2b93d10ca1d8e66678",
+  "film": {
+    "images": 900,
+    "fps": 30,
+    "secondes": 30.0,
+    "audio_streams": 0,
+    "sha256": "89122a6bafd7c71fdde9051f585f96ed4cf25e38abe464188fc6f1a582464a73",
+    "bytes": 9053527,
+    "images_decodees_uniques": 899
+  },
+  "prises": {
+    "S1": {
+      "images": 180,
+      "fps": 30,
+      "secondes": 6.0,
+      "audio_streams": 0,
+      "sha256": "4e3cb23b82836ffc3cda23bf4e0b9c052938157b623078c24fa976d782140ee6",
+      "bytes": 2733878,
+      "images_decodees_uniques": 180
+    },
+    "S2": {
+      "images": 210,
+      "fps": 30,
+      "secondes": 7.0,
+      "audio_streams": 0,
+      "sha256": "c6c53da93ddfa3940e546e0119a9cb494238702d6d2bbf81d28e28c5aa5556fc",
+      "bytes": 3380210,
+      "images_decodees_uniques": 210
+    },
+    "S3": {
+      "images": 210,
+      "fps": 30,
+      "secondes": 7.0,
+      "audio_streams": 0,
+      "sha256": "45383ab9f745701b43af3a69d5f2ebb5ce2b533d09d393c193c6e2ca1e9aceeb",
+      "bytes": 3365583,
+      "images_decodees_uniques": 210
+    },
+    "S4": {
+      "images": 210,
+      "fps": 30,
+      "secondes": 7.0,
+      "audio_streams": 0,
+      "sha256": "9a919a7fe081572e47cedfa6a98a95ff776634808b55debdf4633ca115d6f25e",
+      "bytes": 4031720,
+      "images_decodees_uniques": 210
+    }
+  },
+  "controles": [
+    {
+      "controle": "Quatre prises liées et décodées",
+      "ok": true,
+      "preuve": {
+        "S1": 180,
+        "S2": 210,
+        "S3": 210,
+        "S4": 210
+      }
+    },
+    {
+      "controle": "Master H.264 / 720 × 1280 / 900 images / sans son",
+      "ok": true,
+      "preuve": {
+        "images": 900,
+        "fps": 30,
+        "secondes": 30.0,
+        "audio_streams": 0,
+        "sha256": "89122a6bafd7c71fdde9051f585f96ed4cf25e38abe464188fc6f1a582464a73",
+        "bytes": 9053527,
+        "images_decodees_uniques": 899
+      }
+    },
+    {
+      "controle": "Contrat T1 préservé et cas commun aux écrans",
+      "ok": true,
+      "preuve": "ad4ff15"
+    },
+    {
+      "controle": "Raccords pixels : 2 iris, changement d’échelle, outil et réservation",
+      "ok": true,
+      "preuve": {
+        "vert_iris1": 1.0,
+        "vert_iris2": 1.0,
+        "écart_cut": 12.8,
+        "écart_outil": 45.25,
+        "écart_ui": 59.54
+      }
+    },
+    {
+      "controle": "CTA fixe 3.60 s / plan haut vivant",
+      "ok": true,
+      "preuve": {
+        "drift_carton_px": 0.047,
+        "écart_vidéo_px": 32.346
+      }
+    },
+    {
+      "controle": "Contrastes des surfaces texte",
+      "ok": true,
+      "preuve": {
+        "CTA texte/pin": 8.34,
+        "CTA texte secondaire/pin": 7.18,
+        "Action fond menthe": 8.62,
+        "Prix zone verte (grand corps)": 3.65
+      }
+    }
+  ]
+}
