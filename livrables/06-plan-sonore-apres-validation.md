@@ -1,3 +1,5 @@
+> **Archive.** Le texte et le tarif de cet ancien scénario ne sont pas utilisés par le moteur. Voir [les fonds actifs et l’atelier](07-bandes-son-afrobeat.md).
+
 # Préparation de l’étape sonore — non rendue
 
 **Le master livré ne contient aucune piste sonore.** La proposition ci-dessous préserve la fonction de la voix Great Clips : annoncer tôt l’offre, laisser respirer une preuve visuelle et redire l’action avant l’adresse. Elle n’utilise ni la piste ni la voix du spot de référence.

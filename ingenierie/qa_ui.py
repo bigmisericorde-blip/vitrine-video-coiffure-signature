@@ -1,5 +1,5 @@
 """Recette navigateur de la maquette : parcours séquentiel jusqu’au CTA (Playwright)."""
-import argparse,json
+import argparse,json,re
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
 from core import ROOT,HERE,CASE,load,save
@@ -46,10 +46,10 @@ with sync_playwright() as pw:
  expect(broken.locator('#mediaFeedback')).to_be_visible();expect(broken.locator('#mediaRetry')).to_be_visible();expect(broken.locator('#chronoVal')).to_have_text('0:00');expect(broken.locator('#rec')).to_have_class('rec on');assert broken.evaluate('window.__demo.validations().length')==0
  broken.unroute('**/media/S1.mp4');broken.locator('#mediaRetry').click();broken.wait_for_function('document.getElementById("cam").currentTime>0.1')
  expect(broken.locator('#mediaFeedback')).to_be_hidden();broken.close();report('Vidéo bloquée : chrono à zéro, aucune validation ; Réessayer relance la bonne prise')
- page.goto(u);expect(page.locator('#caseLabel')).to_contain_text(case['id']);expect(page.locator('.list li')).to_have_count(4);expect(page.locator('#startTest')).to_be_disabled();expect(page.locator('#service')).to_have_value(case['display']['service']);snap(page,'00-cas')
- expect(page.locator('[name=resultatChoix][value=profil]')).to_be_checked();page.fill('#service','Tresses');page.check('[name=resultatChoix][value=autre]');expect(page.locator('#resultatAutre')).to_be_visible();page.check('[name=resultatChoix][value=detail]');expect(page.locator('#resultatAutre')).to_be_hidden();page.select_option('#action','Rien pour le moment');expect(page.locator('#contact')).to_be_hidden();page.fill('#prix','');page.check('#checkedCase');page.locator('#startTest').click();expect(page).to_have_url(u+'simulation.html'+q+'&fiche=1');expect(page.locator('#caseContext')).to_have_text('Ton travail : Tresses');report('Question 5 : un choix par défaut et des exemples ; tresses / détail choisissables sans taper ni prix ni résultat')
+ page.goto(u);expect(page.locator('#caseLabel')).to_contain_text('GABARIT T2');expect(page.locator('.list li')).to_have_count(4);expect(page.locator('#startTest')).to_be_disabled();expect(page.locator('#service')).to_have_value(case['display']['service']);snap(page,'00-cas')
+ expect(page.locator('[name=resultatChoix][value=profil]')).to_be_checked();page.fill('#service','Tresses');page.check('[name=resultatChoix][value=autre]');expect(page.locator('#resultatAutre')).to_be_visible();page.check('[name=resultatChoix][value=detail]');expect(page.locator('#resultatAutre')).to_be_hidden();page.select_option('#action','Rien pour le moment');expect(page.locator('#contact')).to_be_hidden();page.fill('#prix','');page.check('#checkedCase');page.locator('#startTest').click();expect(page).to_have_url(re.compile(re.escape(u+'simulation.html'+q)+r'&fiche=[a-f0-9]{32}$'));expect(page.locator('#caseContext')).to_contain_text('Tresses');report('Question 5 : un choix par défaut et des exemples ; tresses / détail choisissables sans taper ni prix ni résultat')
  for i,s in enumerate(case['scenes'],1):
-  expect(page.locator('#sceneCounter')).to_have_text(f'SCÈNE {i}/4');expect(page.locator('#sceneTitle')).to_have_text(s['titre']);expect(page.locator('#durationLabel')).to_have_text(f'{s["secondes"]} secondes');expect(page.locator('#caseContext')).to_have_text('À la fin : Un détail : une tresse, une boucle ou une mèche.' if i==4 else 'Ton travail : Tresses')
+  expect(page.locator('#sceneCounter')).to_have_text(f'SCÈNE {i}/4');expect(page.locator('#sceneTitle')).to_have_text(s['titre']);expect(page.locator('#durationLabel')).to_have_text(f'{s["secondes"]} secondes');expect(page.locator('#caseContext')).to_have_text('À la fin : Un détail : une tresse, une boucle ou une mèche.' if i==4 else ('Studio Vitrine · Tresses · Cotonou' if i==1 else 'Ton travail : Tresses'))
   assert page.evaluate('document.querySelector(".voice").compareDocumentPosition(document.querySelector(".exemple")) & 4')
   page.locator('#exempleText').scroll_into_view_if_needed();expect(page.locator('#exempleText')).to_contain_text(s['exemple']);expect(page.locator('#cta')).to_be_in_viewport();snap(page,f'{s["id"]}-A-fiche-bas')
   page.locator('#sheetBody').evaluate('p=>p.scrollTop=0');snap(page,f'{s["id"]}-A-consigne');page.locator('#cta').click();expect(page.locator('#rec')).to_have_class('rec on');expect(page.locator('#sheet')).to_have_class('sheet hidden');assert page.locator('#app').get_attribute('data-prise')==s['id'];page.wait_for_function('document.getElementById("cam").currentTime>0.1');snap(page,f'{s["id"]}-B-enregistrement')
@@ -59,7 +59,7 @@ with sync_playwright() as pw:
    page.locator('#cta').click();expect(page.locator('#review')).to_have_class('review on',timeout=11000)
   assert abs(page.locator('#replay').evaluate('v=>v.duration')-s['secondes'])<.04
   expect(page.locator('#next')).to_have_text('VOIR MON MONTAGE' if i==4 else 'SCÈNE SUIVANTE');page.locator('#next').click();report(f'{s["id"]} : ordre des textes, source {s["media"]}, chrono automatique, révision, validation')
- expect(page.locator('#panelMontage')).to_have_class('panel on');assert page.evaluate('window.__demo.validations()')==['S1','S2','S3','S4'];snap(page,'09-montage');expect(page.locator('#montageGo')).to_be_enabled(timeout=12000)
+ expect(page.locator('#panelMontage')).to_have_class('panel on');assert page.evaluate('window.__demo.validations()')==['S1','S2','S3','S4'];snap(page,'09-montage');expect(page.locator('#montageGo')).to_be_enabled(timeout=100000)
  # Écouter les événements AVANT le clic ; ne pas chercher dans la vidéo pour la recette.
  page.evaluate('''() => {
    const v = document.getElementById('ad');
@@ -78,17 +78,13 @@ with sync_playwright() as pw:
    v.requestVideoFrameCallback(visit);
  }''')
  page.locator('#montageGo').click();expect(page.locator('#adwrap')).to_have_class('adwrap on');page.wait_for_function('document.getElementById("ad").currentTime>0.4');elt=page.locator('#ad');assert abs(elt.evaluate('v=>v.duration')-30)<.01
- expect(page.locator('#caCta')).to_be_in_viewport();expect(page.locator('#demoFab')).to_be_hidden()
+ expect(page.locator('#caCta')).to_be_hidden();assert elt.get_attribute('src').startswith('blob:')
  page.wait_for_function('document.getElementById("ad").currentTime>27.4');snap(page,'10-publicite')
  expect(page.locator('#panelEnd')).to_have_class('panel on',timeout=10000);snap(page,'11-fin');playback=page.evaluate('window.vvPlayback');assert playback['ended'] and playback['seek']==0 and playback['last']>=29.8 and len(playback['milestones'])==8 and playback['frameCount']>=750 and 29<=playback['elapsed']<=34 and playback['badJumps']<=3 and not playback['errs'],playback
  report('Montage débloqué par S1–S4 ; lecture continue 30 s, sans saut demandé, puis écran de fin')
- expect(page.locator('#endCta')).to_have_text(case['display']['cta']);expect(page.locator('#endCta')).to_have_attribute('href',case['display']['route']+q)
- # Tester le CTA après lecture sans perdre l’étape Fin, puis le redémarrage.
- with page.context.expect_page() as clicked:
-  page.locator('#endCta').click(modifiers=['Control'])
- detail=clicked.value;expect(detail).to_have_url(u+case['display']['route']+q);expect(detail.locator('#reserveData')).to_contain_text(case['display']['service']);detail.get_by_role('radio',name='11:30').click();detail.locator('#selectSlot').click();expect(detail.locator('#result')).to_contain_text('Aucun rendez-vous réel');snap(detail,'12-cta');detail.close();report('Clic du CTA → prestation identique → choix d’un horaire fictif')
+ expect(page.locator('#endCta')).to_be_hidden();expect(page.locator('#endDownload')).to_have_attribute('href',elt.get_attribute('src'));report('Sans action ni prix : pas de faux CTA et même fichier pour l’aperçu et l’export')
  page.locator('#restart').click();expect(page.locator('#sceneCounter')).to_have_text('SCÈNE 1/4');assert page.evaluate('window.__demo.validations().length')==0;report('RECOMMENCER : retour S1 et validation remise à zéro')
- wide=browser.new_page(viewport={'width':430,'height':932});wide.goto(u+'simulation.html'+q);wide.evaluate('window.__demo.showCard(3)');expect(wide.locator('#sceneCounter')).to_have_text('SCÈNE 4/4');wide.locator('#exempleText').scroll_into_view_if_needed();expect(wide.locator('#cta')).to_be_in_viewport();snap(wide,'13-fiche-430');report('Lisibilité et bouton non masqué à 360 et 430 px')
+ wide=browser.new_page(viewport={'width':430,'height':932});wide.goto(u+'simulation.html'+q+'&ecran=10');expect(wide.locator('#sceneCounter')).to_have_text('SCÈNE 4/4');wide.locator('#exempleText').scroll_into_view_if_needed();expect(wide.locator('#cta')).to_be_in_viewport();snap(wide,'13-fiche-430');report('Lisibilité et bouton non masqué à 360 et 430 px')
  if a.refresh_gallery:
   from PIL import Image
   from io import BytesIO
@@ -97,4 +93,4 @@ with sync_playwright() as pw:
    direct_screen(n);direct.evaluate('document.fonts.ready')
    with Image.open(BytesIO(direct.screenshot(animations='disabled'))) as im:im.convert('RGB').save(ROOT/'livrables'/'12-ecrans'/f'{n:02d}.webp',format='WEBP',quality=83,method=4)
  assert not errors,errors; browser.close()
-save(HERE/'recette-parcours.json',{'cas':case['id'],'resultat':'PASS','navigateur':'Chromium headless','vue_px':[320,360,430],'checks':checks,'lecture_complete':playback,'erreurs':errors,'version':'navigation et questions v2','périmètre':'Maquette web ; aucune validation Android ni réservation réelle.'})
+save(HERE/'recette-parcours.json',{'cas':case['id'],'resultat':'PASS','navigateur':'Chromium headless','vue_px':[320,360,430],'checks':checks,'lecture_complete':playback,'erreurs':errors,'version':'T2 dynamique v1.0.0','périmètre':'Application web ; aucune validation Android ni réservation réelle.'})

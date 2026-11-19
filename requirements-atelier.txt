@@ -1,0 +1,3 @@
+# Avec la synthèse locale de texte ; pour voix seule requirements.txt suffit.
+-r requirements.txt
+piper-tts==1.8.0

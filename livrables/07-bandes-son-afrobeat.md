@@ -1,0 +1,18 @@
+# Fonds actifs · Signature Coiffure
+
+La sélection suivante vient des quatre essais validés. **Seuls les instrumentaux sont dans le catalogue** : aucun texte, voix, tarif parlé ou repère d’essai ne peut apparaître automatiquement. L’ancienne deuxième piste a été retirée de la rotation.
+
+| N° | Musique | Extrait source | Tempo rendu | Niveau sans narration |
+| :-- | :-- | --: | --: | --: |
+| 1 | [Afrobeat — Alex Morgan](https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afrobeat-1/) | 0.000 s | 116.67 BPM | -20.06 LUFS-I |
+| 2 | [Harbor Lanterns — FreeVibeVault](https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb) | 0.000 s | 113.64 BPM | -20.01 LUFS-I |
+| 3 | [Afrobeat Afro Beat — ARPMedia](https://pixabay.com/music/afrobeat-afrobeat-afro-beat-569473/) | 6.887 s | 105.56 BPM | -20.04 LUFS-I |
+| 4 | [Amapiano — Elijah_K](https://freemusicarchive.org/music/elijah-k/single/amapiano/) | 9.837 s | 111.11 BPM | -20.05 LUFS-I |
+
+- **1** : vrai départ de l’intro à 0:00 ; l’attaque n’a pas été déplacée.
+- **2** : Harbor Lanterns garde son tempo et son intro d’origine. Les autres pistes gardent le même calage musical que les versions instrumentales de leurs essais.
+- **Rotation** : la piste d’un montage est fixée au rendu. La lecture, le téléchargement et un rechargement de l’aperçu ne relancent pas le tirage. Les quatre fonds tournent ; le dernier du cycle reste exclu du tirage suivant.
+- **Voix** : niveau contrôlé, pas d’accélération ni de coupe dans les mots. Le fond s’atténue d’environ 13 dB sur les zones parlées, avec attaque et retour progressifs. Les prises démo A/B/C restent muettes. Voir [le guide de montage](../README.md#atelier-voix-et-musique).
+- Les films de démonstration ne comportent **aucune narration**. Dans l’atelier, le MP4 final embarque la narration du client si elle est demandée. Le fond source n’est pas offert au téléchargement indépendant.
+
+[Droits et adaptations](../CREDITS.md) · [Recette des images](../ingenierie/recette-video.json) · [Recette des fonds](../ingenierie/recette-sonore.json) · [Recette des lecteurs](../ingenierie/recette-audio-web.json).

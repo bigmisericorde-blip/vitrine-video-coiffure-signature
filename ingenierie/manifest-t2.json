@@ -1,0 +1,421 @@
+{
+  "schema": "vv.coiffure.livraison/1.0",
+  "plan_canonique": "ingenierie/plan.json",
+  "artifacts": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "CREDITS.md",
+      "bytes": 5003,
+      "sha256": "a0681e466713f9077494d0b28648e3aacd9e59c568a430ff3908e6c725aab503"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11585,
+      "sha256": "17eddccf783729f89968b085696ba696694c12c5d25b2b9f2f53066144cfa715"
+    },
+    {
+      "path": "assets/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755"
+    },
+    {
+      "path": "assets/Manrope.ttf",
+      "bytes": 164700,
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    },
+    {
+      "path": "assets/Montserrat-Variable.ttf",
+      "bytes": 744936,
+      "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7"
+    },
+    {
+      "path": "assets/OFL-Montserrat.txt",
+      "bytes": 4400,
+      "sha256": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e"
+    },
+    {
+      "path": "assets/OFL-Plex.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "path": "assets/OFL-PlusJakartaSans.txt",
+      "bytes": 4402,
+      "sha256": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99"
+    },
+    {
+      "path": "assets/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "assets/PlusJakartaSans-Variable.ttf",
+      "bytes": 176288,
+      "sha256": "89b3fb38aa0d275d7a731d0d817a4f1622b316b4d7fbdedcf02ee9099ff68bc8"
+    },
+    {
+      "path": "assets/afrobeat-catalogue.js",
+      "bytes": 2485,
+      "sha256": "e4a508106ebbea84a1a7d782d9998d77ef6d9f3785175b2824ce2d41f15f8b31"
+    },
+    {
+      "path": "assets/atelier.css",
+      "bytes": 6263,
+      "sha256": "fd179b6e17d845e376b9e24619a1ad1c968c9733a6c73614177dadc17c72049a"
+    },
+    {
+      "path": "assets/atelier.js",
+      "bytes": 11132,
+      "sha256": "5497479704821587e2756de5d38b4082794dce7e70e3beb0bceb7c078a29e81b"
+    },
+    {
+      "path": "assets/ecrans.js",
+      "bytes": 3153,
+      "sha256": "d5971a5460c4849b033a65a2adf68df5c0227ff21192afa0041121729ea5a589"
+    },
+    {
+      "path": "assets/fiche-t2.js",
+      "bytes": 3941,
+      "sha256": "e4bf0fb366dd95004f7f203e3f19ec086da2ace7f9fe1a37b26c72555cb6fb1a"
+    },
+    {
+      "path": "assets/film.js",
+      "bytes": 2610,
+      "sha256": "0ef77becbd8af510eee80c8c73e8b1609e5ce46ef22d5ce9d1478d1cb93cbdca"
+    },
+    {
+      "path": "assets/fonts-t2/DMSerifDisplay-Regular.ttf",
+      "bytes": 76580,
+      "sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616"
+    },
+    {
+      "path": "assets/fonts-t2/OFL-dmserifdisplay.txt",
+      "bytes": 4512,
+      "sha256": "aa49c876a28d8c0b0a3027d6c25b9c607eee8c0fb96165011d42a6ace1408fe1"
+    },
+    {
+      "path": "assets/fonts-t2/OFL-pinyonscript.txt",
+      "bytes": 4384,
+      "sha256": "5b6456d2e1a11e06ba40ed52863a9de58eef6221c78005abba4182bb4810fc73"
+    },
+    {
+      "path": "assets/fonts-t2/PinyonScript-Regular.ttf",
+      "bytes": 151412,
+      "sha256": "4aab130a6ed27f8b8117738c84a5602edf9300cdcc0651a9a65bf96f451ac29a"
+    },
+    {
+      "path": "assets/reservation.js",
+      "bytes": 1409,
+      "sha256": "1346794bd250485b9a4139ab33afe6c41535cf5f268675c093458c5161980612"
+    },
+    {
+      "path": "assets/simulation-t2.css",
+      "bytes": 18045,
+      "sha256": "4b53f274788cc4a9cc40095283fd697dc1aab83df1b1b0764a73715fa226229d"
+    },
+    {
+      "path": "assets/simulation-t2.js",
+      "bytes": 14169,
+      "sha256": "436703d0d5978f1f1c2308d6139e1d11fa3933007c3886f062fbc455ccef51a1"
+    },
+    {
+      "path": "assets/t2-motion.mjs",
+      "bytes": 11422,
+      "sha256": "d665df611c19567fb17b3f2fde589d165bff6eb298de8a98ca7717020f4b33cf"
+    },
+    {
+      "path": "assets/t2-render.worker.mjs",
+      "bytes": 8011,
+      "sha256": "1be382ae73cb72f40b31816f94b33bd49627dfaa37b09f4eff6ec92a240659bb"
+    },
+    {
+      "path": "assets/test.js",
+      "bytes": 3100,
+      "sha256": "9b0bcd1bd688835379524d269008dab3760c49b2c2d569bfa64702dc972b2595"
+    },
+    {
+      "path": "assets/tirage-son.js",
+      "bytes": 2900,
+      "sha256": "c8b60de37a9a72b5d158ad6c78517b23658c0de11053e198d59f90505a8821cb"
+    },
+    {
+      "path": "assets/vendor/SOURCES.md",
+      "bytes": 835,
+      "sha256": "bf3c7c72b303aa81422ae2d8f45e3df390064d3accc1c5b69b6a7d51fb6aa02c"
+    },
+    {
+      "path": "assets/vendor/mediabunny-1.66.1.min.mjs",
+      "bytes": 757803,
+      "sha256": "19062c195ea4d32bc4eefd3a7254ae0e8a901bc0607ac3a0174013e165980498"
+    },
+    {
+      "path": "assets/vendor/mediabunny-LICENSE.txt",
+      "bytes": 16726,
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04"
+    },
+    {
+      "path": "assets/web.css",
+      "bytes": 8800,
+      "sha256": "f475a23662b22c7fc643b93d77a363554752df6d17ec6c9aef3e206a19029817"
+    },
+    {
+      "path": "atelier.html",
+      "bytes": 6631,
+      "sha256": "53515ecdd6e7f039a6282f644dbb0ce9d4ee9e60f8aa7059507488d9906709e4"
+    },
+    {
+      "path": "cas-demo.js",
+      "bytes": 3736,
+      "sha256": "4c40c63a35a457a91ea3f954be06ab02fd812965b36d082cb4049b1df28c5b4f"
+    },
+    {
+      "path": "ecrans.html",
+      "bytes": 2661,
+      "sha256": "c4f781eee0839250ec410fdab18d97b256b6f43b4c92080d64d2e64f1e3729fa"
+    },
+    {
+      "path": "film.html",
+      "bytes": 1925,
+      "sha256": "82be4f97992146f934b7481933d51209544b84a8453062d3b6a0f21aa8cfe78e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 5793,
+      "sha256": "d0def438d5d4ab086295099906e58009d0f9144eeb8db8270a51b8429bbef06d"
+    },
+    {
+      "path": "ingenierie/afrobeat.json",
+      "bytes": 4353,
+      "sha256": "6c3e77bd1966b96176b72a6b3c5b6fb895f62b099080bc90f10dec0354d1b299"
+    },
+    {
+      "path": "ingenierie/build_ecrans.py",
+      "bytes": 1443,
+      "sha256": "21a6c374fa27c379682220733e215feb47655022ad913ca1ec17b4c718b952ed"
+    },
+    {
+      "path": "ingenierie/build_prises.py",
+      "bytes": 2137,
+      "sha256": "bd6bfbb04a3ee05d686fc2b27de2bf34c29733fcead122df89698d89bc057877"
+    },
+    {
+      "path": "ingenierie/cas-test.json",
+      "bytes": 5690,
+      "sha256": "d75ebc35690b689996bc04944ff275a67b88d42e5fbf0946a659ea32c3a9c13b"
+    },
+    {
+      "path": "ingenierie/core.py",
+      "bytes": 6036,
+      "sha256": "6b83f3df2d9f998eb12f5a6364e09658716639de18dd75d99984ec2d540b1f88"
+    },
+    {
+      "path": "ingenierie/fixtures/fiche-t2-recette.json",
+      "bytes": 288,
+      "sha256": "f8092861ae07b5517d51cdd7fd096df08ac0d1eb9ddb05f695dc37f7c6dc19a9"
+    },
+    {
+      "path": "ingenierie/manifest-rushs.json",
+      "bytes": 2833,
+      "sha256": "2c026f43472354ab7b07fee73f4b86d77192c4ea36200fcdc0658efbc99e03a0"
+    },
+    {
+      "path": "ingenierie/mix_voix.py",
+      "bytes": 7647,
+      "sha256": "a603ae91ee3b26543afe798f14b32acdfb6b3ea312ea21adf93751124eaca57b"
+    },
+    {
+      "path": "ingenierie/mixage.py",
+      "bytes": 15031,
+      "sha256": "645506993449b9b8523d7bad29667ad10e310393bbf152f5cee411f7f172ca9b"
+    },
+    {
+      "path": "ingenierie/plan.json",
+      "bytes": 3668,
+      "sha256": "9142ee9ec90b4b9b351dce37e163df976005344a8f1517fd866c98718c4ba9f2"
+    },
+    {
+      "path": "ingenierie/postproduction.py",
+      "bytes": 9204,
+      "sha256": "6fef6bb013d5edef1c481c769feed19fc2a5842c500ae765d4703613897d91c9"
+    },
+    {
+      "path": "ingenierie/prises-web.js",
+      "bytes": 5043,
+      "sha256": "e7dd451ccc0560737687794c83d7c2972a4aa578ac2caabad28ccf37a02b58dc"
+    },
+    {
+      "path": "ingenierie/recette-sonore.json",
+      "bytes": 4304,
+      "sha256": "f6e3a18f303522ea0a8613085c88283bcb40b6464f3c43b82c9738d063f5df78"
+    },
+    {
+      "path": "ingenierie/recette-video.json",
+      "bytes": 2923,
+      "sha256": "d6a76d7d0c5bf036fe3553cd3be0b149fa952c155dda75fe4059913239a1ab97"
+    },
+    {
+      "path": "ingenierie/rendu.py",
+      "bytes": 16145,
+      "sha256": "736f34c1f5bcd16649944546dff24422dfb0a3ae515edcccb5018611b37cf896"
+    },
+    {
+      "path": "ingenierie/rotation.py",
+      "bytes": 2110,
+      "sha256": "2b9984073263b65805a45f43c8a22039fe37d6e1e90a654701dd11a79d40c165"
+    },
+    {
+      "path": "ingenierie/serve.py",
+      "bytes": 2042,
+      "sha256": "0f94b8ba9ca7a684c53361089a0f005448aa94eb99c80d59c926e78764f6aec2"
+    },
+    {
+      "path": "ingenierie/serve_atelier.py",
+      "bytes": 8554,
+      "sha256": "719d0450d27e8fa2b7cc2dc0871304543721d012085aac1caa22de6a60242dae"
+    },
+    {
+      "path": "ingenierie/simulation-t2.html",
+      "bytes": 7858,
+      "sha256": "eb3cf740370b358dafe431fea3f7272d023c6d10c5ac729b2d6d0441e777814d"
+    },
+    {
+      "path": "ingenierie/voix_texte.py",
+      "bytes": 4461,
+      "sha256": "22aa69dab6ce8c13dcc54fc3b03a2d9f52c869771e00500c126786d7f177194c"
+    },
+    {
+      "path": "livrables/07-bandes-son-afrobeat.md",
+      "bytes": 2204,
+      "sha256": "f497274145b1294affed4e560b78c0c0f4633ac5d3aae95a4e3bb903a71665a6"
+    },
+    {
+      "path": "livrables/12-ecrans/01.webp",
+      "bytes": 20544,
+      "sha256": "a29af148356117bd70e2e8d1e7b62c13722fdc922b7a1122a7a463b851b2819a"
+    },
+    {
+      "path": "livrables/12-ecrans/02.webp",
+      "bytes": 29870,
+      "sha256": "e491f845f057cbb985c638a486dd2bbb84af1dcfc22c571f4974ea4e1bf6bee0"
+    },
+    {
+      "path": "livrables/12-ecrans/03.webp",
+      "bytes": 21372,
+      "sha256": "1a195582a003f16e0a5fb9c02647ab8f4f0a382d062c62868c184d566a74da20"
+    },
+    {
+      "path": "livrables/12-ecrans/04.webp",
+      "bytes": 19574,
+      "sha256": "978fb2a27abc14c74e4228b1c5d74cc18ee365f8fc7ad106bc332e9893c216e1"
+    },
+    {
+      "path": "livrables/12-ecrans/05.webp",
+      "bytes": 23172,
+      "sha256": "997b91ac82ea25129ac4a66ee977796dfb2c502ecff6bc6c1efb3f41d80044a7"
+    },
+    {
+      "path": "livrables/12-ecrans/06.webp",
+      "bytes": 28094,
+      "sha256": "58544951d991f538e7ab0871801bd05b9998cfc2090b0f82c2d25412443ca6e3"
+    },
+    {
+      "path": "livrables/12-ecrans/07.webp",
+      "bytes": 21770,
+      "sha256": "d86e6e67235e26fdd49f1d04912849cd9bcc19b0ed94e3eb7a8930f2f781f8b1"
+    },
+    {
+      "path": "livrables/12-ecrans/08.webp",
+      "bytes": 21270,
+      "sha256": "1c2f9e4a7a61dae784d78c160d47108d85a2d5f436cbe0a2146d155e02a0aa29"
+    },
+    {
+      "path": "livrables/12-ecrans/09.webp",
+      "bytes": 17596,
+      "sha256": "6ebfe525a0214522ba7fa0ab109d5645b3a6ed8c8df5715bee4e78ee6f8c38c2"
+    },
+    {
+      "path": "livrables/12-ecrans/10.webp",
+      "bytes": 19246,
+      "sha256": "da59ab83209ef7e4da59ee35630765a04c1fafb602740f15fe55c615d7615477"
+    },
+    {
+      "path": "livrables/12-ecrans/11.webp",
+      "bytes": 28144,
+      "sha256": "407971a64881c00ada4953dfb4f5927ff8d5158485e2eb84883168952cd4d9ed"
+    },
+    {
+      "path": "livrables/12-ecrans/12.webp",
+      "bytes": 22218,
+      "sha256": "5a6baf9d2dd58e3c3fd7b00aa00dbdaa7263115ab245e3f219ce160e3af1b6a8"
+    },
+    {
+      "path": "media/04-vitrine-video-signature-muette.mp4",
+      "bytes": 9060752,
+      "sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d"
+    },
+    {
+      "path": "media/S1.mp4",
+      "bytes": 2733878,
+      "sha256": "4e3cb23b82836ffc3cda23bf4e0b9c052938157b623078c24fa976d782140ee6"
+    },
+    {
+      "path": "media/S2.mp4",
+      "bytes": 3380210,
+      "sha256": "c6c53da93ddfa3940e546e0119a9cb494238702d6d2bbf81d28e28c5aa5556fc"
+    },
+    {
+      "path": "media/S3.mp4",
+      "bytes": 3365583,
+      "sha256": "45383ab9f745701b43af3a69d5f2ebb5ce2b533d09d393c193c6e2ca1e9aceeb"
+    },
+    {
+      "path": "media/S4.mp4",
+      "bytes": 4031720,
+      "sha256": "9a919a7fe081572e47cedfa6a98a95ff776634808b55debdf4633ca115d6f25e"
+    },
+    {
+      "path": "media/afrobeat/569473.mp4",
+      "bytes": 9712730,
+      "sha256": "cb28f9836127eb8f07a2741d14c93dc083316043d8d38ce0d5d569e9791bc39a"
+    },
+    {
+      "path": "media/afrobeat/fma-265362.mp4",
+      "bytes": 9696399,
+      "sha256": "31346ad2b8710f74866e009217f46bb866f53b33ad92655db5307963ebe20044"
+    },
+    {
+      "path": "media/afrobeat/fma-279236.mp4",
+      "bytes": 9715595,
+      "sha256": "38faa76f266db570872e01b167d7474dd9d1e74a1c72a04c917fe73985f5122b"
+    },
+    {
+      "path": "media/afrobeat/fvv-ghj3du94kp45fclg9a9ofcqb.mp4",
+      "bytes": 9688002,
+      "sha256": "b8346fd7f6771fb7cf1b306a6ab8ce885063104e23365bebb349d9a6f6524b54"
+    },
+    {
+      "path": "requirements-atelier.txt",
+      "bytes": 116,
+      "sha256": "cc797f458546ab3c20810c4f03fa8fea2e2a499f477d21c650aeb79b3d7d4bf1"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 219,
+      "sha256": "c344e5d3ebaa06f1455046c48ecd78f2569baa1fd4b9b7a6cf284d6fa6fe4339"
+    },
+    {
+      "path": "reservation.html",
+      "bytes": 1092,
+      "sha256": "cf71613232dcc47e883ecb48bedba37dc86054041dcf105944e58f6f8bd7fb41"
+    },
+    {
+      "path": "simulation.html",
+      "bytes": 7858,
+      "sha256": "eb3cf740370b358dafe431fea3f7272d023c6d10c5ac729b2d6d0441e777814d"
+    }
+  ]
+}

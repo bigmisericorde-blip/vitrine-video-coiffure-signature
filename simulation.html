@@ -3,209 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>VITRINE VIDÉO — T1 Coiffure — test de tournage</title>
-<style>
-  @font-face{font-family:"Jakarta";src:url("assets/PlusJakartaSans-Variable.ttf") format("truetype");font-weight:200 800;font-display:swap}
-  @font-face{font-family:"Montserrat";src:url("assets/Montserrat-Variable.ttf") format("truetype");font-weight:100 900;font-display:swap}
-  :root{
-    --bg:#05080f; --deep:#0f172a; --sheet:rgba(12,19,32,.95); --accent:#F2621B;
-    --cream:#FFF3EA; --ok:#3ddc97; --no:#ff6b6b; --line:rgba(255,255,255,.13);
-    --ink:#ffffff; --muted:#a9b8cc;
-    --sans:"Jakarta",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    --display:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
-  }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;height:100%}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden}
+<title>VITRINE VIDÉO — T2 Coiffure — consignes et montage</title>
+<link rel="stylesheet" href="assets/simulation-t2.css?v=t2-1">
+<meta name="referrer" content="same-origin">
 
-  /* ---------- cadre applicatif ---------- */
-  #app{position:relative;margin:0 auto;width:100%;max-width:440px;height:100dvh;overflow:hidden;background:#000}
-  @media (min-width:520px){
-    body{background:radial-gradient(900px 600px at 50% 0%,#131f33 0%,#05080f 65%)}
-    #app{height:min(100dvh,940px);margin-top:max(0px,calc((100dvh - 940px)/2));border-radius:28px;
-         box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)}
-  }
-  video#cam,video#replay,video#ad{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
-  video#replay{display:none}
-  .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,7,18,.55) 0%,rgba(3,7,18,.15) 30%,rgba(3,7,18,.6) 100%);
-         transition:opacity .18s ease}
-  .scrim.off{opacity:0}
-
-  /* ---------- fiche de tournage (état A) ---------- */
-  .sheet{position:absolute;left:0;right:0;bottom:0;z-index:20;max-height:86%;display:flex;flex-direction:column;
-         background:var(--sheet);border-radius:26px 26px 0 0;border-top:1px solid rgba(255,255,255,.10);
-         box-shadow:0 -18px 50px rgba(0,0,0,.45);transition:transform .2s ease,opacity .15s ease;backdrop-filter:blur(10px)}
-  .sheet.hidden{transform:translateY(102%);opacity:0;pointer-events:none}
-  .grabber{width:42px;height:4px;border-radius:999px;background:rgba(255,255,255,.28);margin:10px auto 4px;flex:0 0 auto}
-
-  .sheet-head{padding:4px 20px 10px;flex:0 0 auto}
-  .head-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .scene-counter{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-  .dots{display:flex;gap:6px}
-  .dots i{width:22px;height:4px;border-radius:999px;background:rgba(255,255,255,.18)}
-  .dots i.on{background:var(--accent)}
-  .duration{display:inline-flex;align-items:center;gap:8px;margin:12px 0 6px;padding:7px 14px;border-radius:999px;
-            background:rgba(242,98,27,.14);border:1px solid rgba(242,98,27,.45);font-size:18px;font-weight:800;color:#ffd9c5}
-  .duration svg{flex:0 0 auto}
-  .scene-title{font-family:var(--display);font-weight:800;font-size:23px;line-height:1.15;letter-spacing:-.01em;margin:4px 0 0}
-
-  .sheet-body{overflow-y:auto;overscroll-behavior:contain;padding:14px 18px 34px 20px;flex:1 1 auto;
-              scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.28) transparent;scroll-padding-bottom:34px}
-  .sheet-body::-webkit-scrollbar{width:6px}
-  .sheet-body::-webkit-scrollbar-track{background:transparent}
-  .sheet-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.24);border-radius:999px}
-  .sheet-body::after{content:"";display:block;height:10px}
-  .consigne{font-size:17.5px;line-height:1.5;font-weight:600;color:#fff;margin:0 0 18px;text-wrap:pretty}
-
-  .block{margin:0 0 16px;padding:14px 15px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid var(--line)}
-  .block-title{display:flex;align-items:center;gap:8px;margin:0 0 9px;font-size:12.5px;font-weight:800;
-               letter-spacing:.13em;text-transform:uppercase;color:#93a4bd}
-  .block.film .block-title{color:#9ff0c8}
-  .block.avoid .block-title{color:#ffb4b4}
-  .block ul{list-style:none;margin:0;padding:0}
-  .block li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.42;padding:5px 0;color:#eaf1fa}
-  .block li .mark{flex:0 0 18px;font-weight:800;line-height:1.42}
-  .block.film .mark{color:var(--ok)}
-  .block.avoid .mark{color:var(--no)}
-
-  .voice{display:flex;gap:11px;align-items:flex-start;margin:0 0 16px;padding:14px 15px;border-radius:16px;
-         background:rgba(242,98,27,.08);border:1px solid rgba(242,98,27,.28)}
-  .voice svg{flex:0 0 20px;margin-top:2px}
-  .voice .voice-title{font-size:12.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#ffc4a3;margin:0 0 5px}
-  .voice p{margin:0;font-size:14.5px;line-height:1.45;color:#ffe6d6}
-
-  .exemple{margin:0 0 18px;padding:14px 15px;border-radius:16px;border:1px dashed rgba(255,255,255,.22);background:rgba(255,255,255,.03)}
-  .exemple .exemple-title{font-size:12.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#93a4bd;margin:0 0 7px}
-  .exemple p{margin:0;font-size:14.5px;line-height:1.5;font-style:italic;color:rgba(255,255,255,.82)}
-
-  .scroll-hint{position:absolute;right:20px;top:-46px;z-index:2;display:flex;
-               pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .22s ease,transform .22s ease}
-  .scroll-hint.show{opacity:1;transform:translateY(0)}
-  .scroll-hint span{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
-                    border-radius:999px;background:rgba(12,19,32,.9);border:1px solid var(--line);
-                    font-size:15px;font-weight:800;color:var(--cream);box-shadow:0 6px 18px rgba(0,0,0,.45)}
-  .sheet-foot{position:relative;flex:0 0 auto;padding:12px 20px calc(16px + env(safe-area-inset-bottom));
-              border-top:1px solid rgba(255,255,255,.09);background:rgba(12,19,32,.98)}
-  .sheet-foot::before{content:"";position:absolute;left:0;right:0;top:-52px;height:52px;pointer-events:none;
-              background:linear-gradient(180deg,rgba(12,19,32,0),rgba(12,19,32,.98))}
-  .cta{width:100%;height:56px;border:0;border-radius:999px;background:var(--accent);color:#fff;font-family:var(--display);
-       font-weight:800;font-size:17px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;
-       box-shadow:0 14px 30px rgba(242,98,27,.32)}
-  .cta:active{transform:translateY(1px)}
-
-  /* ---------- état B : enregistrement ---------- */
-  .rec{position:absolute;inset:0;z-index:22;pointer-events:none;opacity:0;transition:opacity .12s linear}
-  .rec.on{opacity:1}
-  .chrono{position:absolute;top:calc(18px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);
-          display:flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;
-          background:rgba(6,10,20,.6);border:1px solid rgba(255,255,255,.18);
-          font-weight:800;font-size:17px;letter-spacing:.05em;font-variant-numeric:tabular-nums}
-  .chrono .dot{width:10px;height:10px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 0 4px rgba(255,77,77,.22)}
-  .chrono.hot{color:var(--accent);border-color:rgba(242,98,27,.62)}
-  .chrono.hot .dot{background:var(--accent);box-shadow:0 0 0 4px rgba(242,98,27,.25);animation:pulse .5s infinite alternate}
-  @keyframes pulse{to{opacity:.35}}
-  .bar{position:absolute;left:7%;right:7%;bottom:calc(26px + env(safe-area-inset-bottom));height:5px;border-radius:999px;
-       background:rgba(255,255,255,.22);overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.5)}
-  .bar i{display:block;height:100%;width:0;background:#fff;border-radius:999px;transition:background .2s linear}
-  .bar.hot i{background:var(--accent)}
-  .rec-hint{position:absolute;left:0;right:0;bottom:calc(44px + env(safe-area-inset-bottom));text-align:center;
-            font-size:12.5px;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-
-  /* ---------- état C : validation ---------- */
-  .review{position:absolute;inset:0;z-index:24;display:none;flex-direction:column;justify-content:flex-end;
-          padding:18px 18px calc(18px + env(safe-area-inset-bottom));gap:12px;
-          background:linear-gradient(180deg,rgba(3,7,18,0) 40%,rgba(3,7,18,.9) 100%)}
-  .review.on{display:flex}
-  .review .lbl{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;
-               font-size:12px;letter-spacing:.10em;text-transform:uppercase;color:#cbd6e6}
-  .review .prise{padding:6px 12px;border-radius:999px;background:rgba(6,10,20,.62);border:1px solid var(--line)}
-  .review .sound{display:flex;align-items:center;gap:7px;font-size:13px;color:#b9c7da}
-  .btns{display:grid;grid-template-columns:1fr 1.2fr;gap:10px}
-  .btn{height:54px;border-radius:999px;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.07em;
-       text-transform:uppercase;cursor:pointer;border:2px solid #fff;background:transparent;color:#fff}
-  .btn.primary{background:var(--accent);border-color:var(--accent);box-shadow:0 14px 30px rgba(242,98,27,.30)}
-
-  /* ---------- montage / publicité / fin ---------- */
-  .panel{position:absolute;inset:0;z-index:26;display:none;flex-direction:column;justify-content:center;
-         padding:26px 22px;background:radial-gradient(600px 420px at 50% 0%,#16233a 0%,#070b14 65%);text-align:center}
-  .panel.on{display:flex}
-  .panel h2{font-family:var(--display);font-weight:800;font-size:24px;margin:0 0 8px}
-  .panel p{font-size:15px;line-height:1.5;color:#c9d5e6;margin:0 0 20px}
-  .steps{display:grid;gap:10px;margin:0 0 20px;text-align:left}
-  .step{display:flex;gap:11px;align-items:center;font-size:14px;color:#8fa1ba}
-  .step .tick{width:22px;height:22px;border-radius:50%;border:2px solid #2b3a52;display:grid;place-items:center;font-size:12px}
-  .step.done{color:#fff}
-  .step.done .tick{border-color:var(--ok);color:var(--ok)}
-  .step.now .tick{border-color:var(--accent);color:var(--accent)}
-  .meter{height:6px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden;margin:0 0 18px}
-  .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s linear}
-  .adwrap{position:absolute;inset:0;z-index:28;display:none;background:#000}
-  .adwrap.on{display:block}
-  .adwrap .badge{position:absolute;left:12px;top:calc(12px + env(safe-area-inset-top));z-index:3;padding:6px 10px;border-radius:999px;
-                 background:rgba(6,10,20,.7);border:1px solid var(--line);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#cfdae9}
-  .adwrap .close{position:absolute;right:12px;top:calc(12px + env(safe-area-inset-top));z-index:3;width:34px;height:34px;border-radius:50%;
-                 border:1px solid var(--line);background:rgba(6,10,20,.72);color:#fff;font-size:16px;cursor:pointer}
-
-  /* ---------- barre de démonstration (hors application) ---------- */
-  .demo-fab{position:absolute;top:calc(12px + env(safe-area-inset-top));left:12px;z-index:40;width:38px;height:38px;border-radius:50%;
-            border:1px solid rgba(255,255,255,.22);background:rgba(6,10,20,.7);color:#fff;font-size:10px;font-weight:800;
-            letter-spacing:.04em;cursor:pointer;opacity:.5;display:grid;place-items:center}
-  body.capture .demo-fab{display:none}
-  .demo-fab:hover{opacity:1}
-  .demo-nav{position:absolute;inset:auto 0 0 0;z-index:41;display:none;padding:14px 16px calc(18px + env(safe-area-inset-bottom));
-            background:rgba(6,10,20,.97);border-top:1px solid var(--line)}
-  .demo-nav.on{display:block}
-  .demo-nav h4{margin:0 0 8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8ea1bb}
-  .demo-nav .row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
-  .demo-nav button{flex:1 1 auto;min-width:84px;padding:9px 10px;border-radius:10px;border:1px solid var(--line);
-                   background:#131e33;color:#dce6f3;font-size:12px;font-family:var(--sans);cursor:pointer}
-  .demo-nav button.on{border-color:var(--accent);background:rgba(242,98,27,.18)}
-
-  .test-id{position:absolute;top:12px;left:58px;color:#f7fffc;background:#0b1d25dd;padding:5px 8px;border-radius:9px;font-size:10px;letter-spacing:.08em;z-index:21;pointer-events:none}
-  body.capture .test-id,#app:has(.rec.on,.adwrap.on) .test-id,#app:has(.rec.on,.adwrap.on,.panel.on) .demo-fab{display:none}
-  :root{--bg:#04191b;--deep:#062629;--sheet:rgba(6,38,41,.97);--accent:#40d6a1;--cream:#f5faf3;--muted:#b1c9bf}
-  #app{height:100vh;height:100dvh}
-  .sheet.hidden{visibility:hidden}
-  .sheet-body{min-height:0;padding-bottom:16px;scroll-padding-bottom:16px}
-  .sheet-foot::before{display:none}
-  button.scroll-hint{position:static;width:100%;display:block;margin:-3px 0 7px;padding:4px 8px;min-height:27px;opacity:1;transform:none;pointer-events:auto;border:1px solid #438679;background:#0b3937;color:#bdf4d8;border-radius:9px;font:700 12px var(--sans);cursor:pointer}
-  button.scroll-hint[hidden]{display:none}
-  .media-feedback{position:absolute;z-index:25;top:calc(72px + env(safe-area-inset-top));left:14px;right:14px;display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;text-align:center;padding:10px 12px;border:1px solid #487d72;border-radius:13px;background:#062629ee;color:#f5faf3}
-  .media-feedback[hidden],.media-feedback button[hidden]{display:none}
-  .media-feedback p{width:100%;margin:0;font-size:13px;line-height:1.4}
-  .media-feedback button{border:1px solid #65d9b0;color:#bdf4d8;background:#0b3e36;border-radius:8px;padding:8px 9px;font:700 12px var(--sans);cursor:pointer}
-  @media(max-width:340px){.sheet-head{padding-inline:14px}.sheet-body{padding-inline:14px}.sheet-foot{padding-inline:14px}.cta{font-size:14px}.btns{gap:7px}.btn{font-size:12px;letter-spacing:.03em}.review{padding-inline:12px}.review-question{font-size:14px}}
-  .case-context{margin:-8px 0 15px;font-size:13px;color:#bdf4d8;overflow-wrap:anywhere}
-  .review-question{font-size:15px;font-weight:750;line-height:1.4;margin:0;padding:9px 12px;color:#fff;background:#062629ee;border-radius:11px;border:1px solid #40d6a17a}
-  .duration,.voice{background:rgba(64,214,161,.10);border-color:rgba(64,214,161,.34)}
-  .duration,.voice .voice-title,.voice p{color:#bdf4d8}
-  .duration svg,.voice svg{stroke:var(--accent)}
-  .sheet-foot{background:#062629}
-  .sheet-foot::before{background:linear-gradient(180deg,#06262900,#062629)}
-  .cta,.btn.primary{color:#062629;box-shadow:0 14px 30px #40d6a125}
-  .cta:disabled{opacity:.55;color:#062629}
-  .chrono.hot{border-color:#40d6a1}
-  .chrono.hot .dot,.meter i{background:#40d6a1;box-shadow:none}
-  .panel{background:radial-gradient(600px 420px at 50% 0%,#0d5342 0%,#04191b 65%)}
-  #endCta{display:block;padding:12px 10px;margin:0 0 12px;color:#bdf4d8;border:1px solid #40d6a1;border-radius:999px;text-decoration:none;font-weight:800}
-  #app :is(a,button):focus-visible{outline:2px solid white;outline-offset:2px}
-  @media (min-width:520px){body{background:radial-gradient(900px 600px at 50% 0%,#0d5342 0%,#04191b 65%)}}
-  @media (prefers-reduced-motion:reduce){#app *,#app *::before,#app *::after{transition:none!important;animation:none!important}}
-  .adwrap.on{display:flex;flex-direction:column}
-  .adwrap .screenVideo{flex:1;min-height:0;position:relative}
-  video#ad{object-fit:contain}
-  .booking-bar{padding:10px 16px calc(12px + env(safe-area-inset-bottom));background:#062629;display:flex;gap:6px;flex-direction:column}
-  .booking-bar a{display:block;text-decoration:none;text-align:center;padding:12px 14px;border-radius:14px;background:#40d6a1;color:#062629;font-size:14px;font-weight:800}
-  .booking-bar small{color:#bdf4d8;font-size:10px;text-align:center}
-  #testCurtain{padding:26px;text-align:center;color:white;background:#0c1320;position:absolute;inset:0;z-index:99;display:grid;place-content:center;gap:16px}
-  #testCurtain[hidden]{display:none}
-  #testCurtain a{color:#a1efd3}
-  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-</style>
 </head>
 <body>
 <main id="app">
-  <div id="testCurtain" hidden><strong>Le cas de test est requis.</strong><a href="index.html">Ouvrir la fiche préremplie</a></div>
+  <div id="testCurtain" hidden><strong id="curtainText">Ouvre ta fiche coiffure pour commencer.</strong><a href="index.html">Ouvrir la fiche coiffure</a></div>
   <span class="test-id" id="testID" aria-hidden="true"></span>
   <aside id="mediaFeedback" class="media-feedback" hidden><p id="mediaMessage" role="status"></p><button id="mediaRetry" type="button" hidden>Réessayer</button><button id="mediaBack" type="button">Revenir à la consigne</button></aside>
   <video id="cam" playsinline muted preload="auto"></video>
@@ -257,14 +62,20 @@
 
     <div class="sheet-foot">
       <button type="button" class="scroll-hint" id="scrollHint" aria-controls="sheetBody" hidden>Lire la suite ↓</button>
+      <p class="take-help" id="takeHelp" hidden></p>
+      <input type="file" id="takeFile" accept="video/mp4,video/quicktime,video/webm,.mp4,.webm,.mov" hidden>
+      <input type="file" id="takeCamera" accept="video/*" capture="environment" hidden>
       <button class="cta" id="cta">COMMENCER À FILMER</button>
+      <button type="button" class="minor" id="cameraBtn" hidden>Filmer avec mon téléphone</button>
+      <div id="flowLinks" class="flow-links" hidden><a id="editFiche" href="index.html">Modifier ma fiche</a><a id="seeScreens" href="ecrans.html">Les 12 écrans</a></div>
     </div>
   </section>
 
   <!-- ÉTAT B — enregistrement : aperçu, chrono, barre -->
   <div class="rec" id="rec" aria-hidden="true">
     <div class="chrono" id="chrono"><span class="dot"></span><span id="chronoVal">0:00</span></div>
-    <p class="rec-hint">enregistrement simulé</p>
+    <p class="rec-hint" id="recordLabel">Enregistrement simulé</p>
+    <p class="rec-context" id="recContext" hidden></p>
     <div class="bar" id="bar"><i id="barFill"></i></div>
   </div>
 
@@ -273,8 +84,9 @@
     <div class="lbl"><span class="prise" id="reviewLabel">PRISE 1 · 0:06</span><span>Prise enregistrée</span></div>
     <div class="sound">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b9c7da" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>
-      <span>Lecture muette en boucle · test</span>
+      <span id="reviewMode">Lecture muette en boucle · test</span>
     </div>
+    <p class="review-context" id="reviewContext" hidden></p>
     <p id="reviewQuestion" class="review-question"></p>
     <div class="btns">
       <button class="btn" id="redo">REFAIRE</button>
@@ -284,343 +96,55 @@
 
   <!-- Montage -->
   <div class="panel" id="panelMontage">
-    <h2>Montage en cours</h2>
-    <p>Les 4 prises sont validées. Préparation de la lecture du montage de démonstration, rendu à l’avance.</p>
+    <h2 id="montageHeading">Montage en cours</h2>
+    <p id="montageStatus" role="status" aria-live="polite">Les quatre prises sont validées.</p>
     <div class="steps" id="montageSteps"></div>
-    <div class="meter"><i id="montageMeter"></i></div>
+    <progress id="montageMeter" max="900" aria-label="Images encodées"></progress>
     <button class="cta" id="montageGo" disabled>VOIR MA PUBLICITÉ</button>
+    <div class="flow-links montage-actions">
+      <button id="montageCancel" class="minor" type="button">Annuler</button>
+      <button id="montageRetry" class="minor" type="button" hidden>Réessayer</button>
+      <button id="montageSilent" class="minor" type="button" hidden>Réessayer sans musique</button>
+    </div>
   </div>
 
   <!-- Publicité finale -->
   <div class="adwrap" id="adwrap">
-    <span class="badge">Test muet · 30 s</span>
+    <span class="badge" id="adBadge">Test muet · 30 s</span>
     <button class="close" id="adClose" aria-label="Fermer">✕</button>
     <div class="screenVideo"><video id="ad" playsinline muted controls preload="metadata"></video></div>
-    <div class="booking-bar"><a id="caCta"></a><small>Simulation — aucun rendez-vous réel</small></div>
+    <div class="booking-bar"><a id="caCta"></a><small id="adNotice">Prises d’exemple</small></div>
   </div>
 
   <!-- Fin -->
   <div class="panel" id="panelEnd">
     <h2>Ta publicité est prête</h2>
-    <p><span id="endMeta"></span> — démonstration.</p>
+    <p id="endMeta"></p>
     <div class="steps">
-      <div class="step done"><span class="tick">✓</span><span>4 prises validées pour le test</span></div>
-      <div class="step done"><span class="tick">✓</span><span>Textes, prix et contact ajoutés</span></div>
-      <div class="step done"><span class="tick">✓</span><span>Rendu sans piste audio</span></div>
+      <div class="step done"><span class="tick">✓</span><span>4 prises validées</span></div>
+      <div class="step done"><span class="tick">✓</span><span>Textes incrustés dans l’image</span></div>
+      <div class="step done"><span class="tick">✓</span><span id="endSound">Rendu sans piste audio</span></div>
       <div class="step done"><span class="tick">✓</span><span>Rendu disponible pour la revue</span></div>
     </div>
+    <div id="endSoundCredits" hidden><a id="endSource" target="_blank" rel="noopener noreferrer">Source</a> · <a id="endLicence" target="_blank" rel="noopener noreferrer">Licence</a><br><span id="endChanges"></span></div>
     <a id="endCta"></a>
+    <div id="endExports"><a id="endDownload" download="vitrine-coiffure.mp4">Télécharger le MP4</a><button id="replayAd" type="button" class="minor">Revoir</button></div>
+    <button type="button" class="minor voice-button" id="voiceOpen">Ajouter ma voix ou mon texte</button>
     <button class="cta" id="restart">RECOMMENCER</button>
-    <a href="index.html" style="color:#b9c7da;margin-top:18px;font-size:13px">Revenir au cas de test</a>
+    <a id="endEdit" href="index.html" class="modify-link">Revenir à ma fiche</a>
   </div>
 
-  <!-- Outils de démonstration (hors application) -->
-  <button class="demo-fab" id="demoFab" title="Navigation de démonstration">DÉMO</button>
-  <div class="demo-nav" id="demoNav">
-    <h4>Navigation de démonstration — hors application</h4>
-    <div class="row" id="navScenes"></div>
-    <div class="row">
-      <button data-etat="A">État A · consigne</button>
-      <button data-etat="B">État B · enregistrement</button>
-      <button data-etat="C">État C · validation</button>
-      <button data-etat="montage">Montage</button>
-      <button data-etat="ad">Publicité</button>
-      <button data-etat="end">Fin</button>
-    </div>
-  </div>
+  <!-- L’atelier reçoit ce MP4, pas une nouvelle démo. Il reste optionnel. -->
+  <section id="voiceWorkshop" aria-label="Atelier voix off" hidden>
+    <button id="voiceClose" type="button" class="minor">← Revenir à mon montage T2</button>
+    <iframe title="Atelier voix et musique" id="voiceFrame" allow="microphone"></iframe>
+  </section>
 </main>
-
-<script src="cas-demo.js"></script>
-<script>
-/* ------------------------------------------------------------------ *
- * Cas VV-COIF : ingenierie/cas-test.json → cas-demo.js + master du même plan.
- * Parcours A/B/C repris du T1 public ; rendu déjà calculé et validé hors navigateur.
- * ------------------------------------------------------------------ */
-const DATA = window.CONSIGNES_T1;
-const SCENES = DATA.scenes.map((s) => ({
-  ...s,
-  video: `media/${s.media}`
-}));
-
-const $ = (id) => document.getElementById(id);
-const cam = $("cam"), replay = $("replay"), ad = $("ad");
-const film = `media/${DATA.sortie.file}`;
-const params = new URLSearchParams(location.search);
-const linked = params.get("test") === DATA.id;
-const requestedScreen=Number(params.get("ecran"));
-const previewNumber=linked&&Number.isInteger(requestedScreen)&&requestedScreen>=1&&requestedScreen<=12?requestedScreen:0;
-const fiche = (() => {
-  if (!linked || params.get("fiche") !== "1") return null;
-  try { return JSON.parse(sessionStorage.getItem("vv-fiche-" + DATA.id) || "null"); }
-  catch { return null; }
-})();
-const validated = new Set();
-let montageTimer = null;
-$("app").dataset.test = DATA.id;
-$("testID").textContent = DATA.id + " · SIMULATION";
-$("caCta").textContent = DATA.display.cta;
-$("caCta").href = DATA.display.route + "?test=" + encodeURIComponent(DATA.id);
-$("endCta").href = $("caCta").getAttribute("href");
-$("endCta").textContent = DATA.display.cta;
-$("endMeta").textContent = `4 prises · ${DATA.plan.duration} secondes · ${DATA.display.salon}`;
-let idx = 0, rafId = null, recording = false, state = "A";
-
-const fmt = (sec) => `${Math.floor(sec / 60)}:${String(Math.floor(sec % 60)).padStart(2, "0")}`;
-
-/* ---------------- rendu de la fiche (état A) ---------------- */
-function renderCard(i) {
-  const s = SCENES[i];
-  $("sceneCounter").textContent = `SCÈNE ${s.n}/${s.total}`;
-  $("dots").innerHTML = SCENES.map((x) => `<i class="${x.n <= s.n ? "on" : ""}"></i>`).join("");
-  $("durationLabel").textContent = `${s.secondes} secondes`;
-  $("sceneTitle").textContent = s.titre;
-  $("consigne").textContent = s.consigne;
-  const list = (id, items, icon) => $(id).replaceChildren(...items.map(t => {
-    const li = document.createElement("li"), mark = document.createElement("span"), txt = document.createElement("span");
-    mark.className = "mark"; mark.textContent = icon; txt.textContent = t;
-    li.append(mark, txt); return li;
-  }));
-  list("listFilm",s.a_filmer,"✓"); list("listAvoid",s.a_eviter,"✕");
-  const hint = i === 3 && fiche?.resultat ? fiche.resultat : fiche?.service;
-  $("caseContext").hidden = typeof hint !== "string" || !hint.trim();
-  $("caseContext").textContent = $("caseContext").hidden ? "" : (i === 3 && fiche?.resultat ? "À la fin : " : "Ton travail : ") + hint.slice(0, 80);
-  $("reviewQuestion").textContent = s.question_relecture;
-  $("voiceText").textContent = DATA.mention_voix_commune;
-  $("exempleText").textContent = `« ${s.exemple} »`;
-  $("cta").textContent = DATA.bouton_principal;
-  $("next").textContent = s.n === s.total ? "VOIR MON MONTAGE" : "SCÈNE SUIVANTE";
-  $("reviewLabel").textContent = `PRISE ${s.n} · 0:${String(s.secondes).padStart(2, "0")}`;
-  $("navScenes").innerHTML = SCENES.map((x) =>
-    `<button data-scene="${x.n - 1}" class="${x.n - 1 === i ? "on" : ""}">Scène ${x.n} · ${x.secondes} s</button>`).join("");
-  $("navScenes").querySelectorAll("button").forEach((b) => { b.onclick = () => showCard(+b.dataset.scene); });
-}
-
-function hideAll() {
-  $("sheet").classList.add("hidden");
-  $("rec").classList.remove("on");
-  $("review").classList.remove("on");
-  $("panelMontage").classList.remove("on");
-  $("panelEnd").classList.remove("on");
-  $("adwrap").classList.remove("on");
-  if (montageTimer !== null) {clearInterval(montageTimer); montageTimer = null;}
-  clearPicture(); cam.pause(); ad.pause(); replay.pause(); replay.style.display = "none";
-}
-
-/* Les états A/B/C du T1 côté coiffure. Le chrono suit la vidéo, jamais l’horloge murale. */
-let pictureHooks=null, pictureTimer=null;
-function hidePictureNotice(){
-  clearTimeout(pictureTimer);pictureTimer=null;$("mediaFeedback").hidden=true;
-}
-function clearPicture(){
-  pictureHooks?.abort();pictureHooks=null;hidePictureNotice();
-}
-function showPictureNotice(message,retry){
-  $("mediaMessage").textContent=message;$("mediaRetry").hidden=!retry;
-  $("mediaRetry").onclick=retry||null;$("mediaBack").hidden=previewNumber!==0;
-  $("mediaFeedback").hidden=false;
-}
-function sameSource(video,s){return video.src===new URL(s.video,document.baseURI).href;}
-function watchPicture(video,s,{frozen=false,review=false,onFinish=null,retry}){
-  clearPicture();const hooks=new AbortController();pictureHooks=hooks;
-  const on=(name,fn)=>video.addEventListener(name,fn,{signal:hooks.signal});
-  const ready=()=>{
-    hidePictureNotice();
-    if(review&&!previewNumber)$("next").disabled=false;
-  };
-  const unavailable=()=>{
-    clearTimeout(pictureTimer);
-    showPictureNotice("La vidéo n’a pas chargé. Réessaie ou reviens à la consigne.",retry);
-  };
-  const waiting=()=>{
-    if(hooks.signal.aborted)return;
-    clearTimeout(pictureTimer);
-    showPictureNotice("La vidéo charge…",null);
-    pictureTimer=setTimeout(()=>showPictureNotice("La vidéo met du temps à charger.",retry),6500);
-  };
-  on("error",unavailable);on("waiting",waiting);
-  if(frozen){
-    on("loadeddata",()=>{if(!video.seeking)ready();});on("seeked",ready);
-  }else on("playing",ready);
-  if(onFinish)on("ended",onFinish);
-  video.pause();video.muted=true;video.playsInline=true;
-  if(!sameSource(video,s))video.src=s.video;
-  else if(video.error)video.load();
-  waiting();
-  if(frozen){
-    const place=()=>{video.currentTime=s.secondes*.4;if(video.readyState>=2&&!video.seeking)ready();};
-    if(video.readyState>=1)place();else on("loadedmetadata",place);
-  }else{
-    video.currentTime=0;
-    video.play().catch(err=>{
-      if(hooks.signal.aborted||err.name==="AbortError")return;
-      if(video.error)unavailable();
-      else{clearTimeout(pictureTimer);showPictureNotice("Appuie sur le bouton pour lire la vidéo.",retry);}
-    });
-  }
-}
-
-/* A — consigne ; elle reste lisible, même sans vidéo dans le fond. */
-function showCard(i){
-  if(!SCENES[i])return;
-  stopRecording();hideAll();idx=i;state="A";
-  const s=SCENES[i];cam.style.display="block";cam.muted=true;cam.loop=!previewNumber;
-  if(!sameSource(cam,s))cam.src=s.video;
-  cam.currentTime=0;
-  if(!previewNumber)cam.play().catch(()=>{});
-  $("scrim").classList.remove("off");
-  renderCard(i);$("sheetBody").scrollTop=0;$("sheet").classList.remove("hidden");
-  requestAnimationFrame(()=>window.majRepereDefilement?.());
-}
-
-function openRecording(s){
-  stopRecording();hideAll();state="B";$("app").dataset.prise=s.id;
-  cam.style.display="block";cam.loop=false;
-  $("scrim").classList.add("off");$("rec").classList.add("on");
-  $("chrono").classList.remove("hot");$("bar").classList.remove("hot");
-  $("chronoVal").textContent="0:00";$("barFill").style.width="0%";
-}
-
-/* B — quand le clip est arrêté, le chrono et la barre sont arrêtés. */
-function startRecording(){
-  if(previewNumber)return;
-  const s=SCENES[idx];openRecording(s);recording=true;
-  watchPicture(cam,s,{onFinish:()=>{if(recording&&state==="B")finishRecording();},retry:startRecording});
-  const tick=()=>{
-    if(!recording)return;
-    const t=Math.min(s.secondes,Math.max(0,Number(cam.currentTime)||0));
-    $("chronoVal").textContent=fmt(t);$("barFill").style.width=`${100*t/s.secondes}%`;
-    $("chrono").classList.toggle("hot",s.secondes-t<=3);$("bar").classList.toggle("hot",s.secondes-t<=3);
-    rafId=requestAnimationFrame(tick);
-  };rafId=requestAnimationFrame(tick);
-}
-function showFrozenRecording(){
-  const s=SCENES[idx];openRecording(s);window.__demo.setProgress(40);
-  watchPicture(cam,s,{frozen:true,retry:showFrozenRecording});
-}
-function stopRecording(){recording=false;if(rafId!==null)cancelAnimationFrame(rafId);rafId=null;}
-
-/* C — un clip illisible ne peut pas être validé. Refaire reste possible. */
-function finishRecording(){
-  stopRecording();hideAll();state="C";const s=SCENES[idx];
-  replay.style.display="block";replay.loop=true;$("next").disabled=true;
-  $("review").classList.add("on");
-  watchPicture(replay,s,{review:true,retry:finishRecording});
-  if(!previewNumber){try{if(navigator.vibrate)navigator.vibrate([18,40,18]);}catch{}}
-}
-$("mediaBack").onclick=()=>showCard(idx);
-
-
-/* ---------------- montage / publicité / fin ---------------- */
-function showMontage() {
-  stopRecording(); hideAll();
-  state = "montage";
-  const steps = ["4 prises de test", "Textes et offre liés au cas", "Transitions appliquées", "Export 30 s sans son", "Prêt à visionner"];
-  $("montageSteps").innerHTML = steps.map((t, i) => `<div class="step"><span class="tick">•</span><span>${t}</span></div>`).join("");
-  $("montageMeter").style.width = "0%";
-  const go = $("montageGo"); go.disabled = true;
-  $("panelMontage").classList.add("on");
-  let p = 0;
-  montageTimer = setInterval(() => {
-    p = Math.min(100, p + 6.5);
-    $("montageMeter").style.width = `${p}%`;
-    $("panelMontage").querySelectorAll(".step").forEach((el, i) => {
-      const th = (i + 1) * 20;
-      el.classList.toggle("done", p >= th);
-      el.querySelector(".tick").textContent = p >= th ? "✓" : "•";
-      el.classList.toggle("now", p < th && p >= th - 20);
-    });
-    if (p >= 100) {
-      clearInterval(montageTimer); montageTimer = null;
-      const ready=()=>{go.disabled=false;go.textContent="VOIR MA PUBLICITÉ";};
-      if (!ad.src.endsWith(film)) ad.src=film;
-      if (ad.readyState>=1) ready();
-      else ad.addEventListener("loadedmetadata",ready,{once:true});
-      ad.addEventListener("error",()=>{go.textContent="RENDU INDISPONIBLE";},{once:true});
-    }
-  }, 110);
-}
-
-$("cta").onclick = startRecording;
-$("redo").onclick = () => showCard(idx);
-$("next").onclick = () => {
-  if (state !== "C" || $("next").disabled || previewNumber) return;
-  validated.add(SCENES[idx].id);
-  if (idx < SCENES.length - 1) showCard(idx+1);
-  else if (validated.size === SCENES.length) showMontage();
-  else showCard(SCENES.findIndex((s)=>!validated.has(s.id)));
-};
-$("montageGo").onclick = () => {
-  hideAll(); state = "ad";
-  $("adwrap").classList.add("on");
-  if (!ad.src.endsWith(film)) ad.src = film;
-  ad.currentTime = 0;
-  ad.play().catch(() => {});
-};
-$("adClose").onclick = () => { ad.pause(); $("adwrap").classList.remove("on"); $("panelEnd").classList.add("on"); state = "end"; };
-ad.onended = () => { $("adwrap").classList.remove("on"); $("panelEnd").classList.add("on"); state = "end"; };
-$("restart").onclick = () => {validated.clear();showCard(0);};
-
-$("demoFab").onclick = () => {
-  const nav = $("demoNav");
-  nav.classList.toggle("on");
-  $("demoFab").style.opacity = nav.classList.contains("on") ? 1 : .55;
-};
-$("demoNav").querySelectorAll("[data-etat]").forEach((b) => {
-  b.onclick = () => forceEtat(b.dataset.etat);
-});
-
-function forceEtat(e) {
-  if (e === "A") showCard(idx);
-  if (e === "B") showFrozenRecording();
-  if (e === "C") finishRecording();
-  if (e === "montage") showMontage();
-  if (e === "ad") { hideAll(); state = "ad"; $("adwrap").classList.add("on"); ad.src = film; }
-  if (e === "end") { hideAll(); $("panelEnd").classList.add("on"); state = "end"; }
-}
-
-/* API utilisée par les captures d'écran */
-window.__demo = {
-  showCard, startRecording, finishRecording, showMontage, forceEtat,
-  scene: (i) => { idx = i; },
-  freezeAt: (pct) => { stopRecording(); window.__demo.setProgress(pct); },
-  setProgress: (pct) => {
-    const s = SCENES[idx];
-    $("barFill").style.width = `${pct}%`;
-    $("chronoVal").textContent = fmt(s.secondes * pct / 100);
-    const hot = 100 - pct <= 50;
-    $("chrono").classList.toggle("hot", hot);
-    $("bar").classList.toggle("hot", hot);
-  },
-  state: () => state,
-  validations: () => [...validated],
-  test: () => DATA.id
-};
-
-if (new URLSearchParams(location.search).has("capture")) document.body.classList.add("capture");
-if (!linked) $("testCurtain").hidden = false;
-else if (previewNumber) {
-  const i=Math.floor((previewNumber-1)/3), mode=(previewNumber-1)%3;
-  document.body.classList.add("capture");
-  showCard(i);
-  if(mode===1)showFrozenRecording();
-  else if(mode===2)finishRecording();
-  for(const id of ["cta","redo","next","demoFab"])$(id).disabled=true;
-} else showCard(0);
-
-/* Repère de défilement : le contenu n'est jamais « coupé » sous le bouton fixe. */
-window.majRepereDefilement = function () {
-  const sb = document.getElementById("sheetBody");
-  const hint = document.getElementById("scrollHint");
-  if (!sb || !hint) return;
-  const deborde = sb.scrollHeight - sb.clientHeight > 10;
-  const fini = sb.scrollTop + sb.clientHeight >= sb.scrollHeight - 16;
-  hint.hidden = !deborde || fini;
-};
-$("sheetBody").addEventListener("scroll",window.majRepereDefilement,{passive:true});
-$("scrollHint").onclick=()=>$("sheetBody").scrollBy({top:Math.max(110,$("sheetBody").clientHeight*.75),behavior:"auto"});
-if(document.fonts)document.fonts.ready.then(window.majRepereDefilement);
-window.addEventListener("resize", window.majRepereDefilement);
-window.majRepereDefilement();
-</script>
+<script src="cas-demo.js?v=t2-1" defer></script>
+<script src="assets/fiche-t2.js?v=t2-1" defer></script>
+<script src="assets/afrobeat-catalogue.js?v=t2-1" defer></script>
+<script src="assets/tirage-son.js?v=t2-1" defer></script>
+<script src="ingenierie/prises-web.js?v=t2-1" defer></script>
+<script src="assets/simulation-t2.js?v=t2-1" defer></script>
 </body>
 </html>

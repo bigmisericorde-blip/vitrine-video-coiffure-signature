@@ -1,0 +1,48 @@
+{
+  "resultat": "PASS",
+  "comparaison": "même fixture, quatre rushs, polices et rendu.py ; seule la présence des trois champs JSON change pour l’image",
+  "plan_canonique": "ingenierie/plan.json",
+  "metadonnees": {
+    "template_id": "T2",
+    "version": "1.0.0",
+    "audio_profile": "coiffure-afrobeat-amapiano"
+  },
+  "plans_egaux_hors_metadonnees": true,
+  "sha_plan_avant": "4cb7bcbb3e0ca4fc39ac5ef766a9b61ed39b8e575a6081d4d655f4cebe29c8b7",
+  "sha_plan_apres": "9142ee9ec90b4b9b351dce37e163df976005344a8f1517fd866c98718c4ba9f2",
+  "sha_fixture": "d75ebc35690b689996bc04944ff275a67b88d42e5fbf0946a659ea32c3a9c13b",
+  "sha_moteur": "736f34c1f5bcd16649944546dff24422dfb0a3ae515edcccb5018611b37cf896",
+  "avant": {
+    "sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d",
+    "octets": 9060752,
+    "codec": "h264",
+    "largeur": 720,
+    "hauteur": 1280,
+    "fps": 30,
+    "images": 900,
+    "duree_s": 30,
+    "audio": false
+  },
+  "apres": {
+    "sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d",
+    "octets": 9060752,
+    "codec": "h264",
+    "largeur": 720,
+    "hauteur": 1280,
+    "fps": 30,
+    "images": 900,
+    "duree_s": 30,
+    "audio": false
+  },
+  "media_intacts": {
+    "media/S1.mp4": "4e3cb23b82836ffc3cda23bf4e0b9c052938157b623078c24fa976d782140ee6",
+    "media/S2.mp4": "c6c53da93ddfa3940e546e0119a9cb494238702d6d2bbf81d28e28c5aa5556fc",
+    "media/S3.mp4": "45383ab9f745701b43af3a69d5f2ebb5ce2b533d09d393c193c6e2ca1e9aceeb",
+    "media/S4.mp4": "9a919a7fe081572e47cedfa6a98a95ff776634808b55debdf4633ca115d6f25e",
+    "media/04-vitrine-video-signature-muette.mp4": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d",
+    "media/afrobeat/569473.mp4": "cb28f9836127eb8f07a2741d14c93dc083316043d8d38ce0d5d569e9791bc39a",
+    "media/afrobeat/fma-265362.mp4": "31346ad2b8710f74866e009217f46bb866f53b33ad92655db5307963ebe20044",
+    "media/afrobeat/fma-279236.mp4": "38faa76f266db570872e01b167d7474dd9d1e74a1c72a04c917fe73985f5122b",
+    "media/afrobeat/fvv-ghj3du94kp45fclg9a9ofcqb.mp4": "b8346fd7f6771fb7cf1b306a6ab8ce885063104e23365bebb349d9a6f6524b54"
+  }
+}

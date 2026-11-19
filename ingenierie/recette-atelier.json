@@ -1,0 +1,34 @@
+{
+  "resultat": "PASS",
+  "ateliers": [
+    "Le texte non synthétisé reste accessible à la personne qui l’enregistre",
+    "Texte français réellement synthétisé et mixé ; lecture, téléchargement et rechargement gardent le même MP4",
+    "Import voix sans imposer de langue ; narration trop longue refusée sans couper ni changer le MP4 précédent",
+    "Vidéo personnelle : sa voix est gardée à son horloge, muxée dans le MP4",
+    "Texte anglais synthétisé ; les quatre fonds ont tourné une fois, aucun doublon consécutif",
+    "Option vraiment muette sans musique ni narration",
+    "Capture micro enregistrée et mixée ; changement de fond même à la frontière du cycle"
+  ],
+  "rotation_quatre_ids": [
+    "fma-265362",
+    "fma-279236",
+    "569473",
+    "fvv-ghj3du94kp45fclg9a9ofcqb"
+  ],
+  "durations": [
+    30.0,
+    30.0,
+    8.0,
+    30.0
+  ],
+  "attenuation_db": 13,
+  "synthese_testee": [
+    "fr",
+    "en"
+  ],
+  "viewport_px": [
+    390,
+    820
+  ],
+  "validation": "La preuve navigateur utilise des textes et fichiers de test temporaires. Aucun n’est dans le catalogue."
+}

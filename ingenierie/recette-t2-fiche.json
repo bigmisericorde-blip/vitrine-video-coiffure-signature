@@ -1,0 +1,75 @@
+{
+  "resultat": "PASS",
+  "mode": "exemple",
+  "checks": [
+    "Même fiche lisible dans les 12 états A/B/C et en ouverture directe ; aperçu sans validation",
+    "Plan T2 lu par le moteur ; quatre prises validées ; aucune donnée envoyée",
+    "Nouveau H.264/AAC de 900 images ; aperçu, relecture et téléchargement identiques ; AAC et PCM du fond conservés",
+    "Voix du texte client synthétisée en FR ; fond épinglé, débit conservé, image AVC copiée, vrai MP4 narré"
+  ],
+  "sortie": {
+    "duree_s": 30.0,
+    "images": 900,
+    "codec": "h264",
+    "image": [
+      720,
+      1280,
+      30
+    ],
+    "audio": "AAC LC 48 kHz stéréo",
+    "taille_octets": 14594457,
+    "sha256": "43fc2e201f472713eb6683f0efca83aac70bff41a923f12b81625a3239d23031",
+    "piste": "fma-279236",
+    "pcm_sha256": "ad695ef01a67065cbd800ff4f209ec5b576f40eda2c1da9c68f5d31595d7241e",
+    "lufs_i": -20.06,
+    "dbtp": -7.21
+  },
+  "sortie_voix": {
+    "duree_s": 30.0,
+    "images": 900,
+    "codec": "h264",
+    "image": [
+      720,
+      1280,
+      30
+    ],
+    "audio": "AAC LC 48 kHz stéréo",
+    "taille_octets": 14602213,
+    "sha256": "56b66274bb4918e5ef874a9fc87589889ff9b8c0d5dc048ae1f719a9f1955006",
+    "piste": "fma-279236",
+    "voix": {
+      "presente": true,
+      "debit_modifie": false,
+      "position_s": 0.72,
+      "ducking_db": 13.0,
+      "fenetres_voix_s": [
+        [
+          0.72,
+          2.28
+        ],
+        [
+          2.76,
+          4.62
+        ],
+        [
+          5.1,
+          6.39
+        ],
+        [
+          6.91,
+          8.38
+        ]
+      ],
+      "type": "texte",
+      "synthese": {
+        "code": "fr",
+        "credit": "Piper · SIWIS French Speech Synthesis Database (CC BY 4.0).",
+        "source": "https://huggingface.co/rhasspy/piper-voices/tree/0ca208afc2a2ee102b1e961e72e0a7e4907be3d0/fr/fr_FR/siwis/medium"
+      }
+    },
+    "mesures": {
+      "lufs_i": -16.75,
+      "dbtp": -3.92
+    }
+  }
+}

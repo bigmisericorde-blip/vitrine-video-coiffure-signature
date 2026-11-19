@@ -3,8 +3,14 @@
   "base_path": "simulation/index.html",
   "sha256_source": "a804a3fa8ad4f9bb70ca624417cdc5b547bf8e4cb9e0528b4c05734fa0f89ea9",
   "adapter": "ingenierie/build_ecrans.py",
+  "t2_markup": "ingenierie/simulation-t2.html",
+  "behavior": [
+    "assets/fiche-t2.js",
+    "ingenierie/prises-web.js",
+    "assets/simulation-t2.js"
+  ],
   "output": "simulation.html",
-  "sha256_output": "2af60000d904c18eea10c286faef0d5358a75c37c42569552d69a25c8095cf1c",
+  "sha256_output": "eb3cf740370b358dafe431fea3f7272d023c6d10c5ac729b2d6d0441e777814d",
   "etats": [
     "A",
     "B",

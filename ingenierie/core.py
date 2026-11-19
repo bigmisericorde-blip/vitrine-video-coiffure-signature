@@ -1,4 +1,4 @@
-"""Contrat T1 coiffure : les 4 prises, le plan image et le cas de test sont liés."""
+"""Contrat T2 coiffure : les 4 prises, le plan image et le cas de test sont liés."""
 from __future__ import annotations
 import hashlib, json, os, re, shutil
 from pathlib import Path
@@ -11,7 +11,14 @@ CUT_RANGES={'split_slide':range(8,25),'iris_vert':range(8,21,2),'ui_push':range(
 STAGES=('hook','offer','cut','cut_close','cut_alt','detail','detail_close','result','result_close','booking','action','lockup')
 PRISERIE=('S1','S1','S2','S2','S2','S3','S3','S4','S4','S4','S4','S4')
 
-def load(p): return json.loads(Path(p).read_text(encoding='utf-8'))
+def unique_json(pairs):
+ obj={}
+ for k,v in pairs:
+  if k in obj:raise ValueError(f'Clé JSON en double : {k}')
+  obj[k]=v
+ return obj
+
+def load(p): return json.loads(Path(p).read_text(encoding='utf-8'),object_pairs_hook=unique_json)
 def sha(p):
  with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def save(p,data):
@@ -28,10 +35,13 @@ def require(x,msg):
  if not x:raise ValueError(msg)
 
 def validate(case,plan):
+ require(plan.get('template_id')=='T2','Identifiant de gabarit invalide')
+ require(re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',str(plan.get('version',''))),'Version du gabarit invalide')
+ require(re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+){1,5}',str(plan.get('audio_profile',''))),'Profil d’ambiance invalide')
  require(case['schema']=='vv.coiffure.case/1.0' and plan['schema']=='vv.coiffure.plan/1.0','Schéma incompatible')
  require(plan['fixture']=='cas-test.json' and plan['spec_sources']['write_back'] is False,'La base T1 est en lecture seule')
  require(case['mode']=='demo','Cette fixture n’est pas un compte professionnel')
- o=case['sortie']; require((o['largeur'],o['hauteur'],o['fps'],o['frames'],o['audio'])==(720,1280,30,900,False),'Contrat vidéo T1 muet invalide')
+ o=case['sortie']; require((o['largeur'],o['hauteur'],o['fps'],o['frames'],o['audio'])==(720,1280,30,900,False),'Contrat vidéo T2 muet invalide')
  d=case['display']; bounds={'salon':30,'service':26,'benefice':36,'devise':5,'ville':24,'pays':20,'contact':28,'cta':29,'indication':27,'condition':34}
  for k,m in bounds.items(): require(isinstance(d[k],str) and 1<=len(d[k].strip())<=m and not re.search(r'[<>\x00-\x1f]',d[k]),f'Libellé invalide : {k}')
  require(type(d['prix'])==int and 1<=d['prix']<=999999,'Prix démo illisible ou non numérique')
@@ -70,4 +80,4 @@ def compile_ui(case,plan):
  view={k:v for k,v in case.items() if k!='schema'}
  view['scenes']=[{k:v for k,v in s.items() if k not in ['stock']} for s in case['scenes']]
  view['plan']={"name":plan['name'],"duration":case['sortie']['frames']/case['sortie']['fps'],"prepared":True}
- (ROOT/'cas-demo.js').write_text('/* Généré par ingenierie/build_prises.py ; ne pas éditer. */\nwindow.CONSIGNES_T1 = '+json.dumps(view,ensure_ascii=False,indent=2).replace('</','<\\/')+';\n',encoding='utf-8')
+ (ROOT/'cas-demo.js').write_text('/* Généré par ingenierie/build_prises.py ; ne pas éditer. */\nwindow.CONSIGNES_T2 = '+json.dumps(view,ensure_ascii=False,indent=2).replace('</','<\\/')+';\n',encoding='utf-8')

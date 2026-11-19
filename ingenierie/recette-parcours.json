@@ -18,13 +18,13 @@
     "S3 : ordre des textes, source S3.mp4, chrono automatique, révision, validation",
     "S4 : ordre des textes, source S4.mp4, chrono automatique, révision, validation",
     "Montage débloqué par S1–S4 ; lecture continue 30 s, sans saut demandé, puis écran de fin",
-    "Clic du CTA → prestation identique → choix d’un horaire fictif",
+    "Sans action ni prix : pas de faux CTA et même fichier pour l’aperçu et l’export",
     "RECOMMENCER : retour S1 et validation remise à zéro",
     "Lisibilité et bouton non masqué à 360 et 430 px"
   ],
   "lecture_complete": {
     "ended": true,
-    "frameCount": 901,
+    "frameCount": 900,
     "badJumps": 0,
     "last": 29.966667,
     "milestones": [
@@ -40,11 +40,11 @@
     "starts": 1,
     "seek": 0,
     "errs": [],
-    "startedAt": 40146.80000000028,
-    "elapsed": 30,
+    "startedAt": 62636.60000000009,
+    "elapsed": 30.097099999999628,
     "frameTiming": {}
   },
   "erreurs": [],
-  "version": "navigation et questions v2",
-  "périmètre": "Maquette web ; aucune validation Android ni réservation réelle."
+  "version": "T2 dynamique v1.0.0",
+  "périmètre": "Application web ; aucune validation Android ni réservation réelle."
 }

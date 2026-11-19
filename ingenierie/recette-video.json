@@ -2,14 +2,14 @@
   "cas": "VV-COIF-01",
   "resultat": "PASS",
   "plan_sha256": "4cb7bcbb3e0ca4fc39ac5ef766a9b61ed39b8e575a6081d4d655f4cebe29c8b7",
-  "cas_sha256": "dcfe16f25b7e6d1e93d461f0a1e63a32968506c913e45d2b93d10ca1d8e66678",
+  "cas_sha256": "d75ebc35690b689996bc04944ff275a67b88d42e5fbf0946a659ea32c3a9c13b",
   "film": {
     "images": 900,
     "fps": 30,
     "secondes": 30.0,
     "audio_streams": 0,
-    "sha256": "89122a6bafd7c71fdde9051f585f96ed4cf25e38abe464188fc6f1a582464a73",
-    "bytes": 9053527,
+    "sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d",
+    "bytes": 9060752,
     "images_decodees_uniques": 899
   },
   "prises": {
@@ -69,8 +69,8 @@
         "fps": 30,
         "secondes": 30.0,
         "audio_streams": 0,
-        "sha256": "89122a6bafd7c71fdde9051f585f96ed4cf25e38abe464188fc6f1a582464a73",
-        "bytes": 9053527,
+        "sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d",
+        "bytes": 9060752,
         "images_decodees_uniques": 899
       }
     },
@@ -85,8 +85,8 @@
       "preuve": {
         "vert_iris1": 1.0,
         "vert_iris2": 1.0,
-        "écart_cut": 12.8,
-        "écart_outil": 45.25,
+        "écart_cut": 12.81,
+        "écart_outil": 45.24,
         "écart_ui": 59.54
       }
     },
@@ -94,7 +94,7 @@
       "controle": "CTA fixe 3.60 s / plan haut vivant",
       "ok": true,
       "preuve": {
-        "drift_carton_px": 0.047,
+        "drift_carton_px": 0.045,
         "écart_vidéo_px": 32.346
       }
     },

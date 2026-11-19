@@ -1,0 +1,25 @@
+{
+  "resultat": "PASS",
+  "version": "T2-v1",
+  "mode": "local",
+  "revision": "",
+  "viewport_px": [
+    320,
+    568
+  ],
+  "master_sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d",
+  "pistes_sha256": {
+    "fma-279236": "38faa76f266db570872e01b167d7474dd9d1e74a1c72a04c917fe73985f5122b",
+    "fvv-ghj3du94kp45fclg9a9ofcqb": "b8346fd7f6771fb7cf1b306a6ab8ce885063104e23365bebb349d9a6f6524b54",
+    "569473": "cb28f9836127eb8f07a2741d14c93dc083316043d8d38ce0d5d569e9791bc39a",
+    "fma-265362": "31346ad2b8710f74866e009217f46bb866f53b33ad92655db5307963ebe20044"
+  },
+  "checks": [
+    "Cinq fichiers vidéo servis avec les empreintes attendues, master muet intact",
+    "Les quatre films se lisent avec son et affichent auteur, source et licence",
+    "Retirage différent, rechargement stable, fichier téléchargé identique à celui lu, option muette",
+    "Lecteur : échec du MP4 musical → lecture et téléchargement du master muet",
+    "Parcours T2 : tirage après quatre validations ; relecture et export du même MP4 ; nouveau fond au montage suivant",
+    "Moteur indisponible : erreur explicite, pas de faux export ni de remplacement par le master"
+  ]
+}

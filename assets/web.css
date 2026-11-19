@@ -9,3 +9,11 @@
 @media(max-width:360px){.screen-layout-v2 .screen-row a{font-size:11px}.screen-layout-v2 .screen-view .kicker{font-size:10px;letter-spacing:.055em}}
 
 .screen-view .screen-open{margin:0 0 12px}
+
+.player [hidden]{display:none!important}
+.player .sound-credit{border:1px solid var(--border);border-radius:13px;margin:14px 0 0;padding:10px 12px;background:#082c2e}.player .sound-credit p{margin:3px 0}.player #sonInfo{color:var(--cream);font-weight:750}.player #sonModifications{font-size:12px}
+
+/* Les captures publiques restent la référence ; une fiche active utilise un écran réel. */
+.screen-picture iframe{display:block;border:0;border-radius:16px;width:min(100%,360px);height: min(780px, 112svh);background:#062629}
+.screen-picture iframe[hidden],.screen-picture img[hidden]{display:none}
+.form-flow .quiet-button{background:transparent;color:#bdf4d8;border:1px solid #377963;box-shadow:none}

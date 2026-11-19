@@ -1,0 +1,27 @@
+{
+  "resultat": "PASS",
+  "mode": "import",
+  "checks": [
+    "Même fiche lisible dans les 12 états A/B/C et en ouverture directe ; aperçu sans validation",
+    "Quatre fichiers locaux utilisés ; clip trop court rejeté ; aucun clip d’exemple chargé pendant les prises",
+    "Nouveau H.264/AAC de 900 images ; aperçu, relecture et téléchargement identiques ; AAC et PCM du fond conservés"
+  ],
+  "sortie": {
+    "duree_s": 30.0,
+    "images": 900,
+    "codec": "h264",
+    "image": [
+      720,
+      1280,
+      30
+    ],
+    "audio": "AAC LC 48 kHz stéréo",
+    "taille_octets": 14605224,
+    "sha256": "1702b95dc122c5f2107801bfb4df79d1d3d2d5f95f7a56af877ef88f1eff2c06",
+    "piste": "fma-279236",
+    "pcm_sha256": "ad695ef01a67065cbd800ff4f209ec5b576f40eda2c1da9c68f5d31595d7241e",
+    "lufs_i": -20.06,
+    "dbtp": -7.21
+  },
+  "sortie_voix": null
+}

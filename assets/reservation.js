@@ -1,5 +1,5 @@
 'use strict';
-const c=window.CONSIGNES_T1,d=c.display;let time=null;
+const c=window.CONSIGNES_T2,d=c.display;let time=null;
 const g=(i)=>document.getElementById(i),el=(t,s)=>{let o=document.createElement(t);o.textContent=s;return o;};
 const status=g('result'),acc=g('selectSlot'),items=['10:00','11:30','16:00'];
 g('back').href='film.html?test='+encodeURIComponent(c.id);

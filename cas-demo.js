@@ -1,12 +1,12 @@
 /* Généré par ingenierie/build_prises.py ; ne pas éditer. */
-window.CONSIGNES_T1 = {
+window.CONSIGNES_T2 = {
   "id": "VV-COIF-01",
   "mode": "demo",
   "display": {
     "salon": "Studio Vitrine",
     "service": "Coupe + barbe",
     "benefice": "Un seul rendez-vous",
-    "prix": 7500,
+    "prix": 1500,
     "devise": "FCFA",
     "ville": "Cotonou",
     "pays": "Bénin",

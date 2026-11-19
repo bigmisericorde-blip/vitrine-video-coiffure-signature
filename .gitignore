@@ -5,3 +5,16 @@ __pycache__/
 *.tmp.mp4
 *.part
 *.token
+
+# Les téléchargements et certificats musicaux restent privés.
+audio-prive/
+*.mp3
+*.wav
+*.m4a
+*.flac
+
+# Données client, exports de travail et modèles TTS.
+*.sqlite*
+*.onnx*
+exports/
+*.upload

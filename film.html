@@ -1,3 +1,33 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vitrine Vidéo — film muet</title><link rel="stylesheet" href="assets/web.css"><script src="cas-demo.js" defer></script><script src="assets/film.js" defer></script></head><body>
-<div class="shell player"><header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="index.html">Revenir au test</a></header>
-<main><p class="kicker">SIGNATURE COIFFURE / TEST MUET</p><video id="clip" playsinline muted controls preload="metadata" aria-label="Le passage vert, film de trente secondes sans son"></video><div class="under"><div class="links"><a class="button" id="booking"></a></div><p class="note">Le bouton teste la destination de la publicité ; aucun rendez-vous n’est pris. Le fichier MP4 ne contient pas de lien cliquable.</p><div class="links"><a id="download" download>Télécharger le MP4</a></div></div></main></div></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Vitrine Vidéo — film exemple de coiffure</title>
+ <link rel="stylesheet" href="assets/web.css?v=audio-2">
+ <script src="cas-demo.js?v=t2-1" defer></script>
+ <script src="assets/afrobeat-catalogue.js?v=audio-2" defer></script>
+ <script src="assets/tirage-son.js?v=audio-2" defer></script>
+ <script src="assets/film.js?v=t2-1" defer></script>
+</head>
+<body>
+<div class="shell player">
+ <header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="index.html">Revenir au test</a></header>
+ <main>
+  <p class="kicker" id="filmMode">SIGNATURE COIFFURE / TEST MUET</p>
+  <video id="clip" playsinline muted controls preload="metadata" aria-label="Le passage vert, film de trente secondes sans son"></video>
+  <div class="under">
+   <div class="sound-credit" id="sonCredit" hidden>
+    <p class="note" id="sonInfo" role="status"></p>
+    <p class="note"><a id="sonSource" target="_blank" rel="noopener noreferrer">Source</a> · <a id="sonLicence" target="_blank" rel="noopener noreferrer">Licence</a></p>
+    <p class="note" id="sonModifications"></p>
+   </div>
+   <div id="tirageActions" class="links" hidden><button type="button" class="button" id="retirer">Tirer une autre musique</button></div>
+   <p class="note" id="filmMessage" role="status" hidden></p>
+   <div class="links"><a id="download" download>Télécharger le MP4</a><a id="muet" href="?muet=1" hidden>Version muette</a></div>
+   <div class="links"><a class="button" id="booking"></a></div>
+   <p class="note">Le bouton teste la destination de la publicité ; aucun rendez-vous n’est pris. Le fichier MP4 ne contient pas de lien cliquable.</p>
+  </div>
+ <p class="links"><a href="atelier.html">Ajouter ma voix ou mon texte →</a></p></main>
+</div>
+</body>
+</html>

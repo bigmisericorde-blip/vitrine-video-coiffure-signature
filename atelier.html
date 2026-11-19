@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atelier voix & musique · Vitrine Vidéo</title>
+<link rel="stylesheet" href="assets/atelier.css?v=1">
+<script src="assets/afrobeat-catalogue.js?v=audio-2" defer></script><script src="assets/tirage-son.js?v=audio-2" defer></script><script src="assets/atelier.js?v=t2-1" defer></script>
+</head><body>
+<header class="top"><a class="wordmark" href="index.html"><span class="mark" aria-hidden="true">V</span> Vitrine Vidéo</a><a class="return" href="index.html">← Fiche coiffure</a></header>
+<main>
+<section class="hero" aria-labelledby="mainTitle"><div><p class="eyebrow"><span class="dot"></span> SIGNATURE COIFFURE / POSTPRODUCTION</p><h1 id="mainTitle">Atelier <em>voix &amp; musique.</em></h1><p class="intro">Une voix dans ta langue. Un fond qui lui laisse la place. Tout est mixé dans le même MP4, prêt à télécharger.</p></div><p class="hero-index"><strong>4</strong> fonds en rotation <span> · </span> <strong>30 s</strong> max.</p></section>
+<div class="layout">
+<form id="form" class="studio" autocomplete="off">
+<fieldset id="controls" class="steps">
+<legend class="sr">Préparer mon montage</legend>
+<section class="panel" aria-labelledby="imageHeading">
+<div class="section-head"><span class="step">01</span><div><h2 id="imageHeading">Ta vidéo</h2><p class="hint">Choisis l’exemple ou importe ton propre montage.</p></div></div>
+<p id="linkedVideo" class="hint" role="status" hidden></p>
+<div class="choices two" id="imageModes">
+<label><input type="radio" name="imageMode" value="demo" checked><span>Essai coiffure</span></label>
+<label><input type="radio" name="imageMode" value="file"><span>Ma vidéo</span></label>
+</div>
+<div id="videoZone" class="detail" hidden><label for="sourceVideo">Vidéo déjà montée</label><input id="sourceVideo" type="file" accept="video/mp4,video/quicktime,video/webm,.mov,.mp4,.webm"><p class="hint">MP4, MOV ou WebM · 3 à 30 s · 64 Mo max.</p></div>
+</section>
+<section class="panel" aria-labelledby="voiceHeading">
+<div class="section-head"><span class="step">02</span><div><h2 id="voiceHeading">Ta voix off</h2><p class="hint">Aucun texte ni enregistrement d’essai n’est réutilisé.</p></div></div>
+<div class="choices three">
+<label><input type="radio" name="voiceMode" value="audio" checked><span>Je parle</span></label>
+<label><input type="radio" name="voiceMode" value="texte"><span>J’écris</span></label>
+<label><input type="radio" name="voiceMode" value="sans"><span>Sans voix</span></label>
+</div>
+<div id="voiceZone" class="detail">
+<label for="entry">Comment veux-tu ajouter ta voix ?</label>
+<select id="entry"><option value="mic">Enregistrer au micro</option><option value="file">Importer un fichier voix</option><option value="video" id="originalVoice" disabled>Garder la voix de ma vidéo</option></select>
+<div id="micZone" class="voice-box"><p class="hint">Parle dans ta langue : fon, yoruba, français, anglais ou une autre. N’ajoute pas de musique à ton enregistrement.</p><div class="record-row"><button type="button" id="record" class="outline"><span class="record-dot" aria-hidden="true"></span> Enregistrer</button><output id="clock" aria-label="Durée d’enregistrement">00:00</output></div><audio id="micListen" controls hidden></audio><p class="hint" id="micState" role="status"></p></div>
+<div id="audioZone" class="voice-box" hidden><label for="sourceAudio">Fichier audio de ta voix</label><input id="sourceAudio" type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg,.webm,.flac,.aac"><p class="hint">12 Mo max. La vitesse et la langue de ta voix sont conservées.</p></div>
+<details id="prompter" class="voice-box" hidden><summary>Relire mon texte pendant l’enregistrement</summary><p id="prompterCopy"></p></details>
+<p id="keepHelp" class="hint voice-box" hidden>Le son de ta vidéo reste synchronisé à l’image. Utilise un montage où la voix est seule, sans musique déjà ajoutée.</p>
+</div>
+<div id="textZone" class="detail" hidden>
+<label for="lang">Langue du texte à lire</label><select id="lang"></select>
+<p id="langHelp" class="hint"></p>
+<label for="script">Écris ton texte de voix off</label><textarea id="script" rows="4" maxlength="550" placeholder="Écris une accroche, ce que tu proposes et ce que le client doit faire ensuite."></textarea>
+<div class="label-row"><p class="hint">Ne vise pas plus de 45 à 55 mots pour 30 s.</p><output id="count">0 / 550</output></div>
+<button id="speakInstead" class="outline" type="button" hidden>Enregistrer ce texte avec ma voix</button>
+</div>
+<p id="noVoice" class="detail hint" hidden>Le montage ne contiendra pas de narration. Tu peux garder la musique seule ou couper aussi la musique.</p>
+</section>
+<section class="panel" aria-labelledby="musicHeading">
+<div class="section-head"><span class="step">03</span><div><h2 id="musicHeading">Le fond musical</h2><p class="hint" id="trackHint">Pas le même fond deux montages de suite. La musique baisse pendant la voix puis remonte progressivement.</p></div></div>
+<label class="check"><input type="checkbox" id="music" checked><span>Ajouter un fond en rotation</span></label>
+</section>
+</fieldset>
+<button id="render" class="primary" type="submit" disabled>Créer mon montage <span aria-hidden="true">→</span></button>
+<p id="status" class="status" role="status" aria-live="polite">Vérification du moteur de montage…</p>
+</form>
+<aside class="preview" aria-labelledby="previewHeading">
+<p class="eyebrow preview-label"><span class="dot"></span> APERÇU &amp; EXPORT</p><h2 id="previewHeading">Ton montage</h2>
+<div class="phone"><video id="result" controls playsinline muted preload="metadata" src="media/04-vitrine-video-signature-muette.mp4" aria-label="Aperçu de la vidéo"></video></div>
+<p class="hint" id="resultInfo">Gabarit coiffure muet, avant mixage.</p>
+<p class="track" id="track" hidden></p>
+<p class="hint links" id="credits" hidden><a id="musicSource" target="_blank" rel="noopener noreferrer">Source</a> · <a id="musicLicense" target="_blank" rel="noopener noreferrer">Licence</a></p>
+<p class="hint" id="synthCredit" hidden></p>
+<a class="primary download" id="download" download="vitrine-montage.mp4" hidden>Télécharger ce MP4 <span aria-hidden="true">↓</span></a>
+<p class="hint" id="expire" hidden>Le lien est temporaire. Télécharge le fichier pour le conserver.</p>
+</aside>
+</div>
+<footer><p>Exemple coiffure fictif. Aucun paiement ni rendez-vous n’est envoyé.</p><a href="film.html">Voir le film exemple →</a></footer>
+</main></body></html>
