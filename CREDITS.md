@@ -31,9 +31,13 @@ Modifications : extrait de 30 secondes, tempo calé pour les fonds 1/3/4, tempo 
 
 [Mediabunny](https://github.com/Vanilagy/mediabunny), Vanilagy, `1.66.1`, est distribué ici sans modification sous [MPL 2.0](assets/vendor/mediabunny-LICENSE.txt). [Version source exacte et intégrité](assets/vendor/SOURCES.md). Il sert au décodage, à l’encodage et à l’assemblage MP4 ; le dessin des textes et transitions appartient au T2.
 
+## Film final narré
+
+[Studio Vitrine — Signature coiffure T2](livrables/09-film-final-t2.md) réutilise les quatre rushs recadrés ci-dessus et *Harbor Lanterns* — FreeVibeVault, [fiche de la piste](https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Extrait depuis le début au tempo d’origine, égalisation, fondus, réduction du fond sous la voix. Cinq prises d’une voix synthétique française déjà préparée pour la démonstration ont été calées et mixées sans changer le débit. Pas de voix Piper dans ce film, pas de mention d’une adresse non confirmée. Seuls le film mixé et sa transcription sont publiés, pas les fichiers de voix isolés ni les essais.
+
 ## Synthèse optionnelle, à la demande
 
-L’atelier peut lire le texte du client en français ou en anglais. [Piper](https://github.com/OHF-Voice/piper1-gpl) est un moteur séparé installé localement ; aucun modèle ni narration de test n’est publié dans ce dossier.
+L’atelier peut lire le texte du client en français ou en anglais. [Piper](https://github.com/OHF-Voice/piper1-gpl) est un moteur séparé installé localement ; aucun modèle ni narration générée par Piper n’est publié dans ce dossier.
 
 - Français : `fr_FR-siwis-medium`, [fiche du modèle](https://huggingface.co/rhasspy/piper-voices/tree/0ca208afc2a2ee102b1e961e72e0a7e4907be3d0/fr/fr_FR/siwis/medium), [SIWIS French Speech Synthesis Database](https://datashare.is.ed.ac.uk/handle/10283/2353), CC BY 4.0 pour le jeu de données.
 - Anglais : `en_US-ljspeech-medium`, [fiche du modèle](https://huggingface.co/rhasspy/piper-voices/tree/bae641dcb5a608cff81ccaf7ff018baaca1a33e1/en/en_US/ljspeech/medium), [LJ Speech Dataset](https://keithito.com/LJ-Speech-Dataset/), domaine public.

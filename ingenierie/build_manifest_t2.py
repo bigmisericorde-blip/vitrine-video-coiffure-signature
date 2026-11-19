@@ -25,11 +25,14 @@ def build():
         'ingenierie/serve.py','ingenierie/serve_atelier.py','ingenierie/core.py','ingenierie/rendu.py',
         'ingenierie/mixage.py','ingenierie/mix_voix.py','ingenierie/rotation.py','ingenierie/postproduction.py','ingenierie/voix_texte.py',
         'ingenierie/fixtures/fiche-t2-recette.json',
+        'final.html','ingenierie/qa_film_final.py','livrables/09-film-final-t2.md','livrables/t2-final/recette-film.json',
+        'media/t2-signature-coiffure-narree.mp4','media/t2-signature-voix.vtt',
         'livrables/07-bandes-son-afrobeat.md',
     ]
     files={ROOT/n for n in (*names,*protected)}
     files.update(p for p in (ROOT/'assets').rglob('*') if p.is_file())
     files.update(p for p in (ROOT/'livrables/12-ecrans').glob('*.webp') if p.is_file())
+    files.update((ROOT/'livrables/t2-final').glob('*.webp'))
     return {'schema':'vv.coiffure.livraison/1.0','plan_canonique':PLAN.relative_to(ROOT).as_posix(),
             'artifacts':[{'path':p.relative_to(ROOT).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(files)]}
 

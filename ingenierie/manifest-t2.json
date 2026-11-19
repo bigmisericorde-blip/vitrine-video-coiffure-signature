@@ -9,13 +9,13 @@
     },
     {
       "path": "CREDITS.md",
-      "bytes": 5003,
-      "sha256": "a0681e466713f9077494d0b28648e3aacd9e59c568a430ff3908e6c725aab503"
+      "bytes": 5766,
+      "sha256": "c5f797980e5fc843c25ff8422e175c346946b35e3437e28e5422d8f4806a220d"
     },
     {
       "path": "README.md",
-      "bytes": 11585,
-      "sha256": "17eddccf783729f89968b085696ba696694c12c5d25b2b9f2f53066144cfa715"
+      "bytes": 12331,
+      "sha256": "60d11bddd8dc2cd7152f23eacbd29d93442b44b4ff7cdd6d9e3cd8729a2ba577"
     },
     {
       "path": "assets/IBMPlexMono-Medium.ttf",
@@ -86,6 +86,11 @@
       "path": "assets/film.js",
       "bytes": 2610,
       "sha256": "0ef77becbd8af510eee80c8c73e8b1609e5ce46ef22d5ce9d1478d1cb93cbdca"
+    },
+    {
+      "path": "assets/final-t2.css",
+      "bytes": 4866,
+      "sha256": "5d98c3dfff55ed2f74d4d441fa1249badc764ca8b9d3851dd479a87d773ea9a2"
     },
     {
       "path": "assets/fonts-t2/DMSerifDisplay-Regular.ttf",
@@ -183,9 +188,14 @@
       "sha256": "82be4f97992146f934b7481933d51209544b84a8453062d3b6a0f21aa8cfe78e"
     },
     {
+      "path": "final.html",
+      "bytes": 5954,
+      "sha256": "23e93950519900e7fe0238f497a938f17f5eb79492f70173f5a0a279ddb169c8"
+    },
+    {
       "path": "index.html",
-      "bytes": 5793,
-      "sha256": "d0def438d5d4ab086295099906e58009d0f9144eeb8db8270a51b8429bbef06d"
+      "bytes": 5866,
+      "sha256": "121baa8406e25466cbcf7e2ebac175b2e87c6ac11512d005b34ed96f4a50d224"
     },
     {
       "path": "ingenierie/afrobeat.json",
@@ -248,6 +258,11 @@
       "sha256": "e7dd451ccc0560737687794c83d7c2972a4aa578ac2caabad28ccf37a02b58dc"
     },
     {
+      "path": "ingenierie/qa_film_final.py",
+      "bytes": 7624,
+      "sha256": "3a4beb5cd5817941291cba672264737349d447fdd72c4b0e1f723232b3e9596f"
+    },
+    {
       "path": "ingenierie/recette-sonore.json",
       "bytes": 4304,
       "sha256": "f6e3a18f303522ea0a8613085c88283bcb40b6464f3c43b82c9738d063f5df78"
@@ -291,6 +306,11 @@
       "path": "livrables/07-bandes-son-afrobeat.md",
       "bytes": 2204,
       "sha256": "f497274145b1294affed4e560b78c0c0f4633ac5d3aae95a4e3bb903a71665a6"
+    },
+    {
+      "path": "livrables/09-film-final-t2.md",
+      "bytes": 4825,
+      "sha256": "5db6baf161f0eef1cb0575a597cd1697c1131ae7b1e726bd2d5d776d361f6967"
     },
     {
       "path": "livrables/12-ecrans/01.webp",
@@ -353,6 +373,41 @@
       "sha256": "5a6baf9d2dd58e3c3fd7b00aa00dbdaa7263115ab245e3f219ce160e3af1b6a8"
     },
     {
+      "path": "livrables/t2-final/00-avant.webp",
+      "bytes": 19332,
+      "sha256": "cfcf8c1b8806228ee4aff43883f5b974752a485f823d8277c32abe57f9f09173"
+    },
+    {
+      "path": "livrables/t2-final/01-revelation.webp",
+      "bytes": 26630,
+      "sha256": "e4ebff649dc55da0e3201343c358b14703562d171fc01aefd8f8218762ad5d31"
+    },
+    {
+      "path": "livrables/t2-final/02-accroche.webp",
+      "bytes": 28624,
+      "sha256": "9a644de8e97d40fda87ebe73bb7205952d7ae209c3df0004cef6dd39687fc651"
+    },
+    {
+      "path": "livrables/t2-final/03-offre.webp",
+      "bytes": 24186,
+      "sha256": "c8cd8f1772da2c7aac4e879955b58f5a87d637fb66a0b80d777288f5ab339d67"
+    },
+    {
+      "path": "livrables/t2-final/04-resultat.webp",
+      "bytes": 26414,
+      "sha256": "58f73f2f4a5ae214a44a4b2db455b1de489072c09bc6fae4dca0da64843b6727"
+    },
+    {
+      "path": "livrables/t2-final/05-carton.webp",
+      "bytes": 31534,
+      "sha256": "40cf8391349a496a74bb3495d14013287130496f962f5a9d56730cdfff523345"
+    },
+    {
+      "path": "livrables/t2-final/recette-film.json",
+      "bytes": 7010,
+      "sha256": "aabc44d85bec6b02e3f24f3e5b7f9860310d798f7560a2c8c93dd45ca515253a"
+    },
+    {
       "path": "media/04-vitrine-video-signature-muette.mp4",
       "bytes": 9060752,
       "sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d"
@@ -396,6 +451,16 @@
       "path": "media/afrobeat/fvv-ghj3du94kp45fclg9a9ofcqb.mp4",
       "bytes": 9688002,
       "sha256": "b8346fd7f6771fb7cf1b306a6ab8ce885063104e23365bebb349d9a6f6524b54"
+    },
+    {
+      "path": "media/t2-signature-coiffure-narree.mp4",
+      "bytes": 14599394,
+      "sha256": "73f2d47496a26c6016e241925d749e75d55cab14835157a24a641cf430bc4725"
+    },
+    {
+      "path": "media/t2-signature-voix.vtt",
+      "bytes": 476,
+      "sha256": "a16aafc746631239af8b5b2201f1a2d712595eb63fab0b9c6e00d95636811a55"
     },
     {
       "path": "requirements-atelier.txt",

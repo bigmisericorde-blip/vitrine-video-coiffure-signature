@@ -1,0 +1,234 @@
+{
+  "resultat": "PASS",
+  "version_gabarit": "1.0.0",
+  "template_id": "T2",
+  "audio_profile": "coiffure-afrobeat-amapiano",
+  "base_publiee": "1b3b4344ede81564d238309c76c13b135031193c",
+  "plan": "ingenierie/plan.json",
+  "plan_sha256": "9142ee9ec90b4b9b351dce37e163df976005344a8f1517fd866c98718c4ba9f2",
+  "fiche": {
+    "salon": "Studio Vitrine",
+    "ville": "Cotonou",
+    "service": "Coupe + barbe",
+    "prix": "1 500 FCFA",
+    "resultatChoix": "autre",
+    "resultatAutre": "Contours nets, profil soigné.",
+    "action": "Prendre rendez-vous",
+    "contact": "Réservation en ligne",
+    "source": "demo"
+  },
+  "fiction": "Démonstration. Ni adresse précise ni contact personnel.",
+  "rushs": [
+    {
+      "id": "S1",
+      "fichier": "media/S1.mp4",
+      "sha256": "4e3cb23b82836ffc3cda23bf4e0b9c052938157b623078c24fa976d782140ee6",
+      "duree_s": 6
+    },
+    {
+      "id": "S2",
+      "fichier": "media/S2.mp4",
+      "sha256": "c6c53da93ddfa3940e546e0119a9cb494238702d6d2bbf81d28e28c5aa5556fc",
+      "duree_s": 7
+    },
+    {
+      "id": "S3",
+      "fichier": "media/S3.mp4",
+      "sha256": "45383ab9f745701b43af3a69d5f2ebb5ce2b533d09d393c193c6e2ca1e9aceeb",
+      "duree_s": 7
+    },
+    {
+      "id": "S4",
+      "fichier": "media/S4.mp4",
+      "sha256": "9a919a7fe081572e47cedfa6a98a95ff776634808b55debdf4633ca115d6f25e",
+      "duree_s": 7
+    }
+  ],
+  "polices": {
+    "nom": {
+      "chemin": "assets/fonts-t2/PinyonScript-Regular.ttf",
+      "sha256": "4aab130a6ed27f8b8117738c84a5602edf9300cdcc0651a9a65bf96f451ac29a",
+      "teinte_base": "#fff5df"
+    },
+    "prestation": {
+      "chemin": "assets/fonts-t2/DMSerifDisplay-Regular.ttf",
+      "sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616"
+    }
+  },
+  "rendu": {
+    "fichier": "media/t2-signature-coiffure-narree.mp4",
+    "sha256": "73f2d47496a26c6016e241925d749e75d55cab14835157a24a641cf430bc4725",
+    "octets": 14599394,
+    "duree_s": 30,
+    "largeur": 720,
+    "hauteur": 1280,
+    "fps": 30,
+    "images": 900,
+    "video": "H.264",
+    "audio": "AAC LC 48 kHz stéréo",
+    "avc_copie_depuis_rendu_web": "SHA256=0347c22728c1a21f66ac03da9773d202a73f1e4241a9c9210035c64f081231a9"
+  },
+  "son": {
+    "titre": "Harbor Lanterns",
+    "auteur": "FreeVibeVault",
+    "id": "fvv-ghj3du94kp45fclg9a9ofcqb",
+    "licence": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb",
+    "debut_original_s": 0,
+    "lufs_i": -16.93,
+    "dbtp": -4.91,
+    "voix": {
+      "presente": true,
+      "debit_modifie": false,
+      "position_s": 0.0,
+      "ducking_db": 13.0,
+      "fenetres_voix_s": [
+        [
+          0.65,
+          2.65
+        ],
+        [
+          3.03,
+          4.51
+        ],
+        [
+          5.32,
+          6.51
+        ],
+        [
+          6.79,
+          7.85
+        ],
+        [
+          10.76,
+          15.48
+        ],
+        [
+          16.3,
+          17.45
+        ],
+        [
+          17.81,
+          20.79
+        ],
+        [
+          24.67,
+          26.64
+        ],
+        [
+          26.97,
+          28.65
+        ]
+      ],
+      "provenance": "Voix synthétique FR préparée pour Studio Vitrine ; cinq prises d’origine, pas de synthèse Piper."
+    }
+  },
+  "phrases": [
+    {
+      "repere": "S1 — Accroche",
+      "debut_s": 0.61,
+      "fin_s": 4.53,
+      "texte": "Votre charme est naturel. Faites-en votre signature.",
+      "prise_source_sha256": "6ee055004b8bbe7574194ed9e301533e2d3cb8ad7515656224e10b84e4f02f3b"
+    },
+    {
+      "repere": "S2 — Geste",
+      "debut_s": 5.28,
+      "fin_s": 7.89,
+      "texte": "Une coupe précise, une barbe dessinée.",
+      "prise_source_sha256": "4f705455323f7d5e9ab2466027fece4f7355f8d813c674b474069d2a87f44d14"
+    },
+    {
+      "repere": "S3 — Offre",
+      "debut_s": 10.73,
+      "fin_s": 15.51,
+      "texte": "Chez Studio Vitrine, coupe et barbe, le tout à mille cinq cents francs CFA.",
+      "prise_source_sha256": "0ce78b17979b865a6ffc361e05e210f2ce551ea975be2e2b7faee8bf55e3ca31"
+    },
+    {
+      "repere": "S4 — Résultat",
+      "debut_s": 16.27,
+      "fin_s": 20.82,
+      "texte": "Face au miroir, comme une impression d’avoir rajeuni de plus de dix ans.",
+      "prise_source_sha256": "5122b71e7af2a9283fd1597c40ba5619d577d8a43486f7cd43ebbf02d138b068"
+    },
+    {
+      "repere": "S4 — Invitation",
+      "debut_s": 24.64,
+      "fin_s": 28.68,
+      "texte": "Venez découvrir la différence. Réservez votre créneau en ligne.",
+      "prise_source_sha256": "e45384de879faf8858b06b2278f8a37c5bcf9357fe86a855d960f0ca061b67e7"
+    }
+  ],
+  "photogrammes_secondes": {
+    "00-avant": 0.07,
+    "01-revelation": 0.48,
+    "02-accroche": 1.24,
+    "03-offre": 3.42,
+    "04-resultat": 17.55,
+    "05-carton": 27.56
+  },
+  "ancienne_recette_modifiee": false,
+  "references_ecoute_audio_modifiees": false,
+  "controle_intelligibilite": {
+    "methode": "ASR base multilingue en local, intervalles du MP4 final mixé",
+    "controle_mots": [
+      {
+        "repere": "S1 — Accroche",
+        "transcription_indicative": "Votre charme est naturel. Faites-en votre signature.",
+        "mots_attendus_reconnus": {
+          "charme": true,
+          "signature": true
+        }
+      },
+      {
+        "repere": "S2 — Geste",
+        "transcription_indicative": "Une coupe précise, une barbe dessinée.",
+        "mots_attendus_reconnus": {
+          "coupe": true,
+          "barbe": true
+        }
+      },
+      {
+        "repere": "S3 — Offre",
+        "transcription_indicative": "Chez Studio Vitrine, coupe et barbe le tout à 1500 francs CFA.",
+        "mots_attendus_reconnus": {
+          "coupe": true,
+          "barbe": true,
+          "cfa": true,
+          "Studio Vitrine": true,
+          "1 500 FCFA": true
+        }
+      },
+      {
+        "repere": "S4 — Résultat",
+        "transcription_indicative": "Face au miroir, comme une impression d'avoir ragony de plus de 10 ans.",
+        "mots_attendus_reconnus": {
+          "miroir": true,
+          "10 ans (dix ans)": true
+        }
+      },
+      {
+        "repere": "S4 — Invitation",
+        "transcription_indicative": "Venez découvrir la différence, réservez votre créneau en ligne.",
+        "mots_attendus_reconnus": {
+          "creneau": true,
+          "en ligne": true
+        }
+      }
+    ],
+    "precision": "Recoupement des termes clés, pas validation mot à mot. Le modèle a notamment mal orthographié « rajeuni » ; la transcription de référence est celle des prises sources."
+  },
+  "generation_image": {
+    "url_gabarit": "https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/",
+    "prises_validees": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "mp4_identique_au_blob_du_lecteur": true,
+    "controle_accompagnement_aac": "copie AAC identique au fond Harbor Lanterns intégré avant mixage"
+  },
+  "photogrammes_extraits_du_mp4_final": true
+}

@@ -4,6 +4,12 @@
 
 [Remplir ta fiche](index.html) · [Ouvrir les 12 écrans](ecrans.html) · [Exemple avec musique](film.html?test=VV-COIF-01) · [Master muet](media/04-vitrine-video-signature-muette.mp4) · [Rapport de recette T2](livrables/08-recette-t2.md)
 
+## Film final narré — Studio Vitrine
+
+[**Regarder et télécharger le film sur GitHub Pages**](https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/final.html) · [MP4](media/t2-signature-coiffure-narree.mp4) · [Contrôle des textes, rushs et voix](livrables/09-film-final-t2.md)
+
+Ce MP4 de 30 s, réalisé avec les quatre rushs d’exemple du T2, incruste **Studio Vitrine · Cotonou · Coupe + barbe · 1 500 FCFA** et l’action finale. Les cinq prises de voix française déjà préparées sont mixées sur *Harbor Lanterns*. Il est pré-rendu : le lecteur public ne dépend pas de l’atelier de voix.
+
 ## Essayer ou préparer un spot commercial
 
 1. Saisir le nom du salon, le lieu, la prestation, le tarif éventuel, le résultat à montrer et l’action finale. N’indiquer qu’un contact à publier. **Relire la fiche dans les 12 écrans** ouvre des aperçus liés à cette fiche, sans validation.
@@ -89,6 +95,7 @@ python -m pytest -q ingenierie
 python ingenierie/build_manifest_t2.py --check
 python ingenierie/qa_ui.py --local
 python ingenierie/qa_audio_web.py --local
+python ingenierie/qa_film_final.py --local          # film narré : fichier, lecteur, sous-titres, téléchargement
 python ingenierie/qa_t2.py --importer --output /dossier/prive/recette
 # Avec serve_atelier.py et le modèle FR installés :
 python ingenierie/qa_t2.py --url http://localhost:8080 --voix --output /dossier/prive/recette
