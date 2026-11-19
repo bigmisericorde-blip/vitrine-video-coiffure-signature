@@ -1,5 +1,8 @@
 {
   "schema":"vv.coiffure.plan/1.0",
+  "template_id":"T2",
+  "version":"1.0.0",
+  "audio_profile":"coiffure-afrobeat-amapiano",
   "fixture":"cas-test.json",
   "name":"Le passage vert",
   "spec_sources":{"t1_public":"ad4ff15a76dcba7bd08b7e8f56052e842b3e794f","write_back":false},
