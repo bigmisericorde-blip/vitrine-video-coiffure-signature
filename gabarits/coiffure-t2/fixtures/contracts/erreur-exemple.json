@@ -1,0 +1,9 @@
+{
+  "schema": "vv.coiffure.render-error/1",
+  "template_id": "COIFFURE-T2",
+  "template_version": "2.0.0-rc.1",
+  "job_id": null,
+  "code": "UNSUPPORTED_MEDIA",
+  "message": "La prise S3 ne respecte pas le format ou la durée attendue.",
+  "retryable": true
+}

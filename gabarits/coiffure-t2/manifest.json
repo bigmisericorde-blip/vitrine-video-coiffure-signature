@@ -1,0 +1,521 @@
+{
+  "schema": "vv.coiffure.integration-bundle/1",
+  "template_id": "COIFFURE-T2",
+  "version": "2.0.0-rc.1",
+  "status": "local_candidate",
+  "execution_profile": "browser-webcodecs",
+  "audio_profile": "coiffure-en-etapes",
+  "music_catalogue_version": "1.0.0",
+  "approved_visual_reference_sha256": "42a9810b07729052ee5c82fe852b7f2e8e213d7e1b4d08f7a707584c2051d318",
+  "source_tree_sha256": "8ed1dd79a626121b91f02cb7977fc1e41386458ce27fe2827fcb6a95e2e9d72c",
+  "submitted_commit": null,
+  "source_directory_proposal": "gabarits/coiffure-t2/",
+  "ota_deployed": false,
+  "added_voice_off": false,
+  "third_party_demo_footage_included": false,
+  "mode_demo": "mires graphiques originales",
+  "local_only_limits": [
+    "Pas de preuve de CI distante ou de recette sur appareil physique.",
+    "Aucun rush de revue R04 ou dérivé de ce rush."
+  ],
+  "files": [
+    {
+      "path": "CREDITS.md",
+      "bytes": 2967,
+      "sha256": "473c2fd17bcc210b4c3ecdf0b6bc5def02f341629c11c2bd33c063fcf878b70b",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "INTEGRATION.md",
+      "bytes": 6372,
+      "sha256": "08cbf199f7dcf8cd5b227be7e36e8ff2b6ccb929d7ef9cf85aeb42a3f5985e40",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2134,
+      "sha256": "ddd31f265d0986085b6f908443300b2983ecb7068309fb8804f9b07ff47cfe89",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/IBMPlexMono-Medium.ttf",
+      "bytes": 136704,
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+      "role": "police_locale"
+    },
+    {
+      "path": "assets/Manrope.ttf",
+      "bytes": 164700,
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+      "role": "police_locale"
+    },
+    {
+      "path": "assets/Montserrat-Variable.ttf",
+      "bytes": 744936,
+      "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+      "role": "police_locale"
+    },
+    {
+      "path": "assets/OFL-Montserrat.txt",
+      "bytes": 4400,
+      "sha256": "861d64229728cd65a98d119612c12769582574d1a092f0b63c8b0fd474e7065f",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/OFL-Plex.txt",
+      "bytes": 4362,
+      "sha256": "d741e57d5f865e294df801f96b7b5161a88b211df65887e4358d271c9fc5fb4f",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/OFL-PlusJakartaSans.txt",
+      "bytes": 4401,
+      "sha256": "f9a8e776b4b048227f2f046b8716083eb04b1539d9ad1d4b87e81c1df28f86e3",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/OFL.txt",
+      "bytes": 4386,
+      "sha256": "d6a309fcfb963d329a93baf9df66fa5f3c23a4be2b5f67edf24d6cafecde12ac",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/PlusJakartaSans-Variable.ttf",
+      "bytes": 176288,
+      "sha256": "89b3fb38aa0d275d7a731d0d817a4f1622b316b4d7fbdedcf02ee9099ff68bc8",
+      "role": "police_locale"
+    },
+    {
+      "path": "assets/capture.mjs",
+      "bytes": 21055,
+      "sha256": "993eed307f2fba25f3deca428144d1969cd8d19422a419de62935b85d17ee55d",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/ecrans-production.mjs",
+      "bytes": 3182,
+      "sha256": "947136f3f861210ef1af51644385c88cba9034c9747ebad5c638d6d1773a2a5e",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/engine/contract.mjs",
+      "bytes": 6280,
+      "sha256": "12748b63613d3d617df70f4d9fe15bad6b7a65bd3418627ec7bd24300c9b1353",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/engine/fiche.mjs",
+      "bytes": 2450,
+      "sha256": "3ff41caed4fad37c249ad93dc641f38d5c8bbc9377feadb843832d3d245c1557",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/engine/music.mjs",
+      "bytes": 2443,
+      "sha256": "dc5a146a39e2d66f57c08ca58e4ce2f2675097d0d4dfd7738271ee00ac57826c",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/engine/resources.mjs",
+      "bytes": 3706,
+      "sha256": "304c2a35b3a55fc26d83c54ccddbf9b3bffafa1bfea45e791c6d864cd004b985",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/engine/rotation.mjs",
+      "bytes": 3287,
+      "sha256": "dd749ae054aae37f0b9466e09a2e909cb116174ce14f6721d24bafa6705a60f2",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/fiche-production.mjs",
+      "bytes": 4456,
+      "sha256": "a0c6d299a6bb45064f4f37feb6b257a2aee37c0e1d7c8a4377c4a1d4223662d1",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/media.mjs",
+      "bytes": 1881,
+      "sha256": "9873dce047f519a814a298233e7ca3eb101595583b1deec36f68505a8f5b2d93",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/motion.mjs",
+      "bytes": 5538,
+      "sha256": "957d5cf874d479ae97fc43db1995cf441d46c9f07c2faa66fbc9c55badb1ec46",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/render.worker.mjs",
+      "bytes": 5768,
+      "sha256": "8d11af296a4e26ae7f16252f95d528bdf1e139dc70eecceb014973c948129e53",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/result.css",
+      "bytes": 2503,
+      "sha256": "cc1d78cb27c2620e49d14db1126b2c69600332af244570817cd1e31db9d97390",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/simulation-t2.css",
+      "bytes": 18598,
+      "sha256": "bd3ea42b2b339a7d44219f8d7a0f2a0cb5237750244e8676cc564b43f5fa4c53",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/texte/Chewy-Regular.ttf",
+      "bytes": 41248,
+      "sha256": "7cf75ea288f82fd20badea8ab4da7a656a96a7277c170811e813b3d3d6294147",
+      "role": "police_locale"
+    },
+    {
+      "path": "assets/texte/LICENSE-Chewy.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/texte/lettrage.mjs",
+      "bytes": 7025,
+      "sha256": "8f64f02620a5e08d50fc235918a1f1d977fcb77ef989d326e8c75912550517e3",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/texte/modele-visuel.mjs",
+      "bytes": 6730,
+      "sha256": "94fa5a6372000dba213a8b2e7f1acc706c330eaca14cdd79fe11ca08822b10cf",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/texte/police.json",
+      "bytes": 10882,
+      "sha256": "ff6dc540519b3be24a1b94a45b8a15adad96ca710656949c8b04cd07f5730ffb",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/SOURCES.md",
+      "bytes": 835,
+      "sha256": "bf3c7c72b303aa81422ae2d8f45e3df390064d3accc1c5b69b6a7d51fb6aa02c",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/mediabunny-1.66.1.min.mjs",
+      "bytes": 757803,
+      "sha256": "19062c195ea4d32bc4eefd3a7254ae0e8a901bc0607ac3a0174013e165980498",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/mediabunny-LICENSE.txt",
+      "bytes": 16726,
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/web.css",
+      "bytes": 9304,
+      "sha256": "bea15797e8006aa761acb0dbab4294f69eb812277c6bd8c4b93fb7298581e801",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "audio/music/CREDITS.md",
+      "bytes": 2173,
+      "sha256": "67a8a81980743c4c2db414ce7f73fedb10494b4601f22890fcd8b9070e0a0e11",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "audio/music/catalogue.json",
+      "bytes": 4371,
+      "sha256": "d91580bfcd2ea7d3761d6670f4d12900685f38fcff0d88b7532e3dc2a9fe9d2d",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "audio/music/fonds/A.m4a",
+      "bytes": 740407,
+      "sha256": "e6c9f21e2d9dd3b66156197eb491f6a3767e7597f0f49abc38e3662827865c0e",
+      "role": "fond_musical_cc_by_4"
+    },
+    {
+      "path": "audio/music/fonds/B.m4a",
+      "bytes": 776766,
+      "sha256": "6a05fe7670a0f8c32c3aa07e6ea00a13198a1bdeffbfbdbbfc8925a3d6b09fe9",
+      "role": "fond_musical_cc_by_4"
+    },
+    {
+      "path": "audio/music/fonds/C.m4a",
+      "bytes": 749864,
+      "sha256": "592680399f40d785ea70649838612ea4343b6cd24c1dc14ed2051d943a9a7f25",
+      "role": "fond_musical_cc_by_4"
+    },
+    {
+      "path": "audio/music/fonds/D.m4a",
+      "bytes": 751198,
+      "sha256": "92b80ae9456c2d7793abbdf383e584166c9ebaf207c8830fc45c752e617bcdac",
+      "role": "fond_musical_cc_by_4"
+    },
+    {
+      "path": "capture/guide.json",
+      "bytes": 4544,
+      "sha256": "ca0d5132bc4a10704cbcbef50473ab8862635059dac0c1368cd0069a5d2c52b2",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "config/template.json",
+      "bytes": 1892,
+      "sha256": "68b9ef568806e608304f5380a57ff3c6e7bbb85d4f5a3075c7c1490ad3171ba5",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "conformance/12-ecrans/01.webp",
+      "bytes": 24582,
+      "sha256": "9a31f8cbe708aefe5f02f4ee6f6a1e5a48e5f1d3738d1486d6e08bed03a7fc8e",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/02.webp",
+      "bytes": 13782,
+      "sha256": "64457992fae453fdb2e5dd66b1d8f7d46bcd5d80ae8ab5ef5619933acf809ffd",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/03.webp",
+      "bytes": 20422,
+      "sha256": "213c261d6f249a3ce07199e817e6cb8b7e75215c734c396bf6f0e49f99b5e7c8",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/04.webp",
+      "bytes": 24346,
+      "sha256": "7eba6b9c5312c1b3a88a0bb90725d832979ed5782d8c538fc445e340a4cc3c4d",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/05.webp",
+      "bytes": 14742,
+      "sha256": "fd1ab4d04e5aaacd5e796a78e09c33559caa6eb46fed98233b35639b34720296",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/06.webp",
+      "bytes": 21296,
+      "sha256": "7368ad14ea8d73f61a9f6190b2ee6502c8fd59db1b1b9f49fab9ee61ad444c21",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/07.webp",
+      "bytes": 25198,
+      "sha256": "e4fc08c71c6462a826f9226b9741846b00091645ee6dcbaf223e79d69064658b",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/08.webp",
+      "bytes": 18162,
+      "sha256": "6d6711fb54ea45f531134d14653acb608bf62227535f25b1226d1aea5ab45591",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/09.webp",
+      "bytes": 24492,
+      "sha256": "54797a1e25f1f85860370aad32da9706eea6140be652d46c9a6aba719791ba9c",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/10.webp",
+      "bytes": 25550,
+      "sha256": "73181a8b1627825c67f90496572279e1d1b4df5d7297bd7c7b8ea6065ba6ce40",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/11.webp",
+      "bytes": 14970,
+      "sha256": "071cf6d304d7203e8c0da16d9f057d95f606bbf4a2f66ca04d3ab956de25ca8a",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/12-ecrans/12.webp",
+      "bytes": 22138,
+      "sha256": "6ce6d1b636aed37c733dafcf9b8287297a8857b406087946ec691285b8c0334a",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/Recette-integrale.json",
+      "bytes": 3406,
+      "sha256": "ec0f08c3f222ebad95752819cc1829880d30e674b2576f31a716ae66b6f8e15d",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/Tests-contrats-rotation.json",
+      "bytes": 396,
+      "sha256": "9ce1d8ff0b6645578823a2d5e3b39d055acb6106689545d6b06367b4034f0eaa",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "conformance/Tests-schemas.json",
+      "bytes": 65,
+      "sha256": "6296584757b77b22253642352b55b3aa372cbe1691aa9c0926f6a44cbb521a56",
+      "role": "preuve_locale"
+    },
+    {
+      "path": "docs/12-ecrans.md",
+      "bytes": 2174,
+      "sha256": "ec59e55b949c1cf6ea2b3cd1d13b98ee4f05be5f59b1ae8f34f97cd08d0d6f80",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "ecrans.html",
+      "bytes": 2348,
+      "sha256": "146d3637c36faacc74401c79d5a51a92a40d3ad8739607636004d3e9a8f229cb",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "fixtures/contracts/erreur-exemple.json",
+      "bytes": 260,
+      "sha256": "566de109f3b5f635513ba7c91633a39eb435a501ba943e8ffaca0c812be7ed9d",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "fixtures/contracts/job-3-prises.json",
+      "bytes": 737,
+      "sha256": "f46165fe8d1aa04717f0bce5c764ed75bf392e56a509a1f41089d1318f1f8675",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "fixtures/contracts/job-4-prises.json",
+      "bytes": 721,
+      "sha256": "ecd6140730a29d079013e69fdcd700493c88a5e3fbd76fea4dab1a8186936ad2",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "fixtures/contracts/resultat-exemple.json",
+      "bytes": 714,
+      "sha256": "c253ef170324004eba4895e375f50507707cfbc6e9f534caf97cefa772d12084",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "fixtures/media/S1.mp4",
+      "bytes": 215486,
+      "sha256": "b7b256360de81afc8baf9759a5f26232581c92e31eb2fd7efe386e1ab43c4937",
+      "role": "mire_graphique_sans_audio"
+    },
+    {
+      "path": "fixtures/media/S2.mp4",
+      "bytes": 262285,
+      "sha256": "0515559fe63444bfc6b44da35d0911f30ebe2b0ee0aee5201e4ab81b412a784c",
+      "role": "mire_graphique_sans_audio"
+    },
+    {
+      "path": "fixtures/media/S3.mp4",
+      "bytes": 317115,
+      "sha256": "3c683b8586aeb5e84dc204ddd5fcc23b41d72de022661f41f66d627a46ea161c",
+      "role": "mire_graphique_sans_audio"
+    },
+    {
+      "path": "fixtures/media/S4.mp4",
+      "bytes": 290535,
+      "sha256": "0d6c038fe951405c63e788ce4e7bfe6fc2a4b5753b25e55abb9b73bddbab63f3",
+      "role": "mire_graphique_sans_audio"
+    },
+    {
+      "path": "formulaire/exemples.json",
+      "bytes": 2428,
+      "sha256": "4e27a6b52acae433bff0c0a48f634e40df9ad489448a06715cedff6bb37c529b",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "formulaire/habillage.json",
+      "bytes": 3392,
+      "sha256": "28ddea776acfd549d6ac91cf2c08a815f4ef7a615f5c9a9b9f57c6c622dcdfa3",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "formulaire/questions.json",
+      "bytes": 4856,
+      "sha256": "dacd6298ed576b3a9334f517c09020300928e282c0074f54d99bde3fc2ddc06d",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3329,
+      "sha256": "3353b3c90d028df93b40f90aafe4e7ed35adb503999017ef0292f6e38bdb3d39",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "ingenierie/plan.json",
+      "bytes": 4891,
+      "sha256": "a4bcb1974da1bebb095a4e4b8b9edbbb7f3a889bf2adc7ad75a51afbe212054d",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "schemas/render-error.schema.json",
+      "bytes": 1639,
+      "sha256": "8f0b7227983473e842ff809b1eae9904a4e9d9f53d8a9f5bd01fa8b1fce21249",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "schemas/render-job.schema.json",
+      "bytes": 5806,
+      "sha256": "8d557522bb80d7dd16e0018b39cfdd890d42f0c70d93d9ee9e992e52721ee130",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "schemas/render-result.schema.json",
+      "bytes": 4555,
+      "sha256": "ecbaa149870931fe1b51dfea3de601d6d2ab2f916e2e8043db1bfd1be8fc3c1a",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "schemas/template.schema.json",
+      "bytes": 3725,
+      "sha256": "e7e33b3e8d4d6635d867a678dd5046e2f98cc8424157c756087847e740261b77",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "simulation.html",
+      "bytes": 7134,
+      "sha256": "5a5f96d3928e8a4e4fb046ab06eff31222e7259c70792d158f90fe5ba486124c",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "tools/mires.py",
+      "bytes": 2501,
+      "sha256": "42a148032c7475b4c1cc15cb3713d05d619cd8505309ef4a65cabfb70602d7f8",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "tools/packager.py",
+      "bytes": 9284,
+      "sha256": "19be2237fe4399f072d74dc84afc4badf347c7c8fd4837653bac04bc4f9ddd32",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "tools/preview.py",
+      "bytes": 1158,
+      "sha256": "379c593f8bff5cb2a1817ff4f15ae26841bba5a5c094e0dde5d005d9d2b9cf6a",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "tools/qa-production.py",
+      "bytes": 19216,
+      "sha256": "f4451116fd953887a26f6fbb6b2716266483c8f86424fc450b90df69956edac9",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "tools/qa-requirements.txt",
+      "bytes": 53,
+      "sha256": "f59be9cebcae2d8e23d66e8c3cec042310128949c6e4fefbb924a7dd23bf81e4",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "tools/test-production.mjs",
+      "bytes": 4740,
+      "sha256": "cf7f73654bd6786f0258e686d2d06acbd73f0891e8707cdb226b465389bbe5da",
+      "role": "contrat_ou_outil"
+    },
+    {
+      "path": "tools/verify-contracts.py",
+      "bytes": 1361,
+      "sha256": "a5e7f3075d5bc93c4a38bec616a1ba4e56c292446c532b376c05b0ec4ceb854f",
+      "role": "contrat_ou_outil"
+    }
+  ]
+}

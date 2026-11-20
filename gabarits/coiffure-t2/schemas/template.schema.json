@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COIFFURE-T2 — canonique candidat",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "../schemas/template.schema.json"
+    },
+    "schema": {
+      "const": "vv.coiffure.template/1"
+    },
+    "template_id": {
+      "const": "COIFFURE-T2"
+    },
+    "version": {
+      "const": "2.0.0-rc.1"
+    },
+    "status": {
+      "const": "local_candidate"
+    },
+    "audio_profile": {
+      "const": "coiffure-en-etapes"
+    },
+    "execution_profile": {
+      "const": "browser-webcodecs"
+    },
+    "paths": {
+      "const": {
+        "entry": "index.html",
+        "guide": "capture/guide.json",
+        "questions": "formulaire/questions.json",
+        "habillage": "formulaire/habillage.json",
+        "font_meta": "assets/texte/police.json",
+        "plan": "ingenierie/plan.json",
+        "catalogue": "audio/music/catalogue.json",
+        "worker": "assets/render.worker.mjs"
+      }
+    },
+    "base": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revision": {
+          "const": "2.0.0-revue.4"
+        },
+        "plan_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "approved_master_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "revision",
+        "plan_sha256",
+        "approved_master_sha256"
+      ]
+    },
+    "editorial_revision": {
+      "const": "r04-texte-02"
+    },
+    "capture": {
+      "const": {
+        "min_seconds": {
+          "S1": 6,
+          "S2": 7,
+          "S3": 7,
+          "S4": 7
+        },
+        "max_input_bytes": 41943040,
+        "source_audio": "review_only",
+        "three_files_rule": "S3_from_S2_only_after_crop_review",
+        "allowed_formats": [
+          "MP4",
+          "MOV",
+          "WebM"
+        ]
+      }
+    },
+    "audio": {
+      "const": {
+        "catalogue_version": "1.0.0",
+        "tracks_per_output": 1,
+        "added_voice_off": false,
+        "source_audio_in_output": false,
+        "rotation_scope": "local_browser_per_origin",
+        "no_immediate_repeat": true,
+        "fixture_affects_rotation": false
+      }
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mime": {
+          "const": "video/mp4"
+        },
+        "video_codec": {
+          "const": "h264"
+        },
+        "width": {
+          "const": 720
+        },
+        "height": {
+          "const": 1280
+        },
+        "fps": {
+          "const": 30
+        },
+        "frames": {
+          "const": 900
+        },
+        "duration_ms": {
+          "const": 30000
+        },
+        "audio_codec": {
+          "const": "aac-lc"
+        },
+        "audio_sample_rate": {
+          "const": 48000
+        },
+        "audio_channels": {
+          "const": 2
+        }
+      },
+      "required": [
+        "mime",
+        "video_codec",
+        "width",
+        "height",
+        "fps",
+        "frames",
+        "duration_ms",
+        "audio_codec",
+        "audio_sample_rate",
+        "audio_channels"
+      ]
+    },
+    "runtime": {
+      "const": {
+        "secure_context": true,
+        "asset_policy": "same_origin_only",
+        "needs_browser_storage": true,
+        "requires_web_locks": true,
+        "networks_external": false
+      }
+    }
+  },
+  "required": [
+    "$schema",
+    "schema",
+    "template_id",
+    "version",
+    "status",
+    "audio_profile",
+    "execution_profile",
+    "paths",
+    "base",
+    "editorial_revision",
+    "capture",
+    "audio",
+    "media",
+    "runtime"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "vv.coiffure.render-result/1",
+  "template_id": "COIFFURE-T2",
+  "template_version": "2.0.0-rc.1",
+  "job_id": "8b203ea8a7cc01de62181b3b65cebd5a",
+  "mode": "merchant",
+  "source_count": 4,
+  "detail": "distinct",
+  "music": {
+    "variant": "A",
+    "track_id": "fma-279239",
+    "catalogue_version": "1.0.0"
+  },
+  "media": {
+    "mime": "video/mp4",
+    "video_codec": "h264",
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "frames": 900,
+    "duration_ms": 30000,
+    "audio_codec": "aac-lc",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2,
+    "bytes": 123456,
+    "sha256": "a7fdd7c8edd52faaa635e2be13fbad03a9516758369c0eeb8e71f307fca1c139"
+  },
+  "added_voice_off": false
+}
