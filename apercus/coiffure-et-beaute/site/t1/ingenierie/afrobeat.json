@@ -1,0 +1,134 @@
+{
+  "schema": "vv.coiffure.afrobeat/1.2",
+  "profile_id": "coiffure-afrobeat-amapiano",
+  "recherche": "https://pixabay.com/music/search/afrobeat/?order=trending",
+  "page": 1,
+  "releve": "2026-11-18",
+  "candidats": [
+    "622493",
+    "622492",
+    "445661",
+    "598119",
+    "554537",
+    "149058",
+    "573648",
+    "554549",
+    "573944",
+    "593655",
+    "569473",
+    "554543",
+    "573643",
+    "455843",
+    "601035",
+    "464383",
+    "540950",
+    "453701",
+    "239426",
+    "406552"
+  ],
+  "selection_initiale_pixabay": [
+    "239426",
+    "573944",
+    "569473",
+    "453701"
+  ],
+  "selection_finale": [
+    {
+      "position": 1,
+      "id": "fma-279236",
+      "depart_original": true,
+      "decision": "Remplacement de Go Down 239426 approuvé ; privilégier l’attaque d’origine."
+    },
+    {
+      "position": 2,
+      "id": "fvv-ghj3du94kp45fclg9a9ofcqb",
+      "depart_original": true,
+      "decision": "Harbor Lanterns, remplacement audio écouté et validé ; tempo naturel."
+    },
+    {
+      "position": 3,
+      "id": "569473",
+      "decision": "Original Pixabay conservé."
+    },
+    {
+      "position": 4,
+      "id": "fma-265362",
+      "decision": "Remplacement de Seyra 453701 approuvé."
+    }
+  ],
+  "ecartes_par_utilisateur": [
+    "622493",
+    "540950",
+    "445661",
+    "239426",
+    "453701",
+    "fma-276761"
+  ],
+  "pistes": [
+    {
+      "id": "fma-279236",
+      "titre": "Afrobeat",
+      "auteur": "Alex Morgan",
+      "plateforme": "fma",
+      "source": "https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afrobeat-1/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "content_id": "non-verifie",
+      "fichier": "alex-morgan-afrobeat-fma-279236.mp3",
+      "sha256": "b0996cc536147f63826b3f553b40d0d3b31a4153493314328aba91f6a3192b73",
+      "intro_0_3_s": "Première attaque grave-médium à 0,065 s ; accents à 0,195 et 0,335 s. Le rythme est net avant la coupe à 1,40 s. Départ original conservé.",
+      "bpm": 105.95,
+      "temps_fort_s": 11.497607,
+      "depuis_s": 0,
+      "depart_original": true
+    },
+    {
+      "id": "fvv-ghj3du94kp45fclg9a9ofcqb",
+      "titre": "Harbor Lanterns",
+      "auteur": "FreeVibeVault",
+      "source": "https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "licence_editeur": "https://freevibevault.com/license",
+      "plateforme": "freevibevault",
+      "content_id": "non-verifie",
+      "fichier": "freevibevault-harbor-lanterns-extrait-prive.mp3",
+      "sha256": "fabc9b6c2ffb9b1bb83860d3465d28a41fff695816a043996aaaea7cb2e883df",
+      "sha256_original": "547ea151e39e94de6a0e2997aebddc0fb49be0b04fc50d76f1b9d2c7473b416b",
+      "intro_0_3_s": "Piano feutré ; intro originale conservée. Contraste avec l’Afrobeat du premier spot.",
+      "bpm": 113.64,
+      "temps_fort_s": 0.25,
+      "depuis_s": 0,
+      "depart_original": true,
+      "tempo_natif": true
+    },
+    {
+      "id": "569473",
+      "titre": "Afrobeat Afro Beat",
+      "auteur": "ARPMedia",
+      "plateforme": "pixabay",
+      "source": "https://pixabay.com/music/afrobeat-afrobeat-afro-beat-569473/",
+      "licence": "https://pixabay.com/service/license-summary/",
+      "content_id": "enregistre",
+      "fichier": "arpmedia-afrobeat-afro-beat-569473.mp3",
+      "sha256": "8cc3ae6499844eeaa75c039a36f325395eee6d3eda52ac03c2bfd2b8f1547f07",
+      "intro_0_3_s": "Environ 92 % de l’énergie sous 500 Hz ; intro dominée par le grave. Extrait à 6,887 s pour le raccord des iris.",
+      "bpm": 98.22,
+      "temps_fort_s": 9.81717,
+      "depuis_s": 6.847239
+    },
+    {
+      "id": "fma-265362",
+      "titre": "Amapiano",
+      "auteur": "Elijah_K",
+      "plateforme": "fma",
+      "source": "https://freemusicarchive.org/music/elijah-k/single/amapiano/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "content_id": "non-verifie",
+      "fichier": "elijah-k-amapiano-fma-265362.mp3",
+      "sha256": "2fd9095484f813ae5fd78426b61f70f3fdc8633e58935d01d95be3d99dc1e3a7",
+      "intro_0_3_s": "Intro très douce ; premières percussions franches autour de 2,35 s. Extrait retenu à 9,837 s pour la variante de fond.",
+      "bpm": 102.0,
+      "temps_fort_s": 12.342696,
+      "depuis_s": 9.812249
+    }
+  ]
+}

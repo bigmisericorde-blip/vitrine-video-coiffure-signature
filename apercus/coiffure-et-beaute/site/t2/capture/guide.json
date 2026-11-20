@@ -1,0 +1,155 @@
+{
+  "schema": "vv.coiffure.capture/1",
+  "id": "COIFFURE-T2",
+  "source_audio": "review_only",
+  "consent": "Demande l’accord de la personne avant de filmer et de diffuser les images.",
+  "sound": "Le micro est facultatif. Le son original de la prise reste disponible à la relecture. Le film exporté utilise uniquement le fond musical, sans voix ajoutée.",
+  "scenes": [
+    {
+      "n": 1,
+      "id": "S1",
+      "secondes": 6,
+      "titre": "AVANT",
+      "consigne": "Filme la zone avant de commencer.",
+      "a_filmer": [
+        "Cadre l’état de départ."
+      ],
+      "a_eviter": [
+        "Ne bouge pas brusquement."
+      ],
+      "question_relecture": "Voit-on bien l’état de départ ?",
+      "fixture_path": "fixtures/media/S1.mp4"
+    },
+    {
+      "n": 2,
+      "id": "S2",
+      "secondes": 7,
+      "titre": "GESTE",
+      "consigne": "Filme un seul geste que l’on peut bien suivre.",
+      "a_filmer": [
+        "Laisse le geste visible."
+      ],
+      "a_eviter": [
+        "Ne bouge pas brusquement."
+      ],
+      "question_relecture": "Voit-on bien le geste choisi ?",
+      "fixture_path": "fixtures/media/S2.mp4"
+    },
+    {
+      "n": 3,
+      "id": "S3",
+      "secondes": 7,
+      "titre": "DÉTAIL",
+      "consigne": "Montre de près le détail choisi.",
+      "a_filmer": [
+        "Garde l’image nette."
+      ],
+      "a_eviter": [
+        "Ne bouge pas brusquement."
+      ],
+      "question_relecture": "Le détail est-il net et bien visible ?",
+      "fixture_path": "fixtures/media/S3.mp4"
+    },
+    {
+      "n": 4,
+      "id": "S4",
+      "secondes": 7,
+      "titre": "RÉSULTAT",
+      "consigne": "Montre le résultat sur la même personne.",
+      "a_filmer": [
+        "Reprends l’angle de départ."
+      ],
+      "a_eviter": [
+        "Ne bouge pas brusquement."
+      ],
+      "question_relecture": "Comprend-on le résultat sans texte ni musique ?",
+      "fixture_path": "fixtures/media/S4.mp4"
+    }
+  ],
+  "screens": [
+    {
+      "order": 1,
+      "id": "COIFFURE-T2.S1_A_GUIDE",
+      "slot": "S1",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 2,
+      "id": "COIFFURE-T2.S1_B_RECORDING",
+      "slot": "S1",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 3,
+      "id": "COIFFURE-T2.S1_C_REVIEW",
+      "slot": "S1",
+      "state": "C",
+      "phase": "relecture"
+    },
+    {
+      "order": 4,
+      "id": "COIFFURE-T2.S2_A_GUIDE",
+      "slot": "S2",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 5,
+      "id": "COIFFURE-T2.S2_B_RECORDING",
+      "slot": "S2",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 6,
+      "id": "COIFFURE-T2.S2_C_REVIEW",
+      "slot": "S2",
+      "state": "C",
+      "phase": "relecture"
+    },
+    {
+      "order": 7,
+      "id": "COIFFURE-T2.S3_A_GUIDE",
+      "slot": "S3",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 8,
+      "id": "COIFFURE-T2.S3_B_RECORDING",
+      "slot": "S3",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 9,
+      "id": "COIFFURE-T2.S3_C_REVIEW",
+      "slot": "S3",
+      "state": "C",
+      "phase": "relecture"
+    },
+    {
+      "order": 10,
+      "id": "COIFFURE-T2.S4_A_GUIDE",
+      "slot": "S4",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 11,
+      "id": "COIFFURE-T2.S4_B_RECORDING",
+      "slot": "S4",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 12,
+      "id": "COIFFURE-T2.S4_C_REVIEW",
+      "slot": "S4",
+      "state": "C",
+      "phase": "relecture"
+    }
+  ]
+}

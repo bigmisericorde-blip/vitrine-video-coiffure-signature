@@ -1,0 +1,33 @@
+{
+  "schema":"vv.coiffure.plan/1.0",
+  "template_id":"T2",
+  "version":"1.0.0",
+  "audio_profile":"coiffure-afrobeat-amapiano",
+  "fixture":"cas-test.json",
+  "name":"Le passage vert",
+  "spec_sources":{"t1_public":"ad4ff15a76dcba7bd08b7e8f56052e842b3e794f","write_back":false},
+  "design":{"palette":{"deep":"#062629","dark":"#0B3F3E","pine":"#08553F","green":"#0B9466","light":"#40D6A1","mint":"#BDF4D8","white":"#F5FAF3"},"fonts":{"title":"Manrope.ttf","data":"IBMPlexMono-Medium.ttf"},"safe":[44,96,676,1116],"format":"9:16","shadow":"cool-green","badge_from_stage":"cut","badge_to_stage":"lockup","motion":{"hook_ease":14,"iris_center":[555,211],"booking_select_at":0.53}},
+  "shots":[
+    {"id":"P01","scene":"S1","in":0,"out":42,"src":2,"speed":1.0,"zoom":[1.01,1.065],"anchor":[0.48,0.43],"stage":"hook","reason":"Visage et prestation avant toute explication"},
+    {"id":"P02","scene":"S1","in":42,"out":150,"src":44,"speed":1.0,"zoom":[1.065,1.085],"anchor":[0.48,0.43],"stage":"offer","reason":"Composition à deux zones : professionnel + prix"},
+    {"id":"P03","scene":"S2","in":150,"out":214,"src":6,"speed":1.0,"zoom":[1.02,1.075],"anchor":[0.51,0.42],"stage":"cut","reason":"La tondeuse établit une preuve de geste"},
+    {"id":"P04","scene":"S2","in":214,"out":282,"src":71,"speed":1.0,"zoom":[1.20,1.24],"anchor":[0.48,0.42],"stage":"cut_close","reason":"Coupe dans le geste, changement d’échelle sans prise supplémentaire"},
+    {"id":"P05","scene":"S2","in":282,"out":330,"src":141,"speed":1.0,"zoom":[1.08,1.04],"anchor":[0.52,0.40],"stage":"cut_alt","reason":"Sortir du macro et préparer le raccord d’outil"},
+    {"id":"P06","scene":"S3","in":330,"out":400,"src":7,"speed":1.0,"zoom":[1.035,1.09],"anchor":[0.48,0.51],"stage":"detail","reason":"Le deuxième geste justifie la formule"},
+    {"id":"P07","scene":"S3","in":400,"out":474,"src":80,"speed":1.0,"zoom":[1.22,1.26],"anchor":[0.62,0.59],"stage":"detail_close","reason":"Voir le contact outil/barbe, pas seulement le décor"},
+    {"id":"P08","scene":"S4","in":474,"out":539,"src":5,"speed":1.0,"zoom":[1.02,1.07],"anchor":[0.53,0.43],"stage":"result","reason":"Respiration visuelle sur le profil fini"},
+    {"id":"P09","scene":"S4","in":539,"out":625,"src":70,"speed":1.0,"zoom":[1.21,1.24],"anchor":[0.65,0.40],"stage":"result_close","reason":"Courte vérification en rapprochement du même profil"},
+    {"id":"P10","scene":"S4","in":625,"out":720,"src":156,"speed":0.48,"zoom":[1.05,1.09],"anchor":[0.58,0.45],"stage":"booking","reason":"Matérialiser le chemin vers un créneau sans afficher de fausse disponibilité"},
+    {"id":"P11","scene":"S4","in":720,"out":792,"src":171,"speed":0.46,"zoom":[1.06,1.10],"anchor":[0.56,0.42],"stage":"action","reason":"Raccorder le bouton au résultat et à la ville"},
+    {"id":"P12","scene":"S4","in":792,"out":900,"src":112,"speed":0.73,"zoom":[1.015,1.06],"anchor":[0.54,0.43],"stage":"lockup","reason":"Verrouillage CTA stable 3,60 s, image encore vivante"}
+  ],
+  "cuts":[
+    {"at":42,"id":"split_slide","frames":18}, {"at":150,"id":"iris_vert","frames":12},
+    {"at":214,"id":"cut_geste","frames":0}, {"at":282,"id":"cut_geste","frames":0},
+    {"at":330,"id":"match_outil","frames":0}, {"at":400,"id":"cut_geste","frames":0},
+    {"at":474,"id":"iris_vert","frames":12}, {"at":539,"id":"match_profil","frames":0},
+    {"at":625,"id":"ui_push","frames":12}, {"at":720,"id":"cut_geste","frames":0},
+    {"at":792,"id":"rail_vert","frames":0}
+  ],
+  "audio":{"enabled":false,"policy":"no_stream","next_pass":"Voix claire; musique originale en retrait; trois accents synchronisés au maximum. Aucun son source réutilisé."}
+}

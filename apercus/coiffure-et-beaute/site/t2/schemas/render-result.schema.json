@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COIFFURE-T2 — RenderResult",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "vv.coiffure.render-result/1"
+    },
+    "template_id": {
+      "const": "COIFFURE-T2"
+    },
+    "template_version": {
+      "const": "2.0.0-rc.1"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{32}$"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "merchant",
+        "technical_fixture"
+      ]
+    },
+    "source_count": {
+      "enum": [
+        3,
+        4
+      ]
+    },
+    "detail": {
+      "type": "string",
+      "enum": [
+        "distinct",
+        "S3_from_S2"
+      ]
+    },
+    "music": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "A"
+            },
+            "track_id": {
+              "const": "fma-279239"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "B"
+            },
+            "track_id": {
+              "const": "fma-277070"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "C"
+            },
+            "track_id": {
+              "const": "fma-228953"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "D"
+            },
+            "track_id": {
+              "const": "fma-224058"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        }
+      ]
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mime": {
+          "const": "video/mp4"
+        },
+        "video_codec": {
+          "const": "h264"
+        },
+        "width": {
+          "const": 720
+        },
+        "height": {
+          "const": 1280
+        },
+        "fps": {
+          "const": 30
+        },
+        "frames": {
+          "const": 900
+        },
+        "duration_ms": {
+          "const": 30000
+        },
+        "audio_codec": {
+          "const": "aac-lc"
+        },
+        "audio_sample_rate": {
+          "const": 48000
+        },
+        "audio_channels": {
+          "const": 2
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 15001,
+          "maximum": 67108864
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "mime",
+        "video_codec",
+        "width",
+        "height",
+        "fps",
+        "frames",
+        "duration_ms",
+        "audio_codec",
+        "audio_sample_rate",
+        "audio_channels",
+        "bytes",
+        "sha256"
+      ]
+    },
+    "added_voice_off": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema",
+    "template_id",
+    "template_version",
+    "job_id",
+    "mode",
+    "source_count",
+    "detail",
+    "music",
+    "media",
+    "added_voice_off"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "detail": {
+            "const": "S3_from_S2"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "mode": {
+            "const": "merchant"
+          },
+          "source_count": {
+            "const": 3
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "source_count": {
+            "const": 4
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "chromium": "159.0.8154.6",
+  "fiches": [
+    {
+      "atelier": "t1",
+      "metier": "coiffure",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t1",
+      "metier": "manucure",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t1",
+      "metier": "pedicure",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t1",
+      "metier": "visage",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t1",
+      "metier": "corps",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t1",
+      "metier": "maquillage",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t1",
+      "metier": "regard",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t1",
+      "metier": "autre",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "coiffure",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "manucure",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "pedicure",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "visage",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "corps",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "maquillage",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "regard",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    },
+    {
+      "atelier": "t2",
+      "metier": "autre",
+      "fiche": "acceptée",
+      "prise": "S1_A"
+    }
+  ],
+  "galeries": [
+    {
+      "atelier": "t1",
+      "metier": "coiffure",
+      "ecrans": 12,
+      "lectures_effectives": 8,
+      "validation_possible": false,
+      "lecture_film": true
+    },
+    {
+      "atelier": "t1",
+      "metier": "manucure",
+      "ecrans": 12,
+      "lectures_effectives": 8,
+      "validation_possible": false,
+      "lecture_film": true
+    },
+    {
+      "atelier": "t1",
+      "metier": "visage",
+      "ecrans": 12,
+      "lectures_effectives": 8,
+      "validation_possible": false,
+      "lecture_film": true
+    },
+    {
+      "atelier": "t2",
+      "metier": "coiffure",
+      "ecrans": 12,
+      "lectures_effectives": 8,
+      "validation_possible": false,
+      "lecture_film": true
+    },
+    {
+      "atelier": "t2",
+      "metier": "manucure",
+      "ecrans": 12,
+      "lectures_effectives": 8,
+      "validation_possible": false,
+      "lecture_film": true
+    },
+    {
+      "atelier": "t2",
+      "metier": "visage",
+      "ecrans": 12,
+      "lectures_effectives": 8,
+      "validation_possible": false,
+      "lecture_film": true
+    }
+  ],
+  "erreurs_js": [],
+  "requetes_bloquees": [],
+  "erreurs_http": []
+}

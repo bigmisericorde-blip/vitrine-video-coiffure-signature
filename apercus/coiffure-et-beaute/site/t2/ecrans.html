@@ -1,0 +1,15 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+<title>Les 12 écrans · T2 · Coiffure et beauté</title><link rel="icon" href="../commun/vitrine.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/web.css"><link rel="stylesheet" href="../commun/atelier.css">
+<script type="module" src="assets/ecrans-production.mjs"></script></head><body><div class="shell">
+<header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><div class="top-links"><a class="back" href="../" id="secteur">← Coiffure et beauté</a><a class="mono" href="index.html" id="return">Ma fiche →</a></div></header>
+<main><div class="screen-layout screen-layout-v2"><section class="screen-intro"><p class="kicker"><span id="version">T2</span> · <span id="profileLabel">Coiffure et beauté</span></p><h1 class="headline">Les 12<span>écrans.</span></h1>
+<p class="lead">Pour chaque prise : la consigne, le chrono et la relecture.</p><p class="note" id="galleryCase" role="status">Chargement des écrans…</p><p class="note" id="caseStatus"></p>
+<div class="links"><a class="button" href="#resultat" id="jumpFilm" hidden>Voir le film</a><a href="index.html" id="essai" hidden>Essayer avec ces prises →</a></div></section>
+<section class="screen-view card" id="apercu" aria-label="Aperçu d’un écran"><p class="kicker" id="screenLabel">Écran 01/12</p><h2 class="screen-text" id="screenText"></h2><p class="note" id="screenDetail"></p>
+<div class="screen-select"><label for="screenSelect">Aller à un écran</label><select id="screenSelect"></select></div>
+<div class="screen-pager"><button class="button" id="screenPrev" type="button" disabled>← Précédent</button><button class="button" id="screenNext" type="button" disabled>Suivant →</button></div>
+<div class="links screen-open"><a id="screenAlone" href="simulation.html">Ouvrir cet écran seul ↗</a></div>
+<figure class="screen-picture picture-frame"><iframe id="screenLive" title="Aperçu de la prise" width="375" height="680" tabindex="-1" allow="autoplay"></iframe></figure></section>
+<section class="screen-index" aria-label="Liste des écrans"><nav id="screenList"></nav><p class="note">Ces écrans montrent le parcours. Ils ne valident aucune prise.</p></section></div>
+<section class="card result-example" id="resultat" hidden><p class="kicker">LES QUATRE PRISES MONTÉES</p><h2 id="filmTitre">Film d’exemple</h2><video controls playsinline preload="metadata" id="film" aria-label="Film d’exemple monté"></video><p class="note" id="filmCredit"></p><div class="links"><a class="button" id="downloadDemo" download>Télécharger le film</a><a id="another" href="index.html">Faire ma propre vidéo →</a></div></section>
+</main><footer class="info"><a href="../CREDITS.html">Crédits des images et des musiques</a></footer></div></body></html>

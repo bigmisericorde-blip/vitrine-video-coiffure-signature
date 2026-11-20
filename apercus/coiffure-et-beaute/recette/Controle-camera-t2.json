@@ -1,0 +1,10 @@
+{
+  "chromium": "159.0.8154.6",
+  "source": "S1 réelle Manucure, injectée comme caméra virtuelle portrait 360 × 640",
+  "micro": false,
+  "annulation_et_retour_consigne": true,
+  "enregistrement_chrono_relecture_validation": true,
+  "liberation_camera": true,
+  "appareil_physique": false,
+  "erreurs_js": []
+}

@@ -1,0 +1,132 @@
+{
+  "manucure": {
+    "auteur": "Artem Podrez",
+    "licence": "https://www.pexels.com/license/",
+    "prises": [
+      {
+        "prise": "S1",
+        "source": "https://www.pexels.com/video/person-getting-her-nails-done-4783398/",
+        "cdn": "https://videos.pexels.com/video-files/4783398/4783398-uhd_2560_1440_30fps.mp4",
+        "source_sha256": "5ad428e849e504893c189e4a1eadfa44c7a39f4e021cebed2111a4f8515c30db",
+        "debut_s": 0.96,
+        "facteur_duree": 1,
+        "crop_source": [
+          810,
+          1440,
+          800,
+          0
+        ],
+        "export_s": 6,
+        "extrait_sha256": "af8e73d1a7c940bca2fbe6df43505a449b1623de0e8c2c9c91944e5baeb040d8"
+      },
+      {
+        "prise": "S2",
+        "source": "https://www.pexels.com/video/woman-getting-red-nail-polish-4783390/",
+        "cdn": "https://videos.pexels.com/video-files/4783390/4783390-uhd_2560_1440_30fps.mp4",
+        "source_sha256": "132224387634822ae980d09c24cbf0c4620ed585085a7d2173a5f018b078f472",
+        "debut_s": 1.15,
+        "facteur_duree": 1,
+        "crop_source": [
+          810,
+          1440,
+          648,
+          0
+        ],
+        "export_s": 7,
+        "extrait_sha256": "fc0c19183c2a87c7d4d3b5b91b790656c5b5be75b59da524b847fd83d31ebed5"
+      },
+      {
+        "prise": "S3",
+        "source": "https://www.pexels.com/video/woman-getting-red-nail-polish-4783391/",
+        "cdn": "https://videos.pexels.com/video-files/4783391/4783391-uhd_2560_1440_30fps.mp4",
+        "source_sha256": "75f606180a3ed011d3f1117334e24a5fa70ae0282ccbc42e46717ccbcfaf8023",
+        "debut_s": 1.18,
+        "facteur_duree": 1,
+        "crop_source": [
+          810,
+          1440,
+          1056,
+          0
+        ],
+        "export_s": 7,
+        "extrait_sha256": "58477714dadf4c69f99cbc14840ec1be174f0b82dfad8fc28649af7963256ccf"
+      },
+      {
+        "prise": "S4",
+        "source": "https://www.pexels.com/video/person-showing-her-manicured-nails-4783779/",
+        "cdn": "https://videos.pexels.com/video-files/4783779/4783779-uhd_2560_1440_30fps.mp4",
+        "source_sha256": "4fd14484649e452fc849f56734c13b3165c8a29da1bffdf2aa1a61b824869bf1",
+        "debut_s": 5.0,
+        "facteur_duree": 1.37,
+        "crop_source": [
+          810,
+          1440,
+          344,
+          0
+        ],
+        "export_s": 7,
+        "extrait_sha256": "92f5144554fb57c4a86f6087a78acf03367e45861e287a044850eb1b87ae6a1d"
+      }
+    ]
+  },
+  "visage": {
+    "auteur": "olia danilevich",
+    "licence": "https://www.pexels.com/license/",
+    "prises": [
+      {
+        "prise": "S1",
+        "source": "https://www.pexels.com/video/a-person-applying-facial-mask-on-a-client-9335904/",
+        "cdn": "https://videos.pexels.com/video-files/9335904/9335904-hd_1920_1080_25fps.mp4",
+        "source_sha256": "f0e91d7d8013fbdd27ff7066173be4d3058b7b9c8a3a8c6b22d143e122acc750",
+        "debut_s": 0.05,
+        "facteur_duree": 1,
+        "crop_source": [
+          606,
+          1080,
+          286,
+          0
+        ],
+        "export_s": 6,
+        "extrait_sha256": "3801b4600de4c2f857475ce81bc8037c61eda25e372278dbcb5033a7f17fc6d3"
+      },
+      {
+        "prise": "S2",
+        "source": "https://www.pexels.com/video/a-person-applying-a-face-mask-on-a-client-s-face-9335905/",
+        "cdn": "https://videos.pexels.com/video-files/9335905/9335905-hd_1080_1920_25fps.mp4",
+        "source_sha256": "96c8091bb387757f4b345cd4da50405d137c6012eef9af98414b8a4c09e84692",
+        "debut_s": 4.6,
+        "facteur_duree": 1,
+        "crop_source": null,
+        "export_s": 7,
+        "extrait_sha256": "cf0e15dc5b671fc6fc8f619414d49029fe145862d4a36ca7b35757e44beceb28"
+      },
+      {
+        "prise": "S3",
+        "source": "https://www.pexels.com/video/a-person-applying-a-face-mask-on-client-s-face-9335918/",
+        "cdn": "https://videos.pexels.com/video-files/9335918/9335918-hd_1080_1920_25fps.mp4",
+        "source_sha256": "17ef442e423490b93f89ec3d4f24f5b09e506d6f4778754a2dc843872170aedc",
+        "debut_s": 2.28,
+        "facteur_duree": 1,
+        "crop_source": null,
+        "export_s": 7,
+        "extrait_sha256": "0b7cfb140b70781684de1d55ead817f9c8782326c21803e8ea0fbc92e7d33668"
+      },
+      {
+        "prise": "S4",
+        "source": "https://www.pexels.com/video/a-person-removing-the-face-mask-on-a-woman-s-face-9335919/",
+        "cdn": "https://videos.pexels.com/video-files/9335919/9335919-hd_1920_1080_25fps.mp4",
+        "source_sha256": "22835fdc9b752208b816078250e6fdce3d92c1757011e56db8de7b2f8521dad2",
+        "debut_s": 6.12,
+        "facteur_duree": 1.62,
+        "crop_source": [
+          606,
+          1080,
+          406,
+          0
+        ],
+        "export_s": 7,
+        "extrait_sha256": "649de5ab6c5f8ddf76b61f268f3a292f7e271f6cf92d4c800188285833293835"
+      }
+    ]
+  }
+}

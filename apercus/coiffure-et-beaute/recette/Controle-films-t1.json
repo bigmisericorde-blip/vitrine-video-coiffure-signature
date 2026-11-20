@@ -1,0 +1,68 @@
+{
+  "chromium": "159.0.8154.6",
+  "films": [
+    {
+      "atelier": "t1",
+      "metier": "manucure",
+      "source": "exemple filmé",
+      "ecrans": [
+        "S1_A",
+        "S1_B",
+        "S1_C",
+        "S2_A",
+        "S2_B",
+        "S2_C",
+        "S3_A",
+        "S3_B",
+        "S3_C",
+        "S4_A",
+        "S4_B",
+        "S4_C"
+      ],
+      "reemploi_s3": false,
+      "refus_puis_relecture": false,
+      "audio": "fvv-ghj3du94kp45fclg9a9ofcqb",
+      "lecteur_et_telechargement": "même fichier",
+      "h264": "720x1280",
+      "frames": 900,
+      "duration_s": 30.0,
+      "aac_paquets_identiques": true,
+      "decode_integral": true,
+      "sha256": "ea8904d5e512fcbd053ae366f01889e97e5ecf6acfd9c2b734ad9d96f5b7ac41",
+      "bytes": 12527394
+    },
+    {
+      "atelier": "t1",
+      "metier": "visage",
+      "source": "exemple filmé",
+      "ecrans": [
+        "S1_A",
+        "S1_B",
+        "S1_C",
+        "S2_A",
+        "S2_B",
+        "S2_C",
+        "S3_A",
+        "S3_B",
+        "S3_C",
+        "S4_A",
+        "S4_B",
+        "S4_C"
+      ],
+      "reemploi_s3": false,
+      "refus_puis_relecture": false,
+      "audio": "fma-265362",
+      "lecteur_et_telechargement": "même fichier",
+      "h264": "720x1280",
+      "frames": 900,
+      "duration_s": 30.0,
+      "aac_paquets_identiques": true,
+      "decode_integral": true,
+      "sha256": "e366b8e8ef43ded4b9145ff0871dbfbb0de6e9706887a2da4210621a91aeca2a",
+      "bytes": 10769453
+    }
+  ],
+  "erreurs_js": [],
+  "requetes_bloquees": [],
+  "erreurs_http": []
+}

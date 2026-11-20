@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+<title>Ta fiche de prestation · T2 · Coiffure et beauté</title>
+<link rel="icon" href="../commun/vitrine.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/web.css"><link rel="stylesheet" href="../commun/atelier.css">
+<script type="module" src="assets/fiche-production.mjs"></script>
+</head><body><div class="shell">
+<header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><div class="top-links"><a class="back" id="home" href="../">← Coiffure et beauté</a><a class="mono" id="gallery" href="ecrans.html">Les 12 écrans →</a></div></header>
+<main class="hero"><section><p class="kicker">T2 · COIFFURE ET BEAUTÉ</p><h1 class="headline">Ta fiche<span>de prestation.</span></h1>
+<p class="lead">Décris ce qu’on verra dans ta vidéo. Le montage assemble ensuite les images, les textes et la musique, sans voix off.</p>
+<div class="card mise"><h2>Les 4 vues</h2><ol class="list"><li><span>01</span><b>Avant</b><small>6 s</small></li><li><span>02</span><b>Geste</b><small>7 s</small></li><li><span>03</span><b>Détail</b><small>7 s</small></li><li><span>04</span><b>Résultat</b><small>7 s</small></li></ol>
+<p class="note">Avec trois vidéos, reprends le geste pour le détail seulement si le gros plan te convient à la relecture.</p><div class="links"><a class="button" href="ecrans.html" id="voir">Voir les 12 écrans</a><a id="filmLink" href="ecrans.html#resultat" hidden>Voir le film d’exemple →</a></div></div>
+</section>
+<form class="card form-flow" id="testForm" autocomplete="off">
+  <div class="context-field"><label for="metier">Quel type de prestation proposes-tu ?</label><select id="metier" name="metier"></select></div>
+  <div class="fiche-group"><p class="kicker">01 · À L’IMAGE</p><div id="fieldsProof"></div></div>
+  <div class="fiche-group"><p class="kicker">02 · EN FIN DE FILM</p><div id="fieldsOffer"></div><div id="conditions"></div>
+    <label id="confirmation" class="check" hidden><input type="checkbox" id="contactConfirme"><span id="contactConfirmationLabel"></span></label>
+  </div>
+  <div class="fiche-group"><p class="kicker">03 · TOURNAGE</p>
+    <label for="framing">Que veux-tu montrer dans la dernière prise ?</label><select id="framing" name="framing"></select>
+    <label for="source">Avec quelles vidéos veux-tu monter ?</label><select id="source" name="source"><option value="client">Mes prises (caméra ou import)</option><option value="demo" disabled>Les quatre prises d’exemple</option></select>
+    <p class="note case-alert" id="sampleNote" hidden></p>
+    <p class="note" id="absenceExemple" hidden>Pas encore d’exemple filmé pour cette prestation. Tu peux continuer avec tes propres prises.</p>
+    <label class="check" id="consentClient"><input type="checkbox" id="checkedCase" required><span>J’ai l’autorisation de filmer et d’utiliser les prises que je vais ajouter.</span></label>
+  </div>
+  <button type="submit" class="button" id="startTest" disabled>Continuer vers les prises →</button>
+  <p class="note" id="formAlert" role="status" tabindex="-1"></p>
+  <noscript>Active JavaScript pour préparer la vidéo dans ton navigateur.</noscript>
+</form></main>
+<footer class="info">Tes prises restent dans ton navigateur. Le son original sert à la relecture ; le film contient seulement le fond musical. <a href="../CREDITS.html">Crédits des exemples</a>.</footer>
+</div></body></html>

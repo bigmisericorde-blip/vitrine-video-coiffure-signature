@@ -1,0 +1,118 @@
+{
+  "resultat": "PASS",
+  "master_sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d",
+  "pistes": [
+    {
+      "bpm_source": 105.95,
+      "bpm_sortie": 116.667,
+      "vitesse": 1.101148340412144,
+      "debut_s": 0,
+      "depart_original": true,
+      "iris_s": [
+        5.0,
+        15.8
+      ],
+      "ecart_grille_iris_ms": [
+        216,
+        216
+      ],
+      "ecart_grille_push_ms": 106,
+      "id": "fma-279236",
+      "source_sha256": "b0996cc536147f63826b3f553b40d0d3b31a4153493314328aba91f6a3192b73",
+      "video_sha256": "38faa76f266db570872e01b167d7474dd9d1e74a1c72a04c917fe73985f5122b",
+      "lufs_i": -20.06,
+      "dbtp": -7.21,
+      "voix": false,
+      "duree_s": 30.0,
+      "attribution": "Afrobeat — Alex Morgan | https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afrobeat-1/ | CC BY 4.0 : https://creativecommons.org/licenses/by/4.0/ | Extrait de 30 s, calage, niveau, égalisation et fondus adaptés au film.",
+      "position": 1,
+      "source": "https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afrobeat-1/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "audio_seul_sha256": "7b22c6343129a1e1fdb9bf5461bff2b46487d7e31499382a9f6122106bac1519"
+    },
+    {
+      "bpm_source": 113.64,
+      "bpm_sortie": 113.64,
+      "vitesse": 1.0,
+      "debut_s": 0,
+      "depart_original": true,
+      "iris_s": [
+        5.0,
+        15.8
+      ],
+      "ecart_grille_iris_ms": [
+        -2,
+        238
+      ],
+      "ecart_grille_push_ms": -8,
+      "id": "fvv-ghj3du94kp45fclg9a9ofcqb",
+      "source_sha256": "fabc9b6c2ffb9b1bb83860d3465d28a41fff695816a043996aaaea7cb2e883df",
+      "video_sha256": "b8346fd7f6771fb7cf1b306a6ab8ce885063104e23365bebb349d9a6f6524b54",
+      "lufs_i": -20.01,
+      "dbtp": -6.99,
+      "voix": false,
+      "duree_s": 30.0,
+      "attribution": "Harbor Lanterns — FreeVibeVault | https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb | CC BY 4.0 : https://creativecommons.org/licenses/by/4.0/ | Extrait de 30 s, calage, niveau, égalisation et fondus adaptés au film.",
+      "position": 2,
+      "source": "https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "audio_seul_sha256": "e865684206518535503e7e68906761856a82985300201a8d8fd73fd2f058517d"
+    },
+    {
+      "bpm_source": 98.22,
+      "bpm_sortie": 105.556,
+      "vitesse": 1.0746849476232492,
+      "debut_s": 6.887239458585038,
+      "depart_original": false,
+      "iris_s": [
+        5.0,
+        15.8
+      ],
+      "ecart_grille_iris_ms": [
+        0,
+        0
+      ],
+      "ecart_grille_push_ms": -82,
+      "id": "569473",
+      "source_sha256": "8cc3ae6499844eeaa75c039a36f325395eee6d3eda52ac03c2bfd2b8f1547f07",
+      "video_sha256": "cb28f9836127eb8f07a2741d14c93dc083316043d8d38ce0d5d569e9791bc39a",
+      "lufs_i": -20.04,
+      "dbtp": -6.39,
+      "voix": false,
+      "duree_s": 30.0,
+      "attribution": "Afrobeat Afro Beat — ARPMedia | https://pixabay.com/music/afrobeat-afrobeat-afro-beat-569473/ | Pixabay Content License : https://pixabay.com/service/license-summary/ | Extrait de 30 s, calage, niveau, égalisation et fondus adaptés au film.",
+      "position": 3,
+      "source": "https://pixabay.com/music/afrobeat-afrobeat-afro-beat-569473/",
+      "licence": "https://pixabay.com/service/license-summary/",
+      "audio_seul_sha256": "8679916c9bddb8503093519c4095bd7efd376eb2b6c4e219b0eefa643f7a0b0b"
+    },
+    {
+      "bpm_source": 102.0,
+      "bpm_sortie": 111.111,
+      "vitesse": 1.0893246187363834,
+      "debut_s": 9.837249376906318,
+      "depart_original": false,
+      "iris_s": [
+        5.0,
+        15.8
+      ],
+      "ecart_grille_iris_ms": [
+        0,
+        0
+      ],
+      "ecart_grille_push_ms": 173,
+      "id": "fma-265362",
+      "source_sha256": "2fd9095484f813ae5fd78426b61f70f3fdc8633e58935d01d95be3d99dc1e3a7",
+      "video_sha256": "31346ad2b8710f74866e009217f46bb866f53b33ad92655db5307963ebe20044",
+      "lufs_i": -20.05,
+      "dbtp": -4.55,
+      "voix": false,
+      "duree_s": 30.0,
+      "attribution": "Amapiano — Elijah_K | https://freemusicarchive.org/music/elijah-k/single/amapiano/ | CC BY 4.0 : https://creativecommons.org/licenses/by/4.0/ | Extrait de 30 s, calage, niveau, égalisation et fondus adaptés au film.",
+      "position": 4,
+      "source": "https://freemusicarchive.org/music/elijah-k/single/amapiano/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "audio_seul_sha256": "933f3afde2930c63b618a051febf46ca6ccc2e8d722ec892bf52d6a6e9617704"
+    }
+  ]
+}

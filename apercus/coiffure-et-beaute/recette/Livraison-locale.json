@@ -1,0 +1,718 @@
+{
+  "candidat": "coiffure-et-beaute-0.1",
+  "statut": "local, non publié",
+  "bases": {
+    "T1_main": "45048956c2163d422423168c7e6e2f538e4888b3",
+    "T2_galerie": "1bede9454e3dae179e54b93f1053decb8758a091",
+    "T2_zip_sha256": "3b189572d53dc3711f8a9d98c4626cfe14e80a0f589cd79babb19cc90467d7de"
+  },
+  "controle": {
+    "fiches": 16,
+    "ecrans_de_galerie": 72,
+    "lectures_de_prises_en_galerie": 48,
+    "exports_exemples": 4,
+    "exports_import": 2,
+    "plans_de_lettrage_T2": 96,
+    "appareil_physique": false,
+    "copie_films_coiffure_identique": true,
+    "camera_virtuelle_T2": "prise S1 Manucure, annulation puis validation",
+    "atelier_voix_T1": "mixage sans narration uniquement"
+  },
+  "site": [
+    {
+      "fichier": "CREDITS.html",
+      "octets": 2915,
+      "sha256": "e3fcb04447c1587e93451090324e17dfac678404f72e486028a59a5c661ad169"
+    },
+    {
+      "fichier": "commun/accueil.css",
+      "octets": 6883,
+      "sha256": "7773cb9128238cc3c20ac7178351c9297c77c5d66dad74cd5245996aac1a97ec"
+    },
+    {
+      "fichier": "commun/accueil.js",
+      "octets": 1804,
+      "sha256": "a55d0f2bccd7a4f023f7efcb677038569cfe6a74c0f8b9d104e1a3a0756fa547"
+    },
+    {
+      "fichier": "commun/atelier.css",
+      "octets": 2268,
+      "sha256": "7832fbcac9b3348a3e8da30a64edbad80dad2a8387f08bf6ef085844da850ba7"
+    },
+    {
+      "fichier": "commun/exemples.js",
+      "octets": 2057,
+      "sha256": "5eb56468efda71f2731c185c585965293d46e80c4dc57063250ad402325ae624"
+    },
+    {
+      "fichier": "commun/galerie.js",
+      "octets": 4122,
+      "sha256": "3f4330def62265f13a12117f121bd717545f2deb7ca3aef0c576c1631442b0a0"
+    },
+    {
+      "fichier": "commun/metiers.js",
+      "octets": 7750,
+      "sha256": "d69bebc0fe7ec2d2ee8f091ccbfaf0d3101f5416875cd64f78801245342be860"
+    },
+    {
+      "fichier": "commun/montage.mjs",
+      "octets": 1105,
+      "sha256": "665538bc2a102f7fe94177188e18af37cef489672feb731a0799e9807e055466"
+    },
+    {
+      "fichier": "commun/vitrine.svg",
+      "octets": 248,
+      "sha256": "d128599ebd794e5e8ab720912190a3ae73f2b809d3fe03e594e6e958302558c4"
+    },
+    {
+      "fichier": "exemples/coiffure-t1/S1.mp4",
+      "octets": 2733878,
+      "sha256": "4e3cb23b82836ffc3cda23bf4e0b9c052938157b623078c24fa976d782140ee6"
+    },
+    {
+      "fichier": "exemples/coiffure-t1/S2.mp4",
+      "octets": 3380210,
+      "sha256": "c6c53da93ddfa3940e546e0119a9cb494238702d6d2bbf81d28e28c5aa5556fc"
+    },
+    {
+      "fichier": "exemples/coiffure-t1/S3.mp4",
+      "octets": 3365583,
+      "sha256": "45383ab9f745701b43af3a69d5f2ebb5ce2b533d09d393c193c6e2ca1e9aceeb"
+    },
+    {
+      "fichier": "exemples/coiffure-t1/S4.mp4",
+      "octets": 4031720,
+      "sha256": "9a919a7fe081572e47cedfa6a98a95ff776634808b55debdf4633ca115d6f25e"
+    },
+    {
+      "fichier": "exemples/coiffure-t1/affiche.jpg",
+      "octets": 61000,
+      "sha256": "4f575eec6339c59a7e6e82cf79bb1c4384005fe9b2746ef2898b3ae14f28518e"
+    },
+    {
+      "fichier": "exemples/coiffure-t1/film.mp4",
+      "octets": 9060752,
+      "sha256": "64cde485d17af9e0e645b0c19526bb738e329bec0549ccfb324c43d3d0a8b76d"
+    },
+    {
+      "fichier": "exemples/coiffure-t2/S1.mp4",
+      "octets": 459544,
+      "sha256": "e37cc7d70ee8bc26ee606f4742a788491bc7380c134c46960ac27759d71f4802"
+    },
+    {
+      "fichier": "exemples/coiffure-t2/S2.mp4",
+      "octets": 835763,
+      "sha256": "1c109166edc5ab7348cfb7d178c0c701fff174745ca6ac8d267a1afba57161f4"
+    },
+    {
+      "fichier": "exemples/coiffure-t2/S3.mp4",
+      "octets": 1202217,
+      "sha256": "b2ddf1a02b97a7800e22457932bed3312eaff30e5b705389f07f1446c980b193"
+    },
+    {
+      "fichier": "exemples/coiffure-t2/S4.mp4",
+      "octets": 618184,
+      "sha256": "ac39cfdaebf1d357c463e8ce8010eed7cb90f0413979f3fa61e1d90affa1a1b0"
+    },
+    {
+      "fichier": "exemples/coiffure-t2/affiche.jpg",
+      "octets": 46791,
+      "sha256": "095d022e13a829c21c968be74a4758960e55deff809f46ca339f012e4545f4bb"
+    },
+    {
+      "fichier": "exemples/coiffure-t2/film.mp4",
+      "octets": 8100112,
+      "sha256": "efa239a54d250f4e1819715a74fb56a0b160ece9068af9264a0c447c66bafb4f"
+    },
+    {
+      "fichier": "exemples/manucure/S1.mp4",
+      "octets": 1824964,
+      "sha256": "af8e73d1a7c940bca2fbe6df43505a449b1623de0e8c2c9c91944e5baeb040d8"
+    },
+    {
+      "fichier": "exemples/manucure/S2.mp4",
+      "octets": 1953371,
+      "sha256": "fc0c19183c2a87c7d4d3b5b91b790656c5b5be75b59da524b847fd83d31ebed5"
+    },
+    {
+      "fichier": "exemples/manucure/S3.mp4",
+      "octets": 2005946,
+      "sha256": "58477714dadf4c69f99cbc14840ec1be174f0b82dfad8fc28649af7963256ccf"
+    },
+    {
+      "fichier": "exemples/manucure/S4.mp4",
+      "octets": 1081897,
+      "sha256": "92f5144554fb57c4a86f6087a78acf03367e45861e287a044850eb1b87ae6a1d"
+    },
+    {
+      "fichier": "exemples/manucure/affiche.jpg",
+      "octets": 33122,
+      "sha256": "f72ecec00be0c49a5207bdb05929d94e6aea36f28695403085da7a3c18494085"
+    },
+    {
+      "fichier": "exemples/manucure/film-t1.mp4",
+      "octets": 12527394,
+      "sha256": "ea8904d5e512fcbd053ae366f01889e97e5ecf6acfd9c2b734ad9d96f5b7ac41"
+    },
+    {
+      "fichier": "exemples/manucure/film-t2.mp4",
+      "octets": 19059569,
+      "sha256": "1a21d4747ebacc86b3052d522fac2ab1b3a83a46a6879eb3685835c1c4492b59"
+    },
+    {
+      "fichier": "exemples/visage/S1.mp4",
+      "octets": 884828,
+      "sha256": "3801b4600de4c2f857475ce81bc8037c61eda25e372278dbcb5033a7f17fc6d3"
+    },
+    {
+      "fichier": "exemples/visage/S2.mp4",
+      "octets": 1275524,
+      "sha256": "cf0e15dc5b671fc6fc8f619414d49029fe145862d4a36ca7b35757e44beceb28"
+    },
+    {
+      "fichier": "exemples/visage/S3.mp4",
+      "octets": 1185829,
+      "sha256": "0b7cfb140b70781684de1d55ead817f9c8782326c21803e8ea0fbc92e7d33668"
+    },
+    {
+      "fichier": "exemples/visage/S4.mp4",
+      "octets": 1151892,
+      "sha256": "649de5ab6c5f8ddf76b61f268f3a292f7e271f6cf92d4c800188285833293835"
+    },
+    {
+      "fichier": "exemples/visage/accueil.jpg",
+      "octets": 32005,
+      "sha256": "7c14faa646ec88032a2dd472d01ee982c528c7e980ae1e3854c36f677b12a5ef"
+    },
+    {
+      "fichier": "exemples/visage/affiche.jpg",
+      "octets": 32258,
+      "sha256": "442950d39c7c11e4262bb953d83ce7086b020a5507f57944a600bc03baa51883"
+    },
+    {
+      "fichier": "exemples/visage/film-t1.mp4",
+      "octets": 10769453,
+      "sha256": "e366b8e8ef43ded4b9145ff0871dbfbb0de6e9706887a2da4210621a91aeca2a"
+    },
+    {
+      "fichier": "exemples/visage/film-t2.mp4",
+      "octets": 18030863,
+      "sha256": "cc2d609adfc176e383b237b45d1cc6b7cace88ab43fdce0c637dc364b9b4a86e"
+    },
+    {
+      "fichier": "index.html",
+      "octets": 3516,
+      "sha256": "9a6d4176cb578b1bd5a736898c8845480c9a4cefd15286987b23fb1a912b2421"
+    },
+    {
+      "fichier": "t1/CREDITS.md",
+      "octets": 5766,
+      "sha256": "c5f797980e5fc843c25ff8422e175c346946b35e3437e28e5422d8f4806a220d"
+    },
+    {
+      "fichier": "t1/assets/IBMPlexMono-Medium.ttf",
+      "octets": 136704,
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755"
+    },
+    {
+      "fichier": "t1/assets/Manrope.ttf",
+      "octets": 164700,
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    },
+    {
+      "fichier": "t1/assets/Montserrat-Variable.ttf",
+      "octets": 744936,
+      "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7"
+    },
+    {
+      "fichier": "t1/assets/OFL-Montserrat.txt",
+      "octets": 4400,
+      "sha256": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e"
+    },
+    {
+      "fichier": "t1/assets/OFL-Plex.txt",
+      "octets": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "fichier": "t1/assets/OFL-PlusJakartaSans.txt",
+      "octets": 4402,
+      "sha256": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99"
+    },
+    {
+      "fichier": "t1/assets/OFL.txt",
+      "octets": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "fichier": "t1/assets/PlusJakartaSans-Variable.ttf",
+      "octets": 176288,
+      "sha256": "89b3fb38aa0d275d7a731d0d817a4f1622b316b4d7fbdedcf02ee9099ff68bc8"
+    },
+    {
+      "fichier": "t1/assets/afrobeat-catalogue.js",
+      "octets": 2527,
+      "sha256": "ae6a2346be4efff85e9d64fad0613b55ba1617d8652639eace71b85ce4de4647"
+    },
+    {
+      "fichier": "t1/assets/atelier.css",
+      "octets": 6263,
+      "sha256": "fd179b6e17d845e376b9e24619a1ad1c968c9733a6c73614177dadc17c72049a"
+    },
+    {
+      "fichier": "t1/assets/atelier.js",
+      "octets": 11142,
+      "sha256": "8c5293ea57c21271d0108cc0368d108ba1572d3dbe5efe1c397b9ec1e8b5a70d"
+    },
+    {
+      "fichier": "t1/assets/ecrans.js",
+      "octets": 538,
+      "sha256": "2d93c5ccaba050fa3287d0183536e39e74414149f35c9e5f13d0341e8adbe586"
+    },
+    {
+      "fichier": "t1/assets/fiche-t2.js",
+      "octets": 4050,
+      "sha256": "7ae0b0938b5e61ac55f70249a0f67d8c6f409d8c11dc510b5d27865554008a4d"
+    },
+    {
+      "fichier": "t1/assets/film.js",
+      "octets": 2610,
+      "sha256": "0ef77becbd8af510eee80c8c73e8b1609e5ce46ef22d5ce9d1478d1cb93cbdca"
+    },
+    {
+      "fichier": "t1/assets/final-t2.css",
+      "octets": 4866,
+      "sha256": "5d98c3dfff55ed2f74d4d441fa1249badc764ca8b9d3851dd479a87d773ea9a2"
+    },
+    {
+      "fichier": "t1/assets/fonts-t2/DMSerifDisplay-Regular.ttf",
+      "octets": 76580,
+      "sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616"
+    },
+    {
+      "fichier": "t1/assets/fonts-t2/OFL-dmserifdisplay.txt",
+      "octets": 4512,
+      "sha256": "aa49c876a28d8c0b0a3027d6c25b9c607eee8c0fb96165011d42a6ace1408fe1"
+    },
+    {
+      "fichier": "t1/assets/fonts-t2/OFL-pinyonscript.txt",
+      "octets": 4384,
+      "sha256": "5b6456d2e1a11e06ba40ed52863a9de58eef6221c78005abba4182bb4810fc73"
+    },
+    {
+      "fichier": "t1/assets/fonts-t2/PinyonScript-Regular.ttf",
+      "octets": 151412,
+      "sha256": "4aab130a6ed27f8b8117738c84a5602edf9300cdcc0651a9a65bf96f451ac29a"
+    },
+    {
+      "fichier": "t1/assets/reservation.js",
+      "octets": 1409,
+      "sha256": "1346794bd250485b9a4139ab33afe6c41535cf5f268675c093458c5161980612"
+    },
+    {
+      "fichier": "t1/assets/simulation-t2.css",
+      "octets": 18045,
+      "sha256": "4b53f274788cc4a9cc40095283fd697dc1aab83df1b1b0764a73715fa226229d"
+    },
+    {
+      "fichier": "t1/assets/simulation-t2.js",
+      "octets": 14918,
+      "sha256": "f8dd1d232e50ef2c7bc98c8ecad384df5a1a50b4a073b337a73004d5afa1fe94"
+    },
+    {
+      "fichier": "t1/assets/t2-motion.mjs",
+      "octets": 11867,
+      "sha256": "f57b8617972c7202adfd94dae8a7ccf6c4f47e2b9e52fea2237a499629aae733"
+    },
+    {
+      "fichier": "t1/assets/t2-render.worker.mjs",
+      "octets": 8359,
+      "sha256": "f65345991810ed403f4d4d9d9169e5159c582f0d8e8678b9011d4228b2ac70c1"
+    },
+    {
+      "fichier": "t1/assets/test.js",
+      "octets": 4440,
+      "sha256": "031fedacb6fa312ef28a9371f3dc0d28e305eca6c24ae0f6165be0d2a7390004"
+    },
+    {
+      "fichier": "t1/assets/tirage-son.js",
+      "octets": 2901,
+      "sha256": "5e339db569628898a7cda945af966e5bf316d7b488f780a7c1479b62f2278be5"
+    },
+    {
+      "fichier": "t1/assets/vendor/SOURCES.md",
+      "octets": 835,
+      "sha256": "bf3c7c72b303aa81422ae2d8f45e3df390064d3accc1c5b69b6a7d51fb6aa02c"
+    },
+    {
+      "fichier": "t1/assets/vendor/mediabunny-1.66.1.min.mjs",
+      "octets": 757803,
+      "sha256": "19062c195ea4d32bc4eefd3a7254ae0e8a901bc0607ac3a0174013e165980498"
+    },
+    {
+      "fichier": "t1/assets/vendor/mediabunny-LICENSE.txt",
+      "octets": 16726,
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04"
+    },
+    {
+      "fichier": "t1/assets/web.css",
+      "octets": 8800,
+      "sha256": "f475a23662b22c7fc643b93d77a363554752df6d17ec6c9aef3e206a19029817"
+    },
+    {
+      "fichier": "t1/atelier.html",
+      "octets": 6475,
+      "sha256": "bd23fa61b73016988c30462649c75e1dfbb1a9e4ba0f7e41cf676f16f652696b"
+    },
+    {
+      "fichier": "t1/cas-demo.js",
+      "octets": 3736,
+      "sha256": "4c40c63a35a457a91ea3f954be06ab02fd812965b36d082cb4049b1df28c5b4f"
+    },
+    {
+      "fichier": "t1/ecrans.html",
+      "octets": 3182,
+      "sha256": "ff3f1d3db951eaf1983c693fffc7333a858f839058ef886648a362421daefc40"
+    },
+    {
+      "fichier": "t1/index.html",
+      "octets": 5170,
+      "sha256": "88c78223045181b071b1544e46c7c34b834bd576a034d67c607048fdca04ae47"
+    },
+    {
+      "fichier": "t1/ingenierie/afrobeat.json",
+      "octets": 4353,
+      "sha256": "6c3e77bd1966b96176b72a6b3c5b6fb895f62b099080bc90f10dec0354d1b299"
+    },
+    {
+      "fichier": "t1/ingenierie/cas-test.json",
+      "octets": 5690,
+      "sha256": "d75ebc35690b689996bc04944ff275a67b88d42e5fbf0946a659ea32c3a9c13b"
+    },
+    {
+      "fichier": "t1/ingenierie/core.py",
+      "octets": 6036,
+      "sha256": "6b83f3df2d9f998eb12f5a6364e09658716639de18dd75d99984ec2d540b1f88"
+    },
+    {
+      "fichier": "t1/ingenierie/mix_voix.py",
+      "octets": 7647,
+      "sha256": "a603ae91ee3b26543afe798f14b32acdfb6b3ea312ea21adf93751124eaca57b"
+    },
+    {
+      "fichier": "t1/ingenierie/mixage.py",
+      "octets": 15031,
+      "sha256": "645506993449b9b8523d7bad29667ad10e310393bbf152f5cee411f7f172ca9b"
+    },
+    {
+      "fichier": "t1/ingenierie/plan.json",
+      "octets": 3668,
+      "sha256": "9142ee9ec90b4b9b351dce37e163df976005344a8f1517fd866c98718c4ba9f2"
+    },
+    {
+      "fichier": "t1/ingenierie/postproduction.py",
+      "octets": 9203,
+      "sha256": "11d83e79cc5696cd47cb2ea7bdfb009656b41b45ed2a4a6205b2bce7e065e2bc"
+    },
+    {
+      "fichier": "t1/ingenierie/prises-web.js",
+      "octets": 5590,
+      "sha256": "bbab162d3f019278a9365b4b220e1e1e9a0fc1942f506f1e7fa931d14a8476fc"
+    },
+    {
+      "fichier": "t1/ingenierie/recette-sonore.json",
+      "octets": 4684,
+      "sha256": "fe7a3b7dd3e819282667a6c44129b697738cc7668d0e7cad353a9ca6db351f06"
+    },
+    {
+      "fichier": "t1/ingenierie/rotation.py",
+      "octets": 2110,
+      "sha256": "2b9984073263b65805a45f43c8a22039fe37d6e1e90a654701dd11a79d40c165"
+    },
+    {
+      "fichier": "t1/ingenierie/serve.py",
+      "octets": 2042,
+      "sha256": "0f94b8ba9ca7a684c53361089a0f005448aa94eb99c80d59c926e78764f6aec2"
+    },
+    {
+      "fichier": "t1/ingenierie/serve_atelier.py",
+      "octets": 8554,
+      "sha256": "719d0450d27e8fa2b7cc2dc0871304543721d012085aac1caa22de6a60242dae"
+    },
+    {
+      "fichier": "t1/ingenierie/voix_texte.py",
+      "octets": 4461,
+      "sha256": "22aa69dab6ce8c13dcc54fc3b03a2d9f52c869771e00500c126786d7f177194c"
+    },
+    {
+      "fichier": "t1/media/afrobeat/569473.m4a",
+      "octets": 635453,
+      "sha256": "8679916c9bddb8503093519c4095bd7efd376eb2b6c4e219b0eefa643f7a0b0b"
+    },
+    {
+      "fichier": "t1/media/afrobeat/fma-265362.m4a",
+      "octets": 619157,
+      "sha256": "933f3afde2930c63b618a051febf46ca6ccc2e8d722ec892bf52d6a6e9617704"
+    },
+    {
+      "fichier": "t1/media/afrobeat/fma-279236.m4a",
+      "octets": 638323,
+      "sha256": "7b22c6343129a1e1fdb9bf5461bff2b46487d7e31499382a9f6122106bac1519"
+    },
+    {
+      "fichier": "t1/media/afrobeat/fvv-ghj3du94kp45fclg9a9ofcqb.m4a",
+      "octets": 610745,
+      "sha256": "e865684206518535503e7e68906761856a82985300201a8d8fd73fd2f058517d"
+    },
+    {
+      "fichier": "t1/simulation.html",
+      "octets": 8133,
+      "sha256": "1e11d1d7b984a84aaa1e7877d90393edf923738601be404be174f338b672e715"
+    },
+    {
+      "fichier": "t2/CREDITS.md",
+      "octets": 2967,
+      "sha256": "473c2fd17bcc210b4c3ecdf0b6bc5def02f341629c11c2bd33c063fcf878b70b"
+    },
+    {
+      "fichier": "t2/assets/IBMPlexMono-Medium.ttf",
+      "octets": 136704,
+      "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755"
+    },
+    {
+      "fichier": "t2/assets/Manrope.ttf",
+      "octets": 164700,
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    },
+    {
+      "fichier": "t2/assets/Montserrat-Variable.ttf",
+      "octets": 744936,
+      "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7"
+    },
+    {
+      "fichier": "t2/assets/OFL-Montserrat.txt",
+      "octets": 4400,
+      "sha256": "861d64229728cd65a98d119612c12769582574d1a092f0b63c8b0fd474e7065f"
+    },
+    {
+      "fichier": "t2/assets/OFL-Plex.txt",
+      "octets": 4362,
+      "sha256": "d741e57d5f865e294df801f96b7b5161a88b211df65887e4358d271c9fc5fb4f"
+    },
+    {
+      "fichier": "t2/assets/OFL-PlusJakartaSans.txt",
+      "octets": 4401,
+      "sha256": "f9a8e776b4b048227f2f046b8716083eb04b1539d9ad1d4b87e81c1df28f86e3"
+    },
+    {
+      "fichier": "t2/assets/OFL.txt",
+      "octets": 4386,
+      "sha256": "d6a309fcfb963d329a93baf9df66fa5f3c23a4be2b5f67edf24d6cafecde12ac"
+    },
+    {
+      "fichier": "t2/assets/PlusJakartaSans-Variable.ttf",
+      "octets": 176288,
+      "sha256": "89b3fb38aa0d275d7a731d0d817a4f1622b316b4d7fbdedcf02ee9099ff68bc8"
+    },
+    {
+      "fichier": "t2/assets/capture.mjs",
+      "octets": 21941,
+      "sha256": "66b7b62ae65972b822d1df9fdd934735ffee7e1ac8c6282d9c3adf79a464b9ce"
+    },
+    {
+      "fichier": "t2/assets/ecrans-production.mjs",
+      "octets": 872,
+      "sha256": "9cabb134012bcf578814cea089682d49df3780d1aa0b2a3b2c0802dc43665b05"
+    },
+    {
+      "fichier": "t2/assets/engine/contract.mjs",
+      "octets": 6205,
+      "sha256": "30805369ac3955a83c094fe6a84be15ab9c89a4fcc980c1c4ae6b0b39838270d"
+    },
+    {
+      "fichier": "t2/assets/engine/fiche.mjs",
+      "octets": 2732,
+      "sha256": "7b5c384c3ea2fb7baf20b6c6011bfa7e02742263b45bfb30fe87591db0f712ae"
+    },
+    {
+      "fichier": "t2/assets/engine/music.mjs",
+      "octets": 2443,
+      "sha256": "dc5a146a39e2d66f57c08ca58e4ce2f2675097d0d4dfd7738271ee00ac57826c"
+    },
+    {
+      "fichier": "t2/assets/engine/resources.mjs",
+      "octets": 3706,
+      "sha256": "304c2a35b3a55fc26d83c54ccddbf9b3bffafa1bfea45e791c6d864cd004b985"
+    },
+    {
+      "fichier": "t2/assets/engine/rotation.mjs",
+      "octets": 3288,
+      "sha256": "3b6951cc38799d4d3af0649288ece149cae36091c4b84bf0b3a7dcfb3e78365e"
+    },
+    {
+      "fichier": "t2/assets/fiche-production.mjs",
+      "octets": 5861,
+      "sha256": "87361a42e7fc612203c3f37571690aa11d32d9bb8b318a14011dc0c4104a6abe"
+    },
+    {
+      "fichier": "t2/assets/media.mjs",
+      "octets": 1929,
+      "sha256": "add6f044b0f5fc94d1fc80b6d32ddee21b3994c7faa6ba9d463047d239aa4853"
+    },
+    {
+      "fichier": "t2/assets/motion.mjs",
+      "octets": 5538,
+      "sha256": "0f00ec03e4ebcf27181b873128dc12929435bac95f0fa5dfd57818d0f7aa02a5"
+    },
+    {
+      "fichier": "t2/assets/render.worker.mjs",
+      "octets": 6093,
+      "sha256": "479dad648cb315a8c274da7ca0cac1e52409ed26d91683a776155577e229f298"
+    },
+    {
+      "fichier": "t2/assets/result.css",
+      "octets": 2503,
+      "sha256": "cc1d78cb27c2620e49d14db1126b2c69600332af244570817cd1e31db9d97390"
+    },
+    {
+      "fichier": "t2/assets/simulation-t2.css",
+      "octets": 18598,
+      "sha256": "bd3ea42b2b339a7d44219f8d7a0f2a0cb5237750244e8676cc564b43f5fa4c53"
+    },
+    {
+      "fichier": "t2/assets/texte/Chewy-Regular.ttf",
+      "octets": 41248,
+      "sha256": "7cf75ea288f82fd20badea8ab4da7a656a96a7277c170811e813b3d3d6294147"
+    },
+    {
+      "fichier": "t2/assets/texte/LICENSE-Chewy.txt",
+      "octets": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "fichier": "t2/assets/texte/lettrage.mjs",
+      "octets": 7025,
+      "sha256": "8f64f02620a5e08d50fc235918a1f1d977fcb77ef989d326e8c75912550517e3"
+    },
+    {
+      "fichier": "t2/assets/texte/modele-visuel.mjs",
+      "octets": 6725,
+      "sha256": "8fd060a80e57e7362c9f562d721707ca6274bec3dd8c9de179682d6dc0451f00"
+    },
+    {
+      "fichier": "t2/assets/texte/police.json",
+      "octets": 10882,
+      "sha256": "ff6dc540519b3be24a1b94a45b8a15adad96ca710656949c8b04cd07f5730ffb"
+    },
+    {
+      "fichier": "t2/assets/vendor/SOURCES.md",
+      "octets": 835,
+      "sha256": "bf3c7c72b303aa81422ae2d8f45e3df390064d3accc1c5b69b6a7d51fb6aa02c"
+    },
+    {
+      "fichier": "t2/assets/vendor/mediabunny-1.66.1.min.mjs",
+      "octets": 757803,
+      "sha256": "19062c195ea4d32bc4eefd3a7254ae0e8a901bc0607ac3a0174013e165980498"
+    },
+    {
+      "fichier": "t2/assets/vendor/mediabunny-LICENSE.txt",
+      "octets": 16726,
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04"
+    },
+    {
+      "fichier": "t2/assets/web.css",
+      "octets": 9304,
+      "sha256": "bea15797e8006aa761acb0dbab4294f69eb812277c6bd8c4b93fb7298581e801"
+    },
+    {
+      "fichier": "t2/audio/music/CREDITS.md",
+      "octets": 2173,
+      "sha256": "67a8a81980743c4c2db414ce7f73fedb10494b4601f22890fcd8b9070e0a0e11"
+    },
+    {
+      "fichier": "t2/audio/music/catalogue.json",
+      "octets": 4371,
+      "sha256": "d91580bfcd2ea7d3761d6670f4d12900685f38fcff0d88b7532e3dc2a9fe9d2d"
+    },
+    {
+      "fichier": "t2/audio/music/fonds/A.m4a",
+      "octets": 740407,
+      "sha256": "e6c9f21e2d9dd3b66156197eb491f6a3767e7597f0f49abc38e3662827865c0e"
+    },
+    {
+      "fichier": "t2/audio/music/fonds/B.m4a",
+      "octets": 776766,
+      "sha256": "6a05fe7670a0f8c32c3aa07e6ea00a13198a1bdeffbfbdbbfc8925a3d6b09fe9"
+    },
+    {
+      "fichier": "t2/audio/music/fonds/C.m4a",
+      "octets": 749864,
+      "sha256": "592680399f40d785ea70649838612ea4343b6cd24c1dc14ed2051d943a9a7f25"
+    },
+    {
+      "fichier": "t2/audio/music/fonds/D.m4a",
+      "octets": 751198,
+      "sha256": "92b80ae9456c2d7793abbdf383e584166c9ebaf207c8830fc45c752e617bcdac"
+    },
+    {
+      "fichier": "t2/capture/guide.json",
+      "octets": 3657,
+      "sha256": "d48cfb77defc0d14010cdc5e46c0a7e6417066be9966ecf25121802196cf8486"
+    },
+    {
+      "fichier": "t2/config/template.json",
+      "octets": 1892,
+      "sha256": "b4fe6d7b311a4986f50c44639d2488d57cf49927271b50e92a2f7744700be119"
+    },
+    {
+      "fichier": "t2/ecrans.html",
+      "octets": 2962,
+      "sha256": "f5219fdb23fac94bda6bf8c220c599a7e05e04cffb88146847af8c1c4ff268aa"
+    },
+    {
+      "fichier": "t2/formulaire/habillage.json",
+      "octets": 3425,
+      "sha256": "da425f22db70e8abf116214471757f7f5a8d3e875ffb7967be3c7faa6fe418db"
+    },
+    {
+      "fichier": "t2/formulaire/questions.json",
+      "octets": 4324,
+      "sha256": "7999f3b6a42ab74b0e651d9fdc1f5350fd49baa2eb31051145a74a0e212a9124"
+    },
+    {
+      "fichier": "t2/index.html",
+      "octets": 3593,
+      "sha256": "e45238e0a3c826b2dd3bb279f5998d91bcb03caf0e9fbc4584c41490b479af67"
+    },
+    {
+      "fichier": "t2/ingenierie/plan.json",
+      "octets": 4891,
+      "sha256": "a4bcb1974da1bebb095a4e4b8b9edbbb7f3a889bf2adc7ad75a51afbe212054d"
+    },
+    {
+      "fichier": "t2/schemas/render-error.schema.json",
+      "octets": 1639,
+      "sha256": "8f0b7227983473e842ff809b1eae9904a4e9d9f53d8a9f5bd01fa8b1fce21249"
+    },
+    {
+      "fichier": "t2/schemas/render-job.schema.json",
+      "octets": 5806,
+      "sha256": "8d557522bb80d7dd16e0018b39cfdd890d42f0c70d93d9ee9e992e52721ee130"
+    },
+    {
+      "fichier": "t2/schemas/render-result.schema.json",
+      "octets": 4555,
+      "sha256": "ecbaa149870931fe1b51dfea3de601d6d2ab2f916e2e8043db1bfd1be8fc3c1a"
+    },
+    {
+      "fichier": "t2/schemas/template.schema.json",
+      "octets": 3725,
+      "sha256": "e7e33b3e8d4d6635d867a678dd5046e2f98cc8424157c756087847e740261b77"
+    },
+    {
+      "fichier": "t2/simulation.html",
+      "octets": 7208,
+      "sha256": "818e540e8040e87c06147d0793932d3af87627b041aa17eeff29b88e276697ae"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "schema": "vv.coiffure.questions/1",
+  "revision": "beaute-fr-01",
+  "language": "fr",
+  "fields": [
+    {
+      "id": "service",
+      "group": "preuve",
+      "question": "Quelle prestation veux-tu montrer ?",
+      "hint": "Nomme une seule prestation.",
+      "required": true,
+      "min": 2,
+      "max": 34,
+      "example": "Soin du visage",
+      "display": "Révélation · nom de la prestation"
+    },
+    {
+      "id": "geste",
+      "group": "preuve",
+      "question": "Quel geste verra-t-on dans ta vidéo ?",
+      "hint": "Décris un geste qu’on verra vraiment.",
+      "required": true,
+      "min": 4,
+      "max": 34,
+      "example": "Appliquer le soin",
+      "display": "Plan de travail · deuxième ligne"
+    },
+    {
+      "id": "preuve",
+      "group": "preuve",
+      "question": "Quel détail peut-on voir de près ?",
+      "hint": "Choisis une finition visible.",
+      "required": true,
+      "min": 4,
+      "max": 36,
+      "example": "Une couche régulière",
+      "display": "Plan de détail · deuxième ligne"
+    },
+    {
+      "id": "accroche",
+      "group": "preuve",
+      "question": "Veux-tu proposer ta propre accroche ?",
+      "hint": "Facultatif : 2 à 6 mots. Vide, l’ouverture change avec la musique.",
+      "required": false,
+      "min": 4,
+      "max": 36,
+      "example": "Une coiffure qui te ressemble",
+      "display": "Ouverture · mots en cascade"
+    },
+    {
+      "id": "salon",
+      "group": "offre",
+      "question": "Quel nom doit-on lire sur la vidéo ?",
+      "hint": "Ton nom professionnel ou le nom de ton établissement.",
+      "required": false,
+      "min": 2,
+      "max": 32,
+      "example": "Studio Vitrine",
+      "display": "Signature de fin"
+    },
+    {
+      "id": "ville",
+      "group": "offre",
+      "question": "Dans quelle ville ou quel quartier travailles-tu ?",
+      "hint": "Laisse vide si tu ne veux pas l’afficher.",
+      "required": false,
+      "min": 2,
+      "max": 32,
+      "example": "Cotonou",
+      "display": "Signature de fin · lieu"
+    },
+    {
+      "id": "prix",
+      "group": "offre",
+      "question": "Quel prix veux-tu montrer ?",
+      "hint": "Facultatif. Laisse vide si tu ne veux pas afficher le prix.",
+      "required": false,
+      "min": 1,
+      "max": 18,
+      "example": "3 500 FCFA",
+      "display": "Signature de fin · tarif exact ou minimum confirmé"
+    },
+    {
+      "id": "canal",
+      "group": "offre",
+      "question": "Comment peut-on te contacter ?",
+      "hint": "Le numéro ou le lien vérifié s’affiche à côté du lecteur, pas dans le film.",
+      "required": true,
+      "options": [
+        [
+          "aucun",
+          "Pas de contact à afficher"
+        ],
+        [
+          "whatsapp",
+          "WhatsApp"
+        ],
+        [
+          "telephone",
+          "Appel téléphonique"
+        ],
+        [
+          "lien",
+          "Page de réservation"
+        ]
+      ],
+      "display": "Appel à l’action · dernière vue"
+    }
+  ],
+  "conditional": [
+    {
+      "id": "prixMode",
+      "condition": "prix non vide",
+      "choices": [
+        "fixe",
+        "minimum"
+      ],
+      "default": "fixe"
+    },
+    {
+      "id": "contact",
+      "condition": "canal autre que aucun",
+      "required": true,
+      "max": 120,
+      "format": "international +… ou URL https sans identifiants"
+    },
+    {
+      "id": "contactConfirme",
+      "condition": "canal autre que aucun",
+      "required": true,
+      "type": "boolean",
+      "label": "J’ai vérifié ce numéro ou ce lien, et j’ai le droit de le communiquer."
+    }
+  ],
+  "capteurs": [
+    {
+      "id": "S1",
+      "duration_s": 6,
+      "guide": "Filme la zone avant de commencer.",
+      "review": "Voit-on bien l’état de départ ?"
+    },
+    {
+      "id": "S2",
+      "duration_s": 7,
+      "guide": "Filme un seul geste que l’on peut bien suivre.",
+      "review": "Voit-on bien le geste choisi ?"
+    },
+    {
+      "id": "S3",
+      "duration_s": 7,
+      "guide": "Montre de près le détail choisi.",
+      "review": "Le détail est-il net et bien visible ?"
+    },
+    {
+      "id": "S4",
+      "duration_s": 7,
+      "guide": "Montre le résultat sur la même personne.",
+      "review": "Comprend-on le résultat sans texte ni musique ?"
+    }
+  ]
+}

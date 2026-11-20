@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T1 · Coiffure et beauté · Les prises</title>
+<link rel="stylesheet" href="assets/simulation-t2.css">
+<link rel="stylesheet" href="../commun/atelier.css">
+<meta name="referrer" content="same-origin">
+
+</head>
+<body>
+<main id="app">
+  <div id="testCurtain" hidden><strong id="curtainText">Ouvre ta fiche de prestation pour commencer.</strong><a href="index.html">Ouvrir ma fiche</a></div>
+  <p id="sansExtrait" class="sans-extrait" hidden>Pas d’exemple filmé pour cette prestation.</p>
+  <span class="test-id" id="testID" aria-hidden="true"></span>
+  <aside id="mediaFeedback" class="media-feedback" hidden><p id="mediaMessage" role="status"></p><button id="mediaRetry" type="button" hidden>Réessayer</button><button id="mediaBack" type="button">Revenir à la consigne</button></aside>
+  <video id="cam" playsinline muted preload="auto"></video>
+  <video id="replay" playsinline muted preload="auto"></video>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- ÉTAT A — fiche de tournage -->
+  <section class="sheet" id="sheet" aria-label="Fiche de tournage">
+    <div class="grabber"></div>
+    <header class="sheet-head">
+      <div class="head-row">
+        <div class="scene-counter" id="sceneCounter">SCÈNE 1/4</div>
+        <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="duration" id="duration">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F2621B" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span id="durationLabel">6 secondes</span>
+      </div>
+      <h1 class="scene-title" id="sceneTitle">AVANT</h1>
+    </header>
+
+    <div class="sheet-body" id="sheetBody">
+      <p class="consigne" id="consigne"></p>
+      <p id="caseContext" class="case-context" hidden></p>
+
+      <div class="block film">
+        <h2 class="block-title"><span aria-hidden="true">✓</span> À filmer</h2>
+        <ul id="listFilm"></ul>
+      </div>
+
+      <div class="block avoid">
+        <h2 class="block-title"><span aria-hidden="true">✕</span> À éviter</h2>
+        <ul id="listAvoid"></ul>
+      </div>
+
+      <div class="voice">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2621B" stroke-width="2.2" stroke-linecap="round"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
+        <div>
+          <p class="voice-title">Tu peux parler pendant que tu filmes</p>
+          <p id="voiceText"></p>
+        </div>
+      </div>
+
+      <div class="exemple">
+        <p class="exemple-title">Exemple de phrase — facultatif</p>
+        <p id="exempleText"></p>
+      </div>
+      <p class="consigne" id="captureConsent"></p>
+    </div>
+
+    <div class="sheet-foot">
+      <button type="button" class="scroll-hint" id="scrollHint" aria-controls="sheetBody" hidden>Lire la suite ↓</button>
+      <p class="take-help" id="takeHelp" hidden></p>
+      <input type="file" id="takeFile" accept="video/mp4,video/quicktime,video/webm,.mp4,.webm,.mov" hidden>
+      <input type="file" id="takeCamera" accept="video/*" capture="environment" hidden>
+      <button class="cta" id="cta">COMMENCER À FILMER</button>
+      <button type="button" class="minor" id="cameraBtn" hidden>Filmer avec mon téléphone</button>
+      <div id="flowLinks" class="flow-links" hidden><a id="editFiche" href="index.html">Modifier ma fiche</a><a id="seeScreens" href="ecrans.html">Les 12 écrans</a></div>
+    </div>
+  </section>
+
+  <!-- ÉTAT B — enregistrement : aperçu, chrono, barre -->
+  <div class="rec" id="rec" aria-hidden="true">
+    <div class="chrono" id="chrono"><span class="dot"></span><span id="chronoVal">0:00</span></div>
+    <p class="rec-hint" id="recordLabel">Enregistrement simulé</p>
+    <p class="rec-context" id="recContext" hidden></p>
+    <div class="bar" id="bar"><i id="barFill"></i></div>
+  </div>
+
+  <!-- ÉTAT C — validation de la prise muette du test -->
+  <div class="review" id="review">
+    <div class="lbl"><span class="prise" id="reviewLabel">PRISE 1 · 0:06</span><span id="reviewOrigin">Prise enregistrée</span></div>
+    <div class="sound">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b9c7da" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>
+      <span id="reviewMode">Lecture muette en boucle · test</span>
+    </div>
+    <p class="review-context" id="reviewContext" hidden></p>
+    <p id="reviewQuestion" class="review-question"></p>
+    <div class="btns">
+      <button class="btn" id="redo">REFAIRE</button>
+      <button class="btn primary" id="next">SCÈNE SUIVANTE</button>
+    </div>
+  </div>
+
+  <!-- Montage -->
+  <div class="panel" id="panelMontage">
+    <h2 id="montageHeading">Montage en cours</h2>
+    <p id="montageStatus" role="status" aria-live="polite">Les quatre prises sont validées.</p>
+    <div class="steps" id="montageSteps"></div>
+    <progress id="montageMeter" max="900" aria-label="Images encodées"></progress>
+    <button class="cta" id="montageGo" disabled>VOIR MA VIDÉO</button>
+    <div class="flow-links montage-actions">
+      <button id="montageCancel" class="minor" type="button">Annuler</button>
+      <button id="montageRetry" class="minor" type="button" hidden>Réessayer</button>
+      <button id="montageSilent" class="minor" type="button" hidden>Réessayer sans musique</button>
+    </div>
+  </div>
+
+  <!-- Publicité finale -->
+  <div class="adwrap" id="adwrap">
+    <span class="badge" id="adBadge">Test muet · 30 s</span>
+    <button class="close" id="adClose" aria-label="Fermer">✕</button>
+    <div class="screenVideo"><video id="ad" playsinline muted controls preload="metadata"></video></div>
+    <div class="booking-bar"><a id="caCta"></a><small id="adNotice">Prises d’exemple</small></div>
+  </div>
+
+  <!-- Fin -->
+  <div class="panel" id="panelEnd">
+    <h2>Ta vidéo est prête</h2>
+    <p id="endMeta"></p>
+    <div class="steps">
+      <div class="step done"><span class="tick">✓</span><span>4 prises validées</span></div>
+      <div class="step done"><span class="tick">✓</span><span>Textes incrustés dans l’image</span></div>
+      <div class="step done"><span class="tick">✓</span><span id="endSound">Rendu sans piste audio</span></div>
+      <div class="step done"><span class="tick">✓</span><span>Rendu disponible pour la revue</span></div>
+    </div>
+    <div id="endSoundCredits" hidden><a id="endSource" target="_blank" rel="noopener noreferrer">Source</a> · <a id="endLicence" target="_blank" rel="noopener noreferrer">Licence</a><br><span id="endChanges"></span></div>
+    <a id="endCta"></a>
+    <div id="endExports"><a id="endDownload" download="vitrine-T1.mp4">Télécharger le MP4</a><button id="replayAd" type="button" class="minor">Revoir</button></div>
+    <button type="button" class="minor voice-button" id="voiceOpen">Ajouter ma voix (facultatif)</button>
+    <button class="cta" id="restart">RECOMMENCER</button>
+    <a id="endEdit" href="index.html" class="modify-link">Revenir à ma fiche</a>
+  </div>
+
+  <!-- L’atelier reçoit ce MP4, pas une nouvelle démo. Il reste optionnel. -->
+  <section id="voiceWorkshop" aria-label="Atelier voix off" hidden>
+    <button id="voiceClose" type="button" class="minor">← Revenir à mon montage T1</button>
+    <iframe title="Atelier voix et musique" id="voiceFrame" allow="microphone"></iframe>
+  </section>
+</main>
+<script src="../commun/metiers.js" defer></script>
+<script src="../commun/exemples.js" defer></script>
+<script src="cas-demo.js?v=t2-1" defer></script>
+<script src="assets/fiche-t2.js?v=t2-1" defer></script>
+<script src="assets/afrobeat-catalogue.js?v=t2-1" defer></script>
+<script src="assets/tirage-son.js?v=t2-1" defer></script>
+<script src="ingenierie/prises-web.js?v=t2-1" defer></script>
+<script src="assets/simulation-t2.js?v=t2-1" defer></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{
+  "$schema": "../schemas/template.schema.json",
+  "schema": "vv.coiffure.template/1",
+  "template_id": "COIFFURE-T2",
+  "version": "2.1.0-rc.1",
+  "status": "local_candidate",
+  "audio_profile": "coiffure-en-etapes",
+  "execution_profile": "browser-webcodecs",
+  "paths": {
+    "entry": "index.html",
+    "guide": "capture/guide.json",
+    "questions": "formulaire/questions.json",
+    "habillage": "formulaire/habillage.json",
+    "font_meta": "assets/texte/police.json",
+    "plan": "ingenierie/plan.json",
+    "catalogue": "audio/music/catalogue.json",
+    "worker": "assets/render.worker.mjs"
+  },
+  "base": {
+    "revision": "2.0.0-revue.4",
+    "plan_sha256": "a4bcb1974da1bebb095a4e4b8b9edbbb7f3a889bf2adc7ad75a51afbe212054d",
+    "approved_master_sha256": "42a9810b07729052ee5c82fe852b7f2e8e213d7e1b4d08f7a707584c2051d318"
+  },
+  "editorial_revision": "beaute-fr-01",
+  "capture": {
+    "min_seconds": {
+      "S1": 6,
+      "S2": 7,
+      "S3": 7,
+      "S4": 7
+    },
+    "max_input_bytes": 41943040,
+    "source_audio": "review_only",
+    "three_files_rule": "S3_from_S2_only_after_crop_review",
+    "allowed_formats": [
+      "MP4",
+      "MOV",
+      "WebM"
+    ]
+  },
+  "audio": {
+    "catalogue_version": "1.0.0",
+    "tracks_per_output": 1,
+    "added_voice_off": false,
+    "source_audio_in_output": false,
+    "rotation_scope": "local_browser_per_origin",
+    "no_immediate_repeat": true,
+    "fixture_affects_rotation": false
+  },
+  "media": {
+    "mime": "video/mp4",
+    "video_codec": "h264",
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "frames": 900,
+    "duration_ms": 30000,
+    "audio_codec": "aac-lc",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2
+  },
+  "runtime": {
+    "secure_context": true,
+    "asset_policy": "same_origin_only",
+    "needs_browser_storage": true,
+    "requires_web_locks": true,
+    "networks_external": false
+  }
+}
