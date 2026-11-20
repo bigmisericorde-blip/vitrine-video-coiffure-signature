@@ -20,3 +20,5 @@
 
 /* Fiche R04 intégrée : le masquage des champs conditionnels est aussi respecté sur mobile. */
 [hidden]{display:none!important}.fiche-group{min-width:0;display:grid;gap:9px}.fiche-group+.fiche-group{border-top:1px solid var(--border);padding-top:13px}.fiche-group .kicker{margin:0 0 3px}.fiche-group :is(#fieldsProof,#fieldsOffer,#conditions){display:grid;gap:11px}.fiche-group #conditions:empty{display:none}.fiche-group .check{margin-top:3px}#formAlert:empty{display:none}#formAlert{color:#ffcfad}
+
+.reperes-t2{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)}.reperes-t2 p{flex-basis:100%;margin:0 0 3px;font-size:14px}.reperes-t2 button{font:inherit;font-size:13px;font-weight:700;color:#e7f6ea;background:#24382f;border:1px solid #667f72;border-radius:7px;padding:7px 10px;min-height:40px;cursor:pointer}.reperes-t2 button:hover,.reperes-t2 button:focus-visible{background:#304b3e;border-color:#bdf4d8}.reperes-t2 small{font-variant-numeric:tabular-nums;color:#bdf4d8;margin-left:3px}

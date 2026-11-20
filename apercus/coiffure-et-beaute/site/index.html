@@ -11,9 +11,9 @@
   <section class="intro" aria-labelledby="title">
     <div class="intro-copy"><p class="eyebrow">ATELIER VIDÉO <span aria-hidden="true">/</span> COIFFURE ET BEAUTÉ</p>
     <h1 id="title">Coiffure <em>et beauté.</em></h1>
-    <p>Filme ton travail et crée une vidéo de 30 secondes pour ton activité.</p>
-    <ol class="stages" aria-label="Les quatre étapes"><li>Avant</li><li>Geste</li><li>Détail</li><li>Résultat</li></ol></div>
-    <figure class="intro-figure"><img src="exemples/visage/accueil.jpg" alt="Application d’un masque à la spatule pendant un soin du visage" width="680" height="612"><figcaption>Du geste au résultat.</figcaption></figure>
+    <p>Choisis un style, puis filme ta prestation. Les exemples montrent le montage : ta vidéo garde tes images et ton métier.</p>
+    <ol class="stages" aria-label="Les trois étapes"><li>Choisis</li><li>Filme</li><li>Monte</li></ol><a class="intro-link" href="t2/ecrans.html?metier=manucure#resultat">Voir le film T2 Onglerie →</a></div>
+    <figure class="intro-figure"><video id="filmAccueil" controls playsinline muted preload="metadata" poster="accueil.jpg" src="accueil.mp4" aria-label="Coiffure et onglerie : deux exemples de la même vitrine"></video><figcaption>Coiffure et beauté en images</figcaption></figure>
   </section>
   <form id="demarrer" action="t2/index.html" method="get" aria-label="Commencer ma vidéo">
     <fieldset class="picker">
@@ -21,14 +21,14 @@
       <div class="section-line"><div><p class="eyebrow">01 · TA PRESTATION</p><h2 aria-hidden="true">Quelle prestation veux-tu montrer ?</h2></div><span class="tag">Une entrée pour tous</span></div>
       <div id="metiers" class="metiers"></div><noscript>Active JavaScript pour choisir une prestation.</noscript>
     </fieldset>
-    <section class="paths" aria-labelledby="pathTitle"><div class="section-line"><div><p class="eyebrow">02 · TES PRISES</p><h2 id="pathTitle">Quel parcours veux-tu utiliser ?</h2></div><p id="selection" role="status">Choisis ta prestation ci-dessus.</p></div>
+    <section class="paths" aria-labelledby="pathTitle"><div class="section-line"><div><p class="eyebrow">02 · TES PRISES</p><h2 id="pathTitle">Quel montage veux-tu ?</h2></div><p id="selection" role="status">Choisis ta prestation ci-dessus.</p></div>
       <div class="path-grid">
-        <article><span class="path-id">T1</span><h3>Montage avec 4 vidéos</h3><p>Une vidéo pour chaque étape. Tu peux ajouter une voix après le montage.</p><button type="submit" formaction="t1/index.html" id="ouvrirT1" disabled>Continuer avec T1 <span aria-hidden="true">→</span></button></article>
-        <article><span class="path-id">T2</span><h3>Montage avec 3 ou 4 vidéos</h3><p>Tu peux reprendre le geste pour le détail, si le gros plan te convient à la relecture.</p><button type="submit" id="ouvrirT2" disabled>Continuer avec T2 <span aria-hidden="true">→</span></button></article>
+        <article><span class="path-id">T1</span><h3>Avant / après</h3><p>Montre ce qui a changé en quatre prises. Exemple : coiffure.</p><button type="submit" formaction="t1/index.html" id="ouvrirT1" disabled>Continuer avec T1 <span aria-hidden="true">→</span></button></article>
+        <article><span class="path-id">T2</span><h3>Le travail en étapes</h3><p>Accroche avec le fini, montre tes gestes, puis termine sur le résultat. Exemple : onglerie.</p><button type="submit" id="ouvrirT2" disabled>Continuer avec T2 <span aria-hidden="true">→</span></button></article>
       </div>
     </section>
   </form>
-  <section id="exemples" class="examples" aria-labelledby="examplesTitle"><div class="section-line"><div><p class="eyebrow">À VOIR AVANT DE FILMER</p><h2 id="examplesTitle">Les exemples filmés</h2></div><p>Chaque exemple suit une seule prestation. Regarde les prises, puis le film monté.</p></div><div id="exempleCards" class="examples-grid"></div></section>
+  <section id="exemples" class="examples" aria-labelledby="examplesTitle"><div class="section-line"><div><p class="eyebrow">À VOIR AVANT DE FILMER</p><h2 id="examplesTitle">Les exemples filmés</h2></div><p>Un exemple par style. Utilise le même style avec tes propres prises, même si tu fais un autre métier.</p></div><div id="exempleCards" class="examples-grid"></div></section>
 </main>
-<footer class="shell foot"><span>Vitrine Vidéo · Version d’essai T1 et T2</span><a href="CREDITS.html">Crédits des images et des musiques</a></footer>
+<footer class="shell foot"><span>Vitrine Vidéo · Revue locale T1 et T2</span><a href="CREDITS.html">Crédits des images et des musiques</a></footer>
 </body></html>

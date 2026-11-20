@@ -7,7 +7,7 @@
       'Montre le peigne, les doigts ou l’outil et la mèche ou la zone travaillée dans le même cadre.',
       'Choisis une boucle, une séparation ou une ligne de barbe. Ne la cache pas avec ta main.',
       'Montre la coupe, la barbe ou la coiffure terminée, avec la même lumière qu’au départ.']],
-    ['manucure','Manucure','Mains, ongles, vernis…', ['Pose de vernis','Manucure simple','Pose de gel'], 'Appliquer le vernis', 'Le bord net du vernis', [
+    ['manucure','Onglerie / manucure','Ongles, vernis, soins des mains…', ['Pose de vernis','Manucure simple','Pose de gel'], 'Appliquer le vernis', 'Le bord net du vernis', [
       'Montre la main et les ongles avant la pose ou le soin. Pas besoin de filmer le visage.',
       'Montre la main et le pinceau ou la lime ensemble. Ne coupe pas les bouts des doigts.',
       'Approche le téléphone d’un ongle. Le bord du vernis ou la forme de l’ongle doit se voir nettement.',
@@ -22,11 +22,11 @@
       'Cadre la main ou le pinceau et la zone du visage au moment de l’application.',
       'Montre la texture ou la façon dont le produit est étalé. Ne change pas la lumière pour accentuer l’effet.',
       'Montre le visage ou la zone à la fin du soin, dans la même lumière et sans filtre. Pour une pose de masque, le masque posé peut être le résultat.']],
-    ['corps','Soin du corps','Gommage, modelage, soin du dos…', ['Gommage du corps','Soin du dos','Modelage esthétique'], 'Appliquer le gommage', 'Une application uniforme', [
+    ['corps','Soin du corps','Massage, gommage, soin du dos…', ['Massage du dos','Gommage du corps','Soin du dos'], 'Masser le dos avec les mains', 'Le mouvement des mains', [
       'Cadre seulement la zone du soin que la personne accepte de montrer. Garde le reste couvert.',
       'Cadre les mains et la zone du soin. Garde ton téléphone fixe pour que l’on voie le mouvement.',
-      'Montre la texture du produit ou le détail d’application, sans filmer une zone que la personne veut garder privée.',
-      'Reprends la même zone et la même lumière à la fin. Montre le résultat visible, sans promettre un effet.']],
+      'Montre de près le mouvement des mains ou la texture du produit. Respecte les zones que la personne veut garder privées.',
+      'Pour la fin, reprends la même zone et la même lumière : par exemple, les mains se retirent et la personne reste au repos. Ne promets pas un effet.']],
     ['maquillage','Maquillage','Teint, yeux, lèvres…', ['Maquillage léger','Maquillage de cérémonie','Mise en valeur des yeux'], 'Estomper le fard', 'Un fondu régulier', [
       'Montre la zone à maquiller avant le premier geste. Choisis une lumière que tu pourras garder.',
       'Filme le pinceau, l’éponge ou la main au moment du geste, avec la zone maquillée bien visible.',

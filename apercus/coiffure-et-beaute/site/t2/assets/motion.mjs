@@ -1,3 +1,4 @@
+import {makeDiagonal} from './cassures.mjs';
 /* COIFFURE‑T2 · Composition d’images uniquement : plans, fenêtres et impacts. */
 export const W=720,H=1280,FPS=30,FRAMES=900;
 const FULL=[0,0,W,H], roles=['S1','S2','S3','S4'];
@@ -58,8 +59,9 @@ export function createMotion(canvas,plan,aim){
   const ctx=canvas.getContext('2d',{alpha:false});
   ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
   const requestedClose=['contours','detail'].includes(aim);
+  const diagonal=makeDiagonal(canvas,ctx,plan);
   return (rows,shot,f)=>{
-    const impact=plan.impacts.find(x=>f>=x.at-x.before&&f<x.at+x.after);
+    const impact=plan.impacts.find(x=>x.kind!=='diagonale'&&f>=x.at-x.before&&f<x.at+x.after);
     for(const [i,row] of rows.entries()){
       if(!row)continue;
       const {sample,layer,n,length}=row;
@@ -76,8 +78,11 @@ export function createMotion(canvas,plan,aim){
       const [start,ex,ey]=layer.pan??[0,ax,ay];
       const u=ease(clamp((n-start)/(length-1-start),0,1));
       const dx=(w-dw)*lerp(ax,ex,u),dy=(h-dh)*lerp(ay,ey,u);
+      // Cadre visible au claquement, bord retiré progressivement avant le plein écran.
+      const border=layer.rect?ease(clamp(Math.max((W-w)/130,(H-h)/180),0,1)):0;
+      const radius=17*border;
       ctx.save();
-      if(layer.rect){ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();}
+      if(layer.rect){ctx.beginPath();ctx.roundRect(x,y,w,h,radius);ctx.clip();}
       const effect=i===0?impact:null;
       if(!effect){sample.draw(ctx,x+dx,y+dy,dw,dh);}
       else{
@@ -94,6 +99,13 @@ export function createMotion(canvas,plan,aim){
         if(power>.02){draw(1+power*1.32,p*.23);draw(1+power*1.64,p*.11);}
       }
       ctx.restore();
+      if(border>.01){
+        ctx.save();ctx.globalAlpha=border;
+        ctx.strokeStyle='#fff1d9';ctx.lineWidth=3.6;
+        ctx.beginPath();ctx.roundRect(x+1.9,y+1.9,w-3.8,h-3.8,Math.max(0,radius-1.9));ctx.stroke();
+        ctx.restore();
+      }
     }
+    diagonal(f);
   };
 }

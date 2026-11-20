@@ -1,5 +1,6 @@
 import '../../commun/exemples.js';
 import {reframeT2} from '../../commun/montage.mjs';
+import {styleCassures} from './cassures.mjs';
 import {BufferTarget,CanvasSource,Mp4OutputFormat,Output,VideoSampleSink} from './vendor/mediabunny-1.66.1.min.mjs';
 import {createMotion,validatePlan,selectLayer,span,sourceFrame,W,H,FPS,FRAMES} from './motion.mjs';
 import {readMedia,describe,inputs,LIMIT} from './media.mjs';
@@ -26,7 +27,7 @@ async function render(payload,core){
   demand(support.supported,'PLATFORM','Encodage H.264 720 × 1280 indisponible sur cet appareil.');
   let plan,captionPlan;
   try{
-    plan=validatePlan(reframeT2(validatePlan(await loadPlan(core))));
+    plan=validatePlan(styleCassures(reframeT2(validatePlan(await loadPlan(core)))));
     demand(plan.revision===core.template.base.revision,'RESOURCE_INVALID');
     if(!detail){
       captionPlan=makeVisualPlan(spec.fields,spec.track.id,core.habillage);

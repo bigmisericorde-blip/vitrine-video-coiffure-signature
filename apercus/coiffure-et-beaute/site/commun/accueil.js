@@ -13,12 +13,12 @@
   }
   function ready(){const val=form.elements.metier.value;for(const id of ['ouvrirT1','ouvrirT2'])$(id).disabled=!val;$('selection').textContent=val?'Choix : '+get(val).label:'Choisis ta prestation ci-dessus.';}
   form.addEventListener('change',ready);window.addEventListener('pageshow',ready);ready();
-  for(const k of ['coiffure','manucure','visage']){
-    const sample=VVExemples.get(k,'t2'),p=get(k),card=el('article','','exemple');
+  for(const [k,v] of [['coiffure','t1'],['manucure','t2']]){
+    const sample=VVExemples.get(k,v),p=get(k),card=el('article','','exemple');
     const image=el('img');image.src=`exemples/${sample.dir}/affiche.jpg`;image.width=540;image.height=390;image.loading='lazy';image.alt='';
-    const content=el('div','','exemple-copy');content.append(el('p',p.label,'eyebrow'),el('h3',sample.title));
-    const links=el('div','','mini-links');
-    for(const v of ['t1','t2']){const a=el('a',`${v.toUpperCase()} →`);a.href=link(`${v}/ecrans.html`,k);a.setAttribute('aria-label',`Voir les 12 écrans et le film : ${p.label}, ${v.toUpperCase()}`);links.append(a);}
-    content.append(links);card.append(image,content);$('exempleCards').append(card);
+    const content=el('div','','exemple-copy');content.append(el('p',`${v.toUpperCase()} · ${p.label}`,'eyebrow'),el('h3',sample.title));
+    const links=el('div','','mini-links'),a=el('a','Les 12 écrans →'),b=el('a','Le film →');
+    a.href=link(`${v}/ecrans.html`,k);b.href=a.href+'#resultat';
+    links.append(a,b);content.append(links);card.append(image,content);$('exempleCards').append(card);
   }
 })();
