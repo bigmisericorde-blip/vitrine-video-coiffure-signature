@@ -1,0 +1,149 @@
+{
+  "schema": "vv.coiffure.demo-client/1",
+  "template": "COIFFURE-T2",
+  "integration_version": "2.0.0-rc.1",
+  "gallery_revision": "démo-client.1",
+  "case_id": "DEMO-BOUCLES",
+  "title": "Boucles mises en forme",
+  "kind": "stock_example",
+  "note": "Exemple de montage sur des images de stock de John Diez. Ni un client du service, ni un témoignage.",
+  "published_reference": "fa945b6bc998327bd0fa3881ba9d298d3bb58812",
+  "answers": {
+    "service": "Boucles mises en forme",
+    "geste": "Soulever les mèches",
+    "preuve": "Des boucles bien dessinées",
+    "accroche": "",
+    "salon": "",
+    "ville": "",
+    "prix": "",
+    "prixMode": "fixe",
+    "canal": "aucun",
+    "contact": "",
+    "contactConfirme": false
+  },
+  "clips": [
+    {
+      "id": "S1",
+      "label": "Avant",
+      "illustration": "Cheveux lâchés avant le séchage.",
+      "seconds": 6,
+      "mp4": "prises/S1.mp4",
+      "poster": "prises/S1.jpg",
+      "sha256": "e37cc7d70ee8bc26ee606f4742a788491bc7380c134c46960ac27759d71f4802",
+      "poster_sha256": "9cbb50965a77880d0137ce4c9c449c79a498860104841b533195ef97b1d86e20",
+      "source": {
+        "id": 7388182,
+        "credit": "John Diez / Pexels",
+        "page": "https://www.pexels.com/video/woman-holding-the-hair-of-a-man-7388182/",
+        "download": "https://videos.pexels.com/video-files/7388182/7388182-hd_1080_1920_24fps.mp4",
+        "license": "https://www.pexels.com/license/",
+        "source_sha256": "9137ef88c369bc03fc54303471918d83af41f8b505b24fcbab77eb7279b9d3a9",
+        "start_seconds": 0.27,
+        "crop_x_y_width_height": [
+          104,
+          200,
+          810,
+          1440
+        ],
+        "modifications": "Extrait, recadrage portrait, 30 i/s, suppression du son.",
+        "preview_frame_size": "432×768"
+      }
+    },
+    {
+      "id": "S2",
+      "label": "Geste",
+      "illustration": "Soulèvement des mèches pendant le séchage.",
+      "seconds": 7,
+      "mp4": "prises/S2.mp4",
+      "poster": "prises/S2.jpg",
+      "sha256": "1c109166edc5ab7348cfb7d178c0c701fff174745ca6ac8d267a1afba57161f4",
+      "poster_sha256": "103eaa65c82c2d4b2d1d75bc91e6ad311669cfa6bbb7f4a9d649ed0816b7b82d",
+      "source": {
+        "id": 7383854,
+        "credit": "John Diez / Pexels",
+        "page": "https://www.pexels.com/video/woman-blow-drying-the-hair-of-the-man-7383854/",
+        "download": "https://videos.pexels.com/video-files/7383854/7383854-hd_1080_1920_24fps.mp4",
+        "license": "https://www.pexels.com/license/",
+        "source_sha256": "3279f7b3944af1c8ac5b535a940086821ad408940e63e5f79b1609e0c9977092",
+        "start_seconds": 1.0,
+        "crop_x_y_width_height": [
+          82,
+          176,
+          918,
+          1632
+        ],
+        "modifications": "Extrait, recadrage portrait, 30 i/s, suppression du son.",
+        "preview_frame_size": "432×768"
+      }
+    },
+    {
+      "id": "S3",
+      "label": "Détail",
+      "illustration": "Gros plan sur la forme et la texture des boucles.",
+      "seconds": 7,
+      "mp4": "prises/S3.mp4",
+      "poster": "prises/S3.jpg",
+      "sha256": "b2ddf1a02b97a7800e22457932bed3312eaff30e5b705389f07f1446c980b193",
+      "poster_sha256": "2a69dfd31d0d8ba3befe953b356d12dde7fab6ef94adf400c76800836212bfdf",
+      "source": {
+        "id": 7383845,
+        "credit": "John Diez / Pexels",
+        "page": "https://www.pexels.com/video/man-getting-his-hair-dry-7383845/",
+        "download": "https://videos.pexels.com/video-files/7383845/7383845-hd_1080_1920_24fps.mp4",
+        "license": "https://www.pexels.com/license/",
+        "source_sha256": "1a9bbc70d642831223929c14fec69f67da2c4d1b06aee4b7e0823cae93f5c437",
+        "start_seconds": 0.62,
+        "crop_x_y_width_height": [
+          70,
+          132,
+          918,
+          1632
+        ],
+        "modifications": "Extrait, recadrage portrait, 30 i/s, suppression du son.",
+        "preview_frame_size": "432×768"
+      }
+    },
+    {
+      "id": "S4",
+      "label": "Résultat",
+      "illustration": "Le volume et les boucles, sans outil dans le cadre.",
+      "seconds": 7,
+      "mp4": "prises/S4.mp4",
+      "poster": "prises/S4.jpg",
+      "sha256": "ac39cfdaebf1d357c463e8ce8010eed7cb90f0413979f3fa61e1d90affa1a1b0",
+      "poster_sha256": "7fd50178f34393498442f8b57c8783b7805a7a30567077d22b51ba25a02a84b1",
+      "source": {
+        "id": 7383856,
+        "credit": "John Diez / Pexels",
+        "page": "https://www.pexels.com/video/young-man-fixing-his-clothes-7383856/",
+        "download": "https://videos.pexels.com/video-files/7383856/7383856-hd_1080_1920_24fps.mp4",
+        "license": "https://www.pexels.com/license/",
+        "source_sha256": "73c98776042c6483a6a9e89b08ce0fa610be7a219057239ffea77ce121ba6c0b",
+        "start_seconds": 0.85,
+        "crop_x_y_width_height": [
+          148,
+          160,
+          756,
+          1344
+        ],
+        "modifications": "Extrait, recadrage portrait, 30 i/s, suppression du son.",
+        "preview_frame_size": "432×768"
+      }
+    }
+  ],
+  "result": {
+    "path": "COIFFURE-T2-Boucles-mises-en-forme.mp4",
+    "poster": "resultat.jpg",
+    "seconds": 30,
+    "sha256": "3dda7a2e38707a8604f253b5c3f0e58641cee014188225247089090c0076390b",
+    "music": {
+      "id": "C",
+      "title": "Touch of Funk",
+      "artist": "JMHBM (Beat Mekanik)",
+      "source": "https://freemusicarchive.org/music/beat-mekanik/single/touch-of-funk/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "change": "Extrait de 30 s, ajustement de niveau, fondus courts ; tempo d’origine.",
+      "ai_disclosed": false
+    }
+  }
+}

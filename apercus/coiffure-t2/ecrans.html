@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Les 12 écrans filmés — COIFFURE-T2</title>
+<link rel="stylesheet" href="../../gabarits/coiffure-t2/assets/web.css">
+<link rel="stylesheet" href="galerie.css">
+<script type="module" src="galerie.mjs"></script>
+</head><body><div class="shell">
+<header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a href="#resultat" class="mono">Voir le résultat · 30 s ↓</a></header>
+<main class="screen-layout screen-layout-v2">
+<section class="screen-intro" aria-labelledby="demoTitle">
+<p class="kicker">COIFFURE‑T2 · DÉMO CLIENT</p>
+<h1 id="demoTitle">Les 12<span>écrans.</span></h1>
+<p class="lead"><strong>Boucles mises en forme.</strong> Quatre prises filmées : choisis la consigne, regarde l’extrait sous le chrono, puis relis la même prise.</p>
+</section>
+<section id="apercu" class="card screen-view" aria-label="Écran choisi">
+<p class="kicker" id="screenLabel" aria-live="polite">Écran 1/12 · Prise 1 · Consigne</p>
+<p id="screenText" class="screen-text"></p>
+<div class="screen-select"><label for="screenSelect">Aller à un écran</label><select id="screenSelect" disabled></select></div>
+<div class="screen-pager" aria-label="Navigation entre les écrans"><button type="button" id="screenPrev" class="button" disabled>← Précédent</button><button type="button" id="screenNext" class="button" disabled>Suivant →</button></div>
+<div class="links screen-open"><a id="screenAlone" href="prise.html?ecran=1">Ouvrir cet écran en taille normale ↗</a></div>
+<figure class="screen-picture"><iframe id="screenLive" title="Prise d’exemple COIFFURE-T2" width="360" height="640" allow="autoplay; camera 'none'; microphone 'none'" hidden></iframe><figcaption id="screenError" role="status" hidden>La galerie n’a pas chargé. Recharge cette page ou ouvre l’écran en taille normale.</figcaption></figure>
+<noscript><p>Active JavaScript pour parcourir les écrans de la démonstration.</p></noscript>
+</section>
+<section class="screen-index" aria-label="Liste des prises"><nav id="screenList" aria-label="Les 12 écrans"></nav><p class="note">Ici, le chrono simule l’enregistrement : il suit l’extrait filmé. La galerie n’ouvre pas la caméra et ne valide aucune prise réelle.</p></section>
+</main>
+<section id="resultat" class="card demo-result" aria-labelledby="resultTitle"><div>
+<p class="kicker">LE FILM À LA FIN DU PARCOURS</p><h2 id="resultTitle" tabindex="-1">Le résultat du même exemple</h2>
+<p>Ce film de 30 secondes est monté par COIFFURE‑T2 à partir des quatre prises ci-dessus. Les mots sur la prestation, le geste et le résultat viennent de la fiche d’exemple.</p>
+<p class="note" id="musicCredit"></p><p class="note">Exemple sur des images de stock, pas une prestation proposée par les personnes filmées.</p>
+<p class="links"><a href="COIFFURE-T2-Boucles-mises-en-forme.mp4">Ouvrir le MP4 ↗</a> · <a href="#apercu">Revenir aux écrans ↑</a></p></div>
+<video id="resultatVideo" controls playsinline preload="none" poster="resultat.jpg" src="COIFFURE-T2-Boucles-mises-en-forme.mp4" aria-label="Résultat de 30 secondes, boucles mises en forme"></video>
+</section>
+<footer class="demo-foot"><strong>Images : John Diez / Pexels.</strong> Les vidéos d’exemple sont distinctes des mires de recette. <a href="CREDITS.md">Sources et licences</a>.</footer>
+</div></body></html>
