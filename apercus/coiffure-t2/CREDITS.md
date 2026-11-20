@@ -15,7 +15,7 @@ Licence : [licence Pexels](https://www.pexels.com/license/). Ces extraits serven
 
 ## Film de 30 secondes
 
-Rendu du moteur COIFFURE‑T2 (`fa945b6bc998`) avec les quatre MP4 de cette galerie. La copie web est recompressée en H.264, en conservant les paquets audio AAC‑LC, la durée de 30 s, la verticale 720 × 1280 et les 900 images. Pas de voix off ni de son des prises.
+Rendu du moteur COIFFURE‑T2 (`fa945b6bc998`) avec les quatre MP4 de cette galerie. La finition de cet exemple reprend les zooms d’impact et les cadres animés du montage initial, sans incorporer d’images, de son ni d’animations des vidéos de référence. Elle ne modifie pas le gabarit d’intégration. La copie web est recompressée en H.264, en conservant les paquets audio AAC‑LC, la durée de 30 s, la verticale 720 × 1280 et les 900 images. Pas de voix off ni de son des prises.
 
 - Fond C : [Touch of Funk](https://freemusicarchive.org/music/beat-mekanik/single/touch-of-funk/) — JMHBM (Beat Mekanik), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Extrait de 30 s, ajustement de niveau, fondus courts ; tempo d’origine.
 - Lettrage : Chewy, Apache 2.0. Détails et licences de la police dans les crédits du gabarit.

@@ -2,7 +2,7 @@
   "schema": "vv.coiffure.demo-client/1",
   "template": "COIFFURE-T2",
   "integration_version": "2.0.0-rc.1",
-  "gallery_revision": "démo-client.1",
+  "gallery_revision": "démo-client.2-cassures",
   "case_id": "DEMO-BOUCLES",
   "title": "Boucles mises en forme",
   "kind": "stock_example",
@@ -135,7 +135,7 @@
     "path": "COIFFURE-T2-Boucles-mises-en-forme.mp4",
     "poster": "resultat.jpg",
     "seconds": 30,
-    "sha256": "3dda7a2e38707a8604f253b5c3f0e58641cee014188225247089090c0076390b",
+    "sha256": "efa239a54d250f4e1819715a74fb56a0b160ece9068af9264a0c447c66bafb4f",
     "music": {
       "id": "C",
       "title": "Touch of Funk",
@@ -144,6 +144,35 @@
       "licence": "https://creativecommons.org/licenses/by/4.0/",
       "change": "Extrait de 30 s, ajustement de niveau, fondus courts ; tempo d’origine.",
       "ai_disclosed": false
+    },
+    "finish": {
+      "profile": "cassures-r04-demo.1",
+      "scope": "demo_only",
+      "derived_from": "3dda7a2e38707a8604f253b5c3f0e58641cee014188225247089090c0076390b",
+      "impact_frames": [
+        24,
+        61,
+        147,
+        221,
+        389,
+        581,
+        721
+      ],
+      "panel_windows_frames": [
+        [
+          274,
+          347
+        ],
+        [
+          492,
+          581
+        ],
+        [
+          670,
+          721
+        ]
+      ],
+      "note": "Zooms d’impact renforcés et cadres animés du travail vers le résultat. Mêmes prises, même fond, même lettrage."
     }
   }
 }
