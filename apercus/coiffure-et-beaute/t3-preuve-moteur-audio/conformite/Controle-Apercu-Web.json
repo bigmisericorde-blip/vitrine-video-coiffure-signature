@@ -1,0 +1,15 @@
+{
+  "statut": "PASS",
+  "import_quatre_prises": false,
+  "exemple_demo": true,
+  "quatre_relectures": true,
+  "mobile_largeur": 390,
+  "lecture_mp4": true,
+  "meme_fichier_lecture_telechargement": true,
+  "piste": "01",
+  "empreinte": "3eee86277b689ad55426ad24c57c84d0a96d83fbe4917d661db634d749068ef0",
+  "credit_Copa_telecharge": true,
+  "repetition_du_dernier_succes_desactivee": true,
+  "appels_hors_origine": [],
+  "erreurs_js": []
+}

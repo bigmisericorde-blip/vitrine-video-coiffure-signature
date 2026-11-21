@@ -1,0 +1,5 @@
+# Recette de référence : Python 3.13, FFmpeg 7.0.2, ffprobe 7.0.2.
+# FFmpeg/ffprobe (avec libx264) à installer à part, puis fonctionnement hors ligne.
+numpy==2.3.5
+opencv-python-headless==4.11.0.86
+Pillow==13.0.0

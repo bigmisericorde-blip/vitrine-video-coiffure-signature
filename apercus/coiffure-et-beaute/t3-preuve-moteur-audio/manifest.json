@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "revision": "t3-preuve-moteur-audio-r1",
+  "statut": "candidat_de_revue",
+  "template_id": null,
+  "version": null,
+  "audio_profile": "beaute-soin-du-visage-instrumental",
+  "compatibilite": "Atelier Python/FFmpeg local sur Linux (recette). Pas Android/OTA.",
+  "base_git": "45048956c2163d422423168c7e6e2f538e4888b3",
+  "revue_r2_reference": "8add7f3d1c689b1b9e2f4014df0917714aa25716",
+  "lecture_r2_supplantee": false,
+  "publication_autorisee": false,
+  "mires": "Quatre prises synthétiques originales. Pas de prise ou de dérivé Mixkit.",
+  "fichiers": {
+    "CREDITS.md": {
+      "octets": 2685,
+      "sha256": "108f0c7d7bfd2011d0e6526d4cd62e289f2de937b9a1183fad8189c7c851026d",
+      "role": "documentation, contrat ou moteur"
+    },
+    "INTEGRATION.md": {
+      "octets": 8138,
+      "sha256": "31266156598608412b6a712b58ca50070d5c993ba03d94c790198a6344b8417d",
+      "role": "documentation, contrat ou moteur"
+    },
+    "audio/01.flac": {
+      "octets": 2365852,
+      "sha256": "c571b2154df5b563e96fc25067967c00deaaaa7defbbffaddced0a0ca59f1877",
+      "role": "extrait musical ou catalogue"
+    },
+    "audio/02.flac": {
+      "octets": 2984091,
+      "sha256": "ef3e00625090e6b7b4ff77bf50b1acb6d3b5cdd14a1ac633d72b1d2fb49e6506",
+      "role": "extrait musical ou catalogue"
+    },
+    "audio/03.flac": {
+      "octets": 1816836,
+      "sha256": "6a62a326eec23da47aad3d18a7cf0fe370c57e68336e8d45bb21d101a6ff01aa",
+      "role": "extrait musical ou catalogue"
+    },
+    "audio/04.flac": {
+      "octets": 1376137,
+      "sha256": "381adb9fd2ebf2849e39631f69dec8c7c4dedf875364587131e07ed272a0927c",
+      "role": "extrait musical ou catalogue"
+    },
+    "audio/catalogue.json": {
+      "octets": 5919,
+      "sha256": "ef70a31ab0ca02ab427b81a715a7e470a0e1cddc20fa979bd9d50cc13dbb2530",
+      "role": "extrait musical ou catalogue"
+    },
+    "conformite/Controle-Apercu-Web.json": {
+      "octets": 438,
+      "sha256": "19c45fa1f061bc5ebe46e102503280dd30eda76c18ee8e08ee4f784d151d300e",
+      "role": "rapport de recette"
+    },
+    "conformite/Controle-Parcours-Web.json": {
+      "octets": 438,
+      "sha256": "de0f55358d510b2ac97342e855f36a30edca52b30a1f54062b00f5677183c5de",
+      "role": "rapport de recette"
+    },
+    "conformite/Controle-moteur-T3.json": {
+      "octets": 6996,
+      "sha256": "5e665279e70e78f4a7058f9096020c5ce0520746179440b963891a9b1b31677c",
+      "role": "rapport de recette"
+    },
+    "contrat.json": {
+      "octets": 1898,
+      "sha256": "360b5c24f86c3dc490bd3a040416349bc4f92fe44fe62e6b83f86ba0d41a5617",
+      "role": "documentation, contrat ou moteur"
+    },
+    "engine/commun.py": {
+      "octets": 6321,
+      "sha256": "d268efd09a59e6d939c9763668318f2109965d31056c7f35f75990088ec12dcf",
+      "role": "documentation, contrat ou moteur"
+    },
+    "engine/images.py": {
+      "octets": 11837,
+      "sha256": "fed50b648d8643aff877aff621a82d00f48807ab4c13a630c123358b83ef0641",
+      "role": "documentation, contrat ou moteur"
+    },
+    "engine/musiques.py": {
+      "octets": 5614,
+      "sha256": "2453b8ebb7faa1571e37eb1e4b53991b85dc07fde72717f86184f9e9029cd731",
+      "role": "documentation, contrat ou moteur"
+    },
+    "exemple/S1.mp4": {
+      "octets": 59342,
+      "sha256": "5891e641b514c144e51cd28d539ae50f99cc718856e1f84b536d8170901152ed",
+      "role": "mire synthétique"
+    },
+    "exemple/S2.mp4": {
+      "octets": 201461,
+      "sha256": "6dbd70ddc160a24726f8bc91bba4eb3e2ad714d739f5ebebba2b12b0233eca5e",
+      "role": "mire synthétique"
+    },
+    "exemple/S3.mp4": {
+      "octets": 85125,
+      "sha256": "c79275a2c29f23a904d7492bcd2fbcd23548457ebf1727f4f7e5e29a0e3d388c",
+      "role": "mire synthétique"
+    },
+    "exemple/S4.mp4": {
+      "octets": 62444,
+      "sha256": "b6e0039fb4a91840eb7c42103d57e026a2b303bed8556c5d1c82f24b2d47a4bd",
+      "role": "mire synthétique"
+    },
+    "exemple/fiche.json": {
+      "octets": 258,
+      "sha256": "5876b1fecfbde72ca54184171350a583953d58a32b50fb7126f293e451c38bc9",
+      "role": "documentation, contrat ou moteur"
+    },
+    "outils/approvisionner.py": {
+      "octets": 2546,
+      "sha256": "c7cdb7dead4105c048140e7b133837c0bceba63a05167b56fbc717778568d5dc",
+      "role": "documentation, contrat ou moteur"
+    },
+    "outils/creer_exemple.py": {
+      "octets": 3571,
+      "sha256": "34e8ed1975ad8c26a8176d43b211f7bcb703ac133e92b357325aaf67f191632a",
+      "role": "documentation, contrat ou moteur"
+    },
+    "outils/lot.py": {
+      "octets": 5422,
+      "sha256": "93f009d1de7e298d44fafb543a7ad9cdd3c8e72bf5a9976fcc2465d78b6a6c37",
+      "role": "documentation, contrat ou moteur"
+    },
+    "outils/recette.py": {
+      "octets": 9147,
+      "sha256": "8d4b809457d4cc8f4059890bfc44840d03c57de9915a04862ac5982e15d038f4",
+      "role": "documentation, contrat ou moteur"
+    },
+    "outils/recette_web.py": {
+      "octets": 4802,
+      "sha256": "f5ad71ef76ddf5512f397e903e41dae8ca7ee12b7b214339c6c89b5fb3d2aa30",
+      "role": "documentation, contrat ou moteur"
+    },
+    "polices/DejaVuSans.ttf": {
+      "octets": 759720,
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+      "role": "police ou licence"
+    },
+    "polices/DejaVuSerif.ttf": {
+      "octets": 380660,
+      "sha256": "8cb29f7db250ebb2551a6ce2c1e0bfd5a0eb520e9e233370db0493e82e1f36f7",
+      "role": "police ou licence"
+    },
+    "polices/LICENCE-DejaVu.txt": {
+      "octets": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
+      "role": "police ou licence"
+    },
+    "requirements.txt": {
+      "octets": 217,
+      "sha256": "355540fcb54233b86402076849a977d7c0eca01df1902e46ca256d871beb8eb1",
+      "role": "documentation, contrat ou moteur"
+    },
+    "service.py": {
+      "octets": 10864,
+      "sha256": "8e3aff456e0889909c47553476bfbcc212074437702ed60b84000eaf177cdf9b",
+      "role": "documentation, contrat ou moteur"
+    },
+    "sources-musicales.json": {
+      "octets": 3899,
+      "sha256": "2c5b9ec297b19af094ce28778912e93f38138ac459e906d4d693f1dbfda216d0",
+      "role": "documentation, contrat ou moteur"
+    },
+    "t3.py": {
+      "octets": 9121,
+      "sha256": "2ab2b81f562db934d44acfc0fc15c2833b67b33117452b7ee6c6a19d1ccf6344",
+      "role": "documentation, contrat ou moteur"
+    },
+    "web/app.css": {
+      "octets": 5129,
+      "sha256": "a146a0f7ed05e04c493716fd87b938e01d0ebad8652e005c53ed591d1c384d8e",
+      "role": "documentation, contrat ou moteur"
+    },
+    "web/app.js": {
+      "octets": 8154,
+      "sha256": "14d132a5767a912c74df66433ce89c367d2b957ddb744b8c4b1fef9b8aeeedf4",
+      "role": "documentation, contrat ou moteur"
+    },
+    "web/index.html": {
+      "octets": 5171,
+      "sha256": "af4a9574adf08515b76aef0bb3285a048a7b9e78c8ff1be4cf434ec23641439a",
+      "role": "documentation, contrat ou moteur"
+    }
+  }
+}

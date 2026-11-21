@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "profil": "beaute-soin-du-visage-instrumental",
+  "revision": "t3-musique-revue-1",
+  "note": "Éditions exactes vérifiées : publicité, montage, synchronisation et redistribution des ressources audio sous leurs conditions. Aucun Content ID garanti.",
+  "titres": {
+    "01": {
+      "titre": "Copa",
+      "artiste": "1000 Handz (1000Handz.com)",
+      "edition": "FMA 287400",
+      "fiche": "https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-tropical-vibes/copa/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "url_original": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/fOmKaCk6mHWjLsn0QiElMmb0zxl2ahDrPJxCO2te.mp3",
+      "sha256_original": "0864869071abc99bed1c32ee46977e344bc32df98872dc68e0b677afd9882636",
+      "octets_original": 4034394,
+      "depart_s": "8.040",
+      "preuve": "Choix M5 01-B, deuxième extrait. Ajouter « 1000Handz.com » dans la description.",
+      "acquisition": {
+        "sans_compte_ni_achat": true,
+        "http": 200,
+        "decode_complet": true,
+        "etag": "\"6af53a37-3d8f5a\"",
+        "duree_s": 100.832653
+      }
+    },
+    "02": {
+      "titre": "Looking Ahead",
+      "artiste": "Johnathon M. Horner (Beat Mekanik / JMHBM)",
+      "edition": "FMA 218308",
+      "fiche": "https://freemusicarchive.org/music/beat-mekanik/single/looking-ahead-1/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "url_original": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/ap5cNcGWD3EqAnK36cko40zxVbqsGq9vXshce34c.mp3",
+      "sha256_original": "70cd72b76e53e1bd590e8aae88782b5293b8af21ee828d7305964b0319410790",
+      "octets_original": 6251886,
+      "depart_s": "19.060",
+      "preuve": "Choix D conservé. CC BY 4.0 affichée par l’artiste sur la fiche de cette édition.",
+      "acquisition": {
+        "sans_compte_ni_achat": true,
+        "http": 200,
+        "decode_complet": true,
+        "etag": "\"6a16f38c-5f656e\"",
+        "duree_s": 156.264
+      },
+      "notice_original": "Copyright © 2023, Johnathon M. Horner - All Rights Reserved."
+    },
+    "03": {
+      "titre": "Midnight Cruiser",
+      "artiste": "Zane Little",
+      "edition": "FMA 222125",
+      "fiche": "https://freemusicarchive.org/music/zane-little/new-peach-radio/midnight-cruiser/",
+      "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "url_original": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/TBpBklFmwpBRAkwmjMYMtrFXKEdErNvgcm8qHUwN.mp3",
+      "sha256_original": "be0285ba239d85c47c6a0de6466123e3fe8dbc4ad4d9419ccd224ab8ea2b54fc",
+      "octets_original": 5778728,
+      "depart_s": "0.000",
+      "preuve": "Choix B de M6. CC0 confirmé aussi sur https://opengameart.org/content/midnight-cruiser ; la ressource vient de FMA.",
+      "acquisition": {
+        "sans_compte_ni_achat": true,
+        "http": 200,
+        "decode_complet": true,
+        "etag": "\"6a16efff-582d28\"",
+        "duree_s": 144.408
+      }
+    },
+    "04": {
+      "titre": "Night Owl",
+      "artiste": "Broke For Free",
+      "edition": "Internet Archive Directionless_EP-8295, #01 (FMA 42377)",
+      "fiche": "https://archive.org/details/Directionless_EP-8295",
+      "licence": "https://creativecommons.org/licenses/by/3.0/",
+      "url_original": "https://archive.org/download/Directionless_EP-8295/Broke_For_Free_-_01_-_Night_Owl.mp3",
+      "sha256_original": "7952dce61b28f454ff3ee0183f85df52b2a9f2edfcd6a0ebafc12f981f666ed5",
+      "octets_original": 8054458,
+      "depart_s": "19.505",
+      "preuve": "Édition Directionless EP BY 3.0, choix maintenu. Pas l’édition Bandcamp.",
+      "acquisition": {
+        "sans_compte_ni_achat": true,
+        "http": 200,
+        "decode_complet": true,
+        "etag": "\"4e85576e-7ae6ba\"",
+        "duree_s": 194.115918
+      }
+    }
+  }
+}
