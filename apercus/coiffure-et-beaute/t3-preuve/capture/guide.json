@@ -1,8 +1,8 @@
 {
-  "revision": "revue-parcours-r1",
+  "revision": "revue-parcours-r2",
   "signature": "T3 — Apporter une preuve",
   "exemple": "Soin du visage",
-  "portee": "Parcours de démonstration. Les durées à filmer sont proposées pour relecture ; le chrono de la démo suit un extrait du film déjà monté.",
+  "portee": "Consultation non validante et essai séparé, sans caméra ni micro. Durées de tournage proposées ; les chronos suivent les vrais extraits du film.",
   "film": {
     "revision": "P2-r3",
     "sha256": "685d2a560aaca265407b596c8ba90bd9e6887488746424bf5c44d2e472e19f03",
@@ -15,8 +15,8 @@
   "scenes": [
     {
       "id": "S1",
-      "titre": "Le départ",
-      "role": "Situer le service",
+      "titre": "Départ",
+      "role": "Départ",
       "duree_filmer_s": 8,
       "extrait_images": [
         27,
@@ -30,12 +30,35 @@
       ],
       "a_eviter": "Ne commence pas trop près.",
       "question": "Comprend-on ce que tu vas montrer ?",
-      "exemple": "Un soin du visage."
+      "exemple": "Un soin du visage.",
+      "intention": "Situer le service",
+      "ecrans": [
+        {
+          "numero": 1,
+          "id": "S1_A_GUIDE",
+          "galerie": "#1",
+          "seul": "#seul-1"
+        },
+        {
+          "numero": 2,
+          "id": "S1_B_RECORDING",
+          "galerie": "#2",
+          "seul": "#seul-2"
+        },
+        {
+          "numero": 3,
+          "id": "S1_C_REVIEW",
+          "galerie": "#3",
+          "seul": "#seul-3"
+        }
+      ],
+      "duree": 3.4166666666666665,
+      "freeze": 1.291667
     },
     {
       "id": "S2",
-      "titre": "Le geste",
-      "role": "Montrer ce qui est fait",
+      "titre": "Geste",
+      "role": "Geste",
       "duree_filmer_s": 10,
       "extrait_images": [
         109,
@@ -49,12 +72,35 @@
       ],
       "a_eviter": "Ne coupe pas la main ni l’outil.",
       "question": "Voit-on bien le geste du début à la fin ?",
-      "exemple": "Appliquer le soin au pinceau."
+      "exemple": "Appliquer le soin au pinceau.",
+      "intention": "Montrer ce qui est fait",
+      "ecrans": [
+        {
+          "numero": 4,
+          "id": "S2_A_GUIDE",
+          "galerie": "#4",
+          "seul": "#seul-4"
+        },
+        {
+          "numero": 5,
+          "id": "S2_B_RECORDING",
+          "galerie": "#5",
+          "seul": "#seul-5"
+        },
+        {
+          "numero": 6,
+          "id": "S2_C_REVIEW",
+          "galerie": "#6",
+          "seul": "#seul-6"
+        }
+      ],
+      "duree": 6.875,
+      "freeze": 1.5416663333333327
     },
     {
       "id": "S3",
-      "titre": "Le détail",
-      "role": "Faire voir le fait",
+      "titre": "Détail",
+      "role": "Détail",
       "duree_filmer_s": 10,
       "extrait_images": [
         274,
@@ -68,12 +114,35 @@
       ],
       "a_eviter": "N’ajoute pas de filtre qui cache le détail.",
       "question": "Le détail est-il net et facile à voir ?",
-      "exemple": "Le passage du pinceau sur la joue."
+      "exemple": "Le passage du pinceau sur la joue.",
+      "intention": "Faire voir le fait",
+      "ecrans": [
+        {
+          "numero": 7,
+          "id": "S3_A_GUIDE",
+          "galerie": "#7",
+          "seul": "#seul-7"
+        },
+        {
+          "numero": 8,
+          "id": "S3_B_RECORDING",
+          "galerie": "#8",
+          "seul": "#seul-8"
+        },
+        {
+          "numero": 9,
+          "id": "S3_C_REVIEW",
+          "galerie": "#9",
+          "seul": "#seul-9"
+        }
+      ],
+      "duree": 2.9166666666666665,
+      "freeze": 0.8333333333333339
     },
     {
       "id": "S4",
-      "titre": "La dernière vue",
-      "role": "Terminer et inviter à agir",
+      "titre": "Dernière vue",
+      "role": "Dernière vue",
       "duree_filmer_s": 8,
       "extrait_images": [
         494,
@@ -87,7 +156,30 @@
       ],
       "a_eviter": "Ne change pas de service en cours de vidéo.",
       "question": "Cette dernière vue va-t-elle bien avec le reste ?",
-      "exemple": "Prendre rendez-vous, si tu le proposes."
+      "exemple": "Prendre rendez-vous, si tu le proposes.",
+      "intention": "Terminer et inviter à agir",
+      "ecrans": [
+        {
+          "numero": 10,
+          "id": "S4_A_GUIDE",
+          "galerie": "#10",
+          "seul": "#seul-10"
+        },
+        {
+          "numero": 11,
+          "id": "S4_B_RECORDING",
+          "galerie": "#11",
+          "seul": "#seul-11"
+        },
+        {
+          "numero": 12,
+          "id": "S4_C_REVIEW",
+          "galerie": "#12",
+          "seul": "#seul-12"
+        }
+      ],
+      "duree": 3.9166666666666665,
+      "freeze": 1.6249996666666675
     }
   ]
 }

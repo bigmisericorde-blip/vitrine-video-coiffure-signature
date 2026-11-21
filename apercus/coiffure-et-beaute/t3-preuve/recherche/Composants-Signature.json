@@ -1,0 +1,24 @@
+{
+  "commit": "1c8128d701ef163b4fd7c37e4cb03911872f36e8",
+  "racine": "https://raw.githubusercontent.com/bigmisericorde-blip/vitrine-video-coiffure-signature/1c8128d701ef163b4fd7c37e4cb03911872f36e8/apercus/coiffure-et-beaute/site/",
+  "empreintes_git_blob": {
+    "t2/ecrans.html": "fde7dd54917eda316fd1015ccc92b3e696d9abce",
+    "t2/simulation.html": "b17814d879aa90b48d60df5021ab23ff5b6ad5c3",
+    "t2/assets/web.css": "2a3d7843206b18a70c4988432e2eb1575c5f6623",
+    "t2/assets/simulation-t2.css": "032687365fae75347bc9c1e954a914e7975770be",
+    "commun/atelier.css": "2787853d637384e34e0286272a7fbfb8aa802f23",
+    "t2/assets/Manrope.ttf": "75274da58537d6123b14f2cd0c355ad4681fc2b3",
+    "t2/assets/IBMPlexMono-Medium.ttf": "33c546f68b6007a45a3f10e845523abb2db25399",
+    "t2/assets/Montserrat-Variable.ttf": "c97aca18592834d8706549c279cb8d5ac5d85f69",
+    "t2/assets/PlusJakartaSans-Variable.ttf": "0cb13a998ed525ba226d911b10d6c4c4f923a961",
+    "t2/assets/OFL.txt": "793d053a8ff58d7185913fc7a33903b58a9826ba",
+    "t2/assets/OFL-Plex.txt": "670c6c04ec17a19131aefbb47472a11c2a5d831c",
+    "t2/assets/OFL-Montserrat.txt": "3344bfd4619241f1a83f6431cb8e5c16ce57d2f2",
+    "t2/assets/OFL-PlusJakartaSans.txt": "cd444675c2836662f94e266a2e5a0d40198e3ae7"
+  },
+  "polices": "SIL OFL 1.1, fichiers TTF d’origine incorporés octet pour octet",
+  "vues_verifiees": [
+    "https://rawcdn.githack.com/bigmisericorde-blip/vitrine-video-coiffure-signature/1c8128d701ef163b4fd7c37e4cb03911872f36e8/apercus/coiffure-et-beaute/site/t1/ecrans.html?metier=coiffure",
+    "https://rawcdn.githack.com/bigmisericorde-blip/vitrine-video-coiffure-signature/1c8128d701ef163b4fd7c37e4cb03911872f36e8/apercus/coiffure-et-beaute/site/t2/ecrans.html?metier=manucure"
+  ]
+}

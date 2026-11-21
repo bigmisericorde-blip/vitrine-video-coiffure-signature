@@ -1,0 +1,922 @@
+{
+  "mobile": {
+    "t1": {
+      "src": "http://127.0.0.1:42501/t1/ecrans.html?metier=coiffure",
+      "outer": {
+        ".top": {
+          "display": "flex",
+          "border-bottom-color": "rgb(37, 80, 76)"
+        },
+        ".screen-layout-v2": {
+          "display": "grid",
+          "grid-template-areas": "\"intro\" \"view\" \"index\"",
+          "grid-template-columns": "352px"
+        },
+        ".headline": {
+          "font-family": "Manrope, system-ui, sans-serif",
+          "font-size": "38px",
+          "font-weight": "800",
+          "letter-spacing": "-2.432px"
+        },
+        ".screen-view.card": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px",
+          "padding": "12px",
+          "position": "static"
+        },
+        "#screenSelect": {
+          "background-color": "rgb(6, 38, 41)",
+          "border-radius": "9px",
+          "height": "41px",
+          "font-size": "14px"
+        },
+        "#screenLive": {
+          "height": "650px",
+          "width": "326px",
+          "border-radius": "16px",
+          "pointer-events": "none"
+        },
+        ".screen-row": {
+          "display": "grid",
+          "column-gap": "6px"
+        },
+        "#resultat": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px"
+        }
+      },
+      "views": [
+        {
+          "ecran": 1,
+          "etat": "A",
+          "prise": "S1",
+          "lecture": false,
+          "duration": 6,
+          "libelle": "ÉCRAN 01/12 · AVANT · CONSIGNE"
+        },
+        {
+          "ecran": 2,
+          "etat": "B",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 02/12 · AVANT · CHRONO"
+        },
+        {
+          "ecran": 3,
+          "etat": "C",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 03/12 · AVANT · RELECTURE"
+        },
+        {
+          "ecran": 4,
+          "etat": "A",
+          "prise": "S2",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 04/12 · GESTE · CONSIGNE"
+        },
+        {
+          "ecran": 5,
+          "etat": "B",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 05/12 · GESTE · CHRONO"
+        },
+        {
+          "ecran": 6,
+          "etat": "C",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 06/12 · GESTE · RELECTURE"
+        },
+        {
+          "ecran": 7,
+          "etat": "A",
+          "prise": "S3",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 07/12 · DÉTAIL · CONSIGNE"
+        },
+        {
+          "ecran": 8,
+          "etat": "B",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 08/12 · DÉTAIL · CHRONO"
+        },
+        {
+          "ecran": 9,
+          "etat": "C",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 09/12 · DÉTAIL · RELECTURE"
+        },
+        {
+          "ecran": 10,
+          "etat": "A",
+          "prise": "S4",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 10/12 · RÉSULTAT · CONSIGNE"
+        },
+        {
+          "ecran": 11,
+          "etat": "B",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 11/12 · RÉSULTAT · CHRONO"
+        },
+        {
+          "ecran": 12,
+          "etat": "C",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 12/12 · RÉSULTAT · RELECTURE"
+        }
+      ],
+      "inner": {
+        ".sheet": {
+          "background-color": "rgba(6, 38, 41, 0.97)",
+          "border-top-left-radius": "26px",
+          "max-height": "86%",
+          "backdrop-filter": "blur(10px)"
+        },
+        ".scene-title": {
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "font-size": "23px",
+          "font-weight": "800"
+        },
+        ".duration": {
+          "background-color": "rgba(64, 214, 161, 0.1)",
+          "border-top-color": "rgba(64, 214, 161, 0.34)",
+          "color": "rgb(189, 244, 216)"
+        },
+        ".cta": {
+          "background-color": "rgb(64, 214, 161)",
+          "height": "56px",
+          "border-radius": "999px"
+        },
+        ".chrono": {
+          "background-color": "rgba(6, 10, 20, 0.6)",
+          "position": "absolute",
+          "border-radius": "999px",
+          "color": "rgb(255, 255, 255)"
+        },
+        ".dot": {
+          "background-color": "rgb(255, 77, 77)"
+        },
+        ".bar": {
+          "position": "absolute",
+          "background-color": "rgba(255, 255, 255, 0.22)"
+        },
+        ".review": {
+          "background-color": "rgba(0, 0, 0, 0)",
+          "bottom": "0px",
+          "padding": "18px 12px"
+        },
+        ".review .btn.primary": {
+          "background-color": "rgb(64, 214, 161)",
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "border-radius": "999px"
+        },
+        "#app>video": {
+          "object-fit": "contain",
+          "background-color": "rgb(4, 20, 23)"
+        }
+      },
+      "film": true
+    },
+    "t2": {
+      "src": "http://127.0.0.1:42501/t2/ecrans.html?metier=manucure",
+      "outer": {
+        ".top": {
+          "display": "flex",
+          "border-bottom-color": "rgb(37, 80, 76)"
+        },
+        ".screen-layout-v2": {
+          "display": "grid",
+          "grid-template-areas": "\"intro\" \"view\" \"index\"",
+          "grid-template-columns": "352px"
+        },
+        ".headline": {
+          "font-family": "Manrope, system-ui, sans-serif",
+          "font-size": "38px",
+          "font-weight": "800",
+          "letter-spacing": "-2.432px"
+        },
+        ".screen-view.card": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px",
+          "padding": "12px",
+          "position": "static"
+        },
+        "#screenSelect": {
+          "background-color": "rgb(6, 38, 41)",
+          "border-radius": "9px",
+          "height": "41px",
+          "font-size": "14px"
+        },
+        "#screenLive": {
+          "height": "650px",
+          "width": "326px",
+          "border-radius": "16px",
+          "pointer-events": "none"
+        },
+        ".screen-row": {
+          "display": "grid",
+          "column-gap": "6px"
+        },
+        "#resultat": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px"
+        }
+      },
+      "views": [
+        {
+          "ecran": 1,
+          "etat": "A",
+          "prise": "S1",
+          "lecture": false,
+          "duration": 6,
+          "libelle": "ÉCRAN 01/12 · AVANT · CONSIGNE"
+        },
+        {
+          "ecran": 2,
+          "etat": "B",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 02/12 · AVANT · CHRONO"
+        },
+        {
+          "ecran": 3,
+          "etat": "C",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 03/12 · AVANT · RELECTURE"
+        },
+        {
+          "ecran": 4,
+          "etat": "A",
+          "prise": "S2",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 04/12 · GESTE · CONSIGNE"
+        },
+        {
+          "ecran": 5,
+          "etat": "B",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 05/12 · GESTE · CHRONO"
+        },
+        {
+          "ecran": 6,
+          "etat": "C",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 06/12 · GESTE · RELECTURE"
+        },
+        {
+          "ecran": 7,
+          "etat": "A",
+          "prise": "S3",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 07/12 · DÉTAIL · CONSIGNE"
+        },
+        {
+          "ecran": 8,
+          "etat": "B",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 08/12 · DÉTAIL · CHRONO"
+        },
+        {
+          "ecran": 9,
+          "etat": "C",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 09/12 · DÉTAIL · RELECTURE"
+        },
+        {
+          "ecran": 10,
+          "etat": "A",
+          "prise": "S4",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 10/12 · RÉSULTAT · CONSIGNE"
+        },
+        {
+          "ecran": 11,
+          "etat": "B",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 11/12 · RÉSULTAT · CHRONO"
+        },
+        {
+          "ecran": 12,
+          "etat": "C",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 12/12 · RÉSULTAT · RELECTURE"
+        }
+      ],
+      "inner": {
+        ".sheet": {
+          "background-color": "rgba(6, 38, 41, 0.97)",
+          "border-top-left-radius": "26px",
+          "max-height": "86%",
+          "backdrop-filter": "blur(10px)"
+        },
+        ".scene-title": {
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "font-size": "23px",
+          "font-weight": "800"
+        },
+        ".duration": {
+          "background-color": "rgba(64, 214, 161, 0.1)",
+          "border-top-color": "rgba(64, 214, 161, 0.34)",
+          "color": "rgb(189, 244, 216)"
+        },
+        ".cta": {
+          "background-color": "rgb(64, 214, 161)",
+          "height": "56px",
+          "border-radius": "999px"
+        },
+        ".chrono": {
+          "background-color": "rgba(6, 10, 20, 0.6)",
+          "position": "absolute",
+          "border-radius": "999px",
+          "color": "rgb(255, 255, 255)"
+        },
+        ".dot": {
+          "background-color": "rgb(255, 77, 77)"
+        },
+        ".bar": {
+          "position": "absolute",
+          "background-color": "rgba(255, 255, 255, 0.22)"
+        },
+        ".review": {
+          "background-color": "rgba(0, 0, 0, 0)",
+          "bottom": "0px",
+          "padding": "18px 12px"
+        },
+        ".review .btn.primary": {
+          "background-color": "rgb(64, 214, 161)",
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "border-radius": "999px"
+        },
+        "#app>video": {
+          "object-fit": "contain",
+          "background-color": "rgb(4, 20, 23)"
+        }
+      },
+      "film": true
+    },
+    "t3-r1": {
+      "vues": [
+        {
+          "ecran": 1,
+          "etat": "A",
+          "prise": "S1"
+        },
+        {
+          "ecran": 2,
+          "etat": "B",
+          "prise": "S1"
+        },
+        {
+          "ecran": 3,
+          "etat": "C",
+          "prise": "S1"
+        },
+        {
+          "ecran": 4,
+          "etat": "A",
+          "prise": "S2"
+        },
+        {
+          "ecran": 5,
+          "etat": "B",
+          "prise": "S2"
+        },
+        {
+          "ecran": 6,
+          "etat": "C",
+          "prise": "S2"
+        },
+        {
+          "ecran": 7,
+          "etat": "A",
+          "prise": "S3"
+        },
+        {
+          "ecran": 8,
+          "etat": "B",
+          "prise": "S3"
+        },
+        {
+          "ecran": 9,
+          "etat": "C",
+          "prise": "S3"
+        },
+        {
+          "ecran": 10,
+          "etat": "A",
+          "prise": "S4"
+        },
+        {
+          "ecran": 11,
+          "etat": "B",
+          "prise": "S4"
+        },
+        {
+          "ecran": 12,
+          "etat": "C",
+          "prise": "S4"
+        }
+      ],
+      "style": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+      }
+    }
+  },
+  "bureau": {
+    "t1": {
+      "src": "http://127.0.0.1:42501/t1/ecrans.html?metier=coiffure",
+      "outer": {
+        ".top": {
+          "display": "flex",
+          "border-bottom-color": "rgb(37, 80, 76)"
+        },
+        ".screen-layout-v2": {
+          "display": "grid",
+          "grid-template-areas": "\"intro view\" \"index view\"",
+          "grid-template-columns": "534px 412px"
+        },
+        ".headline": {
+          "font-family": "Manrope, system-ui, sans-serif",
+          "font-size": "84px",
+          "font-weight": "800",
+          "letter-spacing": "-5.376px"
+        },
+        ".screen-view.card": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px",
+          "padding": "22px",
+          "position": "sticky"
+        },
+        "#screenSelect": {
+          "background-color": "rgb(6, 38, 41)",
+          "border-radius": "9px",
+          "height": "41px",
+          "font-size": "14px"
+        },
+        "#screenLive": {
+          "height": "680px",
+          "width": "366px",
+          "border-radius": "16px",
+          "pointer-events": "none"
+        },
+        ".screen-row": {
+          "display": "grid",
+          "column-gap": "6px"
+        },
+        "#resultat": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px"
+        }
+      },
+      "views": [
+        {
+          "ecran": 1,
+          "etat": "A",
+          "prise": "S1",
+          "lecture": false,
+          "duration": 6,
+          "libelle": "ÉCRAN 01/12 · AVANT · CONSIGNE"
+        },
+        {
+          "ecran": 2,
+          "etat": "B",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 02/12 · AVANT · CHRONO"
+        },
+        {
+          "ecran": 3,
+          "etat": "C",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 03/12 · AVANT · RELECTURE"
+        },
+        {
+          "ecran": 4,
+          "etat": "A",
+          "prise": "S2",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 04/12 · GESTE · CONSIGNE"
+        },
+        {
+          "ecran": 5,
+          "etat": "B",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 05/12 · GESTE · CHRONO"
+        },
+        {
+          "ecran": 6,
+          "etat": "C",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 06/12 · GESTE · RELECTURE"
+        },
+        {
+          "ecran": 7,
+          "etat": "A",
+          "prise": "S3",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 07/12 · DÉTAIL · CONSIGNE"
+        },
+        {
+          "ecran": 8,
+          "etat": "B",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 08/12 · DÉTAIL · CHRONO"
+        },
+        {
+          "ecran": 9,
+          "etat": "C",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 09/12 · DÉTAIL · RELECTURE"
+        },
+        {
+          "ecran": 10,
+          "etat": "A",
+          "prise": "S4",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 10/12 · RÉSULTAT · CONSIGNE"
+        },
+        {
+          "ecran": 11,
+          "etat": "B",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 11/12 · RÉSULTAT · CHRONO"
+        },
+        {
+          "ecran": 12,
+          "etat": "C",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 12/12 · RÉSULTAT · RELECTURE"
+        }
+      ],
+      "inner": {
+        ".sheet": {
+          "background-color": "rgba(6, 38, 41, 0.97)",
+          "border-top-left-radius": "26px",
+          "max-height": "86%",
+          "backdrop-filter": "blur(10px)"
+        },
+        ".scene-title": {
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "font-size": "23px",
+          "font-weight": "800"
+        },
+        ".duration": {
+          "background-color": "rgba(64, 214, 161, 0.1)",
+          "border-top-color": "rgba(64, 214, 161, 0.34)",
+          "color": "rgb(189, 244, 216)"
+        },
+        ".cta": {
+          "background-color": "rgb(64, 214, 161)",
+          "height": "56px",
+          "border-radius": "999px"
+        },
+        ".chrono": {
+          "background-color": "rgba(6, 10, 20, 0.6)",
+          "position": "absolute",
+          "border-radius": "999px",
+          "color": "rgb(255, 255, 255)"
+        },
+        ".dot": {
+          "background-color": "rgb(255, 77, 77)"
+        },
+        ".bar": {
+          "position": "absolute",
+          "background-color": "rgba(255, 255, 255, 0.22)"
+        },
+        ".review": {
+          "background-color": "rgba(0, 0, 0, 0)",
+          "bottom": "0px",
+          "padding": "18px"
+        },
+        ".review .btn.primary": {
+          "background-color": "rgb(64, 214, 161)",
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "border-radius": "999px"
+        },
+        "#app>video": {
+          "object-fit": "contain",
+          "background-color": "rgb(4, 20, 23)"
+        }
+      },
+      "film": true
+    },
+    "t2": {
+      "src": "http://127.0.0.1:42501/t2/ecrans.html?metier=manucure",
+      "outer": {
+        ".top": {
+          "display": "flex",
+          "border-bottom-color": "rgb(37, 80, 76)"
+        },
+        ".screen-layout-v2": {
+          "display": "grid",
+          "grid-template-areas": "\"intro view\" \"index view\"",
+          "grid-template-columns": "534px 412px"
+        },
+        ".headline": {
+          "font-family": "Manrope, system-ui, sans-serif",
+          "font-size": "84px",
+          "font-weight": "800",
+          "letter-spacing": "-5.376px"
+        },
+        ".screen-view.card": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px",
+          "padding": "22px",
+          "position": "sticky"
+        },
+        "#screenSelect": {
+          "background-color": "rgb(6, 38, 41)",
+          "border-radius": "9px",
+          "height": "41px",
+          "font-size": "14px"
+        },
+        "#screenLive": {
+          "height": "680px",
+          "width": "366px",
+          "border-radius": "16px",
+          "pointer-events": "none"
+        },
+        ".screen-row": {
+          "display": "grid",
+          "column-gap": "6px"
+        },
+        "#resultat": {
+          "background-color": "rgb(8, 44, 46)",
+          "border-radius": "23px"
+        }
+      },
+      "views": [
+        {
+          "ecran": 1,
+          "etat": "A",
+          "prise": "S1",
+          "lecture": false,
+          "duration": 6,
+          "libelle": "ÉCRAN 01/12 · AVANT · CONSIGNE"
+        },
+        {
+          "ecran": 2,
+          "etat": "B",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 02/12 · AVANT · CHRONO"
+        },
+        {
+          "ecran": 3,
+          "etat": "C",
+          "prise": "S1",
+          "lecture": true,
+          "duration": 6,
+          "libelle": "ÉCRAN 03/12 · AVANT · RELECTURE"
+        },
+        {
+          "ecran": 4,
+          "etat": "A",
+          "prise": "S2",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 04/12 · GESTE · CONSIGNE"
+        },
+        {
+          "ecran": 5,
+          "etat": "B",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 05/12 · GESTE · CHRONO"
+        },
+        {
+          "ecran": 6,
+          "etat": "C",
+          "prise": "S2",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 06/12 · GESTE · RELECTURE"
+        },
+        {
+          "ecran": 7,
+          "etat": "A",
+          "prise": "S3",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 07/12 · DÉTAIL · CONSIGNE"
+        },
+        {
+          "ecran": 8,
+          "etat": "B",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 08/12 · DÉTAIL · CHRONO"
+        },
+        {
+          "ecran": 9,
+          "etat": "C",
+          "prise": "S3",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 09/12 · DÉTAIL · RELECTURE"
+        },
+        {
+          "ecran": 10,
+          "etat": "A",
+          "prise": "S4",
+          "lecture": false,
+          "duration": 7,
+          "libelle": "ÉCRAN 10/12 · RÉSULTAT · CONSIGNE"
+        },
+        {
+          "ecran": 11,
+          "etat": "B",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 11/12 · RÉSULTAT · CHRONO"
+        },
+        {
+          "ecran": 12,
+          "etat": "C",
+          "prise": "S4",
+          "lecture": true,
+          "duration": 7,
+          "libelle": "ÉCRAN 12/12 · RÉSULTAT · RELECTURE"
+        }
+      ],
+      "inner": {
+        ".sheet": {
+          "background-color": "rgba(6, 38, 41, 0.97)",
+          "border-top-left-radius": "26px",
+          "max-height": "86%",
+          "backdrop-filter": "blur(10px)"
+        },
+        ".scene-title": {
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "font-size": "23px",
+          "font-weight": "800"
+        },
+        ".duration": {
+          "background-color": "rgba(64, 214, 161, 0.1)",
+          "border-top-color": "rgba(64, 214, 161, 0.34)",
+          "color": "rgb(189, 244, 216)"
+        },
+        ".cta": {
+          "background-color": "rgb(64, 214, 161)",
+          "height": "56px",
+          "border-radius": "999px"
+        },
+        ".chrono": {
+          "background-color": "rgba(6, 10, 20, 0.6)",
+          "position": "absolute",
+          "border-radius": "999px",
+          "color": "rgb(255, 255, 255)"
+        },
+        ".dot": {
+          "background-color": "rgb(255, 77, 77)"
+        },
+        ".bar": {
+          "position": "absolute",
+          "background-color": "rgba(255, 255, 255, 0.22)"
+        },
+        ".review": {
+          "background-color": "rgba(0, 0, 0, 0)",
+          "bottom": "0px",
+          "padding": "18px"
+        },
+        ".review .btn.primary": {
+          "background-color": "rgb(64, 214, 161)",
+          "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "border-radius": "999px"
+        },
+        "#app>video": {
+          "object-fit": "contain",
+          "background-color": "rgb(4, 20, 23)"
+        }
+      },
+      "film": true
+    },
+    "t3-r1": {
+      "vues": [
+        {
+          "ecran": 1,
+          "etat": "A",
+          "prise": "S1"
+        },
+        {
+          "ecran": 2,
+          "etat": "B",
+          "prise": "S1"
+        },
+        {
+          "ecran": 3,
+          "etat": "C",
+          "prise": "S1"
+        },
+        {
+          "ecran": 4,
+          "etat": "A",
+          "prise": "S2"
+        },
+        {
+          "ecran": 5,
+          "etat": "B",
+          "prise": "S2"
+        },
+        {
+          "ecran": 6,
+          "etat": "C",
+          "prise": "S2"
+        },
+        {
+          "ecran": 7,
+          "etat": "A",
+          "prise": "S3"
+        },
+        {
+          "ecran": 8,
+          "etat": "B",
+          "prise": "S3"
+        },
+        {
+          "ecran": 9,
+          "etat": "C",
+          "prise": "S3"
+        },
+        {
+          "ecran": 10,
+          "etat": "A",
+          "prise": "S4"
+        },
+        {
+          "ecran": 11,
+          "etat": "B",
+          "prise": "S4"
+        },
+        {
+          "ecran": 12,
+          "etat": "C",
+          "prise": "S4"
+        }
+      ],
+      "style": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "font-family": "system-ui, -apple-system, \"Segoe UI\", sans-serif"
+      }
+    }
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "chromium": "159.0.8154.6",
+  "mobile": {
+    "vues": [
+      {
+        "vue": 1,
+        "prise": "S1",
+        "etat": "A",
+        "duree_s": 3.416667,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 2,
+        "prise": "S1",
+        "etat": "B",
+        "duree_s": 3.416667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 3,
+        "prise": "S1",
+        "etat": "C",
+        "duree_s": 3.416667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 4,
+        "prise": "S2",
+        "etat": "A",
+        "duree_s": 6.875,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 5,
+        "prise": "S2",
+        "etat": "B",
+        "duree_s": 6.875,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 6,
+        "prise": "S2",
+        "etat": "C",
+        "duree_s": 6.875,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 7,
+        "prise": "S3",
+        "etat": "A",
+        "duree_s": 2.916667,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 8,
+        "prise": "S3",
+        "etat": "B",
+        "duree_s": 2.916667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 9,
+        "prise": "S3",
+        "etat": "C",
+        "duree_s": 2.916667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 10,
+        "prise": "S4",
+        "etat": "A",
+        "duree_s": 3.916667,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 11,
+        "prise": "S4",
+        "etat": "B",
+        "duree_s": 3.916667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 12,
+        "prise": "S4",
+        "etat": "C",
+        "duree_s": 3.916667,
+        "mode": "lecture",
+        "validations": 0
+      }
+    ],
+    "css_galerie": {
+      ".top": {
+        "display": "flex",
+        "border-bottom-color": "rgb(37, 80, 76)"
+      },
+      ".screen-layout-v2": {
+        "display": "grid",
+        "grid-template-areas": "\"intro\" \"view\" \"index\"",
+        "grid-template-columns": "352px"
+      },
+      ".headline": {
+        "font-family": "Manrope, system-ui, sans-serif",
+        "font-size": "38px",
+        "font-weight": "800",
+        "letter-spacing": "-2.432px"
+      },
+      ".screen-view.card": {
+        "background-color": "rgb(8, 44, 46)",
+        "border-radius": "23px",
+        "padding": "12px",
+        "position": "static"
+      },
+      "#screenSelect": {
+        "background-color": "rgb(6, 38, 41)",
+        "border-radius": "9px",
+        "height": "41px",
+        "font-size": "14px"
+      },
+      "#screenLive": {
+        "height": "650px",
+        "width": "326px",
+        "border-radius": "16px",
+        "pointer-events": "none"
+      },
+      ".screen-row": {
+        "display": "grid",
+        "column-gap": "6px"
+      },
+      "#resultat": {
+        "background-color": "rgb(8, 44, 46)",
+        "border-radius": "23px"
+      }
+    },
+    "css_prise": {
+      ".sheet": {
+        "background-color": "rgba(6, 38, 41, 0.97)",
+        "border-top-left-radius": "26px",
+        "max-height": "86%",
+        "backdrop-filter": "blur(10px)"
+      },
+      ".scene-title": {
+        "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "font-size": "23px",
+        "font-weight": "800"
+      },
+      ".duration": {
+        "background-color": "rgba(64, 214, 161, 0.1)",
+        "border-top-color": "rgba(64, 214, 161, 0.34)",
+        "color": "rgb(189, 244, 216)"
+      },
+      ".cta": {
+        "background-color": "rgb(64, 214, 161)",
+        "height": "56px",
+        "border-radius": "999px"
+      },
+      ".chrono": {
+        "background-color": "rgba(6, 10, 20, 0.6)",
+        "position": "absolute",
+        "border-radius": "999px",
+        "color": "rgb(255, 255, 255)"
+      },
+      ".dot": {
+        "background-color": "rgb(255, 77, 77)"
+      },
+      ".bar": {
+        "position": "absolute",
+        "background-color": "rgba(255, 255, 255, 0.22)"
+      },
+      ".review": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "bottom": "0px",
+        "padding": "18px 12px"
+      },
+      ".review .btn.primary": {
+        "background-color": "rgb(64, 214, 161)",
+        "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "border-radius": "999px"
+      },
+      "#app>video": {
+        "object-fit": "contain",
+        "background-color": "rgb(4, 20, 23)"
+      }
+    },
+    "sha256_download_film": "3a4858fbd21bccf9301999ad45165c4aaa153f3e12e074f8e356ac9ea54ed848",
+    "aucun_appel_externe": true
+  },
+  "bureau": {
+    "vues": [
+      {
+        "vue": 1,
+        "prise": "S1",
+        "etat": "A",
+        "duree_s": 3.416667,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 2,
+        "prise": "S1",
+        "etat": "B",
+        "duree_s": 3.416667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 3,
+        "prise": "S1",
+        "etat": "C",
+        "duree_s": 3.416667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 4,
+        "prise": "S2",
+        "etat": "A",
+        "duree_s": 6.875,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 5,
+        "prise": "S2",
+        "etat": "B",
+        "duree_s": 6.875,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 6,
+        "prise": "S2",
+        "etat": "C",
+        "duree_s": 6.875,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 7,
+        "prise": "S3",
+        "etat": "A",
+        "duree_s": 2.916667,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 8,
+        "prise": "S3",
+        "etat": "B",
+        "duree_s": 2.916667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 9,
+        "prise": "S3",
+        "etat": "C",
+        "duree_s": 2.916667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 10,
+        "prise": "S4",
+        "etat": "A",
+        "duree_s": 3.916667,
+        "mode": "photo arrêtée",
+        "validations": 0
+      },
+      {
+        "vue": 11,
+        "prise": "S4",
+        "etat": "B",
+        "duree_s": 3.916667,
+        "mode": "lecture",
+        "validations": 0
+      },
+      {
+        "vue": 12,
+        "prise": "S4",
+        "etat": "C",
+        "duree_s": 3.916667,
+        "mode": "lecture",
+        "validations": 0
+      }
+    ],
+    "css_galerie": {
+      ".top": {
+        "display": "flex",
+        "border-bottom-color": "rgb(37, 80, 76)"
+      },
+      ".screen-layout-v2": {
+        "display": "grid",
+        "grid-template-areas": "\"intro view\" \"index view\"",
+        "grid-template-columns": "534px 412px"
+      },
+      ".headline": {
+        "font-family": "Manrope, system-ui, sans-serif",
+        "font-size": "84px",
+        "font-weight": "800",
+        "letter-spacing": "-5.376px"
+      },
+      ".screen-view.card": {
+        "background-color": "rgb(8, 44, 46)",
+        "border-radius": "23px",
+        "padding": "22px",
+        "position": "sticky"
+      },
+      "#screenSelect": {
+        "background-color": "rgb(6, 38, 41)",
+        "border-radius": "9px",
+        "height": "41px",
+        "font-size": "14px"
+      },
+      "#screenLive": {
+        "height": "680px",
+        "width": "366px",
+        "border-radius": "16px",
+        "pointer-events": "none"
+      },
+      ".screen-row": {
+        "display": "grid",
+        "column-gap": "6px"
+      },
+      "#resultat": {
+        "background-color": "rgb(8, 44, 46)",
+        "border-radius": "23px"
+      }
+    },
+    "css_prise": {
+      ".sheet": {
+        "background-color": "rgba(6, 38, 41, 0.97)",
+        "border-top-left-radius": "26px",
+        "max-height": "86%",
+        "backdrop-filter": "blur(10px)"
+      },
+      ".scene-title": {
+        "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "font-size": "23px",
+        "font-weight": "800"
+      },
+      ".duration": {
+        "background-color": "rgba(64, 214, 161, 0.1)",
+        "border-top-color": "rgba(64, 214, 161, 0.34)",
+        "color": "rgb(189, 244, 216)"
+      },
+      ".cta": {
+        "background-color": "rgb(64, 214, 161)",
+        "height": "56px",
+        "border-radius": "999px"
+      },
+      ".chrono": {
+        "background-color": "rgba(6, 10, 20, 0.6)",
+        "position": "absolute",
+        "border-radius": "999px",
+        "color": "rgb(255, 255, 255)"
+      },
+      ".dot": {
+        "background-color": "rgb(255, 77, 77)"
+      },
+      ".bar": {
+        "position": "absolute",
+        "background-color": "rgba(255, 255, 255, 0.22)"
+      },
+      ".review": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "bottom": "0px",
+        "padding": "18px"
+      },
+      ".review .btn.primary": {
+        "background-color": "rgb(64, 214, 161)",
+        "font-family": "Montserrat, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "border-radius": "999px"
+      },
+      "#app>video": {
+        "object-fit": "contain",
+        "background-color": "rgb(4, 20, 23)"
+      }
+    },
+    "sha256_download_film": "3a4858fbd21bccf9301999ad45165c4aaa153f3e12e074f8e356ac9ea54ed848",
+    "aucun_appel_externe": true
+  },
+  "acces_directs": {
+    "liens_seuls": 12,
+    "largeur": 320,
+    "defilement_guides": 4,
+    "ancien_lien_ecran_08": true,
+    "acces_film_sans_garde": true
+  },
+  "essai": {
+    "chronos": 4,
+    "annulation_vers_meme_prise": true,
+    "erreur_vers_meme_prise": true,
+    "refaire_vers_meme_prise": true,
+    "garde_explicite": 4,
+    "film_apres_quatre": true,
+    "reouverture_sans_etat": true
+  },
+  "hors_ligne_apercu": {
+    "planche_hors_ligne": true,
+    "vues": 12,
+    "navigation_ecran_seul_et_film": true,
+    "film_s": 30,
+    "reseau": false,
+    "origine_opaque": true
+  },
+  "comparaison_styles_T1_T2": true
+}

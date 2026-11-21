@@ -1,11 +1,73 @@
 {
-  "fichier_source": "media/T3-Essai-P2-r3-muet.mp4",
-  "sha256_source": "685d2a560aaca265407b596c8ba90bd9e6887488746424bf5c44d2e472e19f03",
-  "sha256_media_integre": "b823ed2caed8a7467e5f0885bf67c71ddd192cb8a782c65c348cf9a7ea2c5241",
-  "octets_media_integre": 695653,
-  "source_preservee": true,
-  "film_deja_monte": true,
-  "piste_audio_absente": true,
-  "fps": 24,
-  "duree_s": 30
+  "master": "T3-Essai-P2-r3-muet.mp4",
+  "sha256_master": "685d2a560aaca265407b596c8ba90bd9e6887488746424bf5c44d2e472e19f03",
+  "derivees": {
+    "dimensions": [
+      360,
+      640
+    ],
+    "fps": 24,
+    "film": {
+      "images": 720,
+      "duree_s": 30.0,
+      "sha256": "3a4858fbd21bccf9301999ad45165c4aaa153f3e12e074f8e356ac9ea54ed848",
+      "octets": 777548,
+      "son": false
+    },
+    "extraits": [
+      {
+        "id": "S1",
+        "bornes": [
+          27,
+          109
+        ],
+        "luma_ecart_moyen": 0.775,
+        "images": 82,
+        "duree_s": 3.416667,
+        "sha256": "b937d1cf7ed5ed2f8a8523ae26ceacc8368b3bbeb71c1c841f7a1e3cc5bdd792",
+        "octets": 233077,
+        "son": false
+      },
+      {
+        "id": "S2",
+        "bornes": [
+          109,
+          274
+        ],
+        "luma_ecart_moyen": 0.693,
+        "images": 165,
+        "duree_s": 6.875,
+        "sha256": "d79202d0919c0d350376c5dace931a53468b7c5d07d2aa2439778702c1574165",
+        "octets": 189815,
+        "son": false
+      },
+      {
+        "id": "S3",
+        "bornes": [
+          274,
+          344
+        ],
+        "luma_ecart_moyen": 0.674,
+        "images": 70,
+        "duree_s": 2.916667,
+        "sha256": "8cd538dda3fc2db646cc51706e3f237ed4846be262d8d3d3a975b23d72809588",
+        "octets": 138063,
+        "son": false
+      },
+      {
+        "id": "S4",
+        "bornes": [
+          494,
+          588
+        ],
+        "luma_ecart_moyen": 0.833,
+        "images": 94,
+        "duree_s": 3.916667,
+        "sha256": "d9d7f8ff733140ddd78e124c1735f8ee518f574d77e3187a022547981c63fbce",
+        "octets": 147373,
+        "son": false
+      }
+    ]
+  },
+  "rush_stock_fournis": false
 }

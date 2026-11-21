@@ -1,0 +1,15 @@
+{
+  "revision": "r2",
+  "statut": "lot pour la revue du propriétaire",
+  "phase_no": 5,
+  "accord_P3": null,
+  "catalog_id": null,
+  "master_P2_r3_inchange": true,
+  "production_validee": false,
+  "branche_de_revue": "review/t3-preuve-12-ecrans",
+  "preuve_publication": "hors lot",
+  "inclut_moteur": false,
+  "cam_mic": false,
+  "audio_prive": false,
+  "ancienne_publication": "90d9b25c48af3f7fe80a667f4b6928943fcac2ff ; r1, non modifiée"
+}
