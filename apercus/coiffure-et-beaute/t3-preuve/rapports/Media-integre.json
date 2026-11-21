@@ -1,0 +1,11 @@
+{
+  "fichier_source": "media/T3-Essai-P2-r3-muet.mp4",
+  "sha256_source": "685d2a560aaca265407b596c8ba90bd9e6887488746424bf5c44d2e472e19f03",
+  "sha256_media_integre": "b823ed2caed8a7467e5f0885bf67c71ddd192cb8a782c65c348cf9a7ea2c5241",
+  "octets_media_integre": 695653,
+  "source_preservee": true,
+  "film_deja_monte": true,
+  "piste_audio_absente": true,
+  "fps": 24,
+  "duree_s": 30
+}

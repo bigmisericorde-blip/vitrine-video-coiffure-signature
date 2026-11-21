@@ -1,0 +1,13 @@
+{
+  "revision": "revue-parcours-r1",
+  "signature": "T3 — Apporter une preuve",
+  "exemple": "Soin du visage",
+  "portee": "Parcours de démonstration. Les durées à filmer sont proposées pour relecture ; le chrono de la démo suit un extrait du film déjà monté.",
+  "film": {"revision": "P2-r3", "sha256": "685d2a560aaca265407b596c8ba90bd9e6887488746424bf5c44d2e472e19f03", "fps": 24, "duree_s": 30, "son": false, "carton": "Réserver ce soin", "destination": null},
+  "scenes": [
+    {"id": "S1", "titre": "Le départ", "role": "Situer le service", "duree_filmer_s": 8, "extrait_images": [27,109], "miniature_s": 2.416667, "repere": "Cadre assez large.", "consignes": ["Montre le lieu et ce que tu vas faire.", "Garde le téléphone droit et laisse un peu de place autour."], "a_eviter": "Ne commence pas trop près.", "question": "Comprend-on ce que tu vas montrer ?", "exemple": "Un soin du visage."},
+    {"id": "S2", "titre": "Le geste", "role": "Montrer ce qui est fait", "duree_filmer_s": 10, "extrait_images": [109,274], "miniature_s": 6.083333, "repere": "Montre le geste du début à la fin.", "consignes": ["Filme le geste que tu as choisi.", "Garde la main ou l’outil et la zone travaillée dans la même image."], "a_eviter": "Ne coupe pas la main ni l’outil.", "question": "Voit-on bien le geste du début à la fin ?", "exemple": "Appliquer le soin au pinceau."},
+    {"id": "S3", "titre": "Le détail", "role": "Faire voir le fait", "duree_filmer_s": 10, "extrait_images": [274,344], "miniature_s": 12.25, "repere": "Approche-toi et reste stable.", "consignes": ["Montre de près le détail choisi dans ta fiche.", "Laisse le temps de bien le voir. Garde le téléphone immobile."], "a_eviter": "N’ajoute pas de filtre qui cache le détail.", "question": "Le détail est-il net et facile à voir ?", "exemple": "Le passage du pinceau sur la joue."},
+    {"id": "S4", "titre": "La dernière vue", "role": "Terminer et inviter à agir", "duree_filmer_s": 8, "extrait_images": [494,588], "miniature_s": 22.208333, "repere": "Laisse de la place pour le texte de fin.", "consignes": ["Filme une dernière vue du même travail ou de l’endroit où tu reçois.", "Garde une image calme et bien éclairée."], "a_eviter": "Ne change pas de service en cours de vidéo.", "question": "Cette dernière vue va-t-elle bien avec le reste ?", "exemple": "Prendre rendez-vous, si tu le proposes."}
+  ]
+}

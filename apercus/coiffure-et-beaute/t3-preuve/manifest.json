@@ -1,0 +1,171 @@
+{
+  "format": "vitrine-video-revue-parcours-1",
+  "revision": "revue-parcours-r1",
+  "catalog_id": null,
+  "phase": "12 écrans à valider",
+  "images_film": "montage P2-r3 et copie navigateur, non des rushs",
+  "catalogue_audio_inclus": false,
+  "comptes_et_cles_inclus": false,
+  "fichiers": [
+    {
+      "chemin": "INTEGRATION.md",
+      "octets": 2243,
+      "sha256": "2275ec350cc86cd90fe078921cd072c69494361e080a2f3fb06e81065d627169"
+    },
+    {
+      "chemin": "README.md",
+      "octets": 1510,
+      "sha256": "e1b20c6defdc0d61977ad5e79636e2fd0ea044ce22e0d7a2b0d72b441ff7aef5"
+    },
+    {
+      "chemin": "capture/12-ecrans.md",
+      "octets": 3266,
+      "sha256": "bef3684f2d121d8a05773eab05f53bfc08b763786dbeb65025a8c20e4b074d79"
+    },
+    {
+      "chemin": "capture/ecrans/01.jpg",
+      "octets": 37305,
+      "sha256": "be7ddd3d75db0bb70e7e4c35c9cd40877508f047285a949ea0cce1b53e3733f4"
+    },
+    {
+      "chemin": "capture/ecrans/02.jpg",
+      "octets": 38687,
+      "sha256": "62d149b6efb3f30da77706a0ea82ce0e57a89235b9eea0aa221445c2350098ad"
+    },
+    {
+      "chemin": "capture/ecrans/03.jpg",
+      "octets": 35552,
+      "sha256": "206897373e566e64e3dd5cb003fe7953e907f8aec564a1b9922893683483847e"
+    },
+    {
+      "chemin": "capture/ecrans/04.jpg",
+      "octets": 37714,
+      "sha256": "f44d2ae70e496edd6dcb466aa8463e8780a86f390e2707c6dbe226822588ff27"
+    },
+    {
+      "chemin": "capture/ecrans/05.jpg",
+      "octets": 38075,
+      "sha256": "4d1d9b9e523f59683344736f8bee83e598c8b89f1fc9b6e606ee386f89b3acff"
+    },
+    {
+      "chemin": "capture/ecrans/06.jpg",
+      "octets": 36069,
+      "sha256": "84ca12c88d3cda51f66167c1b210d710a76e1ce6747dcc4ca3706ca35cf83888"
+    },
+    {
+      "chemin": "capture/ecrans/07.jpg",
+      "octets": 39970,
+      "sha256": "51201d28642ecbc84cd924d1ebbbe5fe7cc393de95056e04508e21b028064273"
+    },
+    {
+      "chemin": "capture/ecrans/08.jpg",
+      "octets": 38850,
+      "sha256": "35841045fff552028078c9777b1c18df3bcc44c699db6d507d7a3800946e1501"
+    },
+    {
+      "chemin": "capture/ecrans/09.jpg",
+      "octets": 35651,
+      "sha256": "8c701a80370bde7b4c4bc8f5a9f41a63860770570a6f7119f06fe8e9a99df4d7"
+    },
+    {
+      "chemin": "capture/ecrans/10.jpg",
+      "octets": 42460,
+      "sha256": "39f07f875d2f4edbd545b17e6de8e0950158baaf360d92d96ee5c9c65ebe808e"
+    },
+    {
+      "chemin": "capture/ecrans/11.jpg",
+      "octets": 40886,
+      "sha256": "36c884ca4d5e6f709c02d5de88505a5d23ba911fdd22eb7005209ec31049a453"
+    },
+    {
+      "chemin": "capture/ecrans/12.jpg",
+      "octets": 39268,
+      "sha256": "ce69ee28aff338fc002dc7c7a531bab02f4e98ffe1d62de12beaf027287cd1b9"
+    },
+    {
+      "chemin": "capture/guide.json",
+      "octets": 2935,
+      "sha256": "88a3aba4e4f329dc7396c8a39094432ac408e8a1d134ece3b6a7eb55dd52e422"
+    },
+    {
+      "chemin": "capture/planche-12-ecrans.jpg",
+      "octets": 596704,
+      "sha256": "d9fbf1f03e7e351fe0f4bf3bfb7cdd5c251731cec24bb03efea24f1242c76c02"
+    },
+    {
+      "chemin": "etat.json",
+      "octets": 453,
+      "sha256": "af3eed3ef99ee4cfdb5e51e6d8e79576d1fefd6bce225e3fd4c054b01bd23a40"
+    },
+    {
+      "chemin": "formulaire/Fiche-questions-T3.md",
+      "octets": 1991,
+      "sha256": "d7fe831518e5654187980d0f0186477b4ae5e2e79ff320ebbe352cfcec2a3501"
+    },
+    {
+      "chemin": "index.html",
+      "octets": 1014362,
+      "sha256": "b27e625f327885ee08c10b93c4320a8882f08e876a350ba26dc648bdd4282a73"
+    },
+    {
+      "chemin": "journal-validations.md",
+      "octets": 715,
+      "sha256": "272b7f6339db504605db443db900190c9e412dd23f96720e9653aebf4164c624"
+    },
+    {
+      "chemin": "media/T3-Essai-P2-r3-muet.mp4",
+      "octets": 5950352,
+      "sha256": "685d2a560aaca265407b596c8ba90bd9e6887488746424bf5c44d2e472e19f03"
+    },
+    {
+      "chemin": "outils/Ecriture-et-audio.md",
+      "octets": 2502,
+      "sha256": "1aedfddd2a1af8114459ab07c9f6a1b5e51c8cb728a97cc41169984f41a13be9"
+    },
+    {
+      "chemin": "outils/capture.json",
+      "octets": 2419,
+      "sha256": "1a17b14a0dccb5d0ebee6cd0964fb59d0b57492f441a838772f33fdce91edd84"
+    },
+    {
+      "chemin": "outils/fabriquer.py",
+      "octets": 10948,
+      "sha256": "b3b4c8c59bc50e906231a511f95d2bb8e7af7536db806b16cdd51b8640302d96"
+    },
+    {
+      "chemin": "outils/galerie.html",
+      "octets": 20237,
+      "sha256": "da40844dd934bae514e2ea6b6a69c642fc12a09ca9fdf0c6511b7c2515f1a2e8"
+    },
+    {
+      "chemin": "outils/recette.py",
+      "octets": 7951,
+      "sha256": "43c924f76cac90f1e65fb9f87a67b81ea0ae075802ed834d18d9f3bfbcf4d074"
+    },
+    {
+      "chemin": "outils/sceller.py",
+      "octets": 4406,
+      "sha256": "03328236a23db24701a86eca6cb8283d61e40afa78682e70a5abf50f39f77e20"
+    },
+    {
+      "chemin": "rapports/Controle-12-ecrans.json",
+      "octets": 3422,
+      "sha256": "5884a7d91d75b9cfc9aa33aff25dbad97e85433ab3e5e034cd91650a3dae2fd6"
+    },
+    {
+      "chemin": "rapports/Media-integre.json",
+      "octets": 387,
+      "sha256": "5413473f45542c08c0e58ba8169e64c2f61c587e2d37c53c7e89d1379fe68d6c"
+    },
+    {
+      "chemin": "recherche/Droits-et-perimetre.md",
+      "octets": 2487,
+      "sha256": "b3dba994ee3b150574fc90fc010c3dd0391b2d49f5a6e5528acf6fbc39c39030"
+    },
+    {
+      "chemin": "recherche/Ecriture-et-audio.md",
+      "octets": 2502,
+      "sha256": "1aedfddd2a1af8114459ab07c9f6a1b5e51c8cb728a97cc41169984f41a13be9"
+    }
+  ]
+}
