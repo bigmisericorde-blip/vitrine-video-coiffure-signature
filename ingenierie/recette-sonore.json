@@ -30,58 +30,43 @@
       "licence": "https://creativecommons.org/licenses/by/4.0/"
     },
     {
-      "bpm_source": 113.64,
-      "bpm_sortie": 113.64,
+      "id": "fma-279237",
+      "source_sha256": "266685af0cb09f076f1b5815b640e61db3426796df113e90122e5097021589f1",
+      "video_sha256": "a67453bb18599905c4414bc11db239dce3902bb78d3a254d01a49f85cc0e4518",
+      "position": 2,
+      "source": "https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afro-house/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Afro House — Alex Morgan | https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afro-house/ | CC BY 4.0 : https://creativecommons.org/licenses/by/4.0/ | Extrait 0–30 s, niveau ajusté, fondus ; tempo original.",
+      "bpm_source": 112.0,
+      "bpm_source_note": "environ, selon fiche FMA, non mesuré",
+      "bpm_sortie": 112.0,
       "vitesse": 1.0,
       "debut_s": 0,
       "depart_original": true,
-      "iris_s": [
-        5.0,
-        15.8
-      ],
-      "ecart_grille_iris_ms": [
-        -2,
-        238
-      ],
-      "ecart_grille_push_ms": -8,
-      "id": "fvv-ghj3du94kp45fclg9a9ofcqb",
-      "source_sha256": "fabc9b6c2ffb9b1bb83860d3465d28a41fff695816a043996aaaea7cb2e883df",
-      "video_sha256": "b8346fd7f6771fb7cf1b306a6ab8ce885063104e23365bebb349d9a6f6524b54",
-      "lufs_i": -20.01,
-      "dbtp": -6.99,
+      "lufs_i": -19.14,
+      "dbtp": -4.11,
       "voix": false,
       "duree_s": 30.0,
-      "attribution": "Harbor Lanterns — FreeVibeVault | https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb | CC BY 4.0 : https://creativecommons.org/licenses/by/4.0/ | Extrait de 30 s, calage, niveau, égalisation et fondus adaptés au film.",
-      "position": 2,
-      "source": "https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb",
-      "licence": "https://creativecommons.org/licenses/by/4.0/"
+      "note": "Audio AAC identique à l’écoute ; BPM approximatif selon la fiche ; calage sur les iris non vérifié."
     },
     {
-      "bpm_source": 98.22,
-      "bpm_sortie": 105.556,
-      "vitesse": 1.0746849476232492,
-      "debut_s": 6.887239458585038,
-      "depart_original": false,
-      "iris_s": [
-        5.0,
-        15.8
-      ],
-      "ecart_grille_iris_ms": [
-        0,
-        0
-      ],
-      "ecart_grille_push_ms": -82,
-      "id": "569473",
-      "source_sha256": "8cc3ae6499844eeaa75c039a36f325395eee6d3eda52ac03c2bfd2b8f1547f07",
-      "video_sha256": "cb28f9836127eb8f07a2741d14c93dc083316043d8d38ce0d5d569e9791bc39a",
-      "lufs_i": -20.04,
-      "dbtp": -6.39,
+      "id": "fma-279239",
+      "source_sha256": "e4b9a4b972f48a1060624bee6bf7e63e09fb718c7dcc76001b81dd28e3a4eff4",
+      "video_sha256": "8c746e07355941bd99094af90b2f617c7c43852bfa8a5de705ea5d19ed843586",
+      "position": 3,
+      "source": "https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/hot-amapiano-beats/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Hot Amapiano Beats — Alex Morgan | https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/hot-amapiano-beats/ | CC BY 4.0 : https://creativecommons.org/licenses/by/4.0/ | Extrait 0–30 s, niveau ajusté, fondus ; tempo original.",
+      "bpm_source": 123.0,
+      "bpm_sortie": 123.0,
+      "vitesse": 1.0,
+      "debut_s": 0,
+      "depart_original": true,
+      "lufs_i": -19.77,
+      "dbtp": -6.58,
       "voix": false,
       "duree_s": 30.0,
-      "attribution": "Afrobeat Afro Beat — ARPMedia | https://pixabay.com/music/afrobeat-afrobeat-afro-beat-569473/ | Pixabay Content License : https://pixabay.com/service/license-summary/ | Extrait de 30 s, calage, niveau, égalisation et fondus adaptés au film.",
-      "position": 3,
-      "source": "https://pixabay.com/music/afrobeat-afrobeat-afro-beat-569473/",
-      "licence": "https://pixabay.com/service/license-summary/"
+      "note": "Audio AAC identique à l’essai 2 écouté ; pas de calage sur les iris revendiqué."
     },
     {
       "bpm_source": 102.0,

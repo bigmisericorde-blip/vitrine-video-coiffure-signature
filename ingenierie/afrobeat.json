@@ -41,14 +41,15 @@
     },
     {
       "position": 2,
-      "id": "fvv-ghj3du94kp45fclg9a9ofcqb",
+      "id": "fma-279237",
       "depart_original": true,
-      "decision": "Harbor Lanterns, remplacement audio écouté et validé ; tempo naturel."
+      "decision": "Remplacement de Harbor explicitement autorisé après audition, extrait 0–30 s au tempo original."
     },
     {
       "position": 3,
-      "id": "569473",
-      "decision": "Original Pixabay conservé."
+      "id": "fma-279239",
+      "depart_original": true,
+      "decision": "Remplacement 569473 : propriétaire « le 2 » après audition, début 0–30 s, tempo original ; montage final et distribution restent à qualifier."
     },
     {
       "position": 4,
@@ -82,38 +83,42 @@
       "depart_original": true
     },
     {
-      "id": "fvv-ghj3du94kp45fclg9a9ofcqb",
-      "titre": "Harbor Lanterns",
-      "auteur": "FreeVibeVault",
-      "source": "https://freevibevault.com/track/ghj3du94kp45fclg9a9ofcqb",
+      "id": "fma-279237",
+      "titre": "Afro House",
+      "auteur": "Alex Morgan",
+      "plateforme": "fma",
+      "source": "https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afro-house/",
       "licence": "https://creativecommons.org/licenses/by/4.0/",
-      "licence_editeur": "https://freevibevault.com/license",
-      "plateforme": "freevibevault",
       "content_id": "non-verifie",
-      "fichier": "freevibevault-harbor-lanterns-extrait-prive.mp3",
-      "sha256": "fabc9b6c2ffb9b1bb83860d3465d28a41fff695816a043996aaaea7cb2e883df",
-      "sha256_original": "547ea151e39e94de6a0e2997aebddc0fb49be0b04fc50d76f1b9d2c7473b416b",
-      "intro_0_3_s": "Piano feutré ; intro originale conservée. Contraste avec l’Afrobeat du premier spot.",
-      "bpm": 113.64,
-      "temps_fort_s": 0.25,
+      "fichier": "alex-morgan-afro-house-fma-279237.mp3",
+      "sha256": "266685af0cb09f076f1b5815b640e61db3426796df113e90122e5097021589f1",
+      "intro_0_3_s": "Extrait choisi à l’écoute : 0–30 s, sans modification du tempo.",
+      "bpm": 112.0,
+      "bpm_source": "environ 112 selon la fiche FMA ; non mesuré",
       "depuis_s": 0,
       "depart_original": true,
-      "tempo_natif": true
+      "tempo_natif": true,
+      "temps_fort_s": 0.0,
+      "temps_fort_note": "repère technique provisoire, pas une détection musicale"
     },
     {
-      "id": "569473",
-      "titre": "Afrobeat Afro Beat",
-      "auteur": "ARPMedia",
-      "plateforme": "pixabay",
-      "source": "https://pixabay.com/music/afrobeat-afrobeat-afro-beat-569473/",
-      "licence": "https://pixabay.com/service/license-summary/",
-      "content_id": "enregistre",
-      "fichier": "arpmedia-afrobeat-afro-beat-569473.mp3",
-      "sha256": "8cc3ae6499844eeaa75c039a36f325395eee6d3eda52ac03c2bfd2b8f1547f07",
-      "intro_0_3_s": "Environ 92 % de l’énergie sous 500 Hz ; intro dominée par le grave. Extrait à 6,887 s pour le raccord des iris.",
-      "bpm": 98.22,
-      "temps_fort_s": 9.81717,
-      "depuis_s": 6.847239
+      "id": "fma-279239",
+      "titre": "Hot Amapiano Beats",
+      "auteur": "Alex Morgan",
+      "plateforme": "fma",
+      "source": "https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/hot-amapiano-beats/",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "content_id": "non-verifie",
+      "fichier": "alex-morgan-hot-amapiano-beats-fma-279239.mp3",
+      "sha256": "e4b9a4b972f48a1060624bee6bf7e63e09fb718c7dcc76001b81dd28e3a4eff4",
+      "intro_0_3_s": "Piste choisie à l’écoute : 0–30 s, sans modification de tempo. Introduction non analysée musicalement.",
+      "bpm": 123.0,
+      "temps_fort_s": 0.0,
+      "depuis_s": 0,
+      "depart_original": true,
+      "tempo_natif": true,
+      "bpm_source": "indiqué par la fiche FMA, non mesuré",
+      "temps_fort_note": "repère technique provisoire, non présenté comme détection musicale"
     },
     {
       "id": "fma-265362",

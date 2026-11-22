@@ -21,5 +21,6 @@
     "Lecteur : échec du MP4 musical → lecture et téléchargement du master muet",
     "Parcours T2 : tirage après quatre validations ; relecture et export du même MP4 ; nouveau fond au montage suivant",
     "Moteur indisponible : erreur explicite, pas de faux export ni de remplacement par le master"
-  ]
+  ],
+  "portee_historique": "Recette de la version précédente, avant remplacement de Harbor et de la piste 569473 ; ne constitue pas une recette du candidat actuel."
 }

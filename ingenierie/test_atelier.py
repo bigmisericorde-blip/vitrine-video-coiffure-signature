@@ -13,7 +13,7 @@ from rotation import next_track
 
 def test_quatre_fonds_valides():
     tracks, _, _ = catalogue()
-    assert [t['id'] for t in tracks] == ['fma-279236','fvv-ghj3du94kp45fclg9a9ofcqb','569473','fma-265362']
+    assert [t['id'] for t in tracks] == ['fma-279236','fma-279237','fma-279239','fma-265362']
     assert all(t['media'].is_file() for t in tracks)
 
 

@@ -108,7 +108,7 @@ def test_lecteur_et_un_montage(banc):
         u = f'http://127.0.0.1:{srv.server_port}/'
         try:
             with pw.sync_playwright() as p:
-                b = p.chromium.launch(args=['--no-sandbox'])
+                b = p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
                 ctx = b.new_context(viewport={'width': 320, 'height': 568}, accept_downloads=True)
                 page = ctx.new_page()
                 errors = []

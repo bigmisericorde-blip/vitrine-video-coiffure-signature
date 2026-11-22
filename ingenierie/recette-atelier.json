@@ -30,5 +30,6 @@
     390,
     820
   ],
-  "validation": "La preuve navigateur utilise des textes et fichiers de test temporaires. Aucun n’est dans le catalogue."
+  "validation": "La preuve navigateur utilise des textes et fichiers de test temporaires. Aucun n’est dans le catalogue.",
+  "portee_historique": "Recette de la version précédente, avant remplacement de Harbor et de la piste 569473 ; ne constitue pas une recette du candidat actuel."
 }

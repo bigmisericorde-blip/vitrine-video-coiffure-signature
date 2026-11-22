@@ -8,7 +8,7 @@ def test_une_identite_et_un_catalogue_separe():
     case,plan=validate(load(CASE),load(PLAN));catalogue=load(HERE/'afrobeat.json')
     assert (plan['template_id'],plan['version'],plan['audio_profile'])==('T2','1.0.0',catalogue['profile_id'])
     assert catalogue['schema']=='vv.coiffure.afrobeat/1.2'
-    assert [x['id'] for x in catalogue['pistes']]==['fma-279236','fvv-ghj3du94kp45fclg9a9ofcqb','569473','fma-265362']
+    assert [x['id'] for x in catalogue['pistes']]==['fma-279236','fma-279237','fma-279239','fma-265362']
     assert '573944' not in (t['id'] for t in catalogue['pistes'])
     assert not {'pistes','selection_finale','ota','download','cloudflare'} & set(plan)
     assert [s['secondes'] for s in case['scenes']]==[6,7,7,7]
@@ -35,7 +35,10 @@ def test_silencieux_et_calibrations_identiques():
     assert r['plans_egaux_hors_metadonnees'] is True
     assert r['avant']['images']==r['apres']['images']==900
     assert r['avant']['audio']==r['apres']['audio']==False
-    assert all(sha(ROOT/n)==digest for n,digest in r['media_intacts'].items())
+    retires={'media/afrobeat/569473.mp4','media/afrobeat/fvv-ghj3du94kp45fclg9a9ofcqb.mp4'}
+    assert all(not (ROOT/n).exists() for n in retires)
+    assert all(sha(ROOT/n)==digest for n,digest in r['media_intacts'].items() if n not in retires)
+    assert all(sha(ROOT/('media/afrobeat/'+t['id']+'.mp4'))==t['video_sha256'] for t in load(HERE/'recette-sonore.json')['pistes'])
 
 
 def test_generation_et_manifeste():

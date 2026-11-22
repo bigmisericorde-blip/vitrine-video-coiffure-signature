@@ -9,13 +9,13 @@
     },
     {
       "path": "CREDITS.md",
-      "bytes": 5766,
-      "sha256": "c5f797980e5fc843c25ff8422e175c346946b35e3437e28e5422d8f4806a220d"
+      "bytes": 5874,
+      "sha256": "34764e94b5305bd8420e35fcc9e5829a681e1b5881c5bc72e126e2f63ad352d2"
     },
     {
       "path": "README.md",
-      "bytes": 12331,
-      "sha256": "60d11bddd8dc2cd7152f23eacbd29d93442b44b4ff7cdd6d9e3cd8729a2ba577"
+      "bytes": 12409,
+      "sha256": "2cf38003b9da670b78cb038f389b8b20a1d14fd3b33f832545f223c981e196bf"
     },
     {
       "path": "assets/IBMPlexMono-Medium.ttf",
@@ -59,8 +59,8 @@
     },
     {
       "path": "assets/afrobeat-catalogue.js",
-      "bytes": 2485,
-      "sha256": "e4a508106ebbea84a1a7d782d9998d77ef6d9f3785175b2824ce2d41f15f8b31"
+      "bytes": 2458,
+      "sha256": "883d81d898f69b2c72b59e749b5e2350e4193279f9f5a0fab316d64f175be061"
     },
     {
       "path": "assets/atelier.css",
@@ -199,8 +199,8 @@
     },
     {
       "path": "ingenierie/afrobeat.json",
-      "bytes": 4353,
-      "sha256": "6c3e77bd1966b96176b72a6b3c5b6fb895f62b099080bc90f10dec0354d1b299"
+      "bytes": 4729,
+      "sha256": "f39b13949e2315cf8b7aace65aa71707b401ffe52580f8baccd93f3a873ad4b1"
     },
     {
       "path": "ingenierie/build_ecrans.py",
@@ -264,8 +264,8 @@
     },
     {
       "path": "ingenierie/recette-sonore.json",
-      "bytes": 4304,
-      "sha256": "f6e3a18f303522ea0a8613085c88283bcb40b6464f3c43b82c9738d063f5df78"
+      "bytes": 4326,
+      "sha256": "89c334f383a057121652d7b0d6b728aafc638381a827cd0cb0e34fa5f4cb0aa1"
     },
     {
       "path": "ingenierie/recette-video.json",
@@ -304,8 +304,8 @@
     },
     {
       "path": "livrables/07-bandes-son-afrobeat.md",
-      "bytes": 2204,
-      "sha256": "f497274145b1294affed4e560b78c0c0f4633ac5d3aae95a4e3bb903a71665a6"
+      "bytes": 2427,
+      "sha256": "8ba4e07d6d702cf3db4a94f8e1272a924ec6fb3795ca8c4b15a2dab3b62db3ad"
     },
     {
       "path": "livrables/09-film-final-t2.md",
@@ -433,11 +433,6 @@
       "sha256": "9a919a7fe081572e47cedfa6a98a95ff776634808b55debdf4633ca115d6f25e"
     },
     {
-      "path": "media/afrobeat/569473.mp4",
-      "bytes": 9712730,
-      "sha256": "cb28f9836127eb8f07a2741d14c93dc083316043d8d38ce0d5d569e9791bc39a"
-    },
-    {
       "path": "media/afrobeat/fma-265362.mp4",
       "bytes": 9696399,
       "sha256": "31346ad2b8710f74866e009217f46bb866f53b33ad92655db5307963ebe20044"
@@ -448,9 +443,14 @@
       "sha256": "38faa76f266db570872e01b167d7474dd9d1e74a1c72a04c917fe73985f5122b"
     },
     {
-      "path": "media/afrobeat/fvv-ghj3du94kp45fclg9a9ofcqb.mp4",
-      "bytes": 9688002,
-      "sha256": "b8346fd7f6771fb7cf1b306a6ab8ce885063104e23365bebb349d9a6f6524b54"
+      "path": "media/afrobeat/fma-279237.mp4",
+      "bytes": 9582549,
+      "sha256": "a67453bb18599905c4414bc11db239dce3902bb78d3a254d01a49f85cc0e4518"
+    },
+    {
+      "path": "media/afrobeat/fma-279239.mp4",
+      "bytes": 9570550,
+      "sha256": "8c746e07355941bd99094af90b2f617c7c43852bfa8a5de705ea5d19ed843586"
     },
     {
       "path": "media/t2-signature-coiffure-narree.mp4",

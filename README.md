@@ -45,9 +45,9 @@ Ouvrir `http://localhost:8080/` ou héberger le dossier en **HTTPS**. Ne pas ouv
 
 ### Musique
 
-Les quatre instrumentaux validés restent dans l’ordre **Alex Morgan, Harbor Lanterns, ARPMedia, Elijah_K**. Le moteur vérifie le fichier sélectionné et recopie son AAC, sans changer sa durée, son tempo ni son gain. Les nouveaux montages réussis ne reprennent pas le dernier fond ; relire ou télécharger ne tire rien. Un échec n’enregistre pas de tirage. `film.html?muet=1` lit le master historique ; `simulation.html?test=VV-COIF-01&muet=1` génère le montage dynamique sans son pour l’exemple. Si le son n’est pas disponible, le parcours permet de **réessayer sans musique** sans abandonner la fiche ni les prises.
+Les quatre instrumentaux validés restent dans l’ordre **Afrobeat (Alex Morgan), Afro House (Alex Morgan), Hot Amapiano Beats (Alex Morgan), Amapiano (Elijah_K)**. Le moteur vérifie le fichier sélectionné et recopie son AAC, sans changer sa durée, son tempo ni son gain. Les nouveaux montages réussis ne reprennent pas le dernier fond ; relire ou télécharger ne tire rien. Un échec n’enregistre pas de tirage. `film.html?muet=1` lit le master historique ; `simulation.html?test=VV-COIF-01&muet=1` génère le montage dynamique sans son pour l’exemple. Si le son n’est pas disponible, le parcours permet de **réessayer sans musique** sans abandonner la fiche ni les prises.
 
-[Licences, mesures et crédits](livrables/07-bandes-son-afrobeat.md) · [Crédits](CREDITS.md). La piste 1 conserve son départ original ; Harbor Lanterns garde son tempo natif. Aucun des quatre essais de voix ne fait partie du catalogue. Pour reconstruire les rendus intégrés de l’exemple, utiliser les originaux licenciés hors dépôt :
+[Licences, mesures et crédits](livrables/07-bandes-son-afrobeat.md) · [Crédits](CREDITS.md). La piste 1 conserve son départ original ; Afro House et Hot Amapiano Beats conservent leur tempo natif. Aucun des quatre essais de voix ne fait partie du catalogue. Pour reconstruire les rendus intégrés de l’exemple, utiliser les originaux licenciés hors dépôt :
 
 ```bash
 python ingenierie/mixage.py --sources /dossier/prive --demo .
