@@ -1,13 +1,27 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>T3 · Créer et exporter</title><link rel="stylesheet" href="app.css"><script src="app.js" defer></script></head>
-<body><main>
-<header class="mast"><span class="brand"><span class="mark" aria-hidden="true">◈</span> Vitrine Vidéo</span><span class="tag">ATELIER · T3</span></header>
-<section class="hero"><p class="kicker">GABARIT T3 / COIFFURE ET BEAUTÉ</p><h1>Apporter une preuve<span>.</span></h1><p>Une fiche, quatre prises et la musique choisie.<br> Un vrai montage vertical de 30 secondes.</p><button id="example" type="button" class="secondary" disabled>Charger l’exemple</button></section>
-<div class="layout">
-<section class="work" aria-label="Créer mon film">
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+<title>Ta fiche preuve — Vitrine Vidéo</title><link rel="stylesheet" href="app.css?v=signature-2"><script src="app.js?v=signature-2" defer></script>
+</head>
+<body><div class="shell">
+<header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="ecrans.html">Les 12 écrans →</a></header>
+<main class="hero">
+<section class="intro">
+<p class="kicker">COIFFURE‑T3 · APPORTER UNE PREUVE</p>
+<h1>Ta fiche<span>preuve.</span></h1>
+<p class="lead">Décris ton produit ou ton service. Filme les étapes, puis télécharge ta vidéo verticale de 30 secondes, avec musique et, si tu le souhaites, ta voix.</p>
+<div class="leadCard card">
+<h2>Quatre vues à montrer</h2><ol class="list slots" id="slots"></ol>
+<p class="note">Le son de tes prises reste disponible à la relecture. Tu peux ajouter ta propre voix séparément au montage.</p>
+<p class="note">Tes prises et ta voix restent dans cet onglet. Aucun média n’est envoyé par le moteur.</p>
+</div>
+
+</section>
+<section class="work card" aria-label="Créer mon film">
 <nav aria-label="Étapes" class="steps"><span id="step1" aria-current="step">01 <b>Fiche</b></span><span id="step2">02 <b>Prises</b></span><span id="step3">03 <b>Export</b></span></nav>
 <p id="alert" class="alert" hidden role="alert"></p>
-<form id="fiche" class="section">
+<form id="fiche" class="section form-flow" autocomplete="off">
 <p class="kicker">LE PRODUIT OU LE SERVICE ET LE GESTE</p><h2>Que veux-tu montrer ?</h2>
 <label>Quel produit ou service veux-tu montrer ?<input name="service" required maxlength="60" placeholder="Un soin du visage"></label>
 <label>Quel geste veux-tu montrer ?<input name="geste" required maxlength="72" placeholder="Appliquer le soin au pinceau"></label>
@@ -16,7 +30,8 @@
 <label id="cibleLabel" hidden>Comment peuvent-ils le faire ? <small>Facultatif · texte affiché, pas un lien actif</small><input name="cible" maxlength="76" placeholder="Sur place, par téléphone…"></label>
 <details><summary>Ajouter un nom, un lieu ou un prix <small>· facultatif</small></summary><div class="optional"><label>Nom<input name="nom" maxlength="46" autocomplete="off"></label><label>Lieu<input name="lieu" maxlength="42"></label><label>Prix affiché<input name="prix" maxlength="34" placeholder="À partir de…"></label></div></details>
 <button type="submit" class="primary" id="continuer" disabled>Passer aux prises <span aria-hidden="true">→</span></button>
-<p><a href="ecrans.html">Consulter les 12 écrans de prise</a></p>
+<button id="example" type="button" class="secondary" disabled>Charger la fiche d’exemple</button>
+<p class="note">Les prises et la voix restent dans ton navigateur. Aucun média n’est envoyé par le moteur.</p>
 </form>
 <section id="prises" class="section" hidden>
 <div id="captureIntro"><button id="captureStart" type="button" class="secondary">Filmer ou importer dans les 12 écrans</button><p class="soft">Filme ou importe tes quatre prises. Tu peux aussi utiliser l’import ci-dessous.</p></div>
@@ -32,6 +47,7 @@
 <p class="kicker">LE FILM À CRÉER</p><h2>Choisis le son.</h2><p class="explain">Tu peux choisir une des quatre pistes ou laisser le moteur choisir automatiquement.</p>
 <label>Musique du montage<select id="piste"><option value="">Rotation automatique</option></select></label>
 <p class="note">Le son original reste disponible à la relecture, mais n’est pas ajouté au film. Tu peux ajouter ta propre voix off séparément.</p>
+<div class="music-card card"><p class="kicker">LES QUATRE MUSIQUES</p><ul class="tracks" id="tracks"></ul><p class="note">Les crédits sont fournis avec ton montage.</p></div>
 <div id="voicePanel" hidden><h3>Ta voix off <small>· facultative</small></h3>
 <p class="soft">Enregistre ou importe une voix que tu es autorisé à utiliser. Maximum 30 secondes et 20 Mio ; elle commence au début du film, avec la musique. Écoute-la avant de créer le MP4. Aucun sous-titre automatique. Les prises et la voix restent dans ton navigateur. Télécharge le MP4 avant de fermer la page.</p>
 <label>Importer une voix (WAV, MP3, M4A, OGG ou WebM)<input id="voiceFile" type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg,.webm"></label>
@@ -44,7 +60,6 @@
 <div class="buttons"><button type="button" id="retourPrises" class="plain">Revoir les prises</button></div>
 </section>
 </section>
-<aside><p class="kicker">LE MOTEUR T3</p><h2>Ton montage</h2><div class="spec"><strong>9:16</strong><span>portrait</span><strong>30 s</strong><span>MP4</span></div><h3>Quatre prises</h3><ol class="slots" id="slots"></ol><h3>Pack musical vérifié</h3><ul class="tracks" id="tracks"></ul><p class="soft">Traitement dans ton navigateur · aucun envoi de tes médias.</p></aside>
-</div>
-<footer>T3 / Atelier navigateur · Utilise des prises autorisées. Pas de collecte ni de publication par le moteur.</footer>
-</main></body></html>
+</main>
+<footer class="info"><a href="CREDITS.md">Crédits et licences</a> · Utilise des prises et une voix que tu es autorisé à diffuser.</footer>
+</div></body></html>

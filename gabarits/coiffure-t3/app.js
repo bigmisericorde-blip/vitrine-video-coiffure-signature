@@ -13,7 +13,7 @@ async function web(path,o={}){const headers={...o.headers};if(token)headers['X-T
 }
 async function req(path,o){if(path==='api/config')return (await fetch('config.json')).json();if(path==='api/session')return {session:'local'};if(o?.method==='DELETE')return {};throw Error('Action indisponible.');}
 function detail(a,b){const li=document.createElement('li'),id=document.createElement('span'),name=document.createElement('span');cl(id,a);cl(name,b);li.append(id,name);return li;}
-function liste(){ $('slots').replaceChildren(...ids.map((s,j)=>{const x=detail(s,cfg.contrat.prises[s].titre+(ok[s]?' ✓':''));if(ok[s])x.classList.add('kept');return x;})); }
+function liste(){ $('slots').replaceChildren(...ids.map((s,j)=>{const take=cfg.contrat.prises[s],x=detail(String(j+1).padStart(2,'0'),take.titre+(ok[s]?' ✓':'')),duration=document.createElement('small');cl(duration,take.secondes+' s');x.append(duration);if(ok[s])x.classList.add('kept');return x;})); }
 function cible(){const ss=form.elements.action.value, target=form.elements.cible; $('cibleLabel').hidden=!ss||ss==='aucune'; if(ss==='aucune')target.value='';}
 function setFiche(data){for(const [k,v] of Object.entries(data))if(form.elements.namedItem(k))form.elements[k].value=v;cible();}
 function release(){if(mediaUrl){URL.revokeObjectURL(mediaUrl);mediaUrl=null;} reel.pause();reel.removeAttribute('src');reel.load();reel.hidden=true;}
