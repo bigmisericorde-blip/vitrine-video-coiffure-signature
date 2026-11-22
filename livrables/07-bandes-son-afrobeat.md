@@ -1,6 +1,6 @@
 # Fonds actifs · Signature Coiffure
 
-Les pistes 2 et 3 remplacent Harbor et 569473 à la suite de deux choix distincts ; cette intégration reste un candidat de revue. **Seuls les instrumentaux sont dans le catalogue** : aucun texte, voix, tarif parlé ou repère d’essai ne peut apparaître automatiquement. L’ancienne deuxième piste a été retirée de la rotation.
+Les pistes 2 et 3 remplacent Harbor et 569473 à la suite de deux choix distincts ; les quatre fonds retenus sont ci-dessous. Aucune narration ni tarif parlé n’est ajouté automatiquement aux fonds. La fiche FMA de la piste 4 ne la classe pas comme instrumentale ; ne pas inférer de cette fiche qu’elle est sans voix. L’ancienne deuxième piste a été retirée de la rotation.
 
 | N° | Musique | Extrait source | Tempo rendu | Niveau sans narration |
 | :-- | :-- | --: | --: | --: |

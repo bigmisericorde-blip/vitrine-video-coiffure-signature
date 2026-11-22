@@ -9,13 +9,13 @@
     },
     {
       "path": "CREDITS.md",
-      "bytes": 5874,
-      "sha256": "34764e94b5305bd8420e35fcc9e5829a681e1b5881c5bc72e126e2f63ad352d2"
+      "bytes": 5962,
+      "sha256": "b283f9095a0875dcfc646c399db6092005cbae587bd13ef0198a4085eb362701"
     },
     {
       "path": "README.md",
-      "bytes": 12409,
-      "sha256": "2cf38003b9da670b78cb038f389b8b20a1d14fd3b33f832545f223c981e196bf"
+      "bytes": 12400,
+      "sha256": "939b7d058618292d0a202589e82d191fa2fb551b271691ef14cbee6a9bbddace"
     },
     {
       "path": "assets/IBMPlexMono-Medium.ttf",
@@ -169,8 +169,8 @@
     },
     {
       "path": "atelier.html",
-      "bytes": 6631,
-      "sha256": "53515ecdd6e7f039a6282f644dbb0ce9d4ee9e60f8aa7059507488d9906709e4"
+      "bytes": 6639,
+      "sha256": "0c4a509048fbecd362535996cc1764260bade34315b62d38efb107bfd23c40e9"
     },
     {
       "path": "cas-demo.js",
@@ -184,8 +184,8 @@
     },
     {
       "path": "film.html",
-      "bytes": 1925,
-      "sha256": "82be4f97992146f934b7481933d51209544b84a8453062d3b6a0f21aa8cfe78e"
+      "bytes": 1933,
+      "sha256": "6640f0164036e55fb6a8a8caeb3c844d4c5da48fa51a58c0397da6ed34433222"
     },
     {
       "path": "final.html",
@@ -199,8 +199,8 @@
     },
     {
       "path": "ingenierie/afrobeat.json",
-      "bytes": 4729,
-      "sha256": "f39b13949e2315cf8b7aace65aa71707b401ffe52580f8baccd93f3a873ad4b1"
+      "bytes": 4730,
+      "sha256": "f0c03b1ae2979420242b97ba3d3b6068ecaa1baac2043b66e6b87b26ff650302"
     },
     {
       "path": "ingenierie/build_ecrans.py",
@@ -270,7 +270,7 @@
     {
       "path": "ingenierie/recette-video.json",
       "bytes": 2923,
-      "sha256": "d6a76d7d0c5bf036fe3553cd3be0b149fa952c155dda75fe4059913239a1ab97"
+      "sha256": "1ca65eca9ad9d2cfcc805bbfadda7572c4c080932b3156bdec195250f06206a1"
     },
     {
       "path": "ingenierie/rendu.py",
@@ -294,8 +294,8 @@
     },
     {
       "path": "ingenierie/simulation-t2.html",
-      "bytes": 7858,
-      "sha256": "eb3cf740370b358dafe431fea3f7272d023c6d10c5ac729b2d6d0441e777814d"
+      "bytes": 7869,
+      "sha256": "5eb63d93503e797df2736d82c3d67632bcefca94b244f6605256456a1d157fe3"
     },
     {
       "path": "ingenierie/voix_texte.py",
@@ -304,8 +304,8 @@
     },
     {
       "path": "livrables/07-bandes-son-afrobeat.md",
-      "bytes": 2427,
-      "sha256": "8ba4e07d6d702cf3db4a94f8e1272a924ec6fb3795ca8c4b15a2dab3b62db3ad"
+      "bytes": 2477,
+      "sha256": "4b481867d152ec0376da0399b9e9b1b7ad624cb99f6650c183e567b459bba6bf"
     },
     {
       "path": "livrables/09-film-final-t2.md",
@@ -479,8 +479,8 @@
     },
     {
       "path": "simulation.html",
-      "bytes": 7858,
-      "sha256": "eb3cf740370b358dafe431fea3f7272d023c6d10c5ac729b2d6d0441e777814d"
+      "bytes": 7869,
+      "sha256": "5eb63d93503e797df2736d82c3d67632bcefca94b244f6605256456a1d157fe3"
     }
   ]
 }

@@ -1,6 +1,6 @@
-# T1 — candidat de revue : remplacement de deux musiques
+# T1 — note de correction : remplacement de deux musiques
 
-Branche de revue uniquement. **Ni validation générale, ni Release stable, ni déploiement.**
+Note de périmètre de la correction, distincte des attestations de déploiement. Aucun déploiement de l’atelier voix n’est sous-entendu.
 
 - Harbor Lanterns → Afro House, Alex Morgan, FMA 279237, choisi explicitement après audition séparée.
 - 569473 → Hot Amapiano Beats, Alex Morgan, FMA 279239, choisi précédemment (« le 2 »).

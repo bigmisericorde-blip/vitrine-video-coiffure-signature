@@ -1,3 +1,5 @@
+> **Document historique** : cette recette précède les deux remplacements musicaux ; sa liste de pistes ne décrit pas la rotation actuelle. Voir [la liste actuelle](07-bandes-son-afrobeat.md).
+
 # T2 · Recette de livraison
 
 **Signature coiffure · gabarit 1.0.0**

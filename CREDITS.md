@@ -19,10 +19,10 @@ Great Clips, The Barber Lab, Maison Nafaya et La Barbera Salón sont cités comm
 
 | Place | Œuvre et auteur | Licence | Film intégré |
 | :---: | :--- | :--- | :--- |
-| 1 | [Afrobeat — Alex Morgan](https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afrobeat-1/) · Free Music Archive | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [MP4](media/afrobeat/fma-279236.mp4) |
+| 1 | [Afrobeat — Alex Morgan](https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afrobeat-1/) · Free Music Archive | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · IA déclarée par l’auteur · Content ID non vérifié | [MP4](media/afrobeat/fma-279236.mp4) |
 | 2 | [Afro House — Alex Morgan](https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/afro-house/) · Free Music Archive | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · IA déclarée par l’auteur · Content ID non vérifié | [MP4](media/afrobeat/fma-279237.mp4) |
 | 3 | [Hot Amapiano Beats — Alex Morgan](https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/hot-amapiano-beats/) · Free Music Archive | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · IA déclarée par l’auteur · Content ID non vérifié | [MP4](media/afrobeat/fma-279239.mp4) |
-| 4 | [Amapiano — Elijah_K](https://freemusicarchive.org/music/elijah-k/single/amapiano/) · Free Music Archive | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [MP4](media/afrobeat/fma-265362.mp4) |
+| 4 | [Amapiano — Elijah_K](https://freemusicarchive.org/music/elijah-k/single/amapiano/) · Free Music Archive | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · Content ID non vérifié | [MP4](media/afrobeat/fma-265362.mp4) |
 
 Modifications : extrait de 30 secondes, tempo calé pour les fonds 1/4 ; tempo d’origine pour les fonds 2/3, égalisation, ajustement de niveau et fondus ; aucune modification de l’image. La piste 1 est intégrée depuis son 0:00. Les crédits et les liens sont repris sous le lecteur et dans les métadonnées de chaque film. Les licences couvrent les pistes selon leurs conditions, pas les autres éléments du spot. Respecter l’attribution en rediffusion ; aucun MP3 original ou certificat dans le dépôt. Aucune garantie d’absence de réclamation Content ID.
 
