@@ -1,7 +1,7 @@
 {
   "schema": "vv.coiffure.render-job/1",
   "template_id": "COIFFURE-T2",
-  "template_version": "2.0.0-rc.1",
+  "template_version": "2.0.1-rc.1",
   "execution_profile": "browser-webcodecs",
   "audio_profile": "coiffure-en-etapes",
   "job_id": "8b203ea8a7cc01de62181b3b65cebd5a",

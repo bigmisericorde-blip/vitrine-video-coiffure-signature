@@ -10,7 +10,7 @@ La licence affichée n’est pas une garantie sur des réclamations Content ID o
 
 | Ressource réellement utilisée | Rôle | Licence |
 |---|---|---|
-| [Chewy Regular 1.001](assets/texte/police.json) | Lettrage ballon dans la vidéo ; l’effet de relief est dessiné par le moteur | [Apache 2.0](assets/texte/LICENSE-Chewy.txt) |
+| [Dancing Script 2.001](assets/texte/police.json) | Sous-titres incrustés dans les images | [SIL OFL 1.1](assets/texte/OFL-DancingScript.txt) |
 | Plus Jakarta Sans Variable | Signature et tarif de la vidéo, écrans de capture | [SIL OFL 1.1](assets/OFL-PlusJakartaSans.txt) |
 | Manrope, IBM Plex Mono, Montserrat | Interface uniquement | [Manrope](assets/OFL.txt) · [IBM Plex Mono](assets/OFL-Plex.txt) · [Montserrat](assets/OFL-Montserrat.txt) — SIL OFL 1.1 |
 | Mediabunny 1.66.1 (Vanilagy) | Lecture, encodage et conteneur MP4 | [MPL 2.0](assets/vendor/mediabunny-LICENSE.txt) · [source correspondante et empreinte](assets/vendor/SOURCES.md) |

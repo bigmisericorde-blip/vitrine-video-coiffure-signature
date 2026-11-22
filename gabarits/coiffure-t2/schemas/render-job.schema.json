@@ -11,7 +11,7 @@
       "const": "COIFFURE-T2"
     },
     "template_version": {
-      "const": "2.0.0-rc.1"
+      "const": "2.0.1-rc.1"
     },
     "job_id": {
       "type": "string",

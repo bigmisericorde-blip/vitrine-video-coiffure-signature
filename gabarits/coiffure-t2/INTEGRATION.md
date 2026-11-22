@@ -1,4 +1,6 @@
-# COIFFURE‑T2 · intégration du candidat `2.0.0-rc.1`
+# COIFFURE‑T2 · intégration du candidat `2.0.1-rc.1`
+
+**Candidat de revue distinct, non validé pour production :** Dancing Script approuvée sur la démo Onglerie est intégrée ici au candidat général T2. L’accord Onglerie ne valide pas automatiquement ce nouvel export. Les guides, scènes, plan et quatre fonds du candidat intégrateur sont conservés ; le parcours multiservice Onglerie n’est pas encore intégré. Pas de production ni de recette sur appareil physique.
 
 **Vérifier les SHA‑256 → lire `manifest.json` → charger `config/template.json` → valider les contrats et prises → rejouer `tools/qa-production.py` → contrôler le fichier téléchargé et mapper les 12 états.** Ce paquet est autonome sur son **profil navigateur**, pas une intégration Android/serveur ni une publication.
 
@@ -24,7 +26,7 @@ Ouvrir `http://127.0.0.1:8092/` dans Chrome/Edge récent, avec WebCodecs H.264, 
 | Musique | `assets/engine/rotation.mjs` sérialise les succès sous Web Locks, par origine et catalogue, avec état local. Une erreur n’avance pas le tour ; la relance du même job garde sa piste. La simulation utilise A sans modifier l’historique du commerçant. En cas de fermeture brutale, la réservation bloquante peut être reprise/abandonnée dans l’onglet ; sinon elle expire après 15 min. Les 128 derniers succès sont mémorisés. Pas de synchronisation entre appareils. |
 | Fichier | Le worker copie en l’état les paquets AAC‑LC du fond vérifié (48 kHz stéréo), à côté de la vidéo H.264 **720 × 1280/30 i/s, 900 images/30 s**. Aucune piste de prise d’origine, de voix off, de sous-titre séparé ou de synthèse. Il transmet un `RenderResult` validé et les octets du MP4 ou un `RenderError`. Lecture et téléchargement partagent la même URL `blob:`. |
 
-`config/template.json` est lu par le runtime ; ses clés `template_id = COIFFURE-T2`, `version = 2.0.0-rc.1` et `audio_profile = coiffure-en-etapes` n’écrasent aucun alias T1. Le dossier contient les quatre schémas JSON Schema 2020‑12 et des exemples de job à 3/4 prises, de résultat et d’erreur dans `fixtures/contracts/`. `resultat-exemple.json` illustre le format, ce n’est pas le manifeste d’un MP4 téléchargeable. `INVALID_JOB` et `PLATFORM` demandent une correction plutôt qu’une nouvelle relance identique ; `AUDIO_INVALID` n’est jamais dégradé silencieusement en vidéo muette. Les erreurs n’effacent pas les prises déjà validées.
+`config/template.json` est lu par le runtime ; ses clés `template_id = COIFFURE-T2`, `version = 2.0.1-rc.1` et `audio_profile = coiffure-en-etapes` n’écrasent aucun alias T1. Le dossier contient les quatre schémas JSON Schema 2020‑12 et des exemples de job à 3/4 prises, de résultat et d’erreur dans `fixtures/contracts/`. `resultat-exemple.json` illustre le format, ce n’est pas le manifeste d’un MP4 téléchargeable. `INVALID_JOB` et `PLATFORM` demandent une correction plutôt qu’une nouvelle relance identique ; `AUDIO_INVALID` n’est jamais dégradé silencieusement en vidéo muette. Les erreurs n’effacent pas les prises déjà validées.
 
 ## Recette reproductible
 

@@ -40,7 +40,7 @@ export function normalizeVisual(raw,config,fontMeta){
     const rule=config.fields.find(x=>x.id===id); const s=text(raw[id],rule.question).replace(/\u2011/gu,'-');
     if((!s&&rule.required)||(s&&(LENGTH(s)<rule.min||LENGTH(s)>rule.max)))throw Error(`${rule.question} ${rule.min} à ${rule.max} caractères.`);
     if(id==='accroche'&&s){const n=s.split(' ').length; if(n<2||n>6)throw Error('Accroche : choisis 2 à 6 mots.');}
-    if(id!=='prix'&&Array.from(id==='salon'||id==='ville'?s:s.toLocaleUpperCase('fr')).some(ch=>!(id==='salon'||id==='ville'?signGlyphs:glyphs).has(ch.codePointAt(0))))throw Error(`${rule.question} La police de revue ne peut pas écrire ce caractère.`);
+    if(id!=='prix'&&Array.from(s).some(ch=>!(id==='salon'||id==='ville'?signGlyphs:glyphs).has(ch.codePointAt(0))))throw Error(`${rule.question} La police de revue ne peut pas écrire ce caractère.`);
     r[id]=s;
   }
   const choix=config.fields.find(f=>f.id==='canal').options.map(x=>x[0]);

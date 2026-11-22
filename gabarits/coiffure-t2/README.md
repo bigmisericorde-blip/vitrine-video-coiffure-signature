@@ -1,6 +1,8 @@
 # Vitrine Vidéo · COIFFURE‑T2
 
-**Candidat local `2.0.0-rc.1` · 3 ou 4 prises → MP4 vertical avec lettrage et musique, sans voix off.** Le même parcours prépare les prises, compose le montage R04, incruste les réponses de la fiche et pose un des quatre fonds retenus. Aucun média client n’est téléversé.
+**Convergence locale de revue non validée, non envoyée :** Dancing Script approuvée sur la démo Onglerie est intégrée ici au candidat général T2. L’accord Onglerie ne valide pas automatiquement ce nouvel export. Les guides, scènes, plan et quatre fonds du candidat intégrateur sont conservés ; le parcours multiservice Onglerie n’est pas encore intégré. Pas de production ni de recette sur appareil physique.
+
+**Candidat local `2.0.1-rc.1` · 3 ou 4 prises → MP4 vertical avec lettrage et musique, sans voix off.** Le même parcours prépare les prises, compose le montage R04, incruste les réponses de la fiche et pose un des quatre fonds retenus. Aucun média client n’est téléversé.
 
 ## Essayer
 

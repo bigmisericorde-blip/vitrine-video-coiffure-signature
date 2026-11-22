@@ -34,7 +34,9 @@ async function load(){
   const p=t.paths;
   const [questions,habillage,font,music,guide]=await Promise.all([p.questions,p.habillage,p.font_meta,p.catalogue,p.guide].map(readJson));
   assert(questions.schema==='vv.coiffure.questions/1'&&questions.revision===EDITION&&habillage.schema==='vv.coiffure.habillage/1'&&habillage.revision===EDITION&&habillage.base===t.base.revision);
-  assert(font.file==='Chewy-Regular.ttf'&&font.sans.file==='../PlusJakartaSans-Variable.ttf');
+  assert(font.family==='Dancing Script'&&font.file==='DancingScript-Variable.ttf'&&font.bytes===133636
+    &&font.sha256==='21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c'
+    &&font.sans.file==='../PlusJakartaSans-Variable.ttf');
   soundPack(music);
   assert(music.version===t.audio.catalogue_version&&music.audio_profile===t.audio_profile&&music.r04_base_sha256===t.base.approved_master_sha256);
   assert(guide.schema==='vv.coiffure.capture/1'&&guide.id===t.template_id&&guide.scenes.length===4&&guide.screens.length===12&&guide.source_audio===t.capture.source_audio);

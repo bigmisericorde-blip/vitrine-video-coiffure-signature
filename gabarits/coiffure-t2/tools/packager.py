@@ -16,7 +16,7 @@ fixtures/contracts/job-3-prises.json fixtures/contracts/job-4-prises.json fixtur
 assets/web.css assets/simulation-t2.css assets/result.css assets/capture.mjs assets/media.mjs assets/motion.mjs assets/render.worker.mjs
 assets/fiche-production.mjs assets/ecrans-production.mjs
 assets/engine/contract.mjs assets/engine/fiche.mjs assets/engine/music.mjs assets/engine/resources.mjs assets/engine/rotation.mjs
-assets/texte/Chewy-Regular.ttf assets/texte/LICENSE-Chewy.txt assets/texte/police.json assets/texte/lettrage.mjs assets/texte/modele-visuel.mjs
+assets/texte/DancingScript-Variable.ttf assets/texte/OFL-DancingScript.txt assets/texte/police.json assets/texte/lettrage.mjs assets/texte/modele-visuel.mjs
 assets/Manrope.ttf assets/IBMPlexMono-Medium.ttf assets/Montserrat-Variable.ttf assets/PlusJakartaSans-Variable.ttf
 assets/OFL.txt assets/OFL-Plex.txt assets/OFL-Montserrat.txt assets/OFL-PlusJakartaSans.txt
 assets/vendor/mediabunny-1.66.1.min.mjs assets/vendor/mediabunny-LICENSE.txt assets/vendor/SOURCES.md

@@ -217,7 +217,7 @@ def main():
         if not options.local_rushs:
             y4m=temp/'test.y4m';subprocess.run([FF,'-y','-v','error','-f','lavfi','-i','testsrc2=size=360x640:rate=30','-t','1','-pix_fmt','yuv420p','-f','yuv4mpegpipe',str(y4m)],check=True)
             flags+=['--use-fake-device-for-media-stream',f'--use-file-for-fake-video-capture={y4m}','--use-fake-ui-for-media-stream']
-        b=pw.chromium.launch(headless=True,args=flags);ctx=b.new_context(viewport={'width':390,'height':820},accept_downloads=True)
+        b=pw.chromium.launch(headless=True,args=flags,executable_path=os.getenv('CHROMIUM','/usr/bin/chromium'));ctx=b.new_context(viewport={'width':390,'height':820},accept_downloads=True);ctx.set_default_navigation_timeout(45000)
         page=ctx.new_page();page.set_default_timeout(10000);errors=[];external=[];fail_music=[False,0];posts=[]
         def gate(route):
             u=route.request.url
@@ -228,7 +228,7 @@ def main():
                 route.continue_()
             else:external.append(u);route.abort()
         ctx.route('**/*',gate);page.on('pageerror',lambda e:errors.append(str(e)))
-        qa={'revision':'2.0.0-rc.1','chromium':b.version,'viewport':[390,820],'physical_device_tested':False}
+        qa={'revision':'2.0.1-rc.1','chromium':b.version,'viewport':[390,820],'physical_device_tested':False}
         clips=ROOT/'fixtures/media';ex1=dict(EXAMPLES[0]['answers']);ex2=dict(EXAMPLES[1]['answers'],canal='telephone',contact='+2290100000000',contactConfirme=True)
         if options.local_rushs:
             fill(page,url,ex1);captures(page,options.local_rushs)
