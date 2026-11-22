@@ -15,15 +15,15 @@ schemas/template.schema.json schemas/render-job.schema.json schemas/render-resul
 fixtures/contracts/job-3-prises.json fixtures/contracts/job-4-prises.json fixtures/contracts/resultat-exemple.json fixtures/contracts/erreur-exemple.json
 assets/web.css assets/simulation-t2.css assets/result.css assets/capture.mjs assets/media.mjs assets/motion.mjs assets/render.worker.mjs
 assets/fiche-production.mjs assets/ecrans-production.mjs
-assets/engine/contract.mjs assets/engine/fiche.mjs assets/engine/music.mjs assets/engine/resources.mjs assets/engine/rotation.mjs
+assets/engine/metiers.js assets/engine/contract.mjs assets/engine/fiche.mjs assets/engine/music.mjs assets/engine/resources.mjs assets/engine/rotation.mjs
 assets/texte/DancingScript-Variable.ttf assets/texte/OFL-DancingScript.txt assets/texte/police.json assets/texte/lettrage.mjs assets/texte/modele-visuel.mjs
 assets/Manrope.ttf assets/IBMPlexMono-Medium.ttf assets/Montserrat-Variable.ttf assets/PlusJakartaSans-Variable.ttf
 assets/OFL.txt assets/OFL-Plex.txt assets/OFL-Montserrat.txt assets/OFL-PlusJakartaSans.txt
 assets/vendor/mediabunny-1.66.1.min.mjs assets/vendor/mediabunny-LICENSE.txt assets/vendor/SOURCES.md
 audio/music/catalogue.json audio/music/CREDITS.md docs/12-ecrans.md
-tools/preview.py tools/mires.py tools/qa-production.py tools/qa-requirements.txt tools/test-production.mjs tools/verify-contracts.py tools/packager.py'''.split()
+tools/preview.py tools/mires.py tools/qa-production.py tools/recette-profils.py tools/qa-requirements.txt tools/test-production.mjs tools/verify-contracts.py tools/packager.py'''.split()
 CORE+= [f'fixtures/media/S{i}.mp4' for i in range(1,5)]+[f'audio/music/fonds/{c}.m4a' for c in 'ABCD']
-EVIDENCE=['conformance/Recette-integrale.json','conformance/Tests-contrats-rotation.json','conformance/Tests-schemas.json']+[f'conformance/12-ecrans/{i:02}.webp' for i in range(1,13)]
+EVIDENCE=['conformance/Recette-integrale.json','conformance/Tests-contrats-rotation.json','conformance/Tests-schemas.json','conformance/Recette-profils.json','conformance/Retest-sources-audio.json']+[f'conformance/12-ecrans/{i:02}.webp' for i in range(1,13)]
 FILES=sorted(CORE+EVIDENCE)
 assert len(FILES)==len(set(FILES))
 MAX_BYTES=32*1024*1024
@@ -48,6 +48,9 @@ def evidence_check(payload):
     need(t['template_id']=='COIFFURE-T2' and not t['audio']['added_voice_off'] and not t['audio']['source_audio_in_output'],'Périmètre audio invalide')
     need(set(t['paths'].values())<=set(FILES),'Ressource canonique hors paquet')
     need(qa['revision']==t['version'] and qa['external_requests']==0 and qa['posts']==0 and qa['errors']==0 and qa['screens']==12 and qa['audio_failure_retry_same_job'] and qa['source_audio_reviewed_not_exported'],'Recette intégrale locale manquante')
+    prof=parse(payload,'conformance/Recette-profils.json');audio=parse(payload,'conformance/Retest-sources-audio.json')
+    need(len(prof['profils'])==8 and all(x['guides_confirmes']==4 for x in prof['profils']) and prof['ecrans_manucure']==12 and prof['export_sur_mires']['decoded_completely'] and not prof['validation_visuelle_humaine'],'Recette des profils manquante')
+    need(len(audio)==4 and {x['id'] for x in audio}==set('ABCD') and all(x.get('identical') and x.get('decoded') and x.get('http')==200 for x in audio),'Retest des sources audio manquant')
     a,b=qa['four_imports'],qa['three_imports']
     need(a['variant']!=b['variant'] and a['music_only_aac_bit_identical'] and b['music_only_aac_bit_identical'] and a['decoded_completely'] and b['decoded_completely'],'MP4 d’intégration non vérifiés')
     need(rot['form_combinations']==16 and rot['rotation_successes']==10000 and rot['rotation_repeats']==0 and schem['schemas']==4,'Schémas ou rotation non vérifiés')

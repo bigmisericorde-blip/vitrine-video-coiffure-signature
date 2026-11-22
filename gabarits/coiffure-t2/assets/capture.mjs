@@ -300,7 +300,7 @@ function backToTakes(){
 function init(){
   $('app').dataset.test=DATA.id;
   if(!preview&&!saved){if(ticket)$('curtainText').textContent='Cette fiche n’est plus dans cet onglet.';$('testCurtain').hidden=false;return;}
-  $('testID').textContent=preview?'APERÇU DE CAPTURE':demo?'COIFFURE · SIMULATION':'COIFFURE · MES PRISES';
+  $('testID').textContent=preview?'APERÇU DE CAPTURE':demo?'BEAUTÉ · SIMULATION':'BEAUTÉ · MES PRISES';
   $('flowLinks').hidden=!!preview;$('editFiche').href=href('index.html',ticket);$('seeScreens').href=href('ecrans.html',ticket);
   $('cta').onclick=()=>demo?intake(example(current()),'Mire de test · lecture'):filmLive();
   $('cameraBtn').onclick=()=>$('takeFile').click();
@@ -326,7 +326,9 @@ function init(){
   window.__capture=()=>({state,screen:state==='ad'||state==='montage'?null:`${current().id}_${state}`,accepted:[...accepted],reusedDetail:takes.get('S3')?.reuseFrom==='S2'});
 }
 loadCore().then(core=>{
-  CORE=core;DATA=core.guide;scenes=DATA.scenes;saved=restoreFiche(ticket,CORE);job=saved;demo=job?.source==='demo';
+  CORE=core;DATA=core.guide;saved=restoreFiche(ticket,CORE);job=saved;demo=job?.source==='demo';
+  const selected=job?.metier||params.get('metier')||'coiffure';
+  scenes=globalThis.VVBeaute.scenes(DATA.scenes,selected,'t2');
   init();document.documentElement.dataset.ready='yes';
 }).catch(()=>{
   $('curtainText').textContent='Impossible de charger les ressources locales du gabarit.';$('testCurtain').hidden=false;

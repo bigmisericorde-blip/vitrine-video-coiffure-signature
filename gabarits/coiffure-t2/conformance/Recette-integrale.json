@@ -1,5 +1,5 @@
 {
-  "revision": "2.0.1-rc.1",
+  "revision": "2.0.2-rc.1",
   "chromium": "156.0.8078.79",
   "viewport": [
     390,
@@ -9,45 +9,8 @@
   "screens": 12,
   "four_imports": {
     "file": "Recette-quatre-prises.mp4",
-    "bytes": 20080587,
-    "sha256": "8b487b18e7500b740c96aa4d4c5268a3597c033488d95de375665c14f40dd954",
-    "frames": 900,
-    "fps": 30,
-    "seconds": 30,
-    "avc_width": 720,
-    "avc_height": 1280,
-    "audio": "aac-lc/48000/2",
-    "variant": "C",
-    "audio_packet_sha256": "9c57f092e761e3afb5d7e0736585788fc24096f917e837f281cf8c8e06701b66",
-    "music_only_aac_bit_identical": true,
-    "metadata_contact_absent": true,
-    "decoded_completely": true,
-    "browser_audio_decoded": true,
-    "pixels": {
-      "gesture": {
-        "frame": 186,
-        "expected_text": "Séparer les mèches",
-        "light_pixels_matching": 1.0
-      },
-      "proof": {
-        "frame": 408,
-        "expected_text": "Des raies bien tracées",
-        "light_pixels_matching": 1.0
-      },
-      "service": {
-        "frame": 616,
-        "expected_text": "Tresses en carrés",
-        "light_pixels_matching": 1.0
-      },
-      "optional_empty_band_checked": true
-    }
-  },
-  "audio_failure_retry_same_job": true,
-  "source_audio_reviewed_not_exported": true,
-  "three_imports": {
-    "file": "Recette-trois-prises.mp4",
-    "bytes": 20030784,
-    "sha256": "3edb7d58b194dde3cfc71c5b72f58cf73992c9250990762192c1fbe9393704d6",
+    "bytes": 20093089,
+    "sha256": "c822e7e784113d1fe2fb060ef410f9c999a5f8cc993ff1645f159361987b5102",
     "frames": 900,
     "fps": 30,
     "seconds": 30,
@@ -59,29 +22,66 @@
     "music_only_aac_bit_identical": true,
     "metadata_contact_absent": true,
     "decoded_completely": true,
+    "browser_audio_decoded": true,
     "pixels": {
       "gesture": {
         "frame": 184,
-        "expected_text": "Fondre les longueurs",
+        "expected_text": "Séparer les mèches",
         "light_pixels_matching": 1.0
       },
       "proof": {
         "frame": 411,
-        "expected_text": "Des contours dessinés",
+        "expected_text": "Des raies bien tracées",
         "light_pixels_matching": 1.0
       },
       "service": {
         "frame": 621,
+        "expected_text": "Tresses en carrés",
+        "light_pixels_matching": 1.0
+      },
+      "optional_empty_band_checked": true
+    }
+  },
+  "audio_failure_retry_same_job": true,
+  "source_audio_reviewed_not_exported": true,
+  "three_imports": {
+    "file": "Recette-trois-prises.mp4",
+    "bytes": 19996474,
+    "sha256": "917a6121aa1ec42cb8c56ba3d022aaba0a437d6d2ed856899c93c85a40dec8c1",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "A",
+    "audio_packet_sha256": "cabfdb08041eae7625bfff023aecc2ffd9f783f2e9857addf253da5dcaa320d3",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true,
+    "pixels": {
+      "gesture": {
+        "frame": 182,
+        "expected_text": "Fondre les longueurs",
+        "light_pixels_matching": 1.0
+      },
+      "proof": {
+        "frame": 403,
+        "expected_text": "Des contours dessinés",
+        "light_pixels_matching": 1.0
+      },
+      "service": {
+        "frame": 617,
         "expected_text": "Dégradé bas",
         "light_pixels_matching": 1.0
       },
       "signature": {
-        "frame": 844,
+        "frame": 846,
         "expected_text": "Atelier Démo · Cotonou",
         "light_pixels_matching": 1.0
       },
       "price": {
-        "frame": 844,
+        "frame": 846,
         "expected_text": "3 500 FCFA",
         "light_pixels_matching": 1.0
       }
@@ -89,8 +89,8 @@
   },
   "technical_fixture": {
     "file": "Recette-mires.mp4",
-    "bytes": 20093632,
-    "sha256": "be89c422983e2af696fae5b484474a7e79993442d5032ea8e1f57b332fdcd714",
+    "bytes": 20087999,
+    "sha256": "755064728c6eb79887c06df9d1ed3a19a135fc014135c0ba72499aa59a72dd36",
     "frames": 900,
     "fps": 30,
     "seconds": 30,
@@ -107,7 +107,7 @@
   "camera_simulated": {
     "device": "Chromium / mire factice 360x640",
     "recorded_slot": "S1",
-    "replay_seconds": 6.1655,
+    "replay_seconds": 6.165,
     "stream_released": true
   },
   "concurrent_local_rotation": {

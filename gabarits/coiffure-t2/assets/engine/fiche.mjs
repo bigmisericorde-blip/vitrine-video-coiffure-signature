@@ -6,7 +6,9 @@ export function normalizeFiche(raw,core){
   if(!raw||!['client','demo'].includes(raw.source)||!Object.hasOwn(framing,raw.framing))throw Error('Choisis l’origine des prises et le cadrage du résultat.');
   // Une simulation n'utilise jamais de coordonnées, même si une autre fiche les avait.
   const fields=normalize(raw.source==='demo'?{...raw,canal:'aucun',contact:'',contactConfirme:false}:raw,core.questions,core.font);
-  return Object.freeze({...fields,source:raw.source,framing:raw.framing});
+  const metier=raw.metier||'coiffure';
+  if(!globalThis.VVBeaute.profiles.some(p=>p.id===metier))throw Error('Choisis une prestation connue.');
+  return Object.freeze({...fields,metier,source:raw.source,framing:raw.framing});
 }
 export function restoreFiche(id,core){
   if(!validId(id))return null;
@@ -17,7 +19,7 @@ export function restoreFiche(id,core){
   }catch{return null;}
 }
 export function saveFiche(fields,core,previous){
-  const answers={...visualAnswers(fields),source:fields.source,framing:fields.framing,contact:fields.contact,contactConfirme:fields.contactConfirme};
+  const answers={...visualAnswers(fields),metier:fields.metier,source:fields.source,framing:fields.framing,contact:fields.contact,contactConfirme:fields.contactConfirme};
   const id=restoreFiche(previous,core)?previous:newId();
   try{
     for(let i=sessionStorage.length-1;i>=0;i--){const k=sessionStorage.key(i);if(k?.startsWith(prefix)&&!restoreFiche(k.slice(prefix.length),core))sessionStorage.removeItem(k);}

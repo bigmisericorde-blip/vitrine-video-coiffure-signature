@@ -1,7 +1,7 @@
 {
   "schema": "vv.coiffure.render-result/1",
   "template_id": "COIFFURE-T2",
-  "template_version": "2.0.1-rc.1",
+  "template_version": "2.0.2-rc.1",
   "job_id": "8b203ea8a7cc01de62181b3b65cebd5a",
   "mode": "merchant",
   "source_count": 4,

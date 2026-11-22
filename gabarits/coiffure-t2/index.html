@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <title>Ta fiche coiffure — Vitrine Vidéo</title>
+  <title>Ta fiche beauté — Vitrine Vidéo</title>
   <link rel="stylesheet" href="assets/web.css">
   <script type="module" src="assets/fiche-production.mjs"></script>
 </head>
@@ -14,7 +14,7 @@
   <main class="hero">
     <section>
       <p class="kicker">COIFFURE‑T2 · DU GESTE AU RÉSULTAT</p>
-      <h1>Ta fiche<span>coiffure.</span></h1>
+      <h1>Ta fiche<span>beauté.</span></h1>
       <p class="lead">Décris ce qu’on verra à l’écran. Filme les étapes, puis télécharge ta vidéo verticale de 30 secondes, avec lettrage et musique, sans voix off.</p>
       <div class="leadCard card">
         <h2>Quatre vues à montrer</h2>
@@ -24,6 +24,7 @@
       </div>
     </section>
     <form class="card form-flow" id="testForm" autocomplete="off">
+      <div class="fiche-group"><label for="metier">Quel type de prestation proposes-tu ?</label><select id="metier" name="metier"></select></div>
       <div class="fiche-group"><p class="kicker">01 · À L’IMAGE</p><div id="fieldsProof"></div></div>
       <div class="fiche-group"><p class="kicker">02 · EN FIN DE FILM</p><div id="fieldsOffer"></div><div id="conditions"></div>
         <label id="confirmation" class="check" hidden><input type="checkbox" id="contactConfirme"><span id="contactConfirmationLabel"></span></label>

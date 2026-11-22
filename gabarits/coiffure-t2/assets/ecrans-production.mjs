@@ -5,15 +5,17 @@ const entries=[],ticket=new URLSearchParams(location.search).get('fiche');
 const names=['Consigne','Enregistrement','Relecture'];
 async function init(){
   const core=await loadCore(),guide=core.guide,job=restoreFiche(ticket,core);
+  const metier=job?.metier||new URLSearchParams(location.search).get('metier')||'coiffure';
+  const scenes=globalThis.VVBeaute.scenes(guide.scenes,metier,'t2');
   if(ticket){$('galleryCase').hidden=false;$('galleryCase').textContent=job?'Ta fiche est disponible dans cet onglet. Dans la galerie, les images restent des mires.':'La fiche n’est plus dans cet onglet. Voici les écrans de recette.';}
   if(job)document.querySelectorAll('a[href="index.html"]').forEach(a=>a.href=href('index.html',ticket));
-  for(const [i,scene] of guide.scenes.entries()){
+  for(const [i,scene] of scenes.entries()){
     const group=document.createElement('section');group.className='screen-group';
     const title=document.createElement('h2');title.textContent=`Prise ${i+1} · ${scene.titre.toLowerCase()}`;group.append(title);
     const row=document.createElement('div');row.className='screen-row';
     for(const [j,step] of names.entries()){
       const n=i*3+j+1,a=document.createElement('a'),rank=String(n).padStart(2,'0');
-      const url=href('simulation.html',job?ticket:null,{ecran:n});
+      const url=href('simulation.html',job?ticket:null,{ecran:n,metier});
       const label=`Écran ${n}/12 · Prise ${i+1} · ${step}`;
       const copy=[scene.consigne,`Durée minimale : ${scene.secondes} secondes.`,scene.question_relecture][j];
       a.href=`#${n}`;a.dataset.ecran=String(n);

@@ -6,8 +6,8 @@
     {
       "id": "service",
       "group": "preuve",
-      "question": "Quelle coiffure ou prestation veux-tu montrer ?",
-      "hint": "Écris le nom tel que ta clientèle le demanderait. Pas besoin d’indiquer homme ou femme.",
+      "question": "Quelle prestation veux-tu montrer ?",
+      "hint": "Écris le nom tel que ta clientèle le demanderait.",
       "required": true,
       "min": 2,
       "max": 34,
@@ -44,7 +44,7 @@
       "required": false,
       "min": 4,
       "max": 36,
-      "example": "Une coiffure qui te ressemble",
+      "example": "Un geste qui te ressemble",
       "display": "Ouverture · mots en cascade"
     },
     {

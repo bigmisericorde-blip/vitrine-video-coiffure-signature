@@ -12,7 +12,7 @@
     },
     "template_version": {
       "enum": [
-        "2.0.1-rc.1",
+        "2.0.2-rc.1",
         null
       ]
     },

@@ -228,7 +228,7 @@ def main():
                 route.continue_()
             else:external.append(u);route.abort()
         ctx.route('**/*',gate);page.on('pageerror',lambda e:errors.append(str(e)))
-        qa={'revision':'2.0.1-rc.1','chromium':b.version,'viewport':[390,820],'physical_device_tested':False}
+        qa={'revision':'2.0.2-rc.1','chromium':b.version,'viewport':[390,820],'physical_device_tested':False}
         clips=ROOT/'fixtures/media';ex1=dict(EXAMPLES[0]['answers']);ex2=dict(EXAMPLES[1]['answers'],canal='telephone',contact='+2290100000000',contactConfirme=True)
         if options.local_rushs:
             fill(page,url,ex1);captures(page,options.local_rushs)

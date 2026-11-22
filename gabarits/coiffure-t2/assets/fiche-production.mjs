@@ -7,7 +7,8 @@ const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=
 const ticket=new URLSearchParams(location.search).get('fiche');
 async function init(){
   const core=await loadCore(), form=$('testForm');
-  const {questions}=core, controls={};
+  const {questions}=core, controls={}, metier=$('metier'), profiles=globalThis.VVBeaute;
+  profiles.populate(metier,'coiffure');
   const make=(field,parent)=>{
     const row=el('div'), label=el('label',field.question);label.htmlFor=field.id;
     const input=el(field.options?'select':'input');input.id=input.name=field.id;input.required=Boolean(field.required);
@@ -39,11 +40,20 @@ async function init(){
     check.checked=a.contactConfirme===true;$('source').value=a.source||'client';$('framing').value=a.framing||'profil';
     renderConditions();
   };
-  const old=restoreFiche(ticket,core);fill(old||{});
+  const old=restoreFiche(ticket,core);profiles.populate(metier,old?.metier||'coiffure');fill(old||{});
+  const refreshProfile=()=>{
+    const p=profiles.get(metier.value);
+    for(const [key,value] of Object.entries({service:p.services[0],geste:p.geste,preuve:p.preuve})){
+      controls[key].placeholder='Ex. '+value;
+    }
+    $('gallery').href=href('ecrans.html',old?ticket:null,{metier:p.id});
+  };
+  metier.addEventListener('change',refreshProfile);refreshProfile();
   $('sample').onclick=async()=>{
     try{
       const rows=await readJson('formulaire/exemples.json');
-      fill({...rows.examples[0].answers,source:'demo',contact:'',contactConfirme:false,canal:'aucun'});
+      const p=profiles.get(metier.value);
+      fill({...rows.examples[0].answers,service:p.services[0],geste:p.geste,preuve:p.preuve,source:'demo',contact:'',contactConfirme:false,canal:'aucun'});
       $('formAlert').textContent='Fiche d’exemple chargée. Les clips fournis sont des mires de test, pas une prestation réelle.';
       $('service').focus();
     }catch{$('formAlert').textContent='La fiche d’exemple n’a pas chargé.';}
@@ -53,13 +63,13 @@ async function init(){
     try{
       const source=$('source').value;
       if(source==='client'&&!$('checkedCase').checked)throw Error('Confirme que tu as l’autorisation d’utiliser les prises.');
-      const raw={...Object.fromEntries(Object.entries(controls).map(([k,v])=>[k,v.value])),source,framing:$('framing').value,contactConfirme:check.checked};
+      const raw={...Object.fromEntries(Object.entries(controls).map(([k,v])=>[k,v.value])),metier:metier.value,source,framing:$('framing').value,contactConfirme:check.checked};
       const saved=saveFiche(normalizeFiche(raw,core),core,ticket);
       location.assign(href('simulation.html',saved));
     }catch(err){$('formAlert').textContent=err.message;$('formAlert').focus();}
   });
   $('startTest').disabled=false;$('sample').disabled=false;
-  if(old)$('gallery').href=href('ecrans.html',ticket);
+  if(old)$('gallery').href=href('ecrans.html',ticket,{metier:metier.value});
   document.documentElement.dataset.ready='yes';
 }
 init().catch(()=>{$('formAlert').textContent='Le gabarit n’a pas chargé. Ouvre-le depuis le serveur local en suivant le guide d’intégration.';document.documentElement.dataset.ready='error';});
