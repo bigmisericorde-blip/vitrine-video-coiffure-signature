@@ -2,7 +2,7 @@
 
 **Vérifier les SHA-256 → lire `manifest.json` → charger `contrat.json` → valider la fiche et S1–S4 → rendre le master muet → contrôler le MP4, le crédit et la rotation.**
 
-Le lot rend un film **neuf à partir de la fiche et des quatre prises**. Ni le master P2-r3 ni les MP4 des auditions ne sont des entrées. Les essais précédents et la galerie des douze vues r2 restent inchangés. Cette révision technique n’est ni un ID/version de production, ni un accord P4, P5 ou P6. Les métadonnées `COIFFURE-T3` / `0.1.0-rc.1` sont une identité et une version de revue, égales dans le contrat et le manifeste ; `publication_autorisee: false` reste obligatoire. Le profil `beaute-soin-du-visage-instrumental` est vérifié contre le catalogue local.
+Le lot rend un film **neuf à partir de la fiche et des quatre prises**. Ni le master P2-r3 ni les MP4 des auditions ne sont des entrées. Les essais précédents et la galerie des douze vues r2 restent inchangés. Cette correction locale de revue remplace « En cabine » par « À découvrir » et rend les guides S1/S4 et le formulaire neutres pour les produits et services. Cette révision technique n’est ni un ID/version de production, ni un accord P4, P5 ou P6. Les métadonnées `COIFFURE-T3` / `0.1.0-rc.2` sont une identité et une version provisoires de revue, égales dans le contrat et le manifeste d’un lot scellé ; `publication_autorisee: false` reste obligatoire. Le profil `beaute-soin-du-visage-instrumental` est vérifié contre le catalogue local.
 
 ## Démarrer hors ligne
 

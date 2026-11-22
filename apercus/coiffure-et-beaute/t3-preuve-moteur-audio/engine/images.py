@@ -115,7 +115,7 @@ class Lettrage:
         intro=self.base(True,None);d=ImageDraw.Draw(intro);d.polygon([(360,344),(368,352),(360,360),(352,352)],outline=GOLD)
         self.bloc(d,x['geste'],898,30,SAGE,2)
         title=Image.new('L',(W,H));self.bloc(ImageDraw.Draw(title),x['service'],546,103,255,3,True)
-        s1=self.base(False,x['service'],'En cabine');s2=self.base(False,x['service'],x['geste']);fr=self.base(False,x['service'],'Le geste en détail')
+        s1=self.base(False,x['service'],'À découvrir');s2=self.base(False,x['service'],x['geste']);fr=self.base(False,x['service'],'Le geste en détail')
         dip=papier();d=ImageDraw.Draw(dip);self.bloc(d,'Deux angles',176,65,PINE,1,True);self.bloc(d,x['detail'],1110,32,MOSS,2)
         end=self.base(True,x['nom'] or x['service']);d=ImageDraw.Draw(end)
         self.bloc(d,loi()['fiche']['action']['choix'][x['action']] or x['service'],540,87,IVORY,2,True)

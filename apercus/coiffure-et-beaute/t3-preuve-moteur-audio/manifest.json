@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "revision": "t3-preuve-moteur-audio-r1",
+  "revision": "t3-preuve-moteur-audio-produit-service-r2",
   "statut": "candidat_de_revue",
   "template_id": "COIFFURE-T3",
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0-rc.2",
   "audio_profile": "beaute-soin-du-visage-instrumental",
   "compatibilite": "Atelier Python/FFmpeg local sur Linux (recette). Pas Android/OTA.",
   "base_git": "45048956c2163d422423168c7e6e2f538e4888b3",
@@ -18,8 +18,8 @@
       "role": "documentation, contrat ou moteur"
     },
     "INTEGRATION.md": {
-      "octets": 8409,
-      "sha256": "2576c32c79a5c94422361b243dac51cba922dfca553823cd05f3ff8fc6e3c11f",
+      "octets": 8603,
+      "sha256": "bea5342c5c256195e0abb0f75e8f76d07b8ca08f93df719f31fe5a2e972e8ec4",
       "role": "documentation, contrat ou moteur"
     },
     "audio/01.flac": {
@@ -49,22 +49,22 @@
     },
     "conformite/Controle-Apercu-Web.json": {
       "octets": 438,
-      "sha256": "19c45fa1f061bc5ebe46e102503280dd30eda76c18ee8e08ee4f784d151d300e",
+      "sha256": "774403a03b3d9360b76cd632dbd6aa0705c55bc007f8b3a72d076ab92eb9bdfa",
       "role": "rapport de recette"
     },
     "conformite/Controle-Parcours-Web.json": {
       "octets": 438,
-      "sha256": "de0f55358d510b2ac97342e855f36a30edca52b30a1f54062b00f5677183c5de",
+      "sha256": "252f9457cfba35d86fd1e62a4fad4c2d6ab9f5a9a498f1e590986e67d0bc2d76",
       "role": "rapport de recette"
     },
     "conformite/Controle-moteur-T3.json": {
-      "octets": 6996,
-      "sha256": "5e665279e70e78f4a7058f9096020c5ce0520746179440b963891a9b1b31677c",
+      "octets": 6936,
+      "sha256": "3d369a268faa11f0ddfa400fc392af59ec721d0def70e31cf315173bdc2c3498",
       "role": "rapport de recette"
     },
     "contrat.json": {
-      "octets": 1957,
-      "sha256": "925b81e53c2425670d8de1564f85a2642458a18a0fd596980d78c2e158058bb1",
+      "octets": 1965,
+      "sha256": "30b90e42250924332e93786651e8897bf7c201d82be8df0c69e634b541ce8b5a",
       "role": "documentation, contrat ou moteur"
     },
     "engine/commun.py": {
@@ -73,8 +73,8 @@
       "role": "documentation, contrat ou moteur"
     },
     "engine/images.py": {
-      "octets": 11837,
-      "sha256": "fed50b648d8643aff877aff621a82d00f48807ab4c13a630c123358b83ef0641",
+      "octets": 11841,
+      "sha256": "2b5b60642fa11d4f8d2001465bbcc1f3df9fbe81d6f69e8dd301c9f66e44f5f4",
       "role": "documentation, contrat ou moteur"
     },
     "engine/musiques.py": {
@@ -118,8 +118,8 @@
       "role": "documentation, contrat ou moteur"
     },
     "outils/lot.py": {
-      "octets": 5771,
-      "sha256": "767331601c62e0aca9f72a969e1e31f19fa4b08b614ff02f13a933bc66bb2247",
+      "octets": 5781,
+      "sha256": "c00698664ce6561bacd0fa3ed9b0d4fb802e9626f994b3cdfe94d8a10a7dec73",
       "role": "documentation, contrat ou moteur"
     },
     "outils/recette.py": {
@@ -178,8 +178,8 @@
       "role": "documentation, contrat ou moteur"
     },
     "web/index.html": {
-      "octets": 5171,
-      "sha256": "af4a9574adf08515b76aef0bb3285a048a7b9e78c8ff1be4cf434ec23641439a",
+      "octets": 5189,
+      "sha256": "34764f0e4f9553634245525ed789228ba1e0692cf684502f46a9e9fadcf92268",
       "role": "documentation, contrat ou moteur"
     }
   }

@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "statut": "PASS",
-  "revision": "t3-preuve-moteur-audio-r1",
+  "revision": "t3-preuve-moteur-audio-produit-service-r2",
   "test": "mires synthétiques reproductibles",
   "outils": {
-    "ffmpeg": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
-    "ffprobe": "ffprobe version N-66595-gc2b38619c0-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2007-2023 the FFmpeg developers"
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe": "ffprobe version 7.1.5-0+deb13u1 Copyright (c) 2007-2026 the FFmpeg developers"
   },
   "master_de_revue_utilise": false,
   "voix_ajoutee": false,
@@ -45,11 +45,11 @@
     ]
   },
   "master_muet": {
-    "sha256": "9eaeef3d67ad189da62b617a035cebb7e6fa69411a2fecd9d700e15c8dab4da8",
-    "octets": 1047030,
+    "sha256": "82b487aa0ac7967b7d4df269056be0ccd9543802226470d0d5719cc9c8033095",
+    "octets": 1046355,
     "image": {
-      "h264_sha256": "fb5ce9a01f4f8d22ee5509aff5b21f0ea9be7984910b9dbc35ff96a3b87555a5",
-      "temps_sha256": "b8f2391c00a5a3f26fdc3c3e2c5d8315c0a0eceab01191c1e153951c9423c1d7",
+      "h264_sha256": "e02ea1e4b5c80e95b96d28102f2135fc6c817f1e750b3346e4d434f878e5e4f1",
+      "temps_sha256": "ae4e90ff0b8a79bfde0733578a79b6da8472fd43c10a6caa44f711f5c889238a",
       "images": 900,
       "fps": 30,
       "secondes": 30
@@ -75,10 +75,10 @@
       "canaux": 2,
       "reduction_export_db": 0,
       "lufs_i": -18.8,
-      "dbtp": -4.7,
-      "correlation_pcm_aac": 0.997462,
-      "mp4_sha256": "3eee86277b689ad55426ad24c57c84d0a96d83fbe4917d661db634d749068ef0",
-      "octets": 1687144
+      "dbtp": -4.8,
+      "correlation_pcm_aac": 0.997364,
+      "mp4_sha256": "fb4d5084cd4514025956c991a05b129aeb6e53a4cb5a728bf1eed501ef328827",
+      "octets": 1685240
     },
     "02": {
       "piste": "02",
@@ -93,10 +93,10 @@
       "canaux": 2,
       "reduction_export_db": 0,
       "lufs_i": -18.7,
-      "dbtp": -5.2,
-      "correlation_pcm_aac": 0.995905,
-      "mp4_sha256": "d89358ff561665526b37d86b0f165eb728159507ea8326492b34d69ad6f6a8a9",
-      "octets": 1688427
+      "dbtp": -5.5,
+      "correlation_pcm_aac": 0.99597,
+      "mp4_sha256": "0b3b27fb37bdac8c3cd78ced2696a58e98546908002706bbbfc1075fa42c342a",
+      "octets": 1686902
     },
     "03": {
       "piste": "03",
@@ -111,10 +111,10 @@
       "canaux": 2,
       "reduction_export_db": 0,
       "lufs_i": -18.7,
-      "dbtp": -6.4,
-      "correlation_pcm_aac": 0.999774,
-      "mp4_sha256": "fe5c217825d26732d77d87f972d213c850f36fe3666cd5d154c7bca4f7002dc7",
-      "octets": 1707221
+      "dbtp": -6.5,
+      "correlation_pcm_aac": 0.999776,
+      "mp4_sha256": "3b78a66b2681b57d2cc3d172ce03fc944156fc99d5ca5c0c5592fd4b31623dbf",
+      "octets": 1706833
     },
     "04": {
       "piste": "04",
@@ -129,10 +129,10 @@
       "canaux": 2,
       "reduction_export_db": 0,
       "lufs_i": -19.6,
-      "dbtp": -4.5,
-      "correlation_pcm_aac": 0.999819,
-      "mp4_sha256": "bbdb820adede751d4f3419404a6c296a2bbbe2f1b25900463362e295d178142f",
-      "octets": 1684306
+      "dbtp": -4.4,
+      "correlation_pcm_aac": 0.999921,
+      "mp4_sha256": "2c9732c2fb08905cafb73726ecd449e404e1d1d337284f5915af21e188458c92",
+      "octets": 1681895
     }
   },
   "rejets": {
@@ -188,11 +188,11 @@
     "annulation_sans_avancer": true
   },
   "variante": {
-    "empreinte": "d02c65a308bd856f8fd422bc47af1f1493eeb767d6e763c9aef2f8d40fa05a0e",
+    "empreinte": "00c3b7454cbeef674c787af5898310e94b3fa9e271a52909ef5bdbd2de3fb0f4",
     "changes_visibles_pixels_mae": {
-      "titre": 8.533,
-      "detail": 10.17,
-      "carton": 5.5
+      "titre": 8.531,
+      "detail": 10.208,
+      "carton": 5.496
     }
   }
 }

@@ -64,7 +64,7 @@ def fabriquer(d,zip_path,source,qa,main_sha,revue_sha):
         # L’archive ne contient ni fichier caché ni contenu hors de la liste scellée.
         with ZipFile(zip_path,'x',compression=ZIP_DEFLATED,compresslevel=6) as z:
             for k in (*FILES,'manifest.json','SHA256SUMS'):
-                i=ZipInfo('T3-Moteur-Audio-r1/'+k);i.compress_type=ZIP_DEFLATED;i.external_attr=0o100644<<16;z.writestr(i,(out/k).read_bytes())
+                i=ZipInfo('T3-Moteur-Produit-Service-r2/'+k);i.compress_type=ZIP_DEFLATED;i.external_attr=0o100644<<16;z.writestr(i,(out/k).read_bytes())
         out.rename(d)
 
 

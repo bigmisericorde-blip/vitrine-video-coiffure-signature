@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "template_id": "COIFFURE-T3",
-  "version": "0.1.0-rc.1",
-  "revision": "t3-preuve-moteur-audio-r1",
+  "version": "0.1.0-rc.2",
+  "revision": "t3-preuve-moteur-audio-produit-service-r2",
   "portee": "Candidat pour revue d’intégration ; fiche et minutages de démonstration. Pas d’ID ou de version de production ni de validation P4–P9.",
   "audio_profile": "beaute-soin-du-visage-instrumental",
   "media": {"largeur": 720, "hauteur": 1280, "fps": 30, "images": 900, "secondes": 30, "codec": "h264", "audio": "AAC-LC stéréo 48000 Hz"},
   "prises": {
-    "S1": {"titre": "Le départ", "secondes": 8, "guide": "Montre le lieu et le service. Garde le téléphone droit.", "question": "Comprend-on ce que tu vas montrer ?"},
+    "S1": {"titre": "Le départ", "secondes": 8, "guide": "Montre ton produit ou ton service. Garde le téléphone droit.", "question": "Comprend-on ce que tu vas montrer ?"},
     "S2": {"titre": "Le geste", "secondes": 10, "guide": "Filme le geste choisi. Garde l’outil ou la main dans l’image.", "question": "Voit-on bien le geste ?"},
     "S3": {"titre": "Le détail", "secondes": 10, "guide": "Rapproche-toi du détail à faire voir. Reste stable.", "question": "Le détail est-il net et facile à voir ?"},
-    "S4": {"titre": "La dernière vue", "secondes": 8, "guide": "Filme un dernier angle du même travail, sans changer de service.", "question": "Cette dernière vue va-t-elle avec le reste ?"}
+    "S4": {"titre": "La dernière vue", "secondes": 8, "guide": "Filme une dernière vue du même produit ou service.", "question": "Cette dernière vue va-t-elle avec le reste ?"}
   },
   "fiche": {
     "service": {"max": 60, "requis": true}, "geste": {"max": 72, "requis": true}, "detail": {"max": 72, "requis": true},
