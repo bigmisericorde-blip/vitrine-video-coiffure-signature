@@ -1,0 +1,124 @@
+{
+  "revision": "2.0.3-rc.1",
+  "chromium": "156.0.8078.79",
+  "viewport": [
+    390,
+    820
+  ],
+  "physical_device_tested": false,
+  "screens": 12,
+  "four_imports": {
+    "file": "Recette-quatre-prises.mp4",
+    "bytes": 20073948,
+    "sha256": "d6c103e33e7e93bf7808867f548b8960c1635aae5c972f5aea6fb77ae00cf0b5",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "C",
+    "audio_packet_sha256": "9c57f092e761e3afb5d7e0736585788fc24096f917e837f281cf8c8e06701b66",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true,
+    "browser_audio_decoded": true,
+    "pixels": {
+      "gesture": {
+        "frame": 186,
+        "expected_text": "Séparer les mèches",
+        "light_pixels_matching": 1.0
+      },
+      "proof": {
+        "frame": 408,
+        "expected_text": "Des raies bien tracées",
+        "light_pixels_matching": 1.0
+      },
+      "service": {
+        "frame": 616,
+        "expected_text": "Tresses en carrés",
+        "light_pixels_matching": 1.0
+      },
+      "optional_empty_band_checked": true
+    }
+  },
+  "audio_failure_retry_same_job": true,
+  "source_audio_reviewed_not_exported": true,
+  "three_imports": {
+    "file": "Recette-trois-prises.mp4",
+    "bytes": 19979612,
+    "sha256": "c668514a16b0db44f5b1ed815720c9e3195a8e7f4f9685591d5baeb173feee28",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "A",
+    "audio_packet_sha256": "cabfdb08041eae7625bfff023aecc2ffd9f783f2e9857addf253da5dcaa320d3",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true,
+    "pixels": {
+      "gesture": {
+        "frame": 182,
+        "expected_text": "Fondre les longueurs",
+        "light_pixels_matching": 1.0
+      },
+      "proof": {
+        "frame": 403,
+        "expected_text": "Des contours dessinés",
+        "light_pixels_matching": 1.0
+      },
+      "service": {
+        "frame": 617,
+        "expected_text": "Dégradé bas",
+        "light_pixels_matching": 1.0
+      },
+      "signature": {
+        "frame": 846,
+        "expected_text": "Atelier Démo · Cotonou",
+        "light_pixels_matching": 1.0
+      },
+      "price": {
+        "frame": 846,
+        "expected_text": "3 500 FCFA",
+        "light_pixels_matching": 1.0
+      }
+    }
+  },
+  "technical_fixture": {
+    "file": "Recette-mires.mp4",
+    "bytes": 20075601,
+    "sha256": "91e571ca19fc8c94c0838a4fbc11c7a3dec6c21ebb604f9ce89c872b83497eca",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "A",
+    "audio_packet_sha256": "cabfdb08041eae7625bfff023aecc2ffd9f783f2e9857addf253da5dcaa320d3",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true
+  },
+  "fixture_did_not_advance_rotation": true,
+  "camera_simulated": {
+    "device": "Chromium / mire factice 360x640",
+    "recorded_slot": "S1",
+    "replay_seconds": 6.1653,
+    "stream_released": true
+  },
+  "concurrent_local_rotation": {
+    "parallel_tabs": 2,
+    "variants": [
+      "A",
+      "B"
+    ],
+    "last_is_second": true
+  },
+  "external_requests": 0,
+  "posts": 0,
+  "errors": 0
+}

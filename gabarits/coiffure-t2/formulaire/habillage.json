@@ -1,0 +1,156 @@
+{
+  "schema": "vv.coiffure.habillage/1",
+  "revision": "r04-texte-02",
+  "language": "fr",
+  "base": "2.0.0-revue.4",
+  "note": "Lettrage à 30 i/s ; fin exclusive. Habillage de production R04.",
+  "common": {
+    "introEnd": 59,
+    "beforeEnd": 141,
+    "workEnd": 270,
+    "detailEnd": 488,
+    "revealEnd": 714,
+    "end": 900,
+    "captionAnimation": {
+      "chiselFrom": 1.19,
+      "entryFrames": 7,
+      "releaseFrames": 4
+    },
+    "safe": {
+      "left": 61,
+      "right": 682,
+      "top": 919,
+      "bottom": 1239
+    }
+  },
+  "variants": {
+    "A": {
+      "name": "Le soin du détail",
+      "energy": "Précis et assuré",
+      "hook": [
+        "Tout",
+        "se joue",
+        "dans le",
+        "détail."
+      ],
+      "before": "On part d’ici.",
+      "work": "Chaque geste compte.",
+      "detail": "Regarde de plus près.",
+      "reveal": "Voilà le résultat.",
+      "closing": "Envie de ce style ?",
+      "beats": {
+        "intro": [
+          5,
+          13,
+          21,
+          35
+        ],
+        "before": 65,
+        "work": 153,
+        "gesture": 168,
+        "detail": 356,
+        "proof": 389,
+        "reveal": 581,
+        "service": 603,
+        "closing": 817,
+        "signature": 832
+      }
+    },
+    "B": {
+      "name": "Le rythme des gestes",
+      "energy": "Franc et percussif",
+      "hook": [
+        "Un geste,",
+        "puis",
+        "un",
+        "autre."
+      ],
+      "before": "D’abord, la base.",
+      "work": "Le style prend forme.",
+      "detail": "Voilà le détail.",
+      "reveal": "Du geste au résultat.",
+      "closing": "On parle de ton style ?",
+      "beats": {
+        "intro": [
+          2,
+          10,
+          27,
+          44
+        ],
+        "before": 62,
+        "work": 148,
+        "gesture": 165,
+        "detail": 347,
+        "proof": 390,
+        "reveal": 581,
+        "service": 607,
+        "closing": 823,
+        "signature": 840
+      }
+    },
+    "C": {
+      "name": "Un détail change l’allure",
+      "energy": "Léger et vif",
+      "hook": [
+        "Le détail",
+        "change",
+        "toute",
+        "l’allure."
+      ],
+      "before": "Voici le départ.",
+      "work": "La forme se dessine.",
+      "detail": "Tout se voit de près.",
+      "reveal": "Regarde la différence.",
+      "closing": "À ton tour ?",
+      "beats": {
+        "intro": [
+          6,
+          11,
+          27,
+          41
+        ],
+        "before": 62,
+        "work": 151,
+        "gesture": 172,
+        "detail": 352,
+        "proof": 394,
+        "reveal": 581,
+        "service": 602,
+        "closing": 823,
+        "signature": 837
+      }
+    },
+    "D": {
+      "name": "Le style pas à pas",
+      "energy": "Posé et direct",
+      "hook": [
+        "Le style",
+        "se construit",
+        "pas à",
+        "pas."
+      ],
+      "before": "Tout commence ici.",
+      "work": "Place au geste.",
+      "detail": "Regarde ce détail.",
+      "reveal": "Le résultat, sans détour.",
+      "closing": "Parlons de ton style.",
+      "beats": {
+        "intro": [
+          4,
+          13,
+          21,
+          34
+        ],
+        "before": 70,
+        "work": 152,
+        "gesture": 170,
+        "detail": 350,
+        "proof": 397,
+        "reveal": 581,
+        "service": 607,
+        "closing": 817,
+        "signature": 830
+      }
+    }
+  }
+}

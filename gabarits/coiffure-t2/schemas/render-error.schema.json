@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COIFFURE-T2 — RenderError",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "vv.coiffure.render-error/1"
+    },
+    "template_id": {
+      "const": "COIFFURE-T2"
+    },
+    "template_version": {
+      "enum": [
+        "2.0.3-rc.1",
+        null
+      ]
+    },
+    "job_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{32}$"
+        },
+        {
+          "const": null
+        }
+      ]
+    },
+    "code": {
+      "type": "string",
+      "enum": [
+        "INVALID_JOB",
+        "UNSUPPORTED_MEDIA",
+        "PLATFORM",
+        "RESOURCE_INVALID",
+        "AUDIO_INVALID",
+        "ROTATION_BUSY",
+        "STORAGE",
+        "TIMEOUT",
+        "RENDER_FAILED",
+        "CANCELLED"
+      ]
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 220
+    },
+    "retryable": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema",
+    "template_id",
+    "template_version",
+    "job_id",
+    "code",
+    "message",
+    "retryable"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "INVALID_JOB",
+              "PLATFORM"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "retryable": {
+            "const": false
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "retryable": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

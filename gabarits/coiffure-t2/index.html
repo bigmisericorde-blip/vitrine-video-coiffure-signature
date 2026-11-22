@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Ta fiche beauté — Vitrine Vidéo</title>
+  <link rel="stylesheet" href="assets/web.css">
+  <script type="module" src="assets/fiche-production.mjs"></script>
+</head>
+<body>
+<div class="shell">
+  <header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" id="gallery" href="ecrans.html">Les 12 écrans →</a></header>
+  <main class="hero">
+    <section>
+      <p class="kicker">COIFFURE‑T2 · DU GESTE AU RÉSULTAT</p>
+      <h1>Ta fiche<span>beauté.</span></h1>
+      <p class="lead">Décris ce qu’on verra à l’écran. Filme les étapes, puis télécharge ta vidéo verticale de 30 secondes, avec lettrage et musique, sans voix off.</p>
+      <div class="leadCard card">
+        <h2>Quatre vues à montrer</h2>
+        <ul class="list"><li><span>01</span> Avant <small>6 s</small></li><li><span>02</span> Geste <small>7 s</small></li><li><span>03</span> Détail <small>7 s</small></li><li><span>04</span> Résultat <small>7 s</small></li></ul>
+        <p class="note">Avec trois fichiers, le geste peut servir de détail seulement si tu valides le recadrage à la relecture.</p>
+        <p class="note">Les prises restent dans cet onglet. Aucun fichier ou numéro n’est envoyé par le moteur.</p>
+      </div>
+    </section>
+    <form class="card form-flow" id="testForm" autocomplete="off">
+      <div class="fiche-group"><label for="metier">Quel type de prestation proposes-tu ?</label><select id="metier" name="metier"></select></div>
+      <div class="fiche-group"><p class="kicker">01 · À L’IMAGE</p><div id="fieldsProof"></div></div>
+      <div class="fiche-group"><p class="kicker">02 · EN FIN DE FILM</p><div id="fieldsOffer"></div><div id="conditions"></div>
+        <label id="confirmation" class="check" hidden><input type="checkbox" id="contactConfirme"><span id="contactConfirmationLabel"></span></label>
+      </div>
+      <div class="fiche-group"><p class="kicker">03 · TOURNAGE</p>
+        <label for="framing">Cadrage de la dernière prise</label><select id="framing" name="framing"></select>
+        <label for="source">Avec quelles prises veux-tu monter ?</label><select id="source" name="source"><option value="client">Mes prises (caméra ou import)</option><option value="demo">Mires de test fournies</option></select>
+        <p class="note" id="sampleNote" hidden>Simulation avec des clips graphiques fictifs. Pas de prestation ni d’offre réelle.</p>
+        <label class="check" id="consentClient"><input type="checkbox" id="checkedCase" required><span>J’ai l’autorisation d’utiliser et de diffuser les prises que je vais ajouter.</span></label>
+      </div>
+      <p class="note" id="formAlert" role="status" tabindex="-1"></p>
+      <button type="submit" class="button" id="startTest" disabled>Continuer vers les prises</button>
+      <button type="button" class="button quiet-button" id="sample" disabled>Charger la fiche d’exemple</button>
+      <noscript><p>Le montage local nécessite JavaScript et un navigateur compatible.</p></noscript>
+    </form>
+  </main>
+  <footer class="info"><a href="CREDITS.md">Crédits et licences</a> · Le son original reste disponible à la relecture ; le MP4 exporté contient la musique de fond seule.</footer>
+</div>
+</body>
+</html>
