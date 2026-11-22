@@ -2,8 +2,8 @@
   "schema": 1,
   "revision": "t3-preuve-moteur-audio-r1",
   "statut": "candidat_de_revue",
-  "template_id": null,
-  "version": null,
+  "template_id": "COIFFURE-T3",
+  "version": "0.1.0-rc.1",
   "audio_profile": "beaute-soin-du-visage-instrumental",
   "compatibilite": "Atelier Python/FFmpeg local sur Linux (recette). Pas Android/OTA.",
   "base_git": "45048956c2163d422423168c7e6e2f538e4888b3",
@@ -18,8 +18,8 @@
       "role": "documentation, contrat ou moteur"
     },
     "INTEGRATION.md": {
-      "octets": 8138,
-      "sha256": "31266156598608412b6a712b58ca50070d5c993ba03d94c790198a6344b8417d",
+      "octets": 8409,
+      "sha256": "2576c32c79a5c94422361b243dac51cba922dfca553823cd05f3ff8fc6e3c11f",
       "role": "documentation, contrat ou moteur"
     },
     "audio/01.flac": {
@@ -68,8 +68,8 @@
       "role": "documentation, contrat ou moteur"
     },
     "engine/commun.py": {
-      "octets": 6321,
-      "sha256": "d268efd09a59e6d939c9763668318f2109965d31056c7f35f75990088ec12dcf",
+      "octets": 6888,
+      "sha256": "e3487687304f100c94260d4763134f8d3a7847bed3f7d32bd81eebf88181acb7",
       "role": "documentation, contrat ou moteur"
     },
     "engine/images.py": {
@@ -118,8 +118,8 @@
       "role": "documentation, contrat ou moteur"
     },
     "outils/lot.py": {
-      "octets": 5422,
-      "sha256": "93f009d1de7e298d44fafb543a7ad9cdd3c8e72bf5a9976fcc2465d78b6a6c37",
+      "octets": 5771,
+      "sha256": "767331601c62e0aca9f72a969e1e31f19fa4b08b614ff02f13a933bc66bb2247",
       "role": "documentation, contrat ou moteur"
     },
     "outils/recette.py": {

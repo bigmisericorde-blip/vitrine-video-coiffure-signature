@@ -26,8 +26,12 @@ def sums(d):
 
 
 def verifier(d):
-    m=lire(d/'manifest.json');exige(m['schema']==1 and m['revision']==loi()['revision'] and m['audio_profile']==loi()['audio_profile'],'LOT','Manifeste incompatible.')
-    exige(m['template_id'] is None and m['version'] is None,'LOT','Ce lot ne doit pas porter de clés de production.')
+    m=lire(d/'manifest.json');contrat=lire(d/'contrat.json'); courant=loi()
+    exige(contrat==courant,'LOT','Le contrat du lot ne correspond pas au moteur de revue.')
+    exige(m['schema']==1 and m['revision']==contrat['revision'] and m['audio_profile']==contrat['audio_profile']
+           and m['template_id']==contrat['template_id'] and m['version']==contrat['version'], 'LOT','Identité ou profil du manifeste incompatible.')
+    exige(m.get('statut')=='candidat_de_revue' and m.get('publication_autorisee') is False,
+           'LOT','Ce lot est réservé à la revue et non autorisé en production.')
     exige(tuple(sorted(m['fichiers']))==FILES,'LOT','Liste des ressources incomplète.')
     for k,v in m['fichiers'].items():
         p=d/k
@@ -51,7 +55,7 @@ def fabriquer(d,zip_path,source,qa,main_sha,revue_sha):
             exige(p.is_file() and not p.is_symlink(),'LOT',f'Pièce de revue non disponible : {k}')
             t=out/k;t.parent.mkdir(parents=True,exist_ok=True);copyfile(p,t)
         role=lambda k: 'extrait musical ou catalogue' if k in AUDIO else 'police ou licence' if k in FONTS else 'mire synthétique' if k in EX else 'rapport de recette' if k in QA else 'documentation, contrat ou moteur'
-        ecrire(out/'manifest.json',{'schema':1,'revision':loi()['revision'],'statut':'candidat_de_revue','template_id':None,'version':None,
+        ecrire(out/'manifest.json',{'schema':1,'revision':loi()['revision'],'statut':'candidat_de_revue','template_id':loi()['template_id'],'version':loi()['version'],
               'audio_profile':loi()['audio_profile'],'compatibilite':'Atelier Python/FFmpeg local sur Linux (recette). Pas Android/OTA.',
               'base_git':main_sha,'revue_r2_reference':revue_sha,'lecture_r2_supplantee':False,'publication_autorisee':False,
               'mires':'Quatre prises synthétiques originales. Pas de prise ou de dérivé Mixkit.',

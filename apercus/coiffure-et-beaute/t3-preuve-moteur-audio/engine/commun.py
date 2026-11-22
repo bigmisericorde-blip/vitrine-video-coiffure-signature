@@ -73,7 +73,16 @@ def verrou(path):
 
 
 def loi():
-    return lire(ROOT/'contrat.json')
+    x = lire(ROOT/'contrat.json')
+    exige(isinstance(x, dict) and x.get('template_id') == 'COIFFURE-T3',
+           'CONTRAT', 'Identifiant de revue du gabarit invalide.')
+    version = x.get('version')
+    exige(isinstance(version, str) and re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)-rc\.(0|[1-9][0-9]*)', version),
+           'CONTRAT', 'Version de revue du gabarit invalide.')
+    profil = x.get('audio_profile')
+    exige(isinstance(profil, str) and re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)+', profil),
+           'CONTRAT', 'Profil musical non sémantique.')
+    return x
 
 
 def lire_fiche(obj):
