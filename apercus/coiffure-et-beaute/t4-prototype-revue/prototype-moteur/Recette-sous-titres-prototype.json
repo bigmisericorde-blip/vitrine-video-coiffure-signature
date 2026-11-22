@@ -1,0 +1,25 @@
+{
+  "resultat": "PASS technique",
+  "portee": "Trois sous-titres fictifs saisis manuellement, incrustés en DM Sans 600 sur mires. Aucun test de correspondance avec une voix ni validation visuelle ; le texte et les temps exigent une relecture humaine.",
+  "module_sha256": "459fff9618c0d38100b2ed91ea9a6bb882054a63f8c76f9507eacefdca31168e",
+  "video_sha256": "b295e3a92366df69cdff9232ff39e6e297df74c123f37db2481a36f8be0bc268",
+  "source_inchangee": "8837ce748f0001ecac256f063b95f5ad97bc7d7315a2d4539171c33d5531606f",
+  "rejets": 5,
+  "cues": [
+    {
+      "debut": 0.5,
+      "fin": 3.2,
+      "texte": "Un parfum pour tous les jours ?"
+    },
+    {
+      "debut": 18,
+      "fin": 20.9,
+      "texte": "Regardez le détail de près."
+    },
+    {
+      "debut": 25,
+      "fin": 28,
+      "texte": "Demandez un essai."
+    }
+  ]
+}

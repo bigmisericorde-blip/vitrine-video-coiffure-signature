@@ -1,0 +1,8 @@
+{
+  "resultat": "PASS",
+  "portee": "Chromium headless à 320 px sans désactivation CSP : formulaire, affichage consigne et permission refusée ; origine étrangère rejetée par HTTP. Pas de capture réelle ni sécurité production complète.",
+  "csp_en_place": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src data:; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+  "caméra_refusée": "PASS",
+  "origine_etrangere": "PASS",
+  "erreurs_javascript": []
+}

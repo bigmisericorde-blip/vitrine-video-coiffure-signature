@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "statut": "prototype local non validé, non publié",
+  "mode": "musique",
+  "master_sha256": "ee848e8fb41eddd6382593d14477a1ebd505b815d912f81da8c6026461743ead",
+  "piste": "B",
+  "audition": true,
+  "voix": {
+    "presente": true,
+    "debit_modifie": false,
+    "position_s": 0.68,
+    "ducking_db": 13.0,
+    "fenetres_voix_s": [
+      [
+        0.68,
+        3.68
+      ]
+    ]
+  },
+  "credit": "« Paradise Found » — Kevin MacLeod (incompetech.com) · CC BY 4.0 · https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000 · https://creativecommons.org/licenses/by/4.0/. Extrait 3.384–33.384 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+  "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000",
+  "licence": "https://creativecommons.org/licenses/by/4.0/",
+  "audio_extrait_sha256": "071cd9457f631d88a44dec645abb92c251430d3965a9a8e14eceeecd495dc693",
+  "lufs_i": -20.3,
+  "dbtp": -6.85,
+  "mp4_sha256": "c0e774f0abd1147948c662a1996e5521a6c5decf2ad548eb8926149f41a26a90",
+  "video_flux_sha256": "SHA256=19e8502751e24ff8ebdfc848455aa82ed21d2e4b3ba278550378234edca555dd"
+}

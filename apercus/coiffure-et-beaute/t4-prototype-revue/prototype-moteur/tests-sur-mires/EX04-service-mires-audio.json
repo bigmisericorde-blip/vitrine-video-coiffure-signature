@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "statut": "prototype local non validé, non publié",
+  "mode": "musique",
+  "master_sha256": "d6b6613695700a8f6ce81b3b3187504ab9a90804755fc8f46bf37e85adb982a7",
+  "piste": "D",
+  "audition": true,
+  "voix": {
+    "presente": false,
+    "debit_modifie": false,
+    "ducking_db": 0,
+    "fenetres_voix_s": []
+  },
+  "credit": "« Electron (Free Stems) » — JMHBM · CC0 1.0 · https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/ · https://creativecommons.org/publicdomain/zero/1.0/. Extrait 7.611–37.611 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+  "source": "https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/",
+  "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "audio_extrait_sha256": "98104e43994926b47db23177e8652d6197b2c399df44165eb93570b7f5b10160",
+  "lufs_i": -17.37,
+  "dbtp": -2.52,
+  "mp4_sha256": "c1fe3f594f32dd26e8dda064ca859b7a3eb6a23dee19b1758dbbf77e7fa16f6a",
+  "video_flux_sha256": "SHA256=345fb0dcaec9d36373e7aae13993eb677419f704dc69cf23420b7d9aa65e0738"
+}

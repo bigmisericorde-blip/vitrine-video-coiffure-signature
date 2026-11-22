@@ -1,0 +1,56 @@
+{
+  "statut": "Démonstration uniquement, non qualifié production ni envoyé",
+  "schema": 1,
+  "sources_sha256": "13c52a15997136f6786d6ce5ca80c551c4f5084753d40c2fb1759e2307d71152",
+  "pistes": {
+    "A": {
+      "titre": "Amapiano",
+      "auteur": "Elijah_K",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://freemusicarchive.org/music/elijah-k/single/amapiano/",
+      "fichier": "banc-A-02.m4a",
+      "sha256": "9be88f46d7ead82a20943da4650015b25b5f6b9786cee266ac5e6184bbf081f6",
+      "credit": "« Amapiano » — Elijah_K · CC BY 4.0 · https://freemusicarchive.org/music/elijah-k/single/amapiano/ · https://creativecommons.org/licenses/by/4.0/. Extrait 17.299–47.299 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+      "content_id": "Non vérifié pour ce fichier. La fiche ne documente pas d’identifiant de revendication ; possible réclamation de tiers.",
+      "debut_source_s": 17.299,
+      "fin_source_s": 47.299
+    },
+    "B": {
+      "titre": "Paradise Found",
+      "auteur": "Kevin MacLeod",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000",
+      "fichier": "banc-B-03.m4a",
+      "sha256": "071cd9457f631d88a44dec645abb92c251430d3965a9a8e14eceeecd495dc693",
+      "credit": "« Paradise Found » — Kevin MacLeod (incompetech.com) · CC BY 4.0 · https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000 · https://creativecommons.org/licenses/by/4.0/. Extrait 3.384–33.384 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+      "content_id": "Catalogue préenregistré selon l’auteur ; statut piste par piste non vérifié. Réclamation possible même avec droits ; garder le crédit et suivre la FAQ de l’auteur.",
+      "debut_source_s": 3.384,
+      "fin_source_s": 33.384
+    },
+    "C": {
+      "titre": "Ocean",
+      "auteur": "Lucien Kemper x Fachhochschule Dortmund",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/",
+      "fichier": "banc-C-06.m4a",
+      "sha256": "af280a45d6eaa3c2968c1dd595051db205f57d4d3f23fd99af2918a0e3f39bb5",
+      "credit": "« Ocean » — Lucien Kemper x Fachhochschule Dortmund · CC BY 4.0 · https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/ · https://creativecommons.org/licenses/by/4.0/. Extrait 16.265–46.265 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+      "content_id": "Non vérifié pour ce fichier. La fiche ne documente pas d’identifiant de revendication ; possible réclamation de tiers.",
+      "debut_source_s": 16.265,
+      "fin_source_s": 46.265
+    },
+    "D": {
+      "titre": "Electron (Free Stems)",
+      "auteur": "JMHBM",
+      "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/",
+      "fichier": "banc-D-09.m4a",
+      "sha256": "98104e43994926b47db23177e8652d6197b2c399df44165eb93570b7f5b10160",
+      "credit": "« Electron (Free Stems) » — JMHBM · CC0 1.0 · https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/ · https://creativecommons.org/publicdomain/zero/1.0/. Extrait 7.611–37.611 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+      "content_id": "Non vérifié pour ce fichier. La fiche ne documente pas d’identifiant de revendication ; possible réclamation de tiers.",
+      "debut_source_s": 7.611,
+      "fin_source_s": 37.611
+    }
+  },
+  "profil_ambiance": "non défini : pas de configuration canonique T4"
+}

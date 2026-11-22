@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "statut": "prototype local non validé, non publié",
+  "mode": "musique",
+  "master_sha256": "35e7f2f700026ceb46bf663abe8276e619668cf87aeda21256b08b029f345637",
+  "piste": "C",
+  "audition": true,
+  "voix": {
+    "presente": false,
+    "debit_modifie": false,
+    "ducking_db": 0,
+    "fenetres_voix_s": []
+  },
+  "credit": "« Ocean » — Lucien Kemper x Fachhochschule Dortmund · CC BY 4.0 · https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/ · https://creativecommons.org/licenses/by/4.0/. Extrait 16.265–46.265 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+  "source": "https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/",
+  "licence": "https://creativecommons.org/licenses/by/4.0/",
+  "audio_extrait_sha256": "af280a45d6eaa3c2968c1dd595051db205f57d4d3f23fd99af2918a0e3f39bb5",
+  "lufs_i": -19.07,
+  "dbtp": -2.57,
+  "mp4_sha256": "705db76e11a1eb3e002d43be6a6689b4d3c58958997a35d3d52d0cb343e119f6",
+  "video_flux_sha256": "SHA256=c91f3c9f35cd138e166add0d28ba1e712c25bcec905633e47d4b34c9fd115d81"
+}

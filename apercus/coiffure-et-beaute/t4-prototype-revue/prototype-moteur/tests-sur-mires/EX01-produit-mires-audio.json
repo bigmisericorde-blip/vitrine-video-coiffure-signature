@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "statut": "prototype local non validé, non publié",
+  "mode": "musique",
+  "master_sha256": "8837ce748f0001ecac256f063b95f5ad97bc7d7315a2d4539171c33d5531606f",
+  "piste": "A",
+  "audition": true,
+  "voix": {
+    "presente": false,
+    "debit_modifie": false,
+    "ducking_db": 0,
+    "fenetres_voix_s": []
+  },
+  "credit": "« Amapiano » — Elijah_K · CC BY 4.0 · https://freemusicarchive.org/music/elijah-k/single/amapiano/ · https://creativecommons.org/licenses/by/4.0/. Extrait 17.299–47.299 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+  "source": "https://freemusicarchive.org/music/elijah-k/single/amapiano/",
+  "licence": "https://creativecommons.org/licenses/by/4.0/",
+  "audio_extrait_sha256": "9be88f46d7ead82a20943da4650015b25b5f6b9786cee266ac5e6184bbf081f6",
+  "lufs_i": -20.35,
+  "dbtp": -4.92,
+  "mp4_sha256": "2b958ec4f0240f4b8e68574541aeae54574ebeef0f09ca4c3fd60fcc80722c84",
+  "video_flux_sha256": "SHA256=fcd3337f6454db38347f4d005006ba9ae1624c62e33ece694d5ad0b6467f0fd9"
+}

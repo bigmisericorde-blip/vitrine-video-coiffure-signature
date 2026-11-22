@@ -1,0 +1,34 @@
+{
+  "statut": "PASS",
+  "portee": "Chromium headless, caméra et micro SIMULÉS : 12 états et 4 fichiers MediaRecorder effectivement capturés, normalisés puis consommés par prototype image+audio. Pas d’appareil physique, ni cas réels, ni validation ni publication.",
+  "viewport": [
+    390,
+    844
+  ],
+  "csp_test_instrumente": "désactivée dans cette recette pour Playwright ; vérification séparée sans bypass dans Recette-csp-refus.json",
+  "autorisation_cross_session_rejetee": true,
+  "annulation_et_liberation_camera": "PASS",
+  "durees_valides_s": [
+    6.0,
+    13.0,
+    8.0,
+    7.0
+  ],
+  "mp4_resultat_sha256": "2e15d49e0560e271b9217b29cc1381ac4b78483288ac9ede9e2929356b5342e0",
+  "master_sha256": "1bc7a3d985daf781da25313e712e61012fc3c6f1b2aec8aa240d25a41c17fc0d",
+  "flux_video_preserve": "PASS : master sous-titré copié intact dans le film avec audio ; master initial conservé séparément",
+  "sous_titres": "Texte fictif saisi et incrusté ; pas de transcription ni synchronisation vérifiées sur voix humaine",
+  "piste": "A",
+  "credit": "« Amapiano » — Elijah_K · CC BY 4.0 · https://freemusicarchive.org/music/elijah-k/single/amapiano/ · https://creativecommons.org/licenses/by/4.0/. Extrait 17.299–47.299 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix.",
+  "erreurs_javascript": [],
+  "fiche_optionnelle": "Nom et lieu fictifs affichés ; prix non confirmé et destination non autorisée exclus ; réalité non vérifiée",
+  "prix_incomplet_rejete_avant_capture": "PASS",
+  "voix_off": "Signal synthétique importé depuis l’interface, pas une narration humaine",
+  "limites": [
+    "Contrôle réel des coordonnées et promesses incombe encore à l’annonceur",
+    "Voix humaine et sous-titres non testés",
+    "Transitions visuelles non conformes à la référence R2",
+    "Pas de production ni déploiement",
+    "Serveur lié à localhost uniquement"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "resultat": "PASS",
+  "portee": "adaptateur expérimental ; ne couvre ni l’interface validée, ni la réalité des détails, l’accessibilité d’une destination, la promesse, les prix réels, ni l’envoi",
+  "actions_verifiees": 7,
+  "rejets_verifies": 16,
+  "cas_produit_et_service": "les mêmes champs acceptent produit ou service ; une identité fictive ci-dessus",
+  "sha_fiche_module": "8ed1b2888c69cfa23b7c69eaa57cfd3bc0fe8bccab4ff29e1c88b02ebe947e7a"
+}

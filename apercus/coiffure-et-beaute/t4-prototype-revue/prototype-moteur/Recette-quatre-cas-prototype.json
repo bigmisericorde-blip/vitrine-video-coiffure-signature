@@ -1,0 +1,81 @@
+{
+  "statut": "PASS technique",
+  "revision": "prototype visuel et audio local seulement",
+  "cas": [
+    {
+      "id": "EX01-produit",
+      "fiche_fictive": {
+        "accroche": "Un parfum pour tous les jours ?",
+        "offre": "Eau de parfum",
+        "detail_visible": "L’essai sur papier",
+        "invitation": "Demandez un essai."
+      },
+      "image": "EX01-produit-mires-muet.mp4",
+      "image_sha256": "8837ce748f0001ecac256f063b95f5ad97bc7d7315a2d4539171c33d5531606f",
+      "avec_musique": "EX01-produit-mires-audio.mp4",
+      "audio_sha256": "2b958ec4f0240f4b8e68574541aeae54574ebeef0f09ca4c3fd60fcc80722c84",
+      "piste": "A",
+      "voix_synthetique_non_parlee": false,
+      "image_et_audio_meme_flux": true,
+      "prise_synthetique": true,
+      "capture": "EX01-produit-image.jpg"
+    },
+    {
+      "id": "EX02-service",
+      "fiche_fictive": {
+        "accroche": "Une fête en vue ?",
+        "offre": "Maquillage de fête",
+        "detail_visible": "Le fini satiné de près",
+        "invitation": "Prenez rendez-vous."
+      },
+      "image": "EX02-service-mires-muet.mp4",
+      "image_sha256": "ee848e8fb41eddd6382593d14477a1ebd505b815d912f81da8c6026461743ead",
+      "avec_musique": "EX02-service-mires-audio.mp4",
+      "audio_sha256": "c0e774f0abd1147948c662a1996e5521a6c5decf2ad548eb8926149f41a26a90",
+      "piste": "B",
+      "voix_synthetique_non_parlee": true,
+      "image_et_audio_meme_flux": true,
+      "prise_synthetique": true,
+      "capture": "EX02-service-image.jpg"
+    },
+    {
+      "id": "EX03-produit",
+      "fiche_fictive": {
+        "accroche": "Envie de brillance ?",
+        "offre": "Gloss transparent",
+        "detail_visible": "Le reflet à la lumière",
+        "invitation": "Passez commande."
+      },
+      "image": "EX03-produit-mires-muet.mp4",
+      "image_sha256": "35e7f2f700026ceb46bf663abe8276e619668cf87aeda21256b08b029f345637",
+      "avec_musique": "EX03-produit-mires-audio.mp4",
+      "audio_sha256": "705db76e11a1eb3e002d43be6a6689b4d3c58958997a35d3d52d0cb343e119f6",
+      "piste": "C",
+      "voix_synthetique_non_parlee": false,
+      "image_et_audio_meme_flux": true,
+      "prise_synthetique": true,
+      "capture": "EX03-produit-image.jpg"
+    },
+    {
+      "id": "EX04-service",
+      "fiche_fictive": {
+        "accroche": "Vous aimez les ongles courts ?",
+        "offre": "Manucure sur ongles courts",
+        "detail_visible": "Le bord arrondi",
+        "invitation": "Demandez conseil."
+      },
+      "image": "EX04-service-mires-muet.mp4",
+      "image_sha256": "d6b6613695700a8f6ce81b3b3187504ab9a90804755fc8f46bf37e85adb982a7",
+      "avec_musique": "EX04-service-mires-audio.mp4",
+      "audio_sha256": "c1fe3f594f32dd26e8dda064ca859b7a3eb6a23dee19b1758dbbf77e7fa16f6a",
+      "piste": "D",
+      "voix_synthetique_non_parlee": false,
+      "image_et_audio_meme_flux": true,
+      "prise_synthetique": true,
+      "capture": "EX04-service-image.jpg"
+    }
+  ],
+  "limites": "Images de mires générées, sans produit ni service réel. Textes, durées et effets provisoires non validés. Ce n’est pas une publicité ; ces quatre cas testent le moteur séparément de l’interface. La capture simulée 12 écrans est testée à part, pas une vraie capture ; aucune narration humaine, comparaison visuelle à R2 et validation restent à faire.",
+  "production": false,
+  "publication": false
+}

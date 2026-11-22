@@ -1,0 +1,307 @@
+{
+  "statut": "Précontrôle audio de démonstration ; validation de production et moteur T4 non acquis. Aucun paquet ni émission distante.",
+  "date_reference": "2026-11-18",
+  "sources": {
+    "provenance_M1_sha256": "0e2d48565693b1dfd98cdd94fcb123361224e84429338233048711e78b7f112c",
+    "lecteur_M1_sha256": "b12808b9092ee5adc347f1888e47147eafd3a51163faf5b8ff68a5b1eb55bfcc",
+    "master_sha256": "518bf2de161d85c6273ea1a9f4242e3c8454f3146e2c1497217856e67ca0c041",
+    "flux_video_sha256": "851ca2e671fdd82bb385ca56c8c4e327964684b22adafef7907885003eedcbed"
+  },
+  "banc": {
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "duree_s": 30,
+    "images": 900,
+    "codec_video": "AVC",
+    "dimensions": [
+      720,
+      1280
+    ],
+    "telechargement_anonyme_rejoue": true,
+    "remux_a_partir_des_fichiers_locaux": true,
+    "verification_des_credits": true
+  },
+  "constitution_pack_production": false,
+  "rotation_moteur_t4_testee": false,
+  "mixe_voix_finale_teste": false,
+  "pistes": [
+    {
+      "place_proposee": "A",
+      "numero_M1": 2,
+      "id_edition": "265362",
+      "titre": "Amapiano",
+      "auteur": "Elijah_K",
+      "fiche_source": "https://freemusicarchive.org/music/elijah-k/single/amapiano/",
+      "conditions_source": "https://freemusicarchive.org/Terms_of_Use",
+      "edition": {
+        "http": 200,
+        "octets": 43795,
+        "sha256": "254b2db7c1cac9304bd0013b0a078151c1fc1328e0f2aba86635b89fd08ab68d",
+        "type": "text/html; charset=UTF-8",
+        "url_finale": "https://freemusicarchive.org/music/elijah-k/single/amapiano/",
+        "edition_et_mention_de_licence_recoupees": true,
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "permissions_deja_qualifiees_M1": {
+        "publicite": true,
+        "synchronisation": true,
+        "montage": true,
+        "redistribution_audio_autonome": true
+      },
+      "notice_attribution": "« Amapiano » — Elijah_K · CC BY 4.0 · https://freemusicarchive.org/music/elijah-k/single/amapiano/ · https://creativecommons.org/licenses/by/4.0/. Extrait 17.299–47.299 s, niveau et fondus adaptés ; démonstration privée Parfum R2.",
+      "content_id": "Non vérifié pour ce fichier. La fiche ne documente pas d’identifiant de revendication ; possible réclamation de tiers.",
+      "instrumental_fiche": "No",
+      "original": {
+        "telechargement": {
+          "http": 200,
+          "octets": 1244131,
+          "sha256": "2fd9095484f813ae5fd78426b61f70f3fdc8633e58935d01d95be3d99dc1e3a7",
+          "type": "audio/mpeg",
+          "url_finale": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/NeggDOx5oJpaW75McvpxVhZYlqUCcLKAAgSlnA6T.mp3",
+          "anonyme": true,
+          "sans_paiement": true
+        },
+        "duree_decodee_s": 77.647075,
+        "sha256": "2fd9095484f813ae5fd78426b61f70f3fdc8633e58935d01d95be3d99dc1e3a7",
+        "octets": 1244131,
+        "frequence_hz": 44100,
+        "canaux": 2
+      },
+      "extrait_revue": {
+        "nom_reproductible_cache": "banc-A-02.m4a",
+        "sha256": "9be88f46d7ead82a20943da4650015b25b5f6b9786cee266ac5e6184bbf081f6",
+        "octets": 338415,
+        "debut_source_s": 17.299,
+        "fin_source_s": 47.299,
+        "fondus_s": [
+          0.08,
+          0.45
+        ],
+        "duree_s": 30,
+        "lufs_i": -20.98,
+        "dbtp": -6.11
+      },
+      "remux_banc": {
+        "sha256": "4b5a2d6c9e7249d851b278125690be5c9d631864cebc31c4ee0ad4f038fe542a",
+        "octets": 5843355,
+        "sha256_flux_video": "851ca2e671fdd82bb385ca56c8c4e327964684b22adafef7907885003eedcbed",
+        "sha256_flux_aac": "2a4518b468c68717bef918bb07fb16a4e3c56041231e266be8541194fbf0db7c",
+        "paquets_video_et_pts_dts_identiques": true,
+        "decode_integral": true,
+        "integration_moteur_t4_testee": false
+      }
+    },
+    {
+      "place_proposee": "B",
+      "numero_M1": 3,
+      "id_edition": "USUAN2300000",
+      "titre": "Paradise Found",
+      "auteur": "Kevin MacLeod",
+      "fiche_source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000",
+      "conditions_source": "https://incompetech.com/music/royalty-free/faq.html",
+      "edition": {
+        "http": 200,
+        "octets": 26826,
+        "sha256": "0aaccc3d496fc4ae189e27e3fe2d4f5216266e3bcccf2e0ba77fb1b57a28fa94",
+        "type": "text/html",
+        "url_finale": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000",
+        "index_editions": {
+          "http": 200,
+          "octets": 881512,
+          "sha256": "54802ad340562624b9d1c9c97aa9f005e2b9bf79001f8a1a07ed857e68b2164a",
+          "type": "application/json",
+          "url_finale": "https://incompetech.com/music/royalty-free/pieces.json"
+        },
+        "edition_et_mention_de_licence_recoupees": true,
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "permissions_deja_qualifiees_M1": {
+        "publicite": true,
+        "synchronisation": true,
+        "montage": true,
+        "redistribution_audio_autonome": true
+      },
+      "notice_attribution": "« Paradise Found » — Kevin MacLeod (incompetech.com) · CC BY 4.0 · https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000 · https://creativecommons.org/licenses/by/4.0/. Extrait 3.384–33.384 s, niveau et fondus adaptés ; démonstration privée Parfum R2.",
+      "content_id": "Catalogue préenregistré selon l’auteur ; statut piste par piste non vérifié. Réclamation possible même avec droits ; garder le crédit et suivre la FAQ de l’auteur.",
+      "instrumental_fiche": "Outils / instruments indiqués par l’auteur",
+      "original": {
+        "telechargement": {
+          "http": 200,
+          "octets": 3751848,
+          "sha256": "7ea20dd113983ecaab67f774da1f0699114b3a6f93a386c202b977a2cb9e00a2",
+          "type": "application/octet-stream",
+          "url_finale": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Paradise_Found.mp3",
+          "anonyme": true,
+          "sans_paiement": true
+        },
+        "duree_decodee_s": 187.480816,
+        "sha256": "7ea20dd113983ecaab67f774da1f0699114b3a6f93a386c202b977a2cb9e00a2",
+        "octets": 3751848,
+        "frequence_hz": 44100,
+        "canaux": 2
+      },
+      "extrait_revue": {
+        "nom_reproductible_cache": "banc-B-03.m4a",
+        "sha256": "071cd9457f631d88a44dec645abb92c251430d3965a9a8e14eceeecd495dc693",
+        "octets": 337672,
+        "debut_source_s": 3.384,
+        "fin_source_s": 33.384,
+        "fondus_s": [
+          0.08,
+          0.45
+        ],
+        "duree_s": 30,
+        "lufs_i": -20.96,
+        "dbtp": -6.97
+      },
+      "remux_banc": {
+        "sha256": "72a62d457854a436279265507b34783c3fd7a90efd73b0c21a65097d2eff9669",
+        "octets": 5842651,
+        "sha256_flux_video": "851ca2e671fdd82bb385ca56c8c4e327964684b22adafef7907885003eedcbed",
+        "sha256_flux_aac": "82dafeb1e9d72463342a10ba91578ce2e31c073aa00e4b2e283c0ceae838640d",
+        "paquets_video_et_pts_dts_identiques": true,
+        "decode_integral": true,
+        "integration_moteur_t4_testee": false
+      }
+    },
+    {
+      "place_proposee": "C",
+      "numero_M1": 6,
+      "id_edition": "200023",
+      "titre": "Ocean",
+      "auteur": "Lucien Kemper x Fachhochschule Dortmund",
+      "fiche_source": "https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/",
+      "conditions_source": "https://freemusicarchive.org/Terms_of_Use",
+      "edition": {
+        "http": 200,
+        "octets": 44991,
+        "sha256": "a9c77f83e9b6085db0ed08435f7798edb854ecafa2756297459c46f5a490ba9a",
+        "type": "text/html; charset=UTF-8",
+        "url_finale": "https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/",
+        "edition_et_mention_de_licence_recoupees": true,
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "licence": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+      "permissions_deja_qualifiees_M1": {
+        "publicite": true,
+        "synchronisation": true,
+        "montage": true,
+        "redistribution_audio_autonome": true
+      },
+      "notice_attribution": "« Ocean » — Lucien Kemper x Fachhochschule Dortmund · CC BY 4.0 · https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/ · https://creativecommons.org/licenses/by/4.0/. Extrait 16.265–46.265 s, niveau et fondus adaptés ; démonstration privée Parfum R2.",
+      "content_id": "Non vérifié pour ce fichier. La fiche ne documente pas d’identifiant de revendication ; possible réclamation de tiers.",
+      "instrumental_fiche": "Yes",
+      "original": {
+        "telechargement": {
+          "http": 200,
+          "octets": 8646627,
+          "sha256": "5b48df75376dcf5d85a33de0d4a66e13d872265166a484258e0bfd97dde88eea",
+          "type": "audio/mpeg",
+          "url_finale": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/v3tws7QuzLSgm4Ikm0yqenuTrqjCjTl0xHMTI1Zw.mp3",
+          "anonyme": true,
+          "sans_paiement": true
+        },
+        "duree_decodee_s": 216.0,
+        "sha256": "5b48df75376dcf5d85a33de0d4a66e13d872265166a484258e0bfd97dde88eea",
+        "octets": 8646627,
+        "frequence_hz": 44100,
+        "canaux": 2
+      },
+      "extrait_revue": {
+        "nom_reproductible_cache": "banc-C-06.m4a",
+        "sha256": "af280a45d6eaa3c2968c1dd595051db205f57d4d3f23fd99af2918a0e3f39bb5",
+        "octets": 338702,
+        "debut_source_s": 16.265,
+        "fin_source_s": 46.265,
+        "fondus_s": [
+          0.08,
+          0.45
+        ],
+        "duree_s": 30,
+        "lufs_i": -21.02,
+        "dbtp": -6.43
+      },
+      "remux_banc": {
+        "sha256": "aab004d2189f14a72a7e04a9ee47c85c1392f09801f487e09f118c6055c7e18b",
+        "octets": 5843674,
+        "sha256_flux_video": "851ca2e671fdd82bb385ca56c8c4e327964684b22adafef7907885003eedcbed",
+        "sha256_flux_aac": "be743381f926a0e746a2eb2aa1e24d760186b7aceeebf11006704136abf3faad",
+        "paquets_video_et_pts_dts_identiques": true,
+        "decode_integral": true,
+        "integration_moteur_t4_testee": false
+      }
+    },
+    {
+      "place_proposee": "D",
+      "numero_M1": 9,
+      "id_edition": "227465",
+      "titre": "Electron (Free Stems)",
+      "auteur": "JMHBM",
+      "fiche_source": "https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/",
+      "conditions_source": "https://freemusicarchive.org/Terms_of_Use",
+      "edition": {
+        "http": 200,
+        "octets": 46031,
+        "sha256": "7dd96d77e77c91753d70e3dab494e87b43c9bde6245407911d2ca59129025602",
+        "type": "text/html; charset=UTF-8",
+        "url_finale": "https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/",
+        "edition_et_mention_de_licence_recoupees": true,
+        "licence": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "CC0 1.0",
+      "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "permissions_deja_qualifiees_M1": {
+        "publicite": true,
+        "synchronisation": true,
+        "montage": true,
+        "redistribution_audio_autonome": true
+      },
+      "notice_attribution": "« Electron (Free Stems) » — JMHBM · CC0 1.0 · https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/ · https://creativecommons.org/publicdomain/zero/1.0/. Extrait 7.611–37.611 s, niveau et fondus adaptés ; démonstration privée Parfum R2.",
+      "content_id": "Non vérifié pour ce fichier. La fiche ne documente pas d’identifiant de revendication ; possible réclamation de tiers.",
+      "instrumental_fiche": "Yes",
+      "original": {
+        "telechargement": {
+          "http": 200,
+          "octets": 8396993,
+          "sha256": "d2723c23900ba6fd5ebbb58995e399182a9f06d6453792f2855aa7c2b7edba27",
+          "type": "audio/mpeg",
+          "url_finale": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/RGy0dISPcgnxYUi6EbUuKc5HKL55uWICf7R2rc6n.mp3",
+          "anonyme": true,
+          "sans_paiement": true
+        },
+        "duree_decodee_s": 209.866916,
+        "sha256": "d2723c23900ba6fd5ebbb58995e399182a9f06d6453792f2855aa7c2b7edba27",
+        "octets": 8396993,
+        "frequence_hz": 44100,
+        "canaux": 2
+      },
+      "extrait_revue": {
+        "nom_reproductible_cache": "banc-D-09.m4a",
+        "sha256": "98104e43994926b47db23177e8652d6197b2c399df44165eb93570b7f5b10160",
+        "octets": 337081,
+        "debut_source_s": 7.611,
+        "fin_source_s": 37.611,
+        "fondus_s": [
+          0.08,
+          0.45
+        ],
+        "duree_s": 30,
+        "lufs_i": -21.05,
+        "dbtp": -5.91
+      },
+      "remux_banc": {
+        "sha256": "dc080ef650b03525c1395bbc52d7cfbf2a57d30a4ac36b1a72dbcb593466ca97",
+        "octets": 5842049,
+        "sha256_flux_video": "851ca2e671fdd82bb385ca56c8c4e327964684b22adafef7907885003eedcbed",
+        "sha256_flux_aac": "bdf2294156f795e2856ec7453735b08c7294b67c055a0431ba67eb2acb7e7a95",
+        "paquets_video_et_pts_dts_identiques": true,
+        "decode_integral": true,
+        "integration_moteur_t4_testee": false
+      }
+    }
+  ]
+}
