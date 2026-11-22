@@ -1,9 +1,12 @@
 import {BufferTarget,CanvasSource,Mp4OutputFormat,Output,VideoSampleSink} from './vendor/mediabunny-1.66.1.min.mjs';
 import {createMotion,validatePlan,selectLayer,span,sourceFrame,W,H,FPS,FRAMES} from './motion.mjs';
+import {createMotion as createMotionOnglerie} from './motion-onglerie.mjs';
+import {reframeT2} from './montage-onglerie.mjs';
+import {styleCassures} from './cassures.mjs';
 import {readMedia,describe,inputs,LIMIT} from './media.mjs';
 import {makeVisualPlan} from './texte/modele-visuel.mjs';
 import {lettrageFonts,prepareCaptions,drawCaptions} from './texte/lettrage.mjs';
-import {loadCore,loadPlan,loadFonts,digest} from './engine/resources.mjs';
+import {loadCore,loadPlan,loadFonts,digest,readBytes} from './engine/resources.mjs';
 import {validateJob,createResult,failRecord,RenderFault,demand} from './engine/contract.mjs';
 import {prepareBed,trackCredit} from './engine/music.mjs';
 
@@ -12,6 +15,9 @@ const post=(stage,completed=0,total=FRAMES)=>self.postMessage({stage,completed,t
 
 async function render(payload,core){
   const {kind,job,files}=payload||{};
+  const metier=payload?.metier??'coiffure';
+  demand(globalThis.VVBeaute.profiles.some(p=>p.id===metier));
+  const onglerie=metier==='manucure';
   const detail=kind==='detail';demand(detail||kind==='production');
   const spec=detail?null:validateJob(job,core);
   const refs=detail?['S2']:spec.slots;
@@ -23,15 +29,22 @@ async function render(payload,core){
   let plan,captionPlan;
   try{
     plan=validatePlan(await loadPlan(core));
+    if(onglerie)plan=validatePlan(styleCassures(reframeT2(plan)));
     demand(plan.revision===core.template.base.revision,'RESOURCE_INVALID');
     if(!detail){
-      captionPlan=makeVisualPlan(spec.fields,spec.track.id,core.habillage);
+      let habillage=core.habillage;
+      if(onglerie){
+        const bytes=await readBytes('formulaire/habillage-onglerie.json','da425f22db70e8abf116214471757f7f5a8d3e875ffb7967be3c7faa6fe418db');
+        habillage=JSON.parse(new TextDecoder().decode(bytes));
+        demand(habillage.schema==='vv.coiffure.habillage/1'&&habillage.revision==='beaute-fr-01'&&habillage.base===core.template.base.revision,'RESOURCE_INVALID');
+      }
+      captionPlan=makeVisualPlan(spec.fields,spec.track.id,habillage);
       await lettrageFonts(...await loadFonts(core));
     }
   }catch{throw new RenderFault('RESOURCE_INVALID');}
   const shots=detail?plan.detailReview.map(id=>plan.shots.find(shot=>shot.id===id)):plan.shots;
   const total=shots.reduce((n,shot)=>n+shot.out-shot.in,0);
-  const canvas=new OffscreenCanvas(W,H),compose=createMotion(canvas,detail?{...plan,impacts:[]}:plan,job?.framing);
+  const canvas=new OffscreenCanvas(W,H),compose=(onglerie?createMotionOnglerie:createMotion)(canvas,detail?{...plan,impacts:[]}:plan,job?.framing);
   const ctx=canvas.getContext('2d',{alpha:false}), overlays=detail?null:prepareCaptions(captionPlan);
   const target=new BufferTarget(),out=new Output({format:new Mp4OutputFormat({fastStart:'in-memory'}),target});
   const media=new Map(),views=new Map();

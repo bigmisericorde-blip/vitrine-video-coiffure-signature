@@ -70,11 +70,12 @@ def near_white(image,n=190):
     r,g,b=image.convert('RGB').split()
     return ImageChops.darker(ImageChops.darker(r,g),b).point(lambda x:255 if x>=n else 0)
 
-def check_pixels(page,base,mp4,answers,variant,keys):
-    masks=page.evaluate('''async ({base,answers,variant,keys})=>{
+def check_pixels(page,base,mp4,answers,variant,keys,onglerie=False):
+    masks=page.evaluate('''async ({base,answers,variant,keys,onglerie})=>{
       const [res,model,paint]=await Promise.all(['assets/engine/resources.mjs','assets/texte/modele-visuel.mjs','assets/texte/lettrage.mjs'].map(p=>import(base+'/'+p)));
       const core=await res.loadCore();await paint.lettrageFonts(...await res.loadFonts(core));
-      const plan=model.makeVisualPlan(model.normalizeVisual(answers,core.questions,core.font),variant,core.habillage);
+      const habillage=onglerie?await res.readJson('formulaire/habillage-onglerie.json'):core.habillage;
+      const plan=model.makeVisualPlan(model.normalizeVisual(answers,core.questions,core.font),variant,habillage);
       const all=paint.prepareCaptions(plan);
       const c=document.createElement('canvas');c.width=720;c.height=1280;
       const ctx=c.getContext('2d'), result=[];
@@ -83,7 +84,7 @@ def check_pixels(page,base,mp4,answers,variant,keys):
         const n=Math.min(item.off-2,item.on+14);ctx.clearRect(0,0,720,1280);
         paint.drawCaptions(ctx,[item],n);result.push({key,n,text:item.text,png:c.toDataURL().split(',')[1]});
       }return result;
-    }''',{'base':base,'answers':answers,'variant':variant,'keys':keys})
+    }''',{'base':base,'answers':answers,'variant':variant,'keys':keys,'onglerie':onglerie})
     results={}
     for item in masks:
         expected=Image.open(BytesIO(base64.b64decode(item['png']))).convert('RGBA')
@@ -228,7 +229,7 @@ def main():
                 route.continue_()
             else:external.append(u);route.abort()
         ctx.route('**/*',gate);page.on('pageerror',lambda e:errors.append(str(e)))
-        qa={'revision':'2.0.2-rc.1','chromium':b.version,'viewport':[390,820],'physical_device_tested':False}
+        qa={'revision':'2.0.3-rc.1','chromium':b.version,'viewport':[390,820],'physical_device_tested':False}
         clips=ROOT/'fixtures/media';ex1=dict(EXAMPLES[0]['answers']);ex2=dict(EXAMPLES[1]['answers'],canal='telephone',contact='+2290100000000',contactConfirme=True)
         if options.local_rushs:
             fill(page,url,ex1);captures(page,options.local_rushs)

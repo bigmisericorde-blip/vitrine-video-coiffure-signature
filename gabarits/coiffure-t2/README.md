@@ -1,8 +1,8 @@
 # Vitrine Vidéo · COIFFURE‑T2
 
-**Convergence locale de revue non validée, non envoyée :** Dancing Script approuvée sur la démo Onglerie est intégrée ici au candidat général T2. L’accord Onglerie ne valide pas automatiquement ce nouvel export. Les guides, scènes, plan et quatre fonds du candidat intégrateur sont conservés ; les guides multi-prestations sont adaptés à partir de la variante Onglerie et restent à vérifier et valider. Pas de production ni de recette sur appareil physique.
+**Convergence locale de revue non validée, non envoyée :** Dancing Script approuvée sur la démo Onglerie est intégrée ici au candidat général T2. L’accord Onglerie ne valide pas automatiquement ce nouvel export. Les guides, scènes, plan et quatre fonds du candidat intégrateur sont conservés ; les guides multi-prestations sont adaptés à partir de la variante Onglerie ; les deux traitements visuels sont conservés séparément selon la prestation. Pas de production ni de recette sur appareil physique.
 
-**Candidat local `2.0.2-rc.1` · 3 ou 4 prises → MP4 vertical avec lettrage et musique, sans voix off.** Le même parcours prépare les prises, compose le montage R04, incruste les réponses de la fiche et pose un des quatre fonds retenus. Aucun média client n’est téléversé.
+**Candidat local `2.0.3-rc.1` · 3 ou 4 prises → MP4 vertical avec lettrage et musique, sans voix off.** Le même parcours prépare les prises, compose le montage R04, incruste les réponses de la fiche et pose un des quatre fonds retenus. Aucun média client n’est téléversé.
 
 ## Essayer
 
@@ -21,5 +21,6 @@ Le prix, l’accroche, le nom et le lieu sont facultatifs. La consigne de réser
 
 **Aucun envoi distant.** Un test local réussi ne valide ni un appareil physique, ni un dépôt ou sa CI, ni les droits des images de démonstration.
 
-## Limites de la variante multi-prestations
-Les consignes de huit prestations reprennent les profils issus d’Onglerie. Les 12 écrans conservent leur disposition et leurs mires graphiques ; celles-ci ne représentent pas un client réel. Il ne s’agit pas d’une intégration à l’identique du parcours Onglerie `2.1.0-rc.2` : son exemple filmé et ses traitements de recadrage et de cassures ne sont pas inclus ici. Le montage reste celui du plan intégrateur R04, avec Dancing Script. Ne pas interpréter l’accord sur la démo Onglerie comme la validation de ce montage général. Aucune voix off ajoutée. Un arbitrage visuel et une recette sur appareil physique restent nécessaires avant production.
+
+## Deux finitions selon la prestation
+Sur décision du propriétaire : `manucure` utilise les cadrages, transitions et l’habillage de la variante Onglerie `99003f2529839e6be3182b85a440cadeae363c82`. Les autres prestations gardent le rendu général R04. Les fonctions de recadrage, les cassures, le moteur de composition Onglerie et son habillage sont inclus séparément ; le plan source et les fonds ne sont pas modifiés. Le contexte métier accompagne l’appel au worker ; un appel direct qui l’omet prend la base générale historique. Les exemples fournis restent des mires graphiques : la démo Onglerie filmée de la branche historique n’est pas redistribuée ici. Le choix de continuer sans voix pour T2 a été confirmé par le propriétaire ; l’export ne contient aucune voix off. Une recette sur appareil physique reste à effectuer avant production.

@@ -188,7 +188,7 @@ function previewDetail(){
     }
   };
   instance.onerror=instance.onmessageerror=()=>fail('L’aperçu du détail n’a pas chargé.');
-  instance.postMessage({kind:'detail',files:{S2:t.file}});
+  instance.postMessage({kind:'detail',files:{S2:t.file},metier:job.metier});
 }
 function showReview(t,{frozen=false}={}){
   transition('C');cam.style.display='none';replay.style.display='block';replay.loop=!frozen;replay.muted=true;
@@ -265,7 +265,7 @@ function runWorker(spec,files,signal){
       $('montageStatus').textContent=data.stage==='encode'?`Images encodées : ${data.completed} / ${data.total}`:data.stage==='finalize'?'Finalisation de la vidéo et de la musique…':'Chargement du plan, des prises et du fond…';
     };
     instance.onerror=instance.onmessageerror=()=>close(new RenderFault('RENDER_FAILED'));
-    try{instance.postMessage({kind:'production',job:spec,files});}catch{close(new RenderFault('RENDER_FAILED'));}
+    try{instance.postMessage({kind:'production',job:spec,files,metier:job.metier});}catch{close(new RenderFault('RENDER_FAILED'));}
   });
 }
 async function encode(){

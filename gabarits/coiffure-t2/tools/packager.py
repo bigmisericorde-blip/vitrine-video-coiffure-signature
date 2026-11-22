@@ -10,10 +10,10 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 CORE='''README.md INTEGRATION.md CREDITS.md index.html simulation.html ecrans.html
 config/template.json capture/guide.json ingenierie/plan.json
-formulaire/questions.json formulaire/habillage.json formulaire/exemples.json
+formulaire/questions.json formulaire/habillage.json formulaire/habillage-onglerie.json formulaire/exemples.json
 schemas/template.schema.json schemas/render-job.schema.json schemas/render-result.schema.json schemas/render-error.schema.json
 fixtures/contracts/job-3-prises.json fixtures/contracts/job-4-prises.json fixtures/contracts/resultat-exemple.json fixtures/contracts/erreur-exemple.json
-assets/web.css assets/simulation-t2.css assets/result.css assets/capture.mjs assets/media.mjs assets/motion.mjs assets/render.worker.mjs
+assets/web.css assets/simulation-t2.css assets/result.css assets/capture.mjs assets/media.mjs assets/motion.mjs assets/motion-onglerie.mjs assets/cassures.mjs assets/montage-onglerie.mjs assets/render.worker.mjs
 assets/fiche-production.mjs assets/ecrans-production.mjs
 assets/engine/metiers.js assets/engine/contract.mjs assets/engine/fiche.mjs assets/engine/music.mjs assets/engine/resources.mjs assets/engine/rotation.mjs
 assets/texte/DancingScript-Variable.ttf assets/texte/OFL-DancingScript.txt assets/texte/police.json assets/texte/lettrage.mjs assets/texte/modele-visuel.mjs
@@ -23,7 +23,7 @@ assets/vendor/mediabunny-1.66.1.min.mjs assets/vendor/mediabunny-LICENSE.txt ass
 audio/music/catalogue.json audio/music/CREDITS.md docs/12-ecrans.md
 tools/preview.py tools/mires.py tools/qa-production.py tools/recette-profils.py tools/qa-requirements.txt tools/test-production.mjs tools/verify-contracts.py tools/packager.py'''.split()
 CORE+= [f'fixtures/media/S{i}.mp4' for i in range(1,5)]+[f'audio/music/fonds/{c}.m4a' for c in 'ABCD']
-EVIDENCE=['conformance/Recette-integrale.json','conformance/Tests-contrats-rotation.json','conformance/Tests-schemas.json','conformance/Recette-profils.json','conformance/Retest-sources-audio.json']+[f'conformance/12-ecrans/{i:02}.webp' for i in range(1,13)]
+EVIDENCE=['conformance/Recette-integrale.json','conformance/Tests-contrats-rotation.json','conformance/Tests-schemas.json','conformance/Recette-profils.json','conformance/Retest-sources-audio.json','conformance/Comparaison-onglerie.json']+[f'conformance/12-ecrans/{i:02}.webp' for i in range(1,13)]
 FILES=sorted(CORE+EVIDENCE)
 assert len(FILES)==len(set(FILES))
 MAX_BYTES=32*1024*1024
@@ -51,6 +51,8 @@ def evidence_check(payload):
     prof=parse(payload,'conformance/Recette-profils.json');audio=parse(payload,'conformance/Retest-sources-audio.json')
     need(len(prof['profils'])==8 and all(x['guides_confirmes']==4 for x in prof['profils']) and prof['ecrans_manucure']==12 and prof['export_sur_mires']['decoded_completely'] and not prof['validation_visuelle_humaine'],'Recette des profils manquante')
     need(len(audio)==4 and {x['id'] for x in audio}==set('ABCD') and all(x.get('identical') and x.get('decoded') and x.get('http')==200 for x in audio),'Retest des sources audio manquant')
+    comp=parse(payload,'conformance/Comparaison-onglerie.json')
+    need(comp['statut']=='PASS' and comp['images_comparees']==900 and comp['ssim_moyen']>=.99 and comp['ssim_image_minimum']>=.98 and comp['donnees_audio_identiques'] and all(x['identique'] for x in comp['composants_identiques']),'Comparaison Onglerie manquante')
     a,b=qa['four_imports'],qa['three_imports']
     need(a['variant']!=b['variant'] and a['music_only_aac_bit_identical'] and b['music_only_aac_bit_identical'] and a['decoded_completely'] and b['decoded_completely'],'MP4 d’intégration non vérifiés')
     need(rot['form_combinations']==16 and rot['rotation_successes']==10000 and rot['rotation_repeats']==0 and schem['schemas']==4,'Schémas ou rotation non vérifiés')

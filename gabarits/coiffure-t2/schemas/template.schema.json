@@ -14,7 +14,7 @@
       "const": "COIFFURE-T2"
     },
     "version": {
-      "const": "2.0.2-rc.1"
+      "const": "2.0.3-rc.1"
     },
     "status": {
       "const": "local_candidate"

@@ -38,7 +38,7 @@ with ThreadingHTTPServer(('127.0.0.1',0),partial(qa.Quiet,directory=str(root))) 
  # Export client réaliste au niveau contrats uniquement, images de test graphiques.
  ex=dict(qa.EXAMPLES[0]['answers'],service='Pose de vernis',geste='Appliquer le vernis',preuve='Le bord net du vernis',accroche='',salon='',ville='',prix='',canal='aucun',contact='',contactConfirme=False)
  qa.fill(page,url,ex,start=False);page.locator('#metier').select_option('manucure');page.locator('#startTest').click();page.wait_for_url('**/simulation.html?fiche=*');qa.wait_ready(page);assert 'ongles' in page.locator('#listFilm').inner_text().lower()
- qa.captures(page,root/'fixtures/media');film=out/'Recette-onglerie-mires.mp4';result=qa.download(page,film,4,['Pose de vernis']);result['pixels']=qa.check_pixels(page,url,film,ex,result['variant'],['gesture','proof','service']);print('Export onglerie sur mires PASS',flush=True)
+ qa.captures(page,root/'fixtures/media');film=out/'Recette-onglerie-mires.mp4';result=qa.download(page,film,4,['Pose de vernis']);result['pixels']=qa.check_pixels(page,url,film,ex,result['variant'],['gesture','proof','service'],onglerie=True);print('Export onglerie sur mires PASS',flush=True)
  assert not errs and not extern and not posts,(errs,extern,posts)
  evidence={'profils':summary,'ecrans_manucure':12,'export_sur_mires':result,'erreurs_js':errs,'requetes_externes':extern,'posts':posts,'appareil_physique':False,'rushs_reels':False,'validation_visuelle_humaine':False,'voix_off':False}
  (out/'Recette-profils.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n');b.close();server.shutdown();print('Profils et recette PASS',flush=True)

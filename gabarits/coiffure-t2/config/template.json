@@ -2,7 +2,7 @@
   "$schema": "../schemas/template.schema.json",
   "schema": "vv.coiffure.template/1",
   "template_id": "COIFFURE-T2",
-  "version": "2.0.2-rc.1",
+  "version": "2.0.3-rc.1",
   "status": "local_candidate",
   "audio_profile": "coiffure-en-etapes",
   "execution_profile": "browser-webcodecs",

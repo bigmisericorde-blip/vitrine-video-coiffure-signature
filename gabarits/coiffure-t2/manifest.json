@@ -1,13 +1,13 @@
 {
   "schema": "vv.coiffure.integration-bundle/1",
   "template_id": "COIFFURE-T2",
-  "version": "2.0.2-rc.1",
+  "version": "2.0.3-rc.1",
   "status": "local_candidate",
   "execution_profile": "browser-webcodecs",
   "audio_profile": "coiffure-en-etapes",
   "music_catalogue_version": "1.0.0",
   "approved_visual_reference_sha256": "42a9810b07729052ee5c82fe852b7f2e8e213d7e1b4d08f7a707584c2051d318",
-  "source_tree_sha256": "fe7bd6440f7302e177d986bcf39f06ef7597a2018c0c3c753cb1e62bf649def3",
+  "source_tree_sha256": "63bd79d3dd1378c12542611237a49ba7817c74f9cadce6c0fca49d487ca2e3ad",
   "submitted_commit": null,
   "source_directory_proposal": "gabarits/coiffure-t2/",
   "ota_deployed": false,
@@ -27,14 +27,14 @@
     },
     {
       "path": "INTEGRATION.md",
-      "bytes": 7481,
-      "sha256": "31f42b20bf5d4cee68838ba1e52b5f67699a8f7a013d75ec065bc4d2545ffef3",
+      "bytes": 7768,
+      "sha256": "ce4431256dbf186a73c19d331d36e5c0005b2e56c547bf0bb61b859b09527ba0",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "README.md",
-      "bytes": 3324,
-      "sha256": "ce726e0fbbcb138807e0b4ee8a9ec6423dcb6920935446d24df19d895065380c",
+      "bytes": 3529,
+      "sha256": "ea6937e7f2adb8f7b2ae4b5fda965810b1c49a9ac26d0d45d45af0fbeaf8a7f4",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -87,8 +87,14 @@
     },
     {
       "path": "assets/capture.mjs",
-      "bytes": 21162,
-      "sha256": "73f94791f528c9e0c28ec56353f31e75d159ac7faa376f2cbb4c5df938fcafe2",
+      "bytes": 21198,
+      "sha256": "5db40c6c70525241b5074c7c20cd409a9f79638d853c8cdaaffa03e0fe375c6e",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/cassures.mjs",
+      "bytes": 2890,
+      "sha256": "b49c59a66abd656af75ecc3230accea6000fc2407f4e9cab7af01edcff8e2634",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -146,6 +152,18 @@
       "role": "source_ressource_ou_documentation"
     },
     {
+      "path": "assets/montage-onglerie.mjs",
+      "bytes": 1105,
+      "sha256": "665538bc2a102f7fe94177188e18af37cef489672feb731a0799e9807e055466",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/motion-onglerie.mjs",
+      "bytes": 6131,
+      "sha256": "df31e686fec48a5a426cbbcef9bfd9d7968893b939aa279a11768dede11649cb",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
       "path": "assets/motion.mjs",
       "bytes": 5538,
       "sha256": "957d5cf874d479ae97fc43db1995cf441d46c9f07c2faa66fbc9c55badb1ec46",
@@ -153,8 +171,8 @@
     },
     {
       "path": "assets/render.worker.mjs",
-      "bytes": 5768,
-      "sha256": "8d11af296a4e26ae7f16252f95d528bdf1e139dc70eecceb014973c948129e53",
+      "bytes": 6622,
+      "sha256": "e534075a5e54004a0420e1b3bde97d58826179168b6b5d7dabdee1df23074eb9",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -268,7 +286,7 @@
     {
       "path": "config/template.json",
       "bytes": 1892,
-      "sha256": "e6540ccaf46dfef0e52ce26518faccc61ce9058b1af30175be567d8da9d60bca",
+      "sha256": "2dcd98aaed7b136a0bc768b6a11febbfc75da33677bb423dd75d0a0c98d5bad2",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -344,15 +362,21 @@
       "role": "preuve_locale"
     },
     {
+      "path": "conformance/Comparaison-onglerie.json",
+      "bytes": 1930,
+      "sha256": "eac4147518fd9244101085b3b043ab6cd863f313fbe78bea8a4f50a2148c73b2",
+      "role": "preuve_locale"
+    },
+    {
       "path": "conformance/Recette-integrale.json",
-      "bytes": 3406,
-      "sha256": "3bf2aeb3597317e54a1c980a0d872c58b25895c5972847188d4345c9e16ca800",
+      "bytes": 3407,
+      "sha256": "dcf1f1d9ac39301a0de001057ae30e255b47b09fea5959b3de58aa06c3329e90",
       "role": "preuve_locale"
     },
     {
       "path": "conformance/Recette-profils.json",
       "bytes": 2020,
-      "sha256": "bdb0306f34960e960c99f457a2073e02b43595f5e74f58d078c88c978437af2e",
+      "sha256": "c6dc9350306bc57b101f0cc9a479fd526337ef3833ec87e69545919df0e506d2",
       "role": "preuve_locale"
     },
     {
@@ -388,25 +412,25 @@
     {
       "path": "fixtures/contracts/erreur-exemple.json",
       "bytes": 260,
-      "sha256": "51be509b726684882ca87faf12c84b7f1ebd36678e484119e2c26de050edbee0",
+      "sha256": "c79da3619676492f91038f9c741dc89d0642ebcb65d40371775ec671bb1c8e52",
       "role": "contrat_ou_outil"
     },
     {
       "path": "fixtures/contracts/job-3-prises.json",
       "bytes": 737,
-      "sha256": "c58576070200f3a13f271e361ccd3146737240c63b273bbc4c5502e9c23513cb",
+      "sha256": "fa9bb39ae73f9afd3c287e65029cc0649f42e43931d1a8dc389974f708ab1f9a",
       "role": "contrat_ou_outil"
     },
     {
       "path": "fixtures/contracts/job-4-prises.json",
       "bytes": 721,
-      "sha256": "b5b2b6859923b018fe5b9dc5753985f002dda72818bb01e55d1676b796b0e2ce",
+      "sha256": "52af7a49b242caaef8eff9b0d3ad7887eff7ea6f9b47ce114e0a63c23b580b09",
       "role": "contrat_ou_outil"
     },
     {
       "path": "fixtures/contracts/resultat-exemple.json",
       "bytes": 714,
-      "sha256": "f938b45d7c6f49317f1451cd1e1ee739de612289fc14388a30b1427a129480dd",
+      "sha256": "e1662c66ed6e70312e98aed55f753aef068e992d468b8f6e9b2510f4da9163fb",
       "role": "contrat_ou_outil"
     },
     {
@@ -440,6 +464,12 @@
       "role": "source_ressource_ou_documentation"
     },
     {
+      "path": "formulaire/habillage-onglerie.json",
+      "bytes": 3425,
+      "sha256": "da425f22db70e8abf116214471757f7f5a8d3e875ffb7967be3c7faa6fe418db",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
       "path": "formulaire/habillage.json",
       "bytes": 3392,
       "sha256": "28ddea776acfd549d6ac91cf2c08a815f4ef7a615f5c9a9b9f57c6c622dcdfa3",
@@ -466,25 +496,25 @@
     {
       "path": "schemas/render-error.schema.json",
       "bytes": 1639,
-      "sha256": "130e4b59e630f4ccaf17150442662ba13d936e7ac6355bb9db2ffa31e7844cf9",
+      "sha256": "18493a6d3b6bb75ea976d7d75d57fad91e1db336b6a7fd684e8abcc012169f67",
       "role": "contrat_ou_outil"
     },
     {
       "path": "schemas/render-job.schema.json",
       "bytes": 5806,
-      "sha256": "424a662489bb9a562f6bb91edd11fddfd4ab4c19e6d0c20f515795184c95f6c4",
+      "sha256": "6e1b6f3f95bd8607e74f30a0d588894c63f58e942f5cb8b17ea84479e4a3dc1d",
       "role": "contrat_ou_outil"
     },
     {
       "path": "schemas/render-result.schema.json",
       "bytes": 4555,
-      "sha256": "cf2a041e312dd551dfa8f0f1863ddd3dd5183601454bb4d82d5c6f725710d438",
+      "sha256": "ca310acfe23c12e4cc098db5854d5085b4533cac0a44f2cbcd9337582c000ab2",
       "role": "contrat_ou_outil"
     },
     {
       "path": "schemas/template.schema.json",
       "bytes": 3725,
-      "sha256": "3b9c05fad008df0f62f0daaad161e408ad8865cb6aa6c0aa82f862007227fa37",
+      "sha256": "4f001c518295931d2533ca4542aa2cf999018c8e327a6a1560d4fe4c1636546e",
       "role": "contrat_ou_outil"
     },
     {
@@ -501,8 +531,8 @@
     },
     {
       "path": "tools/packager.py",
-      "bytes": 9983,
-      "sha256": "d4a7ceb953e03d63faf0bde45d59d4c81603e390eebb6bacc381ebb35d698aa4",
+      "bytes": 10461,
+      "sha256": "8402dc322f81a1572c9e31131de4b911b6edd9b11c8407b684d24fd11d1105ec",
       "role": "contrat_ou_outil"
     },
     {
@@ -513,8 +543,8 @@
     },
     {
       "path": "tools/qa-production.py",
-      "bytes": 19316,
-      "sha256": "cfbb5f730cf95c069163c3773fa2b6170867da19cbbda6be73b0ffb8396297f7",
+      "bytes": 19459,
+      "sha256": "5e871b03d7107c8d1c7bc8408e8758e22711217a617063052abf470284e32454",
       "role": "contrat_ou_outil"
     },
     {
@@ -525,8 +555,8 @@
     },
     {
       "path": "tools/recette-profils.py",
-      "bytes": 4807,
-      "sha256": "abda827f100842e0505f4366058bf39b3eebd5b80141659e450c03b65d33b6d8",
+      "bytes": 4821,
+      "sha256": "e0c841e5d36adcb3bf0359ec6afdd5c577089da10eeaf039a8ea7c15e193598b",
       "role": "contrat_ou_outil"
     },
     {
