@@ -1,5 +1,7 @@
 {
   "schema": 1,
+  "template_id": "COIFFURE-T3",
+  "version": "0.1.0-rc.1",
   "revision": "t3-preuve-moteur-audio-r1",
   "portee": "Candidat pour revue d’intégration ; fiche et minutages de démonstration. Pas d’ID ou de version de production ni de validation P4–P9.",
   "audio_profile": "beaute-soin-du-visage-instrumental",

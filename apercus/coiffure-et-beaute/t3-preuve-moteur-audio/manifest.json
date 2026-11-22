@@ -63,8 +63,8 @@
       "role": "rapport de recette"
     },
     "contrat.json": {
-      "octets": 1898,
-      "sha256": "360b5c24f86c3dc490bd3a040416349bc4f92fe44fe62e6b83f86ba0d41a5617",
+      "octets": 1957,
+      "sha256": "925b81e53c2425670d8de1564f85a2642458a18a0fd596980d78c2e158058bb1",
       "role": "documentation, contrat ou moteur"
     },
     "engine/commun.py": {

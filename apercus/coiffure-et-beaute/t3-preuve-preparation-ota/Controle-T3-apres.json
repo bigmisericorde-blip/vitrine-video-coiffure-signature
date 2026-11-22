@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "statut": "PASS",
+  "revision": "t3-preuve-moteur-audio-r1",
+  "test": "mires synthétiques reproductibles",
+  "outils": {
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe": "ffprobe version 7.1.5-0+deb13u1 Copyright (c) 2007-2026 the FFmpeg developers"
+  },
+  "master_de_revue_utilise": false,
+  "voix_ajoutee": false,
+  "identite_h264_et_pts_dts": true,
+  "bornes_images": {
+    "mise_au_point": [
+      0,
+      15
+    ],
+    "fenetre": [
+      106,
+      136
+    ],
+    "frise": [
+      260,
+      332
+    ],
+    "velocity": [
+      332,
+      343
+    ],
+    "preuve_1x": [
+      343,
+      430
+    ],
+    "diptyque": [
+      617,
+      735
+    ],
+    "revelation_volets": [
+      617,
+      630
+    ],
+    "carton": [
+      735,
+      900
+    ]
+  },
+  "master_muet": {
+    "sha256": "b046b81c99ab41e1226de80a24a2456603bfb9642492bb429e0a8f67b2a8a0d6",
+    "octets": 1046659,
+    "image": {
+      "h264_sha256": "99e9ff1d86eb7a41ca3e3392da1bd5c10a6da3b1d201b238c800f23841ef0058",
+      "temps_sha256": "ae4e90ff0b8a79bfde0733578a79b6da8472fd43c10a6caa44f711f5c889238a",
+      "images": 900,
+      "fps": 30,
+      "secondes": 30
+    },
+    "original_son": {
+      "S1": false,
+      "S2": true,
+      "S3": false,
+      "S4": false
+    }
+  },
+  "exports": {
+    "01": {
+      "piste": "01",
+      "titre": "Copa",
+      "artiste": "1000 Handz (1000Handz.com)",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "fiche": "https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-tropical-vibes/copa/",
+      "audio_sha256": "c571b2154df5b563e96fc25067967c00deaaaa7defbbffaddced0a0ca59f1877",
+      "credit": "Musique : Copa — 1000 Handz (1000Handz.com) · Source : https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-tropical-vibes/copa/ · Licence : https://creativecommons.org/licenses/by/4.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film.",
+      "format": "AAC-LC",
+      "hz": 48000,
+      "canaux": 2,
+      "reduction_export_db": 0,
+      "lufs_i": -18.8,
+      "dbtp": -4.8,
+      "correlation_pcm_aac": 0.997364,
+      "mp4_sha256": "a3b5bcd063b742305e7caabe3eef2ca85fa8671701f114540dcba746763bfaa6",
+      "octets": 1685544
+    },
+    "02": {
+      "piste": "02",
+      "titre": "Looking Ahead",
+      "artiste": "Johnathon M. Horner (Beat Mekanik / JMHBM)",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "fiche": "https://freemusicarchive.org/music/beat-mekanik/single/looking-ahead-1/",
+      "audio_sha256": "ef3e00625090e6b7b4ff77bf50b1acb6d3b5cdd14a1ac633d72b1d2fb49e6506",
+      "credit": "Musique : Looking Ahead — Johnathon M. Horner (Beat Mekanik / JMHBM) · Source : https://freemusicarchive.org/music/beat-mekanik/single/looking-ahead-1/ · Licence : https://creativecommons.org/licenses/by/4.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film. Copyright © 2023, Johnathon M. Horner - All Rights Reserved.",
+      "format": "AAC-LC",
+      "hz": 48000,
+      "canaux": 2,
+      "reduction_export_db": 0,
+      "lufs_i": -18.7,
+      "dbtp": -5.5,
+      "correlation_pcm_aac": 0.99597,
+      "mp4_sha256": "b26d24a6aca2309a689e3b552b776b4fc6d450c3e49dafd9a8f03794ac55d175",
+      "octets": 1687206
+    },
+    "03": {
+      "piste": "03",
+      "titre": "Midnight Cruiser",
+      "artiste": "Zane Little",
+      "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "fiche": "https://freemusicarchive.org/music/zane-little/new-peach-radio/midnight-cruiser/",
+      "audio_sha256": "6a62a326eec23da47aad3d18a7cf0fe370c57e68336e8d45bb21d101a6ff01aa",
+      "credit": "Musique : Midnight Cruiser — Zane Little · Source : https://freemusicarchive.org/music/zane-little/new-peach-radio/midnight-cruiser/ · Licence : https://creativecommons.org/publicdomain/zero/1.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film.",
+      "format": "AAC-LC",
+      "hz": 48000,
+      "canaux": 2,
+      "reduction_export_db": 0,
+      "lufs_i": -18.7,
+      "dbtp": -6.5,
+      "correlation_pcm_aac": 0.999776,
+      "mp4_sha256": "eaee065e3e930ad4e7b43426e5eed734331539ed602b6b8264302b15c1d4e00c",
+      "octets": 1707137
+    },
+    "04": {
+      "piste": "04",
+      "titre": "Night Owl",
+      "artiste": "Broke For Free",
+      "licence": "https://creativecommons.org/licenses/by/3.0/",
+      "fiche": "https://archive.org/details/Directionless_EP-8295",
+      "audio_sha256": "381adb9fd2ebf2849e39631f69dec8c7c4dedf875364587131e07ed272a0927c",
+      "credit": "Musique : Night Owl — Broke For Free · Source : https://archive.org/details/Directionless_EP-8295 · Licence : https://creativecommons.org/licenses/by/3.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film.",
+      "format": "AAC-LC",
+      "hz": 48000,
+      "canaux": 2,
+      "reduction_export_db": 0,
+      "lufs_i": -19.6,
+      "dbtp": -4.4,
+      "correlation_pcm_aac": 0.999921,
+      "mp4_sha256": "5326aad16a168977326dff497bc3a84e05699c93202da6ac4602187fc8f24bc8",
+      "octets": 1682199
+    }
+  },
+  "rejets": {
+    "fiche_incomplete": {
+      "code": "FICHE",
+      "message": "Champ geste vide ou trop long (maximum 72)."
+    },
+    "piste_inconnue": {
+      "code": "JOB",
+      "message": "Mode audio ou piste inconnu."
+    },
+    "pas_de_repetition": {
+      "code": "ROTATION",
+      "message": "Cette piste vient d’être utilisée. Choisis-en une autre ou passe en rotation."
+    },
+    "pack_inexistant": {
+      "code": "PACK",
+      "message": "Pack musical manquant. Aucun export sans la piste choisie."
+    },
+    "flac_invalide": {
+      "code": "PACK",
+      "message": "Ressource 01 manquante ou altérée. Aucune substitution."
+    },
+    "pack_incomplet": {
+      "code": "PACK",
+      "message": "Ressource 01 manquante ou altérée. Aucune substitution."
+    },
+    "id_reutilise_avec_autre_fiche": {
+      "code": "JOB",
+      "message": "Cet ID correspond à un autre rendu, ou le fichier a changé."
+    },
+    "prise_trop_courte": {
+      "code": "PRISE",
+      "message": "S1 : filme au moins 8 s (90 s max).",
+      "prise": "S1"
+    },
+    "relance_conserve_piste": {
+      "code": "PRISE",
+      "message": "S1 : filme au moins 8 s (90 s max).",
+      "prise": "S1"
+    },
+    "job_suivant_en_attente": {
+      "code": "EN_COURS",
+      "message": "Relance ou abandonne le rendu réservé avant de passer au suivant."
+    }
+  },
+  "rotation": {
+    "dernier_avant": "04",
+    "automatique_apres": "03",
+    "succes_seul": true,
+    "relance_idempotente": true,
+    "reprise_apres_ecriture_mp4": true,
+    "annulation_sans_avancer": true
+  },
+  "variante": {
+    "empreinte": "d3f334fa801c493ef00b00dff8934cba4898fcff419add1a76e88678e6040f35",
+    "changes_visibles_pixels_mae": {
+      "titre": 8.531,
+      "detail": 10.208,
+      "carton": 5.496
+    }
+  }
+}

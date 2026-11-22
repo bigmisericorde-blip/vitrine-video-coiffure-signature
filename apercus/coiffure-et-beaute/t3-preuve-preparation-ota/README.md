@@ -1,0 +1,9 @@
+# T3 — Préparation des métadonnées pour un futur catalogue OTA
+
+**Revue uniquement.** Base `review/t3-preuve-moteur-audio` au commit `56c8242a8bfd2c29b7ef9756cb2a68483246645e`. Accord propriétaire sur l'identifiant et la version de revue : `COIFFURE-T3` et `0.1.0-rc.1`. Il n'y a ni version de production approuvée ni déploiement OTA/Cloudflare dans ce changement.
+
+Le moteur lit `t3-preuve-moteur-audio/contrat.json`. Ce contrat a reçu `template_id` et `version`, et conserve `audio_profile: beaute-soin-du-visage-instrumental`, le profil du catalogue des quatre fonds locaux. Aucun changement aux scènes, médias, piste, volume, timeline, moteur, voix ou réseau. Le manifeste de revue conserve volontairement ses identifiants de production à `null` et `publication_autorisee: false` ; seuls l'empreinte et le nombre d'octets du contrat sont actualisés, ainsi que `SHA256SUMS`. Avant toute qualification de production, il faudra aligner le contrat de production et son manifeste, après validation.
+
+Comparaison technique de la base et du candidat : recette `outils/recette.py` rejouée sur les deux copies avec les mêmes fiches, prises synthétiques, polices, fonds et FFmpeg 7.1.5. Validation du JSON, du moteur et du lot de revue ; master muet et quatre MP4 de chaque piste identiques à l'octet entre avant et après, y compris audio. La recette vérifie aussi le crédit, la rotation, les échecs et la reprise, ainsi qu'une deuxième fiche et une prise modifiée. Les rapports joints détaillent les limites et empreintes. Aucun test sur appareil physique ni validation des quatre cas de production. Les rapports `conformite/` dans l'ancien lot demeurent ceux de la revue historique.
+
+Fichiers modifiés : `t3-preuve-moteur-audio/{contrat.json,manifest.json,SHA256SUMS}`. Fichiers ajoutés : ce rapport et les deux contrôles avant/après dans `t3-preuve-preparation-ota/`. `ota_deployed: false`.
