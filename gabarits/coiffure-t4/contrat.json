@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "template_id": "BEAUTE-T4",
+  "version": "0.1.0-web",
+  "revision": "t4-projection-navigateur",
+  "portee": "Atelier navigateur T4 : expérimentation publiée, traitement local ; tests simulés, aucun appareil physique testé ; adaptation R2 et bornes de montage provisoires.",
+  "audio_profile": "beaute-projection-instrumental",
+  "media": {
+    "largeur": 720,
+    "hauteur": 1280,
+    "fps": 30,
+    "images": 900,
+    "secondes": 30,
+    "codec": "h264",
+    "audio": "AAC-LC stéréo 48000 Hz"
+  },
+  "prises": {
+    "S1": {
+      "titre": "Découvrir",
+      "secondes": 6,
+      "guide": "Montre le produit ou l’espace et les outils du service.",
+      "question": "Comprend-on ce que tu présentes ?"
+    },
+    "S2": {
+      "titre": "Présenter",
+      "secondes": 13,
+      "guide": "Montre le même produit sous un autre angle ou la préparation du service.",
+      "question": "Voit-on bien ce que tu présentes ?"
+    },
+    "S3": {
+      "titre": "Montrer le détail",
+      "secondes": 8,
+      "guide": "Filme de près un détail réel, clair et stable.",
+      "question": "Le détail est-il net et facile à voir ?"
+    },
+    "S4": {
+      "titre": "Terminer",
+      "secondes": 7,
+      "guide": "Filme une dernière vue calme du même produit ou service.",
+      "question": "Cette dernière vue va-t-elle avec le reste ?"
+    }
+  },
+  "fiche": {
+    "service": {
+      "max": 60,
+      "requis": true
+    },
+    "geste": {
+      "max": 72,
+      "requis": true
+    },
+    "detail": {
+      "max": 72,
+      "requis": true
+    },
+    "action": {
+      "choix": {
+        "conseil": "Demandez conseil.",
+        "essai": "Demandez un essai.",
+        "commande": "Passez commande.",
+        "rendez_vous": "Prenez rendez-vous.",
+        "visite": "Passez nous voir.",
+        "devis": "Demandez un devis.",
+        "aucune": ""
+      },
+      "requis": true
+    },
+    "cible": {
+      "max": 76,
+      "requis": false
+    },
+    "nom": {
+      "max": 46,
+      "requis": false
+    },
+    "lieu": {
+      "max": 42,
+      "requis": false
+    },
+    "prix": {
+      "max": 34,
+      "requis": false
+    }
+  },
+  "bornes_images": {
+    "decouvrir": [
+      0,
+      152
+    ],
+    "presenter": [
+      152,
+      521
+    ],
+    "detail": [
+      521,
+      727
+    ],
+    "inviter": [
+      727,
+      900
+    ]
+  },
+  "audio_modes": [
+    "muet",
+    "musique_seule"
+  ],
+  "voix_client": {
+    "facultative": true,
+    "duree_max_s": 30,
+    "taille_max_octets": 20971520,
+    "modes": [
+      "musique_seule"
+    ],
+    "origine": [
+      "import",
+      "microphone"
+    ],
+    "captation_audio_des_prises_utilisee": false,
+    "transcription_automatique": false
+  },
+  "bornes_montage_provisoires": true
+}
