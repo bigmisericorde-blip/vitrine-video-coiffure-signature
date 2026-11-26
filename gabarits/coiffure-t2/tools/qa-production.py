@@ -180,6 +180,8 @@ def captures(page,clips,*,reuse=False,tiny=None,tone=None,demo=False):
             page.locator('#redo').click();expect(page.locator('#app')).to_have_attribute('data-state','A');assert page.evaluate('window.__capture().accepted')==['S1','S2'];add()
         page.locator('#next').click()
     assert page.evaluate('window.__capture().accepted')==SLOTS
+    expect(page.locator('#panelVoice')).to_be_visible()
+    page.locator('#voiceContinue').click() # recette historique sans voix
 
 def camera(browser,url,gate):
     p=browser.new_page(viewport={'width':390,'height':820},permissions=['camera']);p.route('**/*',gate)

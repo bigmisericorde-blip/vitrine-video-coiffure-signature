@@ -35,17 +35,20 @@ export function validError(err){
   return keys(err,['schema','template_id','template_version','job_id','code','message','retryable'])&&err.schema===ERROR&&err.template_id==='COIFFURE-T2'&&(err.template_version===null||typeof err.template_version==='string')&&(err.job_id===null||validId(err.job_id))&&own(labels,err.code)&&typeof err.message==='string'&&err.message.length>0&&err.message.length<=220&&err.retryable===labels[err.code][1];
 }
 export function newId(){return Array.from(crypto.getRandomValues(new Uint8Array(16)),x=>x.toString(16).padStart(2,'0')).join('');}
-export function createJob(core,{id,source,detail,view,answers,variant}){
+export function createJob(core,{id,source,detail,view,answers,variant,voice=false}){
   const t=core.template; const track=core.music.tracks.find(x=>x.id===variant);
   demand(track&&answers);
   const job={schema:JOB,template_id:t.template_id,template_version:t.version,execution_profile:t.execution_profile,audio_profile:t.audio_profile,job_id:id,
     mode:source==='demo'?'technical_fixture':'merchant',slots:detail?['S1','S2','S4']:[...knownSlots],detail:detail?'S3_from_S2':'distinct',framing:view,
     answers:visualAnswers(answers),music:{variant,track_id:track.track_id,catalogue_version:core.music.version}};
+  if(voice===true)job.voice=true;
   validateJob(job,core);return job;
 }
 export function validateJob(job,core){
   const t=core.template;
-  demand(keys(job,['schema','template_id','template_version','execution_profile','audio_profile','job_id','mode','slots','detail','framing','answers','music']));
+  const jobKeys=['schema','template_id','template_version','execution_profile','audio_profile','job_id','mode','slots','detail','framing','answers','music'];
+  demand(keys(job,own(job,'voice')?[...jobKeys,'voice']:jobKeys));
+  demand(!own(job,'voice')||job.voice===true);
   demand(job.schema===JOB&&job.template_id===t.template_id&&job.template_version===t.version&&job.execution_profile===t.execution_profile&&job.audio_profile===t.audio_profile&&validId(job.job_id));
   const reuse=job.detail==='S3_from_S2';
   demand((reuse||job.detail==='distinct')&&(job.mode==='merchant'||job.mode==='technical_fixture'&&!reuse)&&own(framing,job.framing));
@@ -60,12 +63,12 @@ export function validateJob(job,core){
 }
 export function createResult(job,core,byteLength,hash){
   const t=core.template;
-  const result={schema:RESULT,template_id:t.template_id,template_version:t.version,job_id:job.job_id,mode:job.mode,source_count:job.slots.length,detail:job.detail,music:{...job.music},media:{...t.media,bytes:byteLength,sha256:hash},added_voice_off:false};
+  const result={schema:RESULT,template_id:t.template_id,template_version:t.version,job_id:job.job_id,mode:job.mode,source_count:job.slots.length,detail:job.detail,music:{...job.music},media:{...t.media,bytes:byteLength,sha256:hash},added_voice_off:job.voice===true};
   validateResult(result,job,core,byteLength);return result;
 }
 export function validateResult(r,job,core,bytes){
   const m=core.template.media;
-  const ok=keys(r,['schema','template_id','template_version','job_id','mode','source_count','detail','music','media','added_voice_off'])&&r.schema===RESULT&&r.template_id===job.template_id&&r.template_version===job.template_version&&r.job_id===job.job_id&&r.mode===job.mode&&r.source_count===job.slots.length&&r.detail===job.detail&&r.added_voice_off===false&&
+  const ok=keys(r,['schema','template_id','template_version','job_id','mode','source_count','detail','music','media','added_voice_off'])&&r.schema===RESULT&&r.template_id===job.template_id&&r.template_version===job.template_version&&r.job_id===job.job_id&&r.mode===job.mode&&r.source_count===job.slots.length&&r.detail===job.detail&&r.added_voice_off===(job.voice===true)&&
     keys(r.music,['variant','track_id','catalogue_version'])&&Object.entries(job.music).every(([k,v])=>r.music[k]===v)&&
     keys(r.media,[...Object.keys(m),'bytes','sha256'])&&Object.entries(m).every(([k,v])=>r.media[k]===v)&&Number.isSafeInteger(bytes)&&r.media.bytes===bytes&&bytes>15000&&bytes<=64*1024*1024&&sha(r.media.sha256);
   demand(ok,'RENDER_FAILED');return r;

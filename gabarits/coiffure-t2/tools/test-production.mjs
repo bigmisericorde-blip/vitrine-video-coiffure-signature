@@ -34,6 +34,7 @@ for(const x of example){
   assert.equal(validateResult(out,job,core,120000),out);
   assert.throws(()=>validateJob({...job,answers:{...job.answers,contact:fields.contact}},core));
   assert.throws(()=>validateResult({...out,added_voice_off:true},job,core,120000));
+  const voiced={...job,voice:true};validateJob(voiced,core);const voicedResult=createResult(voiced,core,120000,digest('sample'));assert.equal(voicedResult.added_voice_off,true);validateResult(voicedResult,voiced,core,120000);assert.throws(()=>validateResult({...voicedResult,added_voice_off:false},voiced,core,120000));
   assert.throws(()=>validateJob({...job,music:{...job.music,track_id:'fma-0'}},core));
  }
 }
@@ -58,4 +59,4 @@ for(let i=0;i<10000;i++){
 }
 const last=s.last;reserve(s,id('cancel'),now);assert(abandon(s,id('cancel')));assert.equal(s.last,last);
 reserve(s,id('expired'),now);reserve(s,id('recovered'),now+16*60*1000);assert.equal(s.pending.id,id('recovered'));
-console.log(JSON.stringify({form_combinations:count,required_field_and_contact_validation:true,contracts_roundtrip:true,voice_free_contract:true,resource_hashes:7,rotation_successes:10000,rotation_repeats:0,distribution:totals,stable_retry:true,failure_not_committed:true,abandon_and_expiration:true},null,2));
+console.log(JSON.stringify({form_combinations:count,required_field_and_contact_validation:true,contracts_roundtrip:true,optional_voice_contract:true,resource_hashes:7,rotation_successes:10000,rotation_repeats:0,distribution:totals,stable_retry:true,failure_not_committed:true,abandon_and_expiration:true},null,2));

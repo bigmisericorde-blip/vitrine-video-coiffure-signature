@@ -7,34 +7,35 @@
   "audio_profile": "coiffure-en-etapes",
   "music_catalogue_version": "1.0.0",
   "approved_visual_reference_sha256": "42a9810b07729052ee5c82fe852b7f2e8e213d7e1b4d08f7a707584c2051d318",
-  "source_tree_sha256": "88b0cbd379ab1dc4fad3071383e274062ec2f683a168710102c506e34537e30f",
+  "source_tree_sha256": "0e70fb4b5eaa002e36297589b58750e784f8c7380cf28e3e24cff325f8828d8a",
   "submitted_commit": null,
   "source_directory_proposal": "gabarits/coiffure-t2/",
   "ota_deployed": false,
   "added_voice_off": false,
-  "third_party_demo_footage_included": false,
-  "mode_demo": "mires graphiques originales",
+  "optional_voice_off": true,
+  "third_party_demo_footage_included": true,
+  "mode_demo": "mires graphiques pour le test, référence onglerie séparée",
   "local_only_limits": [
     "Pas de preuve de CI distante ou de recette sur appareil physique.",
-    "Aucun rush de revue R04 ou dérivé de ce rush."
+    "Référence onglerie fictive : droits de tiers à vérifier pour tout autre usage."
   ],
   "files": [
     {
       "path": "CREDITS.md",
-      "bytes": 2932,
-      "sha256": "5172892026b4f98424c7bab32e1c95492dbdc774f36fac21a669b50bbf98c47a",
+      "bytes": 3839,
+      "sha256": "1242cf064cfd0fa177d138f9a8a51065f2a118637801571554e7ed5b8ee29ad0",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "INTEGRATION.md",
-      "bytes": 7756,
-      "sha256": "019fbcba3e0dc7ea57335b67458f80995cc2ba76c7ffc6531ace52c7d14356a0",
+      "bytes": 7978,
+      "sha256": "678ba9d60aef0a76553bc23d91c4ca75ac7121663ad1c4fb247a93367bf32a22",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "README.md",
-      "bytes": 3542,
-      "sha256": "f4c93d35657c1fe895af861e5bc895549bb935e0697d21cf5d4f6759b91c56f6",
+      "bytes": 3614,
+      "sha256": "0f4243812b799e979f5fa4c08982cf58f9501ce3e5c857eb014bfb13d12f950e",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -87,8 +88,8 @@
     },
     {
       "path": "assets/capture.mjs",
-      "bytes": 21198,
-      "sha256": "5db40c6c70525241b5074c7c20cd409a9f79638d853c8cdaaffa03e0fe375c6e",
+      "bytes": 26424,
+      "sha256": "c749f6a8d55a8d46595df29fe3fa34de46389f32276dc849957ee7bf8377537e",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -99,20 +100,20 @@
     },
     {
       "path": "assets/ecrans-production.mjs",
-      "bytes": 3344,
-      "sha256": "58eff558f980ddc2be223990456e20d893a7fab017ef1f4ef5831af67d4d15b8",
+      "bytes": 3357,
+      "sha256": "b82086b6e6dfe3028367ea68c8f14a7f081e578f38eb002e8d9682c81dd332b7",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/contract.mjs",
-      "bytes": 6191,
-      "sha256": "3cc43311a4245ee707802b20aad34eb39c2488a2647bf0b90031e53106398090",
+      "bytes": 6371,
+      "sha256": "06f92dd9edefef514e959b69dedc0b72210429762f4adc56d4d4b4f6b1484a6e",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/fiche.mjs",
-      "bytes": 2622,
-      "sha256": "abd8a9f9a7ec10365291e350faca98c49088b0d2862ce09dae5be17e960ea31d",
+      "bytes": 2631,
+      "sha256": "1aa56c65d3d0e27a52b48ce46b190ef472cdd9aa55763bb1388674236d2574af",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -123,26 +124,26 @@
     },
     {
       "path": "assets/engine/music.mjs",
-      "bytes": 2443,
-      "sha256": "dc5a146a39e2d66f57c08ca58e4ce2f2675097d0d4dfd7738271ee00ac57826c",
+      "bytes": 2452,
+      "sha256": "be186decb0dc56733cbfccfed259b7b3edc864fffeaf965313b72390c1dfc0df",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/resources.mjs",
-      "bytes": 3860,
-      "sha256": "08d6bf5cd046d4142376b2148c40208f47324dab41c7c2c6924cdb354ca29755",
+      "bytes": 3895,
+      "sha256": "b976da79e897261292cc16ae31dac08ca98982f774ff949d734992798ddea770",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/rotation.mjs",
-      "bytes": 3287,
-      "sha256": "dd749ae054aae37f0b9466e09a2e909cb116174ce14f6721d24bafa6705a60f2",
+      "bytes": 3296,
+      "sha256": "11b27851f4c126a3039fc2fd5c3c1c017056060d3a80d478fcec0cb5450524ed",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/fiche-production.mjs",
-      "bytes": 5101,
-      "sha256": "7b87fda9ad81c526e654fe9af6061a48489a8829d636cf3749610193640f4708",
+      "bytes": 5119,
+      "sha256": "e9153c80ed6324a12a93e71d3028f30848ebc28d300282534c835529bd2d54ad",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -171,8 +172,8 @@
     },
     {
       "path": "assets/render.worker.mjs",
-      "bytes": 6622,
-      "sha256": "e534075a5e54004a0420e1b3bde97d58826179168b6b5d7dabdee1df23074eb9",
+      "bytes": 7801,
+      "sha256": "df00009f774f2f06a1c4ab575d8761b65c9e6844655dee36153fdfc58d046561",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -219,8 +220,62 @@
     },
     {
       "path": "assets/vendor/SOURCES.md",
-      "bytes": 835,
-      "sha256": "bf3c7c72b303aa81422ae2d8f45e3df390064d3accc1c5b69b6a7d51fb6aa02c",
+      "bytes": 1484,
+      "sha256": "f67b3c4d7f926c198959bc3fcc4c057bb846e8782d656a8d1a4ae237eb6c5a0b",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/aac-encoder-LICENSE.txt",
+      "bytes": 16726,
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/aac-source/README.md",
+      "bytes": 6049,
+      "sha256": "ad66085437b88d0a007131b4c8f234f34c770d2c0d1cf86ce9e15b4ff4c84860",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/aac-source/src/bridge.c",
+      "bytes": 6782,
+      "sha256": "fcc0fddf1cb32c384d7807f18902c8d5f2dd5fd2708fa212c27e7688edab23ed",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/aac-source/src/encode.worker.ts",
+      "bytes": 6604,
+      "sha256": "5e2f221d5e834268acb081ef04f6c837a0a0efb82c42b12f50d49ddefd7388ca",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/aac-source/src/encoder.ts",
+      "bytes": 9687,
+      "sha256": "32985bec63b4e8d167304ccb998883e52b76aff5905f81aa9424a1c71b9a8df2",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/aac-source/src/index.ts",
+      "bytes": 887,
+      "sha256": "a0140f93323584086336f4d1e669303a3c0b480b34d6d9a5025ea73c5b869d3a",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/aac-source/src/shared.ts",
+      "bytes": 986,
+      "sha256": "fa9448aab5ee222c8fe575f8a0eed6a482ce3f9d1b9f61aa48b118b6cf12d924",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/ffmpeg-LGPL-2.1.txt",
+      "bytes": 26517,
+      "sha256": "246041b6ecf9bc32d718a62c57877c78b5eb397b6467e74ed7ae2626ab189c30",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/ffmpeg-LICENSE.md",
+      "bytes": 4352,
+      "sha256": "e6dc72d5665a1ebd6dcc841de59278dad4ca77ecc47b03f1064a55c3e9ea8bb8",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -233,6 +288,12 @@
       "path": "assets/vendor/mediabunny-LICENSE.txt",
       "bytes": 16726,
       "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "role": "source_ressource_ou_documentation"
+    },
+    {
+      "path": "assets/vendor/mediabunny-aac-encoder.min.mjs",
+      "bytes": 1132628,
+      "sha256": "1116de7248581abebd5ab59bb6efbbd54942a9a5181c2dc79e25d7fba192b769",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -279,14 +340,14 @@
     },
     {
       "path": "capture/guide.json",
-      "bytes": 4544,
-      "sha256": "ca0d5132bc4a10704cbcbef50473ab8862635059dac0c1368cd0069a5d2c52b2",
+      "bytes": 4532,
+      "sha256": "351bde35310f2a3885b652713b75662de3530a4500a11abf62084aeda8755f5d",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "config/template.json",
-      "bytes": 1894,
-      "sha256": "adb31802033052bcd02b9bb72e50c01b6e7bf00a645504c6a850735484c89deb",
+      "bytes": 1926,
+      "sha256": "1d450e0b39becba66189b0c34640dc0948f49e17d40bb304d6be6b23d8d038d3",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -405,14 +466,14 @@
     },
     {
       "path": "docs/12-ecrans.md",
-      "bytes": 2174,
-      "sha256": "ec59e55b949c1cf6ea2b3cd1d13b98ee4f05be5f59b1ae8f34f97cd08d0d6f80",
+      "bytes": 2287,
+      "sha256": "ca4373e33e426de2316e796f8cfc15db15e40980c94306959e6f0337adb9193e",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "ecrans.html",
-      "bytes": 2347,
-      "sha256": "b95ee097c7cc18b55dfb41f4505839e60081a3b45b06a26d3209e4d877ccfa39",
+      "bytes": 2541,
+      "sha256": "5a176ed9341257a69a483732a9f666c5f1c410cc7c907d81f67144d14efc4bdb",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -489,8 +550,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 3473,
-      "sha256": "bd0ae48f5f77f9d3c448ae961c3132de3b6748f0c07e391fc71d5711739aef1b",
+      "bytes": 4224,
+      "sha256": "0a76bdf10f6fadabcfc93635cc03f1bf460322243c3315f1726ba5f1c2ea9cd2",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -500,6 +561,12 @@
       "role": "source_ressource_ou_documentation"
     },
     {
+      "path": "reference/onglerie.mp4",
+      "bytes": 19076474,
+      "sha256": "b721e77afd8e72a2b6acc2d6dc96fec6bd68741b852d934abd10122e606ae134",
+      "role": "film_exemple_fictif"
+    },
+    {
       "path": "schemas/render-error.schema.json",
       "bytes": 1639,
       "sha256": "18493a6d3b6bb75ea976d7d75d57fad91e1db336b6a7fd684e8abcc012169f67",
@@ -507,26 +574,26 @@
     },
     {
       "path": "schemas/render-job.schema.json",
-      "bytes": 5806,
-      "sha256": "6e1b6f3f95bd8607e74f30a0d588894c63f58e942f5cb8b17ea84479e4a3dc1d",
+      "bytes": 5933,
+      "sha256": "762820b44bd3907df763897482483e44401031d12e590f3744762e965b914304",
       "role": "contrat_ou_outil"
     },
     {
       "path": "schemas/render-result.schema.json",
-      "bytes": 4555,
-      "sha256": "ca310acfe23c12e4cc098db5854d5085b4533cac0a44f2cbcd9337582c000ab2",
+      "bytes": 4558,
+      "sha256": "c1d1d4a43b5e9537c85144384a97a17a8a3eb0bb4ecb4669f5eef7b62ba76656",
       "role": "contrat_ou_outil"
     },
     {
       "path": "schemas/template.schema.json",
-      "bytes": 3727,
-      "sha256": "96a1c22bc0e5a04ee9078d008a9d405284b2152db9b321b04741dc3ec7de004c",
+      "bytes": 3763,
+      "sha256": "a4a25a8a5918c8442a5e11f92de65a0bd5a0b5cbac894b81d68a1029ea4269c7",
       "role": "contrat_ou_outil"
     },
     {
       "path": "simulation.html",
-      "bytes": 7132,
-      "sha256": "ab40c04702516597f8c6c300f8a081c16d21c3133e79a46521e848a022ef3fbe",
+      "bytes": 8147,
+      "sha256": "57b70ac41a33bac716196e6b39132c75fd28d538175d196d26546b2b367f3420",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -537,20 +604,20 @@
     },
     {
       "path": "tools/packager.py",
-      "bytes": 10735,
-      "sha256": "f19f2b3e919fa1f851974fce1a1c983f64462dccbf0638f1bc8b79b9596d8fde",
+      "bytes": 11240,
+      "sha256": "841062bf4d321500a549c2ef1a3ab5789113696fcf98246ff3c21389b461264a",
       "role": "contrat_ou_outil"
     },
     {
       "path": "tools/preview.py",
-      "bytes": 1158,
-      "sha256": "379c593f8bff5cb2a1817ff4f15ae26841bba5a5c094e0dde5d005d9d2b9cf6a",
+      "bytes": 2372,
+      "sha256": "60e72c5dda63fd860d74b9804927070deebabbc9d0e1c87466b222c8ee9c61ef",
       "role": "contrat_ou_outil"
     },
     {
       "path": "tools/qa-production.py",
-      "bytes": 19459,
-      "sha256": "5e871b03d7107c8d1c7bc8408e8758e22711217a617063052abf470284e32454",
+      "bytes": 19589,
+      "sha256": "db9892a0387e5245dfea107a3111e19975a1995162e51ac8a952efe52ab69dc3",
       "role": "contrat_ou_outil"
     },
     {
@@ -567,14 +634,14 @@
     },
     {
       "path": "tools/test-production.mjs",
-      "bytes": 4740,
-      "sha256": "cf7f73654bd6786f0258e686d2d06acbd73f0891e8707cdb226b465389bbe5da",
+      "bytes": 5064,
+      "sha256": "d6b95e8e14b8ab58b40fee6b4e0ad1831075db791f23dc02677987c81b643909",
       "role": "contrat_ou_outil"
     },
     {
       "path": "tools/verify-contracts.py",
-      "bytes": 1361,
-      "sha256": "a5e7f3075d5bc93c4a38bec616a1ba4e56c292446c532b376c05b0ec4ceb854f",
+      "bytes": 1580,
+      "sha256": "15f73d19969f40b07ed41b0b79794c6eabcf167bc1cc5a7238e39ac3d2e3a540",
       "role": "contrat_ou_outil"
     }
   ]

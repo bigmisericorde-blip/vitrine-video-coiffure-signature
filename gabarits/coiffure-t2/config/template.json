@@ -45,7 +45,8 @@
     "source_audio_in_output": false,
     "rotation_scope": "local_browser_per_origin",
     "no_immediate_repeat": true,
-    "fixture_affects_rotation": false
+    "fixture_affects_rotation": false,
+    "optional_voice_off": true
   },
   "media": {
     "mime": "video/mp4",

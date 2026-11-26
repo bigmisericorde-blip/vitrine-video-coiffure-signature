@@ -22,11 +22,12 @@ assets/OFL.txt assets/OFL-Plex.txt assets/OFL-Montserrat.txt assets/OFL-PlusJaka
 assets/vendor/mediabunny-1.66.1.min.mjs assets/vendor/mediabunny-LICENSE.txt assets/vendor/SOURCES.md
 audio/music/catalogue.json audio/music/CREDITS.md docs/12-ecrans.md
 tools/preview.py tools/mires.py tools/qa-production.py tools/recette-profils.py tools/qa-requirements.txt tools/test-production.mjs tools/verify-contracts.py tools/packager.py'''.split()
+CORE+= ['reference/onglerie.mp4','assets/vendor/mediabunny-aac-encoder.min.mjs','assets/vendor/aac-encoder-LICENSE.txt','assets/vendor/ffmpeg-LGPL-2.1.txt','assets/vendor/ffmpeg-LICENSE.md','assets/vendor/aac-source/README.md'] + [f'assets/vendor/aac-source/src/{n}' for n in ['bridge.c','encode.worker.ts','encoder.ts','index.ts','shared.ts']]
 CORE+= [f'fixtures/media/S{i}.mp4' for i in range(1,5)]+[f'audio/music/fonds/{c}.m4a' for c in 'ABCD']
 EVIDENCE=['conformance/Recette-integrale.json','conformance/Tests-contrats-rotation.json','conformance/Tests-schemas.json','conformance/Recette-profils.json','conformance/Retest-sources-audio.json','conformance/Comparaison-onglerie.json','conformance/Validation-utilisateur.json']+[f'conformance/12-ecrans/{i:02}.webp' for i in range(1,13)]
 FILES=sorted(CORE+EVIDENCE)
 assert len(FILES)==len(set(FILES))
-MAX_BYTES=32*1024*1024
+MAX_BYTES=64*1024*1024
 
 def sha(data):return hashlib.sha256(data).hexdigest()
 def js(data):return (json.dumps(data,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
@@ -37,6 +38,7 @@ def need(ok,why):
 
 def role(path):
     if path.startswith('conformance/'):return 'preuve_locale'
+    if path.startswith('reference/'):return 'film_exemple_fictif'
     if path.startswith('fixtures/media/'):return 'mire_graphique_sans_audio'
     if path.startswith('audio/music/fonds/'):return 'fond_musical_cc_by_4'
     if path.startswith('assets/') and path.endswith('.ttf'):return 'police_locale'
@@ -68,7 +70,7 @@ def manifest(payload):
     t=evidence_check(payload)
     rows=[{'path':p,'bytes':len(payload[p]),'sha256':sha(payload[p]),'role':role(p)} for p in FILES]
     index=('\n'.join(f'{x["path"]}\t{x["sha256"]}' for x in rows if x['path'] in CORE)+'\n').encode()
-    return {'schema':'vv.coiffure.integration-bundle/1','template_id':t['template_id'],'version':t['version'],'status':'release_candidate','execution_profile':t['execution_profile'],'audio_profile':t['audio_profile'],'music_catalogue_version':t['audio']['catalogue_version'],'approved_visual_reference_sha256':t['base']['approved_master_sha256'],'source_tree_sha256':sha(index),'submitted_commit':None,'source_directory_proposal':'gabarits/coiffure-t2/','ota_deployed':False,'added_voice_off':False,'third_party_demo_footage_included':False,'mode_demo':'mires graphiques originales','local_only_limits':['Pas de preuve de CI distante ou de recette sur appareil physique.','Aucun rush de revue R04 ou dérivé de ce rush.'], 'files':rows}
+    return {'schema':'vv.coiffure.integration-bundle/1','template_id':t['template_id'],'version':t['version'],'status':'release_candidate','execution_profile':t['execution_profile'],'audio_profile':t['audio_profile'],'music_catalogue_version':t['audio']['catalogue_version'],'approved_visual_reference_sha256':t['base']['approved_master_sha256'],'source_tree_sha256':sha(index),'submitted_commit':None,'source_directory_proposal':'gabarits/coiffure-t2/','ota_deployed':False,'added_voice_off':False,'optional_voice_off':True,'third_party_demo_footage_included':True,'mode_demo':'mires graphiques pour le test, référence onglerie séparée','local_only_limits':['Pas de preuve de CI distante ou de recette sur appareil physique.','Référence onglerie fictive : droits de tiers à vérifier pour tout autre usage.'], 'files':rows}
 
 def source():
     d={}

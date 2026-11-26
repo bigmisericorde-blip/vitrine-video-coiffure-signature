@@ -8,3 +8,6 @@
 - SRI npm : `sha512-Jl+EfJbUASHtWVtOAGX8AK5WyNNG1RNJGjccAXcI2R6wQmIkdAzpyVgyCxvc5DXGSSRAuhGIevCPs43mXDq2ug==`.
 
 Les appels ne font aucun chargement CDN à l’exécution ; le module vient du même hébergement que les pages T2.
+
+Encodeur AAC optionnel : @mediabunny/aac-encoder 1.66.1, MPL-2.0 ; encodeur AAC FFmpeg WebAssembly sous LGPL 2.1 ou ultérieure. Sources et instructions de reconstruction : https://github.com/Vanilagy/mediabunny/tree/v1.66.1/packages/aac-encoder et archive https://registry.npmjs.org/@mediabunny/aac-encoder/-/aac-encoder-1.66.1.tgz. Le chemin d’import pointe vers le module Mediabunny local. Textes des licences et sources correspondantes dans ce dossier.
+Source FFmpeg exacte : https://github.com/FFmpeg/FFmpeg/tree/60a2818f76dcd1fee3155b1791304af104a0fc1b ; Emscripten 4.0.21. Les sources, options et instructions figurent dans `aac-source/`.

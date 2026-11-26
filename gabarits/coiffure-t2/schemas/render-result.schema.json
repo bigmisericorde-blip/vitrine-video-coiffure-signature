@@ -181,7 +181,7 @@
       ]
     },
     "added_voice_off": {
-      "const": false
+      "type": "boolean"
     }
   },
   "required": [

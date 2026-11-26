@@ -1,5 +1,5 @@
 import {normalize,visualAnswers,ASSIST_ACTIONS} from '../texte/modele-visuel.mjs';
-import {framing,newId,validId} from './contract.mjs';
+import {framing,newId,validId} from './contract.mjs?v=voix-1';
 
 const schema='vv.coiffure.fiche/2', prefix='vv-coiffure-fiche-2:', age=24*60*60*1000;
 export function normalizeFiche(raw,core){

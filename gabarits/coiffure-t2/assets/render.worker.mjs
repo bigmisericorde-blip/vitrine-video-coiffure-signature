@@ -1,4 +1,4 @@
-import {BufferTarget,CanvasSource,Mp4OutputFormat,Output,VideoSampleSink} from './vendor/mediabunny-1.66.1.min.mjs';
+import {BufferTarget,CanvasSource,Mp4OutputFormat,Output,VideoSampleSink,AudioSampleSource,AudioSample} from './vendor/mediabunny-1.66.1.min.mjs';
 import {createMotion,validatePlan,selectLayer,span,sourceFrame,W,H,FPS,FRAMES} from './motion.mjs';
 import {createMotion as createMotionOnglerie} from './motion-onglerie.mjs';
 import {reframeT2} from './montage-onglerie.mjs';
@@ -7,19 +7,21 @@ import {readMedia,describe,inputs,LIMIT} from './media.mjs';
 import {makeVisualPlan} from './texte/modele-visuel.mjs';
 import {lettrageFonts,prepareCaptions,drawCaptions} from './texte/lettrage.mjs';
 import {loadCore,loadPlan,loadFonts,digest,readBytes} from './engine/resources.mjs';
-import {validateJob,createResult,failRecord,RenderFault,demand} from './engine/contract.mjs';
-import {prepareBed,trackCredit} from './engine/music.mjs';
+import {validateJob,createResult,failRecord,RenderFault,demand} from './engine/contract.mjs?v=voix-1';
+import {prepareBed,trackCredit} from './engine/music.mjs?v=voix-1';
 
 const codec='avc1.420020',bitrate=5_200_000;
 const post=(stage,completed=0,total=FRAMES)=>self.postMessage({stage,completed,total});
 
 async function render(payload,core){
-  const {kind,job,files}=payload||{};
+  const {kind,job,files,voicePcm}=payload||{};
   const metier=payload?.metier??'coiffure';
   demand(globalThis.VVBeaute.profiles.some(p=>p.id===metier));
   const onglerie=metier==='manucure';
   const detail=kind==='detail';demand(detail||kind==='production');
   const spec=detail?null:validateJob(job,core);
+  demand(detail?!voicePcm:(job.voice===true)===Boolean(voicePcm));
+  if(voicePcm)demand(voicePcm.left instanceof Float32Array&&voicePcm.right instanceof Float32Array&&voicePcm.left.length===1440000&&voicePcm.right.length===1440000,'AUDIO_INVALID');
   const refs=detail?['S2']:spec.slots;
   const reuseDetail=detail||spec.reuse;
   demand(files&&typeof files==='object'&&Object.keys(files).length===refs.length&&refs.every(id=>inputs.includes(id)&&files[id] instanceof Blob&&files[id].size>0&&files[id].size<=LIMIT));
@@ -57,8 +59,13 @@ async function render(payload,core){
         const m=readMedia(files[id]);media.set(id,m);views.set(id,await describe(m,plan.scenes[id]/FPS));
       }catch{throw new RenderFault('UNSUPPORTED_MEDIA',`La prise ${id} ne respecte pas le format ou la durée attendue.`);}
     }
-    const bed=detail?null:await prepareBed(out,spec.track);
-    const comment=detail?undefined:(job.mode==='technical_fixture'?'Recette : images graphiques fictives. ':'')+trackCredit(spec.track);
+    let bed=null;
+    if(!detail&&voicePcm){
+      const {registerAacEncoder}=await import('./vendor/mediabunny-aac-encoder.min.mjs');registerAacEncoder();
+      const aac=new AudioSampleSource({codec:'aac',bitrate:160000});out.addAudioTrack(aac);let audioPos=0;
+      bed={async through(seconds){const end=Math.min(1438976,Math.round(seconds*48000));while(audioPos<end){let len=Math.min(48000,end-audioPos),data=new Float32Array(len*2);data.set(voicePcm.left.subarray(audioPos,audioPos+len));data.set(voicePcm.right.subarray(audioPos,audioPos+len),len);const sample=new AudioSample({format:'f32-planar',sampleRate:48000,numberOfChannels:2,timestamp:audioPos/48000,data});try{await aac.add(sample);}finally{sample.close();}audioPos+=len;}},close(){demand(audioPos===1438976,'AUDIO_INVALID');aac.close();}};
+    }else if(!detail)bed=await prepareBed(out,spec.track);
+    const comment=detail?undefined:(job.mode==='technical_fixture'?'Recette : images graphiques fictives. ':'')+trackCredit(spec.track)+(job.voice?' Voix personnelle importée et mixée localement.':'');
     out.setMetadataTags({title:detail?'COIFFURE-T2 — Détail recadré':'COIFFURE-T2',creationTime:null,...(comment?{comment}:{})});
     await out.start();
     for(const shot of shots){

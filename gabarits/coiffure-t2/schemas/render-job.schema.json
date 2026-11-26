@@ -240,6 +240,10 @@
           ]
         }
       ]
+    },
+    "voice": {
+      "const": true,
+      "description": "Voix personnelle facultative importée et mixée localement."
     }
   },
   "required": [

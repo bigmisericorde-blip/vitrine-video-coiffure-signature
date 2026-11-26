@@ -1,13 +1,13 @@
 import {loadCore} from './engine/resources.mjs';
-import {href,restoreFiche} from './engine/fiche.mjs';
+import {href,restoreFiche} from './engine/fiche.mjs?v=voix-1';
 const $=id=>document.getElementById(id), nav=$('screenList'), select=$('screenSelect');
 const entries=[],ticket=new URLSearchParams(location.search).get('fiche');
 const names=['Consigne','Enregistrement','Relecture'];
 async function init(){
   const core=await loadCore(),guide=core.guide,job=restoreFiche(ticket,core);
-  const metier=job?.metier||new URLSearchParams(location.search).get('metier')||'coiffure';
+  const metier=job?.metier||new URLSearchParams(location.search).get('metier')||'manucure';
   const scenes=globalThis.VVBeaute.scenes(guide.scenes,metier,'t2');
-  if(ticket){$('galleryCase').hidden=false;$('galleryCase').textContent=job?'Ta fiche est disponible dans cet onglet. Dans la galerie, les images restent des mires.':'La fiche n’est plus dans cet onglet. Voici les écrans de recette.';}
+  if(ticket){$('galleryCase').hidden=false;$('galleryCase').textContent=job?'Ta fiche est disponible dans cet onglet. La galerie présente des images de démonstration.':'La fiche n’est plus dans cet onglet. Voici les écrans de recette.';}
   if(job)document.querySelectorAll('a[href="index.html"]').forEach(a=>a.href=href('index.html',ticket));
   for(const [i,scene] of scenes.entries()){
     const group=document.createElement('section');group.className='screen-group';

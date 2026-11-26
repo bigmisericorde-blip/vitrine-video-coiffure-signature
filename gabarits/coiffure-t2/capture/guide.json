@@ -3,7 +3,7 @@
   "id": "COIFFURE-T2",
   "source_audio": "review_only",
   "consent": "Filme la même personne pendant toute la séance et demande son accord de diffusion avant de filmer.",
-  "sound": "Le micro est facultatif. Le son original de la prise reste disponible à la relecture. Le film exporté utilise uniquement le fond musical, sans voix ajoutée.",
+  "sound": "Le micro de la prise est facultatif : son son reste disponible à la relecture. Tu peux aussi importer une voix personnelle facultative au montage.",
   "scenes": [
     {
       "n": 1,

@@ -6,7 +6,7 @@
   <meta name="referrer" content="no-referrer">
   <title>Ta fiche beauté — Vitrine Vidéo</title>
   <link rel="stylesheet" href="assets/web.css">
-  <script type="module" src="assets/fiche-production.mjs"></script>
+  <script type="module" src="assets/fiche-production.mjs?v=voix-1"></script>
 </head>
 <body>
 <div class="shell">
@@ -15,12 +15,18 @@
     <section>
       <p class="kicker">COIFFURE‑T2 · DU GESTE AU RÉSULTAT</p>
       <h1>Ta fiche<span>beauté.</span></h1>
-      <p class="lead">Décris ce qu’on verra à l’écran. Filme les étapes, puis télécharge ta vidéo verticale de 30 secondes, avec lettrage et musique, sans voix off.</p>
+      <p class="lead">Décris ce qu’on verra à l’écran. Filme les étapes, puis télécharge ta vidéo verticale de 30 secondes, avec lettrage et musique, et ta voix si tu le souhaites.</p>
       <div class="leadCard card">
         <h2>Quatre vues à montrer</h2>
         <ul class="list"><li><span>01</span> Avant <small>6 s</small></li><li><span>02</span> Geste <small>7 s</small></li><li><span>03</span> Détail <small>7 s</small></li><li><span>04</span> Résultat <small>7 s</small></li></ul>
         <p class="note">Avec trois fichiers, le geste peut servir de détail seulement si tu valides le recadrage à la relecture.</p>
         <p class="note">Les prises restent dans cet onglet. Aucun fichier ou numéro n’est envoyé par le moteur.</p>
+      </div>
+      <div class="leadCard card">
+        <p class="kicker">UN EXEMPLE DE FILM</p><h2>Onglerie</h2>
+        <video controls playsinline preload="metadata" style="display:block;width:min(100%,230px);margin:0 auto;border-radius:12px;background:#000" aria-label="Exemple de film onglerie avec musique et voix de démonstration"><source src="reference/onglerie.mp4" type="video/mp4"></video>
+        <p class="note">Exemple fictif avec une voix de démonstration. Ce montage illustre le gabarit : le film créé dans ton navigateur peut être différent.</p>
+        <p class="note"><a href="CREDITS.md#exemple-onglerie">Crédits de l’exemple</a></p>
       </div>
     </section>
     <form class="card form-flow" id="testForm" autocomplete="off">
@@ -41,7 +47,7 @@
       <noscript><p>Le montage local nécessite JavaScript et un navigateur compatible.</p></noscript>
     </form>
   </main>
-  <footer class="info"><a href="CREDITS.md">Crédits et licences</a> · Le son original reste disponible à la relecture ; le MP4 exporté contient la musique de fond seule.</footer>
+  <footer class="info"><a href="CREDITS.md">Crédits et licences</a> · Le son original reste disponible à la relecture ; tu peux importer une voix personnelle facultative au montage. Les sous-titres de la voix ne sont pas automatiques.</footer>
 </div>
 </body>
 </html>

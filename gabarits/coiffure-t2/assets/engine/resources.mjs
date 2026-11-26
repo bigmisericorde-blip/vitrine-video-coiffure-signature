@@ -28,7 +28,7 @@ export function loadCore(){return shared || (shared=load().catch(e=>{shared=unde
 async function load(){
   const t=await readJson('config/template.json');
   assert(t.schema==='vv.coiffure.template/1'&&t.template_id==='COIFFURE-T2'&&/^\d+\.\d+\.\d+(?:-rc\.\d+)?$/.test(t.version)&&t.execution_profile==='browser-webcodecs');
-  assert(t.editorial_revision===EDITION&&t.audio.added_voice_off===false&&t.audio.source_audio_in_output===false&&t.audio.tracks_per_output===1&&t.audio.no_immediate_repeat===true&&t.audio.fixture_affects_rotation===false);
+  assert(t.editorial_revision===EDITION&&t.audio.added_voice_off===false&&t.audio.optional_voice_off===true&&t.audio.source_audio_in_output===false&&t.audio.tracks_per_output===1&&t.audio.no_immediate_repeat===true&&t.audio.fixture_affects_rotation===false);
   const v=t.media;
   assert(v.mime==='video/mp4'&&v.video_codec==='h264'&&v.width===720&&v.height===1280&&v.fps===30&&v.frames===900&&v.duration_ms===30000&&v.audio_codec==='aac-lc'&&v.audio_channels===2&&v.audio_sample_rate===48000);
   const p=t.paths;

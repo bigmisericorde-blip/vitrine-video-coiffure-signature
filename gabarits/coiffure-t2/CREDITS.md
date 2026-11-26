@@ -15,10 +15,17 @@ La licence affichée n’est pas une garantie sur des réclamations Content ID o
 | Manrope, IBM Plex Mono, Montserrat | Interface uniquement | [Manrope](assets/OFL.txt) · [IBM Plex Mono](assets/OFL-Plex.txt) · [Montserrat](assets/OFL-Montserrat.txt) — SIL OFL 1.1 |
 | Mediabunny 1.66.1 (Vanilagy) | Lecture, encodage et conteneur MP4 | [MPL 2.0](assets/vendor/mediabunny-LICENSE.txt) · [source correspondante et empreinte](assets/vendor/SOURCES.md) |
 
-Pas de CDN, de moteur de synthèse vocale ni de police Pacifico dans le candidat de production.
+Pas de CDN, de moteur de synthèse vocale ni de police Pacifico dans le moteur. Pour l’import vocal facultatif, l’encodeur AAC et ses licences figurent dans `assets/vendor/SOURCES.md`.
 
 ## Images
 
-- **Dans le paquet :** quatre mires graphiques originales générées par `tools/mires.py`, sans personne, logo, enregistrement ou élément vidéo tiers. Elles servent uniquement à tester la capture et le montage. Aucun tarif ou contact d’exemple n’est une offre réelle.
+- **Dans le paquet :** quatre mires graphiques originales générées par `tools/mires.py`, sans personne ni média tiers, pour tester la capture et le montage. La référence onglerie séparée inclut des images Pexels ; voir ci-dessous. Aucun tarif ou contact d’exemple n’est une offre réelle.
 - **En local seulement :** le master et les rendus de revue R04 issus de [Step by Step Mens Box Braids — QTheBraider](https://www.youtube.com/watch?v=F7fs3oODiac). Extraits recadrés/remontés, sans leur audio d’origine. La page confirme le film et identifie un modèle dans sa description. Le relevé local indiquait CC BY sans version précisée ; il n’atteste pas, à lui seul, l’autorisation de réutiliser l’image de la personne dans une démo publicitaire. Aucune copie, image de ces rushs ou dérivé R04 dans le ZIP. Pour une publication, documenter cette autorisation ou fournir des prises dont la diffusion est consentie.
 - **Prises du commerçant :** elles restent dans le navigateur ; le commerçant confirme qu’il peut les utiliser et les diffuser. La case est une déclaration de sa part, pas une autorisation vérifiée par le logiciel.
+
+
+## Exemple onglerie
+
+Film de démonstration fictif, avec voix synthétique et lettrage, validé comme référence ; il peut différer du résultat du moteur. Les images sont d’Artem Podrez / Pexels, adaptées et montées. [Licence Pexels](https://www.pexels.com/license/) ; vérifier les droits des personnes et les droits de tiers avant un autre usage. La galerie onglerie présente des extraits du film, pas des prises réelles. Les mires sont maintenues pour le parcours de test.
+
+Musique : *Hot Amapiano Beats* — Alex Morgan, [source Free Music Archive](https://freemusicarchive.org/music/alex-morgan/pop-afro-party-instrumentals/hot-amapiano-beats/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Extrait, niveau et fondus ajustés, mixé avec une voix synthétique.

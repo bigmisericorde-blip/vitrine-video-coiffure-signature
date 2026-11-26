@@ -1,6 +1,6 @@
 // Remultiplexage AAC-LC : la prise originale et toute synthèse restent hors export.
 import {BufferSource,Input,MP4,EncodedAudioPacketSource,EncodedPacketSink} from '../vendor/mediabunny-1.66.1.min.mjs';
-import {demand,RenderFault} from './contract.mjs';
+import {demand,RenderFault} from './contract.mjs?v=voix-1';
 import {loadBed} from './resources.mjs';
 
 const SAMPLE_RATE=48000, CLIP_SECS=30;

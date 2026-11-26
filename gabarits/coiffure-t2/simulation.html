@@ -93,6 +93,19 @@
     </div>
   </div>
 
+  <!-- La voix est facultative ; rien n'est transmis au serveur. -->
+  <div class="panel" id="panelVoice">
+    <h2>Ajouter ta voix ?</h2>
+    <p>Facultatif : importe un fichier audio de 30 secondes maximum. Il sera mixé avec la musique dans ton navigateur. Les sous-titres ne sont pas créés automatiquement.</p>
+    <label for="voiceFile">Fichier vocal (MP3, WAV, M4A ou WebM)</label>
+    <input id="voiceFile" type="file" accept="audio/*,.mp3,.wav,.m4a,.webm" style="max-width:100%;margin:12px 0;color:inherit">
+    <p id="voiceStatus" role="status" aria-live="polite">Aucune voix ajoutée.</p>
+    <audio id="voicePreview" controls hidden style="width:100%;max-width:320px;margin:8px 0"></audio>
+    <button id="voiceClear" type="button" class="minor" hidden>Retirer la voix</button>
+    <button id="voiceContinue" type="button" class="cta">CONTINUER VERS LE MONTAGE</button>
+    <div class="flow-links"><button id="voiceBack" type="button" class="minor">Retour aux prises</button></div>
+  </div>
+
   <!-- Montage -->
   <div class="panel" id="panelMontage">
     <h2 id="montageHeading">Montage en cours</h2>
@@ -113,7 +126,7 @@
   <main class="result-layout">
     <video id="ad" playsinline controls preload="metadata" aria-label="Vidéo finale avec fond musical"></video>
     <aside class="result-copy">
-      <p class="result-kicker">MP4 · 720 × 1280 · Lettrage et musique · sans voix off</p>
+      <p class="result-kicker">MP4 · 720 × 1280 · Lettrage et musique · voix facultative</p>
       <h1 id="resultHeading">Ta publicité est prête.</h1>
       <p id="resultMeta"></p><p id="resultCredit" class="result-note" hidden>Montage de recette : mires graphiques fictives, aucune prestation ni offre réelle.</p>
       <p class="result-note" id="resultMusic">Fond : <a id="musicLink" rel="noopener noreferrer" target="_blank"></a> · <a id="musicLicence" rel="noopener noreferrer" target="_blank">CC BY 4.0</a>. Extrait de 30 s, niveau et fondus ajustés.<span id="musicAi" hidden> Usage d’IA déclaré par l’auteur.</span></p>
@@ -124,5 +137,5 @@
     </aside>
   </main>
 </section>
-<script type="module" src="assets/capture.mjs"></script>
+<script type="module" src="assets/capture.mjs?v=voix-1"></script>
 </body></html>

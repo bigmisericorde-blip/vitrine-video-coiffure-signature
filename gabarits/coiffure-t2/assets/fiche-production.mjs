@@ -1,6 +1,6 @@
 import {loadCore,readJson} from './engine/resources.mjs';
-import {framing} from './engine/contract.mjs';
-import {href,restoreFiche,saveFiche,normalizeFiche} from './engine/fiche.mjs';
+import {framing} from './engine/contract.mjs?v=voix-1';
+import {href,restoreFiche,saveFiche,normalizeFiche} from './engine/fiche.mjs?v=voix-1';
 
 const $=id=>document.getElementById(id);
 const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
@@ -40,7 +40,7 @@ async function init(){
     check.checked=a.contactConfirme===true;$('source').value=a.source||'client';$('framing').value=a.framing||'profil';
     renderConditions();
   };
-  const old=restoreFiche(ticket,core);profiles.populate(metier,old?.metier||'coiffure');fill(old||{});
+  const old=restoreFiche(ticket,core);profiles.populate(metier,old?.metier||'manucure');fill(old||{});
   const refreshProfile=()=>{
     const p=profiles.get(metier.value);
     for(const [key,value] of Object.entries({service:p.services[0],geste:p.geste,preuve:p.preuve})){
