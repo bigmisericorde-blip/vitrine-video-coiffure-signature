@@ -15,7 +15,7 @@ Les extraits du lot ont un niveau ajusté et des fondus d’entrée et de fin (F
 
 Reprendre **la seule ligne correspondant au morceau exporté** dans `Credit-musique.txt` (également dans les métadonnées et l’écran d’export). Elle nomme le titre et l’auteur, renvoie à la source et à la licence et signale les modifications et la synchronisation. Pour **Copa**, conserver **1000Handz.com** dans cette ligne. *Midnight Cruiser* est CC0 ; le crédit est fourni volontairement pour la traçabilité.
 
-Les polices DejaVu font l’objet de `polices/LICENCE-DejaVu.txt`. La mention Creative Commons concerne les musiques, pas l’ensemble du projet. Les prises de démonstration sont des mires originales, sans média tiers ni données de client.
+Les polices DejaVu font l’objet de `polices/LICENCE-DejaVu.txt`. La mention Creative Commons concerne les musiques, pas l’ensemble du projet. Le parcours de test utilise des mires originales sans données de client. Les douze écrans présentent des extraits du film de démonstration fictif décrit ci-dessous, et non des enregistrements réels.
 
 
 ## Exemple de film soin du visage
