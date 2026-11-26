@@ -16,3 +16,10 @@ Les extraits du lot ont un niveau ajusté et des fondus d’entrée et de fin (F
 Reprendre **la seule ligne correspondant au morceau exporté** dans `Credit-musique.txt` (également dans les métadonnées et l’écran d’export). Elle nomme le titre et l’auteur, renvoie à la source et à la licence et signale les modifications et la synchronisation. Pour **Copa**, conserver **1000Handz.com** dans cette ligne. *Midnight Cruiser* est CC0 ; le crédit est fourni volontairement pour la traçabilité.
 
 Les polices DejaVu font l’objet de `polices/LICENCE-DejaVu.txt`. La mention Creative Commons concerne les musiques, pas l’ensemble du projet. Les prises de démonstration sont des mires originales, sans média tiers ni données de client.
+
+
+## Exemple de film soin du visage
+
+Montage de démonstration fictif de 30 secondes, avec voix synthétique et sous-titres ; ce n’est pas un export du moteur T3 dans le navigateur. Les images proviennent de Mixkit : [52143](https://mixkit.co/free-stock-video/a-young-woman-laying-on-a-relaxing-spa-bed-receives-52143/), [52148](https://mixkit.co/free-stock-video/a-young-beautiful-woman-laying-on-the-spa-bed-receives-52148/), [52157](https://mixkit.co/free-stock-video/young-woman-getting-a-facial-massage-52157/) et [52150](https://mixkit.co/free-stock-video/a-young-woman-with-her-eyes-shut-receives-a-relaxing-52150/) — [Mixkit Stock Video Free License](https://mixkit.co/license/#videoFree). Images recadrées, montées et adaptées. Les personnes filmées n’endossent aucun établissement. Vérifier les droits de tiers avant toute autre utilisation.
+
+Musique : *Looking Ahead* — Johnathon M. Horner (Beat Mekanik / JMHBM) ; [source](https://freemusicarchive.org/music/beat-mekanik/single/looking-ahead-1/) ; [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Extrait, fondus et niveaux adaptés, mixé avec une voix synthétique. Copyright © 2023 Johnathon M. Horner. Une réclamation automatique reste possible.
