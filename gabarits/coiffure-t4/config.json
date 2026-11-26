@@ -122,11 +122,11 @@
     "bornes_montage_provisoires": true
   },
   "exemple": {
-    "service": "Eau de parfum",
-    "geste": "Pour un parfum à porter au quotidien",
-    "detail": "Le geste au poignet",
-    "accroche": "Un parfum pour tous les jours ?",
-    "action": "essai",
+    "service": "Maquillage des lèvres",
+    "geste": "Pour une occasion spéciale",
+    "detail": "La pose du rouge à lèvres",
+    "accroche": "Une touche de couleur ?",
+    "action": "rendez_vous",
     "nom": "Exemple fictif",
     "lieu": "",
     "cible": ""

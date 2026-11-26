@@ -11,9 +11,18 @@ Les fichiers distribués sont des extraits modifiés de 30 s avec niveau et fond
 - « Ocean » — Lucien Kemper x Fachhochschule Dortmund — CC BY 4.0 — https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/ — https://creativecommons.org/licenses/by/4.0/
 - « Electron (Free Stems) » — JMHBM — CC0 1.0 — https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/ — https://creativecommons.org/publicdomain/zero/1.0/
 
-## Images de référence
+## Exemple de film maquillage
 
-Les 12 aperçus présentent des extraits réencodés de la maquette Parfum R2 déjà montée ; ce ne sont pas des prises client et ils ne sont pas utilisés comme entrée du moteur. Flacon/carton : images de synthèse créées pour la maquette. Geste : MART PRODUCTION/Pexels https://www.pexels.com/video/spraying-perfume-on-inner-wrist-8447604/ ; jet : Mihaela Claudia Puscas/Pexels https://www.pexels.com/video/elegant-perfume-bottling-with-mist-effect-33233537/ ; https://www.pexels.com/license/ . Des droits de marque ou de personne peuvent subsister ; ne pas inférer un parrainage. Les mires de simulation sont distinctes des images de référence.
+Le film de démonstration et les images fixes de la galerie sont extraits du montage maquillage validé. Montage indépendant, non produit par le moteur. Images MART PRODUCTION / Pexels, recadrées et montées :
+- https://www.pexels.com/video/woman-with-eyeshadow-holding-makeup-product-7291977/
+- https://www.pexels.com/video/a-person-applying-lipstick-7291766/
+- https://www.pexels.com/video/person-applying-pink-lipstick-7291968/
+- https://www.pexels.com/video/young-woman-applying-lipstick-7291136/
+- Licence : https://www.pexels.com/license/ ; vérifier les droits des personnes, marques et autres tiers avant tout usage.
+
+Musique : « Paradise Found » — Kevin MacLeod (incompetech.com), https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000 ; CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ ; extrait 3,384–33,384 s, fondus, niveaux et mixage modifiés. Crédit, lien de licence et indication des modifications à conserver lors de la diffusion ; des réclamations automatiques restent possibles. Voix synthétique de démonstration ; la voix personnelle du client est facultative. Les sous-titres du film sont intégrés, ceux du client sont manuels.
+
+Les anciens extraits Parfum R2 restent archivés séparément et ne constituent plus la référence montrée par la galerie. Les mires de simulation et les prises du client restent indépendantes de ce film.
 
 ## Composants
 

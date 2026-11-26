@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
-<title>Ta fiche beauté — Vitrine Vidéo</title><link rel="stylesheet" href="app.css?v=signature-2"><script src="app.js?v=signature-2" defer></script>
+<title>Ta fiche beauté — Vitrine Vidéo</title><link rel="stylesheet" href="app.css?v=signature-2"><script src="app.js?v=maquillage-1" defer></script>
 </head>
 <body><div class="shell">
 <header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="ecrans.html">Les 12 écrans →</a></header>
@@ -16,6 +16,13 @@
 <p class="note">Le son de tes prises reste disponible à la relecture. Tu peux ajouter ta propre voix séparément au montage.</p>
 <p class="note">Tes prises et ta voix restent dans cet onglet. Aucun média n’est envoyé par le moteur.</p>
 </div>
+<section class="leadCard card section" aria-labelledby="titre-reference">
+<p class="kicker">UN EXEMPLE DE FILM</p>
+<h2 id="titre-reference">Maquillage</h2>
+<video controls playsinline preload="none" poster="reference/maquillage-1.jpg" aria-label="Exemple de film maquillage avec musique, voix de démonstration et sous-titres"><source src="reference/maquillage.mp4" type="video/mp4">Ton navigateur ne peut pas lire cette vidéo. <a href="reference/maquillage.mp4">Ouvrir le film</a>.</video>
+<p class="note">Exemple fictif avec voix de démonstration et sous-titres. Ta voix personnelle est facultative. Ce film est un montage indépendant : ton résultat créé dans le navigateur peut être différent.</p>
+<p class="note"><a href="CREDITS.md#exemple-de-film-maquillage">Crédits de l’exemple</a></p>
+</section>
 
 </section>
 <section class="work card" aria-label="Créer mon film">
@@ -23,10 +30,10 @@
 <p id="alert" class="alert" hidden role="alert"></p>
 <form id="fiche" class="section form-flow" autocomplete="off">
 <p class="kicker">LE PRODUIT OU LE SERVICE</p><h2>Que veux-tu présenter ?</h2>
-<label>Quel produit ou service veux-tu présenter ?<input name="service" required maxlength="60" placeholder="Une eau de parfum"></label>
-<label>Dans quelle situation le conseilles-tu ?<input name="geste" required maxlength="72" placeholder="Pour un parfum à porter au quotidien"></label>
-<label>Quel détail peux-tu montrer pour aider à choisir ?<input name="detail" required maxlength="72" placeholder="Le geste au poignet"></label>
-<label>Une accroche courte à afficher <small>· facultatif</small><input name="accroche" maxlength="65" placeholder="Un parfum pour tous les jours ?"></label>
+<label>Quel produit ou service veux-tu présenter ?<input name="service" required maxlength="60" placeholder="Un maquillage des lèvres"></label>
+<label>Dans quelle situation le conseilles-tu ?<input name="geste" required maxlength="72" placeholder="Pour une occasion spéciale"></label>
+<label>Quel détail peux-tu montrer pour aider à choisir ?<input name="detail" required maxlength="72" placeholder="La pose du rouge à lèvres"></label>
+<label>Une accroche courte à afficher <small>· facultatif</small><input name="accroche" maxlength="65" placeholder="Une touche de couleur ?"></label>
 <label>Que veux-tu que les gens fassent après la vidéo ?<select name="action" required><option value="" disabled selected>Choisir une action</option></select></label>
 <div id="cibleLabel" hidden><label><input type="checkbox" id="actionOk"> Je confirme que cette action est vraiment possible.</label><label>Comment peuvent-ils le faire ? <small>Facultatif · texte affiché, pas un lien actif</small><input name="cible" maxlength="76" placeholder="Sur place, par téléphone…"></label><label><input type="checkbox" id="cibleOk"> J’autorise la diffusion de ce moyen de contact.</label></div>
 <details><summary>Ajouter un nom, un lieu ou un prix <small>· facultatif</small></summary><div class="optional"><label>Nom<input name="nom" maxlength="46" autocomplete="off"></label><label>Lieu<input name="lieu" maxlength="42"></label><label>Prix <small>· facultatif</small><input name="prix" inputmode="decimal" maxlength="12" placeholder="Ex. 5000"></label><label>Monnaie<input name="devise" maxlength="12" placeholder="Ex. FCFA"></label><label>Type de prix<select name="type_prix"><option value="">Choisir si prix renseigné</option><option value="exact">Prix exact</option><option value="depart">Prix de départ</option></select></label><label><input type="checkbox" id="prixOk"> Je confirme ce prix et cette monnaie.</label></div></details>
