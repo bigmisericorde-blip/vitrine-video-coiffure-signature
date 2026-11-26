@@ -7,7 +7,7 @@
   "audio_profile": "coiffure-en-etapes",
   "music_catalogue_version": "1.0.0",
   "approved_visual_reference_sha256": "42a9810b07729052ee5c82fe852b7f2e8e213d7e1b4d08f7a707584c2051d318",
-  "source_tree_sha256": "0e70fb4b5eaa002e36297589b58750e784f8c7380cf28e3e24cff325f8828d8a",
+  "source_tree_sha256": "9f6e4bb7e039dffabe95a38ba9d1f51b919e770e60e3812843f0f8263288e7bf",
   "submitted_commit": null,
   "source_directory_proposal": "gabarits/coiffure-t2/",
   "ota_deployed": false,
@@ -88,8 +88,8 @@
     },
     {
       "path": "assets/capture.mjs",
-      "bytes": 26424,
-      "sha256": "c749f6a8d55a8d46595df29fe3fa34de46389f32276dc849957ee7bf8377537e",
+      "bytes": 26890,
+      "sha256": "13bf48446a5a6f72029e5da8237c3933db3a6804ab9558e810258b3eee5110cf",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -466,8 +466,8 @@
     },
     {
       "path": "docs/12-ecrans.md",
-      "bytes": 2287,
-      "sha256": "ca4373e33e426de2316e796f8cfc15db15e40980c94306959e6f0337adb9193e",
+      "bytes": 2403,
+      "sha256": "f4e6da0035e1ddfa41ea970f46106a8abc7eaa7f29fb8a094623ea15284deeb7",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -561,6 +561,30 @@
       "role": "source_ressource_ou_documentation"
     },
     {
+      "path": "reference/ecran-1.jpg",
+      "bytes": 44804,
+      "sha256": "760c3d0c9dde03cf82fb365c876dc369a18ea5a85d661d601a4d7537bf73e3b2",
+      "role": "film_exemple_fictif"
+    },
+    {
+      "path": "reference/ecran-2.jpg",
+      "bytes": 63222,
+      "sha256": "6b9c610e6f559635ea9c372354ed02add05bb80bcebd133add4da51839423ddf",
+      "role": "film_exemple_fictif"
+    },
+    {
+      "path": "reference/ecran-3.jpg",
+      "bytes": 60250,
+      "sha256": "3ba55c3040732a1790a82a35453a28f0b1fe7efd244cd867233f36492ac187fb",
+      "role": "film_exemple_fictif"
+    },
+    {
+      "path": "reference/ecran-4.jpg",
+      "bytes": 53932,
+      "sha256": "2b0b32e1959eb30e36ec8c3bbaab3e8b861f765d6aeba2451bda0e6c193611d5",
+      "role": "film_exemple_fictif"
+    },
+    {
       "path": "reference/onglerie.mp4",
       "bytes": 19076474,
       "sha256": "b721e77afd8e72a2b6acc2d6dc96fec6bd68741b852d934abd10122e606ae134",
@@ -592,8 +616,8 @@
     },
     {
       "path": "simulation.html",
-      "bytes": 8147,
-      "sha256": "57b70ac41a33bac716196e6b39132c75fd28d538175d196d26546b2b367f3420",
+      "bytes": 8149,
+      "sha256": "08f712602dca232742b6a94598832733ddbee4bdd80374dbb17fa61245b48da1",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -604,8 +628,8 @@
     },
     {
       "path": "tools/packager.py",
-      "bytes": 11240,
-      "sha256": "841062bf4d321500a549c2ef1a3ab5789113696fcf98246ff3c21389b461264a",
+      "bytes": 11296,
+      "sha256": "f80d240c7a902fbd5a7250bded9928959d8a176459c9dfecd948d5e5f8d106b0",
       "role": "contrat_ou_outil"
     },
     {

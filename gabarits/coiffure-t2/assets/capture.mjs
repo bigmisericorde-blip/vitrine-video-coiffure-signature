@@ -1,8 +1,11 @@
-import {inspect,demoBlob,inputs} from './media.mjs';
 import {loadCore,resourceURL,loadBed} from './engine/resources.mjs';
 import {restoreFiche,href,sceneText,contactAction} from './engine/fiche.mjs?v=voix-1';
 import {createJob,newId,validateResult,validError,RenderFault} from './engine/contract.mjs?v=voix-1';
 import {rotate,releaseReservation} from './engine/rotation.mjs?v=voix-1';
+// Le lecteur média n’est téléchargé que pour de vraies prises ou un test, pas pour la galerie.
+const inputs=['S1','S2','S3','S4'];
+const inspect=(...args)=>import('./media.mjs').then(m=>m.inspect(...args));
+const demoBlob=(...args)=>import('./media.mjs').then(m=>m.demoBlob(...args));
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search), ticket=params.get('fiche');
 const q=Number(params.get('ecran'));
@@ -18,10 +21,11 @@ const galleryOnglerie=()=>preview&&(job?.metier||params.get('metier'))==='manucu
 const reference=s=>resourceURL(galleryOnglerie()?'reference/onglerie.mp4':s.fixture_path).href;
 const sizeAt=()=>current().secondes;
 const canReuse=()=>!preview&&!demo&&current().id==='S3'&&accepted.has('S2')&&takes.has('S2');
-const freezeAt=()=>galleryOnglerie()?[2.1,6.5,13.4,22.5][idx]:[.88,1.2,3.8,4.72][idx];
+const freezeAt=()=>[.88,1.2,3.8,4.72][idx];
+const still=()=>resourceURL(`reference/ecran-${idx+1}.jpg`).href;
 
 function releaseVideo(v){
-  v.pause();v.srcObject=null;v.removeAttribute('src');v.load();
+  v.pause();v.srcObject=null;v.removeAttribute('src');v.removeAttribute('poster');v.load();
 }
 function showError(text,retry=null){
   $('mediaMessage').textContent=text;
@@ -72,7 +76,7 @@ function describeContext(){
 function showGuide(i=idx){
   idx=i;transition('A');describeContext();
   cam.style.display=(preview||demo)?'block':'none';
-  if(preview||demo){cam.muted=true;cam.loop=!preview;cam.src=reference(current());if(!preview)cam.play().catch(()=>{});else on(cam,'loadedmetadata',()=>{cam.currentTime=freezeAt();},{once:true});}
+  if(preview||demo){cam.muted=true;cam.loop=!preview;if(galleryOnglerie())cam.poster=still();else{cam.src=reference(current());if(!preview)cam.play().catch(()=>{});else on(cam,'loadedmetadata',()=>{cam.currentTime=freezeAt();},{once:true});}}
   $('cta').textContent=galleryOnglerie()?'EXEMPLE ONGLES · APERÇU':(demo||preview)?'LIRE LA MIRE DE TEST':'COMMENCER À FILMER';
   $('cta').disabled=!!preview;
   $('cameraBtn').disabled=false;$('cameraBtn').hidden=!!preview||demo;
@@ -209,9 +213,9 @@ function showReview(t,{frozen=false}={}){
     timeout=setTimeout(()=>{if(state==='C'&&!ready)showError('La relecture n’a pas pu commencer.');},7000);
     eventScope.signal.addEventListener('abort',()=>clearTimeout(timeout),{once:true});
   }
-  replay.src=t.url;
-  if(frozen){on(replay,'loadedmetadata',()=>{replay.currentTime=Math.min(freezeAt(),replay.duration-.1);},{once:true});}
-  else replay.play().catch(()=>{if(!ready&&state==='C')showError('Relis la prise avant de valider.',()=>replay.play().catch(()=>{}));});
+  if(frozen&&galleryOnglerie())replay.poster=still();else replay.src=t.url;
+  if(frozen&&!galleryOnglerie()){on(replay,'loadedmetadata',()=>{replay.currentTime=Math.min(freezeAt(),replay.duration-.1);},{once:true});}
+  else if(!frozen)replay.play().catch(()=>{if(!ready&&state==='C')showError('Relis la prise avant de valider.',()=>replay.play().catch(()=>{}));});
 }
 function clearResult(){
   if(!result)return;releaseVideo(ad);URL.revokeObjectURL(result.url);result=null;
@@ -359,7 +363,7 @@ function init(){
   if(preview){
     document.body.classList.add('capture');showGuide(Math.floor((preview-1)/3));
     const mode=(preview-1)%3;
-    if(mode===1){showB(galleryOnglerie()?'Aperçu fictif · extrait du film':'Aperçu du chrono · simulation',false);cam.src=reference(current());on(cam,'loadedmetadata',()=>{cam.currentTime=freezeAt();setProgress(galleryOnglerie()?Math.min(2,sizeAt()):freezeAt());},{once:true});}
+    if(mode===1){showB(galleryOnglerie()?'Aperçu fictif · extrait du film':'Aperçu du chrono · simulation',false);if(galleryOnglerie()){cam.poster=still();setProgress(Math.min(2,sizeAt()));}else{cam.src=reference(current());on(cam,'loadedmetadata',()=>{cam.currentTime=freezeAt();setProgress(freezeAt());},{once:true});}}
     if(mode===2)showReview({url:reference(current()),meta:{hasAudio:false}},{frozen:true});
   }else showGuide();
   window.addEventListener('pagehide',()=>{voiceRevision++;if(voiceURL)URL.revokeObjectURL(voiceURL);if(state==='montage')invalidateRender();cancelDetail();stopRecord(recSession);});

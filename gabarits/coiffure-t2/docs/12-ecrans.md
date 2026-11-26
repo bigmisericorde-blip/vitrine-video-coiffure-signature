@@ -1,6 +1,6 @@
 # COIFFURE‑T2 · les douze écrans de capture
 
-[Galerie interactive](../ecrans.html) · [Données consommées par le moteur](../capture/guide.json). La galerie utilise des **mires de test**, sans téléversement ni validation de prise. Les libellés de vérification viennent de la fiche COIFFURE‑T2, pas d’un ancien gabarit. Les captures de recette sont dans `conformance/12-ecrans/`.
+[Galerie interactive](../ecrans.html) · [Données consommées par le moteur](../capture/guide.json). La galerie onglerie utilise des images fixes légères extraites du film de référence validé ; les autres métiers utilisent des **mires de test**. Aucun aperçu ne téléverse ni ne valide de prise. Les libellés de vérification viennent de la fiche COIFFURE‑T2, pas d’un ancien gabarit. Les captures de recette sont dans `conformance/12-ecrans/`.
 
 | Nº | ID (préfixe `COIFFURE-T2.`) | Vérification |
 |:--:|---|---|

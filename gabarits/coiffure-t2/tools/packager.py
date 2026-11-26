@@ -23,6 +23,7 @@ assets/vendor/mediabunny-1.66.1.min.mjs assets/vendor/mediabunny-LICENSE.txt ass
 audio/music/catalogue.json audio/music/CREDITS.md docs/12-ecrans.md
 tools/preview.py tools/mires.py tools/qa-production.py tools/recette-profils.py tools/qa-requirements.txt tools/test-production.mjs tools/verify-contracts.py tools/packager.py'''.split()
 CORE+= ['reference/onglerie.mp4','assets/vendor/mediabunny-aac-encoder.min.mjs','assets/vendor/aac-encoder-LICENSE.txt','assets/vendor/ffmpeg-LGPL-2.1.txt','assets/vendor/ffmpeg-LICENSE.md','assets/vendor/aac-source/README.md'] + [f'assets/vendor/aac-source/src/{n}' for n in ['bridge.c','encode.worker.ts','encoder.ts','index.ts','shared.ts']]
+CORE+= [f'reference/ecran-{i}.jpg' for i in range(1,5)]
 CORE+= [f'fixtures/media/S{i}.mp4' for i in range(1,5)]+[f'audio/music/fonds/{c}.m4a' for c in 'ABCD']
 EVIDENCE=['conformance/Recette-integrale.json','conformance/Tests-contrats-rotation.json','conformance/Tests-schemas.json','conformance/Recette-profils.json','conformance/Retest-sources-audio.json','conformance/Comparaison-onglerie.json','conformance/Validation-utilisateur.json']+[f'conformance/12-ecrans/{i:02}.webp' for i in range(1,13)]
 FILES=sorted(CORE+EVIDENCE)
