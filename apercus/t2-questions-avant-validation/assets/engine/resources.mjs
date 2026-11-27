@@ -1,4 +1,4 @@
-import {EDITION,soundPack} from '../texte/modele-visuel.mjs';
+import {EDITION,soundPack} from '../texte/modele-visuel.mjs?v=t2-six-q2';
 
 const root=new URL('../../',import.meta.url);
 const safePath=/^(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)+$/;

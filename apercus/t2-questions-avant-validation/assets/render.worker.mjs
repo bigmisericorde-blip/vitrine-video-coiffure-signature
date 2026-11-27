@@ -1,14 +1,14 @@
 import {BufferTarget,CanvasSource,Mp4OutputFormat,Output,VideoSampleSink,AudioSampleSource,AudioSample} from './vendor/mediabunny-1.66.1.min.mjs';
-import {createMotion,validatePlan,selectLayer,span,sourceFrame,W,H,FPS,FRAMES} from './motion.mjs';
-import {createMotion as createMotionOnglerie} from './motion-onglerie.mjs';
-import {reframeT2} from './montage-onglerie.mjs';
-import {styleCassures} from './cassures.mjs';
-import {readMedia,describe,inputs,LIMIT} from './media.mjs';
-import {makeVisualPlan} from './texte/modele-visuel.mjs';
-import {lettrageFonts,prepareCaptions,drawCaptions} from './texte/lettrage.mjs';
-import {loadCore,loadPlan,loadFonts,digest,readBytes} from './engine/resources.mjs';
-import {validateJob,createResult,failRecord,RenderFault,demand} from './engine/contract.mjs?v=voix-1';
-import {prepareBed,trackCredit} from './engine/music.mjs?v=voix-1';
+import {createMotion,validatePlan,selectLayer,span,sourceFrame,W,H,FPS,FRAMES} from './motion.mjs?v=t2-six-q2';
+import {createMotion as createMotionOnglerie} from './motion-onglerie.mjs?v=t2-six-q2';
+import {reframeT2} from './montage-onglerie.mjs?v=t2-six-q2';
+import {styleCassures} from './cassures.mjs?v=t2-six-q2';
+import {readMedia,describe,inputs,LIMIT} from './media.mjs?v=t2-six-q2';
+import {makeVisualPlan} from './texte/modele-visuel.mjs?v=t2-six-q2';
+import {lettrageFonts,prepareCaptions,drawCaptions} from './texte/lettrage.mjs?v=t2-six-q2';
+import {loadCore,loadPlan,loadFonts,digest,readBytes} from './engine/resources.mjs?v=t2-six-q2';
+import {validateJob,createResult,failRecord,RenderFault,demand} from './engine/contract.mjs?v=t2-six-q2';
+import {prepareBed,trackCredit} from './engine/music.mjs?v=t2-six-q2';
 
 const codec='avc1.420020',bitrate=5_200_000;
 const post=(stage,completed=0,total=FRAMES)=>self.postMessage({stage,completed,total});

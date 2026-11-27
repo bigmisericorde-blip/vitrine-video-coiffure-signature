@@ -1,5 +1,5 @@
-import {normalize,visualAnswers,ASSIST_ACTIONS} from '../texte/modele-visuel.mjs';
-import {framing,newId,validId} from './contract.mjs?v=voix-1';
+import {normalize,visualAnswers,ASSIST_ACTIONS} from '../texte/modele-visuel.mjs?v=t2-six-q2';
+import {framing,newId,validId} from './contract.mjs?v=t2-six-q2';
 
 const schema='vv.coiffure.fiche/2', prefix='vv-coiffure-fiche-2:', age=24*60*60*1000;
 export function normalizeFiche(raw,core){
@@ -33,8 +33,8 @@ export function saveFiche(fields,core,previous){
   return id;
 }
 export function href(page,id,extra={}){
-  const query=new URLSearchParams(extra);if(validId(id))query.set('fiche',id);
-  return page+(query.size?'?'+query:'');
+  const query=new URLSearchParams(extra);if(validId(id))query.set('fiche',id);query.set('v','t2-six-q2');
+  return page+'?'+query;
 }
 export function sceneText(fiche,n,core){
   if(!fiche)return '';

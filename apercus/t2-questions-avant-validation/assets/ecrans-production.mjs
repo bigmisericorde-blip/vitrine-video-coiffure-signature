@@ -1,5 +1,5 @@
-import {loadCore} from './engine/resources.mjs';
-import {href,restoreFiche} from './engine/fiche.mjs?v=voix-1';
+import {loadCore} from './engine/resources.mjs?v=t2-six-q2';
+import {href,restoreFiche} from './engine/fiche.mjs?v=t2-six-q2';
 const $=id=>document.getElementById(id), nav=$('screenList'), select=$('screenSelect');
 const entries=[],ticket=new URLSearchParams(location.search).get('fiche');
 let names=[];

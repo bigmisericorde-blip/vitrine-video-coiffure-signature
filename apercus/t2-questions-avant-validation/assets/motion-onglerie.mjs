@@ -1,4 +1,4 @@
-import {makeDiagonal} from './cassures.mjs';
+import {makeDiagonal} from './cassures.mjs?v=t2-six-q2';
 /* COIFFURE‑T2 · Composition d’images uniquement : plans, fenêtres et impacts. */
 export const W=720,H=1280,FPS=30,FRAMES=900;
 const FULL=[0,0,W,H], roles=['S1','S2','S3','S4'];

@@ -1,6 +1,6 @@
-import {loadCore,readJson} from './engine/resources.mjs';
-import {framing} from './engine/contract.mjs?v=voix-1';
-import {href,restoreFiche,saveFiche,normalizeFiche} from './engine/fiche.mjs?v=voix-1';
+import {loadCore,readJson} from './engine/resources.mjs?v=t2-six-q2';
+import {framing} from './engine/contract.mjs?v=t2-six-q2';
+import {href,restoreFiche,saveFiche,normalizeFiche} from './engine/fiche.mjs?v=t2-six-q2';
 
 const $=id=>document.getElementById(id);
 const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
@@ -19,7 +19,7 @@ async function init(){
     controls[field.id]=input;parent.append(row);return row;
   };
   const byId=id=>questions.fields.find(f=>f.id===id);
-  const target=$('commercialFields');
+  const target=$('commercialFields');target.replaceChildren();
   let channel;
   for(const field of questions.fields){
     make(field,target);
@@ -72,4 +72,8 @@ async function init(){
   if(old)$('gallery').href=href('ecrans.html',ticket,{metier:metier.value});
   document.documentElement.dataset.ready='yes';
 }
-init().catch(()=>{$('formAlert').textContent='Le gabarit n’a pas chargé. Ouvre-le depuis le serveur local en suivant le guide d’intégration.';document.documentElement.dataset.ready='error';});
+init().catch(()=>{
+  const msg='Les questions n’ont pas pu charger. Vérifie ta connexion, puis recharge la page.';
+  $('commercialFields').textContent=msg;$('formAlert').textContent=msg;
+  document.documentElement.dataset.ready='error';
+});
