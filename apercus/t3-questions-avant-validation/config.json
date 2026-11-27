@@ -1,0 +1,168 @@
+{
+  "contrat": {
+    "schema": 1,
+    "template_id": "COIFFURE-T3",
+    "version": "0.2.0-web",
+    "revision": "t3-questions-claires-essai-local",
+    "portee": "Aperçu de travail T3 à valider : quatre prises, 12 états, preuve visible et voix personnelle facultative. Version officielle inchangée.",
+    "audio_profile": "beaute-soin-du-visage-instrumental",
+    "media": {
+      "largeur": 720,
+      "hauteur": 1280,
+      "fps": 30,
+      "images": 900,
+      "secondes": 30,
+      "codec": "h264",
+      "audio": "AAC-LC stéréo 48000 Hz"
+    },
+    "prises": {
+      "S1": {
+        "titre": "Le départ",
+        "secondes": 8,
+        "guide": "Présente ton produit ou le début de ton service. Garde le téléphone droit.",
+        "question": "Voit-on bien ton produit ou le début de ton service ?"
+      },
+      "S2": {
+        "titre": "Le travail ou l’utilisation",
+        "secondes": 10,
+        "guide": "Filme une étape de ton travail ou ton produit en cours d’utilisation.",
+        "question": "Voit-on bien ce que tu fais ?"
+      },
+      "S3": {
+        "titre": "Le détail",
+        "secondes": 10,
+        "guide": "Filme de près un détail réel de ton produit ou de ton travail. Reste stable.",
+        "question": "Le détail est-il net et facile à voir ?"
+      },
+      "S4": {
+        "titre": "La dernière vue",
+        "secondes": 8,
+        "guide": "Filme une dernière vue du produit ou du travail. Si un résultat est visible, montre-le.",
+        "question": "Le produit ou le travail est-il facile à voir ?"
+      }
+    },
+    "fiche": {
+      "nom": {
+        "max": 46,
+        "requis": true,
+        "usage": "nom dans le carton final"
+      },
+      "service": {
+        "max": 60,
+        "requis": true,
+        "usage": "titre et consignes"
+      },
+      "outil": {
+        "max": 72,
+        "requis": false,
+        "usage": "contexte du guide de la prise 2 ; non incrusté"
+      },
+      "lieu": {
+        "max": 42,
+        "requis": false,
+        "usage": "carton final"
+      },
+      "cible": {
+        "max": 32,
+        "requis": false,
+        "usage": "numéro affiché dans le carton final après confirmation, sans lien actif"
+      },
+      "prix": {
+        "max": 30,
+        "requis": false,
+        "usage": "prix de départ au carton final, monnaie indiquée par le client"
+      }
+    },
+    "bornes_images": {
+      "mise_au_point": [
+        0,
+        15
+      ],
+      "fenetre": [
+        106,
+        136
+      ],
+      "frise": [
+        260,
+        332
+      ],
+      "velocity": [
+        332,
+        343
+      ],
+      "preuve_1x": [
+        343,
+        430
+      ],
+      "diptyque": [
+        617,
+        735
+      ],
+      "revelation_volets": [
+        617,
+        630
+      ],
+      "carton": [
+        735,
+        900
+      ]
+    },
+    "audio_modes": [
+      "muet",
+      "musique_seule"
+    ],
+    "voix_client": {
+      "facultative": true,
+      "duree_max_s": 30,
+      "taille_max_octets": 20971520,
+      "modes": [
+        "musique_seule"
+      ],
+      "origine": [
+        "import",
+        "microphone"
+      ],
+      "captation_audio_des_prises_utilisee": false,
+      "transcription_automatique": false
+    }
+  },
+  "exemple": {
+    "nom": "Atelier Démo",
+    "service": "Soin du visage",
+    "outil": "Un pinceau",
+    "lieu": "Exemple fictif",
+    "cible": "",
+    "prix": ""
+  },
+  "demo": false,
+  "catalogue": [
+    {
+      "id": "01",
+      "titre": "Copa",
+      "artiste": "1000 Handz (1000Handz.com)",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Musique : Copa — 1000 Handz (1000Handz.com) · Source : https://freemusicarchive.org/music/1000-handz/cc-by-free-to-use-tropical-vibes/copa/ · Licence : https://creativecommons.org/licenses/by/4.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film."
+    },
+    {
+      "id": "02",
+      "titre": "Looking Ahead",
+      "artiste": "Johnathon M. Horner (Beat Mekanik / JMHBM)",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Musique : Looking Ahead — Johnathon M. Horner (Beat Mekanik / JMHBM) · Source : https://freemusicarchive.org/music/beat-mekanik/single/looking-ahead-1/ · Licence : https://creativecommons.org/licenses/by/4.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film. Copyright © 2023, Johnathon M. Horner - All Rights Reserved."
+    },
+    {
+      "id": "03",
+      "titre": "Midnight Cruiser",
+      "artiste": "Zane Little",
+      "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Musique : Midnight Cruiser — Zane Little · Source : https://freemusicarchive.org/music/zane-little/new-peach-radio/midnight-cruiser/ · Licence : https://creativecommons.org/publicdomain/zero/1.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film."
+    },
+    {
+      "id": "04",
+      "titre": "Night Owl",
+      "artiste": "Broke For Free",
+      "licence": "https://creativecommons.org/licenses/by/3.0/",
+      "credit": "Musique : Night Owl — Broke For Free · Source : https://archive.org/details/Directionless_EP-8295 · Licence : https://creativecommons.org/licenses/by/3.0/ · Extrait de 30 s, niveau ajusté et fondus. Synchronisée au film."
+    }
+  ]
+}

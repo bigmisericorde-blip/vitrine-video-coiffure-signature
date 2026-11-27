@@ -1,0 +1,9 @@
+{
+  "service": "Soin du visage",
+  "geste": "Appliquer le soin au pinceau",
+  "detail": "Le pinceau passe sur la joue",
+  "action": "reserver",
+  "cible": "Carton de démonstration · aucun lien actif",
+  "nom": "Atelier Démo",
+  "lieu": "Exemple fictif"
+}
