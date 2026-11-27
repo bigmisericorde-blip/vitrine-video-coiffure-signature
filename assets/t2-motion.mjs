@@ -183,7 +183,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
       } else {
         const head=kind==='result'?'Le résultat':kind==='detail'?'Tout est dans le détail':job.service;
         title(head,left,984,{size:56,rows:2,t:a});
-        const sub=kind==='result'?job.resultat:kind==='detail'?job.service:job.salon;
+        const sub=kind==='result'?job.resultat:kind==='detail'?(job.detail||job.service):(job.geste||job.salon);
         title(sub,left,1069,{face:'sans',size:31,max:width-14,rows:2,c:p.mint,t:reveal(f,stage[kind]+12,23)});
       }
     }

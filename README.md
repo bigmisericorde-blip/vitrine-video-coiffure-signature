@@ -6,7 +6,9 @@
 
 ## Film final narré — Studio Vitrine
 
-[**Regarder et télécharger le film sur GitHub Pages**](https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/final.html) · [MP4](media/t2-signature-coiffure-narree.mp4) · [Contrôle des textes, rushs et voix](livrables/09-film-final-t2.md)
+**Mise à jour questions beauté :** le lecteur montre le film corrigé où le geste, le détail et le résultat reprennent les réponses de la fiche. Le [film historique](media/t2-signature-coiffure-narree.mp4) est conservé séparément. Le film musical historique `film.html` reste disponible comme archive. Les six questions servent aussi aux montages générés, avec lieu, prix et contact facultatifs.
+
+[**Regarder et télécharger le film sur GitHub Pages**](https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/final.html) · [MP4 corrigé](media/t1-coiffure-questions-corrigees.mp4) · [Contrôle des textes, rushs et voix](livrables/09-film-final-t2.md)
 
 Ce MP4 de 30 s, réalisé avec les quatre rushs d’exemple du T2, incruste **Studio Vitrine · Cotonou · Coupe + barbe · 1 500 FCFA** et l’action finale. Les cinq prises de voix française déjà préparées sont mixées sur *Harbor Lanterns*. Il est pré-rendu : le lecteur public ne dépend pas de l’atelier de voix.
 

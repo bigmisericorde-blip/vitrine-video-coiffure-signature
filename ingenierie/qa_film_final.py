@@ -13,7 +13,8 @@ import subprocess
 
 from core import HERE, ROOT, ffmpeg, load, sha
 
-FILM='media/t2-signature-coiffure-narree.mp4'
+FILM='media/t2-signature-coiffure-narree.mp4'  # film historique, contrôlé et conservé
+FILM_CORRIGE='media/t1-coiffure-questions-corrigees.mp4'
 VTT='media/t2-signature-voix.vtt'
 RAPPORT='livrables/t2-final/recette-film.json'
 
@@ -41,7 +42,7 @@ def check_http(base, paths, manifest, canonical=False):
         req=Request(url,headers={'User-Agent':'Vitrine-Video-T2-verification','Cache-Control':'no-cache','Accept-Encoding':'identity'})
         with urlopen(req,timeout=45) as rep:
             data=rep.read()
-            if canonical and path==FILM:assert rep.headers.get_content_type()=='video/mp4'
+            if canonical and path in (FILM,FILM_CORRIGE):assert rep.headers.get_content_type()=='video/mp4'
         row=manifest[path];assert len(data)==row['bytes'] and sha256(data).hexdigest()==row['sha256'],f'Octets différents : {url}'
     print(f'PASS : {len(paths)} fichiers servis conformes aux empreintes — {base}',flush=True)
 
@@ -71,7 +72,7 @@ def check_player(base, seconds, work, play_full):
         video.evaluate('v=>{v.pause();v.currentTime=27.56}')
         page.wait_for_function('''() => { const v=document.getElementById("finalFilm");
             return !v.error && !v.seeking && v.readyState>=2 && Math.abs(v.currentTime-27.56)<.09; }''', timeout=45000)
-        expect(page.locator('.frames img')).to_have_count(4)
+        expect(page.locator('.frames img')).to_have_count(6)
         for image in page.locator('.frames img').all():
             image.scroll_into_view_if_needed(); image.evaluate('i=>i.decode()')
         page.locator('#rushs summary').click();expect(page.locator('.rush-grid video')).to_have_count(4)
@@ -84,10 +85,10 @@ def check_player(base, seconds, work, play_full):
         ])).every(a=>a.length && a.every(f=>f.status==='loaded'))''')
         with page.expect_download(timeout=60000) as result:page.locator('#filmDownload').click()
         downloaded=work/'telecharge.mp4';result.value.save_as(str(downloaded))
-        assert sha(downloaded)==sha(ROOT/FILM),'Téléchargement différent du MP4 répertorié'
+        assert sha(downloaded)==sha(ROOT/FILM_CORRIGE),'Téléchargement différent du MP4 corrigé répertorié'
         browser.close()
     assert not errors,errors
-    print('PASS : accès depuis la fiche, vidéo audible non muette'+(' lue jusqu’à la fin' if play_full else '')+', recherche du carton, 5 sous-titres, 4 sources, mise en page 320–1200 px, téléchargement identique.',flush=True)
+    print('PASS : accès depuis la fiche, vidéo audible non muette'+(' lue jusqu’à la fin' if play_full else '')+', recherche du carton, 5 sous-titres, 6 captures, 4 sources, mise en page 320–1200 px, téléchargement identique.',flush=True)
 
 
 def main():
@@ -99,6 +100,16 @@ def main():
     expected={r['fichier']:r['sha256'] for r in recipe['rushs']}|{r['chemin']:r['sha256'] for r in recipe['polices'].values()}|{recipe['plan']:recipe['plan_sha256']}
     assert all(sha(ROOT/k)==v for k,v in expected.items())
     check_film(ROOT/FILM,recipe)
+    corrected=ROOT/FILM_CORRIGE
+    probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(corrected)]))
+    v,a=probe['streams']
+    assert (v['codec_name'],int(v['nb_frames']),v['width'],v['height'])==('h264',900,720,1280)
+    assert (a['codec_name'],int(a['sample_rate']),a['channels'])==('aac',48000,2)
+    assert abs(float(probe['format']['duration'])-30)<.001
+    audio_hash=lambda path:subprocess.check_output([ffmpeg(),'-v','error','-i',str(path),'-map','0:a:0','-c:a','copy','-f','md5','-'],text=True).strip()
+    assert audio_hash(corrected)==audio_hash(ROOT/FILM),'La voix ou la musique de référence ont changé'
+    subprocess.run([ffmpeg(),'-v','error','-xerror','-i',str(corrected),'-f','null','-'],check=True,timeout=45)
+    print('PASS : film corrigé 30 s, piste voix et musique identique au film historique.',flush=True)
     with ExitStack() as cleanup:
         work=Path(cleanup.enter_context(TemporaryDirectory(prefix='recette-film-t2-')))
         base=opts.url
@@ -110,7 +121,7 @@ def main():
             Thread(target=server.serve_forever,daemon=True).start();cleanup.callback(server.shutdown)
             base=f'http://127.0.0.1:{server.server_port}/'
         new=sorted(path for path in manifest if path.startswith('livrables/t2-final/') or path in {
-            'README.md','CREDITS.md','index.html','final.html','assets/final-t2.css','livrables/09-film-final-t2.md',FILM,VTT})
+            'README.md','CREDITS.md','index.html','final.html','assets/final-t2.css','livrables/09-film-final-t2.md','livrables/10-questions-beaute.md',FILM,FILM_CORRIGE,VTT})
         if opts.raw_url:check_http(opts.raw_url,new,manifest)
         if base:
             base=base.rstrip('/')+'/'

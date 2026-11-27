@@ -16,18 +16,18 @@ const sceneSource=s=>files.has(s.id)?{...s,video:files.get(s.id).url}:s;
 
 function updateState(value){state=value;$('app').dataset.state=value;}
 function renderCard(i){
-  const s=SCENES[i], hint=FICHE.sceneText(job,i);
+  const s=FICHE.sceneGuide(saved, i, SCENES[i]), hint=FICHE.sceneText(job,i);
   $('app').dataset.prise=s.id;
   $('sceneCounter').textContent=`SCÈNE ${s.n}/${s.total}`;
   $('dots').replaceChildren(...SCENES.map(x=>{let dot=document.createElement('i');dot.classList.toggle('on',x.n<=s.n);return dot;}));
   $('durationLabel').textContent=`${s.secondes} secondes`;
   $('sceneTitle').textContent=s.titre;
-  $('consigne').textContent=personal&&i===0?'Filme la personne avant la prestation. Montre son visage, sa coiffure et un peu du lieu.':s.consigne;
+  $('consigne').textContent=s.consigne;
   const list=(id,items,icon)=>$(id).replaceChildren(...items.map(t=>{
     const li=document.createElement('li'),mark=document.createElement('span'),txt=document.createElement('span');
     mark.className='mark';mark.textContent=icon;txt.textContent=t;li.append(mark,txt);return li;
   }));
-  list('listFilm',personal&&i===0?['La coiffure avant la prestation.','Cadre la même personne pour le résultat final.']:s.a_filmer,'✓');
+  list('listFilm',s.a_filmer,'✓');
   list('listAvoid',s.a_eviter,'✕');
   for (const id of ['caseContext','recContext','reviewContext']){$(id).textContent=saved?hint:'';$(id).hidden=!saved;}
   $('reviewQuestion').textContent=s.question_relecture;
@@ -98,7 +98,7 @@ function encode(request,signal,onProgress){
   return new Promise((resolve,reject)=>{
     signal.throwIfAborted();
     if(!isSecureContext||typeof Worker==='undefined')throw Error('Ouvre cette page en HTTPS pour créer le MP4.');
-    const worker=new Worker('assets/t2-render.worker.mjs?v=t2-1',{type:'module',name:'Export T2'});
+    const worker=new Worker('assets/t2-render.worker.mjs?v=questions-beaute-1',{type:'module',name:'Export T2'});
     const timeout=setTimeout(()=>end(reject,Error('L’encodeur ne répond plus. Essaie un autre appareil ou des vidéos plus légères.')),240000);
     const abort=()=>end(reject,signal.reason);
     function end(fn,value){clearTimeout(timeout);signal.removeEventListener('abort',abort);worker.terminate();fn(value);}
@@ -135,7 +135,7 @@ function acceptResult(blob,track,out){
     $('endLicence').href=track.licence;$('endLicence').textContent=track.licence_nom;
     $('endChanges').textContent=track.modifications+(track.content_id==='enregistre'?' Content ID signalé par la source.':'');
   }
-  $('endMeta').textContent=`${job.salon} · ${job.service} · ${job.ville} · 30 s`;
+  $('endMeta').textContent=[job.salon,job.service,job.ville,'30 s'].filter(Boolean).join(' · ');
   $('endMeta').dataset.template=out.template.id+'@'+out.template.version;
   $('endMeta').dataset.track=track?.id||'';
 }

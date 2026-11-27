@@ -2,7 +2,7 @@ import {
   BlobSource, BufferTarget, CanvasSource, EncodedAudioPacketSource, EncodedPacketSink,
   Input, MP4, Mp4OutputFormat, Output, QTFF, WEBM, VideoSampleSink,
 } from './vendor/mediabunny-1.66.1.min.mjs';
-import {createMotion, loadFonts, sourceFrame, W, H} from './t2-motion.mjs';
+import {createMotion, loadFonts, sourceFrame, W, H} from './t2-motion.mjs?v=questions-beaute-1';
 
 const FPS=30, FRAMES=900, SECONDS=FRAMES/FPS;
 const bitrate=3_800_000, codec='avc1.42001f';

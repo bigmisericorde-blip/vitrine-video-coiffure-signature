@@ -5,16 +5,17 @@ const entries=[], fiche=window.VVFicheT2;
 const id=new URLSearchParams(location.search).get('fiche'), job=fiche.restore(id);
 if (id) {
  $('galleryCase').hidden=false;
- $('galleryCase').textContent=job?[job.salon,job.service,job.ville].join(' · ')+' — aperçu avec les prises d’exemple.':'La fiche n’est plus dans cet onglet. Voici les écrans d’exemple.';
+ $('galleryCase').textContent=job?[job.salon,job.service,job.ville].filter(Boolean).join(' · ')+' — aperçu avec les prises d’exemple.':'La fiche n’est plus dans cet onglet. Voici les écrans d’exemple.';
 }
 if(job) document.querySelectorAll('a[href="index.html"]').forEach(a=>a.href=fiche.href('index.html',id));
-fixture.scenes.forEach((scene,i)=>{
+fixture.scenes.forEach((original,i)=>{
+ const scene=fiche.sceneGuide(job,i,original);
  const group=document.createElement('section');group.className='screen-group';
  const title=document.createElement('h2');title.textContent=`Prise ${i+1} · ${scene.titre.toLowerCase()}`;group.append(title);
  const row=document.createElement('div');row.className='screen-row';
  names.forEach((step,j)=>{
   const n=i*3+j+1, a=document.createElement('a'), rank=String(n).padStart(2,'0');
-  const url=fiche.href("simulation.html",id,{test:fixture.id,ecran:n,v:"t2-1"});
+  const url=fiche.href("simulation.html",id,{test:fixture.id,ecran:n,v:"questions-beaute-1"});
   const label=`Écran ${n}/12 · Prise ${i+1} · ${step}`;
   const copy=[scene.consigne,`Temps de la prise : ${scene.secondes} secondes. Le chrono avance quand la vidéo se joue.`,scene.question_relecture][j];
   a.href=`#${n}`;a.dataset.ecran=String(n);

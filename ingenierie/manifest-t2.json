@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 12400,
-      "sha256": "939b7d058618292d0a202589e82d191fa2fb551b271691ef14cbee6a9bbddace"
+      "bytes": 12821,
+      "sha256": "b2a26c31d85e2f26030a6b0a4920b5c234366fe61dc964471616f9b60db1bcb1"
     },
     {
       "path": "assets/IBMPlexMono-Medium.ttf",
@@ -74,13 +74,13 @@
     },
     {
       "path": "assets/ecrans.js",
-      "bytes": 3153,
-      "sha256": "d5971a5460c4849b033a65a2adf68df5c0227ff21192afa0041121729ea5a589"
+      "bytes": 3233,
+      "sha256": "c34c8815340af3c6fa6f509d993980961f0f8e3eaeb62fbdb2dc4d7674aeace7"
     },
     {
       "path": "assets/fiche-t2.js",
-      "bytes": 3941,
-      "sha256": "e4bf0fb366dd95004f7f203e3f19ec086da2ace7f9fe1a37b26c72555cb6fb1a"
+      "bytes": 5684,
+      "sha256": "3d656c067d687c8d02460c80fe4bd10c0f91da937dfcee13dcbfb60315e2e308"
     },
     {
       "path": "assets/film.js",
@@ -124,23 +124,23 @@
     },
     {
       "path": "assets/simulation-t2.js",
-      "bytes": 14169,
-      "sha256": "436703d0d5978f1f1c2308d6139e1d11fa3933007c3886f062fbc455ccef51a1"
+      "bytes": 14013,
+      "sha256": "5ebd13e7cd4d867bff28b54bc395a4748bb0c146aaa485e55cdfa624f942e410"
     },
     {
       "path": "assets/t2-motion.mjs",
-      "bytes": 11422,
-      "sha256": "d665df611c19567fb17b3f2fde589d165bff6eb298de8a98ca7717020f4b33cf"
+      "bytes": 11449,
+      "sha256": "bb68a8e9eeb8e18d2d3479e7561a1c851ae9a566850449fa9d2add672ac5a054"
     },
     {
       "path": "assets/t2-render.worker.mjs",
-      "bytes": 8011,
-      "sha256": "1be382ae73cb72f40b31816f94b33bd49627dfaa37b09f4eff6ec92a240659bb"
+      "bytes": 8032,
+      "sha256": "3676cadf9cf5a11c321f2e72a3d395af826c73d07d0cc038c608f645e80325d0"
     },
     {
       "path": "assets/test.js",
-      "bytes": 3100,
-      "sha256": "9b0bcd1bd688835379524d269008dab3760c49b2c2d569bfa64702dc972b2595"
+      "bytes": 2749,
+      "sha256": "35d0de7a0eda90f59d2fdd0cb99087e12e3646718fa4b230c6bcc66867b8f71d"
     },
     {
       "path": "assets/tirage-son.js",
@@ -179,8 +179,8 @@
     },
     {
       "path": "ecrans.html",
-      "bytes": 2661,
-      "sha256": "c4f781eee0839250ec410fdab18d97b256b6f43b4c92080d64d2e64f1e3729fa"
+      "bytes": 2689,
+      "sha256": "090b38114f64da7e169931ee3585f02119e93f5927f2eed2572d5b92d990d0cc"
     },
     {
       "path": "film.html",
@@ -189,13 +189,13 @@
     },
     {
       "path": "final.html",
-      "bytes": 5954,
-      "sha256": "23e93950519900e7fe0238f497a938f17f5eb79492f70173f5a0a279ddb169c8"
+      "bytes": 6759,
+      "sha256": "72439197cd621c62430aac273dc529295e7f9e01312d3a686ac05901a3854940"
     },
     {
       "path": "index.html",
-      "bytes": 5866,
-      "sha256": "121baa8406e25466cbcf7e2ebac175b2e87c6ac11512d005b34ed96f4a50d224"
+      "bytes": 5693,
+      "sha256": "b0838dbcaa44a3d27928191c7a4b117f7cecb993b14ff993411e53d5f75257b4"
     },
     {
       "path": "ingenierie/afrobeat.json",
@@ -259,8 +259,8 @@
     },
     {
       "path": "ingenierie/qa_film_final.py",
-      "bytes": 7624,
-      "sha256": "3a4beb5cd5817941291cba672264737349d447fdd72c4b0e1f723232b3e9596f"
+      "bytes": 8718,
+      "sha256": "ff8d0289e0fbe823a904ace6a14bc1af3328494be65298e596387fbb217200ca"
     },
     {
       "path": "ingenierie/recette-sonore.json",
@@ -309,8 +309,13 @@
     },
     {
       "path": "livrables/09-film-final-t2.md",
-      "bytes": 4825,
-      "sha256": "5db6baf161f0eef1cb0575a597cd1697c1131ae7b1e726bd2d5d776d361f6967"
+      "bytes": 5204,
+      "sha256": "fdb1c9eb457a817ba37a5f3e578882cbf499eff16e1ecfc91c0d76730f8a6dc8"
+    },
+    {
+      "path": "livrables/10-questions-beaute.md",
+      "bytes": 1730,
+      "sha256": "08088a134a6f95780fd94aa993da3dc1d8fafba0d2391cf547ac875129344bd7"
     },
     {
       "path": "livrables/12-ecrans/01.webp",
@@ -403,6 +408,36 @@
       "sha256": "40cf8391349a496a74bb3495d14013287130496f962f5a9d56730cdfff523345"
     },
     {
+      "path": "livrables/t2-final/questions-accroche.webp",
+      "bytes": 23142,
+      "sha256": "fbf2ef7dc41ffe74e2b411a27e5a7286db829115dd0450cba37f13d75026bea0"
+    },
+    {
+      "path": "livrables/t2-final/questions-carton.webp",
+      "bytes": 25210,
+      "sha256": "76896222dbb0e2fe9fa29658ceaf826adc5d33003e45126b6cb92b261b165280"
+    },
+    {
+      "path": "livrables/t2-final/questions-detail.webp",
+      "bytes": 15676,
+      "sha256": "cc3a62f23efde95a1beb9baba37a995d05753772e2d44a834d882eb96d569bcd"
+    },
+    {
+      "path": "livrables/t2-final/questions-geste.webp",
+      "bytes": 21618,
+      "sha256": "e896614ab4523a3eb14c71d3ceb9064ca45287b8c043bc1723a276ff20deea97"
+    },
+    {
+      "path": "livrables/t2-final/questions-offre.webp",
+      "bytes": 20212,
+      "sha256": "f29d0aebbbf10a47c128ff636fe8b8d0fb6c86ffcfba4c3408e22fa8c0f883c2"
+    },
+    {
+      "path": "livrables/t2-final/questions-resultat.webp",
+      "bytes": 21120,
+      "sha256": "4bd6d15a1fd319d1dabe1a6681497c6dcab2ad7cf5e1b6981ee87ba1d49e4a48"
+    },
+    {
       "path": "livrables/t2-final/recette-film.json",
       "bytes": 7010,
       "sha256": "aabc44d85bec6b02e3f24f3e5b7f9860310d798f7560a2c8c93dd45ca515253a"
@@ -453,6 +488,11 @@
       "sha256": "8c746e07355941bd99094af90b2f617c7c43852bfa8a5de705ea5d19ed843586"
     },
     {
+      "path": "media/t1-coiffure-questions-corrigees.mp4",
+      "bytes": 14610629,
+      "sha256": "03f342a8cb04f11f20179cbfd3e58c71966ed701c81e481deeacd1e12af74003"
+    },
+    {
       "path": "media/t2-signature-coiffure-narree.mp4",
       "bytes": 14599394,
       "sha256": "73f2d47496a26c6016e241925d749e75d55cab14835157a24a641cf430bc4725"
@@ -479,8 +519,8 @@
     },
     {
       "path": "simulation.html",
-      "bytes": 7869,
-      "sha256": "5eb63d93503e797df2736d82c3d67632bcefca94b244f6605256456a1d157fe3"
+      "bytes": 7897,
+      "sha256": "9e5193ff428e6e86f7c498d28cabbd9dcc0b8f9c46c2bebb04eb2e6f39e42746"
     }
   ]
 }

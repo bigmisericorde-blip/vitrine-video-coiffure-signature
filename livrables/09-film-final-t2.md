@@ -1,5 +1,7 @@
 # Film final T2 · Studio Vitrine
 
+> Rapport historique du film d’origine, conservé intact. Depuis la correction des questions beauté, le lecteur final présente un nouveau montage, avec les textes de geste, de détail et de résultat mis à jour et la même piste sonore. Le [film historique](../media/t2-signature-coiffure-narree.mp4) reste disponible. Voir la [note de correction](10-questions-beaute.md).
+
 [**Lire avec le son sur GitHub Pages**](https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/final.html) · [MP4 dans le dépôt](../media/t2-signature-coiffure-narree.mp4) · [Recette et empreintes](t2-final/recette-film.json) · [Sous-titres FR](../media/t2-signature-voix.vtt)
 
 Le lecteur et le bouton de téléchargement utilisent le **même MP4**. L’affichage de la fiche fait partie de l’image ; la voix et la musique font partie de la piste audio. La lecture n’appelle ni le moteur de montage ni le serveur de voix.
