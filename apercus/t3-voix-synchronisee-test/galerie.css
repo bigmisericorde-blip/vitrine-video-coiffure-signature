@@ -34,3 +34,6 @@
  .screen-layout-v2 .screen-view{padding:9px}
  .screen-view iframe#screenLive{height:min(760px,94svh);width:100%}
 }
+/* Présentation de la galerie comme T1/T2 : liste et aperçu, sans dépendre d'une iframe. */
+.screen-picture img#screenPreview{display:block;width:min(100%,360px);height:auto;margin:auto;border-radius:16px;background:#041a1b}
+@media(max-width:760px){.screen-layout-v2{grid-template-areas:"intro" "view" "index"}}
