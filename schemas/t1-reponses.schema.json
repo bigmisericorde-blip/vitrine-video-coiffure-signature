@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Réponses commerciales T1 beauté",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "salon",
+    "service"
+  ],
+  "properties": {
+    "salon": {
+      "type": "string",
+      "maxLength": 45,
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "service": {
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "ville": {
+      "type": "string",
+      "maxLength": 45
+    },
+    "contact": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "prix": {
+      "type": "string",
+      "maxLength": 40
+    }
+  }
+}

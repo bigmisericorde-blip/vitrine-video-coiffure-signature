@@ -1,6 +1,6 @@
 'use strict';
 const fixture=window.CONSIGNES_T2, $=(id)=>document.getElementById(id);
-const nav=$('screenList'), picture=$('screenPreview'), select=$('screenSelect'), names=['Consigne','Enregistrement','Après lecture'];
+const nav=$('screenList'), picture=$('screenPreview'), select=$('screenSelect'), names=window.VV_T1_CONTRACT.capture.screens.slice(0,3).map(x=>x.label);
 const entries=[], fiche=window.VVFicheT2;
 const id=new URLSearchParams(location.search).get('fiche'), job=fiche.restore(id);
 if (id) {

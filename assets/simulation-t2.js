@@ -203,8 +203,9 @@ function init(){
   $('next').onclick=()=>{
     if(state!=='C'||$('next').disabled||previewNumber)return;
     validated.add(SCENES[idx].id);
-    if(idx<SCENES.length-1)showCard(idx+1);
-    else if(validated.size===SCENES.length)showMontage();
+    const rule=window.VV_T1_CONTRACT.capture.screens[idx*3+2];
+    if(rule.next_screen==='T1_MONTAGE_STATUS'){if(validated.size===SCENES.length)showMontage();}
+    else {const next=window.VV_T1_CONTRACT.capture.screens.find(x=>x.screen_id===rule.next_screen);if(!next||next.state!=='A_GUIDE')throw Error('Navigation T1 invalide.');showCard((next.ordinal-1)/3);}
   };
   $('montageGo').onclick=$('replayAd').onclick=openAd;
   $('adClose').onclick=ad.onended=endAd;

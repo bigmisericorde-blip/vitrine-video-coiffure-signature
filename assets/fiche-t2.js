@@ -1,7 +1,7 @@
 /* Les réponses restent dans l’onglet et ne sont jamais envoyées par le rendu local. */
 (() => {
   'use strict';
-  const fixture=window.CONSIGNES_T2, prefix='vv-t2-fiche:', lifetime=24*60*60*1000;
+  const contract=window.VV_T1_CONTRACT, fixture=window.CONSIGNES_T2, prefix='vv-t2-fiche:', lifetime=24*60*60*1000;
   // Anciens choix : conversion uniquement pour relire une fiche déjà enregistrée.
   const finish=Object.freeze({profil:'Le résultat entier, vu de côté.',contours:'Les contours, filmés de près.',couleur:'La couleur et les reflets, dans la lumière.',detail:'Un détail : une tresse, une boucle ou une mèche.'});
   const action=Object.freeze({'Prendre rendez-vous':'Prendre rendez-vous','T’écrire':'Envoyer un message','T’appeler':'Appeler','Rien pour le moment':''});
@@ -10,10 +10,11 @@
   const has=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
   function normalize(raw){
     if(!raw||typeof raw!== 'object')throw Error('Fiche manquante.');
-    const salon=string(raw.salon,45),service=string(raw.service,50),ville=string(raw.ville,45);
-    if(!salon||!service)throw Error('Complète le nom et la prestation à présenter.');
+    const limits=Object.fromEntries(contract.merchant_input.fields.map(f=>[f.id,f.max_length]));
+    const salon=string(raw.salon,limits.salon),service=string(raw.service,limits.service),ville=string(raw.ville,limits.ville);
+    if(contract.merchant_input.fields.some(f=>f.required&&!string(raw[f.id],f.max_length)))throw Error('Complète le nom et la prestation à présenter.');
     const oldAction=raw.commercial===true?null:(has(action,raw.action)?raw.action:null);
-    const contact=oldAction==='Rien pour le moment'?'':string(raw.contact,30),saisiePrix=string(raw.prix,40);
+    const contact=oldAction==='Rien pour le moment'?'':string(raw.contact,limits.contact),saisiePrix=string(raw.prix,limits.prix);
     const prix=saisiePrix&&!oldAction&&!/^à partir de\b/i.test(saisiePrix)?'À partir de '+saisiePrix:saisiePrix;
     // Anciens champs conservés en lecture seulement pour ne pas casser les fiches déjà enregistrées.
     const ancienne=raw.resultatChoix==='autre'?string(raw.resultatAutre,80):finish[raw.resultatChoix]||'';
@@ -43,23 +44,15 @@
     try{const u=new URL(/^www\./i.test(c)?'https://'+c:c);if(['https:','http:'].includes(u.protocol)&&!u.username&&!u.password&&u.hostname)return u.href;}catch{}
     return '';
   }
+  const expand=(template,job)=>template.replace(/\{(service|salon|ville)\}/g,(_,key)=>job?.[key]|| (key==='service'?'ta prestation':''));
   function sceneText(job,n){
-    if(n===0)return ['Prestation : '+job.service,job.salon,job.ville].filter(Boolean).join(' · ');
-    if(n===1)return 'Ton geste : '+job.service;
-    if(n===2)return 'Un détail : '+job.service;
-    return 'Le résultat : '+job.service;
+    const scene=contract.capture.scenes[n];return expand(scene.contexte,job).split(' · ').filter(Boolean).join(' · ');
   }
   function sceneGuide(job,n,scene){
-    const service=job?.service||'ta prestation';
-    const rows=[
-      {titre:'AVANT LA PRESTATION',consigne:'Avant de commencer, filme la personne ou la zone concernée par '+service+'. Garde un angle qui permettra de comparer avec le résultat.',a_filmer:['La situation avant la prestation.','La personne ou la zone concernée, avec son accord.'],a_eviter:['Commencer à filmer après la prestation.','Changer de personne pour le résultat.'],question_relecture:'Est-ce que la situation avant est bien visible ?'},
-      {titre:'LE GESTE',consigne:'Filme tes mains pendant la prestation : '+service+'.',a_filmer:['Tes mains en action.','Le geste bien visible.'],a_eviter:['Cacher le geste.','Filmer de trop loin.'],question_relecture:'Est-ce qu’on voit bien le geste ?'},
-      {titre:'LE DÉTAIL',consigne:'Approche le téléphone et montre un détail de la prestation : '+service+'.',a_filmer:['Un détail de près.','Une image nette et stable.'],a_eviter:['Trop bouger le téléphone.','Cacher le détail.'],question_relecture:'Est-ce qu’on voit bien le détail ?'},
-      {titre:'LE RÉSULTAT',consigne:'Filme le résultat de '+service+' sur la même personne ou zone, sous un angle proche de la première prise.',a_filmer:['Le résultat terminé.','La même personne ou zone qu’au début.'],a_eviter:['Cacher le résultat.','Changer de personne ou de zone.'],question_relecture:'Est-ce que le résultat est bien visible ?'}
-    ];
-    if(n===0&&job?.source!=='client')rows[0].consigne='Dans cet exemple, la coiffure est déjà commencée. Pour ta vidéo, filme la personne ou la zone avant de commencer.';
-    if(n===3&&job?.source!=='client')rows[3].consigne='Dans cet exemple, on voit les finitions. Pour ta vidéo, filme le résultat de '+service+' sur la même personne et sous un angle proche du début.';
-    return {...scene,...rows[n]};
+    const rule=contract.capture.scenes[n];
+    if(!rule||rule.id!==scene.id)throw Error('Scène incompatible avec le contrat T1.');
+    const text=job?.source!=='client'&&rule.consigne_demo?rule.consigne_demo:rule.consigne;
+    return {...scene,titre:rule.titre,consigne:expand(text,job),a_filmer:rule.a_filmer,a_eviter:rule.a_eviter,question_relecture:rule.question_relecture};
   }
   window.VVFicheT2=Object.freeze({initial,normalize,restore,save,href,destination,sceneText,sceneGuide,finish});
 })();

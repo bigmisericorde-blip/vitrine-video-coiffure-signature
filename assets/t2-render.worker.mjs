@@ -1,3 +1,4 @@
+import {validateT1,bindT1Job} from './t1-contract.mjs?v=1';
 import {
   BlobSource, BufferTarget, CanvasSource, EncodedAudioPacketSource, EncodedPacketSink,
   Input, MP4, Mp4OutputFormat, Output, QTFF, WEBM, VideoSampleSink,
@@ -19,15 +20,15 @@ async function localBlob(url,limit) {
   return data;
 }
 function readInput(blob) {return new Input({source:new BlobSource(blob),formats:[MP4,QTFF,WEBM]});}
-async function planFor(request) {
-  const res=await fetch(new URL('../ingenierie/plan.json',import.meta.url),{cache:'no-cache',redirect:'error'});
+async function planFor(request,contract) {
+  const res=await fetch(new URL('../'+contract.renderer.plan_path,import.meta.url),{cache:'no-cache',redirect:'error'});
   ensure(res.ok,'Le plan canonique T2 n’a pas chargé.');
   const p=await res.json();
   ensure(p?.schema==='vv.coiffure.plan/1.0'&&p.template_id==='T2'&&/^\d+\.\d+\.\d+$/.test(p.version)
     && /^[a-z][a-z0-9-]+$/.test(p.audio_profile) && p.shots?.length===12&&p.cuts?.length===11,'Le plan de montage T2 est invalide.');
   ensure(!request.track||p.audio_profile===request.profile,'Le catalogue ne correspond pas au profil sonore du T2.');
   const scenes=request.scenes, ids=scenes.map(s=>s.id);
-  ensure(scenes.length===4&&ids.join(',')==='S1,S2,S3,S4','Les quatre prises sont nécessaires.');
+  ensure(scenes.length===4&&ids.join(',')===contract.renderer.requires_scenes.join(',')&&scenes.every((s,i)=>s.secondes===contract.capture.scenes[i].secondes),'Les quatre prises du contrat sont nécessaires.');
   let cursor=0;
   for(const [i,s] of p.shots.entries()){
     const n=ids.indexOf(s.scene);
@@ -45,10 +46,13 @@ async function render(request) {
     'L’export MP4 demande un navigateur avec encodage H.264 (essaie une version récente de Chrome, Edge ou Safari).');
   const capability=await VideoEncoder.isConfigSupported({codec,width:W,height:H,bitrate,framerate:FPS,hardwareAcceleration:'no-preference',avc:{format:'avc'}});
   ensure(capability.supported,'Ce navigateur ou appareil ne sait pas encoder le MP4 H.264 en 720 × 1280.');
-  const p=await planFor(request);
+  const contractResponse=await fetch(new URL('../config/t1-beaute.json',import.meta.url),{cache:'no-cache',redirect:'error'});
+  ensure(contractResponse.ok,'Le contrat T1 n’a pas chargé.');
+  const contract=validateT1(await contractResponse.json()), job=bindT1Job(request.job,contract);
+  const p=await planFor(request,contract);
   await loadFonts(self.fonts);
   const canvas=new OffscreenCanvas(W,H);
-  const compose=createMotion(canvas,p,request.job,{demo:request.demo});
+  const compose=createMotion(canvas,p,job,{demo:request.demo});
   const target=new BufferTarget();
   const writer=new Output({format:new Mp4OutputFormat({fastStart:'in-memory'}),target});
   let frames=0, packets=0;

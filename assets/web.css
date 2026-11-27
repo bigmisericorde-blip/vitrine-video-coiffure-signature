@@ -17,3 +17,4 @@
 .screen-picture iframe{display:block;border:0;border-radius:16px;width:min(100%,360px);height: min(780px, 112svh);background:#062629}
 .screen-picture iframe[hidden],.screen-picture img[hidden]{display:none}
 .form-flow .quiet-button{background:transparent;color:#bdf4d8;border:1px solid #377963;box-shadow:none}
+.commercial-fields{display:grid;gap:14px}

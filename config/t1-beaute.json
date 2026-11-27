@@ -1,0 +1,364 @@
+{
+  "$schema": "../schemas/t1-beaute.schema.json",
+  "schema": "vv.beaute.t1.runtime/1",
+  "template_id": "T1_BEAUTE",
+  "version": "1.0.0",
+  "technical_renderer_id": "T2",
+  "language": "fr",
+  "purpose": "Contrat T1 beauté : cinq questions, quatre prises, douze états, une vidéo ; usage beauté général, coiffure en exemple.",
+  "merchant_input": {
+    "fields": [
+      {
+        "id": "salon",
+        "question": "Quel est le nom de ton salon ou de ton activité ?",
+        "required": true,
+        "max_length": 45,
+        "example": "Studio Vitrine",
+        "hint": "",
+        "type": "text",
+        "render_targets": [
+          "ouverture.nom",
+          "fin.nom"
+        ]
+      },
+      {
+        "id": "service",
+        "question": "Quelle prestation veux-tu présenter dans ta vidéo ?",
+        "required": true,
+        "max_length": 50,
+        "example": "Ex. Coupe homme",
+        "hint": "Par exemple : tresses africaines, maquillage ou coupe homme.",
+        "type": "text",
+        "render_targets": [
+          "ouverture.prestation",
+          "offre.prestation",
+          "geste.prestation",
+          "detail.prestation",
+          "resultat.prestation",
+          "fin.prestation"
+        ]
+      },
+      {
+        "id": "ville",
+        "question": "Dans quelle ville se trouve ton salon ?",
+        "required": false,
+        "max_length": 45,
+        "example": "Cotonou",
+        "hint": "Facultatif.",
+        "type": "text",
+        "render_targets": [
+          "ouverture.ville",
+          "offre.ville",
+          "fin.ville"
+        ]
+      },
+      {
+        "id": "contact",
+        "question": "Quel est ton numéro WhatsApp ou téléphone ?",
+        "required": false,
+        "max_length": 30,
+        "example": "+229 XX XX XX XX",
+        "hint": "Facultatif. Indique seulement un numéro que les clients peuvent voir.",
+        "type": "tel",
+        "render_targets": [
+          "contact.numero",
+          "fin.numero"
+        ]
+      },
+      {
+        "id": "prix",
+        "question": "À partir de quel prix proposes-tu cette prestation ?",
+        "required": false,
+        "max_length": 40,
+        "example": "À partir de 2 500 FCFA",
+        "hint": "Facultatif. Laisse vide si tu ne veux pas afficher de prix ; « À partir de » sera ajouté si besoin.",
+        "type": "text",
+        "render_targets": [
+          "offre.prix",
+          "fin.prix"
+        ]
+      }
+    ],
+    "optional_empty": "Ne pas afficher de valeur vide ou inventée.",
+    "phone_policy": "Numéro publié seulement si fourni ; ne pas supposer WhatsApp ou appel.",
+    "price_policy": "Préfixer À partir de si nécessaire ; ne pas inventer un prix."
+  },
+  "capture": {
+    "scenes": [
+      {
+        "id": "S1",
+        "n": 1,
+        "total": 4,
+        "secondes": 6,
+        "media": "S1.mp4",
+        "titre": "AVANT LA PRESTATION",
+        "consigne": "Avant de commencer, filme la personne ou la zone concernée par {service}. Garde un angle qui permettra de comparer avec le résultat.",
+        "consigne_demo": "Dans cet exemple, la coiffure est déjà commencée. Pour ta vidéo, filme la personne ou la zone avant de commencer.",
+        "a_filmer": [
+          "La situation avant la prestation.",
+          "La personne ou la zone concernée, avec son accord."
+        ],
+        "a_eviter": [
+          "Commencer à filmer après la prestation.",
+          "Changer de personne pour le résultat."
+        ],
+        "question_relecture": "Est-ce que la situation avant est bien visible ?",
+        "contexte": "Prestation : {service} · {salon} · {ville}",
+        "example": "Voici ce que je fais.",
+        "capture_slot": "captures.S1"
+      },
+      {
+        "id": "S2",
+        "n": 2,
+        "total": 4,
+        "secondes": 7,
+        "media": "S2.mp4",
+        "titre": "LE GESTE",
+        "consigne": "Filme tes mains pendant la prestation : {service}.",
+        "consigne_demo": null,
+        "a_filmer": [
+          "Tes mains en action.",
+          "Le geste bien visible."
+        ],
+        "a_eviter": [
+          "Cacher le geste.",
+          "Filmer de trop loin."
+        ],
+        "question_relecture": "Est-ce qu’on voit bien le geste ?",
+        "contexte": "Ton geste : {service}",
+        "example": "Voici ce que je fais.",
+        "capture_slot": "captures.S2"
+      },
+      {
+        "id": "S3",
+        "n": 3,
+        "total": 4,
+        "secondes": 7,
+        "media": "S3.mp4",
+        "titre": "LE DÉTAIL",
+        "consigne": "Approche le téléphone et montre un détail de la prestation : {service}.",
+        "consigne_demo": null,
+        "a_filmer": [
+          "Un détail de près.",
+          "Une image nette et stable."
+        ],
+        "a_eviter": [
+          "Trop bouger le téléphone.",
+          "Cacher le détail."
+        ],
+        "question_relecture": "Est-ce qu’on voit bien le détail ?",
+        "contexte": "Un détail : {service}",
+        "example": "Voici ce que je fais.",
+        "capture_slot": "captures.S3"
+      },
+      {
+        "id": "S4",
+        "n": 4,
+        "total": 4,
+        "secondes": 7,
+        "media": "S4.mp4",
+        "titre": "LE RÉSULTAT",
+        "consigne": "Filme le résultat de {service} sur la même personne ou zone, sous un angle proche de la première prise.",
+        "consigne_demo": "Dans cet exemple, on voit les finitions. Pour ta vidéo, filme le résultat de {service} sur la même personne et sous un angle proche du début.",
+        "a_filmer": [
+          "Le résultat terminé.",
+          "La même personne ou zone qu’au début."
+        ],
+        "a_eviter": [
+          "Cacher le résultat.",
+          "Changer de personne ou de zone."
+        ],
+        "question_relecture": "Est-ce que le résultat est bien visible ?",
+        "contexte": "Le résultat : {service}",
+        "example": "Voilà le résultat.",
+        "capture_slot": "captures.S4"
+      }
+    ],
+    "stable_screen_count": 12,
+    "screen_states": [
+      "A_GUIDE",
+      "B_RECORDING",
+      "C_REVIEW"
+    ],
+    "screens": [
+      {
+        "ordinal": 1,
+        "screen_id": "T1_CAPTURE_S1_A_GUIDE",
+        "scene_id": "S1",
+        "state": "A_GUIDE",
+        "label": "Consigne",
+        "capture_slot": "captures.S1",
+        "duration_ms": 6000,
+        "next_screen": "T1_CAPTURE_S1_B_RECORDING",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 2,
+        "screen_id": "T1_CAPTURE_S1_B_RECORDING",
+        "scene_id": "S1",
+        "state": "B_RECORDING",
+        "label": "Enregistrement",
+        "capture_slot": "captures.S1",
+        "duration_ms": 6000,
+        "next_screen": "T1_CAPTURE_S1_C_REVIEW",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 3,
+        "screen_id": "T1_CAPTURE_S1_C_REVIEW",
+        "scene_id": "S1",
+        "state": "C_REVIEW",
+        "label": "Après lecture",
+        "capture_slot": "captures.S1",
+        "duration_ms": 6000,
+        "next_screen": "T1_CAPTURE_S2_A_GUIDE",
+        "retake_screen": "T1_CAPTURE_S1_A_GUIDE"
+      },
+      {
+        "ordinal": 4,
+        "screen_id": "T1_CAPTURE_S2_A_GUIDE",
+        "scene_id": "S2",
+        "state": "A_GUIDE",
+        "label": "Consigne",
+        "capture_slot": "captures.S2",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S2_B_RECORDING",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 5,
+        "screen_id": "T1_CAPTURE_S2_B_RECORDING",
+        "scene_id": "S2",
+        "state": "B_RECORDING",
+        "label": "Enregistrement",
+        "capture_slot": "captures.S2",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S2_C_REVIEW",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 6,
+        "screen_id": "T1_CAPTURE_S2_C_REVIEW",
+        "scene_id": "S2",
+        "state": "C_REVIEW",
+        "label": "Après lecture",
+        "capture_slot": "captures.S2",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S3_A_GUIDE",
+        "retake_screen": "T1_CAPTURE_S2_A_GUIDE"
+      },
+      {
+        "ordinal": 7,
+        "screen_id": "T1_CAPTURE_S3_A_GUIDE",
+        "scene_id": "S3",
+        "state": "A_GUIDE",
+        "label": "Consigne",
+        "capture_slot": "captures.S3",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S3_B_RECORDING",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 8,
+        "screen_id": "T1_CAPTURE_S3_B_RECORDING",
+        "scene_id": "S3",
+        "state": "B_RECORDING",
+        "label": "Enregistrement",
+        "capture_slot": "captures.S3",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S3_C_REVIEW",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 9,
+        "screen_id": "T1_CAPTURE_S3_C_REVIEW",
+        "scene_id": "S3",
+        "state": "C_REVIEW",
+        "label": "Après lecture",
+        "capture_slot": "captures.S3",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S4_A_GUIDE",
+        "retake_screen": "T1_CAPTURE_S3_A_GUIDE"
+      },
+      {
+        "ordinal": 10,
+        "screen_id": "T1_CAPTURE_S4_A_GUIDE",
+        "scene_id": "S4",
+        "state": "A_GUIDE",
+        "label": "Consigne",
+        "capture_slot": "captures.S4",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S4_B_RECORDING",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 11,
+        "screen_id": "T1_CAPTURE_S4_B_RECORDING",
+        "scene_id": "S4",
+        "state": "B_RECORDING",
+        "label": "Enregistrement",
+        "capture_slot": "captures.S4",
+        "duration_ms": 7000,
+        "next_screen": "T1_CAPTURE_S4_C_REVIEW",
+        "retake_screen": null
+      },
+      {
+        "ordinal": 12,
+        "screen_id": "T1_CAPTURE_S4_C_REVIEW",
+        "scene_id": "S4",
+        "state": "C_REVIEW",
+        "label": "Après lecture",
+        "capture_slot": "captures.S4",
+        "duration_ms": 7000,
+        "next_screen": "T1_MONTAGE_STATUS",
+        "retake_screen": "T1_CAPTURE_S4_A_GUIDE"
+      }
+    ],
+    "video_max_bytes": 25165824,
+    "min_dimensions": 240,
+    "max_pixels": 2073600,
+    "source_audio": "Non inclus dans le MP4 initial. Voix personnelle facultative dans l’atelier après montage.",
+    "camera_test": "Non vérifiée sur appareil physique.",
+    "authenticity": "Ne jamais présenter une prise après début du travail comme un avant."
+  },
+  "renderer": {
+    "plan_path": "ingenierie/plan.json",
+    "plan_schema": "vv.coiffure.plan/1.0",
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "frames": 900,
+    "duration_s": 30,
+    "requires_scenes": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "binding_fields": {
+      "salon": "salon",
+      "service": "service",
+      "ville": "ville",
+      "contact": "contact",
+      "prix": "prix",
+      "geste": "geste",
+      "detail": "detail",
+      "resultat": "resultat",
+      "cta": "cta"
+    },
+    "technical_scene_labels_in_video": false,
+    "personal_data_network": "Aucun envoi de prises ou réponses par le moteur."
+  },
+  "flow": [
+    "MERCHANT_INPUT",
+    "GUIDED_CAPTURE",
+    "DETERMINISTIC_RENDER",
+    "REVIEW_AND_DOWNLOAD"
+  ],
+  "limitations": [
+    "Le moteur Web est distinct du moteur Android Media3 de la référence ; aucune parité Android n’est revendiquée.",
+    "Le MP4 de démonstration est fixe et ne personnalise pas sa voix.",
+    "Les extraits de démonstration montrent un travail déjà commencé, pas un véritable avant.",
+    "Le son des prises n’est pas conservé dans le rendu initial ; atelier voix facultatif séparé."
+  ]
+}

@@ -116,10 +116,6 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
     sample.draw(g,x-(sw*scale-w)*cx,y-(sh*scale-h)*cy,sw*scale,sh*scale);
     color('#0b3f3e0c',x,y,w,h);g.restore();
   }
-  function emblem(label){
-    round('#062629e8',left,safe[1],Math.min(width,31+label.length*13),44,10,'#c4ae77ac');
-    small(label,left+15,safe[1]+29,{size:19});
-  }
   function markPrice(f) {
     if(!job.prix||f<stage.cut||f>=stage.lockup)return;
     round('#062629ed',right-260,safe[1],260,59,13,'#dec38e80');
@@ -129,7 +125,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
   function compose(sample,shot,f) {
     const dt=f-shot.in,t=dt/Math.max(1,shot.out-shot.in-1), name=shot.stage;
     if(name==='hook'){
-      picture(sample,shot,t);wash(.89);emblem(demo?'01  /  GESTE EN COURS':'01  /  AVANT');
+      picture(sample,shot,t);wash(.89);
       const at=plan.design.motion.hook_ease;
       const a=reveal(f,1,at+7);
       if(a>0)line(gold,left+width*.35,825,width*.30*ease(a));
@@ -139,7 +135,6 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
     } else if(name==='offer'){
       const a=smooth((dt+1)/cuts.get(shot.in).frames);
       backdrop();picture(sample,shot,t,mix(0,left,a),mix(0,165,a),mix(W,width,a),mix(H,607,a),26*a);
-      emblem('01  /  PRESTATION');
       const x=mix(W+18,left,a), y=794+50*(1-a);
       round('#092d2b',x,y,width,298,22,'#dbc393aa');line(gold,x+25,y+28,52);
       small('LA PRESTATION',x+27,y+67,{max:width-54});
@@ -148,7 +143,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
       small(job.ville,x+27,y+265,{max:width-54,t:reveal(f,shot.in+19)});
     } else if(name==='booking'){
       backdrop(); const a=smooth((dt+1)/cuts.get(shot.in).frames);
-      emblem(demo?'04  /  FINITIONS':'04  /  APRÈS');markPrice(f);
+      markPrice(f);
       picture(sample,shot,t,left,227,width,624,23);
       const y=mix(982,862,a);
       round('#082e2a',left,y,width,234,17,'#d8c2927a');
@@ -159,7 +154,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
       title(job.contact||job.service,left+26,y+190,{face:'sans',size:25,max:width-52,rows:2,c:p.mint,t:reveal(f,shot.in+11)});
     } else if(name==='lockup'){
       backdrop();picture(sample,shot,t,0,0,W,618);
-      color(gold,0,617,W,2);emblem(demo?'04  /  FINITIONS':'04  /  APRÈS');
+      color(gold,0,617,W,2);
       title(job.salon,mid,743,{face:'script',size:102,max:width-22,rows:2,align:'center'});
       title(job.service,mid,821,{size:47,max:width-20,rows:2,align:'center'});
       small([job.ville,job.prix].filter(Boolean).join('  ·  '),mid,883,{size:24,max:width-25,align:'center',rows:2});
@@ -173,8 +168,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
     } else {
       picture(sample,shot,t);wash();
       const kind=name.startsWith('cut')?'cut':name.startsWith('detail')?'detail':name.startsWith('result')?'result':'action';
-      const label={cut:'02  /  LE GESTE',detail:'03  /  LE DÉTAIL',result:demo?'04  /  FINITIONS':'04  /  APRÈS',action:demo?'04  /  FINITIONS':'04  /  APRÈS'}[kind];
-      emblem(label);markPrice(f);
+      markPrice(f);
       const a=reveal(f,stage[kind]+3,22);
       line(gold,left,898,84*ease(a));
       if(kind==='action'){

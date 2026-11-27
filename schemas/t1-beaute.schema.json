@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contrat runtime T1 beauté",
+  "type": "object",
+  "required": [
+    "schema",
+    "template_id",
+    "version",
+    "merchant_input",
+    "capture",
+    "renderer",
+    "flow",
+    "limitations"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vv.beaute.t1.runtime/1"
+    },
+    "template_id": {
+      "const": "T1_BEAUTE"
+    },
+    "version": {
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "merchant_input": {
+      "type": "object",
+      "required": [
+        "fields"
+      ],
+      "properties": {
+        "fields": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "question",
+              "required",
+              "max_length",
+              "example",
+              "hint",
+              "type",
+              "render_targets"
+            ],
+            "properties": {
+              "id": {
+                "enum": [
+                  "salon",
+                  "service",
+                  "ville",
+                  "contact",
+                  "prix"
+                ]
+              },
+              "question": {
+                "type": "string",
+                "minLength": 10
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "max_length": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100
+              },
+              "example": {
+                "type": "string"
+              },
+              "hint": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "text",
+                  "tel"
+                ]
+              },
+              "render_targets": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "scenes",
+        "screens",
+        "stable_screen_count"
+      ],
+      "properties": {
+        "scenes": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "n",
+              "total",
+              "secondes",
+              "media",
+              "titre",
+              "consigne",
+              "consigne_demo",
+              "a_filmer",
+              "a_eviter",
+              "question_relecture",
+              "contexte",
+              "example",
+              "capture_slot"
+            ],
+            "properties": {
+              "id": {
+                "pattern": "^S[1-4]$"
+              },
+              "n": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4
+              },
+              "total": {
+                "const": 4
+              },
+              "secondes": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "media": {
+                "pattern": "^S[1-4]\\.mp4$"
+              },
+              "titre": {
+                "type": "string",
+                "minLength": 1
+              },
+              "consigne": {
+                "type": "string",
+                "minLength": 1
+              },
+              "consigne_demo": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "a_filmer": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "a_eviter": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "question_relecture": {
+                "type": "string"
+              },
+              "contexte": {
+                "type": "string"
+              },
+              "example": {
+                "type": "string"
+              },
+              "capture_slot": {
+                "pattern": "^captures\\.S[1-4]$"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "screens": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "required": [
+              "ordinal",
+              "screen_id",
+              "scene_id",
+              "state",
+              "label",
+              "capture_slot",
+              "duration_ms",
+              "next_screen",
+              "retake_screen"
+            ],
+            "properties": {
+              "ordinal": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "screen_id": {
+                "type": "string"
+              },
+              "scene_id": {
+                "pattern": "^S[1-4]$"
+              },
+              "state": {
+                "enum": [
+                  "A_GUIDE",
+                  "B_RECORDING",
+                  "C_REVIEW"
+                ]
+              },
+              "label": {
+                "type": "string"
+              },
+              "capture_slot": {
+                "pattern": "^captures\\.S[1-4]$"
+              },
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 1000
+              },
+              "next_screen": {
+                "type": "string"
+              },
+              "retake_screen": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "stable_screen_count": {
+          "const": 12
+        }
+      }
+    },
+    "renderer": {
+      "type": "object",
+      "required": [
+        "plan_path",
+        "fps",
+        "frames",
+        "duration_s",
+        "width",
+        "height",
+        "binding_fields",
+        "technical_scene_labels_in_video"
+      ],
+      "properties": {
+        "plan_path": {
+          "const": "ingenierie/plan.json"
+        },
+        "fps": {
+          "const": 30
+        },
+        "frames": {
+          "const": 900
+        },
+        "duration_s": {
+          "const": 30
+        },
+        "width": {
+          "const": 720
+        },
+        "height": {
+          "const": 1280
+        },
+        "binding_fields": {
+          "type": "object"
+        },
+        "technical_scene_labels_in_video": {
+          "const": false
+        }
+      }
+    },
+    "flow": {
+      "type": "array",
+      "minItems": 4
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
