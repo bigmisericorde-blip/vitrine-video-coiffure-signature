@@ -20,8 +20,6 @@
  const contactHint=()=>{
   const a=$('action').value;
   $('contactBloc').hidden=a==='Rien pour le moment';$('contact').disabled=$('contactBloc').hidden;
-  $('contactLabel').textContent=a==='T’écrire'?'À quel numéro ou lien peut-on t’écrire ?':a==='T’appeler'?'À quel numéro peut-on t’appeler ?':'Quel lien ou numéro permet de prendre rendez-vous ?';
-  $('contact').placeholder=a==='T’appeler'?'Ex. Ton numéro de téléphone':'Ex. Ton lien ou ton numéro';
  };
  $('action').addEventListener('change',contactHint);contactHint();
  data.scenes.forEach(s=>{const li=el('li','');li.append(el('span',String(s.n).padStart(2,'0')),el('b',s.titre),el('small',s.secondes+' s'));$('captureList').append(li);});

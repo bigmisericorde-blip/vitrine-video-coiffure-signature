@@ -79,8 +79,8 @@
     },
     {
       "path": "assets/fiche-t2.js",
-      "bytes": 5684,
-      "sha256": "3d656c067d687c8d02460c80fe4bd10c0f91da937dfcee13dcbfb60315e2e308"
+      "bytes": 5693,
+      "sha256": "2fea8ad8b25446c4431e8c7153309620fe17147cd251c8b2be9cbefd501bb477"
     },
     {
       "path": "assets/film.js",
@@ -139,8 +139,8 @@
     },
     {
       "path": "assets/test.js",
-      "bytes": 2749,
-      "sha256": "35d0de7a0eda90f59d2fdd0cb99087e12e3646718fa4b230c6bcc66867b8f71d"
+      "bytes": 2428,
+      "sha256": "fd799e1a0923bcbcebbc7a18c396761a8738af9db30876979dd1ad7d19066193"
     },
     {
       "path": "assets/tirage-son.js",
@@ -180,7 +180,7 @@
     {
       "path": "ecrans.html",
       "bytes": 2689,
-      "sha256": "090b38114f64da7e169931ee3585f02119e93f5927f2eed2572d5b92d990d0cc"
+      "sha256": "f0db1209010ccdcbe4c89bc3e66a2ae39c79a8a432b56051c7a58d2340b38788"
     },
     {
       "path": "film.html",
@@ -194,8 +194,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 5693,
-      "sha256": "b0838dbcaa44a3d27928191c7a4b117f7cecb993b14ff993411e53d5f75257b4"
+      "bytes": 5734,
+      "sha256": "8255918a010c4548f70a7ddaa7e683d4a6ac431f9e17363a5119d4aa9c3d9a79"
     },
     {
       "path": "ingenierie/afrobeat.json",
@@ -520,7 +520,7 @@
     {
       "path": "simulation.html",
       "bytes": 7897,
-      "sha256": "9e5193ff428e6e86f7c498d28cabbd9dcc0b8f9c46c2bebb04eb2e6f39e42746"
+      "sha256": "bce12d5cb08e6169b0a891bad1ba04400ce1c63fc2886ab6b4439c9aa9f67874"
     }
   ]
 }

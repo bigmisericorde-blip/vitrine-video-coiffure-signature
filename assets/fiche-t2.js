@@ -19,7 +19,7 @@
     return Object.freeze({salon,ville,service,geste,detail,prix:string(raw.prix,32),resultat,action:raw.action,cta:action[raw.action],contact:action[raw.action]?string(raw.contact,120):'',source:raw.source==='client'?'client':'demo'});
   }
   const d=fixture.display;
-  const initial=normalize({salon:d.salon,ville:d.ville,service:d.service,geste:'Le geste de coupe',detail:'Les contours de la barbe',resultat:'La coupe et la barbe terminées',prix:new Intl.NumberFormat('fr-FR').format(d.prix)+' '+d.devise,action:'Prendre rendez-vous',contact:'',source:'demo'});
+  const initial=normalize({salon:d.salon,ville:d.ville,service:'Coupe et barbe',geste:'Couper les cheveux',detail:'Les contours de la barbe',resultat:'La coupe et la barbe bien finies',prix:new Intl.NumberFormat('fr-FR').format(d.prix)+' '+d.devise,action:'Prendre rendez-vous',contact:'',source:'demo'});
   function restore(id){
     if(!key(id))return null;
     try{const item=JSON.parse(sessionStorage.getItem(prefix+id)||'null');if(item?.schema!=='vv.coiffure.fiche/1'||!(item.until>Date.now()))return null;return normalize(item.answers);}catch{return null;}
