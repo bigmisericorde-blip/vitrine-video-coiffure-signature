@@ -1,5 +1,5 @@
-import {MUSIC_IDS} from '../texte/modele-visuel.mjs';
-import {RenderFault,validId} from './contract.mjs?v=voix-1';
+import {MUSIC_IDS} from '../texte/modele-visuel.mjs?v=t2-fiche-visible-3';
+import {RenderFault,validId} from './contract.mjs?v=t2-fiche-visible-3';
 
 // Une réservation à la fois par origine et catalogue, comme dans l’orchestrateur de référence.
 // Une erreur garde la piste du job ; seul un résultat validé change le dernier succès.

@@ -71,14 +71,28 @@
           "maxLength": 34
         },
         "geste": {
-          "type": "string",
-          "minLength": 4,
-          "maxLength": 34
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 34
+            }
+          ]
         },
         "preuve": {
-          "type": "string",
-          "minLength": 4,
-          "maxLength": 36
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 36
+            }
+          ]
         },
         "accroche": {
           "anyOf": [
@@ -93,16 +107,9 @@
           ]
         },
         "salon": {
-          "anyOf": [
-            {
-              "const": ""
-            },
-            {
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 32
-            }
-          ]
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 32
         },
         "ville": {
           "anyOf": [
@@ -143,6 +150,10 @@
             "fixe",
             "minimum"
           ]
+        },
+        "numero": {
+          "type": "string",
+          "pattern": "^\\+[1-9]\\d{7,14}$"
         }
       },
       "required": [

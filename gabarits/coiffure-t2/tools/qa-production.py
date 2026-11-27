@@ -14,7 +14,7 @@ import re
 import subprocess
 import tempfile
 from threading import Thread
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 from PIL import Image, ImageChops
 from playwright.sync_api import expect, sync_playwright
 from preview import Site
@@ -75,7 +75,7 @@ def check_pixels(page,base,mp4,answers,variant,keys,onglerie=False):
       const [res,model,paint]=await Promise.all(['assets/engine/resources.mjs','assets/texte/modele-visuel.mjs','assets/texte/lettrage.mjs'].map(p=>import(base+'/'+p)));
       const core=await res.loadCore();await paint.lettrageFonts(...await res.loadFonts(core));
       const habillage=onglerie?await res.readJson('formulaire/habillage-onglerie.json'):core.habillage;
-      const plan=model.makeVisualPlan(model.normalizeVisual(answers,core.questions,core.font),variant,habillage);
+      const plan=model.makeVisualPlan(model.normalizeVisual(answers,core.questions,core.font),variant,habillage,core.questions);
       const all=paint.prepareCaptions(plan);
       const c=document.createElement('canvas');c.width=720;c.height=1280;
       const ctx=c.getContext('2d'), result=[];
@@ -119,16 +119,17 @@ def screens(page,url,out):
 
 def fill(page,url,answers,framing='profil',start=True):
     page.goto(url+'/');wait_ready(page)
-    for key in ['service','geste','preuve','accroche','salon','ville','prix']:page.locator('#'+key).fill(answers.get(key,''))
-    if answers.get('prix'):page.locator('#prixMode').select_option(answers.get('prixMode','fixe'))
-    page.locator('#canal').select_option(answers.get('canal','aucun'))
+    page.locator('#metier').select_option('coiffure')
+    for key in ['salon','service','outil','ville','prix']:
+        page.locator('#'+key).fill(answers.get(key,''))
     if answers.get('canal','aucun')!='aucun':
-        page.locator('#contact').fill(answers['contact']);page.locator('#contactConfirme').set_checked(answers.get('contactConfirme',False))
+        page.locator('#contact').fill(answers['contact']);page.locator('#canal').select_option(answers['canal'])
+        page.locator('#contactConfirme').set_checked(answers.get('contactConfirme',False))
     page.locator('#framing').select_option(framing);page.locator('#checkedCase').check()
     assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
     if start:
         page.locator('#startTest').click();page.wait_for_url('**/simulation.html?fiche=*');wait_ready(page)
-        assert re.fullmatch('fiche=[a-f0-9]{32}',urlparse(page.url).query)
+        params=parse_qs(urlparse(page.url).query);assert re.fullmatch('[a-f0-9]{32}',params['fiche'][0]) and params.get('v')==['t2-fiche-visible-3']
 
 def ready_take(page):
     expect(page.locator('#app')).to_have_attribute('data-state','B');expect(page.locator('#cam')).to_be_visible()
@@ -232,7 +233,7 @@ def main():
             else:external.append(u);route.abort()
         ctx.route('**/*',gate);page.on('pageerror',lambda e:errors.append(str(e)))
         qa={'revision':'2.0.3-rc.1','chromium':b.version,'viewport':[390,820],'physical_device_tested':False}
-        clips=ROOT/'fixtures/media';ex1=dict(EXAMPLES[0]['answers']);ex2=dict(EXAMPLES[1]['answers'],canal='telephone',contact='+2290100000000',contactConfirme=True)
+        clips=ROOT/'fixtures/media';ex1=dict(EXAMPLES[0]['answers'],geste='',preuve='',accroche='');ex2=dict(EXAMPLES[1]['answers'],geste='',preuve='',accroche='',prixMode='minimum',canal='telephone',contact='+2290100000000',numero='+2290100000000',contactConfirme=True)
         if options.local_rushs:
             fill(page,url,ex1);captures(page,options.local_rushs)
             qa['local_private_review']=download(page,out/'COIFFURE-T2-R04-EXPORT-SANS-VOIX.mp4',4,['Tresses en carrés'],True)
@@ -250,12 +251,12 @@ def main():
             page.locator('#montageRetry').click()
             p4=out/'Recette-quatre-prises.mp4';q4=download(page,p4,4,['Tresses en carrés'],True)
             after=current_rotation(page);assert after['recent'][0][0]==bad['pending']['id'] and after['last']==q4['variant']==bad['pending']['variant']
-            q4['pixels']=check_pixels(page,url,p4,ex1,q4['variant'],['gesture','proof','service'])
+            q4['pixels']=check_pixels(page,url,p4,ex1,q4['variant'],['service'])
             qa['four_imports']=q4;qa['audio_failure_retry_same_job']=True;qa['source_audio_reviewed_not_exported']=True;print('4 imports, relance, musique et pixels associés à la fiche OK',flush=True)
             fill(page,url,ex2,'detail');captures(page,clips,reuse=True)
             p3=out/'Recette-trois-prises.mp4';q3=download(page,p3,3,[ex2['contact'],ex2['salon'],ex2['service']]);assert q3['variant']!=q4['variant']
             expect(page.locator('#resultContact')).to_have_attribute('href','tel:+2290100000000')
-            q3['pixels']=check_pixels(page,url,p3,ex2,q3['variant'],['gesture','proof','service','signature','price']);qa['three_imports']=q3
+            q3['pixels']=check_pixels(page,url,p3,ex2,q3['variant'],['service','signature','price','number']);qa['three_imports']=q3
             print('3 imports avec relecture du détail, nouveau fond, tarif et signature incrustés OK',flush=True)
             history=current_rotation(page)
             page.goto(url+'/');wait_ready(page);page.locator('#sample').click();expect(page.locator('#source')).to_have_value('demo');page.locator('#startTest').click();wait_ready(page)

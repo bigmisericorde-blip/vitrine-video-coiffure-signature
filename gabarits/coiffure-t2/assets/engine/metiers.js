@@ -60,11 +60,9 @@
   function scenes(base,metier,version){
     const profile=get(metier);
     return base.map((s,i)=>{
-      const [consigne,avoid,question_relecture,exemple]=guides[i];
-      const a_filmer=[profile.aFilmer[i],i===0||i===3?'Garde le sujet au milieu et un peu de place en bas pour le texte.':'Garde le geste ou le détail au milieu de l’image.'];
-      if(version==='t2'&&i===1)a_filmer.push('Si tu veux réutiliser ce plan comme détail, garde le détail net jusqu’à la fin.');
-      if(version==='t2'&&i===3)a_filmer.push('Montre le fini dès le début de la prise et jusqu’au bout : il ouvre aussi le film.');
-      return {...s,titre:titles[i].toLocaleUpperCase('fr'),role:titles[i],consigne,a_filmer,a_eviter:[avoid],question_relecture,exemple};
+      const a_filmer=[...s.a_filmer];
+      if(i>0)a_filmer.unshift(profile.aFilmer[i]);
+      return {...s,role:s.titre,consigne:s.consigne,a_filmer,a_eviter:s.a_eviter,question_relecture:s.question_relecture,exemple:s.exemple};
     });
   }
   function populate(select,selected,{empty=false}={}){

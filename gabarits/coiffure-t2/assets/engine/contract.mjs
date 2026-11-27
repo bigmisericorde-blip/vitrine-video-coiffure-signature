@@ -1,5 +1,5 @@
-import './metiers.js';
-import {normalizeVisual,visualAnswers,MUSIC_IDS} from '../texte/modele-visuel.mjs';
+import './metiers.js?v=t2-fiche-visible-3';
+import {normalizeVisual,visualAnswers,MUSIC_IDS} from '../texte/modele-visuel.mjs?v=t2-fiche-visible-3';
 
 export const JOB='vv.coiffure.render-job/1', RESULT='vv.coiffure.render-result/1', ERROR='vv.coiffure.render-error/1';
 export const knownSlots=Object.freeze(['S1','S2','S3','S4']);
@@ -56,7 +56,7 @@ export function validateJob(job,core){
   demand(Array.isArray(job.slots)&&job.slots.length===slots.length&&job.slots.every((s,i)=>s===slots[i]));
   demand(keys(job.music,['variant','track_id','catalogue_version'])&&MUSIC_IDS.includes(job.music.variant)&&job.music.catalogue_version===core.music.version);
   const track=core.music.tracks.find(x=>x.id===job.music.variant&&x.track_id===job.music.track_id);demand(track);
-  demand(keys(job.answers,['service','geste','preuve','accroche','salon','ville','prix','prixMode','canal'])&&Object.values(job.answers).every(x=>typeof x==='string'));
+  demand(keys(job.answers,['service','geste','preuve','accroche','salon','ville','prix','prixMode','canal',...(own(job.answers,'numero')?['numero']:[])])&&Object.values(job.answers).every(x=>typeof x==='string'));
   let fields;try{fields=normalizeVisual(job.answers,core.questions,core.font);}catch{throw new RenderFault('INVALID_JOB');}
   demand(Object.entries(visualAnswers(fields)).every(([k,v])=>job.answers[k]===v));
   return {fields,track,reuse,slots};

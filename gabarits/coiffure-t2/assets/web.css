@@ -20,3 +20,5 @@
 
 /* Fiche R04 intégrée : le masquage des champs conditionnels est aussi respecté sur mobile. */
 [hidden]{display:none!important}.fiche-group{min-width:0;display:grid;gap:9px}.fiche-group+.fiche-group{border-top:1px solid var(--border);padding-top:13px}.fiche-group .kicker{margin:0 0 3px}.fiche-group :is(#fieldsProof,#fieldsOffer,#conditions){display:grid;gap:11px}.fiche-group #conditions:empty{display:none}.fiche-group .check{margin-top:3px}#formAlert:empty{display:none}#formAlert{color:#ffcfad}
+
+.fiche-group #commercialFields{display:grid;gap:14px}

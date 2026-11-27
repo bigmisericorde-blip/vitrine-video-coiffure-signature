@@ -1,40 +1,168 @@
 {
+  "$schema": "../schemas/questions.schema.json",
   "schema": "vv.coiffure.questions/1",
   "revision": "r04-texte-02",
   "language": "fr",
   "fields": [
     {
+      "id": "salon",
+      "group": "offre",
+      "question": "Comment s’appelle ton activité ?",
+      "hint": "Obligatoire. Exemple fictif : Beauté Awa.",
+      "required": true,
+      "min": 2,
+      "max": 32,
+      "example": "Beauté Awa",
+      "display": "Signature de fin",
+      "render_targets": [
+        "signature.name"
+      ]
+    },
+    {
       "id": "service",
       "group": "preuve",
-      "question": "Quelle prestation veux-tu montrer ?",
-      "hint": "Écris le nom tel que ta clientèle le demanderait.",
+      "question": "Quel service veux-tu présenter ?",
+      "hint": "Obligatoire. Exemple : une pose de vernis.",
       "required": true,
       "min": 2,
       "max": 34,
-      "example": "Tresses en carrés",
-      "display": "Révélation · nom de la prestation"
+      "example": "Pose de vernis",
+      "display": "Révélation · nom de la prestation",
+      "render_targets": [
+        "reveal.service"
+      ]
     },
+    {
+      "id": "outil",
+      "group": "geste",
+      "question": "Qu’utilises-tu pour faire ce service ?",
+      "hint": "Facultatif. Exemple : un pinceau, un peigne ou tes mains.",
+      "required": false,
+      "min": 0,
+      "max": 60,
+      "example": "Un pinceau",
+      "render_targets": [],
+      "guide_targets": [
+        "S2"
+      ],
+      "display": "Consigne de la prise du geste ; ne s’affiche pas dans la vidéo."
+    },
+    {
+      "id": "ville",
+      "group": "offre",
+      "question": "Dans quelle ville travailles-tu ?",
+      "hint": "Facultatif. Exemple : Cotonou.",
+      "required": false,
+      "min": 2,
+      "max": 32,
+      "example": "Cotonou",
+      "display": "Signature de fin · lieu",
+      "render_targets": [
+        "signature.city"
+      ]
+    },
+    {
+      "id": "contact",
+      "group": "offre",
+      "question": "Quel est ton numéro WhatsApp ou téléphone ?",
+      "required": false,
+      "min": 0,
+      "max": 30,
+      "example": "+229 01 00 00 00 00",
+      "hint": "Facultatif. Ajoute l’indicatif international. Numéro d’exemple fictif.",
+      "render_targets": [
+        "number"
+      ],
+      "type": "tel"
+    },
+    {
+      "id": "prix",
+      "group": "offre",
+      "question": "À partir de quel prix proposes-tu ce service ?",
+      "hint": "Facultatif. Montant en FCFA, sans inventer de prix.",
+      "required": false,
+      "min": 1,
+      "max": 18,
+      "example": "2 500",
+      "display": "Signature de fin · tarif minimum confirmé",
+      "render_targets": [
+        "price"
+      ]
+    }
+  ],
+  "conditional": [
+    {
+      "id": "canal",
+      "condition": "contact non vide en mode client",
+      "required": true,
+      "choices": [
+        "telephone",
+        "whatsapp"
+      ]
+    },
+    {
+      "id": "contactConfirme",
+      "condition": "contact non vide en mode client",
+      "required": true,
+      "type": "boolean",
+      "label": "Cette destination est vérifiée et j’ai le droit de la communiquer."
+    },
+    {
+      "id": "prixMode",
+      "condition": "prix non vide",
+      "value": "minimum"
+    }
+  ],
+  "capteurs": [
+    {
+      "id": "S1",
+      "duration_s": 6,
+      "guide": "Montre le point de départ de la prestation.",
+      "review": "Le plan de départ correspond-il aux images ?"
+    },
+    {
+      "id": "S2",
+      "duration_s": 7,
+      "guide": "Filme un seul geste que l’on peut bien suivre.",
+      "review": "Voit-on bien le geste choisi ?"
+    },
+    {
+      "id": "S3",
+      "duration_s": 7,
+      "guide": "Montre de près le détail que tu veux faire remarquer.",
+      "review": "Le détail est-il net et bien visible ?"
+    },
+    {
+      "id": "S4",
+      "duration_s": 7,
+      "guide": "Montre le résultat sur la même personne et la même zone.",
+      "review": "Comprend-on le résultat sans texte ni musique ?"
+    }
+  ],
+  "engine_fields": [
     {
       "id": "geste",
       "group": "preuve",
       "question": "Quel geste voit-on vraiment à l’écran ?",
       "hint": "Écris une action courte qui correspond à tes images.",
-      "required": true,
+      "required": false,
       "min": 4,
       "max": 34,
       "example": "Séparer les mèches",
-      "display": "Plan de travail · deuxième ligne"
+      "display": "Plan de travail · deuxième ligne",
+      "purpose": "Règle interne de compatibilité du moteur ; non présentée comme question commerciale."
     },
     {
       "id": "preuve",
       "group": "preuve",
       "question": "Quel détail montre que le travail est réussi ?",
       "hint": "Choisis un détail que le gros plan permet de vérifier. Évite les promesses de tenue ou les superlatifs.",
-      "required": true,
+      "required": false,
       "min": 4,
       "max": 36,
       "example": "Des raies bien tracées",
-      "display": "Plan de détail · deuxième ligne"
+      "display": "Plan de détail · deuxième ligne",
+      "purpose": "Règle interne de compatibilité du moteur ; non présentée comme question commerciale."
     },
     {
       "id": "accroche",
@@ -45,40 +173,8 @@
       "min": 4,
       "max": 36,
       "example": "Un geste qui te ressemble",
-      "display": "Ouverture · mots en cascade"
-    },
-    {
-      "id": "salon",
-      "group": "offre",
-      "question": "Quel nom veux-tu signer à la fin ?",
-      "hint": "Ton nom professionnel ou celui du salon. Vide, pas de nom à l’écran.",
-      "required": false,
-      "min": 2,
-      "max": 32,
-      "example": "Atelier Démo",
-      "display": "Signature de fin"
-    },
-    {
-      "id": "ville",
-      "group": "offre",
-      "question": "Où peut-on te retrouver ?",
-      "hint": "Une ville ou un quartier que tu souhaites afficher. Pas besoin d’une adresse privée.",
-      "required": false,
-      "min": 2,
-      "max": 32,
-      "example": "Cotonou",
-      "display": "Signature de fin · lieu"
-    },
-    {
-      "id": "prix",
-      "group": "offre",
-      "question": "Veux-tu afficher un tarif ?",
-      "hint": "Facultatif, en FCFA. Laisse vide si le prix varie et que tu ne veux pas annoncer de minimum.",
-      "required": false,
-      "min": 1,
-      "max": 18,
-      "example": "3 500 FCFA",
-      "display": "Signature de fin · tarif exact ou minimum confirmé"
+      "display": "Ouverture · mots en cascade",
+      "purpose": "Règle interne de compatibilité du moteur ; non présentée comme question commerciale."
     },
     {
       "id": "canal",
@@ -104,58 +200,16 @@
           "Page de réservation"
         ]
       ],
-      "display": "Appel à l’action · dernière vue"
+      "display": "Appel à l’action · dernière vue",
+      "purpose": "Règle interne de compatibilité du moteur ; non présentée comme question commerciale."
     }
   ],
-  "conditional": [
-    {
-      "id": "prixMode",
-      "condition": "prix non vide",
-      "choices": [
-        "fixe",
-        "minimum"
-      ],
-      "default": "fixe"
-    },
-    {
-      "id": "contact",
-      "condition": "canal autre que aucun",
-      "required": true,
-      "max": 120,
-      "format": "international +… ou URL https sans identifiants"
-    },
-    {
-      "id": "contactConfirme",
-      "condition": "canal autre que aucun",
-      "required": true,
-      "type": "boolean",
-      "label": "Cette destination est vérifiée et j’ai le droit de la communiquer."
-    }
-  ],
-  "capteurs": [
-    {
-      "id": "S1",
-      "duration_s": 6,
-      "guide": "Filme la même personne avant de commencer. Laisse de la place autour de la tête.",
-      "review": "Voit-on les cheveux avant le premier geste ?"
-    },
-    {
-      "id": "S2",
-      "duration_s": 7,
-      "guide": "Montre ton geste sans quitter les doigts ni la partie travaillée.",
-      "review": "Voit-on le geste que tu as écrit dans ta fiche ?"
-    },
-    {
-      "id": "S3",
-      "duration_s": 7,
-      "guide": "Rapproche-toi du détail promis. Avec trois prises, réutilise S2 seulement si le détail s’y voit bien.",
-      "review": "Le détail est-il net ? Sinon, refais cette prise."
-    },
-    {
-      "id": "S4",
-      "duration_s": 7,
-      "guide": "Propose un tour lent du fini de la même personne. À la fin, laisse de l’air en bas du cadre.",
-      "review": "Le résultat se comprend-il sans texte ni musique ?"
-    }
-  ]
+  "flow_contract": {
+    "guide": "capture/guide.json",
+    "plan": "ingenierie/plan.json",
+    "engine": "assets/render.worker.mjs",
+    "number_of_scenes": 4,
+    "number_of_capture_states": 12,
+    "note": "Les six questions sont générales beauté. L’outil éventuel accompagne la prise du geste, sans être envoyé au moteur vidéo ; nom, service, ville, numéro confirmé et prix alimentent le montage."
+  }
 }

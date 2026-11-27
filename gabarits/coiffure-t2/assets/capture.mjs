@@ -1,11 +1,11 @@
-import {loadCore,resourceURL,loadBed} from './engine/resources.mjs';
-import {restoreFiche,href,sceneText,contactAction} from './engine/fiche.mjs?v=voix-1';
-import {createJob,newId,validateResult,validError,RenderFault} from './engine/contract.mjs?v=voix-1';
-import {rotate,releaseReservation} from './engine/rotation.mjs?v=voix-1';
+import {loadCore,resourceURL,loadBed} from './engine/resources.mjs?v=t2-fiche-visible-3';
+import {restoreFiche,href,sceneText,contactAction} from './engine/fiche.mjs?v=t2-fiche-visible-3';
+import {createJob,newId,validateResult,validError,RenderFault} from './engine/contract.mjs?v=t2-fiche-visible-3';
+import {rotate,releaseReservation} from './engine/rotation.mjs?v=t2-fiche-visible-3';
 // Le lecteur média n’est téléchargé que pour de vraies prises ou un test, pas pour la galerie.
 const inputs=['S1','S2','S3','S4'];
-const inspect=(...args)=>import('./media.mjs').then(m=>m.inspect(...args));
-const demoBlob=(...args)=>import('./media.mjs').then(m=>m.demoBlob(...args));
+const inspect=(...args)=>import('./media.mjs?v=t2-fiche-visible-3').then(m=>m.inspect(...args));
+const demoBlob=(...args)=>import('./media.mjs?v=t2-fiche-visible-3').then(m=>m.demoBlob(...args));
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search), ticket=params.get('fiche');
 const q=Number(params.get('ecran'));
@@ -61,7 +61,7 @@ function updateScroll(){
   const s=$('sheetBody');$('scrollHint').hidden=state!=='A'||s.scrollHeight-s.clientHeight<=10||s.scrollTop+s.clientHeight>=s.scrollHeight-14;
 }
 function describeContext(){
-  const s=current(), hint=sceneText(job,idx);
+  const s=current(), hint=sceneText(job,idx,CORE);
   $('sceneCounter').textContent=`SCÈNE ${s.n}/4`;
   $('dots').replaceChildren(...scenes.map(x=>{const i=document.createElement('i');i.classList.toggle('on',x.n<=s.n);return i;}));
   $('durationLabel').textContent=s.secondes+' secondes';$('sceneTitle').textContent=s.titre;
@@ -237,7 +237,7 @@ function showResult(out){
   $('resultEdit').href=href('index.html',ticket);state='ad';
   window.scrollTo(0,0);
 }
-const renderURL=()=>{const url=resourceURL(CORE.template.paths.worker);url.searchParams.set('v','voix-1');return url;};
+const renderURL=()=>{const url=resourceURL(CORE.template.paths.worker);url.searchParams.set('v','t2-fiche-visible-3');return url;};
 function invalidateRender(){
   activeRun?.abort();activeRun=null;
   const id=renderId;renderId=null;
@@ -350,7 +350,7 @@ function init(){
   $('cancelCapture').onclick=$('mediaBack').onclick=()=>{drop(current());showGuide();};
   $('toggleTakeAudio').onclick=()=>{replay.muted=!replay.muted;$('toggleTakeAudio').textContent=replay.muted?'Écouter':'Couper le son';replay.play().catch(()=>{});};
   $('redo').onclick=()=>{if(preview)return;drop(current());showGuide();};
-  $('next').onclick=()=>{if(preview||state!=='C'||$('next').disabled||!takes.has(current().id))return;accepted.add(current().id);if(idx<3)showGuide(idx+1);else showVoiceChoice();};
+  $('next').onclick=()=>{if(preview||state!=='C'||$('next').disabled||!takes.has(current().id))return;accepted.add(current().id);const next=DATA.screens[idx*3+2].next_screen;if(next==='COIFFURE-T2.VOICE_CHOICE'){if(accepted.size===4)showVoiceChoice();}else{const target=DATA.screens.find(x=>x.id===next);if(!target||target.state!=='A')throw Error('Navigation des prises invalide.');showGuide((target.order-1)/3);}};
   $('voiceFile').onchange=()=>setVoice($('voiceFile').files[0]||null);
   $('voiceClear').onclick=()=>{if(!voicePending){$('voiceFile').value='';setVoice(null);}};
   $('voiceContinue').onclick=()=>{if(!voicePending)encode();};

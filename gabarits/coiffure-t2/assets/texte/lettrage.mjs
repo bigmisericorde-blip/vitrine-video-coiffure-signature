@@ -22,6 +22,8 @@ const SLOTS={
   upper:{x:74,y:1019,s:68,max:564,maxh:77,rise:38},
   lower:{x:111,y:1112,s:62,max:526,maxh:100,rise:31,wrap:true},
   close:{x:74,y:1053,s:73,max:564,maxh:80,rise:40},
+  closeWithNumber:{x:74,y:1000,s:68,max:564,maxh:76,rise:40},
+  credit0:{x:78,y:1112,s:30,max:525,maxh:28,rise:12},
   credit1:{x:78,y:1147,s:31,max:525,maxh:30,rise:13},
   credit2:{x:78,y:1186,s:32,max:525,maxh:30,rise:12},
 };

@@ -1,10 +1,11 @@
-import {loadCore} from './engine/resources.mjs';
-import {href,restoreFiche} from './engine/fiche.mjs?v=voix-1';
+import {loadCore} from './engine/resources.mjs?v=t2-fiche-visible-3';
+import {href,restoreFiche} from './engine/fiche.mjs?v=t2-fiche-visible-3';
 const $=id=>document.getElementById(id), nav=$('screenList'), select=$('screenSelect');
 const entries=[],ticket=new URLSearchParams(location.search).get('fiche');
-const names=['Consigne','Enregistrement','Relecture'];
+let names=[];
 async function init(){
   const core=await loadCore(),guide=core.guide,job=restoreFiche(ticket,core);
+  names=guide.screens.slice(0,3).map(x=>x.label);
   const metier=job?.metier||new URLSearchParams(location.search).get('metier')||'manucure';
   const scenes=globalThis.VVBeaute.scenes(guide.scenes,metier,'t2');
   if(ticket){$('galleryCase').hidden=false;$('galleryCase').textContent=job?'Ta fiche est disponible dans cet onglet. La galerie présente des images de démonstration.':'La fiche n’est plus dans cet onglet. Voici les écrans de recette.';}

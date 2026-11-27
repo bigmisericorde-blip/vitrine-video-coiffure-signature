@@ -1,0 +1,110 @@
+{
+  "revision": "2.0.3-rc.1",
+  "chromium": "159.0.8154.6",
+  "viewport": [
+    390,
+    820
+  ],
+  "physical_device_tested": false,
+  "screens": 12,
+  "four_imports": {
+    "file": "Recette-quatre-prises.mp4",
+    "bytes": 20114238,
+    "sha256": "8b1e12ba2b43f00d46076d5aae20642c4189f837fd0c3c2fc1843f29791f307c",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "B",
+    "audio_packet_sha256": "7e8969733ea0b4afa5d00ceee5ea4a61354ee6d639656072269966de68b078e3",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true,
+    "browser_audio_decoded": true,
+    "pixels": {
+      "service": {
+        "frame": 621,
+        "expected_text": "Tresses en carrés",
+        "light_pixels_matching": 1.0
+      }
+    }
+  },
+  "audio_failure_retry_same_job": true,
+  "source_audio_reviewed_not_exported": true,
+  "three_imports": {
+    "file": "Recette-trois-prises.mp4",
+    "bytes": 19975945,
+    "sha256": "741ec463ed550ef20f2843bc8a8e1829d479752ba209c281122504fb28bc01ec",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "A",
+    "audio_packet_sha256": "cabfdb08041eae7625bfff023aecc2ffd9f783f2e9857addf253da5dcaa320d3",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true,
+    "pixels": {
+      "service": {
+        "frame": 617,
+        "expected_text": "Dégradé bas",
+        "light_pixels_matching": 1.0
+      },
+      "signature": {
+        "frame": 846,
+        "expected_text": "Atelier Démo · Cotonou",
+        "light_pixels_matching": 1.0
+      },
+      "price": {
+        "frame": 846,
+        "expected_text": "À partir de 3 500 FCFA",
+        "light_pixels_matching": 1.0
+      },
+      "number": {
+        "frame": 846,
+        "expected_text": "+2290100000000",
+        "light_pixels_matching": 1.0
+      }
+    }
+  },
+  "technical_fixture": {
+    "file": "Recette-mires.mp4",
+    "bytes": 19582414,
+    "sha256": "01fdb6c0d898a6b8bbdc1ca5caad4d1d98343b98fdce505012e00f01ae4ae4f4",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "A",
+    "audio_packet_sha256": "cabfdb08041eae7625bfff023aecc2ffd9f783f2e9857addf253da5dcaa320d3",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true
+  },
+  "fixture_did_not_advance_rotation": true,
+  "camera_simulated": {
+    "device": "Chromium / mire factice 360x640",
+    "recorded_slot": "S1",
+    "replay_seconds": 6.1663,
+    "stream_released": true
+  },
+  "concurrent_local_rotation": {
+    "parallel_tabs": 2,
+    "variants": [
+      "A",
+      "B"
+    ],
+    "last_is_second": true
+  },
+  "external_requests": 0,
+  "posts": 0,
+  "errors": 0,
+  "scope": "Recette sur mires, six questions ; les MP4 de recette ne sont pas inclus.",
+  "optional_voice": "Contrôlée séparément par parcours navigateur ; cette recette intégrale est sans voix."
+}

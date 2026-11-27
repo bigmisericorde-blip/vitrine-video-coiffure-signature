@@ -8,10 +8,10 @@
 
 1. Depuis le dossier du gabarit, lancer `python tools/preview.py --host 127.0.0.1 --port 8092`.
 2. Dans Chrome ou Edge récent, ouvrir `http://127.0.0.1:8092/` : remplir la fiche ou choisir **Charger la fiche d’exemple** pour tester avec les quatre mires incluses. Les mires sont graphiques et ne montrent aucune prestation réelle.
-3. Valider l’**avant**, le **geste**, le **détail** et le **résultat**. Avec trois vidéos, reprendre S2 pour S3 seulement si le détail recadré est lisible à la relecture. Le micro est facultatif ; le son original est écoutable en relecture, pas copié dans le film de production.
+3. Valider le **départ**, le **geste**, le **détail** et le **résultat**. Une prise ne représente un avant que si elle précède réellement le travail. Avec trois vidéos, reprendre S2 pour S3 seulement si le détail recadré est lisible à la relecture. Le micro est facultatif ; le son original est écoutable en relecture, pas copié dans le film de production.
 4. Le bouton **Télécharger le MP4** livre le même fichier que le lecteur : 720 × 1280, 30 s, 900 images, H.264 + AAC-LC 48 kHz stéréo. Une musique et, seulement si le client l’importe, une voix personnelle mixée. Télécharger avant de quitter l’onglet : les prises ne sont pas enregistrées ailleurs.
 
-Le prix, l’accroche, le nom et le lieu sont facultatifs. La consigne de réservation peut paraître à l’image, **pas le numéro ni le lien de réservation**. Le lien de contact vérifié par le commerçant reste à côté du lecteur.
+La fiche comporte six questions générales : nom et service obligatoires ; outil utilisé, ville, numéro et prix de départ facultatifs. La réponse sur l’outil aide le guide du geste et n’est pas incrustée dans le film. Le numéro indiqué apparaît en fin de film et un lien de contact correspondant est proposé à côté du lecteur ; le tarif saisi est présenté « À partir de ». Les exemples sont fictifs. Les consignes de tournage sont séparées.
 
 ## Pour reprendre le travail
 
@@ -19,7 +19,7 @@ Le prix, l’accroche, le nom et le lieu sont facultatifs. La consigne de réser
 - [Douze écrans et règles de capture](docs/12-ecrans.md) · [Crédits et droits](CREDITS.md).
 - `config/template.json` est le canonique du candidat. L’étalon R04 approuvé et les prises de revue restent à part : leur empreinte de référence est conservée, leurs fichiers ne sont pas dans le lot. Le film d’onglerie validé est fourni séparément ; voir les crédits.
 
-Les résultats de recette figurent dans `conformance/`. Les mires ne sont pas des vidéos de clientèle ; les droits des images utilisées pour les aperçus séparés ne s’étendent pas automatiquement aux prises des utilisateurs.
+La nouvelle recette sur six questions figure dans `conformance/Recette-six-questions.json` ; les autres preuves de `conformance/` sont historiques et ne prouvent pas cette révision. Les mires ne sont pas des vidéos de clientèle ; les droits des images utilisées pour les aperçus séparés ne s’étendent pas automatiquement aux prises des utilisateurs.
 
 
 ## Deux finitions selon la prestation

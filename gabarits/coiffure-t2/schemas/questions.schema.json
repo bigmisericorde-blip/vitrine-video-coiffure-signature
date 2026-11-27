@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Questions commerciales T2 beauté",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "fields",
+    "engine_fields",
+    "capteurs",
+    "flow_contract"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vv.coiffure.questions/1"
+    },
+    "fields": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "question",
+          "required",
+          "min",
+          "max",
+          "render_targets"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "salon",
+              "service",
+              "outil",
+              "ville",
+              "contact",
+              "prix"
+            ]
+          },
+          "question": {
+            "type": "string",
+            "minLength": 8
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "min": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max": {
+            "type": "integer",
+            "maximum": 120
+          },
+          "render_targets": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "prefixItems": [
+        {
+          "properties": {
+            "id": {
+              "const": "salon"
+            },
+            "required": {
+              "const": true
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "service"
+            },
+            "required": {
+              "const": true
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "outil"
+            },
+            "required": {
+              "const": false
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "ville"
+            },
+            "required": {
+              "const": false
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "contact"
+            },
+            "required": {
+              "const": false
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "prix"
+            },
+            "required": {
+              "const": false
+            }
+          }
+        }
+      ]
+    },
+    "engine_fields": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "capteurs": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "flow_contract": {
+      "type": "object",
+      "required": [
+        "guide",
+        "plan",
+        "engine",
+        "number_of_scenes",
+        "number_of_capture_states"
+      ],
+      "properties": {
+        "guide": {
+          "const": "capture/guide.json"
+        },
+        "plan": {
+          "const": "ingenierie/plan.json"
+        },
+        "engine": {
+          "const": "assets/render.worker.mjs"
+        },
+        "number_of_scenes": {
+          "const": 4
+        },
+        "number_of_capture_states": {
+          "const": 12
+        }
+      }
+    }
+  }
+}

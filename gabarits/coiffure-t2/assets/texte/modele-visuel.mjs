@@ -37,17 +37,19 @@ export function normalizeVisual(raw,config,fontMeta){
   if(!raw||typeof raw!=='object'||Array.isArray(raw))throw Error('Fiche manquante.');
   const r={},glyphs=new Set(fontMeta.glyphs),signGlyphs=new Set(fontMeta.sans.glyphs);
   for(const id of INPUT_IDS){
-    const rule=config.fields.find(x=>x.id===id); const s=text(raw[id],rule.question).replace(/\u2011/gu,'-');
+    const rule=[...config.fields,...config.engine_fields].find(x=>x.id===id); const s=text(raw[id],rule.question).replace(/\u2011/gu,'-');
     if((!s&&rule.required)||(s&&(LENGTH(s)<rule.min||LENGTH(s)>rule.max)))throw Error(`${rule.question} ${rule.min} à ${rule.max} caractères.`);
     if(id==='accroche'&&s){const n=s.split(' ').length; if(n<2||n>6)throw Error('Accroche : choisis 2 à 6 mots.');}
     if(id!=='prix'&&Array.from(s).some(ch=>!(id==='salon'||id==='ville'?signGlyphs:glyphs).has(ch.codePointAt(0))))throw Error(`${rule.question} La police de revue ne peut pas écrire ce caractère.`);
     r[id]=s;
   }
-  const choix=config.fields.find(f=>f.id==='canal').options.map(x=>x[0]);
+  const choix=config.engine_fields.find(f=>f.id==='canal').options.map(x=>x[0]);
   const c=raw.canal??'aucun';if(!choix.includes(c))throw Error('Sélectionne un moyen de réservation.');
   if(r.prix&&raw.prixMode!==undefined&&!['fixe','minimum'].includes(raw.prixMode))throw Error('Choisis un tarif exact ou un minimum.');
   r.prixMode=r.prix&&raw.prixMode==='minimum'?'minimum':'fixe';
   r.tarif=price(r.prix,r.prixMode);r.canal=c;
+  r.numero=text(raw.numero,'Numéro');
+  if(r.numero && !/^\+[1-9]\d{7,14}$/.test(r.numero))throw Error('Numéro : format international invalide.');
   return Object.freeze(r);
 }
 export function normalize(raw,config,fontMeta){
@@ -57,6 +59,7 @@ export function normalize(raw,config,fontMeta){
     if(raw.contactConfirme!==true)throw Error('Confirme que la destination est vérifiée et que tu peux la communiquer.');
     r.contact=text(raw.contact,'Contact');if(!r.contact||LENGTH(r.contact)>120)throw Error('Indique la destination (120 caractères maximum).');
     r.destination=contactDestination(c,r.contact);r.contactConfirme=true;
+    if(c==='whatsapp'||c==='telephone')r.numero=r.contact.replace(/[ ().-]/g,'');
   }
   return Object.freeze(r);
 }
@@ -66,7 +69,12 @@ function splitHook(s){
   if(words.length===5)return [words.slice(0,2).join(' '),...words.slice(2)];
   return [words.slice(0,2).join(' '),words.slice(2,4).join(' '),...words.slice(4)];
 }
-export function makeVisualPlan(fields,id,config){
+export function makeVisualPlan(fields,id,config,questions){
+  // Les destinations commerciales proviennent du contrat, après normalisation ; l’outil guide la scène sans être incrusté.
+  if(!Array.isArray(questions?.fields))throw Error('Questions commerciales absentes du contrat.');
+  const binding=Object.fromEntries(questions.fields.flatMap(f=>f.render_targets.map(target=>[target,f.id])));
+  const visual={...fields,prix:fields.tarif,contact:fields.numero};
+  const get=target=>visual[binding[target]]||'';
   const v=config.variants[id],g=config.common;if(!v)throw Error('Son inconnu.');
   const b=v.beats, out=[];
   const put=(key,text,on,off,slot,role='sign')=>{if(text)out.push({key,text,on,off,slot,role});};
@@ -80,17 +88,21 @@ export function makeVisualPlan(fields,id,config){
   put('detail',v.detail,b.detail,g.detailEnd,'upper');
   put('proof',fields.preuve,b.proof,g.detailEnd,'lower');
   put('reveal',v.reveal,b.reveal,g.revealEnd,'upper');
-  put('service',fields.service,b.service,g.revealEnd,'lower');
+  put('service',get('reveal.service'),b.service,g.revealEnd,'lower');
   const closing=SHORT_ACTIONS[fields.canal]||v.closing;
-  const sig=[fields.salon,fields.ville].filter(Boolean).join(' · ');
-  put('closing',closing,b.closing,g.end,(sig||fields.tarif)?'close':'single');
-  put('signature',sig,b.signature,g.end,fields.tarif?'credit1':'credit2','info');
-  put('price',fields.tarif,b.signature,g.end,'credit2','info');
+  const sig=[get('signature.name'),get('signature.city')].filter(Boolean).join(' · ');
+  const numero=get('number'),tarif=get('price');
+  put('closing',closing,b.closing,g.end,numero?'closeWithNumber':(sig||tarif)?'close':'single');
+  put('signature',sig,b.signature,g.end,numero?'credit0':tarif?'credit1':'credit2','info');
+  put('price',tarif,b.signature,g.end,numero?'credit1':'credit2','info');
+  put('number',numero,b.signature,g.end,'credit2','info');
   for(const x of out){if(!Number.isInteger(x.on)||x.on<0||x.off>x.on+900||x.off>900||x.off<x.on+12)throw Error('Repère texte invalide.');}
   return {variant:id,revision:config.revision,captions:out,closing,animation:{...g.captionAnimation}};
 }
 export function visualAnswers(normalized){
-  return Object.fromEntries([...INPUT_IDS,'prixMode','canal'].map(id=>[id,normalized[id]]));
+  const out=Object.fromEntries([...INPUT_IDS,'prixMode','canal'].map(id=>[id,normalized[id]]));
+  if(normalized.numero)out.numero=normalized.numero;
+  return out;
 }
 
 export function soundPack(rows){
