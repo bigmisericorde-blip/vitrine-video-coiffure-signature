@@ -11,7 +11,7 @@
 3. Valider le **départ**, le **geste**, le **détail** et le **résultat**. Une prise ne représente un avant que si elle précède réellement le travail. Avec trois vidéos, reprendre S2 pour S3 seulement si le détail recadré est lisible à la relecture. Le micro est facultatif ; le son original est écoutable en relecture, pas copié dans le film de production.
 4. Le bouton **Télécharger le MP4** livre le même fichier que le lecteur : 720 × 1280, 30 s, 900 images, H.264 + AAC-LC 48 kHz stéréo. Une musique et, seulement si le client l’importe, une voix personnelle mixée. Télécharger avant de quitter l’onglet : les prises ne sont pas enregistrées ailleurs.
 
-La fiche commerciale comporte cinq questions : nom et prestation obligatoires ; ville, numéro et prix de départ facultatifs. Le numéro indiqué apparaît en fin de film et un lien de contact correspondant est proposé à côté du lecteur ; le tarif saisi est présenté « À partir de ». Les exemples sont fictifs. Les consignes de tournage sont séparées.
+La fiche comporte six questions générales : nom et service obligatoires ; outil utilisé, ville, numéro et prix de départ facultatifs. La réponse sur l’outil aide le guide du geste et n’est pas incrustée dans le film. Le numéro indiqué apparaît en fin de film et un lien de contact correspondant est proposé à côté du lecteur ; le tarif saisi est présenté « À partir de ». Les exemples sont fictifs. Les consignes de tournage sont séparées.
 
 ## Pour reprendre le travail
 

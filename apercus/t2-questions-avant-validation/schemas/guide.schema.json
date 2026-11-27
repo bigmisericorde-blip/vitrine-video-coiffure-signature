@@ -39,8 +39,18 @@
             "pattern": "^S[1-4]$"
           },
           "question_links": {
-            "const": [
-              "service"
+            "oneOf": [
+              {
+                "const": [
+                  "service"
+                ]
+              },
+              {
+                "const": [
+                  "service",
+                  "outil"
+                ]
+              }
             ]
           },
           "contexte": {

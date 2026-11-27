@@ -70,7 +70,7 @@ function splitHook(s){
   return [words.slice(0,2).join(' '),words.slice(2,4).join(' '),...words.slice(4)];
 }
 export function makeVisualPlan(fields,id,config,questions){
-  // Les destinations proviennent des cinq questions du contrat, après normalisation.
+  // Les destinations commerciales proviennent du contrat, après normalisation ; l’outil guide la scène sans être incrusté.
   if(!Array.isArray(questions?.fields))throw Error('Questions commerciales absentes du contrat.');
   const binding=Object.fromEntries(questions.fields.flatMap(f=>f.render_targets.map(target=>[target,f.id])));
   const visual={...fields,prix:fields.tarif,contact:fields.numero};

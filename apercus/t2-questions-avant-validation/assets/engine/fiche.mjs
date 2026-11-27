@@ -6,9 +6,14 @@ export function normalizeFiche(raw,core){
   if(!raw||!['client','demo'].includes(raw.source)||!Object.hasOwn(framing,raw.framing))throw Error('Choisis l’origine des prises et le cadrage du résultat.');
   // Une simulation n'utilise jamais de coordonnées, même si une autre fiche les avait.
   const fields=normalize(raw.source==='demo'?{...raw,canal:'aucun',contact:'',contactConfirme:false}:raw,core.questions,core.font);
+  const rule=core.questions.fields.find(f=>f.id==='outil');
+  const input=raw.outil??'';
+  if(typeof input!=='string'||/[\p{Cc}\u202A-\u202E\u2066-\u2069<>]/u.test(input))throw Error('Indique simplement ce que tu utilises, sans caractères de contrôle.');
+  const outil=input.normalize('NFC').replace(/\s+/gu,' ').trim();
+  if(Array.from(outil).length>rule.max)throw Error(`La réponse sur ce que tu utilises doit contenir ${rule.max} caractères maximum.`);
   const metier=raw.metier||'coiffure';
   if(!globalThis.VVBeaute.profiles.some(p=>p.id===metier))throw Error('Choisis une prestation connue.');
-  return Object.freeze({...fields,metier,source:raw.source,framing:raw.framing});
+  return Object.freeze({...fields,outil,metier,source:raw.source,framing:raw.framing});
 }
 export function restoreFiche(id,core){
   if(!validId(id))return null;
@@ -19,7 +24,7 @@ export function restoreFiche(id,core){
   }catch{return null;}
 }
 export function saveFiche(fields,core,previous){
-  const answers={...visualAnswers(fields),metier:fields.metier,source:fields.source,framing:fields.framing,contact:fields.contact,contactConfirme:fields.contactConfirme};
+  const answers={...visualAnswers(fields),outil:fields.outil,metier:fields.metier,source:fields.source,framing:fields.framing,contact:fields.contact,contactConfirme:fields.contactConfirme};
   const id=restoreFiche(previous,core)?previous:newId();
   try{
     for(let i=sessionStorage.length-1;i>=0;i--){const k=sessionStorage.key(i);if(k?.startsWith(prefix)&&!restoreFiche(k.slice(prefix.length),core))sessionStorage.removeItem(k);}
@@ -33,7 +38,9 @@ export function href(page,id,extra={}){
 }
 export function sceneText(fiche,n,core){
   if(!fiche)return '';
-  return core.guide.scenes[n].contexte.replace(/\{(service|framing)\}/g,(_,k)=>k==='service'?fiche.service:framing[fiche.framing]);
+  const scene=core.guide.scenes[n];
+  const context=scene.contexte.replace(/\{(service|framing)\}/g,(_,k)=>k==='service'?fiche.service:framing[fiche.framing]);
+  return fiche.outil&&scene.contexte_outil ? context+' · '+scene.contexte_outil.replace('{outil}',fiche.outil) : context;
 }
 export function contactAction(fiche){
   if(fiche?.source!=='client'||!fiche.destination||!fiche.contactConfirme)return null;

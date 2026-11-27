@@ -39,7 +39,7 @@ async function load(){
     &&font.sans.file==='../PlusJakartaSans-Variable.ttf');
   soundPack(music);
   assert(music.version===t.audio.catalogue_version&&music.audio_profile===t.audio_profile&&music.r04_base_sha256===t.base.approved_master_sha256);
-  assert(Array.isArray(questions.fields)&&questions.fields.map(f=>f.id).join(',')==='salon,service,ville,contact,prix'&&questions.fields.every((f,i)=>f.required===(i<2)&&typeof f.question==='string'&&Array.isArray(f.render_targets)&&f.render_targets.join(',')===['signature.name','reveal.service','signature.city','number','price'][i]));
+  assert(Array.isArray(questions.fields)&&questions.fields.map(f=>f.id).join(',')==='salon,service,outil,ville,contact,prix'&&questions.fields.every((f,i)=>f.required===(i<2)&&typeof f.question==='string'&&Array.isArray(f.render_targets)&&f.render_targets.join(',')===['signature.name','reveal.service','','signature.city','number','price'][i]));
   assert(Array.isArray(questions.engine_fields)&&questions.engine_fields.map(f=>f.id).join(',')==='geste,preuve,accroche,canal'&&questions.flow_contract?.guide===p.guide&&questions.flow_contract?.plan===p.plan&&questions.flow_contract?.engine===p.worker);
   assert(guide.schema==='vv.coiffure.capture/1'&&guide.id===t.template_id&&guide.scenes.length===4&&guide.screens.length===12&&guide.source_audio===t.capture.source_audio);
   for(const [i,screen] of guide.screens.entries()){
@@ -47,7 +47,7 @@ async function load(){
     assert(screen.order===i+1&&screen.slot===slot&&screen.state===state&&screen.id===`${t.template_id}.${slot}_${suffix}`&&typeof screen.label==='string'&&screen.next_screen===(i===11?`${t.template_id}.VOICE_CHOICE`:`${t.template_id}.S${Math.floor((i+1)/3)+1}_${['A_GUIDE','B_RECORDING','C_REVIEW'][(i+1)%3]}`)&&screen.retake_screen===(i%3===2?`${t.template_id}.${slot}_A_GUIDE`:null));
   }
   for(const [i,scene] of guide.scenes.entries()){
-    assert(scene.id===`S${i+1}`&&scene.secondes===t.capture.min_seconds[scene.id]&&scene.fixture_path===`fixtures/media/${scene.id}.mp4`&&scene.question_relecture===questions.capteurs[i].review&&scene.consigne===questions.capteurs[i].guide&&scene.question_links?.join(',')==='service'&&typeof scene.contexte==='string'&&scene.contexte.includes('{service}')&&Array.isArray(scene.a_filmer)&&Array.isArray(scene.a_eviter));
+    assert(scene.id===`S${i+1}`&&scene.secondes===t.capture.min_seconds[scene.id]&&scene.fixture_path===`fixtures/media/${scene.id}.mp4`&&scene.question_relecture===questions.capteurs[i].review&&scene.consigne===questions.capteurs[i].guide&&scene.question_links?.join(',')===(i===1?'service,outil':'service')&&(i!==1||scene.contexte_outil?.includes('{outil}'))&&typeof scene.contexte==='string'&&scene.contexte.includes('{service}')&&Array.isArray(scene.a_filmer)&&Array.isArray(scene.a_eviter));
   }
   return Object.freeze({template:t,questions,habillage,font,music,guide});
 }

@@ -45,8 +45,10 @@
       "exemple": "Voici le geste.",
       "contexte": "Prestation : {service} · Montre le geste en cours.",
       "question_links": [
-        "service"
-      ]
+        "service",
+        "outil"
+      ],
+      "contexte_outil": "Pendant ton travail, essaie de montrer : {outil}."
     },
     {
       "n": 3,

@@ -7,12 +7,12 @@
     {
       "id": "salon",
       "group": "offre",
-      "question": "Quel est le nom de ton salon ou de ton activité ?",
-      "hint": "Obligatoire. Exemple fictif : Atelier Beauté.",
+      "question": "Comment s’appelle ton activité ?",
+      "hint": "Obligatoire. Exemple fictif : Beauté Awa.",
       "required": true,
       "min": 2,
       "max": 32,
-      "example": "Atelier Beauté",
+      "example": "Beauté Awa",
       "display": "Signature de fin",
       "render_targets": [
         "signature.name"
@@ -21,8 +21,8 @@
     {
       "id": "service",
       "group": "preuve",
-      "question": "Quelle prestation veux-tu présenter dans ta vidéo ?",
-      "hint": "Obligatoire. Exemple : pose de vernis, soin du visage ou maquillage.",
+      "question": "Quel service veux-tu présenter ?",
+      "hint": "Obligatoire. Exemple : une pose de vernis.",
       "required": true,
       "min": 2,
       "max": 34,
@@ -33,9 +33,24 @@
       ]
     },
     {
+      "id": "outil",
+      "group": "geste",
+      "question": "Qu’utilises-tu pour faire ce service ?",
+      "hint": "Facultatif. Exemple : un pinceau, un peigne ou tes mains.",
+      "required": false,
+      "min": 0,
+      "max": 60,
+      "example": "Un pinceau",
+      "render_targets": [],
+      "guide_targets": [
+        "S2"
+      ],
+      "display": "Consigne de la prise du geste ; ne s’affiche pas dans la vidéo."
+    },
+    {
       "id": "ville",
       "group": "offre",
-      "question": "Dans quelle ville se trouve ton salon ?",
+      "question": "Dans quelle ville travailles-tu ?",
       "hint": "Facultatif. Exemple : Cotonou.",
       "required": false,
       "min": 2,
@@ -63,7 +78,7 @@
     {
       "id": "prix",
       "group": "offre",
-      "question": "À partir de quel prix proposes-tu cette prestation ?",
+      "question": "À partir de quel prix proposes-tu ce service ?",
       "hint": "Facultatif. Montant en FCFA, sans inventer de prix.",
       "required": false,
       "min": 1,
@@ -195,6 +210,6 @@
     "engine": "assets/render.worker.mjs",
     "number_of_scenes": 4,
     "number_of_capture_states": 12,
-    "note": "Les prises et le montage exploitent la prestation ; nom, ville, numéro confirmé et tarif concernent la signature. Les consignes ne sont pas de nouvelles questions."
+    "note": "Les six questions sont générales beauté. L’outil éventuel accompagne la prise du geste, sans être envoyé au moteur vidéo ; nom, service, ville, numéro confirmé et prix alimentent le montage."
   }
 }

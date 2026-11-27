@@ -25,8 +25,8 @@ print(json.dumps({'schemas':len(validators),'valid_fixtures':sum(map(len,fixture
 for schema_name, document in [('questions','formulaire/questions.json'),('guide','capture/guide.json')]:
     Draft202012Validator(load('schemas/'+schema_name+'.schema.json')).validate(load(document))
 q,g,t,plan=map(load,['formulaire/questions.json','capture/guide.json','config/template.json','ingenierie/plan.json'])
-assert [x['id'] for x in q['fields']]==['salon','service','ville','contact','prix']
-assert [x['required'] for x in q['fields']]==[True,True,False,False,False]
+assert [x['id'] for x in q['fields']]==['salon','service','outil','ville','contact','prix']
+assert [x['required'] for x in q['fields']]==[True,True,False,False,False,False]
 assert [x['secondes'] for x in g['scenes']]==[6,7,7,7]
 assert list(plan['scenes'])==[s['id'] for s in g['scenes']]
 assert all(plan['scenes'][s['id']]==s['secondes']*t['media']['fps'] for s in g['scenes'])

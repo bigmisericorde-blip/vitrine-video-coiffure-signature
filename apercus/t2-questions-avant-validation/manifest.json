@@ -7,7 +7,7 @@
   "audio_profile": "coiffure-en-etapes",
   "music_catalogue_version": "1.0.0",
   "approved_visual_reference_sha256": "42a9810b07729052ee5c82fe852b7f2e8e213d7e1b4d08f7a707584c2051d318",
-  "source_tree_sha256": "41845e62c8e76787ccb72556e52f3640f5a5d5b67cf12d8c5efb8d54227a4569",
+  "source_tree_sha256": "f4015ec8832622e1be3cc7fca00483b612027e3bb409f6a9166f474b8fe8f618",
   "submitted_commit": null,
   "source_directory_proposal": "gabarits/coiffure-t2/",
   "ota_deployed": false,
@@ -28,14 +28,14 @@
     },
     {
       "path": "INTEGRATION.md",
-      "bytes": 9845,
-      "sha256": "7e8812d400b8f1eb7ed48e45aa0c65ce987594546c1e04c8af04d1226c07d931",
+      "bytes": 9955,
+      "sha256": "af559029d541fbd461c413f6628507f69c8444c10bdf4450f8441327a63fa2a9",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "README.md",
-      "bytes": 3820,
-      "sha256": "eb419ab017aab27bb71002ab4b27c67a4d4e3b09ae4a4b6392752d9907f9f98b",
+      "bytes": 3921,
+      "sha256": "c9e5d1cbf0955a0536ce92a573b7102d8c7098bd613f1d0a4c502c8c684fa73e",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -112,8 +112,8 @@
     },
     {
       "path": "assets/engine/fiche.mjs",
-      "bytes": 2591,
-      "sha256": "08ad3d0db3f1843d0ef8e2ad0c46128f596759e27de621dc1fe6385d5d30014c",
+      "bytes": 3227,
+      "sha256": "32cb4ab0ab1cf4145b0035c6ae07cebf6c8bd5575c193dc4e8ec835003a5058e",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -130,8 +130,8 @@
     },
     {
       "path": "assets/engine/resources.mjs",
-      "bytes": 5271,
-      "sha256": "962d5f4d0e7de8792d86401d07157a861760c2c2cb929fe49f8614ce7d0df55f",
+      "bytes": 5356,
+      "sha256": "05ba805c8ded4b36e66e7cd97c3d5a28e890cf021bba588c3ea435eb097b2f9c",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -208,8 +208,8 @@
     },
     {
       "path": "assets/texte/modele-visuel.mjs",
-      "bytes": 7608,
-      "sha256": "4e8e889d28e7eb269008a7bfbeb09c3b4a5dc0f66064a6834c6d83c3077b4575",
+      "bytes": 7651,
+      "sha256": "ba51374d82a70c081976537221ddfa296553861f2c61928768370f0950f18e32",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -340,8 +340,8 @@
     },
     {
       "path": "capture/guide.json",
-      "bytes": 6400,
-      "sha256": "04cd4457598f9eb7b7a8bf9fea97cb937a74956b3253caea311bbc4727aaf636",
+      "bytes": 6494,
+      "sha256": "4633672a539d2ce17269542bf722a97a5add7eeeb9d7aadbb8dbc5dc4e16be2a",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -544,8 +544,8 @@
     },
     {
       "path": "formulaire/questions.json",
-      "bytes": 6026,
-      "sha256": "ec978b630122c3cc293eb406b430476a65224810ad011f3c3975288e25674709",
+      "bytes": 6426,
+      "sha256": "ac33d1d302b8f3d4461b2eda52ad8d15a51cbc486e1accb332ba32b267561334",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -592,14 +592,14 @@
     },
     {
       "path": "schemas/guide.schema.json",
-      "bytes": 2012,
-      "sha256": "d4e26e8ff50bc25d4d981be2eaebfb98897ef094b776852a7a8415899d436366",
+      "bytes": 2226,
+      "sha256": "726e92e33584dcd746b951f3e5e68a2e0c9d505595c0ecf4023916dc1f74e6d8",
       "role": "contrat_ou_outil"
     },
     {
       "path": "schemas/questions.schema.json",
-      "bytes": 3118,
-      "sha256": "d375612a980bf1fd23acd3c7a649d08c4e90a269fcad5b3a15198966445cfd5d",
+      "bytes": 3335,
+      "sha256": "1d55294554b1e0121a5886fc348d4658a1fe235bd4b785ec63e66db6736d4732",
       "role": "contrat_ou_outil"
     },
     {
@@ -676,8 +676,8 @@
     },
     {
       "path": "tools/verify-contracts.py",
-      "bytes": 2770,
-      "sha256": "304d3c7532c7cdd9a1bedd3d71d54c2fae48c49add3041c7586a8de82b58e303",
+      "bytes": 2784,
+      "sha256": "bbfda9b68f24ff33bc7cca6c960773f057ebb6ba3d67aede283e0ccf42f76695",
       "role": "contrat_ou_outil"
     }
   ]
