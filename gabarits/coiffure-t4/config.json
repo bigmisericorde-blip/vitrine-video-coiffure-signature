@@ -4,14 +4,14 @@
     "template_id": "BEAUTE-T4",
     "version": "0.1.0-web",
     "revision": "t4-projection-navigateur",
-    "portee": "Atelier navigateur T4 : expérimentation publiée, traitement local ; tests simulés, aucun appareil physique testé ; adaptation R2 et bornes de montage provisoires.",
+    "portee": "T4 navigateur : quatre prises de 2 secondes minimum à 6/13/8/7 secondes maximum ; film variable jusqu’à 34 secondes. Tests simulés. Les champs media.images et media.secondes indiquent le maximum, pas la durée fixe.",
     "audio_profile": "beaute-projection-instrumental",
     "media": {
       "largeur": 720,
       "hauteur": 1280,
       "fps": 30,
-      "images": 900,
-      "secondes": 30,
+      "images": 1020,
+      "secondes": 34,
       "codec": "h264",
       "audio": "AAC-LC stéréo 48000 Hz"
     },
@@ -48,23 +48,25 @@
       },
       "geste": {
         "max": 72,
-        "requis": true
+        "requis": false
       },
       "detail": {
         "max": 72,
-        "requis": true
+        "requis": false
       },
       "action": {
         "choix": {
-          "conseil": "Demandez conseil.",
-          "essai": "Demandez un essai.",
-          "commande": "Passez commande.",
-          "rendez_vous": "Prenez rendez-vous.",
-          "visite": "Passez nous voir.",
-          "devis": "Demandez un devis.",
-          "aucune": ""
+          "appeler": "M’appeler",
+          "ecrire": "M’écrire",
+          "rendez_vous": "Prendre rendez-vous",
+          "commande": "Commander",
+          "aucune": "",
+          "conseil": "Demander conseil",
+          "essai": "Demander un essai",
+          "visite": "Venir sur place",
+          "devis": "Demander un devis"
         },
-        "requis": true
+        "requis": false
       },
       "cible": {
         "max": 76,
@@ -72,7 +74,7 @@
       },
       "nom": {
         "max": 46,
-        "requis": false
+        "requis": true
       },
       "lieu": {
         "max": 42,
@@ -81,25 +83,11 @@
       "prix": {
         "max": 34,
         "requis": false
+      },
+      "telephone": {
+        "max": 30,
+        "requis": false
       }
-    },
-    "bornes_images": {
-      "decouvrir": [
-        0,
-        152
-      ],
-      "presenter": [
-        152,
-        521
-      ],
-      "detail": [
-        521,
-        727
-      ],
-      "inviter": [
-        727,
-        900
-      ]
     },
     "audio_modes": [
       "muet",
@@ -107,7 +95,7 @@
     ],
     "voix_client": {
       "facultative": true,
-      "duree_max_s": 30,
+      "duree_max_s": 34,
       "taille_max_octets": 20971520,
       "modes": [
         "musique_seule"
@@ -138,28 +126,28 @@
       "titre": "Amapiano",
       "artiste": "Elijah_K",
       "licence": "https://creativecommons.org/licenses/by/4.0/",
-      "credit": "« Amapiano » — Elijah_K · CC BY 4.0 · https://freemusicarchive.org/music/elijah-k/single/amapiano/ · https://creativecommons.org/licenses/by/4.0/. Extrait 17.299–47.299 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix."
+      "credit": "« Amapiano » — Elijah_K · CC BY 4.0 · https://freemusicarchive.org/music/elijah-k/single/amapiano/ · https://creativecommons.org/licenses/by/4.0/. Extrait 17.299–47.299 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix. Pour les films dépassant 25 s : boucle avec fondu enchaîné ; fondu final adapté à la durée du film."
     },
     {
       "id": "03",
       "titre": "Paradise Found",
       "artiste": "Kevin MacLeod",
       "licence": "https://creativecommons.org/licenses/by/4.0/",
-      "credit": "« Paradise Found » — Kevin MacLeod (incompetech.com) · CC BY 4.0 · https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000 · https://creativecommons.org/licenses/by/4.0/. Extrait 3.384–33.384 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix."
+      "credit": "« Paradise Found » — Kevin MacLeod (incompetech.com) · CC BY 4.0 · https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300000 · https://creativecommons.org/licenses/by/4.0/. Extrait 3.384–33.384 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix. Pour les films dépassant 25 s : boucle avec fondu enchaîné ; fondu final adapté à la durée du film."
     },
     {
       "id": "06",
       "titre": "Ocean",
       "artiste": "Lucien Kemper x Fachhochschule Dortmund",
       "licence": "https://creativecommons.org/licenses/by/4.0/",
-      "credit": "« Ocean » — Lucien Kemper x Fachhochschule Dortmund · CC BY 4.0 · https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/ · https://creativecommons.org/licenses/by/4.0/. Extrait 16.265–46.265 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix."
+      "credit": "« Ocean » — Lucien Kemper x Fachhochschule Dortmund · CC BY 4.0 · https://freemusicarchive.org/music/lucien-kemper/single/ocean-1/ · https://creativecommons.org/licenses/by/4.0/. Extrait 16.265–46.265 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix. Pour les films dépassant 25 s : boucle avec fondu enchaîné ; fondu final adapté à la durée du film."
     },
     {
       "id": "09",
       "titre": "Electron (Free Stems)",
       "artiste": "JMHBM",
       "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "credit": "« Electron (Free Stems) » — JMHBM · CC0 1.0 · https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/ · https://creativecommons.org/publicdomain/zero/1.0/. Extrait 7.611–37.611 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix."
+      "credit": "« Electron (Free Stems) » — JMHBM · CC0 1.0 · https://freemusicarchive.org/music/beat-mekanik/single/electron-free-stems/ · https://creativecommons.org/publicdomain/zero/1.0/. Extrait 7.611–37.611 s, niveau et fondus adaptés ; synchronisation au film, avec adaptation du niveau en présence de voix. Pour les films dépassant 25 s : boucle avec fondu enchaîné ; fondu final adapté à la durée du film."
     }
   ]
 }
