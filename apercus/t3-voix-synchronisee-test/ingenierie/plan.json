@@ -1,0 +1,136 @@
+{
+  "schema": "vv.t3.plan-documentaire/1",
+  "template_id": "COIFFURE-T3",
+  "statut": "essai local sans texte, non publié",
+  "source_moteur": "render.worker.mjs",
+  "images_par_seconde": 30,
+  "images": 900,
+  "secondes": 30,
+  "semantique_intervalles": "début inclus, fin exclue",
+  "prises_minimum_secondes": {
+    "S1": 8,
+    "S2": 10,
+    "S3": 10,
+    "S4": 8
+  },
+  "note": "Les quatre prises minimales totalisent 36 s ; le montage T3 habituel les découpe, réutilise et combine. La variante facultative voix des prises sélectionne les 6, 8, 8 et 8 premières secondes, dans cet ordre, pour produire 30 s.",
+  "segments": [
+    {
+      "de": 0,
+      "a": 34,
+      "sources": [
+        "S1"
+      ],
+      "role": "ouverture sur prise S1 sans texte"
+    },
+    {
+      "de": 34,
+      "a": 136,
+      "sources": [
+        "S1"
+      ],
+      "role": "présentation"
+    },
+    {
+      "de": 136,
+      "a": 260,
+      "sources": [
+        "S2"
+      ],
+      "role": "travail ou utilisation"
+    },
+    {
+      "de": 260,
+      "a": 343,
+      "sources": [
+        "S2",
+        "S4",
+        "S3"
+      ],
+      "role": "transition vers détail"
+    },
+    {
+      "de": 343,
+      "a": 430,
+      "sources": [
+        "S3"
+      ],
+      "role": "détail"
+    },
+    {
+      "de": 430,
+      "a": 526,
+      "sources": [
+        "S4"
+      ],
+      "role": "dernière vue"
+    },
+    {
+      "de": 526,
+      "a": 617,
+      "sources": [
+        "S3"
+      ],
+      "role": "détail"
+    },
+    {
+      "de": 617,
+      "a": 735,
+      "sources": [
+        "S1",
+        "S4"
+      ],
+      "role": "deux vues, sans étiquette avant/après"
+    },
+    {
+      "de": 735,
+      "a": 900,
+      "sources": [
+        "S4"
+      ],
+      "role": "fin sur prise S4 sans texte"
+    }
+  ],
+  "variante_voix_prises": [
+    {
+      "de": 0,
+      "a": 180,
+      "sources": [
+        "S1"
+      ],
+      "source_debut": 0,
+      "source_fin_exclue": 180,
+      "vitesse": 1
+    },
+    {
+      "de": 180,
+      "a": 420,
+      "sources": [
+        "S2"
+      ],
+      "source_debut": 0,
+      "source_fin_exclue": 240,
+      "vitesse": 1
+    },
+    {
+      "de": 420,
+      "a": 660,
+      "sources": [
+        "S3"
+      ],
+      "source_debut": 0,
+      "source_fin_exclue": 240,
+      "vitesse": 1
+    },
+    {
+      "de": 660,
+      "a": 900,
+      "sources": [
+        "S4"
+      ],
+      "source_debut": 0,
+      "source_fin_exclue": 240,
+      "vitesse": 1
+    }
+  ]
+}

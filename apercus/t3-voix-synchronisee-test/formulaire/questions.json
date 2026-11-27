@@ -1,0 +1,45 @@
+{
+  "version": "essai-local-1",
+  "template_id": "COIFFURE-T3",
+  "objectif": "Montrer une preuve visible et réelle du produit ou du service, sans promesse inventée.",
+  "questions": [
+    {
+      "id": "nom",
+      "libelle": "Comment s’appelle ton activité ?",
+      "obligatoire": true
+    },
+    {
+      "id": "service",
+      "libelle": "Quel produit ou service veux-tu présenter ?",
+      "obligatoire": true
+    },
+    {
+      "id": "outil",
+      "libelle": "Quel outil ou produit utilises-tu dans ton travail ?",
+      "obligatoire": false
+    },
+    {
+      "id": "lieu",
+      "libelle": "Dans quelle ville travailles-tu ?",
+      "obligatoire": false
+    },
+    {
+      "id": "cible",
+      "libelle": "Quel est ton numéro WhatsApp ou téléphone ?",
+      "obligatoire": false,
+      "condition": "confirmation si renseigné ; non affiché dans le film de cet essai"
+    },
+    {
+      "id": "prix",
+      "libelle": "À partir de quel prix proposes-tu ce produit ou service ?",
+      "obligatoire": false,
+      "condition": "monnaie fournie par le client ; non affiché dans le film de cet essai"
+    }
+  ],
+  "mode_moteur": {
+    "geste": "vide",
+    "detail": "vide",
+    "action": "aucune",
+    "outil": "guide uniquement"
+  }
+}
