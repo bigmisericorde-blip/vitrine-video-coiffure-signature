@@ -1,5 +1,5 @@
-import './metiers.js?v=t2-six-q2';
-import {normalizeVisual,visualAnswers,MUSIC_IDS} from '../texte/modele-visuel.mjs?v=t2-six-q2';
+import './metiers.js?v=t2-fiche-visible-3';
+import {normalizeVisual,visualAnswers,MUSIC_IDS} from '../texte/modele-visuel.mjs?v=t2-fiche-visible-3';
 
 export const JOB='vv.coiffure.render-job/1', RESULT='vv.coiffure.render-result/1', ERROR='vv.coiffure.render-error/1';
 export const knownSlots=Object.freeze(['S1','S2','S3','S4']);

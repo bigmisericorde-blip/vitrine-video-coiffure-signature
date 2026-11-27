@@ -1,30 +1,24 @@
-import {loadCore,readJson} from './engine/resources.mjs?v=t2-six-q2';
-import {framing} from './engine/contract.mjs?v=t2-six-q2';
-import {href,restoreFiche,saveFiche,normalizeFiche} from './engine/fiche.mjs?v=t2-six-q2';
+import {loadCore,readJson} from './engine/resources.mjs?v=t2-fiche-visible-3';
+import {framing} from './engine/contract.mjs?v=t2-fiche-visible-3';
+import {href,restoreFiche,saveFiche,normalizeFiche} from './engine/fiche.mjs?v=t2-fiche-visible-3';
 
 const $=id=>document.getElementById(id);
-const el=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
 const ticket=new URLSearchParams(location.search).get('fiche');
 async function init(){
   const core=await loadCore(), form=$('testForm');
   const {questions}=core, controls={}, metier=$('metier'), profiles=globalThis.VVBeaute;
   profiles.populate(metier,'coiffure');
-  const make=(field,parent)=>{
-    const row=el('div'), label=el('label',field.question);label.htmlFor=field.id;
-    const input=el(field.options?'select':'input');input.id=input.name=field.id;input.required=Boolean(field.required);
-    if(field.options){for(const [key,value] of field.options)input.add(new Option(value,key));}
-    else{input.type=field.type||'text'; if(field.max)input.maxLength=field.max; if(field.example)input.placeholder=`Ex. ${field.example}`;}
-    if(field.id==='prix')input.inputMode='numeric';
-    row.append(label,input);if(field.hint){const hint=el('small',field.hint);hint.id='hint-'+field.id;input.setAttribute('aria-describedby',hint.id);row.append(hint);}
-    controls[field.id]=input;parent.append(row);return row;
-  };
-  const byId=id=>questions.fields.find(f=>f.id===id);
-  const target=$('commercialFields');target.replaceChildren();
-  let channel;
+  // Les champs sont présents dans le HTML dès l’ouverture. Le JSON reste la
+  // source des libellés et des règles lorsque le parcours est prêt.
   for(const field of questions.fields){
-    make(field,target);
-    if(field.id==='contact')channel=make({id:'canal',question:'Utiliser ce numéro pour',options:[['telephone','Téléphone'],['whatsapp','WhatsApp']]},target);
+    const input=$(field.id),label=document.querySelector(`label[for="${field.id}"]`),hint=$('hint-'+field.id);
+    if(!input||!label||!hint)throw Error('La fiche et son contrat ne correspondent pas.');
+    label.textContent=field.question;hint.textContent=field.hint||'';
+    input.required=Boolean(field.required);input.maxLength=field.max;
+    input.placeholder=field.example?'Ex. '+field.example:'';
+    controls[field.id]=input;
   }
+  const channel=$('channelRow');controls.canal=$('canal');
   const check=$('contactConfirme');
   for(const [key,title] of Object.entries(framing))$('framing').add(new Option(title,key));
   const renderConditions=()=>{
@@ -42,7 +36,7 @@ async function init(){
     check.checked=a.contactConfirme===true;$('source').value=a.source||'client';$('framing').value=a.framing||'profil';
     renderConditions();
   };
-  const old=restoreFiche(ticket,core);profiles.populate(metier,old?.metier||'manucure');fill(old||{});
+  const old=restoreFiche(ticket,core);profiles.populate(metier,old?.metier||'manucure');if(old)fill(old);else renderConditions();
   const refreshProfile=()=>{
     const p=profiles.get(metier.value);
     controls.service.placeholder='Ex. '+p.services[0];
@@ -70,10 +64,10 @@ async function init(){
   });
   $('startTest').disabled=false;$('sample').disabled=false;
   if(old)$('gallery').href=href('ecrans.html',ticket,{metier:metier.value});
-  document.documentElement.dataset.ready='yes';
+  $('loadStatus').textContent='Les questions sont prêtes.';document.documentElement.dataset.ready='yes';
 }
 init().catch(()=>{
-  const msg='Les questions n’ont pas pu charger. Vérifie ta connexion, puis recharge la page.';
-  $('commercialFields').textContent=msg;$('formAlert').textContent=msg;
+  const msg='Les questions sont visibles, mais le parcours n’a pas pu démarrer. Vérifie ta connexion et recharge la page.';
+  $('loadStatus').textContent=msg;$('formAlert').textContent='';
   document.documentElement.dataset.ready='error';
 });

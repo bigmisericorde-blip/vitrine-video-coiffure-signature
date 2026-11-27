@@ -7,7 +7,7 @@
   "audio_profile": "coiffure-en-etapes",
   "music_catalogue_version": "1.0.0",
   "approved_visual_reference_sha256": "42a9810b07729052ee5c82fe852b7f2e8e213d7e1b4d08f7a707584c2051d318",
-  "source_tree_sha256": "af001b1151ca014ea36b90435d7c877b225e4289a5e2760c3ab3e836904473f4",
+  "source_tree_sha256": "f28b8cc7ee0640e8e0c74f409aba264b170915257b36ad5f82c546e32dcc0275",
   "submitted_commit": null,
   "source_directory_proposal": "gabarits/coiffure-t2/",
   "ota_deployed": false,
@@ -88,8 +88,8 @@
     },
     {
       "path": "assets/capture.mjs",
-      "bytes": 27178,
-      "sha256": "f02a85257452c9446920c78a7f143f2117d640d17a820f38581040f2ae368a5b",
+      "bytes": 27241,
+      "sha256": "7ba6767a566ea600d60331891d3664ec09644b273395b91234114c2a3434900b",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -100,20 +100,20 @@
     },
     {
       "path": "assets/ecrans-production.mjs",
-      "bytes": 3381,
-      "sha256": "6b179376377013aa0b562ea4afa7569ed033f9abc2775200d7dce24956bd6ee6",
+      "bytes": 3399,
+      "sha256": "ab6b585e0172cc5bc4c53a75e73bba60367b9a6f6761e7a9972ae4571c142960",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/contract.mjs",
-      "bytes": 6440,
-      "sha256": "35eb3f28607e310a81ac5ef90cce8cb9ec7092232650da5afc7ed7510beec218",
+      "bytes": 6458,
+      "sha256": "d4963a54ec028c2033cba252c5f1f0e472c69e5850bcff77e7e9f29f73aeb90a",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/fiche.mjs",
-      "bytes": 3253,
-      "sha256": "183aaf255eb745297d3127ebf61d05ac3d2d281a2974bda40567d091a5a3d0ca",
+      "bytes": 3280,
+      "sha256": "ec082e0aeb018adb398eb4d92a1171944ad071b661b35cc74e18b8c120b09be3",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -124,26 +124,26 @@
     },
     {
       "path": "assets/engine/music.mjs",
-      "bytes": 2467,
-      "sha256": "7b294597d69147118fe185b5a8f193398215d166489fb9eee81e11973b280893",
+      "bytes": 2485,
+      "sha256": "0f3c23f79c21664b328a0dbb305b0f322fd0e8ec838a30041f1fcc579eb6eca0",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/resources.mjs",
-      "bytes": 5368,
-      "sha256": "1a9ee31f14a0e0190297201db25a44bdaab2f0ec1e889eafcf0efde86f2b7882",
+      "bytes": 5377,
+      "sha256": "d831720c9fab8d8e5a625d2b99b490de30fbf55911c419be391bc1ee1dba62e1",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/engine/rotation.mjs",
-      "bytes": 3311,
-      "sha256": "82076f4686d4f393a6ce198fbb04617a97320f679d76d88ff446174396fa186f",
+      "bytes": 3329,
+      "sha256": "7dfdb895eb90f526a96afd95112c051e0a3279693fd3f7eb5b213e09158780cc",
       "role": "source_ressource_ou_documentation"
     },
     {
       "path": "assets/fiche-production.mjs",
-      "bytes": 4977,
-      "sha256": "dc70789fbc128a1b83aba20ec0753aae4128457868739caa85a804104b63af71",
+      "bytes": 4588,
+      "sha256": "36a69886bd8aa1bb14280b9b97049ba88cae270ce65b4ea531b25cc80ccde97d",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -160,8 +160,8 @@
     },
     {
       "path": "assets/motion-onglerie.mjs",
-      "bytes": 6143,
-      "sha256": "82f74b36585e9314d679fc6fcc66b2942cb9ad3c01866fea753bce02f0921839",
+      "bytes": 6152,
+      "sha256": "98301f68c96f8adb6287095de3a98e39408db1023bfd7e6ed5769e02cf57112c",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -172,8 +172,8 @@
     },
     {
       "path": "assets/render.worker.mjs",
-      "bytes": 7918,
-      "sha256": "768e3aae44c8aee202c0ace093f9172c22cd67e8908e7457c9e6613e3ab951b4",
+      "bytes": 8008,
+      "sha256": "739f976d396e4ca731a67389c384350fb5753583db03963c8377626aec575fa9",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -472,8 +472,8 @@
     },
     {
       "path": "ecrans.html",
-      "bytes": 2544,
-      "sha256": "6e643748c72d716ab9861e7ba359bcb3f900a9540d4cdf993791ffe675899074",
+      "bytes": 2553,
+      "sha256": "08b590a8cc24999d925d306f3f5851206040ce2eba36de551c39a7535aa7f8fd",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -550,8 +550,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 4602,
-      "sha256": "175c8a1724f01efee7fd2e4cb5c6f599b5a787f77bc198a3962cecbcb588ef31",
+      "bytes": 7559,
+      "sha256": "32a104f1f838ce2d848763070c6deecdbe48603fc28bd3b3075f42cf0e59caae",
       "role": "source_ressource_ou_documentation"
     },
     {
@@ -628,8 +628,8 @@
     },
     {
       "path": "simulation.html",
-      "bytes": 8150,
-      "sha256": "595f23140a96cd35204e984ea628e27f850d5071c02e3b506cda310602ba6111",
+      "bytes": 8159,
+      "sha256": "a657872fa56d6ffa48dae6a12f63d69e0f8c0ad563c07b91abfb446362c63ac9",
       "role": "source_ressource_ou_documentation"
     },
     {
