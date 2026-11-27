@@ -1,0 +1,385 @@
+{
+  "$schema": "schema-contrat-t3.json",
+  "schema_version": "1.0.0",
+  "template_id": "COIFFURE-T3",
+  "statut": "gabarit T3, deux montages et voix des prises optionnelle ; tests d’appareils physiques non documentés",
+  "finalite": "Preuve visible, sans contenu inventé et sans texte ajouté par le moteur.",
+  "portee": "Contrat descriptif du navigateur ; ni moteur Android ni schéma du gabarit restaurant partenaire.",
+  "implementation": {
+    "source_config": "../config.json#/contrat",
+    "source_questions": "../formulaire/questions.json",
+    "source_rendu": "../render.worker.mjs",
+    "contrat_documentaire": "Le moteur ne charge pas ce fichier ; la recette vérifie sa concordance."
+  },
+  "sortie": {
+    "largeur_px": 720,
+    "hauteur_px": 1280,
+    "fps": 30,
+    "images": 900,
+    "duree_s": 30,
+    "video": "H.264",
+    "audio": "AAC-LC stéréo, 48000 Hz, si activé"
+  },
+  "champs": [
+    {
+      "id": "nom",
+      "libelle": "Comment s’appelle ton activité ?",
+      "obligatoire": true,
+      "maximum_caracteres": 46,
+      "usage": "fiche uniquement, non incrusté"
+    },
+    {
+      "id": "service",
+      "libelle": "Quel produit ou service veux-tu présenter ?",
+      "obligatoire": true,
+      "maximum_caracteres": 60,
+      "usage": "fiche et consignes, non incrusté"
+    },
+    {
+      "id": "outil",
+      "libelle": "Quel outil ou produit utilises-tu dans ton travail ?",
+      "obligatoire": false,
+      "maximum_caracteres": 72,
+      "usage": "contexte du guide de la prise 2 ; non incrusté"
+    },
+    {
+      "id": "lieu",
+      "libelle": "Dans quelle ville travailles-tu ?",
+      "obligatoire": false,
+      "maximum_caracteres": 42,
+      "usage": "fiche uniquement, non incrusté"
+    },
+    {
+      "id": "cible",
+      "libelle": "Quel est ton numéro WhatsApp ou téléphone ?",
+      "obligatoire": false,
+      "maximum_caracteres": 32,
+      "usage": "fiche uniquement après confirmation, non incrusté"
+    },
+    {
+      "id": "prix",
+      "libelle": "À partir de quel prix proposes-tu ce produit ou service ?",
+      "obligatoire": false,
+      "maximum_caracteres": 30,
+      "usage": "fiche uniquement, non incrusté"
+    }
+  ],
+  "regles_fiche": [
+    "Confirmation obligatoire si un numéro est fourni.",
+    "Le prix fourni reste dans la fiche, avec sa monnaie.",
+    "Aucune donnée de la fiche n’est dessinée sur le film.",
+    "La narration n’est pas produite automatiquement depuis la fiche."
+  ],
+  "capture": {
+    "nombre_scenes": 4,
+    "nombre_etats_stables": 12,
+    "scenes": [
+      {
+        "id": "S1",
+        "titre": "Le départ",
+        "minimum_s": 8,
+        "guide": "Présente ton produit ou le début de ton service. Garde le téléphone droit.",
+        "question_relecture": "Voit-on bien ton produit ou le début de ton service ?",
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ]
+      },
+      {
+        "id": "S2",
+        "titre": "Le travail ou l’utilisation",
+        "minimum_s": 10,
+        "guide": "Filme une étape de ton travail ou ton produit en cours d’utilisation.",
+        "question_relecture": "Voit-on bien ce que tu fais ?",
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ]
+      },
+      {
+        "id": "S3",
+        "titre": "Le détail",
+        "minimum_s": 10,
+        "guide": "Filme de près un détail réel de ton produit ou de ton travail. Reste stable.",
+        "question_relecture": "Le détail est-il net et facile à voir ?",
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ]
+      },
+      {
+        "id": "S4",
+        "titre": "La dernière vue",
+        "minimum_s": 8,
+        "guide": "Filme une dernière vue du produit ou du travail. Si un résultat est visible, montre-le.",
+        "question_relecture": "Le produit ou le travail est-il facile à voir ?",
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ]
+      }
+    ],
+    "audio_prises": "Écoutable en relecture et sélectionnable pour le film ; prise non sélectionnée = silence dans son créneau.",
+    "camera": "Enregistrement avec microphone sélectionnable ; disponibilité selon navigateur.",
+    "import": "Vidéo MP4, MOV ou WebM lisible ; maximum 48 Mio par fichier ; compatibilité codec selon navigateur.",
+    "tolerance_duree_s": 0.05,
+    "preference_avant_prise": "Choix facultatif de parler pendant les prises ; les durées de capture restent 8 / 10 / 10 / 8 secondes dans les deux modes.",
+    "consigne_voix": "Terminer sa phrase avant la fin des 6 premières secondes de S1 ou des 8 premières secondes de S2, S3 et S4. La fin des prises S1–S3 ne sera pas utilisée dans ce mode."
+  },
+  "montage": {
+    "semantique": "début inclus, fin exclue ; origine zéro",
+    "nombre_segments": 9,
+    "echantillonnage_source": "(indice_image_source + 0.18) / 30 secondes après le premier horodatage de la piste vidéo",
+    "regle_image_source": "offset_images + (image_sortie - debut) + supplément éventuel",
+    "segments": [
+      {
+        "debut": 0,
+        "fin_exclue": 34,
+        "sources": [
+          {
+            "source": "S1",
+            "offset_images": 0,
+            "progression_images_par_image": 1
+          }
+        ]
+      },
+      {
+        "debut": 34,
+        "fin_exclue": 136,
+        "sources": [
+          {
+            "source": "S1",
+            "offset_images": 11,
+            "progression_images_par_image": 1
+          }
+        ]
+      },
+      {
+        "debut": 136,
+        "fin_exclue": 260,
+        "sources": [
+          {
+            "source": "S2",
+            "offset_images": 13,
+            "progression_images_par_image": 1
+          }
+        ]
+      },
+      {
+        "debut": 260,
+        "fin_exclue": 343,
+        "sources": [
+          {
+            "source": "S2",
+            "offset_images": 137,
+            "progression_images_par_image": 1,
+            "supplement_arrondi": {
+              "de_image_sortie": 332,
+              "duree_images": 11,
+              "puissance": 2,
+              "maximum": 5,
+              "arrondi": "JavaScript Math.round"
+            }
+          },
+          {
+            "source": "S4",
+            "offset_images": 12,
+            "progression_images_par_image": 1,
+            "supplement_arrondi": {
+              "de_image_sortie": 332,
+              "duree_images": 11,
+              "puissance": 2,
+              "maximum": 5,
+              "arrondi": "JavaScript Math.round"
+            }
+          },
+          {
+            "source": "S3",
+            "offset_images": 17,
+            "progression_images_par_image": 1,
+            "supplement_arrondi": {
+              "de_image_sortie": 332,
+              "duree_images": 11,
+              "puissance": 2,
+              "maximum": 8,
+              "arrondi": "JavaScript Math.round"
+            }
+          }
+        ]
+      },
+      {
+        "debut": 343,
+        "fin_exclue": 430,
+        "sources": [
+          {
+            "source": "S3",
+            "offset_images": 108,
+            "progression_images_par_image": 1
+          }
+        ]
+      },
+      {
+        "debut": 430,
+        "fin_exclue": 526,
+        "sources": [
+          {
+            "source": "S4",
+            "offset_images": 8,
+            "progression_images_par_image": 1
+          }
+        ]
+      },
+      {
+        "debut": 526,
+        "fin_exclue": 617,
+        "sources": [
+          {
+            "source": "S3",
+            "offset_images": 199,
+            "progression_images_par_image": 1
+          }
+        ]
+      },
+      {
+        "debut": 617,
+        "fin_exclue": 735,
+        "sources": [
+          {
+            "source": "S1",
+            "offset_images": 115,
+            "progression_images_par_image": 1
+          },
+          {
+            "source": "S4",
+            "offset_images": 115,
+            "progression_images_par_image": 1
+          }
+        ]
+      },
+      {
+        "debut": 735,
+        "fin_exclue": 900,
+        "sources": [
+          {
+            "source": "S4",
+            "offset_images": 20,
+            "progression_images_par_image": 1
+          }
+        ]
+      }
+    ],
+    "diptyque": "S1 et S4, sans légende avant/après ni affirmation de résultat.",
+    "variante_voix_prises": {
+      "semantique": "début inclus, fin exclue, 30 images/s",
+      "description": "Scènes successives à l’échelle 1, pas de répétition ni de retiming. Le film diffère visuellement du montage T3 habituel.",
+      "regle_image_source": "image sortie moins début de scène ; début à la première image de la prise",
+      "coupes": [
+        180,
+        420,
+        660
+      ],
+      "segments": [
+        {
+          "debut": 0,
+          "fin_exclue": 180,
+          "source": "S1",
+          "source_debut": 0,
+          "source_fin_exclue": 180,
+          "vitesse": 1
+        },
+        {
+          "debut": 180,
+          "fin_exclue": 420,
+          "source": "S2",
+          "source_debut": 0,
+          "source_fin_exclue": 240,
+          "vitesse": 1
+        },
+        {
+          "debut": 420,
+          "fin_exclue": 660,
+          "source": "S3",
+          "source_debut": 0,
+          "source_fin_exclue": 240,
+          "vitesse": 1
+        },
+        {
+          "debut": 660,
+          "fin_exclue": 900,
+          "source": "S4",
+          "source_debut": 0,
+          "source_fin_exclue": 240,
+          "vitesse": 1
+        }
+      ]
+    }
+  },
+  "audio": {
+    "voix_facultative": true,
+    "modes": [
+      "controle_muet",
+      "musique_seule",
+      "musique_et_voix_separee",
+      "musique_et_son_de_prises_choisies"
+    ],
+    "mode_voix_separee": "enregistrement ou import séparé ; durée de 0,3 à 30,15 secondes ; commence au début du film",
+    "prise_en_compte_du_son_des_scenes": true,
+    "mode_voix_des_prises": {
+      "facultatif": true,
+      "choix": "sélection explicite des prises dont on utilise le son",
+      "placement": "son de la prise dans son segment image, les prises non sélectionnées laissent leur créneau silencieux",
+      "debut_source_s": 0,
+      "duree_conservee_par_scene_s": [
+        6,
+        8,
+        8,
+        8
+      ],
+      "capture_minimale_s": [
+        8,
+        10,
+        10,
+        8
+      ],
+      "duree_max_s": 30,
+      "retime": false,
+      "suppression_silence": false,
+      "synchronisation": "les horodatages audio et vidéo de chaque source sont pris en compte ; vérification technique sur échantillons, pas de garantie universelle sur tous les formats ou appareils",
+      "limite": "un mot commencé trop près de la fin du segment peut être coupé ; écouter le montage et refaire la prise si nécessaire",
+      "combinaison_avec_voix_separee": false
+    },
+    "voix_dans_controle_muet": false,
+    "sous_titres_automatiques": false,
+    "credit_musique": "Affiché et téléchargeable séparément"
+  },
+  "texte": {
+    "ajoute_par_moteur": false,
+    "texte_incruste_dans_une_source": "ne peut pas être supprimé par ce moteur ; fournir des rushs sans texte",
+    "mires": "copies locales sans texte ajouté",
+    "reference": "copie soin sans texte validée par l’utilisateur ; original conservé"
+  },
+  "limites": [
+    "WebCodecs / H.264 et navigateur compatible nécessaires",
+    "Résultats, performances, permissions et codecs dépendent de l’appareil",
+    "Aucune conformité au schéma ou backend Android du T1 partenaire revendiquée",
+    "Aucun test sur appareil physique documenté",
+    "La variante voix des prises coupe les fins S1–S3 : les paroles aux coupures peuvent être tronquées"
+  ],
+  "verification": {
+    "schema": "schema-contrat-t3.json",
+    "programme": "verifier-contrat.py",
+    "attendu": [
+      "sources de segments conformes à chaque image du code moteur",
+      "scènes et champs cohérents avec config et formulaire",
+      "900 images et couverture complète sans trou",
+      "noms des 12 états et durées alignés",
+      "aucun appel de dessin texte dans le moteur",
+      "variante voix des prises : 4 segments successifs et correspondance image/son, scènes à vitesse 1",
+      "contrôler mots coupés et permissions micro lors des tests sur appareil physique"
+    ]
+  }
+}
