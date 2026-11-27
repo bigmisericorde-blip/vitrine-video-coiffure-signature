@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 12821,
-      "sha256": "b2a26c31d85e2f26030a6b0a4920b5c234366fe61dc964471616f9b60db1bcb1"
+      "bytes": 12860,
+      "sha256": "b12ce293087e53a660dd50947df334e520fab629b525b4c0fde93e7abb301cc3"
     },
     {
       "path": "assets/IBMPlexMono-Medium.ttf",
@@ -74,13 +74,13 @@
     },
     {
       "path": "assets/ecrans.js",
-      "bytes": 3233,
-      "sha256": "c34c8815340af3c6fa6f509d993980961f0f8e3eaeb62fbdb2dc4d7674aeace7"
+      "bytes": 3257,
+      "sha256": "ac6051aae35cd973336380d3bbd59ddfecdd503f3e1aa9a73aa8c79844be8d12"
     },
     {
       "path": "assets/fiche-t2.js",
-      "bytes": 5693,
-      "sha256": "2fea8ad8b25446c4431e8c7153309620fe17147cd251c8b2be9cbefd501bb477"
+      "bytes": 6233,
+      "sha256": "39c63d6b5522e1bd441183b74fe9ceb3ecf6dbc42adbb112998c54d9230016a3"
     },
     {
       "path": "assets/film.js",
@@ -124,23 +124,23 @@
     },
     {
       "path": "assets/simulation-t2.js",
-      "bytes": 14013,
-      "sha256": "5ebd13e7cd4d867bff28b54bc395a4748bb0c146aaa485e55cdfa624f942e410"
+      "bytes": 14056,
+      "sha256": "d33a1a4aeae81acc7c9f6f1909ca8198a3c037077c9890122408966fe55cc78a"
     },
     {
       "path": "assets/t2-motion.mjs",
-      "bytes": 11449,
-      "sha256": "bb68a8e9eeb8e18d2d3479e7561a1c851ae9a566850449fa9d2add672ac5a054"
+      "bytes": 11574,
+      "sha256": "26474903b68b1957a3307ec0b7789f292c9fb0f0f6f58380e0c7fbd2c3fd714d"
     },
     {
       "path": "assets/t2-render.worker.mjs",
-      "bytes": 8032,
-      "sha256": "3676cadf9cf5a11c321f2e72a3d395af826c73d07d0cc038c608f645e80325d0"
+      "bytes": 8029,
+      "sha256": "5edb684562088d06cecc5ba85b726d9c17270793472d793ec45dc0b6e8f354b0"
     },
     {
       "path": "assets/test.js",
-      "bytes": 2428,
-      "sha256": "fd799e1a0923bcbcebbc7a18c396761a8738af9db30876979dd1ad7d19066193"
+      "bytes": 1741,
+      "sha256": "dcc714163fad0813c80800072e8cd387b5b6ca5cfc8ae99e63be380e25868249"
     },
     {
       "path": "assets/tirage-son.js",
@@ -179,8 +179,8 @@
     },
     {
       "path": "ecrans.html",
-      "bytes": 2689,
-      "sha256": "f0db1209010ccdcbe4c89bc3e66a2ae39c79a8a432b56051c7a58d2340b38788"
+      "bytes": 2683,
+      "sha256": "33dda8b3a51edcb7102755da04f9acc4d1c33cd119506dced575eef9ee0dfa7a"
     },
     {
       "path": "film.html",
@@ -189,13 +189,13 @@
     },
     {
       "path": "final.html",
-      "bytes": 6759,
-      "sha256": "72439197cd621c62430aac273dc529295e7f9e01312d3a686ac05901a3854940"
+      "bytes": 6979,
+      "sha256": "1d02fa169b9e29f7536c38c3638a455a4bc891558d27da2becbe4caf89f54862"
     },
     {
       "path": "index.html",
-      "bytes": 5734,
-      "sha256": "8255918a010c4548f70a7ddaa7e683d4a6ac431f9e17363a5119d4aa9c3d9a79"
+      "bytes": 4639,
+      "sha256": "6eb3dca3348d88e5c2a38cf1db2a4f319ce01be9ba156e91bdff9e5901eeedad"
     },
     {
       "path": "ingenierie/afrobeat.json",
@@ -314,68 +314,68 @@
     },
     {
       "path": "livrables/10-questions-beaute.md",
-      "bytes": 1730,
-      "sha256": "08088a134a6f95780fd94aa993da3dc1d8fafba0d2391cf547ac875129344bd7"
+      "bytes": 1395,
+      "sha256": "498ee561a24d72ff8382b20843299443ce766061d977c60e6416e3a164f80449"
     },
     {
       "path": "livrables/12-ecrans/01.webp",
-      "bytes": 20544,
-      "sha256": "a29af148356117bd70e2e8d1e7b62c13722fdc922b7a1122a7a463b851b2819a"
+      "bytes": 24380,
+      "sha256": "a8f43348d8706760081be55d783308bf0d16aa6c82e08cf95b55f10fff3c7c2e"
     },
     {
       "path": "livrables/12-ecrans/02.webp",
-      "bytes": 29870,
-      "sha256": "e491f845f057cbb985c638a486dd2bbb84af1dcfc22c571f4974ea4e1bf6bee0"
+      "bytes": 31596,
+      "sha256": "66c832415b401be05e9e7268f5755abd6bf022c24afde6ccd328b7edf9bc5fa4"
     },
     {
       "path": "livrables/12-ecrans/03.webp",
-      "bytes": 21372,
-      "sha256": "1a195582a003f16e0a5fb9c02647ab8f4f0a382d062c62868c184d566a74da20"
+      "bytes": 23808,
+      "sha256": "7d13b5bfb053d7b5d63a229126f87a787c168848bc85c34e11531065cea72e1b"
     },
     {
       "path": "livrables/12-ecrans/04.webp",
-      "bytes": 19574,
-      "sha256": "978fb2a27abc14c74e4228b1c5d74cc18ee365f8fc7ad106bc332e9893c216e1"
+      "bytes": 18978,
+      "sha256": "82347abb8cd8c8926f4ef346d2f46e330f87819af1cadb65a7c7c43a8912a693"
     },
     {
       "path": "livrables/12-ecrans/05.webp",
-      "bytes": 23172,
-      "sha256": "997b91ac82ea25129ac4a66ee977796dfb2c502ecff6bc6c1efb3f41d80044a7"
+      "bytes": 24426,
+      "sha256": "09f15b3a5a9f47307294b3f6dc13e036a1edf5e1777a1d0c2a187b2b7e86b108"
     },
     {
       "path": "livrables/12-ecrans/06.webp",
-      "bytes": 28094,
-      "sha256": "58544951d991f538e7ab0871801bd05b9998cfc2090b0f82c2d25412443ca6e3"
+      "bytes": 28022,
+      "sha256": "e4b703b35a5477dcbcedb0f66a2fb10050d46c26279e3635003cbc9727f0175c"
     },
     {
       "path": "livrables/12-ecrans/07.webp",
-      "bytes": 21770,
-      "sha256": "d86e6e67235e26fdd49f1d04912849cd9bcc19b0ed94e3eb7a8930f2f781f8b1"
+      "bytes": 21336,
+      "sha256": "5c91172ce749cec71b718edcfdc2f9b12b980ec985e18423e65260653c279bc5"
     },
     {
       "path": "livrables/12-ecrans/08.webp",
-      "bytes": 21270,
-      "sha256": "1c2f9e4a7a61dae784d78c160d47108d85a2d5f436cbe0a2146d155e02a0aa29"
+      "bytes": 22702,
+      "sha256": "203c1d4a77446360afaf13fe07a3ffd8e4389214402f29a993efe970601fea1f"
     },
     {
       "path": "livrables/12-ecrans/09.webp",
-      "bytes": 17596,
-      "sha256": "6ebfe525a0214522ba7fa0ab109d5645b3a6ed8c8df5715bee4e78ee6f8c38c2"
+      "bytes": 18546,
+      "sha256": "2aac46b1ed9088a1a465136d5dca849edce55da56cf5285fe0e88ecc1f8f7d17"
     },
     {
       "path": "livrables/12-ecrans/10.webp",
-      "bytes": 19246,
-      "sha256": "da59ab83209ef7e4da59ee35630765a04c1fafb602740f15fe55c615d7615477"
+      "bytes": 23446,
+      "sha256": "24c0831602d30f23584eaba03f6d47c26be3910962f67ef5da469891f0411c2e"
     },
     {
       "path": "livrables/12-ecrans/11.webp",
-      "bytes": 28144,
-      "sha256": "407971a64881c00ada4953dfb4f5927ff8d5158485e2eb84883168952cd4d9ed"
+      "bytes": 29734,
+      "sha256": "7adf5811c0cb37b16cfd2026718149a4c022075c67efb952cdc5e786231be258"
     },
     {
       "path": "livrables/12-ecrans/12.webp",
-      "bytes": 22218,
-      "sha256": "5a6baf9d2dd58e3c3fd7b00aa00dbdaa7263115ab245e3f219ce160e3af1b6a8"
+      "bytes": 22782,
+      "sha256": "fad4c8da7eb4d9e992a25e27f491acca973e2df9dfcd3f69b33cebc447016de6"
     },
     {
       "path": "livrables/t2-final/00-avant.webp",
@@ -409,8 +409,8 @@
     },
     {
       "path": "livrables/t2-final/questions-accroche.webp",
-      "bytes": 23142,
-      "sha256": "fbf2ef7dc41ffe74e2b411a27e5a7286db829115dd0450cba37f13d75026bea0"
+      "bytes": 23836,
+      "sha256": "11f3b367879982075fd7c4b50251b7ef7cd6de6a8fe95756b2d192a7d7e3c63b"
     },
     {
       "path": "livrables/t2-final/questions-carton.webp",
@@ -419,23 +419,23 @@
     },
     {
       "path": "livrables/t2-final/questions-detail.webp",
-      "bytes": 15676,
-      "sha256": "cc3a62f23efde95a1beb9baba37a995d05753772e2d44a834d882eb96d569bcd"
+      "bytes": 16100,
+      "sha256": "185f86492bae07b5224b45d5390e3f61886973749494b877f194ee7c824e62e0"
     },
     {
       "path": "livrables/t2-final/questions-geste.webp",
-      "bytes": 21618,
-      "sha256": "e896614ab4523a3eb14c71d3ceb9064ca45287b8c043bc1723a276ff20deea97"
+      "bytes": 22412,
+      "sha256": "dcac0425cadaaccd025c79d35fadc323856fd1588433dfdc8bfce535257fc5c3"
     },
     {
       "path": "livrables/t2-final/questions-offre.webp",
-      "bytes": 20212,
-      "sha256": "f29d0aebbbf10a47c128ff636fe8b8d0fb6c86ffcfba4c3408e22fa8c0f883c2"
+      "bytes": 20826,
+      "sha256": "4620dfc187649fc78aec4a9b93dec3c1b87e771b431c61fcd1bf8e5114436359"
     },
     {
       "path": "livrables/t2-final/questions-resultat.webp",
-      "bytes": 21120,
-      "sha256": "4bd6d15a1fd319d1dabe1a6681497c6dcab2ad7cf5e1b6981ee87ba1d49e4a48"
+      "bytes": 21972,
+      "sha256": "ca8450d762652fa8cb3eacde230fadb09ac04ca4925d80bb13bcf8610e395873"
     },
     {
       "path": "livrables/t2-final/recette-film.json",
@@ -488,6 +488,11 @@
       "sha256": "8c746e07355941bd99094af90b2f617c7c43852bfa8a5de705ea5d19ed843586"
     },
     {
+      "path": "media/t1-coiffure-progression-validee.mp4",
+      "bytes": 11768813,
+      "sha256": "73d094f5619f65eaecc3806b409bed8280ac75925538360e7b55f5c7f3f25b2f"
+    },
+    {
       "path": "media/t1-coiffure-questions-corrigees.mp4",
       "bytes": 14610629,
       "sha256": "03f342a8cb04f11f20179cbfd3e58c71966ed701c81e481deeacd1e12af74003"
@@ -519,8 +524,8 @@
     },
     {
       "path": "simulation.html",
-      "bytes": 7897,
-      "sha256": "bce12d5cb08e6169b0a891bad1ba04400ce1c63fc2886ab6b4439c9aa9f67874"
+      "bytes": 7891,
+      "sha256": "f603c39c7fd2c76abdb1def351377e4de19a838782065141e666d602c9702f37"
     }
   ]
 }

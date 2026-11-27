@@ -16,7 +16,7 @@ const sceneSource=s=>files.has(s.id)?{...s,video:files.get(s.id).url}:s;
 
 function updateState(value){state=value;$('app').dataset.state=value;}
 function renderCard(i){
-  const s=FICHE.sceneGuide(saved, i, SCENES[i]), hint=FICHE.sceneText(job,i);
+  const s=FICHE.sceneGuide(previewNumber&&saved?{...saved,source:"demo"}:saved, i, SCENES[i]), hint=FICHE.sceneText(job,i);
   $('app').dataset.prise=s.id;
   $('sceneCounter').textContent=`SCÈNE ${s.n}/${s.total}`;
   $('dots').replaceChildren(...SCENES.map(x=>{let dot=document.createElement('i');dot.classList.toggle('on',x.n<=s.n);return dot;}));
@@ -98,7 +98,7 @@ function encode(request,signal,onProgress){
   return new Promise((resolve,reject)=>{
     signal.throwIfAborted();
     if(!isSecureContext||typeof Worker==='undefined')throw Error('Ouvre cette page en HTTPS pour créer le MP4.');
-    const worker=new Worker('assets/t2-render.worker.mjs?v=questions-beaute-1',{type:'module',name:'Export T2'});
+    const worker=new Worker('assets/t2-render.worker.mjs?v=commercial-t1-1',{type:'module',name:'Export T2'});
     const timeout=setTimeout(()=>end(reject,Error('L’encodeur ne répond plus. Essaie un autre appareil ou des vidéos plus légères.')),240000);
     const abort=()=>end(reject,signal.reason);
     function end(fn,value){clearTimeout(timeout);signal.removeEventListener('abort',abort);worker.terminate();fn(value);}

@@ -6,9 +6,9 @@
 
 ## Film final narré — Studio Vitrine
 
-**Mise à jour questions beauté :** le lecteur montre le film corrigé où le geste, le détail et le résultat reprennent les réponses de la fiche. Le [film historique](media/t2-signature-coiffure-narree.mp4) est conservé séparément. Le film musical historique `film.html` reste disponible comme archive. Les six questions servent aussi aux montages générés, avec lieu, prix et contact facultatifs.
+**T1 beauté :** cinq questions commerciales : nom, prestation, ville, contact et prix. Ville, contact et prix sont facultatifs. Avant, geste, détail et résultat sont des consignes de tournage, pas des questions. Le montage d’exemple validé montre un geste en cours et des finitions : il ne prouve pas un avant coupe. Pour un vrai avant/après, filmer la même personne ou zone avant et après. L’ancien film reste conservé.
 
-[**Regarder et télécharger le film sur GitHub Pages**](https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/final.html) · [MP4 corrigé](media/t1-coiffure-questions-corrigees.mp4) · [Contrôle des textes, rushs et voix](livrables/09-film-final-t2.md)
+[**Regarder et télécharger le film sur GitHub Pages**](https://bigmisericorde-blip.github.io/vitrine-video-coiffure-signature/final.html) · [MP4 de progression validé](media/t1-coiffure-progression-validee.mp4) · [Contrôle des textes, rushs et voix](livrables/09-film-final-t2.md)
 
 Ce MP4 de 30 s, réalisé avec les quatre rushs d’exemple du T2, incruste **Studio Vitrine · Cotonou · Coupe + barbe · 1 500 FCFA** et l’action finale. Les cinq prises de voix française déjà préparées sont mixées sur *Harbor Lanterns*. Il est pré-rendu : le lecteur public ne dépend pas de l’atelier de voix.
 

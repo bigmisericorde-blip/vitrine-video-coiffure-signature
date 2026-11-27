@@ -1,9 +1,11 @@
-# Questions beauté — adaptation du premier gabarit coiffure
+# Formulaire commercial T1 — coiffure et beauté
 
-Le principe est celui du gabarit partenaire : une fiche, quatre prises guidées, douze états et des données reprises en textes graphiques dans le montage. Les durées, questions et champs sont adaptés au secteur beauté et ne sont pas identiques au contrat restaurant ; le lieu, le prix et le contact sont facultatifs.
+1. Quel est le nom de ton salon ou de ton activité ?
+2. Quelle prestation veux-tu présenter dans ta vidéo ?
+3. Dans quelle ville se trouve ton salon ? *(facultatif)*
+4. Quel est ton numéro WhatsApp ou téléphone ? *(facultatif)*
+5. À partir de quel prix proposes-tu cette prestation ? *(facultatif)*
 
-La fiche fournit nom, travail, geste, détail, résultat et action ; le moteur relie les textes aux quatre séquences. L'utilisateur fournit lui-même les vidéos qui correspondent à ses réponses : aucune reconnaissance d'image automatique n'est promise. Les textes graphiques ne sont pas une transcription de voix. Les prises et réponses ne sont pas envoyées pour le montage local. Les anciennes fiches restent lisibles : elles ne disposent pas des nouveaux champs geste et détail et doivent les compléter avant d'enregistrer à nouveau.
+Les consignes de tournage ne sont pas des questions supplémentaires : filmer la même personne ou zone avant, le geste, un détail, puis le résultat sous un angle comparable. Le moteur reprend le nom, la prestation, la ville, le prix et le contact fournis ; il produit des textes génériques adaptés à la prestation. Une fiche peut être exportée sans ville, numéro ou prix. Les anciennes fiches restent lisibles dans leur onglet.
 
-La [nouvelle démonstration narrée](../media/t1-coiffure-questions-corrigees.mp4) a été créée par le moteur à partir des mêmes quatre prises coiffure. Elle affiche le geste de coupe, les contours de la barbe, puis la coupe et la barbe terminées. Sa piste AAC de voix et musique est copiée à l'identique du film historique. Ce dernier reste disponible : [film original](../media/t2-signature-coiffure-narree.mp4). Les vidéos des autres gabarits et le master historique n'ont pas été modifiés.
-
-Le film fictif conserve un prix, une ville et une mention de réservation en ligne pour correspondre à sa voix d'origine ; ce n'est pas une réservation réelle ni une obligation pour une fiche cliente. La voix de démonstration est synthétique et facultative pour les futurs créateurs.
+Le film de démonstration validé est distinct des prises client et montre un geste déjà commencé puis des finitions : il ne prouve pas un avant coupe. Il conserve son audio historique avec tarif fictif de 1 500 FCFA et réservation en ligne. L’exemple de formulaire « À partir de 2 500 FCFA » est une indication fictive différente, non une modification de la bande-son. [Film validé](../media/t1-coiffure-progression-validee.mp4) ; [film précédent](../media/t1-coiffure-questions-corrigees.mp4) ; [film historique](../media/t2-signature-coiffure-narree.mp4). Voix client facultative.

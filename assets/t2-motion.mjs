@@ -129,7 +129,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
   function compose(sample,shot,f) {
     const dt=f-shot.in,t=dt/Math.max(1,shot.out-shot.in-1), name=shot.stage;
     if(name==='hook'){
-      picture(sample,shot,t);wash(.89);emblem('01  /  AVANT');
+      picture(sample,shot,t);wash(.89);emblem(demo?'01  /  GESTE EN COURS':'01  /  AVANT');
       const at=plan.design.motion.hook_ease;
       const a=reveal(f,1,at+7);
       if(a>0)line(gold,left+width*.35,825,width*.30*ease(a));
@@ -148,7 +148,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
       small(job.ville,x+27,y+265,{max:width-54,t:reveal(f,shot.in+19)});
     } else if(name==='booking'){
       backdrop(); const a=smooth((dt+1)/cuts.get(shot.in).frames);
-      emblem('04  /  APRÈS');markPrice(f);
+      emblem(demo?'04  /  FINITIONS':'04  /  APRÈS');markPrice(f);
       picture(sample,shot,t,left,227,width,624,23);
       const y=mix(982,862,a);
       round('#082e2a',left,y,width,234,17,'#d8c2927a');
@@ -159,7 +159,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
       title(job.contact||job.service,left+26,y+190,{face:'sans',size:25,max:width-52,rows:2,c:p.mint,t:reveal(f,shot.in+11)});
     } else if(name==='lockup'){
       backdrop();picture(sample,shot,t,0,0,W,618);
-      color(gold,0,617,W,2);emblem('04  /  APRÈS');
+      color(gold,0,617,W,2);emblem(demo?'04  /  FINITIONS':'04  /  APRÈS');
       title(job.salon,mid,743,{face:'script',size:102,max:width-22,rows:2,align:'center'});
       title(job.service,mid,821,{size:47,max:width-20,rows:2,align:'center'});
       small([job.ville,job.prix].filter(Boolean).join('  ·  '),mid,883,{size:24,max:width-25,align:'center',rows:2});
@@ -173,7 +173,7 @@ export function createMotion(canvas,plan,job,{demo=false}={}) {
     } else {
       picture(sample,shot,t);wash();
       const kind=name.startsWith('cut')?'cut':name.startsWith('detail')?'detail':name.startsWith('result')?'result':'action';
-      const label={cut:'02  /  LE GESTE',detail:'03  /  LE DÉTAIL',result:'04  /  APRÈS',action:'04  /  APRÈS'}[kind];
+      const label={cut:'02  /  LE GESTE',detail:'03  /  LE DÉTAIL',result:demo?'04  /  FINITIONS':'04  /  APRÈS',action:demo?'04  /  FINITIONS':'04  /  APRÈS'}[kind];
       emblem(label);markPrice(f);
       const a=reveal(f,stage[kind]+3,22);
       line(gold,left,898,84*ease(a));

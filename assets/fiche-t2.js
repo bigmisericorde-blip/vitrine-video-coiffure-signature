@@ -9,24 +9,28 @@
   const key=id=>/^[a-f0-9]{32}$/.test(id||'');
   const has=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
   function normalize(raw){
-    if(!raw||typeof raw!=='object')throw Error('Fiche manquante.');
-    const salon=string(raw.salon,45),ville=string(raw.ville,45),service=string(raw.service,50),geste=string(raw.geste,60),detail=string(raw.detail,60);
-    if(!salon||!service)throw Error('Complète le nom et le travail à montrer.');
+    if(!raw||typeof raw!== 'object')throw Error('Fiche manquante.');
+    const salon=string(raw.salon,45),service=string(raw.service,50),ville=string(raw.ville,45);
+    if(!salon||!service)throw Error('Complète le nom et la prestation à présenter.');
+    const oldAction=raw.commercial===true?null:(has(action,raw.action)?raw.action:null);
+    const contact=oldAction==='Rien pour le moment'?'':string(raw.contact,30),saisiePrix=string(raw.prix,40);
+    const prix=saisiePrix&&!oldAction&&!/^à partir de\b/i.test(saisiePrix)?'À partir de '+saisiePrix:saisiePrix;
+    // Anciens champs conservés en lecture seulement pour ne pas casser les fiches déjà enregistrées.
     const ancienne=raw.resultatChoix==='autre'?string(raw.resultatAutre,80):finish[raw.resultatChoix]||'';
-    const resultat=string(raw.resultat,80)||ancienne;
-    if(!resultat)throw Error('Indique ce qu’il faut montrer à la fin.');
-    if(!has(action,raw.action))throw Error('Choisis une action de fin.');
-    return Object.freeze({salon,ville,service,geste,detail,prix:string(raw.prix,32),resultat,action:raw.action,cta:action[raw.action],contact:action[raw.action]?string(raw.contact,120):'',source:raw.source==='client'?'client':'demo'});
+    const resultat=(oldAction&&(string(raw.resultat,80)||ancienne))||('Le résultat : '+service);
+    const geste=(oldAction&&string(raw.geste,60))||'Le geste en action';
+    const detail=(oldAction&&string(raw.detail,60))||'Les détails de la prestation';
+    const cta=oldAction?action[oldAction]:(contact?'Nous contacter':'Découvrir la prestation');
+    return Object.freeze({salon,service,ville,contact,prix,geste,detail,resultat,action:oldAction||'T’appeler',cta,commercial:!oldAction,source:raw.source==='client'?'client':'demo'});
   }
   const d=fixture.display;
-  const initial=normalize({salon:d.salon,ville:d.ville,service:'Coupe et barbe',geste:'Couper les cheveux',detail:'Les contours de la barbe',resultat:'La coupe et la barbe bien finies',prix:new Intl.NumberFormat('fr-FR').format(d.prix)+' '+d.devise,action:'Prendre rendez-vous',contact:'',source:'demo'});
+  const initial=normalize({salon:d.salon,ville:d.ville,service:'Coupe et barbe',prix:'1 500 FCFA',contact:'',source:'demo'});
   function restore(id){
     if(!key(id))return null;
     try{const item=JSON.parse(sessionStorage.getItem(prefix+id)||'null');if(item?.schema!=='vv.coiffure.fiche/1'||!(item.until>Date.now()))return null;return normalize(item.answers);}catch{return null;}
   }
   function save(raw,previous){
     const answers=normalize(raw);
-    if(!answers.geste||!answers.detail)throw Error('Précise le geste et le détail à filmer.');
     const id=restore(previous)?previous:Array.from(crypto.getRandomValues(new Uint8Array(16)),x=>x.toString(16).padStart(2,'0')).join('');
     for(let i=sessionStorage.length-1;i>=0;i--){const k=sessionStorage.key(i);if(k?.startsWith(prefix)&&!restore(k.slice(prefix.length)))sessionStorage.removeItem(k);}
     try{sessionStorage.setItem(prefix+id,JSON.stringify({schema:'vv.coiffure.fiche/1',until:Date.now()+lifetime,answers}));}catch{throw Error('Active le stockage de cet onglet pour pouvoir relire ta fiche.');}
@@ -34,25 +38,28 @@
   }
   function href(page,id,extra={}){const p=new URLSearchParams(extra);if(key(id))p.set('fiche',id);return page+(p.size?'?'+p:'');}
   function destination(job){
-    const c=job.contact;if(!job.cta||!c)return '';
+    const c=job.contact;if(job.commercial||!job.cta||!c)return ''; // Numéro WhatsApp ou téléphone : ne pas supposer lequel.
     if(/^\+?\d[\d ().-]{5,26}$/.test(c)){const phone=c.replace(/[^+\d]/g,'');return job.action==='T’écrire'?'sms:'+phone:'tel:'+phone;}
     try{const u=new URL(/^www\./i.test(c)?'https://'+c:c);if(['https:','http:'].includes(u.protocol)&&!u.username&&!u.password&&u.hostname)return u.href;}catch{}
     return '';
   }
   function sceneText(job,n){
-    if(n===0)return ['Ton travail : '+job.service,job.salon,job.ville].filter(Boolean).join(' · ');
-    if(n===1)return job.geste?'Ton geste : '+job.geste:'Ton travail : '+job.service;
-    if(n===2)return job.detail?'Ton détail : '+job.detail:'Ton travail : '+job.service;
-    return 'À la fin : '+job.resultat;
+    if(n===0)return ['Prestation : '+job.service,job.salon,job.ville].filter(Boolean).join(' · ');
+    if(n===1)return 'Ton geste : '+job.service;
+    if(n===2)return 'Un détail : '+job.service;
+    return 'Le résultat : '+job.service;
   }
   function sceneGuide(job,n,scene){
-    if(!job)return scene;
+    const service=job?.service||'ta prestation';
     const rows=[
-      {consigne:'Filme-toi au travail. Montre ce que tu fais et, si la personne est d’accord, un peu du lieu.',a_filmer:['Le travail que tu as choisi.','Tes mains et la personne si elle accepte.'],a_eviter:['Bouger trop vite.','Filmer une personne sans son accord.'],question_relecture:'Est-ce qu’on voit bien ton travail ?'},
-      {consigne:job.geste?'Filme tes mains pendant ce geste : '+job.geste+'.':'Filme tes mains pendant que tu travailles.',a_filmer:['Tes mains en action.','Ce que tu fais.'],a_eviter:['Cacher le geste avec ta main.','Filmer de trop loin.'],question_relecture:job.geste?'Est-ce qu’on voit bien ton geste : '+job.geste+' ?':'Est-ce qu’on voit bien le geste ?'},
-      {consigne:job.detail?'Approche le téléphone et montre ce détail : '+job.detail+'.':'Approche le téléphone et montre un détail de ton travail.',a_filmer:['Le détail de près.','Une image nette et stable.'],a_eviter:['Trop bouger le téléphone.','Cacher le détail avec ta main.'],question_relecture:job.detail?'Est-ce qu’on voit bien ce détail : '+job.detail+' ?':'Est-ce qu’on voit bien le détail ?'},
-      {consigne:'Filme ton travail terminé. Montre bien : '+job.resultat+'.',a_filmer:['Le travail terminé.','Le résultat dans la lumière.'],a_eviter:['Cacher le résultat.','Changer de personne si tu montres un avant et un après.'],question_relecture:'Est-ce qu’on voit bien le résultat que tu as choisi ?'}
-    ];return {...scene,...rows[n]};
+      {titre:'AVANT LA PRESTATION',consigne:'Avant de commencer, filme la personne ou la zone concernée par '+service+'. Garde un angle qui permettra de comparer avec le résultat.',a_filmer:['La situation avant la prestation.','La personne ou la zone concernée, avec son accord.'],a_eviter:['Commencer à filmer après la prestation.','Changer de personne pour le résultat.'],question_relecture:'Est-ce que la situation avant est bien visible ?'},
+      {titre:'LE GESTE',consigne:'Filme tes mains pendant la prestation : '+service+'.',a_filmer:['Tes mains en action.','Le geste bien visible.'],a_eviter:['Cacher le geste.','Filmer de trop loin.'],question_relecture:'Est-ce qu’on voit bien le geste ?'},
+      {titre:'LE DÉTAIL',consigne:'Approche le téléphone et montre un détail de la prestation : '+service+'.',a_filmer:['Un détail de près.','Une image nette et stable.'],a_eviter:['Trop bouger le téléphone.','Cacher le détail.'],question_relecture:'Est-ce qu’on voit bien le détail ?'},
+      {titre:'LE RÉSULTAT',consigne:'Filme le résultat de '+service+' sur la même personne ou zone, sous un angle proche de la première prise.',a_filmer:['Le résultat terminé.','La même personne ou zone qu’au début.'],a_eviter:['Cacher le résultat.','Changer de personne ou de zone.'],question_relecture:'Est-ce que le résultat est bien visible ?'}
+    ];
+    if(n===0&&job?.source!=='client')rows[0].consigne='Dans cet exemple, la coiffure est déjà commencée. Pour ta vidéo, filme la personne ou la zone avant de commencer.';
+    if(n===3&&job?.source!=='client')rows[3].consigne='Dans cet exemple, on voit les finitions. Pour ta vidéo, filme le résultat de '+service+' sur la même personne et sous un angle proche du début.';
+    return {...scene,...rows[n]};
   }
   window.VVFicheT2=Object.freeze({initial,normalize,restore,save,href,destination,sceneText,sceneGuide,finish});
 })();

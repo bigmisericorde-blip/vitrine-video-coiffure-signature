@@ -26,7 +26,7 @@ def build():
         'ingenierie/mixage.py','ingenierie/mix_voix.py','ingenierie/rotation.py','ingenierie/postproduction.py','ingenierie/voix_texte.py',
         'ingenierie/fixtures/fiche-t2-recette.json',
         'final.html','ingenierie/qa_film_final.py','livrables/09-film-final-t2.md','livrables/t2-final/recette-film.json',
-        'media/t2-signature-coiffure-narree.mp4','media/t1-coiffure-questions-corrigees.mp4','media/t2-signature-voix.vtt','livrables/10-questions-beaute.md',
+        'media/t2-signature-coiffure-narree.mp4','media/t1-coiffure-questions-corrigees.mp4','media/t1-coiffure-progression-validee.mp4','media/t2-signature-voix.vtt','livrables/10-questions-beaute.md',
         'livrables/07-bandes-son-afrobeat.md',
     ]
     files={ROOT/n for n in (*names,*protected)}
