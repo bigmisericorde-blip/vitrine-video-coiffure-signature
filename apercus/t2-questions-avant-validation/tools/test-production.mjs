@@ -19,7 +19,7 @@ let count=0;
 for(const x of example){
  const fields=normalize(x.answers,core.questions,core.font), visual=visualAnswers(fields);
  for(const {id:variant} of core.music.tracks){
-  const p=makeVisualPlan(normalizeVisual(visual,core.questions,core.font),variant,core.habillage);
+  const p=makeVisualPlan(normalizeVisual(visual,core.questions,core.font),variant,core.habillage,core.questions);
   assert.equal(p.captions.find(t=>t.key==='service').text,fields.service);
   assert.equal(p.captions.find(t=>t.key==='gesture').text,fields.geste);
   assert.equal(p.captions.find(t=>t.key==='proof').text,fields.preuve);

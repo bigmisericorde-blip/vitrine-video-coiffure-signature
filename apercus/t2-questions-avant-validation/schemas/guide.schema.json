@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prises et écrans T2 beauté",
+  "type": "object",
+  "required": [
+    "schema",
+    "id",
+    "scenes",
+    "screens"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vv.coiffure.capture/1"
+    },
+    "id": {
+      "const": "COIFFURE-T2"
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "n",
+          "secondes",
+          "titre",
+          "consigne",
+          "a_filmer",
+          "a_eviter",
+          "question_relecture",
+          "contexte",
+          "question_links",
+          "fixture_path"
+        ],
+        "properties": {
+          "id": {
+            "pattern": "^S[1-4]$"
+          },
+          "question_links": {
+            "const": [
+              "service"
+            ]
+          },
+          "contexte": {
+            "type": "string",
+            "pattern": "\\{service\\}"
+          },
+          "a_filmer": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "a_eviter": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "screens": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "order",
+          "id",
+          "slot",
+          "state",
+          "phase",
+          "label",
+          "next_screen",
+          "retake_screen"
+        ],
+        "properties": {
+          "state": {
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "next_screen": {
+            "type": "string"
+          },
+          "retake_screen": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

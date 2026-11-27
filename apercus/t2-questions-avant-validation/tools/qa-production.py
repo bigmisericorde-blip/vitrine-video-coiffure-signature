@@ -75,7 +75,7 @@ def check_pixels(page,base,mp4,answers,variant,keys,onglerie=False):
       const [res,model,paint]=await Promise.all(['assets/engine/resources.mjs','assets/texte/modele-visuel.mjs','assets/texte/lettrage.mjs'].map(p=>import(base+'/'+p)));
       const core=await res.loadCore();await paint.lettrageFonts(...await res.loadFonts(core));
       const habillage=onglerie?await res.readJson('formulaire/habillage-onglerie.json'):core.habillage;
-      const plan=model.makeVisualPlan(model.normalizeVisual(answers,core.questions,core.font),variant,habillage);
+      const plan=model.makeVisualPlan(model.normalizeVisual(answers,core.questions,core.font),variant,habillage,core.questions);
       const all=paint.prepareCaptions(plan);
       const c=document.createElement('canvas');c.width=720;c.height=1280;
       const ctx=c.getContext('2d'), result=[];

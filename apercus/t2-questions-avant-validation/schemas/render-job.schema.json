@@ -107,16 +107,9 @@
           ]
         },
         "salon": {
-          "anyOf": [
-            {
-              "const": ""
-            },
-            {
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 32
-            }
-          ]
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 32
         },
         "ville": {
           "anyOf": [

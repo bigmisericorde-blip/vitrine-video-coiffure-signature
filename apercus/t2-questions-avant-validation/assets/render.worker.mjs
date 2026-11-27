@@ -40,7 +40,7 @@ async function render(payload,core){
         habillage=JSON.parse(new TextDecoder().decode(bytes));
         demand(habillage.schema==='vv.coiffure.habillage/1'&&habillage.revision==='beaute-fr-01'&&habillage.base===core.template.base.revision,'RESOURCE_INVALID');
       }
-      captionPlan=makeVisualPlan(spec.fields,spec.track.id,habillage);
+      captionPlan=makeVisualPlan(spec.fields,spec.track.id,habillage,core.questions);
       await lettrageFonts(...await loadFonts(core));
     }
   }catch{throw new RenderFault('RESOURCE_INVALID');}

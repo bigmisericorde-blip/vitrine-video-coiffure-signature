@@ -31,9 +31,9 @@ export function href(page,id,extra={}){
   const query=new URLSearchParams(extra);if(validId(id))query.set('fiche',id);
   return page+(query.size?'?'+query:'');
 }
-export function sceneText(fiche,n){
+export function sceneText(fiche,n,core){
   if(!fiche)return '';
-  return ['La prestation : '+fiche.service,fiche.geste?'À montrer : '+fiche.geste:'Montre le geste en cours.',fiche.preuve?'À montrer en gros plan : '+fiche.preuve:'Montre un détail bien visible.','Résultat : '+fiche.service+' · '+framing[fiche.framing]][n];
+  return core.guide.scenes[n].contexte.replace(/\{(service|framing)\}/g,(_,k)=>k==='service'?fiche.service:framing[fiche.framing]);
 }
 export function contactAction(fiche){
   if(fiche?.source!=='client'||!fiche.destination||!fiche.contactConfirme)return null;

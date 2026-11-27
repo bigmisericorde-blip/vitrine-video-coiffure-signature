@@ -13,19 +13,18 @@ async function init(){
     const row=el('div'), label=el('label',field.question);label.htmlFor=field.id;
     const input=el(field.options?'select':'input');input.id=input.name=field.id;input.required=Boolean(field.required);
     if(field.options){for(const [key,value] of field.options)input.add(new Option(value,key));}
-    else{input.type='text'; if(field.max)input.maxLength=field.max; if(field.example)input.placeholder=`Ex. ${field.example}`;}
+    else{input.type=field.type||'text'; if(field.max)input.maxLength=field.max; if(field.example)input.placeholder=`Ex. ${field.example}`;}
     if(field.id==='prix')input.inputMode='numeric';
     row.append(label,input);if(field.hint){const hint=el('small',field.hint);hint.id='hint-'+field.id;input.setAttribute('aria-describedby',hint.id);row.append(hint);}
     controls[field.id]=input;parent.append(row);return row;
   };
   const byId=id=>questions.fields.find(f=>f.id===id);
   const target=$('commercialFields');
-  for(const id of ['salon','service','ville']){
-    make({...byId(id),required:id==='salon'||id==='service'},target);
+  let channel;
+  for(const field of questions.fields){
+    make(field,target);
+    if(field.id==='contact')channel=make({id:'canal',question:'Utiliser ce numéro pour',options:[['telephone','Téléphone'],['whatsapp','WhatsApp']]},target);
   }
-  make({id:'contact',question:'Quel est ton numéro WhatsApp ou téléphone ?',max:30,example:'+229 01 00 00 00 00',hint:'Facultatif. Ajoute l’indicatif international. Numéro d’exemple fictif.'},target);
-  const channel=make({id:'canal',question:'Utiliser ce numéro pour',options:[['telephone','Téléphone'],['whatsapp','WhatsApp']]},target);
-  make(byId('prix'),target);
   const check=$('contactConfirme');
   for(const [key,title] of Object.entries(framing))$('framing').add(new Option(title,key));
   const renderConditions=()=>{
