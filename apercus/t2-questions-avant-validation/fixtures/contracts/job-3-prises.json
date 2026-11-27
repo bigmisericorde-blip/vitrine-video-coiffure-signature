@@ -1,0 +1,32 @@
+{
+  "schema": "vv.coiffure.render-job/1",
+  "template_id": "COIFFURE-T2",
+  "template_version": "2.0.3-rc.1",
+  "execution_profile": "browser-webcodecs",
+  "audio_profile": "coiffure-en-etapes",
+  "job_id": "c561b271049a67cb8756dfe0e7ca4d7a",
+  "mode": "merchant",
+  "slots": [
+    "S1",
+    "S2",
+    "S4"
+  ],
+  "detail": "S3_from_S2",
+  "framing": "detail",
+  "answers": {
+    "service": "Dégradé bas",
+    "geste": "Fondre les longueurs",
+    "preuve": "Des contours dessinés",
+    "accroche": "",
+    "salon": "Atelier Démo",
+    "ville": "Cotonou",
+    "prix": "3 500 FCFA",
+    "canal": "aucun",
+    "prixMode": "fixe"
+  },
+  "music": {
+    "variant": "B",
+    "track_id": "fma-277070",
+    "catalogue_version": "1.0.0"
+  }
+}

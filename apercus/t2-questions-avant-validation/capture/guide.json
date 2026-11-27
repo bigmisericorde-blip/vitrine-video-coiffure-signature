@@ -1,0 +1,163 @@
+{
+  "schema": "vv.coiffure.capture/1",
+  "id": "COIFFURE-T2",
+  "source_audio": "review_only",
+  "consent": "Filme la même personne pendant toute la séance et demande son accord de diffusion avant de filmer.",
+  "sound": "Le micro de la prise est facultatif : son son reste disponible à la relecture. Tu peux aussi importer une voix personnelle facultative au montage.",
+  "scenes": [
+    {
+      "n": 1,
+      "id": "S1",
+      "secondes": 6,
+      "titre": "AVANT DE COMMENCER",
+      "consigne": "Filme la personne avant de commencer. Montre le volume et les cheveux avant de les coiffer. Laisse un peu de marge autour de la tête.",
+      "a_filmer": [
+        "Les cheveux avant la coiffure.",
+        "Le volume des cheveux, de face ou de côté."
+      ],
+      "a_eviter": [
+        "Bouger trop vite.",
+        "Centrer le cadre sur le visage plutôt que sur les cheveux."
+      ],
+      "question_relecture": "Voit-on les cheveux avant le premier geste ?",
+      "fixture_path": "fixtures/media/S1.mp4"
+    },
+    {
+      "n": 2,
+      "id": "S2",
+      "secondes": 7,
+      "titre": "LE GESTE",
+      "consigne": "Filme tes mains et la zone que tu coiffes. Si tu veux réutiliser cette prise pour le détail, garde le motif net jusque vers la fin.",
+      "a_filmer": [
+        "Tes mains en action.",
+        "Les doigts et la mèche ou la zone travaillée dans le même cadre."
+      ],
+      "a_eviter": [
+        "Cacher le geste.",
+        "Filmer de trop loin ou face à une enseigne."
+      ],
+      "question_relecture": "Voit-on le geste que tu as écrit dans ta fiche ?",
+      "fixture_path": "fixtures/media/S2.mp4"
+    },
+    {
+      "n": 3,
+      "id": "S3",
+      "secondes": 7,
+      "titre": "LE DÉTAIL",
+      "consigne": "Filme de près une ligne, une mèche ou une tresse. Tu peux reprendre la prise du geste si ce détail y est bien visible.",
+      "a_filmer": [
+        "Le détail de près.",
+        "Un geste autour de ce détail."
+      ],
+      "a_eviter": [
+        "Trop bouger le téléphone.",
+        "Cacher le détail avec ta main."
+      ],
+      "question_relecture": "Le détail est-il net ? Sinon, refais cette prise.",
+      "fixture_path": "fixtures/media/S3.mp4"
+    },
+    {
+      "n": 4,
+      "id": "S4",
+      "secondes": 7,
+      "titre": "LE RÉSULTAT",
+      "consigne": "Filme la même personne coiffée. Montre une vue nette, puis tourne doucement vers le profil et le dos si possible. Le film commence aussi sur cette prise.",
+      "a_filmer": [
+        "Le résultat sous une bonne lumière.",
+        "La coiffure portée, sans main devant."
+      ],
+      "a_eviter": [
+        "Cacher le résultat.",
+        "Changer de personne."
+      ],
+      "question_relecture": "Le résultat se comprend-il sans texte ni musique ?",
+      "fixture_path": "fixtures/media/S4.mp4"
+    }
+  ],
+  "screens": [
+    {
+      "order": 1,
+      "id": "COIFFURE-T2.S1_A_GUIDE",
+      "slot": "S1",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 2,
+      "id": "COIFFURE-T2.S1_B_RECORDING",
+      "slot": "S1",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 3,
+      "id": "COIFFURE-T2.S1_C_REVIEW",
+      "slot": "S1",
+      "state": "C",
+      "phase": "relecture"
+    },
+    {
+      "order": 4,
+      "id": "COIFFURE-T2.S2_A_GUIDE",
+      "slot": "S2",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 5,
+      "id": "COIFFURE-T2.S2_B_RECORDING",
+      "slot": "S2",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 6,
+      "id": "COIFFURE-T2.S2_C_REVIEW",
+      "slot": "S2",
+      "state": "C",
+      "phase": "relecture"
+    },
+    {
+      "order": 7,
+      "id": "COIFFURE-T2.S3_A_GUIDE",
+      "slot": "S3",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 8,
+      "id": "COIFFURE-T2.S3_B_RECORDING",
+      "slot": "S3",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 9,
+      "id": "COIFFURE-T2.S3_C_REVIEW",
+      "slot": "S3",
+      "state": "C",
+      "phase": "relecture"
+    },
+    {
+      "order": 10,
+      "id": "COIFFURE-T2.S4_A_GUIDE",
+      "slot": "S4",
+      "state": "A",
+      "phase": "guide"
+    },
+    {
+      "order": 11,
+      "id": "COIFFURE-T2.S4_B_RECORDING",
+      "slot": "S4",
+      "state": "B",
+      "phase": "enregistrement"
+    },
+    {
+      "order": 12,
+      "id": "COIFFURE-T2.S4_C_REVIEW",
+      "slot": "S4",
+      "state": "C",
+      "phase": "relecture"
+    }
+  ]
+}

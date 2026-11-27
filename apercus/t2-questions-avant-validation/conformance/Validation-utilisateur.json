@@ -1,0 +1,10 @@
+{
+  "schema": "vv.coiffure.validation-t2/1",
+  "finitions_separees": true,
+  "sans_voix_pour_instant": true,
+  "rendu_general_valide": true,
+  "portee_validation": "rendu coiffure présenté ; finition Onglerie conservée séparément",
+  "sha256_video_coiffure_presentee": "9c537b9b5dbb4e882f35ff99509c242e8018c13d844ea94ff047e5b1b3bed535",
+  "preuve_test_appareil_physique": false,
+  "validation_generale_toutes_images_client": false
+}

@@ -1,0 +1,50 @@
+{
+  "statut": "PASS",
+  "reference_commit": "99003f2529839e6be3182b85a440cadeae363c82",
+  "cas": "manucure, quatre prises identiques Artem Podrez / Pexels, fiche fictive, fond A",
+  "composants_identiques": [
+    {
+      "candidat": "assets/motion-onglerie.mjs",
+      "reference": "t2/assets/motion.mjs",
+      "sha256": "df31e686fec48a5a426cbbcef9bfd9d7968893b939aa279a11768dede11649cb",
+      "identique": true
+    },
+    {
+      "candidat": "assets/cassures.mjs",
+      "reference": "t2/assets/cassures.mjs",
+      "sha256": "b49c59a66abd656af75ecc3230accea6000fc2407f4e9cab7af01edcff8e2634",
+      "identique": true
+    },
+    {
+      "candidat": "assets/montage-onglerie.mjs",
+      "reference": "commun/montage.mjs",
+      "sha256": "665538bc2a102f7fe94177188e18af37cef489672feb731a0799e9807e055466",
+      "identique": true
+    },
+    {
+      "candidat": "formulaire/habillage-onglerie.json",
+      "reference": "t2/formulaire/habillage.json",
+      "sha256": "da425f22db70e8abf116214471757f7f5a8d3e875ffb7967be3c7faa6fe418db",
+      "identique": true
+    },
+    {
+      "candidat": "assets/texte/lettrage.mjs",
+      "reference": "t2/assets/texte/lettrage.mjs",
+      "sha256": "ea481621fc33392a123343afc69973a1a03835e829d128678febc99ad20e9e27",
+      "identique": true
+    },
+    {
+      "candidat": "ingenierie/plan.json",
+      "reference": "t2/ingenierie/plan.json",
+      "sha256": "a4bcb1974da1bebb095a4e4b8b9edbbb7f3a889bf2adc7ad75a51afbe212054d",
+      "identique": true
+    }
+  ],
+  "images_comparees": 900,
+  "ssim_moyen": 0.993148,
+  "ssim_image_minimum": 0.985755,
+  "donnees_audio_identiques": true,
+  "audio_sha256": "SHA256=cabfdb08041eae7625bfff023aecc2ffd9f783f2e9857addf253da5dcaa320d3",
+  "images_bit_identiques": false,
+  "limite": "Deux encodages séparés sont proches mais non identiques bit à bit. Ce test ne constitue pas une nouvelle validation humaine ni une recette sur appareil physique."
+}

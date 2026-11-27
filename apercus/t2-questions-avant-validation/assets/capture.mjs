@@ -1,0 +1,381 @@
+import {loadCore,resourceURL,loadBed} from './engine/resources.mjs';
+import {restoreFiche,href,sceneText,contactAction} from './engine/fiche.mjs?v=voix-1';
+import {createJob,newId,validateResult,validError,RenderFault} from './engine/contract.mjs?v=voix-1';
+import {rotate,releaseReservation} from './engine/rotation.mjs?v=voix-1';
+// Le lecteur média n’est téléchargé que pour de vraies prises ou un test, pas pour la galerie.
+const inputs=['S1','S2','S3','S4'];
+const inspect=(...args)=>import('./media.mjs').then(m=>m.inspect(...args));
+const demoBlob=(...args)=>import('./media.mjs').then(m=>m.demoBlob(...args));
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search), ticket=params.get('fiche');
+const q=Number(params.get('ecran'));
+const preview=Number.isInteger(q)&&q>=1&&q<=12?q:0;
+let CORE,DATA,saved=null,job=null,demo=false,scenes=[];
+const takes=new Map(),accepted=new Set(),samples=new Map();
+const cam=$('cam'),replay=$('replay'),ad=$('ad');
+let idx=0,state='A',epoch=0,eventScope=new AbortController(),animation=0,recSession=null,activeRun=null,renderId=null,detailEditor=null,result=null;
+let voiceFile=null,voiceURL=null,voicePending=false,voiceInvalid=false,voiceRevision=0;
+const current=()=>scenes[idx];
+const fmt=s=>`0:${String(Math.max(0,Math.floor(s))).padStart(2,'0')}`;
+const galleryOnglerie=()=>preview&&(job?.metier||params.get('metier'))==='manucure';
+const reference=s=>resourceURL(galleryOnglerie()?'reference/onglerie.mp4':s.fixture_path).href;
+const sizeAt=()=>current().secondes;
+const canReuse=()=>!preview&&!demo&&current().id==='S3'&&accepted.has('S2')&&takes.has('S2');
+const freezeAt=()=>[.88,1.2,3.8,4.72][idx];
+const still=()=>resourceURL(`reference/ecran-${idx+1}.jpg`).href;
+
+function releaseVideo(v){
+  v.pause();v.srcObject=null;v.removeAttribute('src');v.removeAttribute('poster');v.load();
+}
+function showError(text,retry=null){
+  $('mediaMessage').textContent=text;
+  $('mediaRetry').hidden=!retry;$('mediaRetry').onclick=retry;
+  $('mediaBack').hidden=!!preview;$('mediaFeedback').hidden=false;
+}
+function clearError(){$('mediaFeedback').hidden=true;}
+function stopRecord(session){
+  if(!session)return;
+  session.live=false;
+  if(session.mr.state!=='inactive')session.mr.stop();
+  session.stream.getTracks().forEach(t=>t.stop());
+  if(recSession===session)recSession=null;
+}
+function transition(next){
+  delete $('app').dataset.detailPreview;
+  epoch++;eventScope.abort();eventScope=new AbortController();cancelAnimationFrame(animation);
+  stopRecord(recSession);cancelDetail();clearError();releaseVideo(cam);releaseVideo(replay);replay.style.display='none';
+  for(const name of ['rec','review','panelMontage','panelVoice'])$(name).classList.remove('on');
+  $('sheet').classList.toggle('hidden',next!=='A');
+  $('scrim').classList.toggle('off',next!=='A');
+  $('rec').setAttribute('aria-hidden','true');
+  state=next;$('app').dataset.state=next;$('app').dataset.prise=current().id;
+  return epoch;
+}
+function bullets(el,data,mark){
+  el.replaceChildren(...data.map(text=>{
+    const li=document.createElement('li'),i=document.createElement('span'),t=document.createElement('span');
+    i.className='mark';i.textContent=mark;t.textContent=text;li.append(i,t);return li;
+  }));
+}
+function updateScroll(){
+  const s=$('sheetBody');$('scrollHint').hidden=state!=='A'||s.scrollHeight-s.clientHeight<=10||s.scrollTop+s.clientHeight>=s.scrollHeight-14;
+}
+function describeContext(){
+  const s=current(), hint=sceneText(job,idx);
+  $('sceneCounter').textContent=`SCÈNE ${s.n}/4`;
+  $('dots').replaceChildren(...scenes.map(x=>{const i=document.createElement('i');i.classList.toggle('on',x.n<=s.n);return i;}));
+  $('durationLabel').textContent=s.secondes+' secondes';$('sceneTitle').textContent=s.titre;
+  $('consigne').textContent=s.consigne;
+  bullets($('listFilm'),s.a_filmer,'✓');bullets($('listAvoid'),s.a_eviter,'✕');
+  for(const key of ['caseContext','recContext','reviewContext']){$(key).textContent=hint;$(key).hidden=!saved;}
+  $('soundText').textContent=DATA.sound;$('captureConsent').textContent=DATA.consent;
+  $('reviewQuestion').textContent=s.question_relecture;
+  $('next').textContent=s.n===4?'VOIR MON MONTAGE':'VALIDER ET CONTINUER';
+  $('reviewLabel').textContent=`PRISE ${s.n} · ${fmt(s.secondes)}`;
+}
+function showGuide(i=idx){
+  idx=i;transition('A');describeContext();
+  cam.style.display=(preview||demo)?'block':'none';
+  if(preview||demo){cam.muted=true;cam.loop=!preview;if(galleryOnglerie())cam.poster=still();else{cam.src=reference(current());if(!preview)cam.play().catch(()=>{});else on(cam,'loadedmetadata',()=>{cam.currentTime=freezeAt();},{once:true});}}
+  $('cta').textContent=galleryOnglerie()?'EXEMPLE ONGLES · APERÇU':(demo||preview)?'LIRE LA MIRE DE TEST':'COMMENCER À FILMER';
+  $('cta').disabled=!!preview;
+  $('cameraBtn').disabled=false;$('cameraBtn').hidden=!!preview||demo;
+  $('reuseTake').hidden=!canReuse();$('reuseTake').disabled=false;
+  $('micOption').hidden=!!preview||demo;
+  $('takeHelp').hidden=demo||!!preview;
+  $('takeHelp').textContent=`Filme en 9:16 · ${sizeAt()} s · MP4, MOV ou WebM · 40 Mio maxi.`;
+  $('sheetBody').scrollTop=0;requestAnimationFrame(updateScroll);
+}
+function on(v,event,fn,extra={}){v.addEventListener(event,fn,{signal:eventScope.signal,...extra});}
+function setProgress(t){
+  const p=Math.min(t/sizeAt(),1);
+  $('chronoVal').textContent=fmt(Math.min(sizeAt(),t));$('barFill').style.width=(p*100)+'%';
+  $('bar').classList.toggle('hot',sizeAt()-t<=2);$('chrono').classList.toggle('hot',sizeAt()-t<=2);
+}
+function showB(label,cancel){
+  const e=transition('B');cam.style.display='block';cam.loop=false;cam.muted=true;
+  $('recordLabel').textContent=label;$('cancelCapture').hidden=!cancel;
+  $('rec').classList.add('on');$('rec').setAttribute('aria-hidden','false');setProgress(0);return e;
+}
+function drop(s){
+  if(renderId)invalidateRender();
+  accepted.delete(s.id);const t=takes.get(s.id);if(t)URL.revokeObjectURL(t.url);takes.delete(s.id);
+  if(s.id==='S2'&&takes.get('S3')?.reuseFrom==='S2')drop(scenes[2]);
+}
+function keepTake(file,meta,detailPreview=null){
+  const s=current();drop(s);const t={file,meta,reuseFrom:detailPreview?'S2':null,url:URL.createObjectURL(detailPreview??file)};takes.set(s.id,t);return t;
+}
+async function intake(file,label){
+  if(state!=='A'||preview)return;
+  const e=epoch;const s=current();$('cta').disabled=$('cameraBtn').disabled=$('reuseTake').disabled=true;clearError();
+  try {
+    const blob=await file;
+    const meta=await inspect(blob,s.secondes);
+    if(epoch!==e)return;
+    const t=keepTake(blob,meta);
+    const started=showB(label,true);
+    cam.src=t.url;
+    const go=()=>{cam.play().then(clearError).catch(()=>showError('Appuie sur Réessayer pour lire la prise.',go));};
+    on(cam,'error',()=>showError('La vidéo n’a pas chargé. Reviens à la consigne.',null));
+    on(cam,'ended',()=>{if(epoch===started)showReview(t);});
+    go();
+    const tick=()=>{
+      if(epoch!==started)return;
+      const time=cam.currentTime;setProgress(time);
+      if(time>=s.secondes-.020){showReview(t);return;}
+      animation=requestAnimationFrame(tick);
+    };animation=requestAnimationFrame(tick);
+  } catch(err){if(epoch===e)showError(err.message);}
+  finally{if(epoch===e){$('cta').disabled=$('cameraBtn').disabled=$('reuseTake').disabled=false;}}
+}
+async function example(s){
+  if(!samples.has(s.id))samples.set(s.id,demoBlob(s.id).catch(e=>{samples.delete(s.id);throw e;}));
+  return samples.get(s.id);
+}
+async function filmLive(){
+  if(preview||demo||state!=='A')return;
+  if(!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder==='undefined'){showError('Caméra indisponible ici. Filme avec ton téléphone puis importe le fichier.');return;}
+  const e=epoch,s=current(),audio=$('wantMic').checked;let stream;
+  $('cta').disabled=$('cameraBtn').disabled=$('reuseTake').disabled=true;clearError();
+  try {
+    stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:720},height:{ideal:1280},aspectRatio:{ideal:9/16},frameRate:{ideal:30,max:30}},audio});
+    if(epoch!==e){stream.getTracks().forEach(t=>t.stop());return;}
+    const mimes=audio?['video/mp4','video/webm;codecs=vp8,opus','video/webm']:['video/mp4','video/webm;codecs=vp8','video/webm'];
+    const mimeType=mimes.find(m=>MediaRecorder.isTypeSupported(m));
+    const mr=new MediaRecorder(stream,{...(mimeType?{mimeType}:{}),videoBitsPerSecond:4500000});
+    const phase=showB(audio?'Enregistrement · micro actif':'Enregistrement · micro coupé',true);
+    const r={mr,stream,live:true,finished:false,parts:[]};recSession=r;
+    const fail=(msg)=>{if(epoch!==phase)return;showGuide();showError(msg);};
+    mr.ondataavailable=x=>{if(x.data.size)r.parts.push(x.data);};
+    mr.onerror=()=>fail('La caméra a interrompu la prise. Recommence ou importe un fichier.');
+    stream.getVideoTracks().forEach(t=>t.addEventListener('ended',()=>{if(!r.finished&&r.live)fail('La caméra a été interrompue.');},{once:true}));
+    mr.onstop=async()=>{
+      if(!r.finished||epoch!==phase)return;
+      try {
+        const file=new Blob(r.parts,{type:mr.mimeType||r.parts[0]?.type||'video/webm'});
+        const meta=await inspect(file,s.secondes);if(epoch===phase)showReview(keepTake(file,meta));
+      }catch(err){fail(err.message+' Tu peux aussi importer une prise.');}
+    };
+    cam.srcObject=stream;
+    await cam.play();
+    if(epoch!==phase)return;
+    mr.start(250);const wall=performance.now();
+    const tick=()=>{
+      if(epoch!==phase||!r.live)return;
+      const t=(performance.now()-wall)/1000;setProgress(t);
+      if(t>=s.secondes+.19){r.finished=true;stopRecord(r);return;}
+      animation=requestAnimationFrame(tick);
+    };animation=requestAnimationFrame(tick);
+  }catch(err){
+    stream?.getTracks().forEach(t=>t.stop());
+    if(epoch===e||state==='B'&&recSession?.stream===stream){showGuide();showError(err.name==='NotAllowedError'?'Autorisation caméra ou micro refusée. Tu peux réessayer ou importer un fichier.':'Impossible de lancer la caméra. Tu peux importer un fichier.');}
+  }finally{if(epoch===e){$('cta').disabled=$('cameraBtn').disabled=$('reuseTake').disabled=false;}}
+}
+function cancelDetail(){
+  if(!detailEditor)return;
+  clearTimeout(detailEditor.timer);detailEditor.instance.terminate();detailEditor=null;
+}
+function previewDetail(){
+  if(state!=='A'||!canReuse())return;
+  const t=takes.get('S2');showB('Préparation du détail recadré…',true);cam.style.display='none';
+  let instance;
+  const fail=msg=>{showGuide();showError(msg+' Tu peux aussi importer ou filmer le détail.');};
+  try{instance=new Worker(renderURL(),{type:'module',name:'COIFFURE-T2 aperçu du détail'});}
+  catch{fail('Impossible de préparer l’aperçu.');return;}
+  detailEditor={instance,timer:setTimeout(()=>fail('La préparation de l’aperçu est trop longue.'),45000)};
+  instance.onmessage=({data})=>{
+    if(detailEditor?.instance!==instance)return;
+    if(data.stage==='error'){fail(data.message);return;}
+    if(data.stage==='done'){
+      showReview(keepTake(t.file,t.meta,new Blob([data.buffer],{type:'video/mp4'})));
+    }else if(data.completed&&data.total){
+      $('barFill').style.width=100*data.completed/data.total+'%';
+      $('chronoVal').textContent=Math.round(100*data.completed/data.total)+'%';
+    }
+  };
+  instance.onerror=instance.onmessageerror=()=>fail('L’aperçu du détail n’a pas chargé.');
+  instance.postMessage({kind:'detail',files:{S2:t.file},metier:job.metier});
+}
+function showReview(t,{frozen=false}={}){
+  transition('C');cam.style.display='none';replay.style.display='block';replay.loop=!frozen;replay.muted=true;
+  if(t.reuseFrom)$('app').dataset.detailPreview='true';
+  $('review').classList.add('on');$('next').disabled=true;$('redo').disabled=!!preview;
+  $('reviewMode').textContent=frozen?(galleryOnglerie()?'Extrait du film · aucune prise réelle':'Aperçu · aucune prise validée'):t.reuseFrom?'Geste recadré · aperçu sans son':t.meta.hasAudio?'Son d’origine disponible':'Cette prise est muette';
+  $('reviewOrigin').textContent=t.reuseFrom?'Vidéo du geste':frozen&&galleryOnglerie()?'Extrait du film':frozen||demo?'Mire de test':'Prise validée à la relecture';
+  $('reviewLabel').textContent=t.reuseFrom?'VUE 3 · DÉTAIL':`PRISE ${current().n} · ${fmt(sizeAt())}`;
+  $('reviewQuestion').textContent=t.reuseFrom?'Le détail se voit-il nettement dans ces extraits recadrés ? Sinon, filme ou importe un plan plus serré.':current().question_relecture;
+  $('next').textContent=t.reuseFrom?'VALIDER CE DÉTAIL':current().n===4?'VOIR MON MONTAGE':'VALIDER ET CONTINUER';
+  $('toggleTakeAudio').hidden=frozen||!!t.reuseFrom||!t.meta.hasAudio;$('toggleTakeAudio').textContent='Écouter';
+  let ready=false,timeout=0;
+  if(!frozen){
+    on(replay,'loadeddata',()=>{ready=true;clearTimeout(timeout);$('next').disabled=false;clearError();},{once:true});
+    on(replay,'error',()=>{clearTimeout(timeout);$('next').disabled=true;showError('Cette prise ne se lit pas. Refais-la ou importe un autre fichier.');});
+    timeout=setTimeout(()=>{if(state==='C'&&!ready)showError('La relecture n’a pas pu commencer.');},7000);
+    eventScope.signal.addEventListener('abort',()=>clearTimeout(timeout),{once:true});
+  }
+  if(frozen&&galleryOnglerie())replay.poster=still();else replay.src=t.url;
+  if(frozen&&!galleryOnglerie()){on(replay,'loadedmetadata',()=>{replay.currentTime=Math.min(freezeAt(),replay.duration-.1);},{once:true});}
+  else if(!frozen)replay.play().catch(()=>{if(!ready&&state==='C')showError('Relis la prise avant de valider.',()=>replay.play().catch(()=>{}));});
+}
+function clearResult(){
+  if(!result)return;releaseVideo(ad);URL.revokeObjectURL(result.url);result=null;
+}
+function showResult(out){
+  clearResult();
+  const {result:meta,buffer}=out;
+  const url=URL.createObjectURL(new Blob([buffer],{type:meta.media.mime}));result={url};
+  $('app').hidden=true;$('resultPage').hidden=false;$('resultHeading').textContent=demo?'Le montage de test est prêt.':'Ta vidéo est prête.';
+  $('resultMeta').textContent=[job.salon,job.service,job.ville,job.tarif].filter(Boolean).join(' · ');
+  $('resultCredit').hidden=!demo;document.querySelector('.result-kicker').textContent='MP4 · 720 × 1280 · lettrage et musique'+(meta.added_voice_off?' · avec voix':' · sans voix');
+  $('resultError').textContent='';const dest=contactAction(job);const contact=$('resultContact');contact.hidden=!dest;
+  if(dest){contact.href=dest.href;contact.textContent=dest.label;}else contact.removeAttribute('href');
+  const track=CORE.music.tracks.find(x=>x.id===meta.music.variant);
+  const musicLink=$('musicLink');musicLink.textContent=track.title+' — '+track.artist;musicLink.href=track.source;
+  $('musicLicence').href=track.licence;$('musicAi').hidden=!track.ai_disclosed;
+  $('endDownload').href=url;ad.src=url;ad.muted=false;
+  Object.assign($('resultPage').dataset,{revision:meta.template_version,frames:String(meta.media.frames),sources:String(meta.source_count),track:meta.music.variant,sha256:meta.media.sha256});
+  $('resultEdit').href=href('index.html',ticket);state='ad';
+  window.scrollTo(0,0);
+}
+const renderURL=()=>{const url=resourceURL(CORE.template.paths.worker);url.searchParams.set('v','voix-1');return url;};
+function invalidateRender(){
+  activeRun?.abort();activeRun=null;
+  const id=renderId;renderId=null;
+  if(id&&!demo)Promise.resolve().then(()=>releaseReservation(CORE,id)).catch(()=>{});
+}
+function runWorker(spec,files,voicePcm,signal){
+  return new Promise((resolve,reject)=>{
+    signal.throwIfAborted();
+    let instance;
+    try{instance=new Worker(renderURL(),{type:'module',name:'COIFFURE-T2 export'});}catch{reject(new RenderFault('PLATFORM'));return;}
+    const close=(error,data)=>{
+      clearTimeout(timer);signal.removeEventListener('abort',abort);instance.terminate();
+      if(error)reject(error);else resolve(data);
+    };
+    const abort=()=>close(new RenderFault('CANCELLED'));
+    const timer=setTimeout(()=>close(new RenderFault('TIMEOUT')),160000);
+    signal.addEventListener('abort',abort,{once:true});
+    instance.onmessage=({data})=>{
+      if(signal.aborted)return;
+      if(data.stage==='error'){
+        const r=data.error;
+        close(validError(r)?new RenderFault(r.code,r.message):new RenderFault('RENDER_FAILED'));return;
+      }
+      if(data.stage==='done'){
+        try{
+          if(!(data.buffer instanceof ArrayBuffer))throw new RenderFault('RENDER_FAILED');
+          validateResult(data.result,spec,CORE,data.buffer.byteLength);close(null,data);
+        }catch(err){close(err);}return;
+      }
+      if(data.completed)$('montageMeter').value=data.completed;
+      $('montageStatus').textContent=data.stage==='encode'?`Images encodées : ${data.completed} / ${data.total}`:data.stage==='finalize'?'Finalisation de la vidéo et de la musique…':'Chargement du plan, des prises et du fond…';
+    };
+    instance.onerror=instance.onmessageerror=()=>close(new RenderFault('RENDER_FAILED'));
+    try{instance.postMessage({kind:'production',job:spec,files,metier:job.metier,voicePcm});}catch{close(new RenderFault('RENDER_FAILED'));}
+  });
+}
+function showVoiceChoice(){transition('voice');$('panelVoice').classList.add('on');$('voiceContinue').disabled=voicePending||voiceInvalid;}
+async function setVoice(file){
+  const rev=++voiceRevision;voicePending=true;voiceInvalid=false;$('voiceContinue').disabled=true;
+  if(voiceURL)URL.revokeObjectURL(voiceURL);voiceURL=null;voiceFile=null;$('voicePreview').pause();$('voicePreview').removeAttribute('src');$('voicePreview').hidden=true;$('voiceClear').hidden=true;
+  if(!file){$('voiceStatus').textContent='Aucune voix ajoutée.';voicePending=false;$('voiceContinue').disabled=false;return;}
+  let ctx;
+  try{
+    if(!file.size||file.size>20*1024*1024)throw Error('Le fichier doit faire moins de 20 Mio.');
+    const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)throw Error('Audio indisponible sur ce navigateur.');ctx=new Audio({sampleRate:48000});
+    const decoded=await ctx.decodeAudioData(await file.arrayBuffer());if(rev!==voiceRevision)return;
+    if(decoded.duration<.3||decoded.duration>30.15)throw Error('La voix doit durer entre 0,3 et 30 secondes.');
+    let energy=0,count=0;for(let c=0;c<decoded.numberOfChannels;c++){const a=decoded.getChannelData(c);for(let i=0;i<a.length;i+=16){energy+=a[i]*a[i];count++;}}
+    if(Math.sqrt(energy/Math.max(1,count))<.0001)throw Error('Cette voix est silencieuse ou trop faible.');
+    voiceFile=file;voiceURL=URL.createObjectURL(file);$('voicePreview').src=voiceURL;$('voicePreview').hidden=false;$('voiceClear').hidden=false;
+    $('voiceStatus').textContent='Voix prête : écoute-la avant le montage.';
+  }catch(e){if(rev===voiceRevision){$('voiceFile').value='';voiceInvalid=true;$('voiceClear').hidden=false;$('voiceStatus').textContent=(e.message||'Fichier audio illisible.')+' Choisis un autre fichier ou retire la voix.';}}
+  finally{if(ctx)await ctx.close();if(rev===voiceRevision){voicePending=false;$('voiceContinue').disabled=voiceInvalid;}}
+}
+async function mixVoice(track,file){
+  const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)throw new RenderFault('AUDIO_INVALID');const ctx=new Audio({sampleRate:48000});
+  try{
+    const [raw,voiceRaw]=await Promise.all([loadBed(track),file.arrayBuffer()]);
+    const [bed,v]=await Promise.all([ctx.decodeAudioData(raw),ctx.decodeAudioData(voiceRaw)]);
+    if(v.duration<.3||v.duration>30.15)throw new RenderFault('AUDIO_INVALID','La voix doit durer entre 0,3 et 30 secondes.');
+    const sr=48000,n=sr*30,left=new Float32Array(n),right=new Float32Array(n);let energy=0,count=0,step=Math.round(sr*.4);
+    for(let i=0;i<v.length;i+=step){let sum=0,end=Math.min(v.length,i+step);for(let c=0;c<v.numberOfChannels;c++){let a=v.getChannelData(c);for(let j=i;j<end;j++)sum+=a[j]*a[j];}let k=(end-i)*v.numberOfChannels;if(sum/k>1e-5){energy+=sum;count+=k;}}
+    const rms=Math.sqrt(energy/Math.max(1,count));if(!Number.isFinite(rms)||rms<.0001)throw new RenderFault('AUDIO_INVALID','La voix est silencieuse ou trop faible.');
+    const vg=Math.min(5,Math.pow(10,-20.5/20)/rms),bl=bed.getChannelData(0),br=bed.getChannelData(Math.min(1,bed.numberOfChannels-1)),vl=v.getChannelData(0),vr=v.getChannelData(Math.min(1,v.numberOfChannels-1));
+    let env=0,attack=Math.exp(-1/(sr*.04)),release=Math.exp(-1/(sr*.6));for(let i=0;i<n;i++){
+      let a=i<vl.length?vl[i]*vg:0,b=i<vr.length?vr[i]*vg:0,det=Math.max(Math.abs(a),Math.abs(b)),coef=det>env?attack:release;env=coef*env+(1-coef)*det;
+      let duck=Math.max(.22,Math.min(1,Math.pow(.03/Math.max(.03,env),.70)));let x=(bl[i]||0)*.707*duck+a,y=(br[i]||0)*.707*duck+b;
+      left[i]=Math.max(-.55,Math.min(.55,x));right[i]=Math.max(-.55,Math.min(.55,y));
+    }return {left,right};
+  }catch(e){if(e instanceof RenderFault)throw e;throw new RenderFault('AUDIO_INVALID','Impossible de lire ou de mixer la voix avec la musique.');}finally{await ctx.close();}
+}
+async function encode(){
+  if(preview||!saved||accepted.size!==4||activeRun)return;
+  for(const id of inputs)if(!accepted.has(id)||!takes.has(id))return;
+  const reuseDetail=takes.get('S3').reuseFrom==='S2';
+  const refs=reuseDetail?['S1','S2','S4']:inputs;
+  if(reuseDetail&&takes.get('S3').file!==takes.get('S2').file){drop(scenes[2]);showGuide(2);return;}
+  const id=renderId??(renderId=newId()), run=new AbortController();activeRun=run;
+  const files=Object.fromEntries(refs.map(key=>[key,takes.get(key).file]));
+  transition('montage');$('panelMontage').classList.add('on');
+  $('montageHeading').textContent='Montage en cours';$('montageSteps').textContent=`${refs.length} vidéos · 4 vues validées · lettrage et musique${voiceFile?' avec voix':' sans voix'}`;
+  $('montageStatus').textContent='Préparation du fond musical…';$('montageMeter').value=0;
+  $('montageRetry').hidden=true;$('montageGo').hidden=true;$('montageCancel').textContent='Retour aux prises';
+  try{
+    if(!isSecureContext)throw new RenderFault('PLATFORM');
+    const render=async variant=>{const track=CORE.music.tracks.find(t=>t.id===variant);const voicePcm=voiceFile?await mixVoice(track,voiceFile):null;run.signal.throwIfAborted();return runWorker(createJob(CORE,{id,source:job.source,detail:reuseDetail,view:job.framing,answers:job,variant,voice:Boolean(voicePcm)}),files,voicePcm,run.signal);};
+    const data=await (demo?render('A'):rotate(CORE,id,run.signal,render));
+    if(activeRun===run&&!run.signal.aborted)showResult(data);
+  }catch(err){
+    if(activeRun!==run||run.signal.aborted)return;
+    $('montageHeading').textContent='Le montage n’a pas abouti';
+    $('montageStatus').textContent=err instanceof RenderFault?err.message:'Le montage n’a pas abouti. Tu peux réessayer sans refaire tes prises.';
+    $('montageRetry').hidden=err instanceof RenderFault&&!err.retryable;
+  }finally{if(activeRun===run)activeRun=null;}
+}
+function backToTakes(){
+  if(state==='montage')invalidateRender();
+  clearResult();$('resultPage').hidden=true;$('app').hidden=false;idx=3;
+  const t=takes.get(current().id);if(t){describeContext();showReview(t);}else showGuide(3);
+}
+function init(){
+  $('app').dataset.test=DATA.id;
+  if(!preview&&!saved){if(ticket)$('curtainText').textContent='Cette fiche n’est plus dans cet onglet.';$('testCurtain').hidden=false;return;}
+  $('testID').textContent=galleryOnglerie()?'EXEMPLE ONGLES · FILM VALIDÉ':preview?'APERÇU DE CAPTURE':demo?'BEAUTÉ · SIMULATION':'BEAUTÉ · MES PRISES';
+  $('flowLinks').hidden=!!preview;$('editFiche').href=href('index.html',ticket);$('seeScreens').href=href('ecrans.html',ticket);
+  $('cta').onclick=()=>demo?intake(example(current()),'Mire de test · lecture'):filmLive();
+  $('cameraBtn').onclick=()=>$('takeFile').click();
+  $('reuseTake').onclick=previewDetail;
+  $('takeFile').onchange=e=>{const f=e.target.files[0];e.target.value='';if(f)intake(Promise.resolve(f),'Fichier importé · lecture');};
+  $('cancelCapture').onclick=$('mediaBack').onclick=()=>{drop(current());showGuide();};
+  $('toggleTakeAudio').onclick=()=>{replay.muted=!replay.muted;$('toggleTakeAudio').textContent=replay.muted?'Écouter':'Couper le son';replay.play().catch(()=>{});};
+  $('redo').onclick=()=>{if(preview)return;drop(current());showGuide();};
+  $('next').onclick=()=>{if(preview||state!=='C'||$('next').disabled||!takes.has(current().id))return;accepted.add(current().id);if(idx<3)showGuide(idx+1);else showVoiceChoice();};
+  $('voiceFile').onchange=()=>setVoice($('voiceFile').files[0]||null);
+  $('voiceClear').onclick=()=>{if(!voicePending){$('voiceFile').value='';setVoice(null);}};
+  $('voiceContinue').onclick=()=>{if(!voicePending)encode();};
+  $('voiceBack').onclick=backToTakes;
+  $('montageCancel').onclick=$('resultBack').onclick=backToTakes;$('montageRetry').onclick=encode;
+  $('replayAd').onclick=()=>{ad.currentTime=0;ad.play().catch(()=>{});};
+  ad.onerror=()=>{$('resultError').textContent='Le navigateur ne peut pas lire ce fichier ici. Le téléchargement reste disponible.';};
+  $('scrollHint').onclick=()=>$('sheetBody').scrollBy({top:Math.max(100,$('sheetBody').clientHeight*.8)});
+  $('sheetBody').addEventListener('scroll',updateScroll,{passive:true});window.addEventListener('resize',updateScroll);document.fonts.ready.then(updateScroll);
+  if(preview){
+    document.body.classList.add('capture');showGuide(Math.floor((preview-1)/3));
+    const mode=(preview-1)%3;
+    if(mode===1){showB(galleryOnglerie()?'Aperçu fictif · extrait du film':'Aperçu du chrono · simulation',false);if(galleryOnglerie()){cam.poster=still();setProgress(Math.min(2,sizeAt()));}else{cam.src=reference(current());on(cam,'loadedmetadata',()=>{cam.currentTime=freezeAt();setProgress(freezeAt());},{once:true});}}
+    if(mode===2)showReview({url:reference(current()),meta:{hasAudio:false}},{frozen:true});
+  }else showGuide();
+  window.addEventListener('pagehide',()=>{voiceRevision++;if(voiceURL)URL.revokeObjectURL(voiceURL);if(state==='montage')invalidateRender();cancelDetail();stopRecord(recSession);});
+  // État de diagnostic uniquement, sans accès à la fiche, aux vidéos ou aux coordonnées.
+  window.__capture=()=>({state,screen:state==='ad'||state==='montage'?null:`${current().id}_${state}`,accepted:[...accepted],reusedDetail:takes.get('S3')?.reuseFrom==='S2'});
+}
+loadCore().then(core=>{
+  CORE=core;DATA=core.guide;saved=restoreFiche(ticket,CORE);job=saved;demo=job?.source==='demo';
+  const selected=job?.metier||params.get('metier')||'coiffure';
+  scenes=globalThis.VVBeaute.scenes(DATA.scenes,selected,'t2');
+  init();document.documentElement.dataset.ready='yes';
+}).catch(()=>{
+  $('curtainText').textContent='Impossible de charger les ressources locales du gabarit.';$('testCurtain').hidden=false;
+  document.documentElement.dataset.ready='error';
+});

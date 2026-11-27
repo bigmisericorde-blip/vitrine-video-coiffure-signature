@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "COIFFURE-T2 — RenderJob",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "vv.coiffure.render-job/1"
+    },
+    "template_id": {
+      "const": "COIFFURE-T2"
+    },
+    "template_version": {
+      "const": "2.0.3-rc.1"
+    },
+    "job_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{32}$"
+    },
+    "execution_profile": {
+      "const": "browser-webcodecs"
+    },
+    "audio_profile": {
+      "const": "coiffure-en-etapes"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "merchant",
+        "technical_fixture"
+      ]
+    },
+    "slots": {
+      "enum": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "detail": {
+      "type": "string",
+      "enum": [
+        "distinct",
+        "S3_from_S2"
+      ]
+    },
+    "framing": {
+      "type": "string",
+      "enum": [
+        "profil",
+        "contours",
+        "couleur",
+        "detail"
+      ]
+    },
+    "answers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "service": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 34
+        },
+        "geste": {
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 34
+            }
+          ]
+        },
+        "preuve": {
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 36
+            }
+          ]
+        },
+        "accroche": {
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 36
+            }
+          ]
+        },
+        "salon": {
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 32
+            }
+          ]
+        },
+        "ville": {
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 32
+            }
+          ]
+        },
+        "prix": {
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 18
+            }
+          ]
+        },
+        "canal": {
+          "type": "string",
+          "enum": [
+            "aucun",
+            "whatsapp",
+            "telephone",
+            "lien"
+          ]
+        },
+        "prixMode": {
+          "type": "string",
+          "enum": [
+            "fixe",
+            "minimum"
+          ]
+        },
+        "numero": {
+          "type": "string",
+          "pattern": "^\\+[1-9]\\d{7,14}$"
+        }
+      },
+      "required": [
+        "service",
+        "geste",
+        "preuve",
+        "accroche",
+        "salon",
+        "ville",
+        "prix",
+        "canal",
+        "prixMode"
+      ]
+    },
+    "music": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "A"
+            },
+            "track_id": {
+              "const": "fma-279239"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "B"
+            },
+            "track_id": {
+              "const": "fma-277070"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "C"
+            },
+            "track_id": {
+              "const": "fma-228953"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": {
+              "const": "D"
+            },
+            "track_id": {
+              "const": "fma-224058"
+            },
+            "catalogue_version": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "variant",
+            "track_id",
+            "catalogue_version"
+          ]
+        }
+      ]
+    },
+    "voice": {
+      "const": true,
+      "description": "Voix personnelle facultative importée et mixée localement."
+    }
+  },
+  "required": [
+    "schema",
+    "template_id",
+    "template_version",
+    "job_id",
+    "execution_profile",
+    "audio_profile",
+    "mode",
+    "slots",
+    "detail",
+    "framing",
+    "answers",
+    "music"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "detail": {
+            "const": "S3_from_S2"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "mode": {
+            "const": "merchant"
+          },
+          "slots": {
+            "const": [
+              "S1",
+              "S2",
+              "S4"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "slots": {
+            "const": [
+              "S1",
+              "S2",
+              "S3",
+              "S4"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

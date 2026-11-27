@@ -1,0 +1,18 @@
+{
+  "form_combinations": 16,
+  "required_field_and_contact_validation": true,
+  "contracts_roundtrip": true,
+  "voice_free_contract": true,
+  "resource_hashes": 7,
+  "rotation_successes": 10000,
+  "rotation_repeats": 0,
+  "distribution": {
+    "A": 2508,
+    "B": 2526,
+    "C": 2466,
+    "D": 2500
+  },
+  "stable_retry": true,
+  "failure_not_committed": true,
+  "abandon_and_expiration": true
+}

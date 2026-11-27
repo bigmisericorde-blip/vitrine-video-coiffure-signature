@@ -1,0 +1,86 @@
+{
+  "schema": "vv.coiffure.exemples/1",
+  "revision": "r04-texte-02",
+  "examples": [
+    {
+      "id": "EX-01",
+      "title": "Tresses en carrés",
+      "language": "fr",
+      "media": "EX-01 : une séance de revue conservée en local. Le paquet n’embarque que des mires graphiques de recette.",
+      "track": "A",
+      "answers": {
+        "service": "Tresses en carrés",
+        "geste": "Séparer les mèches",
+        "preuve": "Des raies bien tracées",
+        "accroche": "",
+        "salon": "Atelier Démo",
+        "ville": "",
+        "prix": "",
+        "prixMode": "fixe",
+        "canal": "aucun",
+        "contact": "",
+        "contactConfirme": false
+      }
+    },
+    {
+      "id": "EX-02",
+      "title": "Dégradé bas",
+      "language": "fr",
+      "media": "Fiche fictive ; ne pas la présenter comme la coiffure des images R04",
+      "track": "B",
+      "answers": {
+        "service": "Dégradé bas",
+        "geste": "Fondre les longueurs",
+        "preuve": "Des contours dessinés",
+        "accroche": "",
+        "salon": "Atelier Démo",
+        "ville": "Cotonou",
+        "prix": "3 500 FCFA",
+        "prixMode": "fixe",
+        "canal": "aucun",
+        "contact": "",
+        "contactConfirme": false
+      }
+    },
+    {
+      "id": "EX-03",
+      "title": "Vanilles sur cheveux naturels",
+      "language": "fr",
+      "media": "Fiche fictive ; pas de prises correspondantes livrées",
+      "track": "C",
+      "answers": {
+        "service": "Vanilles sur cheveux naturels",
+        "geste": "Torsader deux mèches",
+        "preuve": "Des mèches bien définies",
+        "accroche": "",
+        "salon": "Studio Exemple",
+        "ville": "Abomey-Calavi",
+        "prix": "5 000",
+        "prixMode": "minimum",
+        "canal": "lien",
+        "contact": "https://exemple.invalid/reserver",
+        "contactConfirme": true
+      }
+    },
+    {
+      "id": "EX-04",
+      "title": "Chignon tressé",
+      "language": "fr",
+      "media": "Fiche fictive ; pas de prises correspondantes livrées",
+      "track": "D",
+      "answers": {
+        "service": "Chignon tressé",
+        "geste": "Fixer le chignon",
+        "preuve": "L’attache ne se voit pas",
+        "accroche": "",
+        "salon": "Maison Démo",
+        "ville": "",
+        "prix": "",
+        "prixMode": "fixe",
+        "canal": "aucun",
+        "contact": "",
+        "contactConfirme": false
+      }
+    }
+  ]
+}

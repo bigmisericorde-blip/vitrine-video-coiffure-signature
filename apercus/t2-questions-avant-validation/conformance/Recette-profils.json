@@ -1,0 +1,86 @@
+{
+  "profils": [
+    {
+      "metier": "coiffure",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    },
+    {
+      "metier": "manucure",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    },
+    {
+      "metier": "pedicure",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    },
+    {
+      "metier": "visage",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    },
+    {
+      "metier": "corps",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    },
+    {
+      "metier": "maquillage",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    },
+    {
+      "metier": "regard",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    },
+    {
+      "metier": "autre",
+      "guides_confirmes": 4,
+      "mires_explicites": true
+    }
+  ],
+  "ecrans_manucure": 12,
+  "export_sur_mires": {
+    "file": "Recette-onglerie-mires.mp4",
+    "bytes": 19581364,
+    "sha256": "c1b97a34190334f92f7b6caa42d383573d8e890124e7e0dbacc9f2a865b35520",
+    "frames": 900,
+    "fps": 30,
+    "seconds": 30,
+    "avc_width": 720,
+    "avc_height": 1280,
+    "audio": "aac-lc/48000/2",
+    "variant": "C",
+    "audio_packet_sha256": "9c57f092e761e3afb5d7e0736585788fc24096f917e837f281cf8c8e06701b66",
+    "music_only_aac_bit_identical": true,
+    "metadata_contact_absent": true,
+    "decoded_completely": true,
+    "pixels": {
+      "gesture": {
+        "frame": 186,
+        "expected_text": "Appliquer le vernis",
+        "light_pixels_matching": 1.0
+      },
+      "proof": {
+        "frame": 408,
+        "expected_text": "Le bord net du vernis",
+        "light_pixels_matching": 1.0
+      },
+      "service": {
+        "frame": 616,
+        "expected_text": "Pose de vernis",
+        "light_pixels_matching": 1.0
+      },
+      "optional_empty_band_checked": true
+    }
+  },
+  "erreurs_js": [],
+  "requetes_externes": [],
+  "posts": [],
+  "appareil_physique": false,
+  "rushs_reels": false,
+  "validation_visuelle_humaine": false,
+  "voix_off": false
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "A",
+    "source": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/cUcs6uMOXcjxxrLW0btTwHzwF1kK9Ga4LxlZzfAd.mp3",
+    "http": 200,
+    "bytes": 9522285,
+    "sha256": "e4b9a4b972f48a1060624bee6bf7e63e09fb718c7dcc76001b81dd28e3a4eff4",
+    "expected_sha256": "e4b9a4b972f48a1060624bee6bf7e63e09fb718c7dcc76001b81dd28e3a4eff4",
+    "identical": true,
+    "decoded": true,
+    "stderr": ""
+  },
+  {
+    "id": "B",
+    "source": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/ffNqG5FYktO7ghvxqBDl9DPP38gDrPXOvY8BVMJX.mp3",
+    "http": 200,
+    "bytes": 5713965,
+    "sha256": "779d95417beea8477dcbfe6f1c6d9d5ffeb6e556a56b1eba904c133f37e3b1b9",
+    "expected_sha256": "779d95417beea8477dcbfe6f1c6d9d5ffeb6e556a56b1eba904c133f37e3b1b9",
+    "identical": true,
+    "decoded": true,
+    "stderr": ""
+  },
+  {
+    "id": "C",
+    "source": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/2BKZWzZ2JKjaLHbdPnhGhM9FEYiVwyENQYQxWFau.mp3",
+    "http": 200,
+    "bytes": 6375419,
+    "sha256": "2a6c8d1a37307ed30fbd198016a38f4aa7c5a6d3eb4f641a61c8418cedcb7172",
+    "expected_sha256": "2a6c8d1a37307ed30fbd198016a38f4aa7c5a6d3eb4f641a61c8418cedcb7172",
+    "identical": true,
+    "decoded": true,
+    "stderr": ""
+  },
+  {
+    "id": "D",
+    "source": "https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/45Tl14trLcx7VKeae0M5o1XIPzzZwLEWGMPxevS7.mp3",
+    "http": 200,
+    "bytes": 4244412,
+    "sha256": "62a645677acacf3f83eb57e9abe9347a2bacee03886e3bd48ed0d55a391b6ed6",
+    "expected_sha256": "62a645677acacf3f83eb57e9abe9347a2bacee03886e3bd48ed0d55a391b6ed6",
+    "identical": true,
+    "decoded": true,
+    "stderr": ""
+  }
+]

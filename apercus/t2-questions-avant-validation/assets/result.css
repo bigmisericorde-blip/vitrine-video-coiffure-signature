@@ -1,0 +1,24 @@
+/* Les cadres caméra restent dans la capture ; le fichier final est lu sans cadre ni recadrage. */
+[hidden]{display:none!important}
+.mic-option{display:flex;align-items:center;justify-content:center;gap:6px;margin:7px 0 9px;font-size:12px;color:#dbe7f5}
+.mic-option input{accent-color:#40d6a1}
+.record-stop{pointer-events:auto;position:absolute;top:18px;right:15px;border:1px solid #c0cde1;border-radius:9px;background:#0b1726be;color:white;padding:8px 10px;font:600 12px Jakarta,sans-serif}
+#replay{object-fit:contain}
+#app[data-state=B] #cam{object-fit:contain}
+body:has(.result-page:not([hidden])){overflow:auto;background:#f6f3ee;color:#211b18}
+.result-page{min-height:100dvh;background:#f6f3ee;color:#211b18;font:16px/1.55 Jakarta,system-ui,sans-serif}
+.result-page header{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;border-bottom:1px solid #ded6cb;position:relative;gap:10px}
+.result-page a{color:inherit;text-underline-offset:3px}
+.result-page header a{font-size:13px}
+.result-layout{display:grid;grid-template-columns:auto minmax(220px,370px);align-items:center;justify-content:center;gap:clamp(28px,6vw,90px);margin:auto;padding:26px 24px 36px}
+.result-layout video,.result-layout video#ad{position:static;inset:auto;width:auto;height:min(81svh,815px);max-width:100%;aspect-ratio:9/16;object-fit:contain;background:#100d0b;display:block;border:0;border-radius:0;box-shadow:none}
+.result-copy h1{font-size:clamp(28px,4vw,52px);line-height:1.04;letter-spacing:-.052em;margin:10px 0 16px}
+.result-kicker{font-size:12px;font-weight:750;letter-spacing:.11em;text-transform:uppercase;color:#765343}
+.result-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:22px 0}
+.result-actions .cta{width:auto;background:#25211d;color:white;text-decoration:none;letter-spacing:0;text-transform:none;padding:12px 16px;border-radius:8px}
+.result-copy .minor{color:#312d27;background:transparent;border:1px solid #af9d8d;border-radius:8px;padding:8px 12px}
+.result-note,#resultError{font-size:13px;color:#65564a}
+#resultContact{display:block;margin-bottom:12px;overflow-wrap:anywhere}
+@media(max-width:650px){.result-page header{padding:12px 16px}.result-layout{display:grid;grid-template-columns:1fr;gap:20px;justify-items:center;padding:0 0 25px}.result-layout video,.result-layout video#ad{width:min(100%,calc(84svh*9/16));height:auto;max-height:84svh}.result-copy{width:min(100%,470px);padding:0 16px}}
+
+body:has(.result-page:not([hidden])){height:auto}

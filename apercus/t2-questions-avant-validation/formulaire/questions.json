@@ -1,0 +1,161 @@
+{
+  "schema": "vv.coiffure.questions/1",
+  "revision": "r04-texte-02",
+  "language": "fr",
+  "fields": [
+    {
+      "id": "service",
+      "group": "preuve",
+      "question": "Quelle prestation veux-tu présenter dans ta vidéo ?",
+      "hint": "Obligatoire. Exemple : pose de vernis, soin du visage ou maquillage.",
+      "required": true,
+      "min": 2,
+      "max": 34,
+      "example": "Pose de vernis",
+      "display": "Révélation · nom de la prestation"
+    },
+    {
+      "id": "geste",
+      "group": "preuve",
+      "question": "Quel geste voit-on vraiment à l’écran ?",
+      "hint": "Écris une action courte qui correspond à tes images.",
+      "required": false,
+      "min": 4,
+      "max": 34,
+      "example": "Séparer les mèches",
+      "display": "Plan de travail · deuxième ligne"
+    },
+    {
+      "id": "preuve",
+      "group": "preuve",
+      "question": "Quel détail montre que le travail est réussi ?",
+      "hint": "Choisis un détail que le gros plan permet de vérifier. Évite les promesses de tenue ou les superlatifs.",
+      "required": false,
+      "min": 4,
+      "max": 36,
+      "example": "Des raies bien tracées",
+      "display": "Plan de détail · deuxième ligne"
+    },
+    {
+      "id": "accroche",
+      "group": "preuve",
+      "question": "Veux-tu proposer ta propre accroche ?",
+      "hint": "Facultatif : 2 à 6 mots. Vide, l’ouverture change avec la musique.",
+      "required": false,
+      "min": 4,
+      "max": 36,
+      "example": "Un geste qui te ressemble",
+      "display": "Ouverture · mots en cascade"
+    },
+    {
+      "id": "salon",
+      "group": "offre",
+      "question": "Quel est le nom de ton salon ou de ton activité ?",
+      "hint": "Obligatoire. Exemple fictif : Atelier Beauté.",
+      "required": false,
+      "min": 2,
+      "max": 32,
+      "example": "Atelier Beauté",
+      "display": "Signature de fin"
+    },
+    {
+      "id": "ville",
+      "group": "offre",
+      "question": "Dans quelle ville se trouve ton salon ?",
+      "hint": "Facultatif. Exemple : Cotonou.",
+      "required": false,
+      "min": 2,
+      "max": 32,
+      "example": "Cotonou",
+      "display": "Signature de fin · lieu"
+    },
+    {
+      "id": "prix",
+      "group": "offre",
+      "question": "À partir de quel prix proposes-tu cette prestation ?",
+      "hint": "Facultatif. Montant en FCFA, sans inventer de prix.",
+      "required": false,
+      "min": 1,
+      "max": 18,
+      "example": "2 500",
+      "display": "Signature de fin · tarif exact ou minimum confirmé"
+    },
+    {
+      "id": "canal",
+      "group": "offre",
+      "question": "Comment ta clientèle prend-elle rendez-vous ?",
+      "hint": "Le film affiche la consigne, pas tes coordonnées en clair. La destination vérifiée est à côté du lecteur.",
+      "required": true,
+      "options": [
+        [
+          "aucun",
+          "Pas de contact à afficher"
+        ],
+        [
+          "whatsapp",
+          "WhatsApp"
+        ],
+        [
+          "telephone",
+          "Appel téléphonique"
+        ],
+        [
+          "lien",
+          "Page de réservation"
+        ]
+      ],
+      "display": "Appel à l’action · dernière vue"
+    }
+  ],
+  "conditional": [
+    {
+      "id": "prixMode",
+      "condition": "prix non vide",
+      "choices": [
+        "fixe",
+        "minimum"
+      ],
+      "default": "fixe"
+    },
+    {
+      "id": "contact",
+      "condition": "canal autre que aucun",
+      "required": true,
+      "max": 120,
+      "format": "international +… ou URL https sans identifiants"
+    },
+    {
+      "id": "contactConfirme",
+      "condition": "canal autre que aucun",
+      "required": true,
+      "type": "boolean",
+      "label": "Cette destination est vérifiée et j’ai le droit de la communiquer."
+    }
+  ],
+  "capteurs": [
+    {
+      "id": "S1",
+      "duration_s": 6,
+      "guide": "Filme la même personne avant de commencer. Laisse de la place autour de la tête.",
+      "review": "Voit-on les cheveux avant le premier geste ?"
+    },
+    {
+      "id": "S2",
+      "duration_s": 7,
+      "guide": "Montre ton geste sans quitter les doigts ni la partie travaillée.",
+      "review": "Voit-on le geste que tu as écrit dans ta fiche ?"
+    },
+    {
+      "id": "S3",
+      "duration_s": 7,
+      "guide": "Rapproche-toi du détail promis. Avec trois prises, réutilise S2 seulement si le détail s’y voit bien.",
+      "review": "Le détail est-il net ? Sinon, refais cette prise."
+    },
+    {
+      "id": "S4",
+      "duration_s": 7,
+      "guide": "Propose un tour lent du fini de la même personne. À la fin, laisse de l’air en bas du cadre.",
+      "review": "Le résultat se comprend-il sans texte ni musique ?"
+    }
+  ]
+}
