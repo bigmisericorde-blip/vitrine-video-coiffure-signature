@@ -56,9 +56,9 @@ export function validateJob(job,core){
   demand(Array.isArray(job.slots)&&job.slots.length===slots.length&&job.slots.every((s,i)=>s===slots[i]));
   demand(keys(job.music,['variant','track_id','catalogue_version'])&&MUSIC_IDS.includes(job.music.variant)&&job.music.catalogue_version===core.music.version);
   const track=core.music.tracks.find(x=>x.id===job.music.variant&&x.track_id===job.music.track_id);demand(track);
-  demand(keys(job.answers,['service','geste','preuve','accroche','salon','ville','prix','prixMode','canal',...(own(job.answers,'numero')?['numero']:[])])&&Object.values(job.answers).every(x=>typeof x==='string'));
+  demand(keys(job.answers,['service','geste','preuve','accroche','salon','ville','prix','prixMode','canal',...(own(job.answers,'outil')?['outil']:[]),...(own(job.answers,'numero')?['numero']:[])])&&Object.values(job.answers).every(x=>typeof x==='string'));
   let fields;try{fields=normalizeVisual(job.answers,core.questions,core.font);}catch{throw new RenderFault('INVALID_JOB');}
-  demand(Object.entries(visualAnswers(fields)).every(([k,v])=>job.answers[k]===v));
+  demand(Object.entries(visualAnswers(fields)).every(([k,v])=>job.answers[k]===v||(k==='outil'&&!own(job.answers,k)&&v==='')));
   return {fields,track,reuse,slots};
 }
 export function createResult(job,core,byteLength,hash){

@@ -39,7 +39,7 @@ async function load(){
     &&font.sans.file==='../PlusJakartaSans-Variable.ttf');
   soundPack(music);
   assert(music.version===t.audio.catalogue_version&&music.audio_profile===t.audio_profile&&music.r04_base_sha256===t.base.approved_master_sha256);
-  assert(Array.isArray(questions.fields)&&questions.fields.map(f=>f.id).join(',')==='salon,service,outil,ville,contact,prix'&&questions.fields.every((f,i)=>f.required===(i<2)&&typeof f.question==='string'&&Array.isArray(f.render_targets)&&f.render_targets.join(',')===['signature.name','reveal.service','','signature.city','number','price'][i]));
+  assert(Array.isArray(questions.fields)&&questions.fields.map(f=>f.id).join(',')==='salon,service,outil,ville,contact,prix'&&questions.fields.every((f,i)=>f.required===(i<2)&&typeof f.question==='string'&&Array.isArray(f.render_targets)&&f.render_targets.join(',')===['signature.name','reveal.service','work.tool','signature.city','number','price'][i]));
   assert(Array.isArray(questions.engine_fields)&&questions.engine_fields.map(f=>f.id).join(',')==='geste,preuve,accroche,canal'&&questions.flow_contract?.guide===p.guide&&questions.flow_contract?.plan===p.plan&&questions.flow_contract?.engine===p.worker);
   assert(guide.schema==='vv.coiffure.capture/1'&&guide.id===t.template_id&&guide.scenes.length===4&&guide.screens.length===12&&guide.source_audio===t.capture.source_audio);
   for(const [i,screen] of guide.screens.entries()){

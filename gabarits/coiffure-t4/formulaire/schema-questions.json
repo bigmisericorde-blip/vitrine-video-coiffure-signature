@@ -99,7 +99,8 @@
             },
             "destinations": {
               "const": [
-                "guide_S2"
+                "guide_S2",
+                "film"
               ]
             }
           }

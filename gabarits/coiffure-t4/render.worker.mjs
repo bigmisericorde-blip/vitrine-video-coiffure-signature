@@ -30,9 +30,10 @@ function artwork(frame,ctx,s,x,subs,seg){
  if(f<727)lc.drawImage(plate,0,0);
  if(f>=727&&f<755){let q=smooth((f-727)/28),edge=W*(1-q)*1.7-260;ctx.drawImage(last,0,0);ctx.save();ctx.beginPath();ctx.moveTo(edge,0);ctx.lineTo(W,0);ctx.lineTo(W,H);ctx.lineTo(edge-.23*H,H);ctx.closePath();ctx.clip();ctx.drawImage(plate,0,0);ctx.restore()}
  if(f>=892){ctx.fillStyle=`rgba(0,0,0,${.34*smooth((f-892)/8)})`;ctx.fillRect(0,0,W,H)}
- if(!sub&&f>=30&&f<130){shade(ctx,0,400);title(ctx,x.accroche||x.service,110,78,Math.min(smooth((f-30)/10),smooth((130-f)/10)))}
- if(!sub&&f>=336&&f<413){shade(ctx,0,400);title(ctx,x.service,110,78,Math.min(smooth((f-336)/12),smooth((413-f)/10)))}
- if(!sub&&f>=538&&f<596){shade(ctx,0,400);title(ctx,x.detail,110,76,Math.min(smooth((f-538)/10),smooth((596-f)/10)))}
+ if(f>=30&&f<130){if(!sub)shade(ctx,0,400);title(ctx,x.accroche||x.service,sub?1000:110,sub?52:78,Math.min(smooth((f-30)/10),smooth((130-f)/10)))}
+ if(x.geste&&f>=200&&f<320){title(ctx,x.geste,1000,52,Math.min(smooth((f-200)/10),smooth((320-f)/10)),3,'DMSans','#fff')}
+ if(f>=336&&f<413){if(!sub)shade(ctx,0,400);title(ctx,x.service,sub?1000:110,sub?52:78,Math.min(smooth((f-336)/12),smooth((413-f)/10)))}
+ if(f>=538&&f<596){if(!sub)shade(ctx,0,400);title(ctx,x.detail,sub?1000:110,sub?52:76,Math.min(smooth((f-538)/10),smooth((596-f)/10)))}
  if(f>=755){let q=smooth((f-755)/20),actions={appeler:'Appelez-nous.',ecrire:'Écrivez-nous.',commande:'Passez commande.',rendez_vous:'Prenez rendez-vous.',conseil:'Demandez conseil.',essai:'Demandez un essai.',visite:'Passez nous voir.',devis:'Demandez un devis.',aucune:''};let action=actions[x.action]||'';if(action)title(ctx,action,850,58,q,2,'DMSans','#fff');let signature=[x.nom,x.lieu,x.prix,x.telephone,x.cible].filter(Boolean).join(' · ');if(signature){let g=ctx.createLinearGradient(0,950,0,1280);g.addColorStop(0,'rgba(22,7,15,0)');g.addColorStop(1,'rgba(22,7,15,.75)');ctx.fillStyle=g;ctx.fillRect(0,950,W,330);title(ctx,signature,1010,28,q,5,'DMSans')}}
  if(sub){shade(ctx,0,320);title(ctx,sub.text,84,39,1,3,'DMSans','#fff')}
 }

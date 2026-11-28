@@ -1,7 +1,7 @@
 /* Vérification des questions, des scènes et des douze destinations T4. */
 (()=>{'use strict';const ids=['S1','S2','S3','S4'],states=['A_GUIDE','B_ENREGISTREMENT_OU_LECTURE_IMPORT','C_RELECTURE'];
  const fields=['nom','service','geste','detail','lieu','telephone','prix','action'],contexts=['service','geste','detail','service'];
- const dest=[['signature'],['guide_S1','guide_S4','film'],['guide_S2'],['guide_S3','film'],['signature'],['signature_apres_accord'],['signature_apres_confirmation'],['film_apres_confirmation']];
+ const dest=[['signature'],['guide_S1','guide_S4','film'],['guide_S2','film'],['guide_S3','film'],['signature'],['signature_apres_accord'],['signature_apres_confirmation'],['film_apres_confirmation']];
  const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b), text=x=>typeof x==='string'&&x.trim().length>0;
  function questions(q,c){if(q?.template_id!=='BEAUTE-T4'||q.version!=='1.0.0'||!text(q.objectif)||!Array.isArray(q.questions)||q.questions.length!==8)throw Error('Questions T4 invalides.');q.questions.forEach((x,i)=>{let id=fields[i],r=i<2;if(x.id!==id||!text(x.libelle)||x.obligatoire!==r||c.fiche[id]?.requis!==r||!same(x.destinations,dest[i]))throw Error('Une question ne correspond pas au contrat T4.');});return q;}
  function guide(g){if(g?.template_id!=='BEAUTE-T4'||g.version!=='1.0.0'||!Array.isArray(g.scenes)||g.scenes.length!==4||!Array.isArray(g.screens)||g.screens.length!==12)throw Error('Guide T4 invalide.');

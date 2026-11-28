@@ -1,3 +1,4 @@
+import {verifierSortie} from './verifier-sortie.mjs';
 import {BufferTarget,CanvasSource,Mp4OutputFormat,Output,VideoSampleSink,AudioSampleSource,AudioSample} from './vendor/mediabunny-1.66.1.min.mjs';
 import {createMotion,validatePlan,selectLayer,span,sourceFrame,W,H,FPS,FRAMES} from './motion.mjs?v=t2-fiche-visible-3';
 import {createMotion as createMotionOnglerie} from './motion-onglerie.mjs?v=t2-fiche-visible-3';
@@ -101,6 +102,7 @@ async function render(payload,core){
     if(detail)self.postMessage({stage:'done',buffer,frames:n,seconds:n/FPS,revision:plan.revision,sourceCount:refs.length},[buffer]);
     else{
       demand(n===core.template.media.frames,'RENDER_FAILED');
+      await verifierSortie(new Blob([buffer],{type:'video/mp4'}),true);
       const result=createResult(job,core,buffer.byteLength,await digest(buffer));
       self.postMessage({stage:'done',buffer,result},[buffer]);
     }

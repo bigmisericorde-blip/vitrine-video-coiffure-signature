@@ -1,3 +1,4 @@
+import {verifierSortie} from './verifier-sortie.mjs';
 import {validateT1,bindT1Job} from './t1-contract.mjs?v=1';
 import {
   BlobSource, BufferTarget, CanvasSource, EncodedAudioPacketSource, EncodedPacketSink,
@@ -126,6 +127,7 @@ async function render(request) {
     post('finalize',frames);
     await writer.finalize();
     ensure(frames===FRAMES&&packets===FRAMES&&target.buffer?.byteLength>65536,'Le MP4 ne contient pas les 900 images attendues.');
+    await verifierSortie(new Blob([target.buffer],{type:'video/mp4'}),true);
     self.postMessage({stage:'done',buffer:target.buffer,frames,seconds:SECONDS,template:{id:p.template_id,version:p.version,profile:p.audio_profile}},[target.buffer]);
   } catch(e) {
     await writer.cancel().catch(()=>{});

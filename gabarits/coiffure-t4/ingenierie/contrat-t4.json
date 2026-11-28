@@ -27,7 +27,8 @@
       "libelle": "Pour qui est ce produit ou ce service ?",
       "obligatoire": false,
       "destinations": [
-        "guide_S2"
+        "guide_S2",
+        "film"
       ]
     },
     {

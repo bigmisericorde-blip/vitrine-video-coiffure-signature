@@ -5,7 +5,7 @@ export const FPS=30;
 export const MUSIC_IDS=Object.freeze(['A','B','C','D']);
 export const SHORT_ACTIONS=Object.freeze({whatsapp:'Écris-nous sur WhatsApp.',telephone:'Appelle pour réserver.',lien:'Réserve ton créneau.'});
 export const ASSIST_ACTIONS=Object.freeze({whatsapp:'Ouvrir WhatsApp',telephone:'Appeler',lien:'Ouvrir la réservation'});
-const INPUT_IDS=['service','geste','preuve','accroche','salon','ville','prix'];
+const INPUT_IDS=['service','geste','preuve','accroche','salon','ville','prix','outil'];
 const safe=(value)=>value.normalize('NFC').replace(/\s+/gu,' ').trim();
 const text=(value,key)=>{
   if(value==null)return '';
@@ -70,7 +70,7 @@ function splitHook(s){
   return [words.slice(0,2).join(' '),words.slice(2,4).join(' '),...words.slice(4)];
 }
 export function makeVisualPlan(fields,id,config,questions){
-  // Les destinations commerciales proviennent du contrat, après normalisation ; l’outil guide la scène sans être incrusté.
+  // Les destinations commerciales proviennent du contrat, après normalisation.
   if(!Array.isArray(questions?.fields))throw Error('Questions commerciales absentes du contrat.');
   const binding=Object.fromEntries(questions.fields.flatMap(f=>f.render_targets.map(target=>[target,f.id])));
   const visual={...fields,prix:fields.tarif,contact:fields.numero};
@@ -84,7 +84,7 @@ export function makeVisualPlan(fields,id,config,questions){
   h.forEach((s,i)=>put('intro-'+i,s,hookBeat[i],g.introEnd,`i${hookSlots[i]}`,'intro'));
   put('before',v.before,b.before,g.beforeEnd,'single');
   put('work',v.work,b.work,g.workEnd,'upper');
-  put('gesture',fields.geste,b.gesture,g.workEnd,'lower');
+  put('gesture',get('work.tool')||fields.geste,b.gesture,g.workEnd,'lower');
   put('detail',v.detail,b.detail,g.detailEnd,'upper');
   put('proof',fields.preuve,b.proof,g.detailEnd,'lower');
   put('reveal',v.reveal,b.reveal,g.revealEnd,'upper');

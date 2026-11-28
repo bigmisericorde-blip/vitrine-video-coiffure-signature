@@ -41,11 +41,13 @@
       "min": 0,
       "max": 60,
       "example": "Un pinceau",
-      "render_targets": [],
+      "render_targets": [
+        "work.tool"
+      ],
       "guide_targets": [
         "S2"
       ],
-      "display": "Consigne de la prise du geste ; ne s’affiche pas dans la vidéo."
+      "display": "Prise du geste · texte dans la vidéo et consigne"
     },
     {
       "id": "ville",
@@ -210,6 +212,6 @@
     "engine": "assets/render.worker.mjs",
     "number_of_scenes": 4,
     "number_of_capture_states": 12,
-    "note": "Les six questions sont générales beauté. L’outil éventuel accompagne la prise du geste, sans être envoyé au moteur vidéo ; nom, service, ville, numéro confirmé et prix alimentent le montage."
+    "note": "Les six questions sont générales beauté. L’outil facultatif guide la prise du geste et apparaît dans le montage ; nom, service, ville, numéro confirmé et prix alimentent également le montage."
   }
 }
