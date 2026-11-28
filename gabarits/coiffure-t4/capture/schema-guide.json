@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Guide et navigation T4",
+  "type": "object",
+  "required": [
+    "version",
+    "template_id",
+    "scenes",
+    "screens"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0.0"
+    },
+    "template_id": {
+      "const": "BEAUTE-T4"
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "titre_affiche",
+            "contexte_champ",
+            "consigne",
+            "a_filmer",
+            "a_eviter",
+            "etats",
+            "scene_suivante"
+          ],
+          "properties": {
+            "id": {
+              "const": "S1"
+            },
+            "titre_affiche": {
+              "type": "string",
+              "minLength": 1
+            },
+            "contexte_champ": {
+              "const": "service"
+            },
+            "consigne": {
+              "type": "string",
+              "minLength": 1
+            },
+            "a_filmer": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "a_eviter": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "etats": {
+              "const": [
+                "A_GUIDE",
+                "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+                "C_RELECTURE"
+              ]
+            },
+            "scene_suivante": {
+              "const": "S2"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "titre_affiche",
+            "contexte_champ",
+            "consigne",
+            "a_filmer",
+            "a_eviter",
+            "etats",
+            "scene_suivante"
+          ],
+          "properties": {
+            "id": {
+              "const": "S2"
+            },
+            "titre_affiche": {
+              "type": "string",
+              "minLength": 1
+            },
+            "contexte_champ": {
+              "const": "geste"
+            },
+            "consigne": {
+              "type": "string",
+              "minLength": 1
+            },
+            "a_filmer": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "a_eviter": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "etats": {
+              "const": [
+                "A_GUIDE",
+                "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+                "C_RELECTURE"
+              ]
+            },
+            "scene_suivante": {
+              "const": "S3"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "titre_affiche",
+            "contexte_champ",
+            "consigne",
+            "a_filmer",
+            "a_eviter",
+            "etats",
+            "scene_suivante"
+          ],
+          "properties": {
+            "id": {
+              "const": "S3"
+            },
+            "titre_affiche": {
+              "type": "string",
+              "minLength": 1
+            },
+            "contexte_champ": {
+              "const": "detail"
+            },
+            "consigne": {
+              "type": "string",
+              "minLength": 1
+            },
+            "a_filmer": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "a_eviter": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "etats": {
+              "const": [
+                "A_GUIDE",
+                "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+                "C_RELECTURE"
+              ]
+            },
+            "scene_suivante": {
+              "const": "S4"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "titre_affiche",
+            "contexte_champ",
+            "consigne",
+            "a_filmer",
+            "a_eviter",
+            "etats",
+            "scene_suivante"
+          ],
+          "properties": {
+            "id": {
+              "const": "S4"
+            },
+            "titre_affiche": {
+              "type": "string",
+              "minLength": 1
+            },
+            "contexte_champ": {
+              "const": "service"
+            },
+            "consigne": {
+              "type": "string",
+              "minLength": 1
+            },
+            "a_filmer": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "a_eviter": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "etats": {
+              "const": [
+                "A_GUIDE",
+                "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+                "C_RELECTURE"
+              ]
+            },
+            "scene_suivante": {
+              "const": "EXPORT"
+            }
+          }
+        }
+      ]
+    },
+    "screens": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "prefixItems": [
+        {
+          "const": {
+            "id": "S1_A_GUIDE",
+            "scene": "S1",
+            "etat": "A_GUIDE",
+            "next_screen": "S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+          }
+        },
+        {
+          "const": {
+            "id": "S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "scene": "S1",
+            "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "next_screen": "S1_C_RELECTURE"
+          }
+        },
+        {
+          "const": {
+            "id": "S1_C_RELECTURE",
+            "scene": "S1",
+            "etat": "C_RELECTURE",
+            "next_screen": "S2_A_GUIDE"
+          }
+        },
+        {
+          "const": {
+            "id": "S2_A_GUIDE",
+            "scene": "S2",
+            "etat": "A_GUIDE",
+            "next_screen": "S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+          }
+        },
+        {
+          "const": {
+            "id": "S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "scene": "S2",
+            "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "next_screen": "S2_C_RELECTURE"
+          }
+        },
+        {
+          "const": {
+            "id": "S2_C_RELECTURE",
+            "scene": "S2",
+            "etat": "C_RELECTURE",
+            "next_screen": "S3_A_GUIDE"
+          }
+        },
+        {
+          "const": {
+            "id": "S3_A_GUIDE",
+            "scene": "S3",
+            "etat": "A_GUIDE",
+            "next_screen": "S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+          }
+        },
+        {
+          "const": {
+            "id": "S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "scene": "S3",
+            "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "next_screen": "S3_C_RELECTURE"
+          }
+        },
+        {
+          "const": {
+            "id": "S3_C_RELECTURE",
+            "scene": "S3",
+            "etat": "C_RELECTURE",
+            "next_screen": "S4_A_GUIDE"
+          }
+        },
+        {
+          "const": {
+            "id": "S4_A_GUIDE",
+            "scene": "S4",
+            "etat": "A_GUIDE",
+            "next_screen": "S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+          }
+        },
+        {
+          "const": {
+            "id": "S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "scene": "S4",
+            "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+            "next_screen": "S4_C_RELECTURE"
+          }
+        },
+        {
+          "const": {
+            "id": "S4_C_RELECTURE",
+            "scene": "S4",
+            "etat": "C_RELECTURE",
+            "next_screen": "EXPORT"
+          }
+        }
+      ]
+    }
+  }
+}

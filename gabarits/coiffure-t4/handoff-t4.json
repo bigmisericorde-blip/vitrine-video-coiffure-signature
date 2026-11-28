@@ -1,0 +1,218 @@
+{
+  "$schema": "handoff-t4.schema.json",
+  "schema_version": "1.0.0",
+  "template_id": "BEAUTE-T4",
+  "status": "description_technique_t4",
+  "usage": "Description des capacités du navigateur T4 : ce document n’est pas un protocole implémenté par le moteur de l’ami. Le navigateur consomme config.json et les JSON de questions et du guide ; il ne consomme pas ce document. Les screen_id sont des identifiants documentaires, pas des routes ni identifiants DOM.",
+  "implementation_handoff": {
+    "contract_type": "description_runtime_t4",
+    "runtime_order": [
+      "MERCHANT_INPUT",
+      "GUIDED_CAPTURE_OR_IMPORT",
+      "T4_LOCAL_RENDER",
+      "AD_REVIEW_DOWNLOAD"
+    ],
+    "counts": {
+      "merchant_questions": 8,
+      "capture_scenes": 4,
+      "stable_capture_screens": 12,
+      "capture_states_per_scene": 3,
+      "output_video_files": 1
+    },
+    "states": [
+      "A_GUIDE",
+      "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "C_RELECTURE"
+    ],
+    "screens": [
+      {
+        "ordinal": 1,
+        "screen_id": "T4_CAPTURE_S1_A_GUIDE",
+        "scene_id": "S1",
+        "state": "A_GUIDE",
+        "role": "guide"
+      },
+      {
+        "ordinal": 2,
+        "screen_id": "T4_CAPTURE_S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene_id": "S1",
+        "state": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "role": "enregistrement ou lecture"
+      },
+      {
+        "ordinal": 3,
+        "screen_id": "T4_CAPTURE_S1_C_RELECTURE",
+        "scene_id": "S1",
+        "state": "C_RELECTURE",
+        "role": "relecture"
+      },
+      {
+        "ordinal": 4,
+        "screen_id": "T4_CAPTURE_S2_A_GUIDE",
+        "scene_id": "S2",
+        "state": "A_GUIDE",
+        "role": "guide"
+      },
+      {
+        "ordinal": 5,
+        "screen_id": "T4_CAPTURE_S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene_id": "S2",
+        "state": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "role": "enregistrement ou lecture"
+      },
+      {
+        "ordinal": 6,
+        "screen_id": "T4_CAPTURE_S2_C_RELECTURE",
+        "scene_id": "S2",
+        "state": "C_RELECTURE",
+        "role": "relecture"
+      },
+      {
+        "ordinal": 7,
+        "screen_id": "T4_CAPTURE_S3_A_GUIDE",
+        "scene_id": "S3",
+        "state": "A_GUIDE",
+        "role": "guide"
+      },
+      {
+        "ordinal": 8,
+        "screen_id": "T4_CAPTURE_S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene_id": "S3",
+        "state": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "role": "enregistrement ou lecture"
+      },
+      {
+        "ordinal": 9,
+        "screen_id": "T4_CAPTURE_S3_C_RELECTURE",
+        "scene_id": "S3",
+        "state": "C_RELECTURE",
+        "role": "relecture"
+      },
+      {
+        "ordinal": 10,
+        "screen_id": "T4_CAPTURE_S4_A_GUIDE",
+        "scene_id": "S4",
+        "state": "A_GUIDE",
+        "role": "guide"
+      },
+      {
+        "ordinal": 11,
+        "screen_id": "T4_CAPTURE_S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene_id": "S4",
+        "state": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "role": "enregistrement ou lecture"
+      },
+      {
+        "ordinal": 12,
+        "screen_id": "T4_CAPTURE_S4_C_RELECTURE",
+        "scene_id": "S4",
+        "state": "C_RELECTURE",
+        "role": "relecture"
+      }
+    ],
+    "merchant_bindings": {
+      "required": [
+        "nom",
+        "service"
+      ],
+      "optional": [
+        "geste",
+        "detail",
+        "lieu",
+        "telephone",
+        "prix",
+        "action"
+      ],
+      "guidance_only": [
+        "geste"
+      ],
+      "consent_fields": [
+        "telephone",
+        "prix",
+        "action"
+      ]
+    },
+    "renderer_handoff": {
+      "configuration": "config.json#/contrat",
+      "input_media": "quatre objets Blob dans le navigateur",
+      "presentation": "fiche",
+      "subtitles": "facultatifs, manuels",
+      "audio_choice": [
+        "aucune",
+        "prises_selectionnees",
+        "separee"
+      ],
+      "output": "MP4 téléchargeable dans le navigateur"
+    },
+    "documents_runtime": {
+      "questions": "formulaire/questions.json",
+      "guide": "capture/guide.json",
+      "controle": "contrats-t4.js"
+    }
+  },
+  "media_ingest_contract": {
+    "containers": [
+      "MP4",
+      "QuickTime",
+      "WebM"
+    ],
+    "decode": "navigateur et MediaBunny, disponibilité dépendante du codec et du navigateur",
+    "normalization": "images échantillonnées à la cadence de sortie, sans réaccélération volontaire ; sorties audio resamplées et mixées",
+    "fps_source": "cadence fixe non imposée et variable non rejetée systématiquement, contrairement au T1 de référence",
+    "audio_required": false,
+    "max_bytes_per_take": 50331648,
+    "face_lip_sync_protection_automatic": false
+  },
+  "speech_continuity": {
+    "audio_source": "une des options : aucune voix, voix séparée, ou son sélectionné de prises",
+    "time_map": "pas de changement volontaire de vitesse ; gain, mixage, encodage et échantillonnage modifient le signal",
+    "internal_visual_effects": "effets propres au T4, pas de garantie que le geste ou visage reste visible à chaque image",
+    "tail_detector": "mesure de niveau sonore ; pas de reconnaissance des mots ; ni phrase complète ni absence de coupe garantie",
+    "frontieres": "La partie sonore présentée peut continuer sur la scène suivante ; en cas de chevauchement ou de débordement sonore hors du film, le montage refuse selon le seuil de présence."
+  },
+  "execution_contract": {
+    "runtime": "navigateur et WebCodecs, si disponibles",
+    "remote_render_server_required": false,
+    "offline_guaranteed": false,
+    "network_note": "Les fichiers du site doivent être accessibles ; pas de service worker de mise en cache hors ligne. Aucun média personnel n’est envoyé par ce moteur.",
+    "android_media3_backend": false,
+    "minimum_ram_guaranteed": false
+  },
+  "recovery": {
+    "facultative_et_sur_consentement": true,
+    "stockage": "IndexedDB sur cet appareil et origine",
+    "contenu": [
+      "fiche",
+      "confirmations",
+      "prises_gardees"
+    ],
+    "non_inclus": [
+      "voix_separee",
+      "sous_titres",
+      "choix_son",
+      "export"
+    ],
+    "suppression_manuelle": true,
+    "persistance_garantie": false
+  },
+  "render_protocol": {
+    "status": "description_des_etapes_mais_pas_de_schema_job_result_expose",
+    "steps": [
+      "validation",
+      "preparation_audio",
+      "montage_et_encodage",
+      "verification_mp4",
+      "telechargement"
+    ],
+    "retry": "corriger le problème puis relancer ; pas de clé d’idempotence",
+    "errors": "messages à l’écran, sans code d’erreur structuré public",
+    "result": "blob local et lien de téléchargement ; pas de RenderResult JSON publié"
+  },
+  "compatibility": {
+    "friend_template": "T1 restaurant, schéma strict dédié",
+    "direct_interchangeability_tested": false,
+    "observed_partner_schema_result": "rejet du contrat T4 par le schéma T1 strict",
+    "partner_engine_acceptance_tested": false,
+    "next_step": "adaptateur et contrat T4 côté intégrateur à définir et tester avec le partenaire, sans falsifier l’identité T1"
+  }
+}

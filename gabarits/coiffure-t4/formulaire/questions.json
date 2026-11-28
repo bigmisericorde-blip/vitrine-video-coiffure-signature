@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "template_id": "BEAUTE-T4",
+  "objectif": "Aider à choisir un produit ou un service de beauté.",
+  "questions": [
+    {
+      "id": "nom",
+      "libelle": "Comment s’appelle ton activité ?",
+      "obligatoire": true,
+      "destinations": [
+        "signature"
+      ]
+    },
+    {
+      "id": "service",
+      "libelle": "Quel produit ou service veux-tu présenter ?",
+      "obligatoire": true,
+      "destinations": [
+        "guide_S1",
+        "guide_S4",
+        "film"
+      ]
+    },
+    {
+      "id": "geste",
+      "libelle": "Pour qui est ce produit ou ce service ?",
+      "obligatoire": false,
+      "destinations": [
+        "guide_S2"
+      ]
+    },
+    {
+      "id": "detail",
+      "libelle": "Qu’est-ce qui est bien avec ce produit ou ce service ?",
+      "obligatoire": false,
+      "destinations": [
+        "guide_S3",
+        "film"
+      ]
+    },
+    {
+      "id": "lieu",
+      "libelle": "Dans quelle ville travailles-tu ?",
+      "obligatoire": false,
+      "destinations": [
+        "signature"
+      ]
+    },
+    {
+      "id": "telephone",
+      "libelle": "Quel est ton numéro WhatsApp ou téléphone ?",
+      "obligatoire": false,
+      "destinations": [
+        "signature_apres_accord"
+      ]
+    },
+    {
+      "id": "prix",
+      "libelle": "Combien coûte ce produit ou ce service ?",
+      "obligatoire": false,
+      "destinations": [
+        "signature_apres_confirmation"
+      ]
+    },
+    {
+      "id": "action",
+      "libelle": "Que veux-tu que tes clients fassent après la vidéo ?",
+      "obligatoire": false,
+      "destinations": [
+        "film_apres_confirmation"
+      ]
+    }
+  ]
+}

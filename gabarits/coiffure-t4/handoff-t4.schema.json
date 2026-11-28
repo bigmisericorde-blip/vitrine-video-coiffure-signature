@@ -1,0 +1,427 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Description technique handoff T4, distincte de T1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "template_id",
+    "status",
+    "usage",
+    "implementation_handoff",
+    "media_ingest_contract",
+    "speech_continuity",
+    "execution_contract",
+    "recovery",
+    "render_protocol",
+    "compatibility"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "handoff-t4.schema.json"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "template_id": {
+      "const": "BEAUTE-T4"
+    },
+    "status": {
+      "const": "description_technique_t4"
+    },
+    "usage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation_handoff": {
+      "type": "object",
+      "required": [
+        "contract_type",
+        "runtime_order",
+        "counts",
+        "states",
+        "screens",
+        "merchant_bindings",
+        "renderer_handoff"
+      ],
+      "properties": {
+        "counts": {
+          "type": "object",
+          "properties": {
+            "merchant_questions": {
+              "const": 8
+            },
+            "capture_scenes": {
+              "const": 4
+            },
+            "stable_capture_screens": {
+              "const": 12
+            },
+            "capture_states_per_scene": {
+              "const": 3
+            },
+            "output_video_files": {
+              "const": 1
+            }
+          },
+          "required": [
+            "merchant_questions",
+            "capture_scenes",
+            "stable_capture_screens",
+            "capture_states_per_scene",
+            "output_video_files"
+          ]
+        },
+        "screens": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "required": [
+              "ordinal",
+              "screen_id",
+              "scene_id",
+              "state",
+              "role"
+            ],
+            "properties": {
+              "ordinal": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "scene_id": {
+                "enum": [
+                  "S1",
+                  "S2",
+                  "S3",
+                  "S4"
+                ]
+              },
+              "state": {
+                "enum": [
+                  "A_GUIDE",
+                  "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+                  "C_RELECTURE"
+                ]
+              },
+              "screen_id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              }
+            }
+          },
+          "prefixItems": [
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 1
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S1_A_GUIDE"
+                },
+                "scene_id": {
+                  "const": "S1"
+                },
+                "state": {
+                  "const": "A_GUIDE"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 2
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                },
+                "scene_id": {
+                  "const": "S1"
+                },
+                "state": {
+                  "const": "B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 3
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S1_C_RELECTURE"
+                },
+                "scene_id": {
+                  "const": "S1"
+                },
+                "state": {
+                  "const": "C_RELECTURE"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 4
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S2_A_GUIDE"
+                },
+                "scene_id": {
+                  "const": "S2"
+                },
+                "state": {
+                  "const": "A_GUIDE"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 5
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                },
+                "scene_id": {
+                  "const": "S2"
+                },
+                "state": {
+                  "const": "B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 6
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S2_C_RELECTURE"
+                },
+                "scene_id": {
+                  "const": "S2"
+                },
+                "state": {
+                  "const": "C_RELECTURE"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 7
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S3_A_GUIDE"
+                },
+                "scene_id": {
+                  "const": "S3"
+                },
+                "state": {
+                  "const": "A_GUIDE"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 8
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                },
+                "scene_id": {
+                  "const": "S3"
+                },
+                "state": {
+                  "const": "B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 9
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S3_C_RELECTURE"
+                },
+                "scene_id": {
+                  "const": "S3"
+                },
+                "state": {
+                  "const": "C_RELECTURE"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 10
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S4_A_GUIDE"
+                },
+                "scene_id": {
+                  "const": "S4"
+                },
+                "state": {
+                  "const": "A_GUIDE"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 11
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                },
+                "scene_id": {
+                  "const": "S4"
+                },
+                "state": {
+                  "const": "B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "ordinal": {
+                  "const": 12
+                },
+                "screen_id": {
+                  "const": "T4_CAPTURE_S4_C_RELECTURE"
+                },
+                "scene_id": {
+                  "const": "S4"
+                },
+                "state": {
+                  "const": "C_RELECTURE"
+                }
+              }
+            }
+          ],
+          "uniqueItems": true
+        },
+        "merchant_bindings": {
+          "type": "object",
+          "required": [
+            "required",
+            "optional",
+            "guidance_only",
+            "consent_fields"
+          ]
+        },
+        "renderer_handoff": {
+          "type": "object"
+        }
+      }
+    },
+    "media_ingest_contract": {
+      "type": "object",
+      "required": [
+        "containers",
+        "decode",
+        "normalization",
+        "fps_source",
+        "audio_required",
+        "max_bytes_per_take",
+        "face_lip_sync_protection_automatic"
+      ],
+      "properties": {
+        "audio_required": {
+          "const": false
+        },
+        "face_lip_sync_protection_automatic": {
+          "const": false
+        }
+      }
+    },
+    "speech_continuity": {
+      "type": "object",
+      "required": [
+        "audio_source",
+        "time_map",
+        "internal_visual_effects",
+        "tail_detector"
+      ]
+    },
+    "execution_contract": {
+      "type": "object",
+      "required": [
+        "runtime",
+        "remote_render_server_required",
+        "offline_guaranteed",
+        "network_note",
+        "android_media3_backend",
+        "minimum_ram_guaranteed"
+      ],
+      "properties": {
+        "remote_render_server_required": {
+          "const": false
+        },
+        "offline_guaranteed": {
+          "const": false
+        },
+        "android_media3_backend": {
+          "const": false
+        }
+      }
+    },
+    "recovery": {
+      "type": "object",
+      "required": [
+        "facultative_et_sur_consentement",
+        "stockage",
+        "contenu",
+        "non_inclus",
+        "suppression_manuelle",
+        "persistance_garantie"
+      ],
+      "properties": {
+        "facultative_et_sur_consentement": {
+          "const": true
+        },
+        "persistance_garantie": {
+          "const": false
+        }
+      }
+    },
+    "render_protocol": {
+      "type": "object",
+      "required": [
+        "status",
+        "steps",
+        "retry",
+        "errors",
+        "result"
+      ]
+    },
+    "compatibility": {
+      "type": "object",
+      "required": [
+        "friend_template",
+        "direct_interchangeability_tested",
+        "observed_partner_schema_result",
+        "partner_engine_acceptance_tested",
+        "next_step"
+      ],
+      "properties": {
+        "direct_interchangeability_tested": {
+          "const": false
+        },
+        "partner_engine_acceptance_tested": {
+          "const": false
+        }
+      }
+    }
+  }
+}

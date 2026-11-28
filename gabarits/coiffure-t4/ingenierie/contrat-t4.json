@@ -1,0 +1,275 @@
+{
+  "id": "BEAUTE-T4",
+  "version": "t4-continuite-son-1",
+  "statut": "description_technique_t4",
+  "objectif": "Aider à choisir un produit ou un service de beauté.",
+  "champs": [
+    {
+      "id": "nom",
+      "libelle": "Comment s’appelle ton activité ?",
+      "obligatoire": true,
+      "destinations": [
+        "signature"
+      ]
+    },
+    {
+      "id": "service",
+      "libelle": "Quel produit ou service veux-tu présenter ?",
+      "obligatoire": true,
+      "destinations": [
+        "guide_S1",
+        "guide_S4",
+        "film"
+      ]
+    },
+    {
+      "id": "geste",
+      "libelle": "Pour qui est ce produit ou ce service ?",
+      "obligatoire": false,
+      "destinations": [
+        "guide_S2"
+      ]
+    },
+    {
+      "id": "detail",
+      "libelle": "Qu’est-ce qui est bien avec ce produit ou ce service ?",
+      "obligatoire": false,
+      "destinations": [
+        "guide_S3",
+        "film"
+      ]
+    },
+    {
+      "id": "lieu",
+      "libelle": "Dans quelle ville travailles-tu ?",
+      "obligatoire": false,
+      "destinations": [
+        "signature"
+      ]
+    },
+    {
+      "id": "telephone",
+      "libelle": "Quel est ton numéro WhatsApp ou téléphone ?",
+      "obligatoire": false,
+      "destinations": [
+        "signature_apres_accord"
+      ]
+    },
+    {
+      "id": "prix",
+      "libelle": "Combien coûte ce produit ou ce service ?",
+      "obligatoire": false,
+      "destinations": [
+        "signature_apres_confirmation"
+      ]
+    },
+    {
+      "id": "action",
+      "libelle": "Que veux-tu que tes clients fassent après la vidéo ?",
+      "obligatoire": false,
+      "destinations": [
+        "film_apres_confirmation"
+      ]
+    }
+  ],
+  "capture": {
+    "scenes": [
+      {
+        "id": "S1",
+        "titre_affiche": "Découvrir",
+        "contexte_champ": "service",
+        "consigne": "Cadre assez large.",
+        "a_filmer": [
+          "Montre le produit ou le service et ce que tu vas faire.",
+          "Garde le téléphone droit et laisse un peu de place autour."
+        ],
+        "a_eviter": [
+          "Ne commence pas trop près."
+        ],
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ],
+        "scene_suivante": "S2"
+      },
+      {
+        "id": "S2",
+        "titre_affiche": "Présenter",
+        "contexte_champ": "geste",
+        "consigne": "Change de cadrage pour présenter.",
+        "a_filmer": [
+          "Montre le même produit sous un autre angle ou la préparation du service.",
+          "Garde le téléphone stable et l’offre visible."
+        ],
+        "a_eviter": [
+          "Ne change pas de produit ou de service."
+        ],
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ],
+        "scene_suivante": "S3"
+      },
+      {
+        "id": "S3",
+        "titre_affiche": "Détail",
+        "contexte_champ": "detail",
+        "consigne": "Approche-toi et reste stable.",
+        "a_filmer": [
+          "Montre de près le détail choisi dans ta fiche.",
+          "Laisse le temps de bien le voir. Garde le téléphone immobile."
+        ],
+        "a_eviter": [
+          "N’ajoute pas de filtre qui cache le détail."
+        ],
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ],
+        "scene_suivante": "S4"
+      },
+      {
+        "id": "S4",
+        "titre_affiche": "Terminer",
+        "contexte_champ": "service",
+        "consigne": "Laisse de la place pour le texte de fin.",
+        "a_filmer": [
+          "Filme une dernière vue du même produit ou service.",
+          "Garde une image calme et bien éclairée."
+        ],
+        "a_eviter": [
+          "Ne change pas de produit ou de service en cours de vidéo."
+        ],
+        "etats": [
+          "A_GUIDE",
+          "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+          "C_RELECTURE"
+        ],
+        "scene_suivante": "EXPORT"
+      }
+    ],
+    "ecrans": [
+      {
+        "id": "S1_A_GUIDE",
+        "scene": "S1",
+        "etat": "A_GUIDE",
+        "next_screen": "S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+      },
+      {
+        "id": "S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene": "S1",
+        "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "next_screen": "S1_C_RELECTURE"
+      },
+      {
+        "id": "S1_C_RELECTURE",
+        "scene": "S1",
+        "etat": "C_RELECTURE",
+        "next_screen": "S2_A_GUIDE"
+      },
+      {
+        "id": "S2_A_GUIDE",
+        "scene": "S2",
+        "etat": "A_GUIDE",
+        "next_screen": "S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+      },
+      {
+        "id": "S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene": "S2",
+        "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "next_screen": "S2_C_RELECTURE"
+      },
+      {
+        "id": "S2_C_RELECTURE",
+        "scene": "S2",
+        "etat": "C_RELECTURE",
+        "next_screen": "S3_A_GUIDE"
+      },
+      {
+        "id": "S3_A_GUIDE",
+        "scene": "S3",
+        "etat": "A_GUIDE",
+        "next_screen": "S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+      },
+      {
+        "id": "S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene": "S3",
+        "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "next_screen": "S3_C_RELECTURE"
+      },
+      {
+        "id": "S3_C_RELECTURE",
+        "scene": "S3",
+        "etat": "C_RELECTURE",
+        "next_screen": "S4_A_GUIDE"
+      },
+      {
+        "id": "S4_A_GUIDE",
+        "scene": "S4",
+        "etat": "A_GUIDE",
+        "next_screen": "S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+      },
+      {
+        "id": "S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "scene": "S4",
+        "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "next_screen": "S4_C_RELECTURE"
+      },
+      {
+        "id": "S4_C_RELECTURE",
+        "scene": "S4",
+        "etat": "C_RELECTURE",
+        "next_screen": "EXPORT"
+      }
+    ],
+    "nombre_scenes": 4,
+    "nombre_etats_stables": 12
+  },
+  "montage": {
+    "sources_par_ordre": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "regle": "Scènes successives : pour chaque image de sortie, l’indice source est image - début de sa scène. Les effets visuels utilisent une échelle rapportée à une référence ; cela peut masquer une partie de l’image.",
+    "echantillonnage_source": "premier horodatage vidéo + (indice source + 0.18) / 30",
+    "reference_debuts": [
+      0,
+      152,
+      521,
+      727
+    ],
+    "reference_longueurs": [
+      152,
+      369,
+      206,
+      173
+    ],
+    "vitesse_audio": 1,
+    "aucune_transcription": true
+  },
+  "audio": {
+    "facultatif": true,
+    "modes": [
+      "aucune",
+      "prises_selectionnees",
+      "separee"
+    ],
+    "pas_de_garantie_fin_phrase": true,
+    "continuite_son": "Son des prises sélectionnées continu à 1x ; fin réellement présente reportée à la scène suivante si nécessaire ; refus si chevauchement ou sortie du film au-delà du seuil de présence."
+  },
+  "documents": {
+    "questions": "formulaire/questions.json",
+    "guide": "capture/guide.json",
+    "handoff_descriptif": "handoff-t4.json"
+  },
+  "limites": [
+    "Ce document est descriptif, non lu par le moteur ; config.json, formulaire/questions.json et capture/guide.json sont les données réellement consommées.",
+    "La reconnaissance des phrases, la visibilité continue des gestes et la compatibilité avec le moteur partenaire ne sont pas garanties.",
+    "La continuité du signal n’établit pas si les paroles enregistrées ont un sens ou si une phrase était déjà inachevée lors de la capture."
+  ]
+}

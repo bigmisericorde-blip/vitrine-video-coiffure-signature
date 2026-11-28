@@ -1,0 +1,156 @@
+{
+  "version": "1.0.0",
+  "template_id": "BEAUTE-T4",
+  "scenes": [
+    {
+      "id": "S1",
+      "titre_affiche": "Découvrir",
+      "contexte_champ": "service",
+      "consigne": "Cadre assez large.",
+      "a_filmer": [
+        "Montre le produit ou le service et ce que tu vas faire.",
+        "Garde le téléphone droit et laisse un peu de place autour."
+      ],
+      "a_eviter": [
+        "Ne commence pas trop près."
+      ],
+      "etats": [
+        "A_GUIDE",
+        "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "C_RELECTURE"
+      ],
+      "scene_suivante": "S2"
+    },
+    {
+      "id": "S2",
+      "titre_affiche": "Présenter",
+      "contexte_champ": "geste",
+      "consigne": "Change de cadrage pour présenter.",
+      "a_filmer": [
+        "Montre le même produit sous un autre angle ou la préparation du service.",
+        "Garde le téléphone stable et l’offre visible."
+      ],
+      "a_eviter": [
+        "Ne change pas de produit ou de service."
+      ],
+      "etats": [
+        "A_GUIDE",
+        "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "C_RELECTURE"
+      ],
+      "scene_suivante": "S3"
+    },
+    {
+      "id": "S3",
+      "titre_affiche": "Détail",
+      "contexte_champ": "detail",
+      "consigne": "Approche-toi et reste stable.",
+      "a_filmer": [
+        "Montre de près le détail choisi dans ta fiche.",
+        "Laisse le temps de bien le voir. Garde le téléphone immobile."
+      ],
+      "a_eviter": [
+        "N’ajoute pas de filtre qui cache le détail."
+      ],
+      "etats": [
+        "A_GUIDE",
+        "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "C_RELECTURE"
+      ],
+      "scene_suivante": "S4"
+    },
+    {
+      "id": "S4",
+      "titre_affiche": "Terminer",
+      "contexte_champ": "service",
+      "consigne": "Laisse de la place pour le texte de fin.",
+      "a_filmer": [
+        "Filme une dernière vue du même produit ou service.",
+        "Garde une image calme et bien éclairée."
+      ],
+      "a_eviter": [
+        "Ne change pas de produit ou de service en cours de vidéo."
+      ],
+      "etats": [
+        "A_GUIDE",
+        "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+        "C_RELECTURE"
+      ],
+      "scene_suivante": "EXPORT"
+    }
+  ],
+  "screens": [
+    {
+      "id": "S1_A_GUIDE",
+      "scene": "S1",
+      "etat": "A_GUIDE",
+      "next_screen": "S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+    },
+    {
+      "id": "S1_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "scene": "S1",
+      "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "next_screen": "S1_C_RELECTURE"
+    },
+    {
+      "id": "S1_C_RELECTURE",
+      "scene": "S1",
+      "etat": "C_RELECTURE",
+      "next_screen": "S2_A_GUIDE"
+    },
+    {
+      "id": "S2_A_GUIDE",
+      "scene": "S2",
+      "etat": "A_GUIDE",
+      "next_screen": "S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+    },
+    {
+      "id": "S2_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "scene": "S2",
+      "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "next_screen": "S2_C_RELECTURE"
+    },
+    {
+      "id": "S2_C_RELECTURE",
+      "scene": "S2",
+      "etat": "C_RELECTURE",
+      "next_screen": "S3_A_GUIDE"
+    },
+    {
+      "id": "S3_A_GUIDE",
+      "scene": "S3",
+      "etat": "A_GUIDE",
+      "next_screen": "S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+    },
+    {
+      "id": "S3_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "scene": "S3",
+      "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "next_screen": "S3_C_RELECTURE"
+    },
+    {
+      "id": "S3_C_RELECTURE",
+      "scene": "S3",
+      "etat": "C_RELECTURE",
+      "next_screen": "S4_A_GUIDE"
+    },
+    {
+      "id": "S4_A_GUIDE",
+      "scene": "S4",
+      "etat": "A_GUIDE",
+      "next_screen": "S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT"
+    },
+    {
+      "id": "S4_B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "scene": "S4",
+      "etat": "B_ENREGISTREMENT_OU_LECTURE_IMPORT",
+      "next_screen": "S4_C_RELECTURE"
+    },
+    {
+      "id": "S4_C_RELECTURE",
+      "scene": "S4",
+      "etat": "C_RELECTURE",
+      "next_screen": "EXPORT"
+    }
+  ]
+}

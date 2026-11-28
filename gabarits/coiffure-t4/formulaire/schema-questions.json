@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Questions commerciales T4",
+  "type": "object",
+  "required": [
+    "version",
+    "template_id",
+    "objectif",
+    "questions"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0.0"
+    },
+    "template_id": {
+      "const": "BEAUTE-T4"
+    },
+    "objectif": {
+      "type": "string",
+      "minLength": 1
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "prefixItems": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "nom"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": true
+            },
+            "destinations": {
+              "const": [
+                "signature"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "service"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": true
+            },
+            "destinations": {
+              "const": [
+                "guide_S1",
+                "guide_S4",
+                "film"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "geste"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": false
+            },
+            "destinations": {
+              "const": [
+                "guide_S2"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "detail"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": false
+            },
+            "destinations": {
+              "const": [
+                "guide_S3",
+                "film"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "lieu"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": false
+            },
+            "destinations": {
+              "const": [
+                "signature"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "telephone"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": false
+            },
+            "destinations": {
+              "const": [
+                "signature_apres_accord"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "prix"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": false
+            },
+            "destinations": {
+              "const": [
+                "signature_apres_confirmation"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "libelle",
+            "obligatoire",
+            "destinations"
+          ],
+          "properties": {
+            "id": {
+              "const": "action"
+            },
+            "libelle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "obligatoire": {
+              "const": false
+            },
+            "destinations": {
+              "const": [
+                "film_apres_confirmation"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

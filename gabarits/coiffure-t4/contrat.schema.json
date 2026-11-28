@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contrat T4 beauté — version 2, durée variable",
+  "description": "Schéma propre au T4 navigateur, distinct du contrat restaurant partenaire. Les champs historiques media.images et media.secondes représentent les maxima, pas une durée fixe.",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_document",
+    "template_id",
+    "version",
+    "revision",
+    "media",
+    "prises",
+    "fiche",
+    "duree_regles",
+    "voix_client",
+    "implementation_handoff",
+    "reprise_locale",
+    "guides_documents"
+  ],
+  "properties": {
+    "schema": {
+      "const": 2
+    },
+    "schema_document": {
+      "const": "contrat.schema.json"
+    },
+    "template_id": {
+      "const": "BEAUTE-T4"
+    },
+    "version": {
+      "const": "0.2.0-web"
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "largeur",
+        "hauteur",
+        "fps",
+        "images",
+        "secondes",
+        "duree_mode",
+        "images_min",
+        "images_max",
+        "secondes_min",
+        "secondes_max"
+      ],
+      "properties": {
+        "largeur": {
+          "const": 720
+        },
+        "hauteur": {
+          "const": 1280
+        },
+        "fps": {
+          "const": 30
+        },
+        "images": {
+          "const": 897
+        },
+        "secondes": {
+          "const": 29.9
+        },
+        "duree_mode": {
+          "const": "variable"
+        },
+        "images_min": {
+          "const": 240
+        },
+        "images_max": {
+          "const": 897
+        },
+        "secondes_min": {
+          "const": 8
+        },
+        "secondes_max": {
+          "const": 29.9
+        }
+      }
+    },
+    "prises": {
+      "type": "object",
+      "required": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "S1": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/prise"
+            },
+            {
+              "properties": {
+                "secondes": {
+                  "const": 5
+                }
+              }
+            }
+          ]
+        },
+        "S2": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/prise"
+            },
+            {
+              "properties": {
+                "secondes": {
+                  "const": 11
+                }
+              }
+            }
+          ]
+        },
+        "S3": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/prise"
+            },
+            {
+              "properties": {
+                "secondes": {
+                  "const": 8
+                }
+              }
+            }
+          ]
+        },
+        "S4": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/prise"
+            },
+            {
+              "properties": {
+                "secondes": {
+                  "const": 5.9
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "fiche": {
+      "type": "object",
+      "required": [
+        "nom",
+        "service",
+        "geste",
+        "detail",
+        "lieu",
+        "telephone",
+        "prix",
+        "action"
+      ],
+      "properties": {
+        "nom": {
+          "properties": {
+            "requis": {
+              "const": true
+            }
+          },
+          "required": [
+            "requis"
+          ]
+        },
+        "service": {
+          "properties": {
+            "requis": {
+              "const": true
+            }
+          },
+          "required": [
+            "requis"
+          ]
+        },
+        "action": {
+          "properties": {
+            "requis": {
+              "const": false
+            }
+          },
+          "required": [
+            "requis"
+          ]
+        }
+      }
+    },
+    "duree_regles": {
+      "type": "object",
+      "required": [
+        "fps_sortie",
+        "maximum_images_supplementaires",
+        "arrondi_frames",
+        "fin_fichier_maximum_coupee_images",
+        "duree_sortie",
+        "preservation_sens_geste_ou_parole_garantie",
+        "controle_fin_son",
+        "silence_fin_ms",
+        "seuil_rms",
+        "controle_fin_prises_selectionnees",
+        "controle_fin_voix_separee"
+      ],
+      "properties": {
+        "fps_sortie": {
+          "const": 30
+        },
+        "maximum_images_supplementaires": {
+          "const": 1
+        },
+        "arrondi_frames": {
+          "const": "inferieur"
+        },
+        "fin_fichier_maximum_coupee_images": {
+          "const": 1
+        },
+        "duree_sortie": {
+          "const": "somme_frames_des_prises"
+        },
+        "preservation_sens_geste_ou_parole_garantie": {
+          "const": false
+        },
+        "controle_fin_son": {
+          "const": "niveau_sonore_sans_reconnaissance_des_paroles"
+        },
+        "silence_fin_ms": {
+          "const": 250
+        },
+        "seuil_rms": {
+          "const": 0.002
+        },
+        "controle_fin_prises_selectionnees": {
+          "const": true
+        },
+        "controle_fin_voix_separee": {
+          "const": true
+        }
+      }
+    },
+    "voix_client": {
+      "type": "object",
+      "required": [
+        "facultative",
+        "duree_max_s",
+        "captation_audio_des_prises_utilisee",
+        "exclusivite",
+        "origine"
+      ],
+      "properties": {
+        "facultative": {
+          "const": true
+        },
+        "duree_max_s": {
+          "const": 29.9
+        },
+        "captation_audio_des_prises_utilisee": {
+          "const": true
+        },
+        "exclusivite": {
+          "const": "choix_prise_ou_separee_ou_aucune"
+        },
+        "origine": {
+          "type": "array",
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "const": "prises_selectionnees"
+              }
+            },
+            {
+              "contains": {
+                "const": "import"
+              }
+            },
+            {
+              "contains": {
+                "const": "microphone"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "implementation_handoff": {
+      "type": "object",
+      "required": [
+        "document",
+        "schema",
+        "statut"
+      ],
+      "properties": {
+        "document": {
+          "const": "handoff-t4.json"
+        },
+        "schema": {
+          "const": "handoff-t4.schema.json"
+        },
+        "statut": {
+          "const": "descriptif_verifie_non_interface_t1"
+        }
+      }
+    },
+    "reprise_locale": {
+      "type": "object",
+      "required": [
+        "facultative_et_sur_consentement",
+        "stockage",
+        "contenu",
+        "non_inclus",
+        "suppression_manuelle",
+        "persistance_garantie"
+      ],
+      "properties": {
+        "facultative_et_sur_consentement": {
+          "const": true
+        },
+        "stockage": {
+          "type": "string"
+        },
+        "contenu": {
+          "const": [
+            "fiche",
+            "confirmations",
+            "prises_gardees"
+          ]
+        },
+        "non_inclus": {
+          "const": [
+            "voix_separee",
+            "sous_titres",
+            "choix_son",
+            "export"
+          ]
+        },
+        "suppression_manuelle": {
+          "const": true
+        },
+        "persistance_garantie": {
+          "const": false
+        }
+      }
+    },
+    "guides_documents": {
+      "const": {
+        "questions": "formulaire/questions.json",
+        "scenes": "capture/guide.json",
+        "verification": "ingenierie/verifier-t4.py"
+      }
+    }
+  },
+  "$defs": {
+    "prise": {
+      "type": "object",
+      "required": [
+        "titre",
+        "secondes",
+        "secondes_min",
+        "guide",
+        "question"
+      ],
+      "properties": {
+        "titre": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondes": {
+          "type": "number"
+        },
+        "secondes_min": {
+          "const": 2
+        },
+        "guide": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

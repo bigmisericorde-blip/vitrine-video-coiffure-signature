@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contrat technique descriptif T4 beauté",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "statut",
+    "objectif",
+    "champs",
+    "capture",
+    "montage",
+    "audio",
+    "documents",
+    "limites"
+  ],
+  "properties": {
+    "id": {
+      "const": "BEAUTE-T4"
+    },
+    "statut": {
+      "const": "description_technique_t4"
+    },
+    "champs": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "scenes",
+        "ecrans",
+        "nombre_scenes",
+        "nombre_etats_stables"
+      ],
+      "properties": {
+        "nombre_scenes": {
+          "const": 4
+        },
+        "nombre_etats_stables": {
+          "const": 12
+        },
+        "scenes": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "ecrans": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12
+        }
+      }
+    },
+    "montage": {
+      "type": "object",
+      "required": [
+        "sources_par_ordre",
+        "regle",
+        "echantillonnage_source",
+        "reference_debuts",
+        "reference_longueurs",
+        "vitesse_audio",
+        "aucune_transcription"
+      ],
+      "properties": {
+        "sources_par_ordre": {
+          "const": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "reference_debuts": {
+          "const": [
+            0,
+            152,
+            521,
+            727
+          ]
+        },
+        "reference_longueurs": {
+          "const": [
+            152,
+            369,
+            206,
+            173
+          ]
+        },
+        "vitesse_audio": {
+          "const": 1
+        },
+        "aucune_transcription": {
+          "const": true
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "required": [
+        "facultatif",
+        "modes",
+        "pas_de_garantie_fin_phrase"
+      ],
+      "properties": {
+        "facultatif": {
+          "const": true
+        },
+        "pas_de_garantie_fin_phrase": {
+          "const": true
+        }
+      }
+    },
+    "documents": {
+      "type": "object"
+    },
+    "limites": {
+      "type": "array",
+      "minItems": 2
+    }
+  }
+}

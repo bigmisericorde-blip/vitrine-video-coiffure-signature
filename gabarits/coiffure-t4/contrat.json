@@ -1,43 +1,52 @@
 {
-  "schema": 1,
+  "schema": 2,
   "template_id": "BEAUTE-T4",
-  "version": "0.1.0-web",
-  "revision": "t4-projection-navigateur",
-  "portee": "T4 navigateur : quatre prises de 2 secondes minimum à 6/13/8/7 secondes maximum ; film variable jusqu’à 34 secondes. Tests simulés. Les champs media.images et media.secondes indiquent le maximum, pas la durée fixe.",
+  "version": "0.2.0-web",
+  "revision": "t4-beaute-continuite-audio-v1",
+  "portee": "T4 beauté : contrat propre, distinct du contrat T1 restaurant.",
   "audio_profile": "beaute-projection-instrumental",
   "media": {
     "largeur": 720,
     "hauteur": 1280,
     "fps": 30,
-    "images": 1020,
-    "secondes": 34,
+    "images": 897,
+    "secondes": 29.9,
     "codec": "h264",
-    "audio": "AAC-LC stéréo 48000 Hz"
+    "audio": "AAC-LC stéréo 48000 Hz",
+    "duree_mode": "variable",
+    "images_min": 240,
+    "images_max": 897,
+    "secondes_min": 8,
+    "secondes_max": 29.9
   },
   "prises": {
     "S1": {
       "titre": "Découvrir",
-      "secondes": 6,
+      "secondes": 5,
       "guide": "Montre le produit ou l’espace et les outils du service.",
-      "question": "Comprend-on ce que tu présentes ?"
+      "question": "Comprend-on ce que tu présentes ?",
+      "secondes_min": 2
     },
     "S2": {
       "titre": "Présenter",
-      "secondes": 13,
+      "secondes": 11,
       "guide": "Montre le même produit sous un autre angle ou la préparation du service.",
-      "question": "Voit-on bien ce que tu présentes ?"
+      "question": "Voit-on bien ce que tu présentes ?",
+      "secondes_min": 2
     },
     "S3": {
       "titre": "Montrer le détail",
       "secondes": 8,
       "guide": "Filme de près un détail réel, clair et stable.",
-      "question": "Le détail est-il net et facile à voir ?"
+      "question": "Le détail est-il net et facile à voir ?",
+      "secondes_min": 2
     },
     "S4": {
       "titre": "Terminer",
-      "secondes": 7,
+      "secondes": 5.9,
       "guide": "Filme une dernière vue calme du même produit ou service.",
-      "question": "Cette dernière vue va-t-elle avec le reste ?"
+      "question": "Cette dernière vue va-t-elle avec le reste ?",
+      "secondes_min": 2
     }
   },
   "fiche": {
@@ -94,17 +103,60 @@
   ],
   "voix_client": {
     "facultative": true,
-    "duree_max_s": 34,
+    "duree_max_s": 29.9,
     "taille_max_octets": 20971520,
     "modes": [
       "musique_seule"
     ],
     "origine": [
       "import",
-      "microphone"
+      "microphone",
+      "prises_selectionnees"
     ],
-    "captation_audio_des_prises_utilisee": false,
-    "transcription_automatique": false
+    "captation_audio_des_prises_utilisee": true,
+    "transcription_automatique": false,
+    "exclusivite": "choix_prise_ou_separee_ou_aucune"
   },
-  "bornes_montage_provisoires": true
+  "bornes_montage_provisoires": true,
+  "duree_regles": {
+    "fps_sortie": 30,
+    "maximum_images_supplementaires": 1,
+    "arrondi_frames": "inferieur",
+    "fin_fichier_maximum_coupee_images": 1,
+    "duree_sortie": "somme_frames_des_prises",
+    "preservation_sens_geste_ou_parole_garantie": false,
+    "controle_fin_son": "niveau_sonore_sans_reconnaissance_des_paroles",
+    "silence_fin_ms": 250,
+    "seuil_rms": 0.002,
+    "controle_fin_prises_selectionnees": true,
+    "controle_fin_voix_separee": true
+  },
+  "schema_document": "contrat.schema.json",
+  "implementation_handoff": {
+    "document": "handoff-t4.json",
+    "schema": "handoff-t4.schema.json",
+    "statut": "descriptif_verifie_non_interface_t1"
+  },
+  "reprise_locale": {
+    "facultative_et_sur_consentement": true,
+    "stockage": "IndexedDB sur cet appareil et origine",
+    "contenu": [
+      "fiche",
+      "confirmations",
+      "prises_gardees"
+    ],
+    "non_inclus": [
+      "voix_separee",
+      "sous_titres",
+      "choix_son",
+      "export"
+    ],
+    "suppression_manuelle": true,
+    "persistance_garantie": false
+  },
+  "guides_documents": {
+    "questions": "formulaire/questions.json",
+    "scenes": "capture/guide.json",
+    "verification": "ingenierie/verifier-t4.py"
+  }
 }
