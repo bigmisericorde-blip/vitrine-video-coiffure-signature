@@ -2,20 +2,19 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
-<title>Ta fiche preuve — Vitrine Vidéo</title><link rel="stylesheet" href="app.css?v=t3-public-voix-1"><script src="app.js?v=t3-public-voix-1" defer></script>
+<title>Ta fiche preuve — Vitrine Vidéo</title><link rel="stylesheet" href="app.css?v=t3-revision-30s-2"><script src="reprise.js?v=t3-reprise-1" defer></script><script src="app.js?v=t3-revision-30s-2" defer></script>
 </head>
 <body><div class="shell">
-<header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="ecrans.html?v=t3-comme-t1t2-1">Les 12 écrans →</a></header>
+<header class="top"><strong><span class="mark" aria-hidden="true">V</span>Vitrine Vidéo</strong><a class="mono" href="ecrans.html?v=t3-revision-30s-2">Les 12 écrans →</a></header>
 <main class="hero">
 <section class="intro">
-<p class="note"><strong>APERÇU DE TRAVAIL T3</strong> — Proposition à valider ; la version officielle reste inchangée.</p>
 <p class="kicker">COIFFURE‑T3 · APPORTER UNE PREUVE</p>
 <h1>Ta fiche<span>preuve.</span></h1>
-<p class="lead">Décris ton produit ou ton service. Filme les étapes, puis télécharge ta vidéo verticale de 30 secondes, avec musique et, si tu le souhaites, ta voix.</p>
+<p class="lead">Décris ton produit ou ton service. Filme les étapes, puis télécharge ta vidéo verticale de 30 secondes maximum, avec musique et, si tu le souhaites, ta voix.</p>
 <div class="leadCard card">
 <h2>Quatre vues à montrer</h2><ol class="list slots" id="slots"></ol>
 <p class="note">Le son de tes prises reste disponible à la relecture. Tu peux choisir de l’utiliser dans le film ou ajouter ta voix séparément ; la voix reste facultative.</p>
-<p class="note">Tes prises et ta voix restent dans cet onglet. Aucun média n’est envoyé par le moteur.</p>
+<p class="note">Tes prises et ta voix restent dans ton navigateur. La sauvegarde locale est facultative. Aucun média n’est envoyé par le moteur.</p>
 </div>
 <section class="leadCard card section" aria-labelledby="titre-reference">
 <p class="kicker">UN EXEMPLE DE FILM</p>
@@ -32,7 +31,7 @@ Ton navigateur ne peut pas lire cette vidéo. <a href="reference/soin-du-visage-
 <section class="work card" aria-label="Créer mon film">
 <nav aria-label="Étapes" class="steps"><span id="step1" aria-current="step">01 <b>Fiche</b></span><span id="step2">02 <b>Prises</b></span><span id="step3">03 <b>Export</b></span></nav>
 <p id="alert" class="alert" hidden role="alert"></p>
-<form id="fiche" class="section form-flow" autocomplete="off">
+<div id="repriseOfferte" class="card" hidden><p>Un travail est sauvegardé sur cet appareil. La voix séparée, les sous-titres et les réglages son ne sont pas sauvegardés.</p><div class="buttons"><button type="button" id="reprendreTravail">Reprendre mon travail</button><button type="button" id="effacerTravail">Effacer le travail sauvegardé</button></div><p class="note">N’utilise cette option que sur un appareil de confiance. Le navigateur peut supprimer ces données.</p></div><form id="fiche" class="section form-flow" autocomplete="off">
 <p class="kicker">TON ACTIVITÉ</p><h2>Parlons de ton activité.</h2>
 <p class="note">Les deux premières réponses sont nécessaires. Les autres sont facultatives. La T3 montre un détail réel de ton produit ou de ton travail.</p>
 <label>Comment s’appelle ton activité ?<input name="nom" required maxlength="46" placeholder="Exemple : Atelier Éclat"></label>
@@ -40,12 +39,12 @@ Ton navigateur ne peut pas lire cette vidéo. <a href="reference/soin-du-visage-
 <label>Quel outil ou produit utilises-tu dans ton travail ? <small>· facultatif</small><input name="outil" maxlength="72" placeholder="Exemple : un pinceau"></label>
 <label>Dans quelle ville travailles-tu ? <small>· facultatif</small><input name="lieu" maxlength="42" placeholder="Exemple : Cotonou"></label>
 <label>Quel est ton numéro WhatsApp ou téléphone ? <small>· facultatif</small><input name="cible" type="tel" maxlength="32" autocomplete="tel" placeholder="Exemple : +229 …"></label>
-<label id="contactConfirmation" hidden><input type="checkbox" name="contactConfirme"> Je confirme que ce numéro est correct pour cet essai.</label>
+<label id="contactConfirmation" hidden><input type="checkbox" name="contactConfirme"> Je confirme que ce numéro est correct et j’autorise son affichage dans la vidéo.</label>
 <label>À partir de quel prix proposes-tu ce produit ou service ? <small>· facultatif</small><input name="prix" maxlength="30" placeholder="Exemple : 5 000 FCFA"></label>
-<p class="note">Si tu indiques un prix, vérifie qu’il est exact et précise la monnaie. Pour cet essai sans texte, ces informations restent dans la fiche et ne sont pas affichées dans la vidéo.</p>
+<p class="note">Si tu indiques un prix, vérifie qu’il est exact et précise la monnaie. Les réponses renseignées peuvent apparaître dans la vidéo.</p>
 <label>Veux-tu parler pendant que tu filmes ? <small>· facultatif</small><select name="modeVoixPrises"><option value="non">Non : je garde le montage T3 habituel</option><option value="oui">Oui : je pourrai utiliser la voix de mes prises</option></select></label>
-<p class="note">Si tu choisis oui, le film gardera les 6 premières secondes de la prise 1 et les 8 premières secondes des prises 2, 3 et 4. Filme toujours 8, 10, 10 et 8 secondes. Termine chaque phrase avant la fin de la partie conservée. Le montage avec voix suit les prises dans l’ordre et est différent de l’exemple T3 habituel.</p>
-<button type="submit" class="primary" id="continuer" disabled>Passer aux prises <span aria-hidden="true">→</span></button>
+<p class="note">Tu peux arrêter chaque prise dès que ton geste et ta phrase sont terminés. Les quatre prises doivent tenir dans le film, sans dépasser 30 secondes au total.</p>
+<label><input type="checkbox" id="sauvegardeLocale"> Sauvegarder ma fiche et les prises gardées sur cet appareil pour les reprendre plus tard.</label><p class="note">Facultatif. La voix séparée, les sous-titres et les choix son ne sont pas sauvegardés. Tu peux effacer ce travail depuis cette page.</p><button type="submit" class="primary" id="continuer" disabled>Passer aux prises <span aria-hidden="true">→</span></button>
 <button id="example" type="button" class="secondary" disabled>Charger la fiche d’exemple</button>
 <button id="real" type="button" class="secondary" hidden>Utiliser mes propres prises</button>
 <p id="simulationNotice" class="note" hidden>Simulation : les mires seront utilisées à la place de tes prises. Pour faire ton film, choisis « Utiliser mes propres prises ».</p>
@@ -68,13 +67,14 @@ Ton navigateur ne peut pas lire cette vidéo. <a href="reference/soin-du-visage-
 <div class="music-card card"><p class="kicker">LES QUATRE MUSIQUES</p><ul class="tracks" id="tracks"></ul><p class="note">Les crédits sont fournis avec ton montage.</p></div>
 <div id="voicePanel" hidden><h3>Ta voix <small>· facultative</small></h3>
 <label>Comment veux-tu ajouter ta voix ?<select id="voiceMode"><option value="separee">Enregistrer ou importer ma voix séparément</option><option value="prises">Utiliser le son de mes prises</option><option value="aucune">Aucune voix</option></select></label>
-<div id="takeVoice" hidden><p class="soft">Choisis les prises dont tu veux garder le son. Active le micro quand tu filmes, ou importe une vidéo avec du son. Pour synchroniser le son et l’image, le film montre les prises dans l’ordre : les 6 premières secondes de la prise 1, puis les 8 premières secondes de chacune des trois autres. Les fins restantes ne sont pas utilisées ; si tu parles à ce moment, ta phrase sera coupée. Écoute et regarde le film avant de le partager.</p>
+<div id="takeVoice" hidden><p class="soft">Choisis les prises dont tu veux garder le son. Les prises restent dans l’ordre. Si le son dépasse les images ou se chevauche, le montage est refusé au lieu de supprimer sa fin.</p>
 <fieldset><legend>Prises à écouter dans le film</legend><label><input type="checkbox" class="takeVoiceChoice" value="S1"> Prise 1 · le départ</label><label><input type="checkbox" class="takeVoiceChoice" value="S2"> Prise 2 · le travail ou l’utilisation</label><label><input type="checkbox" class="takeVoiceChoice" value="S3"> Prise 3 · le détail</label><label><input type="checkbox" class="takeVoiceChoice" value="S4"> Prise 4 · la dernière vue</label></fieldset></div>
-<div id="separateVoice"><p class="soft">Enregistre ou importe une voix que tu es autorisé à utiliser. Maximum 30 secondes et 20 Mio ; elle commence au début du film, avec la musique. Écoute-la avant de créer le MP4. Aucun sous-titre automatique. Les prises et la voix restent dans ton navigateur. Télécharge le MP4 avant de fermer la page.</p>
+<div id="separateVoice"><p class="soft">Enregistre ou importe une voix que tu es autorisé à utiliser. Maximum 30 secondes et 20 Mio ; elle commence au début du film, avec la musique. L’écoute est facultative. Aucun sous-titre automatique. Les prises et la voix restent dans ton navigateur. Télécharge le MP4 avant de fermer la page.</p>
 <label>Importer une voix (WAV, MP3, M4A, OGG ou WebM)<input id="voiceFile" type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg,.webm"></label>
 <div class="buttons"><button type="button" id="recordVoice" class="secondary">Enregistrer ma voix</button><button type="button" id="stopVoice" class="plain" disabled>Arrêter l’enregistrement</button><button type="button" id="clearVoice" class="plain" disabled>Retirer ma voix</button></div>
 <p id="voiceStatus" class="soft" role="status">Aucune voix ajoutée.</p><audio id="voicePreview" controls hidden></audio></div>
 </div>
+<label>Sous-titres (facultatif) <small>· une ligne par phrase : début-fin | texte, en secondes</small><textarea id="subtitles" rows="3" placeholder="1-4 | Ta phrase ici"></textarea></label><p class="note">Aucune transcription automatique : si tu ajoutes des sous-titres, écris uniquement les paroles réellement prononcées.</p>
 <div class="buttons"><button id="muet" type="button" class="secondary">Contrôle muet</button><button id="rendre" type="button" class="primary">Créer mon MP4 <span aria-hidden="true">↗</span></button></div>
 <div id="progressBox" class="progressBox" hidden><p id="phase" aria-live="polite"></p><progress max="100" value="0" id="progress"></progress></div>
 <article id="resultat" class="result" hidden><p class="kicker">TON MONTAGE</p><h3 id="titreResultat"></h3><video id="film" controls playsinline></video><p id="credit" class="credit"></p><div class="buttons"><a id="dl" class="primary" download="T3.mp4">Télécharger le MP4</a><a id="dlCredit" class="secondary" download="Credit-musique.txt">Crédit musique</a></div></article>

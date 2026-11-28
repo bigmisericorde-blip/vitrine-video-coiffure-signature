@@ -2,8 +2,8 @@
   "schema": 1,
   "template_id": "COIFFURE-T3",
   "version": "0.2.0-web",
-  "revision": "t3-deux-montages-voix-locale-4",
-  "portee": "Gabarit T3 : aucun texte ajouté aux vidéos, montage T3 habituel ou variante facultative synchronisée aux voix des prises.",
+  "revision": "t3-candidat-30s-1",
+  "portee": "Candidat local : durée variable, réponses de fiche visibles et voix facultative ; transcription automatique non intégrée.",
   "audio_profile": "beaute-soin-du-visage-instrumental",
   "media": {
     "largeur": 720,
@@ -12,64 +12,116 @@
     "images": 900,
     "secondes": 30,
     "codec": "h264",
-    "audio": "AAC-LC stéréo 48000 Hz"
+    "audio": "AAC-LC stéréo 48000 Hz",
+    "duree_mode": "variable",
+    "secondes_max": 30,
+    "images_max": 900,
+    "images_max_avec_audio": 899
   },
   "prises": {
     "S1": {
       "titre": "Le départ",
       "secondes": 8,
       "guide": "Présente ton produit ou le début de ton service. Garde le téléphone droit.",
-      "question": "Voit-on bien ton produit ou le début de ton service ?"
+      "question": "Voit-on bien ton produit ou le début de ton service ?",
+      "capture": {
+        "titre": "Départ",
+        "consigne": "Cadre assez large.",
+        "a_filmer": [
+          "Montre le produit ou le service et ce que tu vas faire.",
+          "Garde le téléphone droit et laisse un peu de place autour."
+        ],
+        "a_eviter": [
+          "Ne commence pas trop près."
+        ]
+      },
+      "secondes_min": 2
     },
     "S2": {
       "titre": "Le travail ou l’utilisation",
       "secondes": 10,
       "guide": "Filme une étape de ton travail ou ton produit en cours d’utilisation.",
-      "question": "Voit-on bien ce que tu fais ?"
+      "question": "Voit-on bien ce que tu fais ?",
+      "capture": {
+        "titre": "Travail ou utilisation",
+        "consigne": "Montre ton travail.",
+        "a_filmer": [
+          "Filme ton produit en cours d’utilisation ou une étape de ton service.",
+          "Garde les mains et ce que tu fais dans l’image."
+        ],
+        "a_eviter": [
+          "Ne cache pas ce que tu fais."
+        ]
+      },
+      "secondes_min": 2
     },
     "S3": {
       "titre": "Le détail",
       "secondes": 10,
       "guide": "Filme de près un détail réel de ton produit ou de ton travail. Reste stable.",
-      "question": "Le détail est-il net et facile à voir ?"
+      "question": "Le détail est-il net et facile à voir ?",
+      "capture": {
+        "titre": "Détail",
+        "consigne": "Approche-toi et reste stable.",
+        "a_filmer": [
+          "Filme de près un détail réel de ton produit ou de ton travail.",
+          "Laisse le temps de bien le voir. Garde le téléphone immobile."
+        ],
+        "a_eviter": [
+          "N’ajoute pas de filtre qui cache le détail."
+        ]
+      },
+      "secondes_min": 2
     },
     "S4": {
       "titre": "La dernière vue",
       "secondes": 8,
       "guide": "Filme une dernière vue du produit ou du travail. Si un résultat est visible, montre-le.",
-      "question": "Le produit ou le travail est-il facile à voir ?"
+      "question": "Le produit ou le travail est-il facile à voir ?",
+      "capture": {
+        "titre": "Dernière vue",
+        "consigne": "Garde une image calme.",
+        "a_filmer": [
+          "Filme ton produit ou ton travail. S’il y a un résultat visible, montre-le.",
+          "Garde une image stable et bien éclairée."
+        ],
+        "a_eviter": [
+          "Ne change pas de produit ou de service."
+        ]
+      },
+      "secondes_min": 2
     }
   },
   "fiche": {
     "nom": {
       "max": 46,
       "requis": true,
-      "usage": "fiche uniquement, non incrusté"
+      "usage": "affiché dans le film si renseigné"
     },
     "service": {
       "max": 60,
       "requis": true,
-      "usage": "fiche et consignes, non incrusté"
+      "usage": "affiché dans le film si renseigné"
     },
     "outil": {
       "max": 72,
       "requis": false,
-      "usage": "contexte du guide de la prise 2 ; non incrusté"
+      "usage": "affiché dans le film si renseigné"
     },
     "lieu": {
       "max": 42,
       "requis": false,
-      "usage": "fiche uniquement, non incrusté"
+      "usage": "affiché dans le film si renseigné"
     },
     "cible": {
       "max": 32,
       "requis": false,
-      "usage": "fiche uniquement après confirmation, non incrusté"
+      "usage": "affiché dans le film si renseigné et autorisé"
     },
     "prix": {
       "max": 30,
       "requis": false,
-      "usage": "fiche uniquement, non incrusté"
+      "usage": "affiché dans le film si renseigné"
     }
   },
   "bornes_images": {
@@ -112,41 +164,21 @@
   ],
   "voix_client": {
     "facultative": true,
-    "duree_max_s": 30,
-    "taille_max_octets": 20971520,
     "modes": [
-      "musique_seule"
+      "voix_separee",
+      "son_des_prises_selectionnees",
+      "aucune"
     ],
-    "origine": [
-      "import_voix",
-      "microphone_separe",
-      "son_des_prises_selectionnees"
-    ],
-    "captation_audio_des_prises_utilisee": true,
     "transcription_automatique": false,
-    "son_des_prises": {
-      "facultatif": true,
-      "selection": "S1 à S4 au choix ; les prises sans son peuvent être décochées",
-      "montage": "quatre scènes consécutives ; chaque voix est à la place de son image, même si une prise est décochée",
-      "capture_secondes": [
-        8,
-        10,
-        10,
-        8
-      ],
-      "duree_conservee_par_scene_s": [
-        6,
-        8,
-        8,
-        8
-      ],
-      "duree_finale_s": 30,
-      "selection_source": "premiers 6, 8, 8, 8 secondes respectivement ; fins des prises S1–S3 non utilisées",
-      "non_retime": true,
-      "transitions": "coupes franches aux frontières 6, 14, 22 s",
-      "synchro": "horodatages audio/vidéo et amorce décodée recalés ; vérifier sur appareils physiques",
-      "avertissement": "un mot à la coupure peut être tronqué ; terminer chaque phrase à temps et relire",
-      "voix_separee_simultanee": false
-    }
+    "detection_semantique_fin_phrase": false
+  },
+  "duree_regles": {
+    "fps_sortie": 30,
+    "silence_fin_ms": 250,
+    "seuil_rms": 0.002,
+    "duree_sortie": "somme_images_des_prises",
+    "maximum_secondes": 30,
+    "preservation_sens_geste_ou_parole_garantie": false,
+    "controle_fin_son": "niveau_sonore_sans_reconnaissance_des_paroles"
   }
 }

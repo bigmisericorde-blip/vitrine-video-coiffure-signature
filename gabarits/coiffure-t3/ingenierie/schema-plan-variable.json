@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contrat expérimental de rendu T3",
+  "type": "object",
+  "required": [
+    "version",
+    "template_id",
+    "statut",
+    "media",
+    "scenes",
+    "soustitres",
+    "audio"
+  ],
+  "properties": {
+    "version": {
+      "const": "t3-variable-30s-2"
+    },
+    "template_id": {
+      "const": "COIFFURE-T3"
+    },
+    "statut": {
+      "const": "revision_navigateur"
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "fps",
+        "largeur",
+        "hauteur",
+        "images_max_sans_audio",
+        "images_max_avec_audio"
+      ],
+      "properties": {
+        "fps": {
+          "const": 30
+        },
+        "largeur": {
+          "const": 720
+        },
+        "hauteur": {
+          "const": 1280
+        },
+        "images_max_sans_audio": {
+          "const": 900
+        },
+        "images_max_avec_audio": {
+          "const": 899
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "properties": {
+            "id": {
+              "const": "S1"
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "S2"
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "S3"
+            }
+          }
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "S4"
+            }
+          }
+        }
+      ],
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "reponses_affichees"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "S1",
+              "S2",
+              "S3",
+              "S4"
+            ]
+          },
+          "reponses_affichees": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "nom",
+                "service",
+                "outil",
+                "lieu",
+                "prix",
+                "cible"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "soustitres": {
+      "type": "object",
+      "required": [
+        "transcription_automatique_integree"
+      ],
+      "properties": {
+        "transcription_automatique_integree": {
+          "const": false
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "required": [
+        "detection_fin_phrase",
+        "absence_coupure_garantie"
+      ],
+      "properties": {
+        "detection_fin_phrase": {
+          "const": false
+        },
+        "absence_coupure_garantie": {
+          "const": false
+        }
+      }
+    }
+  }
+}

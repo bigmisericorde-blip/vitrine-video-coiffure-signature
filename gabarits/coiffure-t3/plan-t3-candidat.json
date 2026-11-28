@@ -1,0 +1,53 @@
+{
+  "version": "t3-variable-30s-2",
+  "template_id": "COIFFURE-T3",
+  "statut": "revision_navigateur",
+  "media": {
+    "fps": 30,
+    "largeur": 720,
+    "hauteur": 1280,
+    "images_max_sans_audio": 900,
+    "images_max_avec_audio": 899,
+    "raison_marge_audio": "Une image de marge est réservée pour le son ; le fichier MP4 terminé est vérifié et refusé si sa durée dépasse 30 secondes.",
+    "note_budget_capture": "Le parcours réserve une image même pour le contrôle muet afin que la même fiche puisse être exportée avec le son."
+  },
+  "scenes": [
+    {
+      "id": "S1",
+      "reponses_affichees": [
+        "nom",
+        "service"
+      ]
+    },
+    {
+      "id": "S2",
+      "reponses_affichees": [
+        "outil"
+      ]
+    },
+    {
+      "id": "S3",
+      "reponses_affichees": []
+    },
+    {
+      "id": "S4",
+      "reponses_affichees": [
+        "nom",
+        "lieu",
+        "prix",
+        "cible"
+      ]
+    }
+  ],
+  "soustitres": {
+    "source": "transcription_horodatee_fournie_au_moteur",
+    "transcription_automatique_integree": false,
+    "note": "Saisie facultative : uniquement les paroles réellement prononcées ; aucune reconnaissance automatique intégrée."
+  },
+  "audio": {
+    "selection_son_prises": "facultative",
+    "voix_separee": "facultative",
+    "detection_fin_phrase": false,
+    "absence_coupure_garantie": false
+  }
+}

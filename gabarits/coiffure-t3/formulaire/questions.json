@@ -1,5 +1,5 @@
 {
-  "version": "essai-local-1",
+  "version": "t3-variable-30s-2",
   "template_id": "COIFFURE-T3",
   "objectif": "Montrer une preuve visible et réelle du produit ou du service, sans promesse inventée.",
   "questions": [
@@ -27,19 +27,19 @@
       "id": "cible",
       "libelle": "Quel est ton numéro WhatsApp ou téléphone ?",
       "obligatoire": false,
-      "condition": "confirmation si renseigné ; non affiché dans le film de cet essai"
+      "condition": "autorisation explicite si le numéro est renseigné ; affiché dans la vidéo"
     },
     {
       "id": "prix",
       "libelle": "À partir de quel prix proposes-tu ce produit ou service ?",
       "obligatoire": false,
-      "condition": "monnaie fournie par le client ; non affiché dans le film de cet essai"
+      "condition": "monnaie fournie par le client ; affiché dans la vidéo"
     }
   ],
   "mode_moteur": {
     "geste": "vide",
     "detail": "vide",
     "action": "aucune",
-    "outil": "guide uniquement"
+    "outil": "guide et film"
   }
 }
